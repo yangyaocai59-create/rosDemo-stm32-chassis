@@ -19,9 +19,10 @@ PWM ripple.
 - Integral limit: +/-80 -> +/-50 permille.
 - Output slew limit: 1500 -> 1000 permille/s for a softer start.
 - Replaced the single pivot feedforward boost with eight explicit
-  wheel/turn-direction slots. Until repeatable loaded-ground calibration is
-  available, all eight slots are zero; the PI controller must establish the
-  pivot speed without an unverified extra torque term.
+  wheel/turn-direction slots. The 0.18.2 first trim is deliberately small:
+  left-pivot RF/RR +60, right-pivot RF -60, right-pivot LR -10, and all other
+  slots zero. These values are a measured starting point, not final factory
+  calibration.
 - USB protocol, encoder timers/polarity, IMU, ESTOP, standby and PWM safety
   behavior are unchanged.
 
