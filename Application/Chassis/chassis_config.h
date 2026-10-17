@@ -33,7 +33,7 @@
 #define CHASSIS_WHEELBASE_M                    0.180f
 
 /* Wheel-speed acquisition and filtering parameters. */
-#define CHASSIS_SPEED_SAMPLE_PERIOD_MS         10U
+#define CHASSIS_SPEED_SAMPLE_PERIOD_MS         20U
 #define CHASSIS_SPEED_FILTER_TIME_CONSTANT_MS  50U
 #define CHASSIS_SPEED_STOP_TIMEOUT_MS          200U
 

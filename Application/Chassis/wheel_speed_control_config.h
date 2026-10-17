@@ -13,19 +13,28 @@
 
 /* Controller units: target/measurement in encoder counts/s, output in permille. */
 #define WHEEL_SPEED_CONTROL_KP_PERMILLE_PER_CPS          0.050f
-#define WHEEL_SPEED_CONTROL_KI_PERMILLE_PER_CPS_SECOND   0.500f
-#define WHEEL_SPEED_CONTROL_INTEGRATOR_LIMIT_PERMILLE   80.0f
+#define WHEEL_SPEED_CONTROL_KI_PERMILLE_PER_CPS_SECOND   0.250f
+#define WHEEL_SPEED_CONTROL_INTEGRATOR_LIMIT_PERMILLE   50.0f
 #define WHEEL_SPEED_CONTROL_OUTPUT_LIMIT_PERMILLE        300
-#define WHEEL_SPEED_CONTROL_SLEW_PERMILLE_PER_SECOND  1500.0f
+#define WHEEL_SPEED_CONTROL_SLEW_PERMILLE_PER_SECOND  1000.0f
 #define WHEEL_SPEED_CONTROL_TARGET_LIMIT_CPS           1600.0f
 #define WHEEL_SPEED_CONTROL_ZERO_TARGET_CPS               1.0f
 
 /*
- * Extra signed feedforward used only for a zero-linear-speed skid-steer
- * pivot. Four fixed tyres require additional torque to overcome lateral scrub.
- * This is a provisional loaded-ground value and remains subject to calibration.
+ * Per-wheel, direction-aware feedforward used only for a zero-linear-speed
+ * skid-steer pivot. A single common boost was rejected by the loaded-ground
+ * trace: rear/right wheels oversped while the opposite front wheel needed
+ * additional torque. These are conservative first-pass values and remain
+ * subject to loaded calibration.
  */
-#define WHEEL_SPEED_CONTROL_PIVOT_FF_BOOST_PERMILLE      80.0f
+#define WHEEL_SPEED_CONTROL_PIVOT_FF_LEFT_LF_PERMILLE   -60.0f
+#define WHEEL_SPEED_CONTROL_PIVOT_FF_LEFT_LR_PERMILLE   -60.0f
+#define WHEEL_SPEED_CONTROL_PIVOT_FF_LEFT_RF_PERMILLE    80.0f
+#define WHEEL_SPEED_CONTROL_PIVOT_FF_LEFT_RR_PERMILLE    80.0f
+#define WHEEL_SPEED_CONTROL_PIVOT_FF_RIGHT_LF_PERMILLE   95.0f
+#define WHEEL_SPEED_CONTROL_PIVOT_FF_RIGHT_LR_PERMILLE   80.0f
+#define WHEEL_SPEED_CONTROL_PIVOT_FF_RIGHT_RF_PERMILLE  -55.0f
+#define WHEEL_SPEED_CONTROL_PIVOT_FF_RIGHT_RR_PERMILLE  -55.0f
 
 /* Forward feedforward: output = static + velocity_gain * abs(target_cps). */
 #define WHEEL_SPEED_FF_LF_FWD_STATIC_PERMILLE            51.8f

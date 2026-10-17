@@ -8,6 +8,7 @@
 #include <stddef.h>
 
 #include "FreeRTOS.h"
+#include "chassis_config.h"
 #include "emergency_stop.h"
 #include "task.h"
 #include "wheel_speed_control_config.h"
@@ -41,7 +42,7 @@ static float ChassisController_Abs(float value)
 
 static float ChassisController_GetFeedforwardBias(
   const ChassisVelocityCommand *command,
-  float target_counts_per_second)
+  MotorDriverWheel wheel)
 {
   const bool is_pivot =
     (command != NULL) &&
@@ -54,9 +55,44 @@ static float ChassisController_GetFeedforwardBias(
   {
     return 0.0f;
   }
-  return (target_counts_per_second > 0.0f) ?
-    WHEEL_SPEED_CONTROL_PIVOT_FF_BOOST_PERMILLE :
-    -WHEEL_SPEED_CONTROL_PIVOT_FF_BOOST_PERMILLE;
+
+  /* The chassis has unequal loaded scrub on each corner. Select the
+   * direction/side-specific correction instead of applying one boost to all
+   * four wheels. Positive angular velocity is the CCW-left pivot. */
+  if (command->angular_z_rad_s > 0.0f)
+  {
+    switch (wheel)
+    {
+      case MOTOR_DRIVER_WHEEL_LF:
+        return WHEEL_SPEED_CONTROL_PIVOT_FF_LEFT_LF_PERMILLE;
+      case MOTOR_DRIVER_WHEEL_LR:
+        return WHEEL_SPEED_CONTROL_PIVOT_FF_LEFT_LR_PERMILLE;
+      case MOTOR_DRIVER_WHEEL_RF:
+        return WHEEL_SPEED_CONTROL_PIVOT_FF_LEFT_RF_PERMILLE;
+      case MOTOR_DRIVER_WHEEL_RR:
+        return WHEEL_SPEED_CONTROL_PIVOT_FF_LEFT_RR_PERMILLE;
+      default:
+        break;
+    }
+  }
+  else
+  {
+    switch (wheel)
+    {
+      case MOTOR_DRIVER_WHEEL_LF:
+        return WHEEL_SPEED_CONTROL_PIVOT_FF_RIGHT_LF_PERMILLE;
+      case MOTOR_DRIVER_WHEEL_LR:
+        return WHEEL_SPEED_CONTROL_PIVOT_FF_RIGHT_LR_PERMILLE;
+      case MOTOR_DRIVER_WHEEL_RF:
+        return WHEEL_SPEED_CONTROL_PIVOT_FF_RIGHT_RF_PERMILLE;
+      case MOTOR_DRIVER_WHEEL_RR:
+        return WHEEL_SPEED_CONTROL_PIVOT_FF_RIGHT_RR_PERMILLE;
+      default:
+        break;
+    }
+  }
+
+  return 0.0f;
 }
 
 static void ChassisController_ResetWheelControllers(void)
@@ -233,8 +269,8 @@ static bool ChassisController_StartInternal(
           measured[wheel],
           ChassisController_GetFeedforwardBias(
             command,
-            targets.counts_per_second[wheel]),
-          10U,
+            (MotorDriverWheel)wheel),
+          CHASSIS_SPEED_SAMPLE_PERIOD_MS,
           &outputs[wheel])) ||
         (!WheelSpeedController_GetState((MotorDriverWheel)wheel, &control)))
     {
@@ -407,7 +443,7 @@ void ChassisController_Process(uint32_t now_ms)
           measured[wheel],
           ChassisController_GetFeedforwardBias(
             &command,
-            targets.counts_per_second[wheel]),
+            (MotorDriverWheel)wheel),
           elapsed_ms,
           &outputs[wheel])) ||
         (!WheelSpeedController_GetState((MotorDriverWheel)wheel,
