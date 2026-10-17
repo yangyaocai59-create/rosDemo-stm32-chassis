@@ -7,7 +7,7 @@
 #define APPLICATION_SYSTEM_FIRMWARE_INFO_H_
 
 #define FIRMWARE_NAME       "rosDemo Four-Wheel Differential Chassis"
-#define FIRMWARE_VERSION    "0.16.0-imu-fractional-bias"
+#define FIRMWARE_VERSION    "0.17.0-imu-stationary-bias"
 #define FIRMWARE_MCU        "STM32F407ZGT6"
 
 #endif /* APPLICATION_SYSTEM_FIRMWARE_INFO_H_ */

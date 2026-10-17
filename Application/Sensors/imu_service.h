@@ -90,6 +90,15 @@ bool ImuService_SetGyroBiasMilliRaw(int32_t x_milli_raw,
                                     int32_t y_milli_raw,
                                     int32_t z_milli_raw);
 
+/** Record the temperature at which the persisted/manual bias was measured. */
+void ImuService_SetCalibrationTemperatureCentiC(
+  int16_t calibration_temp_centi_c);
+
+/** Slowly follow a verified zero-rate residual in RAM only. */
+void ImuService_UpdateStationaryBias(bool stationary_allowed,
+                                     bool calibration_active,
+                                     uint32_t now_ms);
+
 /** Remove the current runtime gyro correction. */
 void ImuService_ClearGyroBias(void);
 

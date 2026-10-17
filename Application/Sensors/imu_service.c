@@ -55,6 +55,11 @@ static ImuPrivatePhase s_phase;
 static uint32_t s_deadline_ms;
 static int32_t s_gyro_bias_milli_raw[3];
 static bool s_gyro_bias_valid;
+static int16_t s_calibration_temperature_centi_c;
+static uint32_t s_stationary_since_ms;
+static uint32_t s_stationary_last_update_ms;
+static uint32_t s_stationary_last_log_ms;
+static bool s_stationary_candidate;
 
 void ImuService_OnDataReadyFromISR(uint32_t timestamp_ms)
 {
@@ -88,6 +93,11 @@ static bool ImuService_IsBiasValid(int32_t value)
          (value <= IMU_GYRO_BIAS_ABS_MAX_RAW * IMU_BIAS_MILLI_RAW_PER_RAW);
 }
 #endif
+
+static int32_t ImuService_AbsI32(int32_t value)
+{
+  return value < 0 ? -value : value;
+}
 
 static float ImuService_GyroRawToRadS(int16_t raw, int32_t bias_milli_raw)
 {
@@ -159,6 +169,11 @@ void ImuService_Init(uint32_t now_ms)
   memset(&s_snapshot, 0, sizeof(s_snapshot));
   memset(s_gyro_bias_milli_raw, 0, sizeof(s_gyro_bias_milli_raw));
   s_gyro_bias_valid = false;
+  s_calibration_temperature_centi_c = 0;
+  s_stationary_since_ms = 0U;
+  s_stationary_last_update_ms = 0U;
+  s_stationary_last_log_ms = 0U;
+  s_stationary_candidate = false;
   s_snapshot.initialized = true;
   s_snapshot.state = IMU_SERVICE_STATE_NOT_READY;
   s_phase = IMU_PHASE_RETRY_WAIT;
@@ -509,6 +524,123 @@ bool ImuService_SetGyroBiasMilliRaw(int32_t x_milli_raw,
     ImuService_GyroRawToRadS(s_snapshot.gyro_z_raw, z_milli_raw);
   taskEXIT_CRITICAL();
   return true;
+#endif
+}
+
+void ImuService_SetCalibrationTemperatureCentiC(
+  int16_t calibration_temp_centi_c)
+{
+  taskENTER_CRITICAL();
+  s_calibration_temperature_centi_c = calibration_temp_centi_c;
+  taskEXIT_CRITICAL();
+}
+
+void ImuService_UpdateStationaryBias(bool stationary_allowed,
+                                     bool calibration_active,
+                                     uint32_t now_ms)
+{
+#if IMU_RUNTIME_BIAS_TRACKING_ENABLED && IMU_CALIBRATION_ENABLED
+  ImuServiceSnapshot snapshot;
+  int32_t next_bias[3];
+  int32_t residual_milli_raw[3];
+  int64_t accel_norm_squared;
+  const int64_t accel_min = 8192L - IMU_RUNTIME_BIAS_TRACK_ACCEL_TOL_RAW;
+  const int64_t accel_max = 8192L + IMU_RUNTIME_BIAS_TRACK_ACCEL_TOL_RAW;
+
+  if ((!stationary_allowed) || calibration_active ||
+      (!ImuService_GetSnapshot(&snapshot)) || (!snapshot.valid) ||
+      (!snapshot.gyro_bias_valid))
+  {
+    s_stationary_candidate = false;
+    s_stationary_since_ms = 0U;
+    s_stationary_last_update_ms = 0U;
+    return;
+  }
+
+  accel_norm_squared = (int64_t)snapshot.accel_x_raw * snapshot.accel_x_raw +
+                       (int64_t)snapshot.accel_y_raw * snapshot.accel_y_raw +
+                       (int64_t)snapshot.accel_z_raw * snapshot.accel_z_raw;
+  if ((accel_norm_squared < accel_min * accel_min) ||
+      (accel_norm_squared > accel_max * accel_max))
+  {
+    s_stationary_candidate = false;
+    s_stationary_since_ms = 0U;
+    s_stationary_last_update_ms = 0U;
+    return;
+  }
+
+  for (uint32_t axis = 0U; axis < 3U; ++axis)
+  {
+    const int16_t raw = (axis == 0U) ? snapshot.gyro_x_raw :
+                        (axis == 1U) ? snapshot.gyro_y_raw :
+                                       snapshot.gyro_z_raw;
+    const int32_t bias = (axis == 0U) ? snapshot.gyro_bias_x_milli_raw :
+                         (axis == 1U) ? snapshot.gyro_bias_y_milli_raw :
+                                        snapshot.gyro_bias_z_milli_raw;
+    residual_milli_raw[axis] =
+      (int32_t)raw * IMU_BIAS_MILLI_RAW_PER_RAW - bias;
+    if (ImuService_AbsI32(residual_milli_raw[axis]) >
+        IMU_RUNTIME_BIAS_TRACK_GYRO_LIMIT_RAW * IMU_BIAS_MILLI_RAW_PER_RAW)
+    {
+      s_stationary_candidate = false;
+      s_stationary_since_ms = 0U;
+      s_stationary_last_update_ms = 0U;
+      return;
+    }
+    next_bias[axis] = bias;
+  }
+
+  if (!s_stationary_candidate)
+  {
+    s_stationary_candidate = true;
+    s_stationary_since_ms = now_ms;
+    s_stationary_last_update_ms = now_ms;
+    return;
+  }
+  if ((uint32_t)(now_ms - s_stationary_since_ms) <
+      IMU_RUNTIME_BIAS_TRACK_MIN_STATIONARY_MS)
+  {
+    return;
+  }
+  if ((uint32_t)(now_ms - s_stationary_last_update_ms) <
+      IMU_RUNTIME_BIAS_TRACK_UPDATE_MS)
+  {
+    return;
+  }
+  s_stationary_last_update_ms = now_ms;
+
+  for (uint32_t axis = 0U; axis < 3U; ++axis)
+  {
+    next_bias[axis] += residual_milli_raw[axis] /
+                       (1L << IMU_RUNTIME_BIAS_TRACK_ALPHA_SHIFT);
+  }
+
+  if (ImuService_IsBiasValid(next_bias[0]) &&
+      ImuService_IsBiasValid(next_bias[1]) &&
+      ImuService_IsBiasValid(next_bias[2]) &&
+      ((next_bias[0] != snapshot.gyro_bias_x_milli_raw) ||
+       (next_bias[1] != snapshot.gyro_bias_y_milli_raw) ||
+       (next_bias[2] != snapshot.gyro_bias_z_milli_raw)) &&
+      ImuService_SetGyroBiasMilliRaw(next_bias[0], next_bias[1], next_bias[2]) &&
+      ((uint32_t)(now_ms - s_stationary_last_log_ms) >=
+       IMU_RUNTIME_BIAS_TRACK_LOG_PERIOD_MS))
+  {
+    const int32_t temp_centi_c = (int32_t)(snapshot.temperature_c * 100.0f);
+    s_stationary_last_log_ms = now_ms;
+    DEBUG_LOG_INFO(
+      "IMU stationary bias RAM track: milli_raw=[%ld,%ld,%ld] temp=%ld.%02ldC cal_temp=%d.%02uC",
+      (long)next_bias[0], (long)next_bias[1], (long)next_bias[2],
+      (long)(temp_centi_c / 100), (long)(temp_centi_c < 0 ?
+        -(temp_centi_c % 100) : (temp_centi_c % 100)),
+      (int)(s_calibration_temperature_centi_c / 100),
+      (unsigned int)((s_calibration_temperature_centi_c < 0) ?
+        -(s_calibration_temperature_centi_c % 100) :
+         (s_calibration_temperature_centi_c % 100)));
+  }
+#else
+  (void)stationary_allowed;
+  (void)calibration_active;
+  (void)now_ms;
 #endif
 }
 

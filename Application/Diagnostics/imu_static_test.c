@@ -214,6 +214,11 @@ static void ImuStaticTest_Report(const ImuStaticAccumulator *result)
       bias_applied = ImuService_SetGyroBiasMilliRaw(gyro_mean_milli_raw[0],
                                                     gyro_mean_milli_raw[1],
                                                     gyro_mean_milli_raw[2]);
+      if (bias_applied)
+      {
+        ImuService_SetCalibrationTemperatureCentiC(
+          (int16_t)temperature_centi_c);
+      }
       final_result = bias_applied ? IMU_STATIC_RESULT_PASS :
         IMU_STATIC_RESULT_FAIL_BIAS_RANGE;
       s_persistence_active = bias_applied;

@@ -45,6 +45,7 @@
 #include "four_wheel_speed_control_test.h"
 #include "imu_config.h"
 #include "imu_bias_storage.h"
+#include "imu_calibration_guard.h"
 #include "imu_service.h"
 #include "imu_static_test.h"
 #include "imu_spi_identity_test.h"
@@ -461,6 +462,8 @@ void StartImuTask(void *argument)
                                               bias_y_milli_raw,
                                               bias_z_milli_raw))
           {
+            ImuService_SetCalibrationTemperatureCentiC(
+              calibration_temp_centi_c);
             DEBUG_LOG_INFO(
               "IMU gyro bias restored from Flash: milli_raw=[%ld,%ld,%ld] calibration_temp=%d.%02uC",
               (long)bias_x_milli_raw,
@@ -479,6 +482,14 @@ void StartImuTask(void *argument)
         }
       }
       ImuStaticTest_ProcessSample(&imu_snapshot, HAL_GetTick());
+      {
+        int64_t stationary_wheel_counts[ENCODER_WHEEL_COUNT];
+        const bool stationary_allowed =
+          ImuCalibrationGuard_Read(stationary_wheel_counts, false);
+        ImuService_UpdateStationaryBias(stationary_allowed,
+                                        ImuStaticTest_IsActive(),
+                                        HAL_GetTick());
+      }
     }
 #endif
 #endif

@@ -84,4 +84,16 @@
 #define IMU_STATIC_TEST_GYRO_STD_RAW        12.0f
 #define IMU_STATIC_TEST_ACCEL_STD_RAW       64.0f
 
+/* RAM-only zero-rate tracking. It is enabled only after the chassis interlock
+ * proves that all wheels are stopped; it never writes Flash. */
+#ifndef IMU_RUNTIME_BIAS_TRACKING_ENABLED
+#define IMU_RUNTIME_BIAS_TRACKING_ENABLED    1
+#endif
+#define IMU_RUNTIME_BIAS_TRACK_MIN_STATIONARY_MS 3000U
+#define IMU_RUNTIME_BIAS_TRACK_UPDATE_MS     100U
+#define IMU_RUNTIME_BIAS_TRACK_ALPHA_SHIFT   9U /* 1/512 per update */
+#define IMU_RUNTIME_BIAS_TRACK_GYRO_LIMIT_RAW 24L
+#define IMU_RUNTIME_BIAS_TRACK_ACCEL_TOL_RAW 500L
+#define IMU_RUNTIME_BIAS_TRACK_LOG_PERIOD_MS 5000U
+
 #endif /* APPLICATION_SENSORS_IMU_CONFIG_H_ */
