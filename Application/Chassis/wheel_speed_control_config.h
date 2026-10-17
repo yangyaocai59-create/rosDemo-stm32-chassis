@@ -21,19 +21,12 @@
 #define WHEEL_SPEED_CONTROL_ZERO_TARGET_CPS               1.0f
 
 /*
- * Optional signed feedforward used only for a zero-linear-speed skid-steer
- * pivot. Loaded-ground traces are not yet repeatable enough to justify an
- * extra torque term, so the safe baseline is zero for every wheel. Keep the
- * per-wheel/side slots explicit for a later, measured calibration.
+ * Dynamic breakaway assistance used only for a zero-linear-speed skid-steer
+ * pivot. It is present only while a wheel is effectively stationary; once
+ * encoder speed appears, PI and normal feedforward take over.
  */
-#define WHEEL_SPEED_CONTROL_PIVOT_FF_LEFT_LF_PERMILLE   -60.0f
-#define WHEEL_SPEED_CONTROL_PIVOT_FF_LEFT_LR_PERMILLE   -60.0f
-#define WHEEL_SPEED_CONTROL_PIVOT_FF_LEFT_RF_PERMILLE    60.0f
-#define WHEEL_SPEED_CONTROL_PIVOT_FF_LEFT_RR_PERMILLE    20.0f
-#define WHEEL_SPEED_CONTROL_PIVOT_FF_RIGHT_LF_PERMILLE    0.0f
-#define WHEEL_SPEED_CONTROL_PIVOT_FF_RIGHT_LR_PERMILLE  -30.0f
-#define WHEEL_SPEED_CONTROL_PIVOT_FF_RIGHT_RF_PERMILLE -120.0f
-#define WHEEL_SPEED_CONTROL_PIVOT_FF_RIGHT_RR_PERMILLE  -20.0f
+#define WHEEL_SPEED_CONTROL_PIVOT_BREAKAWAY_PERMILLE    60.0f
+#define WHEEL_SPEED_CONTROL_PIVOT_STATIONARY_CPS        20.0f
 
 /* Forward feedforward: output = static + velocity_gain * abs(target_cps). */
 #define WHEEL_SPEED_FF_LF_FWD_STATIC_PERMILLE            51.8f

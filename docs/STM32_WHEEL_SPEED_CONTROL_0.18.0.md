@@ -20,8 +20,9 @@ PWM ripple.
 - Output slew limit: 1500 -> 1000 permille/s for a softer start.
 - Replaced the single pivot feedforward boost with eight explicit
   wheel/turn-direction slots. The 0.18.2 first trim is deliberately small:
-  left-pivot LF/LR -60, RF +60, RR +20; right-pivot LR -30, RF -120, RR -20;
-  right-pivot LF remains zero. These values are a measured starting point, not final factory
+  a dynamic +60/-60 breakaway assist is applied only while a pivoting wheel is
+  stationary. Once encoder speed appears, the assist is removed and PI takes
+  over; there is no sustained per-wheel pivot boost.
   calibration.
 - USB protocol, encoder timers/polarity, IMU, ESTOP, standby and PWM safety
   behavior are unchanged.

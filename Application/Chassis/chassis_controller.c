@@ -42,7 +42,9 @@ static float ChassisController_Abs(float value)
 
 static float ChassisController_GetFeedforwardBias(
   const ChassisVelocityCommand *command,
-  MotorDriverWheel wheel)
+  MotorDriverWheel wheel,
+  float target_counts_per_second,
+  float measured_counts_per_second)
 {
   const bool is_pivot =
     (command != NULL) &&
@@ -56,42 +58,16 @@ static float ChassisController_GetFeedforwardBias(
     return 0.0f;
   }
 
-  /* The chassis has unequal loaded scrub on each corner. Select the
-   * direction/side-specific correction instead of applying one boost to all
-   * four wheels. Positive angular velocity is the CCW-left pivot. */
-  if (command->angular_z_rad_s > 0.0f)
+  (void)wheel;
+  if ((ChassisController_Abs(target_counts_per_second) >=
+       WHEEL_SPEED_CONTROL_PIVOT_STATIONARY_CPS) &&
+      (ChassisController_Abs(measured_counts_per_second) <=
+       WHEEL_SPEED_CONTROL_PIVOT_STATIONARY_CPS))
   {
-    switch (wheel)
-    {
-      case MOTOR_DRIVER_WHEEL_LF:
-        return WHEEL_SPEED_CONTROL_PIVOT_FF_LEFT_LF_PERMILLE;
-      case MOTOR_DRIVER_WHEEL_LR:
-        return WHEEL_SPEED_CONTROL_PIVOT_FF_LEFT_LR_PERMILLE;
-      case MOTOR_DRIVER_WHEEL_RF:
-        return WHEEL_SPEED_CONTROL_PIVOT_FF_LEFT_RF_PERMILLE;
-      case MOTOR_DRIVER_WHEEL_RR:
-        return WHEEL_SPEED_CONTROL_PIVOT_FF_LEFT_RR_PERMILLE;
-      default:
-        break;
-    }
+    return (target_counts_per_second > 0.0f) ?
+      WHEEL_SPEED_CONTROL_PIVOT_BREAKAWAY_PERMILLE :
+      -WHEEL_SPEED_CONTROL_PIVOT_BREAKAWAY_PERMILLE;
   }
-  else
-  {
-    switch (wheel)
-    {
-      case MOTOR_DRIVER_WHEEL_LF:
-        return WHEEL_SPEED_CONTROL_PIVOT_FF_RIGHT_LF_PERMILLE;
-      case MOTOR_DRIVER_WHEEL_LR:
-        return WHEEL_SPEED_CONTROL_PIVOT_FF_RIGHT_LR_PERMILLE;
-      case MOTOR_DRIVER_WHEEL_RF:
-        return WHEEL_SPEED_CONTROL_PIVOT_FF_RIGHT_RF_PERMILLE;
-      case MOTOR_DRIVER_WHEEL_RR:
-        return WHEEL_SPEED_CONTROL_PIVOT_FF_RIGHT_RR_PERMILLE;
-      default:
-        break;
-    }
-  }
-
   return 0.0f;
 }
 
@@ -269,7 +245,9 @@ static bool ChassisController_StartInternal(
           measured[wheel],
           ChassisController_GetFeedforwardBias(
             command,
-            (MotorDriverWheel)wheel),
+            (MotorDriverWheel)wheel,
+            targets.counts_per_second[wheel],
+            measured[wheel]),
           CHASSIS_SPEED_SAMPLE_PERIOD_MS,
           &outputs[wheel])) ||
         (!WheelSpeedController_GetState((MotorDriverWheel)wheel, &control)))
@@ -443,7 +421,9 @@ void ChassisController_Process(uint32_t now_ms)
           measured[wheel],
           ChassisController_GetFeedforwardBias(
             &command,
-            (MotorDriverWheel)wheel),
+            (MotorDriverWheel)wheel,
+            targets.counts_per_second[wheel],
+            measured[wheel]),
           elapsed_ms,
           &outputs[wheel])) ||
         (!WheelSpeedController_GetState((MotorDriverWheel)wheel,
