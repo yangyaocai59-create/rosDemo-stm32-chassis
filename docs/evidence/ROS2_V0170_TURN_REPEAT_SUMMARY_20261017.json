@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-17",
+  "firmware_reference_tag": "v0.17.0",
+  "firmware_reference_commit": "ef3d3606f3246bac870534692c3898b40dcf1404",
+  "scope": "ROS 2 low-speed full-turn repeat review; read-only firmware review; no firmware change or flash",
+  "physical_geometry_m": {
+    "wheelbase": 0.185,
+    "physical_track_width": 0.215,
+    "wheel_diameter": 0.065
+  },
+  "ros_effective_track_m": 0.395,
+  "turns_deg": {
+    "left_first": {
+      "imu": 357.32286386710615,
+      "wheel": 355.0727848101269
+    },
+    "left_repeat": {
+      "imu": 358.0699038260956,
+      "wheel": 350.25949367088594
+    },
+    "right_first": {
+      "imu": -363.42175801300385,
+      "wheel": -339.6360759493668
+    },
+    "right_repeat": {
+      "imu": -357.13645820270915,
+      "wheel": -334.5094936708859
+    }
+  },
+  "same_direction_wheel_repeat_difference_deg": {
+    "left": -4.81329113924096,
+    "right": 5.1265822784809
+  },
+  "static_recovery_drift_deg_min": 0.0575518907562412,
+  "protocol_errors_max": 0,
+  "raw_ros_formula_match_error_rad_s_max": 5.551115123125783e-17,
+  "decision": "Do not change ROS effective track, IMU, firmware or safety gates. STM32 engineer should review loaded low-speed pivot wheel target/measured/raw encoder/PWM/PI/feedforward/filter behavior before any firmware revision.",
+  "local_evidence_archive": {
+    "path": "/home/jetson/STM32_ROS_V0170_FULL_TURN_REPEAT_REVIEW_20261017.zip",
+    "sha256": "79f1cc3c216b68dc4c296428173f793ec84a2566732390c3900ff9dccfc186cb",
+    "note": "Raw evidence archive is retained on Jetson; repository commit contains the reports and this compact summary."
+  },
+  "source_reports": [
+    "docs/ROS2_V0170_FULL_TURN_REPEAT_REVIEW_20261017.md",
+    "docs/STM32_LOW_SPEED_PIVOT_HANDOFF_20261017.md"
+  ]
+}
