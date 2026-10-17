@@ -1,0 +1,153 @@
+{
+  "firmware": "0.16.0-imu-fractional-bias",
+  "stream": "RAW_V2 0x86",
+  "bias_milli_raw": [
+    -52438,
+    19020,
+    146592
+  ],
+  "duration_observed_s": 600.009631243,
+  "imu_samples": 60002,
+  "source_stamp_span_s": 599.9839999675751,
+  "source_rate_hz": 100.0043334542965,
+  "source_gap_max_s": 0.01100015640258789,
+  "source_gap_p99_s": 0.010000228881835938,
+  "source_nonincreasing": 0,
+  "source_gaps_over_20ms": 0,
+  "host_receive_gap_max_s": 0.3682552260002012,
+  "host_receive_gaps_over_100ms": 4,
+  "gyro_z_mean_rad_s": 0.001706749950475923,
+  "gyro_z_std_rad_s": 0.0008586790604936123,
+  "integral_deg": 58.67193077075601,
+  "drift_deg_per_min": 5.867349540047083,
+  "minute_windows": [
+    {
+      "minute": 1,
+      "samples": 6001,
+      "mean_gyro_z_rad_s": 0.0017479427245355153,
+      "integral_deg": 6.008271559707973
+    },
+    {
+      "minute": 2,
+      "samples": 6000,
+      "mean_gyro_z_rad_s": 0.0017155742749247027,
+      "integral_deg": 5.896604370393793
+    },
+    {
+      "minute": 3,
+      "samples": 6000,
+      "mean_gyro_z_rad_s": 0.0017086462504129695,
+      "integral_deg": 5.872506696074932
+    },
+    {
+      "minute": 4,
+      "samples": 6000,
+      "mean_gyro_z_rad_s": 0.001701052069698185,
+      "integral_deg": 5.845902184362618
+    },
+    {
+      "minute": 5,
+      "samples": 6001,
+      "mean_gyro_z_rad_s": 0.0016786296211885375,
+      "integral_deg": 5.7702027752417155
+    },
+    {
+      "minute": 6,
+      "samples": 6000,
+      "mean_gyro_z_rad_s": 0.0017107335398491967,
+      "integral_deg": 5.879766707427603
+    },
+    {
+      "minute": 7,
+      "samples": 6000,
+      "mean_gyro_z_rad_s": 0.0017311179196625656,
+      "integral_deg": 5.949803102551489
+    },
+    {
+      "minute": 8,
+      "samples": 6001,
+      "mean_gyro_z_rad_s": 0.0016833807435832375,
+      "integral_deg": 5.786698954909772
+    },
+    {
+      "minute": 9,
+      "samples": 6000,
+      "mean_gyro_z_rad_s": 0.0017052710589841764,
+      "integral_deg": 5.861574205602352
+    },
+    {
+      "minute": 10,
+      "samples": 5999,
+      "mean_gyro_z_rad_s": 0.0016851494179584109,
+      "integral_deg": 5.791260959785367
+    }
+  ],
+  "wheel_position_static": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "odom_position_static": 0.0,
+  "odom_yaw_delta_deg": 0.0,
+  "cmd_vel_count": 0,
+  "diagnostic_levels_observed": {
+    "rosdemo_base/connection": [
+      0
+    ],
+    "rosdemo_base/telemetry": [
+      0
+    ],
+    "rosdemo_base/protocol": [
+      0
+    ],
+    "rosdemo_base/chassis": [
+      0
+    ],
+    "rosdemo_base/motor_bus": [
+      1
+    ],
+    "rosdemo_base/imu": [
+      0
+    ]
+  },
+  "final_imu_diagnostics": {
+    "level": 0,
+    "message": "IMU READY with calibrated gyro bias",
+    "values": {
+      "state": "2",
+      "valid": "true",
+      "gyro_bias_valid": "true",
+      "service_initialized": "true",
+      "calibration_active": "false",
+      "calibration_result_valid": "false",
+      "calibration_last_success": "false",
+      "calibration_last_moved": "false",
+      "calibration_last_range": "false",
+      "read_errors": "0",
+      "consecutive_errors": "0",
+      "temperature_millidegrees_c": "28874",
+      "stream": "RAW_V2",
+      "raw_format": "2",
+      "gyro_bias_milli_raw_x": "-52438",
+      "gyro_bias_milli_raw_y": "19020",
+      "gyro_bias_milli_raw_z": "146592",
+      "gyro_sensitivity_x10": "655",
+      "raw_sample_count": "153197"
+    }
+  },
+  "classification": {
+    "raw_v2_decode_and_stream": "PASS",
+    "source_sample_continuity": "PASS",
+    "static_wheel_and_odom": "PASS",
+    "ros_receive_scheduling": "OBSERVE_HOST_GAPS",
+    "10min_gyro_drift_target_le_1_deg_per_min": "FAIL",
+    "temperature_compensation": "NOT_AVAILABLE"
+  },
+  "evidence_files": [
+    "static_10min.json",
+    "static_10min.jsonl",
+    "driver.log",
+    "static_10min.progress.json"
+  ]
+}

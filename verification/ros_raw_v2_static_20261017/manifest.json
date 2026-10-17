@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-17",
+  "firmware": {
+    "version": "0.16.0-imu-fractional-bias",
+    "git_tag": "v0.16.0",
+    "git_commit": "33bbef1d903e3c012018144116d01bd12061a79c"
+  },
+  "ros": {
+    "distribution": "humble",
+    "packages": [
+      "rosdemo_base",
+      "rosdemo_description",
+      "rosdemo_localization"
+    ],
+    "build": "colcon build --packages-select rosdemo_base rosdemo_description rosdemo_localization --symlink-install",
+    "domain_id": 180,
+    "localhost_only": 1,
+    "rmw": "rmw_fastrtps_cpp"
+  },
+  "hardware": {
+    "device": "/dev/serial/by-id/usb-STMicroelectronics_STM32_Virtual_ComPort_338536803133-if00",
+    "stream": "RAW_V2 0x86",
+    "baud": 115200,
+    "bias_milli_raw": [
+      -52438,
+      19020,
+      146592
+    ]
+  },
+  "driver_parameters": {
+    "imu.stream_mode": 2,
+    "command.require_calibrated_imu": true,
+    "publish_tf": false,
+    "protocol.keepalive_period_ms": 800,
+    "command.send_period_ms": 50,
+    "command.timeout_ms": 200
+  },
+  "observer_command": "python3 tools/localization_observer.py --duration 600 --sensor-depth 200 --checkpoint-seconds 60 --checkpoint-tail 200 --output logs/acceptance/imu_raw_v2_static_20261017_1712/static_10min.json",
+  "vehicle_state": "grounded and stationary; no teleop; no nonzero cmd_vel; no SLAM",
+  "config_sha256": {
+    "base_driver_release.yaml": "7db23c816531e5fb0ad02df41997974838e6ab83d214fc0d35e3c30e8ebe02a0",
+    "protocol_v1.hpp": "dbe1fc2a5f9b7721a176523c341d0451df58d850f031711e172f5003de020c2c",
+    "protocol_v1.cpp": "dddbef71fcb74c7c4742d8901eb0898b75570ae94f28d5a198b94f020bdb3cb8",
+    "ros_messages.cpp": "b1b7bfc19f54f9cbe5f2b633059e5d188dfec522e9867afec82337bac6f389a6"
+  },
+  "evidence": [
+    "static_10min.json",
+    "static_10min.jsonl",
+    "static_10min_analysis.json",
+    "static_10min.progress.json",
+    "driver.log",
+    "status.txt"
+  ],
+  "source_package_reference": "/home/jetson/firmware_reference/rosDemo-stm32-chassis-0.16.0"
+}

@@ -1,0 +1,298 @@
+{
+  "duration_requested_s": 600.0,
+  "duration_observed_s": 600.009631243,
+  "sensor_depth": 200,
+  "topics": {
+    "/odom": {
+      "count": 12000,
+      "frames": [
+        "odom"
+      ],
+      "received_hz": 19.999304824430983,
+      "received_max_gap_s": 0.3697723919999589,
+      "received_nonincreasing": 0,
+      "stamp_hz": 19.99999999841041,
+      "stamp_max_gap_s": 0.05000019073486328,
+      "stamp_nonincreasing": 0,
+      "child_frames": [
+        "base_footprint"
+      ],
+      "position_delta_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_position_offset_m": 0.0,
+      "path_length_m": 0.0,
+      "yaw_delta_deg": 0.0,
+      "max_abs_vx_m_s": 0.0,
+      "max_abs_vy_m_s": 0.0,
+      "all_finite": true,
+      "first_pose_variance_x_y_yaw": [
+        0.0025,
+        0.0025,
+        0.0076
+      ],
+      "last_pose_variance_x_y_yaw": [
+        0.0025,
+        0.0025,
+        0.0076
+      ],
+      "first_twist_variance_vx_vy_wz": [
+        0.0001,
+        0.0004,
+        0.0025
+      ],
+      "last_twist_variance_vx_vy_wz": [
+        0.0001,
+        0.0004,
+        0.0025
+      ],
+      "max_twist_variance_vx_vy_wz": [
+        0.0001,
+        0.0004,
+        0.0025
+      ]
+    },
+    "/wheel/odometry": {
+      "count": 0
+    },
+    "/imu/data_raw": {
+      "count": 60002,
+      "frames": [
+        "imu_link"
+      ],
+      "received_hz": 100.00201805392439,
+      "received_max_gap_s": 0.3682552260002012,
+      "received_nonincreasing": 0,
+      "stamp_hz": 100.0043334542965,
+      "stamp_max_gap_s": 0.01100015640258789,
+      "stamp_nonincreasing": 0,
+      "gyro_z_mean_rad_s": 0.001706749950475923,
+      "gyro_z_std_rad_s": 0.0008586790604936123,
+      "gyro_integral_deg": 58.67193077075601,
+      "first_covariances": {
+        "orientation": [
+          -1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "angular_velocity": [
+          4e-06,
+          0.0,
+          0.0,
+          0.0,
+          4e-06,
+          0.0,
+          0.0,
+          0.0,
+          4e-06
+        ],
+        "linear_acceleration": [
+          0.01,
+          0.0,
+          0.0,
+          0.0,
+          0.01,
+          0.0,
+          0.0,
+          0.0,
+          0.01
+        ]
+      },
+      "all_finite": true
+    },
+    "/odometry/filtered_shadow": {
+      "count": 0
+    },
+    "/joint_states": {
+      "count": 12000,
+      "frames": [
+        ""
+      ],
+      "received_hz": 19.99922947307368,
+      "received_max_gap_s": 0.3699723649999669,
+      "received_nonincreasing": 0,
+      "stamp_hz": 19.99999999841041,
+      "stamp_max_gap_s": 0.05000019073486328,
+      "stamp_nonincreasing": 0,
+      "max_abs_wheel_rad_s": 0.0,
+      "joint_names": [
+        "left_front_wheel_joint",
+        "left_rear_wheel_joint",
+        "right_front_wheel_joint",
+        "right_rear_wheel_joint"
+      ],
+      "joint_position_delta_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_abs_joint_position_offset_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "/cmd_vel": {
+      "count": 0
+    },
+    "/tf:odom->base_footprint": {
+      "count": 0
+    }
+  },
+  "publishers": {
+    "/odom": [
+      "/rosdemo_base_driver"
+    ],
+    "/wheel/odometry": [],
+    "/imu/data_raw": [
+      "/rosdemo_base_driver"
+    ],
+    "/odometry/filtered_shadow": [],
+    "/joint_states": [
+      "/rosdemo_base_driver"
+    ],
+    "/cmd_vel": [],
+    "/tf": [
+      "/robot_state_publisher"
+    ],
+    "/tf_static": [
+      "/robot_state_publisher"
+    ]
+  },
+  "tf_edges_observed": {
+    "base_footprint -> base_link": 1,
+    "base_link -> imu_link": 1,
+    "imu_link -> laser": 1,
+    "base_link -> left_front_wheel_link": 12058,
+    "base_link -> left_rear_wheel_link": 12058,
+    "base_link -> right_front_wheel_link": 12058,
+    "base_link -> right_rear_wheel_link": 12058
+  },
+  "diagnostics_latest": {
+    "rosdemo_base/connection": {
+      "level": 0,
+      "message": "USB CDC session synchronized",
+      "values": {
+        "connected": "true",
+        "synchronized": "true"
+      }
+    },
+    "rosdemo_base/telemetry": {
+      "level": 0,
+      "message": "telemetry rates healthy",
+      "values": {
+        "status_hz": "11.0",
+        "wheel_hz": "20.0",
+        "battery_hz": "2.0",
+        "imu_hz": "101.8"
+      }
+    },
+    "rosdemo_base/protocol": {
+      "level": 0,
+      "message": "no communication errors",
+      "values": {
+        "host_valid_frames": "82398",
+        "host_crc_errors": "0",
+        "host_version_errors": "0",
+        "host_length_errors": "0",
+        "host_discarded_bytes": "0",
+        "rejected_ack": "0",
+        "malformed_messages": "0",
+        "unexpected_messages": "0",
+        "timestamp_duplicates": "641",
+        "timestamp_regressions": "0",
+        "mcu_crc_errors": "0",
+        "mcu_rx_overflow_packets": "0",
+        "mcu_dropped_tx_frames": "0"
+      }
+    },
+    "rosdemo_base/chassis": {
+      "level": 0,
+      "message": "IDLE with zero requested velocity",
+      "values": {
+        "runtime_state": "1",
+        "runtime_state_name": "IDLE",
+        "runtime_fault": "0",
+        "runtime_fault_name": "NONE",
+        "controller_fault": "0",
+        "controller_fault_name": "NONE",
+        "last_stop_reason": "2",
+        "last_stop_reason_name": "EXPLICIT",
+        "flags": "336",
+        "health_fault_latched": "false",
+        "estop_latched": "false",
+        "estop_input_active": "false",
+        "requested_linear_x_mm_s": "0",
+        "requested_angular_z_mrad_s": "0"
+      }
+    },
+    "rosdemo_base/motor_bus": {
+      "level": 1,
+      "message": "motor-bus monitor only; battery SOC unavailable",
+      "values": {
+        "motor_bus_mv": "3916",
+        "state": "1",
+        "flags": "1",
+        "adc_errors": "0",
+        "consecutive_errors": "0",
+        "low_threshold_mv": "0",
+        "critical_threshold_mv": "0"
+      }
+    },
+    "rosdemo_base/imu": {
+      "level": 0,
+      "message": "IMU READY with calibrated gyro bias",
+      "values": {
+        "state": "2",
+        "valid": "true",
+        "gyro_bias_valid": "true",
+        "service_initialized": "true",
+        "calibration_active": "false",
+        "calibration_result_valid": "false",
+        "calibration_last_success": "false",
+        "calibration_last_moved": "false",
+        "calibration_last_range": "false",
+        "read_errors": "0",
+        "consecutive_errors": "0",
+        "temperature_millidegrees_c": "28874",
+        "stream": "RAW_V2",
+        "raw_format": "2",
+        "gyro_bias_milli_raw_x": "-52438",
+        "gyro_bias_milli_raw_y": "19020",
+        "gyro_bias_milli_raw_z": "146592",
+        "gyro_sensitivity_x10": "655",
+        "raw_sample_count": "153197"
+      }
+    }
+  },
+  "diagnostic_levels_observed": {
+    "rosdemo_base/connection": [
+      0
+    ],
+    "rosdemo_base/telemetry": [
+      0
+    ],
+    "rosdemo_base/protocol": [
+      0
+    ],
+    "rosdemo_base/chassis": [
+      0
+    ],
+    "rosdemo_base/motor_bus": [
+      1
+    ],
+    "rosdemo_base/imu": [
+      0
+    ]
+  }
+}
