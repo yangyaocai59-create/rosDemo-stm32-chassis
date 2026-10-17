@@ -1,0 +1,6 @@
+#define BOARD_ENCODER_MAPPING_TEXT "host enc"
+#define BOARD_PWM_MAPPING_TEXT "host pwm"
+#define BOARD_BATTERY_ADC_MAPPING_TEXT "host adc"
+#define BOARD_IMU_MAPPING_TEXT "host imu"
+#define BOARD_MOTOR_POLARITY_TEXT "host motor polarity"
+#define BOARD_ENCODER_POLARITY_TEXT "host encoder polarity"

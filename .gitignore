@@ -1,0 +1,10 @@
+build
+mx.scratch
+!.settings
+
+# External handoff archive; keep the public source repository clean.
+STM32_IMU_RESTART_RESIDUAL_20261016_UART_UPDATE.zip
+
+# Python cache files generated while running the hardware tools.
+__pycache__/
+*.py[cod]
