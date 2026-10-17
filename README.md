@@ -18,8 +18,9 @@ ROS2 或上位机开发前，请先阅读：
 
 1. `docs/STM32_IMU_FRACTIONAL_BIAS_0.16.0_HANDOFF_20261017.md`
 2. `docs/STM32_IMU_STATIONARY_BIAS_TRACKING_0.17.0.md`
-3. `docs/ROS2_UBUNTU_HANDOFF.md`
-4. `docs/usb_cdc_protocol_v1.md`
+3. `docs/STM32_IMU_STATIONARY_BIAS_HARDWARE_20261017.md`
+4. `docs/ROS2_UBUNTU_HANDOFF.md`
+5. `docs/usb_cdc_protocol_v1.md`
 
 ## 重要说明
 
