@@ -20,8 +20,8 @@ PWM ripple.
 - Output slew limit: 1500 -> 1000 permille/s for a softer start.
 - Replaced the single pivot feedforward boost with eight explicit
   wheel/turn-direction slots. The 0.18.2 first trim is deliberately small:
-  left-pivot RF/RR +60, right-pivot RF -60, right-pivot LR -10, and all other
-  slots zero. These values are a measured starting point, not final factory
+  left-pivot LF/LR -60, RF +60, RR +20; right-pivot LR -30, RF -120, RR -20;
+  right-pivot LF remains zero. These values are a measured starting point, not final factory
   calibration.
 - USB protocol, encoder timers/polarity, IMU, ESTOP, standby and PWM safety
   behavior are unchanged.
