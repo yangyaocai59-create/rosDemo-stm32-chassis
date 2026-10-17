@@ -4,7 +4,7 @@ STM32F407ZGT6 四轮差速移动机器人底盘控制器工程，配套 Jetson O
 
 ## 当前版本
 
-- 固件版本：`0.18.0-wheel-speed-smooth`（基于 0.17.0）
+- 固件版本：`0.18.1-wheel-speed-safe-pivot`（基于 0.17.0）
 - MCU：`STM32F407ZGT6`，168 MHz
 - 调试串口：USART1，PA9/PA10，115200 8-N-1
 - ROS2 通信：USB CDC，PA11/PA12

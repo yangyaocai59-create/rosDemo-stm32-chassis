@@ -21,20 +21,19 @@
 #define WHEEL_SPEED_CONTROL_ZERO_TARGET_CPS               1.0f
 
 /*
- * Per-wheel, direction-aware feedforward used only for a zero-linear-speed
- * skid-steer pivot. A single common boost was rejected by the loaded-ground
- * trace: rear/right wheels oversped while the opposite front wheel needed
- * additional torque. These are conservative first-pass values and remain
- * subject to loaded calibration.
+ * Optional signed feedforward used only for a zero-linear-speed skid-steer
+ * pivot. Loaded-ground traces are not yet repeatable enough to justify an
+ * extra torque term, so the safe baseline is zero for every wheel. Keep the
+ * per-wheel/side slots explicit for a later, measured calibration.
  */
-#define WHEEL_SPEED_CONTROL_PIVOT_FF_LEFT_LF_PERMILLE   -60.0f
-#define WHEEL_SPEED_CONTROL_PIVOT_FF_LEFT_LR_PERMILLE   -60.0f
-#define WHEEL_SPEED_CONTROL_PIVOT_FF_LEFT_RF_PERMILLE    80.0f
-#define WHEEL_SPEED_CONTROL_PIVOT_FF_LEFT_RR_PERMILLE    80.0f
-#define WHEEL_SPEED_CONTROL_PIVOT_FF_RIGHT_LF_PERMILLE   95.0f
-#define WHEEL_SPEED_CONTROL_PIVOT_FF_RIGHT_LR_PERMILLE   80.0f
-#define WHEEL_SPEED_CONTROL_PIVOT_FF_RIGHT_RF_PERMILLE  -55.0f
-#define WHEEL_SPEED_CONTROL_PIVOT_FF_RIGHT_RR_PERMILLE  -55.0f
+#define WHEEL_SPEED_CONTROL_PIVOT_FF_LEFT_LF_PERMILLE     0.0f
+#define WHEEL_SPEED_CONTROL_PIVOT_FF_LEFT_LR_PERMILLE     0.0f
+#define WHEEL_SPEED_CONTROL_PIVOT_FF_LEFT_RF_PERMILLE     0.0f
+#define WHEEL_SPEED_CONTROL_PIVOT_FF_LEFT_RR_PERMILLE     0.0f
+#define WHEEL_SPEED_CONTROL_PIVOT_FF_RIGHT_LF_PERMILLE    0.0f
+#define WHEEL_SPEED_CONTROL_PIVOT_FF_RIGHT_LR_PERMILLE    0.0f
+#define WHEEL_SPEED_CONTROL_PIVOT_FF_RIGHT_RF_PERMILLE    0.0f
+#define WHEEL_SPEED_CONTROL_PIVOT_FF_RIGHT_RR_PERMILLE    0.0f
 
 /* Forward feedforward: output = static + velocity_gain * abs(target_cps). */
 #define WHEEL_SPEED_FF_LF_FWD_STATIC_PERMILLE            51.8f

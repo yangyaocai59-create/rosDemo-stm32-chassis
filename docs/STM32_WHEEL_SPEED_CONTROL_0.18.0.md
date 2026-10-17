@@ -1,4 +1,4 @@
-# STM32 wheel-speed control update 0.18.0
+# STM32 wheel-speed control update 0.18.x
 
 Date: 2026-10-17
 
@@ -18,9 +18,10 @@ PWM ripple.
 - PI integral gain: 0.500 -> 0.250 permille/(count/s)/s.
 - Integral limit: +/-80 -> +/-50 permille.
 - Output slew limit: 1500 -> 1000 permille/s for a softer start.
-- Replaced the single pivot feedforward boost with eight loaded-ground,
-  wheel/turn-direction-specific first-pass biases. They are intentionally
-  calibration parameters, not pin mappings or safety settings.
+- Replaced the single pivot feedforward boost with eight explicit
+  wheel/turn-direction slots. Until repeatable loaded-ground calibration is
+  available, all eight slots are zero; the PI controller must establish the
+  pivot speed without an unverified extra torque term.
 - USB protocol, encoder timers/polarity, IMU, ESTOP, standby and PWM safety
   behavior are unchanged.
 
