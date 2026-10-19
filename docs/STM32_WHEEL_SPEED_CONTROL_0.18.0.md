@@ -21,8 +21,9 @@ PWM ripple.
 - Replaced the single pivot feedforward boost with eight explicit
   wheel/turn-direction slots. The 0.18.2 first trim is deliberately small:
   a dynamic +60/-60 breakaway assist is applied only while a pivoting wheel is
-  stationary. Once encoder speed appears, the assist is removed and PI takes
-  over; there is no sustained per-wheel pivot boost.
+  stationary. Version 0.18.5 adds 300 ms minimum hold time and a 50 cps
+  release threshold, with re-arm below 20 cps. Once released, PI and normal
+  feedforward take over; there is no sustained per-wheel pivot boost.
   calibration.
 - USB protocol, encoder timers/polarity, IMU, ESTOP, standby and PWM safety
   behavior are unchanged.

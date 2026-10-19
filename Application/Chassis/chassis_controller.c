@@ -6,6 +6,7 @@
 #include "chassis_controller.h"
 
 #include <stddef.h>
+#include <stdint.h>
 
 #include "FreeRTOS.h"
 #include "chassis_config.h"
@@ -28,6 +29,9 @@ static const EncoderWheel s_encoder_wheels[MOTOR_DRIVER_WHEEL_COUNT] = {
 };
 
 static ChassisControllerStatus s_status;
+static bool s_pivot_breakaway_active[MOTOR_DRIVER_WHEEL_COUNT];
+static int8_t s_pivot_breakaway_sign[MOTOR_DRIVER_WHEEL_COUNT];
+static uint32_t s_pivot_breakaway_start_ms[MOTOR_DRIVER_WHEEL_COUNT];
 
 static bool ChassisController_TimeReached(uint32_t now_ms,
                                           uint32_t deadline_ms)
@@ -44,7 +48,8 @@ static float ChassisController_GetFeedforwardBias(
   const ChassisVelocityCommand *command,
   MotorDriverWheel wheel,
   float target_counts_per_second,
-  float measured_counts_per_second)
+  float measured_counts_per_second,
+  uint32_t now_ms)
 {
   const bool is_pivot =
     (command != NULL) &&
@@ -55,20 +60,52 @@ static float ChassisController_GetFeedforwardBias(
 
   if (!is_pivot)
   {
+    s_pivot_breakaway_active[wheel] = false;
+    s_pivot_breakaway_sign[wheel] = 0;
     return 0.0f;
   }
 
-  (void)wheel;
-  if ((ChassisController_Abs(target_counts_per_second) >=
-       WHEEL_SPEED_CONTROL_PIVOT_STATIONARY_CPS) &&
-      (ChassisController_Abs(measured_counts_per_second) <=
-       WHEEL_SPEED_CONTROL_PIVOT_STATIONARY_CPS))
+  if (ChassisController_Abs(target_counts_per_second) <
+      WHEEL_SPEED_CONTROL_PIVOT_STATIONARY_CPS)
   {
-    return (target_counts_per_second > 0.0f) ?
-      WHEEL_SPEED_CONTROL_PIVOT_BREAKAWAY_PERMILLE :
-      -WHEEL_SPEED_CONTROL_PIVOT_BREAKAWAY_PERMILLE;
+    s_pivot_breakaway_active[wheel] = false;
+    s_pivot_breakaway_sign[wheel] = 0;
+    return 0.0f;
   }
-  return 0.0f;
+
+  const int8_t target_sign = target_counts_per_second > 0.0f ? 1 : -1;
+  if (s_pivot_breakaway_sign[wheel] != target_sign)
+  {
+    s_pivot_breakaway_active[wheel] = false;
+    s_pivot_breakaway_sign[wheel] = target_sign;
+  }
+
+  const float signed_speed = measured_counts_per_second *
+    (float)target_sign;
+  if (!s_pivot_breakaway_active[wheel])
+  {
+    if ((signed_speed <= WHEEL_SPEED_CONTROL_PIVOT_STATIONARY_CPS) ||
+        (ChassisController_Abs(measured_counts_per_second) <=
+         WHEEL_SPEED_CONTROL_PIVOT_STATIONARY_CPS))
+    {
+      s_pivot_breakaway_active[wheel] = true;
+      s_pivot_breakaway_start_ms[wheel] = now_ms;
+    }
+  }
+  else
+  {
+    const uint32_t held_ms = now_ms - s_pivot_breakaway_start_ms[wheel];
+    if ((held_ms >= WHEEL_SPEED_CONTROL_PIVOT_HOLD_MS) &&
+        (signed_speed >= WHEEL_SPEED_CONTROL_PIVOT_RELEASE_CPS))
+    {
+      s_pivot_breakaway_active[wheel] = false;
+    }
+  }
+
+  return s_pivot_breakaway_active[wheel] ?
+    ((target_sign > 0) ? WHEEL_SPEED_CONTROL_PIVOT_BREAKAWAY_PERMILLE :
+                          -WHEEL_SPEED_CONTROL_PIVOT_BREAKAWAY_PERMILLE) :
+    0.0f;
 }
 
 static void ChassisController_ResetWheelControllers(void)
@@ -76,6 +113,9 @@ static void ChassisController_ResetWheelControllers(void)
   for (uint32_t wheel = 0U; wheel < MOTOR_DRIVER_WHEEL_COUNT; ++wheel)
   {
     (void)WheelSpeedController_Reset((MotorDriverWheel)wheel);
+    s_pivot_breakaway_active[wheel] = false;
+    s_pivot_breakaway_sign[wheel] = 0;
+    s_pivot_breakaway_start_ms[wheel] = 0U;
   }
 }
 
@@ -247,7 +287,8 @@ static bool ChassisController_StartInternal(
             command,
             (MotorDriverWheel)wheel,
             targets.counts_per_second[wheel],
-            measured[wheel]),
+            measured[wheel],
+            now_ms),
           CHASSIS_SPEED_SAMPLE_PERIOD_MS,
           &outputs[wheel])) ||
         (!WheelSpeedController_GetState((MotorDriverWheel)wheel, &control)))
@@ -423,7 +464,8 @@ void ChassisController_Process(uint32_t now_ms)
             &command,
             (MotorDriverWheel)wheel,
             targets.counts_per_second[wheel],
-            measured[wheel]),
+            measured[wheel],
+            now_ms),
           elapsed_ms,
           &outputs[wheel])) ||
         (!WheelSpeedController_GetState((MotorDriverWheel)wheel,

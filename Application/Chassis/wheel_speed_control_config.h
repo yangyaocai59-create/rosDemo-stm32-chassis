@@ -22,11 +22,13 @@
 
 /*
  * Dynamic breakaway assistance used only for a zero-linear-speed skid-steer
- * pivot. It is present only while a wheel is effectively stationary; once
- * encoder speed appears, PI and normal feedforward take over.
+ * pivot. The assist has hysteresis and a minimum hold time so it cannot
+ * chatter at the low-speed measurement threshold under ground load.
  */
 #define WHEEL_SPEED_CONTROL_PIVOT_BREAKAWAY_PERMILLE    60.0f
 #define WHEEL_SPEED_CONTROL_PIVOT_STATIONARY_CPS        20.0f
+#define WHEEL_SPEED_CONTROL_PIVOT_RELEASE_CPS          50.0f
+#define WHEEL_SPEED_CONTROL_PIVOT_HOLD_MS              300U
 
 /* Forward feedforward: output = static + velocity_gain * abs(target_cps). */
 #define WHEEL_SPEED_FF_LF_FWD_STATIC_PERMILLE            51.8f
