@@ -1,0 +1,241 @@
+{
+  "scope": "offline replay and host-built production source with mocks; no physical motion, sensor reset, serial access or firmware flash",
+  "input_capture": "/home/jetson/rosdemo_jetson_ws/logs/navigation/manual_left_regression_20261019_191333",
+  "command_duration_s": 2.1070828437805176,
+  "reference_profile_integral_deg": 23.38049245229578,
+  "reference_profile_loss_vs_requested_deg": 0.7648983543136268,
+  "reference_profile_reaches_0_2_s": 0.14,
+  "inferred_steady_wheel_targets_cps": [
+    -160.42819213867188,
+    -160.42819213867188,
+    160.42819213867188,
+    160.42819213867188
+  ],
+  "inferred_nominal_encoder_counts_abs_with_profile": 327.32689433214085,
+  "reference_profile_plus_0_395_effective_track_angle_deg": 12.430135227802818,
+  "wheel_reconstruction_samples": 1699,
+  "max_ros_wheel_math_abs_error": {
+    "vx": 2.3852447794681098e-18,
+    "wz": 1.3877787807814457e-17
+  },
+  "joint_relative_encoder_count_before": [
+    1482,
+    1477,
+    1499,
+    1517
+  ],
+  "joint_relative_encoder_count_after": [
+    1413,
+    1337,
+    1611,
+    1750
+  ],
+  "joint_origin_scope": "Joint positions subtract a per-wheel session origin; only their deltas are compared to raw MCU counts",
+  "encoder_delta_LF_LR_RF_RR": [
+    -69,
+    -140,
+    112,
+    233
+  ],
+  "raw_driver_sparse_log_before": {
+    "host_log_s": 1792408481.7260778,
+    "t_ms": 3006302,
+    "count": [
+      1481,
+      1473,
+      1501,
+      1517
+    ],
+    "cps": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "raw_driver_sparse_log_after": {
+    "host_log_s": 1792408485.7360704,
+    "t_ms": 3010342,
+    "count": [
+      1412,
+      1333,
+      1613,
+      1750
+    ],
+    "cps": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "raw_driver_sparse_log_encoder_delta": [
+    -69,
+    -140,
+    112,
+    233
+  ],
+  "count_based_wheel_yaw_deg": 5.2594936708860756,
+  "wheel_pose_yaw_delta_deg": 5.259493670886079,
+  "imu_motion_integral_deg": 4.584600230048318,
+  "pre_motion_mean_gyro_z_rad_s": -0.0001705750691450369,
+  "pre_motion_baseline_contribution_deg": -0.032320886394452054,
+  "offline_only_baseline_sensitivity_imu_deg": 4.616921116442771,
+  "half_second_segments": [
+    {
+      "time_from_command_s": [
+        0,
+        0.5
+      ],
+      "time_weighted_mean_filtered_cps": [
+        -20.3558479081836,
+        -38.71084569952949,
+        24.41856689565561,
+        53.007343865930586
+      ],
+      "imu_mean_wz_rad_s": 0.01909291229620373,
+      "wheel_mean_wz_rad_s": 0.022616253331008904
+    },
+    {
+      "time_from_command_s": [
+        0.5,
+        1.0
+      ],
+      "time_weighted_mean_filtered_cps": [
+        -31.951509363954184,
+        -44.11016635225844,
+        45.47498079202103,
+        91.82758338003774
+      ],
+      "imu_mean_wz_rad_s": 0.028315155783944567,
+      "wheel_mean_wz_rad_s": 0.035353561633531844
+    },
+    {
+      "time_from_command_s": [
+        1.0,
+        1.5
+      ],
+      "time_weighted_mean_filtered_cps": [
+        -23.16579872741829,
+        -70.50902559235136,
+        72.93101046048116,
+        131.49440532177553
+      ],
+      "imu_mean_wz_rad_s": 0.04148900928234568,
+      "wheel_mean_wz_rad_s": 0.04939396225410757
+    },
+    {
+      "time_from_command_s": [
+        1.5,
+        2.1070828437805176
+      ],
+      "time_weighted_mean_filtered_cps": [
+        -54.714588977157284,
+        -102.51473789147217,
+        64.27333336018746,
+        136.39072082466063
+      ],
+      "imu_mean_wz_rad_s": 0.059003936765558596,
+      "wheel_mean_wz_rad_s": 0.05930143547922032
+    }
+  ],
+  "after_first_0_5s_wheel_statistics": [
+    {
+      "wheel": "LF",
+      "samples": 32,
+      "mean_abs_filtered_cps": 38.0625,
+      "median_abs_filtered_cps": 23.499999999999996,
+      "peak_abs_filtered_cps": 114.99999999999999,
+      "sample_fraction_abs_below_20cps": 0.46875,
+      "mean_fraction_of_inferred_steady_target": 0.23725568114050247
+    },
+    {
+      "wheel": "LR",
+      "samples": 32,
+      "mean_abs_filtered_cps": 75.0,
+      "median_abs_filtered_cps": 67.0,
+      "peak_abs_filtered_cps": 172.0,
+      "sample_fraction_abs_below_20cps": 0.21875,
+      "mean_fraction_of_inferred_steady_target": 0.46749887909458615
+    },
+    {
+      "wheel": "RF",
+      "samples": 32,
+      "mean_abs_filtered_cps": 61.93749999999999,
+      "median_abs_filtered_cps": 55.5,
+      "peak_abs_filtered_cps": 137.0,
+      "sample_fraction_abs_below_20cps": 0.1875,
+      "mean_fraction_of_inferred_steady_target": 0.38607615765227904
+    },
+    {
+      "wheel": "RR",
+      "samples": 32,
+      "mean_abs_filtered_cps": 122.15625,
+      "median_abs_filtered_cps": 144.0,
+      "peak_abs_filtered_cps": 196.99999999999997,
+      "sample_fraction_abs_below_20cps": 0.03125,
+      "mean_fraction_of_inferred_steady_target": 0.7614387993253072
+    }
+  ],
+  "historical_same_version_command_window_reanalysis": [
+    {
+      "file": "/home/jetson/rosdemo_jetson_ws/logs/acceptance/v0184_imu_calibration_20261018_112501/low_speed_left_turn_trial.jsonl",
+      "segment": 1,
+      "command_wz": 0.2,
+      "duration_s": 3.3300118446350098,
+      "imu_deg": 17.193769318007963,
+      "wheel_deg": 17.66202540563632
+    },
+    {
+      "file": "/home/jetson/rosdemo_jetson_ws/logs/acceptance/v0184_imu_calibration_20261018_112501/controlled_left_90_trial.jsonl",
+      "segment": 1,
+      "command_wz": 0.2,
+      "duration_s": 14.53063416481018,
+      "imu_deg": 86.97447798090735,
+      "wheel_deg": 84.89110607371333
+    },
+    {
+      "file": "/home/jetson/rosdemo_jetson_ws/logs/acceptance/v0184_imu_calibration_20261018_112501/controlled_left_90_trial.jsonl",
+      "segment": 2,
+      "command_wz": 0.2,
+      "duration_s": 0.31522226333618164,
+      "imu_deg": 2.467400366771359,
+      "wheel_deg": 2.4274783835241758
+    },
+    {
+      "file": "/home/jetson/rosdemo_jetson_ws/logs/acceptance/v0184_imu_calibration_20261018_112501/controlled_left_90_trial.jsonl",
+      "segment": 3,
+      "command_wz": 0.2,
+      "duration_s": 0.19522356986999512,
+      "imu_deg": 2.5421187207762794,
+      "wheel_deg": 2.718592974767917
+    },
+    {
+      "file": "/home/jetson/rosdemo_jetson_ws/logs/acceptance/v0184_imu_calibration_20261018_112501/controlled_left_90_trial.jsonl",
+      "segment": 4,
+      "command_wz": 0.2,
+      "duration_s": 0.4307091236114502,
+      "imu_deg": 2.110701906121993,
+      "wheel_deg": 1.9986289293424426
+    },
+    {
+      "file": "/home/jetson/rosdemo_jetson_ws/logs/acceptance/v0184_imu_calibration_20261018_112501/controlled_left_90_trial.jsonl",
+      "segment": 5,
+      "command_wz": 0.2,
+      "duration_s": 0.3609781265258789,
+      "imu_deg": 1.2573909722737238,
+      "wheel_deg": 1.3590188705468484
+    },
+    {
+      "file": "/home/jetson/rosdemo_jetson_ws/logs/acceptance/v0184_imu_calibration_20261018_112501/ekf_left_turn_trial.jsonl",
+      "segment": 1,
+      "command_wz": 0.2,
+      "duration_s": 2.338864803314209,
+      "imu_deg": 9.369115673024213,
+      "wheel_deg": 10.153481111119065
+    }
+  ],
+  "runtime_model_scope": "Unmodified v0.18.4 runtime/controller with existing mocked peripherals and zero measured velocity; proves logic only, not a physical-plant/PWM measurement",
+  "remaining_unknown": "Actual on-board applied/profile command, target, FF/P/I, PWM/saturation/breakaway trace not in this capture",
+  "conclusion": "No ROS wheel-unit/track conversion error found; no repeated-ramp-reset under normal repeated-command model. Acceleration and nominal/effective geometry account for part, but not all, of low response. Unequal and low actual encoder counts persist beyond startup; underlying loaded wheel response versus on-board target remains unresolved, not proof of a firmware bug."
+}

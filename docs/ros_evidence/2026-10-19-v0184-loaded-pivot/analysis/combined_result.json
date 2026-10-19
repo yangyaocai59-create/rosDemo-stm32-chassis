@@ -1,0 +1,265 @@
+{
+  "motion": {
+    "segments": [
+      {
+        "command_start_ros_s": 1792410187.3645582,
+        "command_stop_ros_s": 1792410189.4590762,
+        "command_duration_s": 2.094517946243286,
+        "vx_m_s": 0.0,
+        "wz_rad_s": 0.2,
+        "command_integral_deg": 24.001407686829868,
+        "common_measurement_window_ros_s": [
+          1792410187.1645582,
+          1792410190.4590762
+        ],
+        "estimated_angles_deg": {
+          "/imu/data_raw": 3.6639036287971427,
+          "/wheel/odometry": 4.473418140713175,
+          "/odom": 3.6586842859229964
+        },
+        "mean_filtered_wheel_cps_LF_LR_RF_RR": [
+          -28.095238095238095,
+          -61.04761904761905,
+          42.3095238095238,
+          67.14285714285715
+        ],
+        "maximum_nonzero_command_receive_gap_s": 0.06814265251159668
+      },
+      {
+        "command_start_ros_s": 1792410199.8925185,
+        "command_stop_ros_s": 1792410202.408692,
+        "command_duration_s": 2.5161733627319336,
+        "vx_m_s": 0.0,
+        "wz_rad_s": 0.2,
+        "command_integral_deg": 28.83322284155596,
+        "common_measurement_window_ros_s": [
+          1792410199.6925185,
+          1792410203.408692
+        ],
+        "estimated_angles_deg": {
+          "/imu/data_raw": 2.913362547009734,
+          "/wheel/odometry": 3.8050632080699827,
+          "/odom": 2.9027704375043726
+        },
+        "mean_filtered_wheel_cps_LF_LR_RF_RR": [
+          -24.28000000000001,
+          -41.859999999999985,
+          22.66,
+          74.32000000000001
+        ],
+        "maximum_nonzero_command_receive_gap_s": 0.2093050479888916
+      }
+    ],
+    "operator_reported_count": 2,
+    "captured_command_segments": 2,
+    "non_left_commands": false,
+    "driver_errors": [],
+    "status_timeouts": 0,
+    "output_faults": 0,
+    "final_cmd_publishers": [],
+    "final_wheel_vx_wz": [
+      0.0,
+      0.0
+    ],
+    "scope": "User performed two manual lefts. No external angle measurement. MCU cache resets at each start; trace must be matched to last motion only."
+  },
+  "trace": {
+    "trace_frames": 127,
+    "trace_span_ms": 2520,
+    "first_last_source_ms": [
+      77461,
+      79981
+    ],
+    "max_trace_gap_ms": 20,
+    "active_samples": 126,
+    "steady_applied_200_samples": 112,
+    "requested_commands": [
+      [
+        0,
+        200
+      ]
+    ],
+    "applied_wz_range": [
+      15,
+      200
+    ],
+    "first_applied_200_from_first_record_ms": 140,
+    "any_fault": false,
+    "last_frame": {
+      "t_ms": 79981,
+      "dt_ms": 20,
+      "req_vx": 0,
+      "req_wz": 0,
+      "applied_vx": 0,
+      "applied_wz": 0,
+      "state": 1,
+      "stop": 2,
+      "fault": 0,
+      "standby": 0,
+      "wheels": {
+        "LF": {
+          "delta_count": 0,
+          "raw_cps": 0,
+          "target_cps": -160,
+          "filtered_cps": -4,
+          "ff_x10": 0,
+          "p_x10": 0,
+          "i_x10": 0,
+          "pwm_permille": 0
+        },
+        "LR": {
+          "delta_count": 0,
+          "raw_cps": 0,
+          "target_cps": -160,
+          "filtered_cps": -12,
+          "ff_x10": 0,
+          "p_x10": 0,
+          "i_x10": 0,
+          "pwm_permille": 0
+        },
+        "RF": {
+          "delta_count": 0,
+          "raw_cps": 0,
+          "target_cps": 160,
+          "filtered_cps": 0,
+          "ff_x10": 0,
+          "p_x10": 0,
+          "i_x10": 0,
+          "pwm_permille": 0
+        },
+        "RR": {
+          "delta_count": -1,
+          "raw_cps": -50,
+          "target_cps": 160,
+          "filtered_cps": 0,
+          "ff_x10": 0,
+          "p_x10": 0,
+          "i_x10": 0,
+          "pwm_permille": 0
+        }
+      }
+    },
+    "steady_wheel_statistics": {
+      "LF": {
+        "samples": 112,
+        "mean_target_cps": -160,
+        "mean_filtered_cps": -24.973214285714285,
+        "mean_raw_cps": -25.892857142857142,
+        "mean_abs_pwm_permille": 134.5,
+        "min_max_pwm_permille": [
+          -181,
+          -79
+        ],
+        "min_max_integrator_permille": [
+          -48.5,
+          -0.3
+        ],
+        "fraction_integrator_at_50_permille": 0.0,
+        "fraction_pwm_at_300_permille": 0.0,
+        "fraction_abs_filtered_cps_le20": 0.625,
+        "inferred_ff_extra_range_permille": [
+          -60.01680000000002,
+          -0.01680000000000348
+        ],
+        "inferred_ff_extra_abs_gt40_samples": 68,
+        "inferred_assistance_transitions": 14,
+        "mean_abs_measured_to_abs_target_ratio": 0.15608258928571428,
+        "maximum_pwm_change_between_steady_trace_frames_permille": 20
+      },
+      "LR": {
+        "samples": 112,
+        "mean_target_cps": -160,
+        "mean_filtered_cps": -44.455357142857146,
+        "mean_raw_cps": -47.32142857142857,
+        "mean_abs_pwm_permille": 109.6875,
+        "min_max_pwm_permille": [
+          -160,
+          -82
+        ],
+        "min_max_integrator_permille": [
+          -31.2,
+          -0.6
+        ],
+        "fraction_integrator_at_50_permille": 0.0,
+        "fraction_pwm_at_300_permille": 0.0,
+        "fraction_abs_filtered_cps_le20": 0.3125,
+        "inferred_ff_extra_range_permille": [
+          -60.03280000000001,
+          -0.03280000000000882
+        ],
+        "inferred_ff_extra_abs_gt40_samples": 32,
+        "inferred_assistance_transitions": 30,
+        "mean_abs_measured_to_abs_target_ratio": 0.27784598214285716,
+        "maximum_pwm_change_between_steady_trace_frames_permille": 20
+      },
+      "RF": {
+        "samples": 112,
+        "mean_target_cps": 160,
+        "mean_filtered_cps": 23.633928571428573,
+        "mean_raw_cps": 25.446428571428573,
+        "mean_abs_pwm_permille": 141.07142857142858,
+        "min_max_pwm_permille": [
+          86,
+          182
+        ],
+        "min_max_integrator_permille": [
+          0.8,
+          37.4
+        ],
+        "fraction_integrator_at_50_permille": 0.0,
+        "fraction_pwm_at_300_permille": 0.0,
+        "fraction_abs_filtered_cps_le20": 0.6428571428571429,
+        "inferred_ff_extra_range_permille": [
+          -0.024799999999999045,
+          59.97519999999999
+        ],
+        "inferred_ff_extra_abs_gt40_samples": 70,
+        "inferred_assistance_transitions": 15,
+        "mean_abs_measured_to_abs_target_ratio": 0.14771205357142858,
+        "maximum_pwm_change_between_steady_trace_frames_permille": 25
+      },
+      "RR": {
+        "samples": 112,
+        "mean_target_cps": 160,
+        "mean_filtered_cps": 80.22321428571429,
+        "mean_raw_cps": 80.80357142857143,
+        "mean_abs_pwm_permille": 107.02678571428571,
+        "min_max_pwm_permille": [
+          86,
+          162
+        ],
+        "min_max_integrator_permille": [
+          1.1,
+          20.3
+        ],
+        "fraction_integrator_at_50_permille": 0.0,
+        "fraction_pwm_at_300_permille": 0.0,
+        "fraction_abs_filtered_cps_le20": 0.1875,
+        "inferred_ff_extra_range_permille": [
+          0.05360000000000298,
+          60.05359999999999
+        ],
+        "inferred_ff_extra_abs_gt40_samples": 20,
+        "inferred_assistance_transitions": 17,
+        "mean_abs_measured_to_abs_target_ratio": 0.5013950892857143,
+        "maximum_pwm_change_between_steady_trace_frames_permille": 20
+      }
+    },
+    "scope": "Actual UART-dumped on-board fields, integer-truncated by firmware printf; initial ring coverage must be checked against command duration. FF-extra is inferred from reference table, not a logged breakaway flag. Ground-truth body angle not measured.",
+    "assistance_inference_note": "FF already includes breakaway. Compare to reference signed base FF table; >40permille excess matches approximately 60permille assist. Inferred because no explicit flag is logged."
+  },
+  "uart_ready_source_ms": 9002,
+  "initial_uart_open_reset_count": 1,
+  "no_additional_reset_between_ready_motion_and_dump": true,
+  "one_dump_only_no_speed_from_collector": true,
+  "operator_confirmation": {
+    "user_reported_motion_count": 2,
+    "both_left_turns_and_stops_normal": true,
+    "teleop_exited": true,
+    "vehicle_stopped": true,
+    "ground_truth_body_angles_measured": false
+  },
+  "motion_direction_stop_scope_pass": true,
+  "angular_speed_tracking_pass": false,
+  "remaining": "Actual low-speed ground-loaded wheel tracking is poor; controller feedforward/PI/breakaway versus mechanical/drive load needs engineering review; no precise ground-truth angle or voltage waveform captured."
+}

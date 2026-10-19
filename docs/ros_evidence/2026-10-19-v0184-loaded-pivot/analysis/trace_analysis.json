@@ -1,0 +1,185 @@
+{
+  "trace_frames": 127,
+  "trace_span_ms": 2520,
+  "first_last_source_ms": [
+    77461,
+    79981
+  ],
+  "max_trace_gap_ms": 20,
+  "active_samples": 126,
+  "steady_applied_200_samples": 112,
+  "requested_commands": [
+    [
+      0,
+      200
+    ]
+  ],
+  "applied_wz_range": [
+    15,
+    200
+  ],
+  "first_applied_200_from_first_record_ms": 140,
+  "any_fault": false,
+  "last_frame": {
+    "t_ms": 79981,
+    "dt_ms": 20,
+    "req_vx": 0,
+    "req_wz": 0,
+    "applied_vx": 0,
+    "applied_wz": 0,
+    "state": 1,
+    "stop": 2,
+    "fault": 0,
+    "standby": 0,
+    "wheels": {
+      "LF": {
+        "delta_count": 0,
+        "raw_cps": 0,
+        "target_cps": -160,
+        "filtered_cps": -4,
+        "ff_x10": 0,
+        "p_x10": 0,
+        "i_x10": 0,
+        "pwm_permille": 0
+      },
+      "LR": {
+        "delta_count": 0,
+        "raw_cps": 0,
+        "target_cps": -160,
+        "filtered_cps": -12,
+        "ff_x10": 0,
+        "p_x10": 0,
+        "i_x10": 0,
+        "pwm_permille": 0
+      },
+      "RF": {
+        "delta_count": 0,
+        "raw_cps": 0,
+        "target_cps": 160,
+        "filtered_cps": 0,
+        "ff_x10": 0,
+        "p_x10": 0,
+        "i_x10": 0,
+        "pwm_permille": 0
+      },
+      "RR": {
+        "delta_count": -1,
+        "raw_cps": -50,
+        "target_cps": 160,
+        "filtered_cps": 0,
+        "ff_x10": 0,
+        "p_x10": 0,
+        "i_x10": 0,
+        "pwm_permille": 0
+      }
+    }
+  },
+  "steady_wheel_statistics": {
+    "LF": {
+      "samples": 112,
+      "mean_target_cps": -160,
+      "mean_filtered_cps": -24.973214285714285,
+      "mean_raw_cps": -25.892857142857142,
+      "mean_abs_pwm_permille": 134.5,
+      "min_max_pwm_permille": [
+        -181,
+        -79
+      ],
+      "min_max_integrator_permille": [
+        -48.5,
+        -0.3
+      ],
+      "fraction_integrator_at_50_permille": 0.0,
+      "fraction_pwm_at_300_permille": 0.0,
+      "fraction_abs_filtered_cps_le20": 0.625,
+      "inferred_ff_extra_range_permille": [
+        -60.01680000000002,
+        -0.01680000000000348
+      ],
+      "inferred_ff_extra_abs_gt40_samples": 68,
+      "inferred_assistance_transitions": 14,
+      "mean_abs_measured_to_abs_target_ratio": 0.15608258928571428,
+      "maximum_pwm_change_between_steady_trace_frames_permille": 20
+    },
+    "LR": {
+      "samples": 112,
+      "mean_target_cps": -160,
+      "mean_filtered_cps": -44.455357142857146,
+      "mean_raw_cps": -47.32142857142857,
+      "mean_abs_pwm_permille": 109.6875,
+      "min_max_pwm_permille": [
+        -160,
+        -82
+      ],
+      "min_max_integrator_permille": [
+        -31.2,
+        -0.6
+      ],
+      "fraction_integrator_at_50_permille": 0.0,
+      "fraction_pwm_at_300_permille": 0.0,
+      "fraction_abs_filtered_cps_le20": 0.3125,
+      "inferred_ff_extra_range_permille": [
+        -60.03280000000001,
+        -0.03280000000000882
+      ],
+      "inferred_ff_extra_abs_gt40_samples": 32,
+      "inferred_assistance_transitions": 30,
+      "mean_abs_measured_to_abs_target_ratio": 0.27784598214285716,
+      "maximum_pwm_change_between_steady_trace_frames_permille": 20
+    },
+    "RF": {
+      "samples": 112,
+      "mean_target_cps": 160,
+      "mean_filtered_cps": 23.633928571428573,
+      "mean_raw_cps": 25.446428571428573,
+      "mean_abs_pwm_permille": 141.07142857142858,
+      "min_max_pwm_permille": [
+        86,
+        182
+      ],
+      "min_max_integrator_permille": [
+        0.8,
+        37.4
+      ],
+      "fraction_integrator_at_50_permille": 0.0,
+      "fraction_pwm_at_300_permille": 0.0,
+      "fraction_abs_filtered_cps_le20": 0.6428571428571429,
+      "inferred_ff_extra_range_permille": [
+        -0.024799999999999045,
+        59.97519999999999
+      ],
+      "inferred_ff_extra_abs_gt40_samples": 70,
+      "inferred_assistance_transitions": 15,
+      "mean_abs_measured_to_abs_target_ratio": 0.14771205357142858,
+      "maximum_pwm_change_between_steady_trace_frames_permille": 25
+    },
+    "RR": {
+      "samples": 112,
+      "mean_target_cps": 160,
+      "mean_filtered_cps": 80.22321428571429,
+      "mean_raw_cps": 80.80357142857143,
+      "mean_abs_pwm_permille": 107.02678571428571,
+      "min_max_pwm_permille": [
+        86,
+        162
+      ],
+      "min_max_integrator_permille": [
+        1.1,
+        20.3
+      ],
+      "fraction_integrator_at_50_permille": 0.0,
+      "fraction_pwm_at_300_permille": 0.0,
+      "fraction_abs_filtered_cps_le20": 0.1875,
+      "inferred_ff_extra_range_permille": [
+        0.05360000000000298,
+        60.05359999999999
+      ],
+      "inferred_ff_extra_abs_gt40_samples": 20,
+      "inferred_assistance_transitions": 17,
+      "mean_abs_measured_to_abs_target_ratio": 0.5013950892857143,
+      "maximum_pwm_change_between_steady_trace_frames_permille": 20
+    }
+  },
+  "scope": "Actual UART-dumped on-board fields, integer-truncated by firmware printf; initial ring coverage must be checked against command duration. FF-extra is inferred from reference table, not a logged breakaway flag. Ground-truth body angle not measured.",
+  "assistance_inference_note": "FF already includes breakaway. Compare to reference signed base FF table; >40permille excess matches approximately 60permille assist. Inferred because no explicit flag is logged."
+}

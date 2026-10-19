@@ -1,0 +1,14 @@
+{
+  "action": "one operator-controlled 2s low-speed left, ground loaded",
+  "command_vx_m_s": 0,
+  "command_wz_rad_s": 0.2,
+  "firmware_modified": false,
+  "auto_calibration": false,
+  "user_confirmed_ground_space_cables_local_stop_teleop_exited": true,
+  "uart_open_policy": "one stationary open, wait for READY, keep same descriptor through motion and dump; no automatic movement",
+  "dump_policy": "only after user exits teleop and actual IDLE/zero feedback; one UART t, allow 45s to finish",
+  "base_log": "/home/jetson/rosdemo_checkpoints/20261019_185237/resume_20261019_185303/base_ekf.log",
+  "base_log_offset": 3283223,
+  "critical_manifest_checkpoint": "/home/jetson/rosdemo_checkpoints/20261019_192354",
+  "uart_tool_session_id": 13725
+}

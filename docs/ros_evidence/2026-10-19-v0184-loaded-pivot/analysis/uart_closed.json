@@ -1,0 +1,61 @@
+{
+  "pid": 10505,
+  "port": "/dev/serial/by-id/usb-1a86_USB_Serial-if00-port0",
+  "before": {
+    "host_s": 1792410121.3018744,
+    "mcu_ms": 529392,
+    "state": "IDLE",
+    "fault": "NONE",
+    "controller_fault": "NONE",
+    "vx": 0,
+    "wz": 0,
+    "wheel_mcu_ms": 529361,
+    "cps": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "ready": true,
+  "tx": [
+    {
+      "host_s": 1792410254.2278554,
+      "hex": "74",
+      "meaning": "idle-only cached motion trace dump"
+    }
+  ],
+  "scope": "Only UART byte t may be sent, after externally confirmed stop. No velocity/reset/calibration commands.",
+  "opened_wall_s": 1792410122.2550912,
+  "resets": 1,
+  "motion_seen": true,
+  "bytes": 519530,
+  "latest_status": {
+    "host_s": 1792410330.949667,
+    "mcu_ms": 208506,
+    "state": "IDLE",
+    "fault": "NONE",
+    "controller_fault": "NONE",
+    "vx": 0,
+    "wz": 0,
+    "wheel_mcu_ms": 208481,
+    "cps": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "uart_receive_age_s": 0.00021635299981426215,
+  "ready_mcu_ms": 9002,
+  "ready_wall_s": 1792410132.416948,
+  "dump_result": {
+    "complete": true,
+    "unavailable": false,
+    "headers": 127,
+    "wheel_lines": 508,
+    "elapsed_s": 31.325400104000437,
+    "rx_byte_start": 335289
+  },
+  "closed_wall_s": 1792410331.5383039
+}

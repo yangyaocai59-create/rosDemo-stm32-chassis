@@ -1,0 +1,22 @@
+{
+  "user_reported_debug_wiring": [
+    "TX",
+    "RX",
+    "GND"
+  ],
+  "user_reported_not_connected": [
+    "VCC",
+    "DTR",
+    "RTS",
+    "NRST"
+  ],
+  "new_uart_open_attempts": 0,
+  "new_motion_commands": 0,
+  "reset_decode_review": "CaptureResetCause reads RCC PINRST into bit1, logs as PIN RESET, and clears RCC reset flags at startup. 0x2 is the application mask, not raw RCC CSR. No application/core NVIC_SystemReset call found in source search.",
+  "conclusion": "Do not attribute reset to direct DTR/RTS-to-NRST wiring given the user report. Actual MCU reboot confirmed by uptime + startup log; electrical path and any relationship to Jetson ch34x warning remain undetermined. No firmware/driver/ROS parameter changes.",
+  "source_files": {
+    "Application/System/system_status.c": "a595a8a5243f61b879992606ce4446b9692d4718cb4d70ef1d601492718c6ca4",
+    "Application/System/system_status.h": "c2f33cb5d29ca35f114d0bff9397b05d690a3a135f196b72d276773303fe3f35",
+    "Core/Src/main.c": "ee006b41e143bb6fa46c05cf53c3d6a86ca9de403d32a9a96884211b2822432a"
+  }
+}
