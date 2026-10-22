@@ -1,0 +1,196 @@
+{
+  "baseline_folder": "build\\hardware_tests\\loaded_pivot_compare_20261020_141258",
+  "candidate_folder": "build\\hardware_tests\\loaded_pivot_compare_20261020_142813",
+  "baseline": {
+    "LEFT": {
+      "active_trace_samples": 127,
+      "wheel": {
+        "LF": {
+          "mean_cps": -202.8,
+          "rms_error_cps": 96.58,
+          "raw_zero_percent": 14.17,
+          "max_consecutive_zero_interval_ms": 360,
+          "mean_abs_pwm_permille": 153.06,
+          "max_ff_plus_i_step_permille": 31.3,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 1.0
+        },
+        "LR": {
+          "mean_cps": -209.98,
+          "rms_error_cps": 107.34,
+          "raw_zero_percent": 8.66,
+          "max_consecutive_zero_interval_ms": 180,
+          "mean_abs_pwm_permille": 92.83,
+          "max_ff_plus_i_step_permille": 52.0,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 1.2
+        },
+        "RF": {
+          "mean_cps": 239.15,
+          "rms_error_cps": 116.51,
+          "raw_zero_percent": 4.72,
+          "max_consecutive_zero_interval_ms": 100,
+          "mean_abs_pwm_permille": 133.92,
+          "max_ff_plus_i_step_permille": 60.0,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 1.0
+        },
+        "RR": {
+          "mean_cps": 140.93,
+          "rms_error_cps": 106.91,
+          "raw_zero_percent": 33.07,
+          "max_consecutive_zero_interval_ms": 620,
+          "mean_abs_pwm_permille": 122.18,
+          "max_ff_plus_i_step_permille": 49.7,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0.7
+        }
+      },
+      "net_counts": [
+        -844,
+        -1269,
+        1294,
+        1103
+      ]
+    },
+    "RIGHT": {
+      "active_trace_samples": 127,
+      "wheel": {
+        "LF": {
+          "mean_cps": 192.39,
+          "rms_error_cps": 88.3,
+          "raw_zero_percent": 4.72,
+          "max_consecutive_zero_interval_ms": 100,
+          "mean_abs_pwm_permille": 155.03,
+          "max_ff_plus_i_step_permille": 40.4,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 1.3
+        },
+        "LR": {
+          "mean_cps": 211.8,
+          "rms_error_cps": 91.34,
+          "raw_zero_percent": 5.51,
+          "max_consecutive_zero_interval_ms": 120,
+          "mean_abs_pwm_permille": 95.97,
+          "max_ff_plus_i_step_permille": 29.6,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 1.0
+        },
+        "RF": {
+          "mean_cps": -207.52,
+          "rms_error_cps": 108.47,
+          "raw_zero_percent": 14.17,
+          "max_consecutive_zero_interval_ms": 200,
+          "mean_abs_pwm_permille": 151.09,
+          "max_ff_plus_i_step_permille": 54.1,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0.9
+        },
+        "RR": {
+          "mean_cps": -153.31,
+          "rms_error_cps": 50.8,
+          "raw_zero_percent": 8.66,
+          "max_consecutive_zero_interval_ms": 120,
+          "mean_abs_pwm_permille": 85.8,
+          "max_ff_plus_i_step_permille": 51.0,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        }
+      },
+      "net_counts": [
+        1152,
+        1212,
+        -1230,
+        -1139
+      ]
+    }
+  },
+  "candidate": {
+    "LEFT": {
+      "active_trace_samples": 127,
+      "wheel": {
+        "LF": {
+          "mean_cps": -207.98,
+          "rms_error_cps": 80.5,
+          "raw_zero_percent": 6.3,
+          "max_consecutive_zero_interval_ms": 160,
+          "mean_abs_pwm_permille": 150.2,
+          "max_ff_plus_i_step_permille": 36.5,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 1.0
+        },
+        "LR": {
+          "mean_cps": -217.27,
+          "rms_error_cps": 72.1,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 84.87,
+          "max_ff_plus_i_step_permille": 0.9,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "RF": {
+          "mean_cps": 233.21,
+          "rms_error_cps": 124.01,
+          "raw_zero_percent": 6.3,
+          "max_consecutive_zero_interval_ms": 160,
+          "mean_abs_pwm_permille": 124.31,
+          "max_ff_plus_i_step_permille": 60.0,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 1.2
+        },
+        "RR": {
+          "mean_cps": 171.39,
+          "rms_error_cps": 147.65,
+          "raw_zero_percent": 31.5,
+          "max_consecutive_zero_interval_ms": 720,
+          "mean_abs_pwm_permille": 130.51,
+          "max_ff_plus_i_step_permille": 43.7,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 1.7
+        }
+      },
+      "net_counts": [
+        -984,
+        -1300,
+        1188,
+        1182
+      ]
+    },
+    "RIGHT": {
+      "active_trace_samples": 127,
+      "wheel": {
+        "LF": {
+          "mean_cps": 177.39,
+          "rms_error_cps": 54.41,
+          "raw_zero_percent": 4.72,
+          "max_consecutive_zero_interval_ms": 120,
+          "mean_abs_pwm_permille": 161.76,
+          "max_ff_plus_i_step_permille": 41.5,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0.7
+        },
+        "LR": {
+          "mean_cps": 203.06,
+          "rms_error_cps": 55.02,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 87.58,
+          "max_ff_plus_i_step_permille": 0.5,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "RF": {
+          "mean_cps": -214.1,
+          "rms_error_cps": 97.21,
+          "raw_zero_percent": 7.09,
+          "max_consecutive_zero_interval_ms": 100,
+          "mean_abs_pwm_permille": 146.37,
+          "max_ff_plus_i_step_permille": 60.0,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 1.0
+        },
+        "RR": {
+          "mean_cps": -160.96,
+          "rms_error_cps": 58.96,
+          "raw_zero_percent": 11.02,
+          "max_consecutive_zero_interval_ms": 180,
+          "mean_abs_pwm_permille": 86.12,
+          "max_ff_plus_i_step_permille": 52.7,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0.1
+        }
+      },
+      "net_counts": [
+        981,
+        1207,
+        -1121,
+        -1140
+      ]
+    }
+  }
+}

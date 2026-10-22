@@ -1,0 +1,195 @@
+{
+  "note": "Same firmware, different targets; not firmware A/B.",
+  "target200": {
+    "LEFT": {
+      "active_trace_samples": 127,
+      "wheel": {
+        "LF": {
+          "mean_cps": -202.08,
+          "rms_error_cps": 69.84,
+          "raw_zero_percent": 0.79,
+          "max_consecutive_zero_interval_ms": 20,
+          "mean_abs_pwm_permille": 148.04,
+          "max_ff_plus_i_step_permille": 1.0,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "LR": {
+          "mean_cps": -193.84,
+          "rms_error_cps": 82.91,
+          "raw_zero_percent": 8.66,
+          "max_consecutive_zero_interval_ms": 200,
+          "mean_abs_pwm_permille": 83.22,
+          "max_ff_plus_i_step_permille": 51.5,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 5.0
+        },
+        "RF": {
+          "mean_cps": 161.57,
+          "rms_error_cps": 65.96,
+          "raw_zero_percent": 13.39,
+          "max_consecutive_zero_interval_ms": 340,
+          "mean_abs_pwm_permille": 119.69,
+          "max_ff_plus_i_step_permille": 0.8,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "RR": {
+          "mean_cps": 146.24,
+          "rms_error_cps": 78.02,
+          "raw_zero_percent": 17.32,
+          "max_consecutive_zero_interval_ms": 380,
+          "mean_abs_pwm_permille": 102.97,
+          "max_ff_plus_i_step_permille": 48.8,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 4.9
+        }
+      },
+      "net_counts": [
+        -884,
+        -1135,
+        993,
+        1123
+      ]
+    },
+    "RIGHT": {
+      "active_trace_samples": 127,
+      "wheel": {
+        "LF": {
+          "mean_cps": 166.32,
+          "rms_error_cps": 41.35,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 145.67,
+          "max_ff_plus_i_step_permille": 0.5,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "LR": {
+          "mean_cps": 185.9,
+          "rms_error_cps": 37.49,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 91.63,
+          "max_ff_plus_i_step_permille": 0.6,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "RF": {
+          "mean_cps": -162,
+          "rms_error_cps": 52.74,
+          "raw_zero_percent": 6.3,
+          "max_consecutive_zero_interval_ms": 120,
+          "mean_abs_pwm_permille": 132.13,
+          "max_ff_plus_i_step_permille": 15.7,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 4.6
+        },
+        "RR": {
+          "mean_cps": -157.82,
+          "rms_error_cps": 61.61,
+          "raw_zero_percent": 10.24,
+          "max_consecutive_zero_interval_ms": 140,
+          "mean_abs_pwm_permille": 87.81,
+          "max_ff_plus_i_step_permille": 56.3,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 4.8
+        }
+      },
+      "net_counts": [
+        890,
+        1100,
+        -924,
+        -1147
+      ]
+    }
+  },
+  "target350": {
+    "LEFT": {
+      "active_trace_samples": 127,
+      "wheel": {
+        "LF": {
+          "mean_cps": -279.8,
+          "rms_error_cps": 24.98,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 151.39,
+          "max_ff_plus_i_step_permille": 0.4,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "LR": {
+          "mean_cps": -281.91,
+          "rms_error_cps": 22.22,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 95.35,
+          "max_ff_plus_i_step_permille": 0.3,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "RF": {
+          "mean_cps": 224.43,
+          "rms_error_cps": 162.66,
+          "raw_zero_percent": 22.05,
+          "max_consecutive_zero_interval_ms": 500,
+          "mean_abs_pwm_permille": 165.75,
+          "max_ff_plus_i_step_permille": 1.5,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "RR": {
+          "mean_cps": 303.46,
+          "rms_error_cps": 63.35,
+          "raw_zero_percent": 0.79,
+          "max_consecutive_zero_interval_ms": 20,
+          "mean_abs_pwm_permille": 106.54,
+          "max_ff_plus_i_step_permille": 0.8,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        }
+      },
+      "net_counts": [
+        -1646,
+        -1863,
+        1571,
+        1899
+      ]
+    },
+    "RIGHT": {
+      "active_trace_samples": 127,
+      "wheel": {
+        "LF": {
+          "mean_cps": 258.72,
+          "rms_error_cps": 66.95,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 148.04,
+          "max_ff_plus_i_step_permille": 0.8,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "LR": {
+          "mean_cps": 284.24,
+          "rms_error_cps": 48.47,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 107.56,
+          "max_ff_plus_i_step_permille": 0.7,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "RF": {
+          "mean_cps": -296.55,
+          "rms_error_cps": 49.63,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 141.39,
+          "max_ff_plus_i_step_permille": 0.6,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "RR": {
+          "mean_cps": -277.8,
+          "rms_error_cps": 24.39,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 95.43,
+          "max_ff_plus_i_step_permille": 0.3,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        }
+      },
+      "net_counts": [
+        1612,
+        1826,
+        -1643,
+        -1905
+      ]
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "capture_result": "COMPLETE_NOT_A_TRACKING_PASS",
+  "motion_kind": "straight",
+  "duration_s_each": 6,
+  "angular_command_mrad_s": 0,
+  "linear_command_mm_s": 37,
+  "directions": [
+    {
+      "direction": "FORWARD",
+      "requested_v_mm_s": 37,
+      "requested_w_mrad_s": 0,
+      "commands_sent": 120,
+      "status_samples": 60,
+      "supply_mV_min_max": [
+        10571,
+        10736
+      ],
+      "stopped_status": [
+        519149,
+        360,
+        360,
+        0,
+        134,
+        1,
+        0,
+        2,
+        0,
+        336,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        530,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "direction": "REVERSE",
+      "requested_v_mm_s": -37,
+      "requested_w_mrad_s": 0,
+      "commands_sent": 120,
+      "status_samples": 60,
+      "supply_mV_min_max": [
+        10571,
+        10747
+      ],
+      "stopped_status": [
+        558239,
+        480,
+        480,
+        0,
+        321,
+        1,
+        0,
+        2,
+        0,
+        336,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        717,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "errors": [],
+  "final_status": [
+    590755,
+    480,
+    480,
+    0,
+    387,
+    1,
+    0,
+    2,
+    0,
+    336,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    783,
+    0,
+    0,
+    0
+  ],
+  "host_crc_errors": 0
+}

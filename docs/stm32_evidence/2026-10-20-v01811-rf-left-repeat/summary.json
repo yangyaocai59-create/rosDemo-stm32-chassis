@@ -1,0 +1,100 @@
+{
+  "capture_result": "COMPLETE_NOT_A_TRACKING_PASS",
+  "motion_kind": "pivot",
+  "duration_s_each": 6,
+  "angular_command_mrad_s": 350,
+  "linear_command_mm_s": 0,
+  "directions": [
+    {
+      "direction": "LEFT1",
+      "requested_v_mm_s": 0,
+      "requested_w_mrad_s": 350,
+      "commands_sent": 120,
+      "status_samples": 60,
+      "supply_mV_min_max": [
+        10384,
+        10725
+      ],
+      "stopped_status": [
+        1046177,
+        840,
+        840,
+        0,
+        134,
+        1,
+        0,
+        2,
+        0,
+        336,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1313,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "direction": "LEFT2",
+      "requested_v_mm_s": 0,
+      "requested_w_mrad_s": 350,
+      "commands_sent": 120,
+      "status_samples": 60,
+      "supply_mV_min_max": [
+        10395,
+        10615
+      ],
+      "stopped_status": [
+        1085311,
+        960,
+        960,
+        0,
+        322,
+        1,
+        0,
+        2,
+        0,
+        336,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1501,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "errors": [],
+  "focused_left_repeat": true,
+  "final_status": [
+    1117817,
+    960,
+    960,
+    0,
+    388,
+    1,
+    0,
+    2,
+    0,
+    336,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1567,
+    0,
+    0,
+    0
+  ],
+  "host_crc_errors": 0
+}

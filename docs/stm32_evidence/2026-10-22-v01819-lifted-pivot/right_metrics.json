@@ -1,0 +1,141 @@
+{
+  "scope": "ONE_LIFTED_RIGHT_ONLY_NOT_GROUND_OR_TRACKING_ACCEPTANCE",
+  "firmware_identity": "User-reported flash of 0.18.19; no boot version banner captured",
+  "source_capture": "build/hardware_tests/loaded_pivot_compare_20261022_141149",
+  "user_observation": "四轮都连续，没有明显异常",
+  "duration_s": 6,
+  "command_mrad_s": -200,
+  "velocity_commands": 120,
+  "complete_active_trace_frames": 127,
+  "trace_span_ms": [
+    699342,
+    701862
+  ],
+  "trace_is_last_window_not_full_startup": true,
+  "wheels": {
+    "LF": {
+      "target_printed_cps": [
+        160
+      ],
+      "mean_filtered_cps": 165.1,
+      "filtered_range_cps": [
+        138,
+        186
+      ],
+      "rms_error_cps": 10.79,
+      "longest_raw_zero_ms": 0,
+      "zero_dc_samples": 0,
+      "pwm_range_permille": [
+        50,
+        56
+      ],
+      "USB_motion_peak_abs_cps": 285
+    },
+    "LR": {
+      "target_printed_cps": [
+        160
+      ],
+      "mean_filtered_cps": 168.02,
+      "filtered_range_cps": [
+        141,
+        192
+      ],
+      "rms_error_cps": 12.85,
+      "longest_raw_zero_ms": 0,
+      "zero_dc_samples": 0,
+      "pwm_range_permille": [
+        51,
+        58
+      ],
+      "USB_motion_peak_abs_cps": 410
+    },
+    "RF": {
+      "target_printed_cps": [
+        -160
+      ],
+      "mean_filtered_cps": -166.13,
+      "filtered_range_cps": [
+        -189,
+        -128
+      ],
+      "rms_error_cps": 14.65,
+      "longest_raw_zero_ms": 0,
+      "zero_dc_samples": 0,
+      "pwm_range_permille": [
+        -56,
+        -48
+      ],
+      "USB_motion_peak_abs_cps": 325
+    },
+    "RR": {
+      "target_printed_cps": [
+        -160
+      ],
+      "mean_filtered_cps": -167.16,
+      "filtered_range_cps": [
+        -194,
+        -128
+      ],
+      "rms_error_cps": 15.33,
+      "longest_raw_zero_ms": 0,
+      "zero_dc_samples": 0,
+      "pwm_range_permille": [
+        -56,
+        -46
+      ],
+      "USB_motion_peak_abs_cps": 481
+    }
+  },
+  "voltage_mV": [
+    10483,
+    10560
+  ],
+  "final_status": [
+    735576,
+    240,
+    240,
+    0,
+    200,
+    1,
+    0,
+    2,
+    0,
+    336,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    400,
+    0,
+    0,
+    0
+  ],
+  "faults_observed": false,
+  "host_crc_errors": 0,
+  "minimum_reported_stack_free_bytes": {
+    "motor": 1268,
+    "safety": 352
+  },
+  "source_timing_ms": {
+    "motor": [
+      20,
+      20
+    ],
+    "safety": [
+      10,
+      10
+    ]
+  },
+  "ports_closed": true,
+  "automatic_repeat": false,
+  "fault_cleared": false,
+  "calibration_sent": false,
+  "limits": [
+    "Only one unloaded RIGHT run; no evidence of loaded LR recovery improvement.",
+    "Startup peaks use full USB motion; detailed trace contains only last 2.54 seconds.",
+    "Observed stack high-watermark covers this run, not every error/library/interrupt path.",
+    "Build-time verification remains historical; not overwritten as hardware pass."
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "scope": "ONE_GROUND_LEFT_300_ONLY_NOT_REPEATABILITY_OR_PRECISION_ACCEPTANCE",
+  "firmware_identity": "User reports .21 flashed; no boot banner or independent flash readback captured",
+  "source_capture": "build/hardware_tests/loaded_pivot_compare_20261022_105749",
+  "user_observation": "RR 连续，没有明显停顿或突然加速",
+  "result": "MIXED_SUBJECTIVE_IMPROVEMENT_BUT_RR_MIDRUN_FEEDBACK_GAP_REMAINS_NOT_ACCEPTED",
+  "duration_s": 6,
+  "velocity_commands": 120,
+  "command_accepted_delta": 120,
+  "rejected_delta": 0,
+  "trace_span_ms": [
+    157123,
+    159643
+  ],
+  "active_trace_frames": 127,
+  "trace_is_last_2_54s_not_full_startup": true,
+  "wheels": {
+    "LF": {
+      "target_printed_cps": [
+        -240
+      ],
+      "mean_filtered_cps": -236.9,
+      "filtered_range_cps": [
+        -295,
+        -77
+      ],
+      "rms_error_cps": 38.51,
+      "zero_increment_groups": [
+        {
+          "first_ms": 157163,
+          "last_ms": 157163,
+          "covered_ms": 20
+        },
+        {
+          "first_ms": 157203,
+          "last_ms": 157203,
+          "covered_ms": 20
+        }
+      ],
+      "longest_zero_ms": 20,
+      "raw_cps_range": [
+        -350,
+        0
+      ],
+      "pwm_range_permille": [
+        -164,
+        -144
+      ],
+      "USB_full_motion_peak_abs_cps": 293,
+      "USB_same_net_count_runs": [
+        {
+          "first_ms": 153703,
+          "last_ms": 153743,
+          "samples": 2,
+          "span_ms": 40,
+          "phase_elapsed_start_s": 0.04699999999957072
+        },
+        {
+          "first_ms": 153803,
+          "last_ms": 153843,
+          "samples": 2,
+          "span_ms": 40,
+          "phase_elapsed_start_s": 0.15599999999994907
+        }
+      ]
+    },
+    "LR": {
+      "target_printed_cps": [
+        -240
+      ],
+      "mean_filtered_cps": -252.61,
+      "filtered_range_cps": [
+        -299,
+        -202
+      ],
+      "rms_error_cps": 29.51,
+      "zero_increment_groups": [],
+      "longest_zero_ms": 0,
+      "raw_cps_range": [
+        -350,
+        -150
+      ],
+      "pwm_range_permille": [
+        -89,
+        -73
+      ],
+      "USB_full_motion_peak_abs_cps": 450,
+      "USB_same_net_count_runs": [
+        {
+          "first_ms": 153643,
+          "last_ms": 153703,
+          "samples": 2,
+          "span_ms": 60,
+          "phase_elapsed_start_s": 0.0
+        }
+      ]
+    },
+    "RF": {
+      "target_printed_cps": [
+        240
+      ],
+      "mean_filtered_cps": 217.02,
+      "filtered_range_cps": [
+        126,
+        327
+      ],
+      "rms_error_cps": 39.68,
+      "zero_increment_groups": [],
+      "longest_zero_ms": 0,
+      "raw_cps_range": [
+        50,
+        350
+      ],
+      "pwm_range_permille": [
+        112,
+        152
+      ],
+      "USB_full_motion_peak_abs_cps": 320,
+      "USB_same_net_count_runs": [
+        {
+          "first_ms": 153643,
+          "last_ms": 153743,
+          "samples": 3,
+          "span_ms": 100,
+          "phase_elapsed_start_s": 0.0
+        }
+      ]
+    },
+    "RR": {
+      "target_printed_cps": [
+        240
+      ],
+      "mean_filtered_cps": 259.21,
+      "filtered_range_cps": [
+        226,
+        396
+      ],
+      "rms_error_cps": 33.87,
+      "zero_increment_groups": [],
+      "longest_zero_ms": 0,
+      "raw_cps_range": [
+        200,
+        450
+      ],
+      "pwm_range_permille": [
+        83,
+        118
+      ],
+      "USB_full_motion_peak_abs_cps": 492,
+      "USB_same_net_count_runs": [
+        {
+          "first_ms": 156803,
+          "last_ms": 156943,
+          "samples": 4,
+          "span_ms": 140,
+          "phase_elapsed_start_s": 3.155999999999949
+        }
+      ]
+    }
+  },
+  "voltage_mV": [
+    10219,
+    10527
+  ],
+  "final_status": [
+    193266,
+    120,
+    120,
+    0,
+    206,
+    1,
+    0,
+    2,
+    0,
+    336,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    216,
+    0,
+    0,
+    0
+  ],
+  "host_crc_errors": 0,
+  "fault_observed": false,
+  "boot_reset_banner_observed": false,
+  "motor_period_ms": [
+    20,
+    20
+  ],
+  "safety_period_ms": [
+    10,
+    10
+  ],
+  "minimum_stack_free_bytes": {
+    "motor": 1252,
+    "safety": 352
+  },
+  "final_IMU_bias_valid": false,
+  "RR_previous_visible_zero_ms": 140,
+  "RR_previous_zero_group_start_truncated": true,
+  "RR_current_visible_zero_ms": 0,
+  "RR_midrun_USB_same_net_count": [
+    {
+      "first_ms": 156803,
+      "last_ms": 156943,
+      "samples": 4,
+      "span_ms": 140,
+      "phase_elapsed_start_s": 3.155999999999949
+    }
+  ],
+  "RR_same_net_count_span_is_not_exact_physical_stop_duration": true,
+  "detailed_trace_does_not_cover_RR_midrun_gap": true,
+  "RR_previous_rms_cps": 80.07,
+  "RR_current_rms_cps": 33.87,
+  "source_167_and_four_artifact_hashes_unchanged": true,
+  "ports_closed": true,
+  "repeated": false,
+  "fault_cleared": false,
+  "calibration_sent": false,
+  "firmware_modified": false,
+  "limits": [
+    "Single LEFT only: no repeatability, opposite-direction, ROS tracking or navigation acceptance.",
+    "Recorded waveforms differ between runs; this is not same-input software replay or proof of unique cause.",
+    "RR has 140ms identical USB net count at 3.16..3.31s while filtered speed decays 83 to 8cps; tail-only no-zero trace cannot negate it.",
+    "Same net count is a feedback gap, not proof of exact physical stall duration or unique cause; user saw continuous movement.",
+    "Mean error and startup/other-wheel velocity deviations remain; no new tuning justified solely by this run.",
+    "Detailed ring is final 2.54s; USB same net counts are not high-frequency encoder waveforms.",
+    "Supply telemetry range is not a scope measurement and cannot exclude fast power transients.",
+    "No observed reset/banner is not proof against every possible reset; no reset requested."
+  ]
+}

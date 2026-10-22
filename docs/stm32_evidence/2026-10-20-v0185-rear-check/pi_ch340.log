@@ -1,0 +1,301 @@
+[0000080922] [INFO ] LR test disarmed; all motor outputs disabled
+[0000081049] [INFO ] ENC L: LF raw=0 d=0 total=0 dir=STOP | LR raw=4294967072 d=0 total=-224 dir=STOP
+[0000081059] [INFO ] ENC R: RF raw=0 d=0 total=0 dir=STOP | RR raw=65406 d=0 total=130 dir=STOP
+[0000081067] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000081077] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000081244] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1352/352
+[0000081254] [INFO ] ENC L: LF raw=0 d=0 total=0 dir=STOP | LR raw=4294967072 d=0 total=-224 dir=STOP
+[0000081263] [INFO ] ENC R: RF raw=0 d=0 total=0 dir=STOP | RR raw=65406 d=0 total=130 dir=STOP
+[0000081271] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000081281] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000081291] [INFO ] IMU RAW: a=[164,-9,8443] temp=2440 g=[-57,27,147] samples=8096 errors=0
+[0000081299] [INFO ] IMU SI: a_mmps2=[196,-10,10107] w_mrads=[-15,7,39] temp_mC=28308 bias=0
+[0000081308] [INFO ] IMU QUALITY: epoch=1 drdy=8118 missed=0 race=0 timeout=0 cal=0 persist=0
+[0000081443] [INFO ] ENC L: LF raw=0 d=0 total=0 dir=STOP | LR raw=4294967072 d=0 total=-224 dir=STOP
+[0000081452] [INFO ] ENC R: RF raw=0 d=0 total=0 dir=STOP | RR raw=65406 d=0 total=130 dir=STOP
+[0000081461] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000081471] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000081643] [INFO ] ENC L: LF raw=0 d=0 total=0 dir=STOP | LR raw=4294967072 d=0 total=-224 dir=STOP
+[0000081652] [INFO ] ENC R: RF raw=0 d=0 total=0 dir=STOP | RR raw=65406 d=0 total=130 dir=STOP
+[0000081661] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000081671] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000081843] [INFO ] ENC L: LF raw=0 d=0 total=0 dir=STOP | LR raw=4294967072 d=0 total=-224 dir=STOP
+[0000081852] [INFO ] ENC R: RF raw=0 d=0 total=0 dir=STOP | RR raw=65406 d=0 total=130 dir=STOP
+[0000081861] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000081871] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+HOST_TEST RR
+[0000081942] [INFO ] Selected RR; motor disabled. Send 'a' for pulse or 'p' for PI
+[0000082051] [INFO ] ENC L: LF raw=0 d=0 total=0 dir=STOP | LR raw=4294967072 d=0 total=-224 dir=STOP
+[0000082060] [INFO ] ENC R: RF raw=0 d=0 total=0 dir=STOP | RR raw=65406 d=0 total=130 dir=STOP
+[0000082069] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000082078] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000082142] [WARN ] PI test armed: wheel=RR for 5 s; send 'g' to start
+[0000082142] [WARN ] Sequence: +500 cps/4 s, stop, -500 cps/4 s, stop; limit=30%
+[0000082257] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1352/352
+[0000082402] [WARN ] PI test for RR starts in 3 s; send 's' to cancel
+[0000082402] [WARN ] Keep every wheel lifted and keep 12 V physical cutoff ready
+[0000082402] [INFO ] PI config: kp_x1000=50 ki_x1000=250 target=500 cps output_limit=300/1000 slew=1000/1000/s
+[0000083244] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1352/352
+[0000084243] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1352/352
+[0000085128] [INFO ] BAT: raw=1213 filtered=1214 adc=978mV supply=10758mV state=MONITOR_ONLY samples=851 errors=0
+[0000085243] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1352/352
+[0000085702] [WARN ] PI phase started: wheel=RR dir=FWD target=500 cps duration=4 s output_limit=300/1000
+[0000085802] [INFO ] PI sample: wheel=RR phase=FWD t=100 target=500 measured=35 error=465 ff=138 p=23 i=0 pwm=110 limited=1
+[0000085902] [INFO ] PI sample: wheel=RR phase=FWD t=200 target=500 measured=500 error=0 ff=138 p=0 i=2 pwm=139 limited=0
+[0000086002] [INFO ] PI sample: wheel=RR phase=FWD t=300 target=500 measured=771 error=-271 ff=138 p=-14 i=-3 pwm=121 limited=0
+[0000086102] [INFO ] PI sample: wheel=RR phase=FWD t=400 target=500 measured=763 error=-263 ff=138 p=-13 i=-10 pwm=115 limited=0
+[0000086202] [INFO ] PI sample: wheel=RR phase=FWD t=500 target=500 measured=735 error=-235 ff=138 p=-12 i=-16 pwm=110 limited=0
+[0000086266] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1168/352
+[0000086302] [INFO ] PI sample: wheel=RR phase=FWD t=600 target=500 measured=699 error=-199 ff=138 p=-10 i=-21 pwm=106 limited=0
+[0000086402] [INFO ] PI sample: wheel=RR phase=FWD t=700 target=500 measured=669 error=-169 ff=138 p=-8 i=-26 pwm=104 limited=0
+[0000086502] [INFO ] PI sample: wheel=RR phase=FWD t=800 target=500 measured=643 error=-143 ff=138 p=-7 i=-30 pwm=101 limited=0
+[0000086602] [INFO ] PI sample: wheel=RR phase=FWD t=900 target=500 measured=623 error=-123 ff=138 p=-6 i=-33 pwm=99 limited=0
+[0000086702] [INFO ] PI sample: wheel=RR phase=FWD t=1000 target=500 measured=610 error=-110 ff=138 p=-5 i=-36 pwm=97 limited=0
+[0000086802] [INFO ] PI sample: wheel=RR phase=FWD t=1100 target=500 measured=598 error=-98 ff=138 p=-5 i=-38 pwm=95 limited=0
+[0000086902] [INFO ] PI sample: wheel=RR phase=FWD t=1200 target=500 measured=574 error=-74 ff=138 p=-4 i=-40 pwm=94 limited=0
+[0000087002] [INFO ] PI sample: wheel=RR phase=FWD t=1300 target=500 measured=560 error=-60 ff=138 p=-3 i=-42 pwm=93 limited=0
+[0000087102] [INFO ] PI sample: wheel=RR phase=FWD t=1400 target=500 measured=556 error=-56 ff=138 p=-3 i=-43 pwm=92 limited=0
+[0000087202] [INFO ] PI sample: wheel=RR phase=FWD t=1500 target=500 measured=551 error=-51 ff=138 p=-3 i=-45 pwm=90 limited=0
+[0000087266] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1168/352
+[0000087302] [INFO ] PI sample: wheel=RR phase=FWD t=1600 target=500 measured=546 error=-46 ff=138 p=-2 i=-46 pwm=90 limited=0
+[0000087402] [INFO ] PI sample: wheel=RR phase=FWD t=1700 target=500 measured=535 error=-35 ff=138 p=-2 i=-47 pwm=89 limited=0
+[0000087502] [INFO ] PI sample: wheel=RR phase=FWD t=1800 target=500 measured=532 error=-32 ff=138 p=-2 i=-48 pwm=89 limited=0
+[0000087602] [INFO ] PI sample: wheel=RR phase=FWD t=1900 target=500 measured=531 error=-31 ff=138 p=-2 i=-48 pwm=88 limited=0
+[0000087702] [INFO ] PI sample: wheel=RR phase=FWD t=2000 target=500 measured=525 error=-25 ff=138 p=-1 i=-49 pwm=88 limited=0
+[0000087802] [INFO ] PI sample: wheel=RR phase=FWD t=2100 target=500 measured=524 error=-24 ff=138 p=-1 i=-49 pwm=87 limited=0
+[0000087902] [INFO ] PI sample: wheel=RR phase=FWD t=2200 target=500 measured=524 error=-24 ff=138 p=-1 i=-50 pwm=87 limited=0
+[0000088002] [INFO ] PI sample: wheel=RR phase=FWD t=2300 target=500 measured=512 error=-12 ff=138 p=-1 i=-50 pwm=87 limited=0
+[0000088102] [INFO ] PI sample: wheel=RR phase=FWD t=2400 target=500 measured=522 error=-22 ff=138 p=-1 i=-50 pwm=87 limited=0
+[0000088202] [INFO ] PI sample: wheel=RR phase=FWD t=2500 target=500 measured=511 error=-11 ff=138 p=-1 i=-50 pwm=87 limited=0
+[0000088266] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1168/352
+[0000088302] [INFO ] PI sample: wheel=RR phase=FWD t=2600 target=500 measured=516 error=-16 ff=138 p=-1 i=-50 pwm=87 limited=0
+[0000088402] [INFO ] PI sample: wheel=RR phase=FWD t=2700 target=500 measured=522 error=-22 ff=138 p=-1 i=-50 pwm=87 limited=0
+[0000088502] [INFO ] PI sample: wheel=RR phase=FWD t=2800 target=500 measured=511 error=-11 ff=138 p=-1 i=-50 pwm=87 limited=0
+[0000088602] [INFO ] PI sample: wheel=RR phase=FWD t=2900 target=500 measured=516 error=-16 ff=138 p=-1 i=-50 pwm=87 limited=0
+[0000088702] [INFO ] PI sample: wheel=RR phase=FWD t=3000 target=500 measured=517 error=-17 ff=138 p=-1 i=-50 pwm=87 limited=0
+[0000088802] [INFO ] PI sample: wheel=RR phase=FWD t=3100 target=500 measured=517 error=-17 ff=138 p=-1 i=-50 pwm=87 limited=0
+[0000088902] [INFO ] PI sample: wheel=RR phase=FWD t=3200 target=500 measured=517 error=-17 ff=138 p=-1 i=-50 pwm=87 limited=0
+[0000089002] [INFO ] PI sample: wheel=RR phase=FWD t=3300 target=500 measured=517 error=-17 ff=138 p=-1 i=-50 pwm=87 limited=0
+[0000089102] [INFO ] PI sample: wheel=RR phase=FWD t=3400 target=500 measured=517 error=-17 ff=138 p=-1 i=-50 pwm=87 limited=0
+[0000089202] [INFO ] PI sample: wheel=RR phase=FWD t=3500 target=500 measured=514 error=-14 ff=138 p=-1 i=-50 pwm=87 limited=0
+[0000089266] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1168/352
+[0000089302] [INFO ] PI sample: wheel=RR phase=FWD t=3600 target=500 measured=528 error=-28 ff=138 p=-1 i=-50 pwm=86 limited=0
+[0000089402] [INFO ] PI sample: wheel=RR phase=FWD t=3700 target=500 measured=527 error=-27 ff=138 p=-1 i=-50 pwm=86 limited=0
+[0000089502] [INFO ] PI sample: wheel=RR phase=FWD t=3800 target=500 measured=527 error=-27 ff=138 p=-1 i=-50 pwm=86 limited=0
+[0000089602] [INFO ] PI sample: wheel=RR phase=FWD t=3900 target=500 measured=520 error=-20 ff=138 p=-1 i=-50 pwm=87 limited=0
+[0000089702] [INFO ] PI result: wheel=RR dir=FWD target=500 avg=519 min=508 max=528 final=527 avg_error=-19 max_pwm=150 samples=100
+[0000090128] [INFO ] BAT: raw=1212 filtered=1213 adc=978mV supply=10758mV state=MONITOR_ONLY samples=901 errors=0
+[0000090102] [WARN ] PI phase started: wheel=RR dir=REV target=-500 cps duration=4 s output_limit=300/1000
+[0000090202] [INFO ] PI sample: wheel=RR phase=REV t=100 target=-500 measured=-24 error=-476 ff=-132 p=-24 i=0 pwm=-110 limited=1
+[0000090264] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1168/352
+[0000090302] [INFO ] PI sample: wheel=RR phase=REV t=200 target=-500 measured=-439 error=-61 ff=-132 p=-3 i=-3 pwm=-138 limited=0
+[0000090402] [INFO ] PI sample: wheel=RR phase=REV t=300 target=-500 measured=-715 error=215 ff=-132 p=11 i=1 pwm=-121 limited=0
+[0000090502] [INFO ] PI sample: wheel=RR phase=REV t=400 target=-500 measured=-726 error=226 ff=-132 p=11 i=7 pwm=-114 limited=0
+[0000090602] [INFO ] PI sample: wheel=RR phase=REV t=500 target=-500 measured=-690 error=190 ff=-132 p=10 i=12 pwm=-111 limited=0
+[0000090702] [INFO ] PI sample: wheel=RR phase=REV t=600 target=-500 measured=-676 error=176 ff=-132 p=9 i=16 pwm=-107 limited=0
+[0000090802] [INFO ] PI sample: wheel=RR phase=REV t=700 target=-500 measured=-647 error=147 ff=-132 p=7 i=20 pwm=-105 limited=0
+[0000090902] [INFO ] PI sample: wheel=RR phase=REV t=800 target=-500 measured=-620 error=120 ff=-132 p=6 i=24 pwm=-103 limited=0
+[0000091002] [INFO ] PI sample: wheel=RR phase=REV t=900 target=-500 measured=-607 error=107 ff=-132 p=5 i=26 pwm=-101 limited=0
+[0000091102] [INFO ] PI sample: wheel=RR phase=REV t=1000 target=-500 measured=-587 error=87 ff=-132 p=4 i=29 pwm=-99 limited=0
+[0000091202] [INFO ] PI sample: wheel=RR phase=REV t=1100 target=-500 measured=-590 error=90 ff=-132 p=5 i=31 pwm=-97 limited=0
+[0000091266] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1168/352
+[0000091302] [INFO ] PI sample: wheel=RR phase=REV t=1200 target=-500 measured=-563 error=63 ff=-132 p=3 i=33 pwm=-96 limited=0
+[0000091402] [INFO ] PI sample: wheel=RR phase=REV t=1300 target=-500 measured=-556 error=56 ff=-132 p=3 i=35 pwm=-95 limited=0
+[0000091502] [INFO ] PI sample: wheel=RR phase=REV t=1400 target=-500 measured=-551 error=51 ff=-132 p=3 i=36 pwm=-94 limited=0
+[0000091602] [INFO ] PI sample: wheel=RR phase=REV t=1500 target=-500 measured=-550 error=50 ff=-132 p=3 i=37 pwm=-93 limited=0
+[0000091702] [INFO ] PI sample: wheel=RR phase=REV t=1600 target=-500 measured=-531 error=31 ff=-132 p=2 i=38 pwm=-93 limited=0
+[0000091802] [INFO ] PI sample: wheel=RR phase=REV t=1700 target=-500 measured=-539 error=39 ff=-132 p=2 i=39 pwm=-91 limited=0
+[0000091902] [INFO ] PI sample: wheel=RR phase=REV t=1800 target=-500 measured=-537 error=37 ff=-132 p=2 i=40 pwm=-91 limited=0
+[0000092002] [INFO ] PI sample: wheel=RR phase=REV t=1900 target=-500 measured=-522 error=22 ff=-132 p=1 i=40 pwm=-91 limited=0
+[0000092102] [INFO ] PI sample: wheel=RR phase=REV t=2000 target=-500 measured=-515 error=15 ff=-132 p=1 i=41 pwm=-91 limited=0
+[0000092202] [INFO ] PI sample: wheel=RR phase=REV t=2100 target=-500 measured=-514 error=14 ff=-132 p=1 i=42 pwm=-90 limited=0
+[0000092266] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1064/352
+[0000092302] [INFO ] PI sample: wheel=RR phase=REV t=2200 target=-500 measured=-514 error=14 ff=-132 p=1 i=42 pwm=-90 limited=0
+[0000092402] [INFO ] PI sample: wheel=RR phase=REV t=2300 target=-500 measured=-522 error=22 ff=-132 p=1 i=42 pwm=-89 limited=0
+[0000092502] [INFO ] PI sample: wheel=RR phase=REV t=2400 target=-500 measured=-514 error=14 ff=-132 p=1 i=43 pwm=-89 limited=0
+[0000092602] [INFO ] PI sample: wheel=RR phase=REV t=2500 target=-500 measured=-510 error=10 ff=-132 p=0 i=43 pwm=-89 limited=0
+[0000092702] [INFO ] PI sample: wheel=RR phase=REV t=2600 target=-500 measured=-512 error=12 ff=-132 p=1 i=43 pwm=-88 limited=0
+[0000092802] [INFO ] PI sample: wheel=RR phase=REV t=2700 target=-500 measured=-512 error=12 ff=-132 p=1 i=44 pwm=-88 limited=0
+[0000092902] [INFO ] PI sample: wheel=RR phase=REV t=2800 target=-500 measured=-502 error=2 ff=-132 p=0 i=44 pwm=-89 limited=0
+[0000093002] [INFO ] PI sample: wheel=RR phase=REV t=2900 target=-500 measured=-504 error=4 ff=-132 p=0 i=44 pwm=-88 limited=0
+[0000093102] [INFO ] PI sample: wheel=RR phase=REV t=3000 target=-500 measured=-515 error=15 ff=-132 p=1 i=44 pwm=-88 limited=0
+[0000093202] [INFO ] PI sample: wheel=RR phase=REV t=3100 target=-500 measured=-503 error=3 ff=-132 p=0 i=44 pwm=-88 limited=0
+[0000093266] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1064/352
+[0000093302] [INFO ] PI sample: wheel=RR phase=REV t=3200 target=-500 measured=-501 error=1 ff=-132 p=0 i=44 pwm=-88 limited=0
+[0000093402] [INFO ] PI sample: wheel=RR phase=REV t=3300 target=-500 measured=-514 error=14 ff=-132 p=1 i=44 pwm=-87 limited=0
+[0000093502] [INFO ] PI sample: wheel=RR phase=REV t=3400 target=-500 measured=-503 error=3 ff=-132 p=0 i=44 pwm=-88 limited=0
+[0000093602] [INFO ] PI sample: wheel=RR phase=REV t=3500 target=-500 measured=-508 error=8 ff=-132 p=0 i=45 pwm=-87 limited=0
+[0000093702] [INFO ] PI sample: wheel=RR phase=REV t=3600 target=-500 measured=-501 error=1 ff=-132 p=0 i=45 pwm=-88 limited=0
+[0000093802] [INFO ] PI sample: wheel=RR phase=REV t=3700 target=-500 measured=-508 error=8 ff=-132 p=0 i=45 pwm=-87 limited=0
+[0000093902] [INFO ] PI sample: wheel=RR phase=REV t=3800 target=-500 measured=-501 error=1 ff=-132 p=0 i=45 pwm=-87 limited=0
+[0000094002] [INFO ] PI sample: wheel=RR phase=REV t=3900 target=-500 measured=-500 error=0 ff=-132 p=0 i=45 pwm=-87 limited=0
+[0000094102] [INFO ] PI result: wheel=RR dir=REV target=-500 avg=-508 min=-527 max=-500 final=-500 avg_error=8 max_pwm=150 samples=100
+[0000094255] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1064/352
+[0000094442] [INFO ] PI test completed: wheel=RR; motor outputs disabled
+[0000094450] [INFO ] ENC L: LF raw=0 d=0 total=0 dir=STOP | LR raw=4294967072 d=0 total=-224 dir=STOP
+[0000094459] [INFO ] ENC R: RF raw=0 d=0 total=0 dir=STOP | RR raw=65342 d=0 total=194 dir=STOP
+[0000094468] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000094477] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000094487] [INFO ] IMU RAW: a=[154,-6,8469] temp=2454 g=[-51,19,147] samples=9416 errors=0
+[0000094495] [INFO ] IMU SI: a_mmps2=[184,-7,10138] w_mrads=[-13,5,39] temp_mC=28350 bias=0
+[0000094504] [INFO ] IMU QUALITY: epoch=1 drdy=9438 missed=0 race=0 timeout=0 cal=0 persist=0
+[0000094482] [INFO ] RR test disarmed; all motor outputs disabled
+[0000094649] [INFO ] ENC L: LF raw=0 d=0 total=0 dir=STOP | LR raw=4294967072 d=0 total=-224 dir=STOP
+[0000094658] [INFO ] ENC R: RF raw=0 d=0 total=0 dir=STOP | RR raw=65342 d=0 total=194 dir=STOP
+[0000094667] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000094676] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000094843] [INFO ] ENC L: LF raw=0 d=0 total=0 dir=STOP | LR raw=4294967072 d=0 total=-224 dir=STOP
+[0000094852] [INFO ] ENC R: RF raw=0 d=0 total=0 dir=STOP | RR raw=65342 d=0 total=194 dir=STOP
+[0000094861] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000094870] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000095043] [INFO ] ENC L: LF raw=0 d=0 total=0 dir=STOP | LR raw=4294967072 d=0 total=-224 dir=STOP
+[0000095052] [INFO ] ENC R: RF raw=0 d=0 total=0 dir=STOP | RR raw=65342 d=0 total=194 dir=STOP
+[0000095061] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000095070] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+HOST_TEST LR
+[0000095128] [INFO ] BAT: raw=1215 filtered=1215 adc=979mV supply=10769mV state=MONITOR_ONLY samples=951 errors=0
+[0000095082] [INFO ] Selected LR; motor disabled. Send 'a' for pulse or 'p' for PI
+[0000095251] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1064/352
+[0000095260] [INFO ] ENC L: LF raw=0 d=0 total=0 dir=STOP | LR raw=4294967072 d=0 total=-224 dir=STOP
+[0000095270] [INFO ] ENC R: RF raw=0 d=0 total=0 dir=STOP | RR raw=65342 d=0 total=194 dir=STOP
+[0000095278] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000095288] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000095282] [WARN ] PI test armed: wheel=LR for 5 s; send 'g' to start
+[0000095282] [WARN ] Sequence: +500 cps/4 s, stop, -500 cps/4 s, stop; limit=30%
+[0000095522] [WARN ] PI test for LR starts in 3 s; send 's' to cancel
+[0000095522] [WARN ] Keep every wheel lifted and keep 12 V physical cutoff ready
+[0000095522] [INFO ] PI config: kp_x1000=50 ki_x1000=250 target=500 cps output_limit=300/1000 slew=1000/1000/s
+[0000096243] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1064/352
+[0000097243] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1064/352
+[0000098243] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1064/352
+[0000098822] [WARN ] PI phase started: wheel=LR dir=FWD target=500 cps duration=4 s output_limit=300/1000
+[0000098922] [INFO ] PI sample: wheel=LR phase=FWD t=100 target=500 measured=49 error=451 ff=120 p=23 i=0 pwm=110 limited=1
+[0000099022] [INFO ] PI sample: wheel=LR phase=FWD t=200 target=500 measured=441 error=59 ff=120 p=3 i=3 pwm=126 limited=0
+[0000099122] [INFO ] PI sample: wheel=LR phase=FWD t=300 target=500 measured=652 error=-152 ff=120 p=-8 i=1 pwm=113 limited=0
+[0000099222] [INFO ] PI sample: wheel=LR phase=FWD t=400 target=500 measured=669 error=-169 ff=120 p=-8 i=-3 pwm=108 limited=0
+[0000099266] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1064/352
+[0000099322] [INFO ] PI sample: wheel=LR phase=FWD t=500 target=500 measured=654 error=-154 ff=120 p=-8 i=-7 pwm=105 limited=0
+[0000099422] [INFO ] PI sample: wheel=LR phase=FWD t=600 target=500 measured=622 error=-122 ff=120 p=-6 i=-11 pwm=103 limited=0
+[0000099522] [INFO ] PI sample: wheel=LR phase=FWD t=700 target=500 measured=615 error=-115 ff=120 p=-6 i=-14 pwm=100 limited=0
+[0000099622] [INFO ] PI sample: wheel=LR phase=FWD t=800 target=500 measured=603 error=-103 ff=120 p=-5 i=-16 pwm=98 limited=0
+[0000099722] [INFO ] PI sample: wheel=LR phase=FWD t=900 target=500 measured=585 error=-85 ff=120 p=-4 i=-19 pwm=97 limited=0
+[0000099822] [INFO ] PI sample: wheel=LR phase=FWD t=1000 target=500 measured=572 error=-72 ff=120 p=-4 i=-20 pwm=96 limited=0
+[0000099922] [INFO ] PI sample: wheel=LR phase=FWD t=1100 target=500 measured=561 error=-61 ff=120 p=-3 i=-22 pwm=95 limited=0
+[0000100022] [INFO ] PI sample: wheel=LR phase=FWD t=1200 target=500 measured=557 error=-57 ff=120 p=-3 i=-24 pwm=93 limited=0
+[0000100128] [INFO ] BAT: raw=1213 filtered=1214 adc=978mV supply=10758mV state=MONITOR_ONLY samples=1001 errors=0
+[0000100122] [INFO ] PI sample: wheel=LR phase=FWD t=1300 target=500 measured=548 error=-48 ff=120 p=-2 i=-25 pwm=93 limited=0
+[0000100222] [INFO ] PI sample: wheel=LR phase=FWD t=1400 target=500 measured=546 error=-46 ff=120 p=-2 i=-26 pwm=92 limited=0
+[0000100266] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1064/352
+[0000100322] [INFO ] PI sample: wheel=LR phase=FWD t=1500 target=500 measured=531 error=-31 ff=120 p=-2 i=-27 pwm=91 limited=0
+[0000100422] [INFO ] PI sample: wheel=LR phase=FWD t=1600 target=500 measured=522 error=-22 ff=120 p=-1 i=-28 pwm=91 limited=0
+[0000100522] [INFO ] PI sample: wheel=LR phase=FWD t=1700 target=500 measured=523 error=-23 ff=120 p=-1 i=-28 pwm=90 limited=0
+[0000100622] [INFO ] PI sample: wheel=LR phase=FWD t=1800 target=500 measured=523 error=-23 ff=120 p=-1 i=-29 pwm=89 limited=0
+[0000100722] [INFO ] PI sample: wheel=LR phase=FWD t=1900 target=500 measured=515 error=-15 ff=120 p=-1 i=-30 pwm=89 limited=0
+[0000100822] [INFO ] PI sample: wheel=LR phase=FWD t=2000 target=500 measured=508 error=-8 ff=120 p=0 i=-30 pwm=89 limited=0
+[0000100922] [INFO ] PI sample: wheel=LR phase=FWD t=2100 target=500 measured=513 error=-13 ff=120 p=-1 i=-30 pwm=89 limited=0
+[0000101022] [INFO ] PI sample: wheel=LR phase=FWD t=2200 target=500 measured=516 error=-16 ff=120 p=-1 i=-31 pwm=88 limited=0
+[0000101122] [INFO ] PI sample: wheel=LR phase=FWD t=2300 target=500 measured=510 error=-10 ff=120 p=-1 i=-31 pwm=88 limited=0
+[0000101222] [INFO ] PI sample: wheel=LR phase=FWD t=2400 target=500 measured=509 error=-9 ff=120 p=0 i=-31 pwm=88 limited=0
+[0000101266] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1064/352
+[0000101322] [INFO ] PI sample: wheel=LR phase=FWD t=2500 target=500 measured=507 error=-7 ff=120 p=0 i=-32 pwm=88 limited=0
+[0000101422] [INFO ] PI sample: wheel=LR phase=FWD t=2600 target=500 measured=509 error=-9 ff=120 p=0 i=-32 pwm=87 limited=0
+[0000101522] [INFO ] PI sample: wheel=LR phase=FWD t=2700 target=500 measured=512 error=-12 ff=120 p=-1 i=-32 pwm=87 limited=0
+[0000101622] [INFO ] PI sample: wheel=LR phase=FWD t=2800 target=500 measured=516 error=-16 ff=120 p=-1 i=-32 pwm=86 limited=0
+[0000101722] [INFO ] PI sample: wheel=LR phase=FWD t=2900 target=500 measured=513 error=-13 ff=120 p=-1 i=-33 pwm=86 limited=0
+[0000101822] [INFO ] PI sample: wheel=LR phase=FWD t=3000 target=500 measured=513 error=-13 ff=120 p=-1 i=-33 pwm=86 limited=0
+[0000101922] [INFO ] PI sample: wheel=LR phase=FWD t=3100 target=500 measured=513 error=-13 ff=120 p=-1 i=-33 pwm=86 limited=0
+[0000102022] [INFO ] PI sample: wheel=LR phase=FWD t=3200 target=500 measured=502 error=-2 ff=120 p=0 i=-33 pwm=86 limited=0
+[0000102122] [INFO ] PI sample: wheel=LR phase=FWD t=3300 target=500 measured=508 error=-8 ff=120 p=0 i=-33 pwm=86 limited=0
+[0000102222] [INFO ] PI sample: wheel=LR phase=FWD t=3400 target=500 measured=501 error=-1 ff=120 p=0 i=-34 pwm=86 limited=0
+[0000102266] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1064/352
+[0000102322] [INFO ] PI sample: wheel=LR phase=FWD t=3500 target=500 measured=510 error=-10 ff=120 p=-1 i=-34 pwm=85 limited=0
+[0000102422] [INFO ] PI sample: wheel=LR phase=FWD t=3600 target=500 measured=502 error=-2 ff=120 p=0 i=-34 pwm=86 limited=0
+[0000102522] [INFO ] PI sample: wheel=LR phase=FWD t=3700 target=500 measured=504 error=-4 ff=120 p=0 i=-34 pwm=85 limited=0
+[0000102622] [INFO ] PI sample: wheel=LR phase=FWD t=3800 target=500 measured=511 error=-11 ff=120 p=-1 i=-34 pwm=85 limited=0
+[0000102722] [INFO ] PI sample: wheel=LR phase=FWD t=3900 target=500 measured=502 error=-2 ff=120 p=0 i=-34 pwm=85 limited=0
+[0000102822] [INFO ] PI result: wheel=LR dir=FWD target=500 avg=509 min=501 max=525 final=515 avg_error=-9 max_pwm=136 samples=100
+[0000103243] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1064/352
+[0000103262] [WARN ] PI phase started: wheel=LR dir=REV target=-500 cps duration=4 s output_limit=300/1000
+[0000103362] [INFO ] PI sample: wheel=LR phase=REV t=100 target=-500 measured=-46 error=-454 ff=-124 p=-23 i=0 pwm=-110 limited=1
+[0000103462] [INFO ] PI sample: wheel=LR phase=REV t=200 target=-500 measured=-533 error=33 ff=-124 p=2 i=-2 pwm=-125 limited=0
+[0000103562] [INFO ] PI sample: wheel=LR phase=REV t=300 target=-500 measured=-750 error=250 ff=-124 p=13 i=2 pwm=-109 limited=0
+[0000103662] [INFO ] PI sample: wheel=LR phase=REV t=400 target=-500 measured=-739 error=239 ff=-124 p=12 i=9 pwm=-103 limited=0
+[0000103762] [INFO ] PI sample: wheel=LR phase=REV t=500 target=-500 measured=-707 error=207 ff=-124 p=10 i=14 pwm=-99 limited=0
+[0000103862] [INFO ] PI sample: wheel=LR phase=REV t=600 target=-500 measured=-666 error=166 ff=-124 p=8 i=19 pwm=-97 limited=0
+[0000103962] [INFO ] PI sample: wheel=LR phase=REV t=700 target=-500 measured=-633 error=133 ff=-124 p=7 i=22 pwm=-95 limited=0
+[0000104062] [INFO ] PI sample: wheel=LR phase=REV t=800 target=-500 measured=-617 error=117 ff=-124 p=6 i=26 pwm=-92 limited=0
+[0000104162] [INFO ] PI sample: wheel=LR phase=REV t=900 target=-500 measured=-596 error=96 ff=-124 p=5 i=28 pwm=-91 limited=0
+[0000104262] [INFO ] PI sample: wheel=LR phase=REV t=1000 target=-500 measured=-585 error=85 ff=-124 p=4 i=31 pwm=-89 limited=0
+[0000104278] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1064/352
+[0000104362] [INFO ] PI sample: wheel=LR phase=REV t=1100 target=-500 measured=-580 error=80 ff=-124 p=4 i=33 pwm=-87 limited=0
+[0000104462] [INFO ] PI sample: wheel=LR phase=REV t=1200 target=-500 measured=-563 error=63 ff=-124 p=3 i=34 pwm=-86 limited=0
+[0000104562] [INFO ] PI sample: wheel=LR phase=REV t=1300 target=-500 measured=-563 error=63 ff=-124 p=3 i=36 pwm=-85 limited=0
+[0000104662] [INFO ] PI sample: wheel=LR phase=REV t=1400 target=-500 measured=-538 error=38 ff=-124 p=2 i=37 pwm=-85 limited=0
+[0000104762] [INFO ] PI sample: wheel=LR phase=REV t=1500 target=-500 measured=-548 error=48 ff=-124 p=2 i=38 pwm=-83 limited=0
+[0000104862] [INFO ] PI sample: wheel=LR phase=REV t=1600 target=-500 measured=-530 error=30 ff=-124 p=2 i=39 pwm=-83 limited=0
+[0000104962] [INFO ] PI sample: wheel=LR phase=REV t=1700 target=-500 measured=-527 error=27 ff=-124 p=1 i=40 pwm=-82 limited=0
+[0000105062] [INFO ] PI sample: wheel=LR phase=REV t=1800 target=-500 measured=-530 error=30 ff=-124 p=2 i=41 pwm=-81 limited=0
+[0000105128] [INFO ] BAT: raw=1213 filtered=1212 adc=977mV supply=10747mV state=MONITOR_ONLY samples=1051 errors=0
+[0000105162] [INFO ] PI sample: wheel=LR phase=REV t=1900 target=-500 measured=-521 error=21 ff=-124 p=1 i=41 pwm=-81 limited=0
+[0000105255] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1064/352
+[0000105262] [INFO ] PI sample: wheel=LR phase=REV t=2000 target=-500 measured=-523 error=23 ff=-124 p=1 i=42 pwm=-81 limited=0
+[0000105362] [INFO ] PI sample: wheel=LR phase=REV t=2100 target=-500 measured=-526 error=26 ff=-124 p=1 i=42 pwm=-80 limited=0
+[0000105462] [INFO ] PI sample: wheel=LR phase=REV t=2200 target=-500 measured=-515 error=15 ff=-124 p=1 i=43 pwm=-80 limited=0
+[0000105562] [INFO ] PI sample: wheel=LR phase=REV t=2300 target=-500 measured=-521 error=21 ff=-124 p=1 i=43 pwm=-79 limited=0
+[0000105662] [INFO ] PI sample: wheel=LR phase=REV t=2400 target=-500 measured=-518 error=18 ff=-124 p=1 i=44 pwm=-79 limited=0
+[0000105762] [INFO ] PI sample: wheel=LR phase=REV t=2500 target=-500 measured=-511 error=11 ff=-124 p=1 i=44 pwm=-79 limited=0
+[0000105862] [INFO ] PI sample: wheel=LR phase=REV t=2600 target=-500 measured=-516 error=16 ff=-124 p=1 i=44 pwm=-79 limited=0
+[0000105962] [INFO ] PI sample: wheel=LR phase=REV t=2700 target=-500 measured=-503 error=3 ff=-124 p=0 i=44 pwm=-79 limited=0
+[0000106062] [INFO ] PI sample: wheel=LR phase=REV t=2800 target=-500 measured=-504 error=4 ff=-124 p=0 i=44 pwm=-79 limited=0
+[0000106162] [INFO ] PI sample: wheel=LR phase=REV t=2900 target=-500 measured=-511 error=11 ff=-124 p=1 i=45 pwm=-79 limited=0
+[0000106262] [INFO ] PI sample: wheel=LR phase=REV t=3000 target=-500 measured=-502 error=2 ff=-124 p=0 i=45 pwm=-79 limited=0
+[0000106277] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1064/352
+[0000106362] [INFO ] PI sample: wheel=LR phase=REV t=3100 target=-500 measured=-504 error=4 ff=-124 p=0 i=45 pwm=-79 limited=0
+[0000106462] [INFO ] PI sample: wheel=LR phase=REV t=3200 target=-500 measured=-511 error=11 ff=-124 p=1 i=45 pwm=-78 limited=0
+[0000106562] [INFO ] PI sample: wheel=LR phase=REV t=3300 target=-500 measured=-502 error=2 ff=-124 p=0 i=45 pwm=-78 limited=0
+[0000106662] [INFO ] PI sample: wheel=LR phase=REV t=3400 target=-500 measured=-500 error=0 ff=-124 p=0 i=45 pwm=-78 limited=0
+[0000106762] [INFO ] PI sample: wheel=LR phase=REV t=3500 target=-500 measured=-507 error=7 ff=-124 p=0 i=45 pwm=-78 limited=0
+[0000106862] [INFO ] PI sample: wheel=LR phase=REV t=3600 target=-500 measured=-501 error=1 ff=-124 p=0 i=45 pwm=-78 limited=0
+[0000106962] [INFO ] PI sample: wheel=LR phase=REV t=3700 target=-500 measured=-500 error=0 ff=-124 p=0 i=45 pwm=-78 limited=0
+[0000107062] [INFO ] PI sample: wheel=LR phase=REV t=3800 target=-500 measured=-504 error=4 ff=-124 p=0 i=46 pwm=-78 limited=0
+[0000107162] [INFO ] PI sample: wheel=LR phase=REV t=3900 target=-500 measured=-501 error=1 ff=-124 p=0 i=46 pwm=-78 limited=0
+[0000107255] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1064/352
+[0000107262] [INFO ] PI result: wheel=LR dir=REV target=-500 avg=-508 min=-526 max=-500 final=-510 avg_error=8 max_pwm=140 samples=100
+[0000107682] [INFO ] PI test completed: wheel=LR; motor outputs disabled
+[0000107850] [INFO ] ENC L: LF raw=0 d=0 total=0 dir=STOP | LR raw=4294967020 d=0 total=-276 dir=STOP
+[0000107859] [INFO ] ENC R: RF raw=0 d=0 total=0 dir=STOP | RR raw=65342 d=0 total=194 dir=STOP
+[0000107867] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000107877] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000107887] [INFO ] IMU RAW: a=[149,9,8480] temp=2456 g=[-54,17,146] samples=10756 errors=0
+[0000107895] [INFO ] IMU SI: a_mmps2=[178,10,10151] w_mrads=[-14,4,38] temp_mC=28356 bias=0
+[0000107903] [INFO ] IMU QUALITY: epoch=1 drdy=10778 missed=0 race=0 timeout=0 cal=0 persist=0
+[0000107982] [INFO ] LR test disarmed; all motor outputs disabled
+[0000108049] [INFO ] ENC L: LF raw=0 d=0 total=0 dir=STOP | LR raw=4294967020 d=0 total=-276 dir=STOP
+[0000108058] [INFO ] ENC R: RF raw=0 d=0 total=0 dir=STOP | RR raw=65342 d=0 total=194 dir=STOP
+[0000108067] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000108076] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000108243] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1064/352
+[0000108253] [INFO ] ENC L: LF raw=0 d=0 total=0 dir=STOP | LR raw=4294967020 d=0 total=-276 dir=STOP
+[0000108262] [INFO ] ENC R: RF raw=0 d=0 total=0 dir=STOP | RR raw=65342 d=0 total=194 dir=STOP
+[0000108271] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000108280] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000108443] [INFO ] ENC L: LF raw=0 d=0 total=0 dir=STOP | LR raw=4294967020 d=0 total=-276 dir=STOP
+[0000108452] [INFO ] ENC R: RF raw=0 d=0 total=0 dir=STOP | RR raw=65342 d=0 total=194 dir=STOP
+[0000108461] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000108470] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000108622] [INFO ] LR test disarmed; all motor outputs disabled
+[0000108649] [INFO ] ENC L: LF raw=0 d=0 total=0 dir=STOP | LR raw=4294967020 d=0 total=-276 dir=STOP
+[0000108658] [INFO ] ENC R: RF raw=0 d=0 total=0 dir=STOP | RR raw=65342 d=0 total=194 dir=STOP
+[0000108667] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000108676] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000108843] [INFO ] ENC L: LF raw=0 d=0 total=0 dir=STOP | LR raw=4294967020 d=0 total=-276 dir=STOP
+[0000108852] [INFO ] ENC R: RF raw=0 d=0 total=0 dir=STOP | RR raw=65342 d=0 total=194 dir=STOP
+[0000108861] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000108870] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000108880] [INFO ] IMU RAW: a=[157,-14,8466] temp=2461 g=[-57,20,142] samples=10855 errors=0
+[0000108889] [INFO ] IMU SI: a_mmps2=[187,-16,10134] w_mrads=[-15,5,37] temp_mC=28371 bias=0
+[0000108897] [INFO ] IMU QUALITY: epoch=1 drdy=10877 missed=0 race=0 timeout=0 cal=0 persist=0
+[0000109043] [INFO ] ENC L: LF raw=0 d=0 total=0 dir=STOP | LR raw=4294967020 d=0 total=-276 dir=STOP
+[0000109052] [INFO ] ENC R: RF raw=0 d=0 total=0 dir=STOP | RR raw=65342 d=0 total=194 dir=STOP
+[0000109061] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000109070] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1

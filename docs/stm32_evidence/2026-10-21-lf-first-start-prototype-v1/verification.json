@@ -1,0 +1,55 @@
+{
+  "kind": "OFFLINE_PROTOTYPE_ONLY_NOT_A_FIRMWARE_RELEASE",
+  "native_pass_groups": 47,
+  "usb_pass_groups": 20,
+  "production_source_test_hashes_unchanged": 137,
+  "production_hex_unchanged": true,
+  "serial_opened": false,
+  "motion_sent": false,
+  "firmware_linked": false,
+  "flashed": false,
+  "hardware_tested": false,
+  "warnings": 0,
+  "isolation_updates": 120010,
+  "ARM_object_size": "   text\t   data\t    bss\t    dec\t    hex\tfilename\n   5738\t      0\t    288\t   6026\t   178a\tE:\\DEMO\\rosDemo\\build\\prototypes\\lf_first_start_v1\\baseline_arm.o\n   6418\t      0\t    300\t   6718\t   1a3e\tE:\\DEMO\\rosDemo\\build\\prototypes\\lf_first_start_v1\\candidate_arm.o\n",
+  "static_stack_lines": {
+    "baseline": [
+      "E:\\DEMO\\rosDemo\\docs\\stm32_evidence\\2026-10-21-v01817-lf-start-review\\source_snapshot\\wheel_speed_controller.c:148:14:WheelSpeedController_FrontSupport\t152\tstatic",
+      "E:\\DEMO\\rosDemo\\docs\\stm32_evidence\\2026-10-21-v01817-lf-start-review\\source_snapshot\\wheel_speed_controller.c:419:6:WheelSpeedController_UpdateWithMode\t96\tstatic"
+    ],
+    "candidate": [
+      "E:\\DEMO\\rosDemo\\docs\\stm32_evidence\\2026-10-21-lf-first-start-prototype-v1\\prototype\\wheel_speed_controller.c:164:14:WheelSpeedController_FrontSupport\t160\tstatic",
+      "E:\\DEMO\\rosDemo\\docs\\stm32_evidence\\2026-10-21-lf-first-start-prototype-v1\\prototype\\wheel_speed_controller.c:480:6:WheelSpeedController_UpdateWithMode\t96\tstatic"
+    ]
+  },
+  "files": {
+    "compare_recorded.py": "1777f2de1b47f064e20ad779317146d931ea48c0e3589e7821f5a5897981d4ed",
+    "first_baseline_commands.csv": "158942532e0cd5fec2d18f3ab44b1886a09266970f77306ef285176d5999b5df",
+    "first_prototype_commands.csv": "46879b38a444cd4aed93fc84684434895a4c91235d08eacd8db203d5e8ba0935",
+    "README.md": "547c9b3424f9c64d2dd68bfcb60a11d3518523afccd416de75d24cc57007df30",
+    "recorded_comparison.json": "70058a01efb651aea3e96b7457dbca5233f4a4f667368257d275d0c75e0663d2",
+    "repeat_baseline_commands.csv": "a5ee7eeac6f6246996436accbe50b9d32203294c4426edc037788d360c928113",
+    "repeat_prototype_commands.csv": "dc2fc214e33bd0d7dc5969ab976fbf72391bdeaea835718236f2bec49c250fa0",
+    "run_tests.py": "6490143da5dbe23f72c8f26f8ef18c9d46b6fd35ef0fec71745cbad58f3c348b",
+    "start_replay.c": "5791b32b7ad0869513d7d8629f9ead140b33579a8f7fbdbab1aefea6cda9f441",
+    "test_extended_safety.c": "a5284070c566a8556a0a39142273fb08c828f668a15e7d5599b19f303bf198b7",
+    "test_isolation.c": "9305e008aeba4b3b3cce1879ddcec4ccafc50bfb1f7a794a1be7ee84a91e029a",
+    "test_policy.c": "bb4f6f2541dd089dfa32ba2ec409036f39869f74338a4d0d7622c33beb7ef196",
+    "prototype\\chassis_config.h": "d135bb847057595bf6965408e8ab3a7e47ecfb0b2e1c85bba4a2cf3e8b383047",
+    "prototype\\chassis_kinematics.c": "635dc4c5b19f7625bc7df5e36d2bbfa6ac659ca1e3b38103f8c0b19317c1dba3",
+    "prototype\\chassis_kinematics.h": "b5a00bf6c1abd1b66697ec9fb35e6116516faf5c4d8445cb80b6a74819dff505",
+    "prototype\\chassis_motion_profile.c": "2c40a85f702a00649516304f71bf725eaae0bd749769de1128303230ba6c47ea",
+    "prototype\\chassis_motion_profile.h": "7a4f5bed9b3f09eec0b056ab9a121b5e882fb8c82a08db3733d37d4f3c78a3ee",
+    "prototype\\motor_driver.h": "906df9369cabea75a3913541fd52271ef7bb877a4e7513f0b184e0418681429a",
+    "prototype\\wheel_speed_controller.c": "0c902100d0bdebc1644c453759958bdf3883bc2d8dc6baaa62151f452e497aa3",
+    "prototype\\wheel_speed_controller.h": "836110055ab2e64a459942dc2dc433c46b8b916879b47bb6c127530286bb9171",
+    "prototype\\wheel_speed_control_config.h": "77a2fb5dd66d7a8fdba42094ab48241612d823c8828b4b972164c0ab04000063",
+    "regression\\test_coordination.c": "363f38fb5a3f2221770f5deb172c662ae71f2e9ad7eae5184907cc2fb268daa3"
+  },
+  "limits": [
+    "Recorded/artificial feedback is not a plant model.",
+    "Only LF reverse first start changes; not confirmed moving LF/RF/rear/NORMAL.",
+    "600ms cap applies to special first-start extension; late entry keeps old 300ms path.",
+    "Object compilation is not linked firmware or hardware timing/stack proof."
+  ]
+}

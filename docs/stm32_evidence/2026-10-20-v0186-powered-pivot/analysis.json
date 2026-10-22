@@ -1,0 +1,432 @@
+{
+  "LEFT": {
+    "trace_headers": 128,
+    "complete_active_samples": 127,
+    "time_span_ms": [
+      62542,
+      65062
+    ],
+    "dt_ms": [
+      20
+    ],
+    "req_w": [
+      200
+    ],
+    "applied_w": [
+      200
+    ],
+    "wheels": {
+      "LF": {
+        "target": {
+          "mean": -160,
+          "min": -160,
+          "max": -160
+        },
+        "cps": {
+          "mean": -212.69,
+          "min": -377,
+          "max": 0
+        },
+        "raw": {
+          "mean": -209.45,
+          "min": -400,
+          "max": 0
+        },
+        "pwm": {
+          "mean": -155.84,
+          "min": -188,
+          "max": -141
+        },
+        "ff_x10": {
+          "mean": -1089.43,
+          "min": -1298,
+          "max": -937
+        },
+        "p_x10": {
+          "mean": 26.08,
+          "min": -80,
+          "max": 108
+        },
+        "i_x10": {
+          "mean": -495.81,
+          "min": -500,
+          "max": -489
+        },
+        "near_zero_filtered_samples": 15,
+        "integrator_limit_samples": 35,
+        "ff_changes": 99
+      },
+      "LR": {
+        "target": {
+          "mean": -160,
+          "min": -160,
+          "max": -160
+        },
+        "cps": {
+          "mean": -266.62,
+          "min": -466,
+          "max": -17
+        },
+        "raw": {
+          "mean": -262.6,
+          "min": -500,
+          "max": 0
+        },
+        "pwm": {
+          "mean": -90.51,
+          "min": -141,
+          "max": -71
+        },
+        "ff_x10": {
+          "mean": -809.87,
+          "min": -1339,
+          "max": -739
+        },
+        "p_x10": {
+          "mean": 52.99,
+          "min": -71,
+          "max": 152
+        },
+        "i_x10": {
+          "mean": -152.81,
+          "min": -485,
+          "max": 100
+        },
+        "near_zero_filtered_samples": 1,
+        "integrator_limit_samples": 0,
+        "ff_changes": 2
+      },
+      "RF": {
+        "target": {
+          "mean": 160,
+          "min": 160,
+          "max": 160
+        },
+        "cps": {
+          "mean": 205.38,
+          "min": 7,
+          "max": 413
+        },
+        "raw": {
+          "mean": 207.48,
+          "min": 0,
+          "max": 550
+        },
+        "pwm": {
+          "mean": 129.57,
+          "min": 109,
+          "max": 184
+        },
+        "ff_x10": {
+          "mean": 908.71,
+          "min": 782,
+          "max": 1382
+        },
+        "p_x10": {
+          "mean": -22.53,
+          "min": -126,
+          "max": 76
+        },
+        "i_x10": {
+          "mean": 413.07,
+          "min": 299,
+          "max": 496
+        },
+        "near_zero_filtered_samples": 4,
+        "integrator_limit_samples": 0,
+        "ff_changes": 23
+      },
+      "RR": {
+        "target": {
+          "mean": 160,
+          "min": 160,
+          "max": 160
+        },
+        "cps": {
+          "mean": 236.54,
+          "min": 0,
+          "max": 459
+        },
+        "raw": {
+          "mean": 237.01,
+          "min": 0,
+          "max": 550
+        },
+        "pwm": {
+          "mean": 106.64,
+          "min": 80,
+          "max": 154
+        },
+        "ff_x10": {
+          "mean": 917.71,
+          "min": 842,
+          "max": 1442
+        },
+        "p_x10": {
+          "mean": -38.04,
+          "min": -149,
+          "max": 80
+        },
+        "i_x10": {
+          "mean": 191.19,
+          "min": -23,
+          "max": 489
+        },
+        "near_zero_filtered_samples": 6,
+        "integrator_limit_samples": 0,
+        "ff_changes": 12
+      }
+    },
+    "source_gap_min_max_ms": [
+      20,
+      20
+    ],
+    "usb_wheel_net_counts": [
+      -1137,
+      -1566,
+      1326,
+      1356
+    ],
+    "usb_steady_cps_mean": [
+      -208.18,
+      -264,
+      212.38,
+      222.32
+    ],
+    "status_states": [
+      2
+    ],
+    "status_flags": [
+      369
+    ],
+    "status_faults": [
+      [
+        0,
+        0
+      ]
+    ],
+    "status_command_accepted_rejected_end": [
+      119,
+      0
+    ],
+    "supply_mV_min_max": [
+      10417,
+      10780
+    ]
+  },
+  "RIGHT": {
+    "trace_headers": 128,
+    "complete_active_samples": 127,
+    "time_span_ms": [
+      101522,
+      104042
+    ],
+    "dt_ms": [
+      20
+    ],
+    "req_w": [
+      -200
+    ],
+    "applied_w": [
+      -200
+    ],
+    "wheels": {
+      "LF": {
+        "target": {
+          "mean": 160,
+          "min": 160,
+          "max": 160
+        },
+        "cps": {
+          "mean": 132.62,
+          "min": 9,
+          "max": 305
+        },
+        "raw": {
+          "mean": 137.01,
+          "min": 0,
+          "max": 350
+        },
+        "pwm": {
+          "mean": 150.22,
+          "min": 142,
+          "max": 193
+        },
+        "ff_x10": {
+          "mean": 990.19,
+          "min": 937,
+          "max": 1352
+        },
+        "p_x10": {
+          "mean": 13.35,
+          "min": -72,
+          "max": 75
+        },
+        "i_x10": {
+          "mean": 499.13,
+          "min": 474,
+          "max": 500
+        },
+        "near_zero_filtered_samples": 3,
+        "integrator_limit_samples": 109,
+        "ff_changes": 19
+      },
+      "LR": {
+        "target": {
+          "mean": 160,
+          "min": 160,
+          "max": 160
+        },
+        "cps": {
+          "mean": 166.47,
+          "min": 70,
+          "max": 253
+        },
+        "raw": {
+          "mean": 167.72,
+          "min": 0,
+          "max": 300
+        },
+        "pwm": {
+          "mean": 89.43,
+          "min": 82,
+          "max": 98
+        },
+        "ff_x10": {
+          "mean": 689,
+          "min": 689,
+          "max": 689
+        },
+        "p_x10": {
+          "mean": -3.13,
+          "min": -46,
+          "max": 45
+        },
+        "i_x10": {
+          "mean": 207.47,
+          "min": 162,
+          "max": 263
+        },
+        "near_zero_filtered_samples": 0,
+        "integrator_limit_samples": 0,
+        "ff_changes": 0
+      },
+      "RF": {
+        "target": {
+          "mean": -160,
+          "min": -160,
+          "max": -160
+        },
+        "cps": {
+          "mean": -195.26,
+          "min": -389,
+          "max": -6
+        },
+        "raw": {
+          "mean": -199.61,
+          "min": -450,
+          "max": 0
+        },
+        "pwm": {
+          "mean": -139.64,
+          "min": -193,
+          "max": -117
+        },
+        "ff_x10": {
+          "mean": -939.7,
+          "min": -1396,
+          "max": -796
+        },
+        "p_x10": {
+          "mean": 17.43,
+          "min": -76,
+          "max": 114
+        },
+        "i_x10": {
+          "mean": -478.08,
+          "min": -500,
+          "max": -413
+        },
+        "near_zero_filtered_samples": 5,
+        "integrator_limit_samples": 27,
+        "ff_changes": 52
+      },
+      "RR": {
+        "target": {
+          "mean": -160,
+          "min": -160,
+          "max": -160
+        },
+        "cps": {
+          "mean": -235.31,
+          "min": -460,
+          "max": -8
+        },
+        "raw": {
+          "mean": -236.61,
+          "min": -500,
+          "max": 0
+        },
+        "pwm": {
+          "mean": -106.32,
+          "min": -164,
+          "max": -85
+        },
+        "ff_x10": {
+          "mean": -888.81,
+          "min": -1411,
+          "max": -811
+        },
+        "p_x10": {
+          "mean": 37.54,
+          "min": -76,
+          "max": 149
+        },
+        "i_x10": {
+          "mean": -215.96,
+          "min": -488,
+          "max": -52
+        },
+        "near_zero_filtered_samples": 3,
+        "integrator_limit_samples": 0,
+        "ff_changes": 13
+      }
+    },
+    "source_gap_min_max_ms": [
+      20,
+      20
+    ],
+    "usb_wheel_net_counts": [
+      970,
+      1342,
+      -1223,
+      -1580
+    ],
+    "usb_steady_cps_mean": [
+      135.53,
+      190.64,
+      -202.69,
+      -270.24
+    ],
+    "status_states": [
+      2
+    ],
+    "status_flags": [
+      369
+    ],
+    "status_faults": [
+      [
+        0,
+        0
+      ]
+    ],
+    "status_command_accepted_rejected_end": [
+      239,
+      0
+    ],
+    "supply_mV_min_max": [
+      10428,
+      10780
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "target_actual_cps": 240.642288208,
+  "nominal_filter_ms": 50,
+  "sample_ms": 20,
+  "raw_one_count_quantum_cps": 50,
+  "window40_one_count_quantum_cps": 25,
+  "first_recovered_count_ms": 162682,
+  "first_raw_over_target_plus_margin_ms": 162762,
+  "first_40ms_count_window_over_target_plus_margin_ms": 162762,
+  "first_two_consecutive_raw_over_margin_ms": 162782,
+  "first_filtered_over_target_ms": 162802,
+  "raw_margin_to_filtered_delay_ms": 40,
+  "window40_margin_to_filtered_delay_ms": 40,
+  "raw_two_sample_margin_to_filtered_delay_ms": 20,
+  "combined_FF_I_at_162642": 156.870950698,
+  "combined_FF_I_at_162782": 156.870942116,
+  "I_increase_during_handoff_permille": 2.4000005730000016,
+  "note": "Earlier raw/window detections are diagnostic comparisons, not proposed or validated new control thresholds."
+}

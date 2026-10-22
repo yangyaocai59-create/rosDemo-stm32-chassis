@@ -1,0 +1,105 @@
+{
+  "scope": "failed single left run; never a tracking PASS or six-second completed test",
+  "active_frames": 87,
+  "active_time_ms": [
+    547462,
+    549182
+  ],
+  "fault_frame_time_ms": 549202,
+  "wheel": {
+    "LF": {
+      "sum_dc": -3,
+      "nonzero_dc_frames": 3,
+      "pwm_min_max": [
+        -183,
+        -20
+      ],
+      "max_zero_dc_frame_accounting_ms": 1500,
+      "max_near_rest_frame_accounting_ms": 1500
+    },
+    "LR": {
+      "sum_dc": -527,
+      "nonzero_dc_frames": 83,
+      "pwm_min_max": [
+        -145,
+        -20
+      ],
+      "max_zero_dc_frame_accounting_ms": 80,
+      "max_near_rest_frame_accounting_ms": 100
+    },
+    "RF": {
+      "sum_dc": 370,
+      "nonzero_dc_frames": 83,
+      "pwm_min_max": [
+        20,
+        132
+      ],
+      "max_zero_dc_frame_accounting_ms": 80,
+      "max_near_rest_frame_accounting_ms": 100
+    },
+    "RR": {
+      "sum_dc": 592,
+      "nonzero_dc_frames": 79,
+      "pwm_min_max": [
+        20,
+        167
+      ],
+      "max_zero_dc_frame_accounting_ms": 160,
+      "max_near_rest_frame_accounting_ms": 180
+    }
+  },
+  "commands_sent": 37,
+  "fault_status_before_host_stop": true,
+  "first_fault_status_host_motion_elapsed_s": 1.8130000000001019,
+  "host_stop_motion_elapsed_s": 1.8280000000013388,
+  "source_files_checked": 137,
+  "final_status": [
+    744574,
+    275,
+    275,
+    2,
+    59,
+    3,
+    5,
+    6,
+    0,
+    464,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    517,
+    0,
+    0,
+    0
+  ],
+  "final_wheel": [
+    744562,
+    10,
+    -572,
+    372,
+    615,
+    0,
+    0,
+    0,
+    0
+  ],
+  "read_only_get_status_count": 59,
+  "user_observation": "没看清，无法确认",
+  "limits": [
+    "No independent visual confirmation; counts are feedback evidence, not proof of a physical seizure.",
+    "Same wheel-mask log can result from legacy stall or exhausted-front recovery; private fault branch not telemetered.",
+    "87 ACTIVE frames include startup ramp, not the steady 2.54-second window of completed tests.",
+    "No fault clear, retry, calibration, firmware edit or flashing occurred."
+  ],
+  "input_sha256": {
+    "motion_capture\\ch340.log": "3cee188fa0dd9d7e98f5036741f12bb79ba42e46c8c24d102f06efd84cb249d5",
+    "motion_capture\\decoded.json": "859cb2997dba05ba0749e8c1f6c51ae652cf4b2778a65fe741b20d126ff365c0",
+    "motion_capture\\summary.json": "a2fdb1df66a3251aed148fefffde9d65e5ab5076b6c7171c24dc8ecfb94c74b0",
+    "fault_trace\\ch340.log": "fa7a6d994effb566a50e1b695a0382b7bf4673aa21ec708e6d8820ea7448686d",
+    "fault_trace\\trace_parsed.json": "1da3a37a91397e31bf93f0110722edd9644e619fb54c4165796ab35662880f8d",
+    "fault_trace\\summary.json": "a9554b4dca31d832cb73d071b5fb75b2839ff64f03b4aebe4428c10bfaf61e56"
+  }
+}

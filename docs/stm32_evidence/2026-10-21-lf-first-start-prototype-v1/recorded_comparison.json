@@ -1,0 +1,65 @@
+{
+  "kind": "COMMAND_COMPARISON_ON_FIXED_RECORDED_FEEDBACK_NOT_A_PHYSICAL_PREDICTION",
+  "trials": {
+    "first": {
+      "source_sha256": "1da3a37a91397e31bf93f0110722edd9644e619fb54c4165796ab35662880f8d",
+      "baseline": {
+        "samples": 87,
+        "peak_pwm_abs": 183.0,
+        "peak_recovery_permille": 39.0,
+        "recovery_entry_ms": 547522,
+        "recovery_exit_ms": 547822,
+        "full_support_first_ms": null,
+        "full_support_frame_accounting_ms": 0,
+        "failure_ms": 549182,
+        "first_elapsed_at_exit": null,
+        "full_hold_at_exit": null
+      },
+      "prototype": {
+        "samples": 87,
+        "peak_pwm_abs": 209.0,
+        "peak_recovery_permille": 50.0,
+        "recovery_entry_ms": 547522,
+        "recovery_exit_ms": 548022,
+        "full_support_first_ms": 547922,
+        "full_support_frame_accounting_ms": 100,
+        "failure_ms": 549182,
+        "first_elapsed_at_exit": 560.0,
+        "full_hold_at_exit": 100.0
+      }
+    },
+    "repeat": {
+      "source_sha256": "6510782049fcf5288b589b653d43daed985764f4801e5153b56fd01e670cf02d",
+      "baseline": {
+        "samples": 86,
+        "peak_pwm_abs": 183.0,
+        "peak_recovery_permille": 27.0,
+        "recovery_entry_ms": 1285342,
+        "recovery_exit_ms": 1285642,
+        "full_support_first_ms": null,
+        "full_support_frame_accounting_ms": 0,
+        "failure_ms": 1286982,
+        "first_elapsed_at_exit": null,
+        "full_hold_at_exit": null
+      },
+      "prototype": {
+        "samples": 86,
+        "peak_pwm_abs": 209.0,
+        "peak_recovery_permille": 50.0,
+        "recovery_entry_ms": 1285342,
+        "recovery_exit_ms": 1285842,
+        "full_support_first_ms": 1285742,
+        "full_support_frame_accounting_ms": 100,
+        "failure_ms": 1286982,
+        "first_elapsed_at_exit": 560.0,
+        "full_hold_at_exit": 100.0
+      }
+    }
+  },
+  "limits": [
+    "The same feedback is forced into both controllers. Real feedback could differ.",
+    "Higher/longer commanded effort is intentional but not evidence the real wheel starts.",
+    "Failure time remains unchanged for these fixed inputs; no safety gate relaxed.",
+    "No serial, motion, production file modification, firmware link or flash."
+  ]
+}

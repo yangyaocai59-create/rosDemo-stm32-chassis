@@ -1,0 +1,29 @@
+PASS: explicit front/direction pivot load table, zero and 1/20/80/160/280/1600 cps ramp/clamp, rear zero; NORMAL/legacy feedforward remains original, invalid lookup rejected
+PASS: stale caller/new heartbeat, true 250/251ms timeout, latch/clear and tick wrap
+PASS: bounded linear/angular startup, reversal crosses zero, invalid dt/NaN rejected
+PASS: all four production PI outputs obey slew across reversal/zero, immediate Reset and finite inputs
+PASS: all wheels/both directions conserve FF+I and PWM at assist release; bounded residual holds at equilibrium, unwinds with error, invalid inputs rejected
+PASS: four-wheel bidirectional pivot overspeed damping; unchanged startup/underspeed/normal gains, no reverse braking, slew/integral/output limits and invalid-mode guard
+PASS: no overdue catch-up loop, exact deadline/late slots, timing statistics and tick wrap
+PASS: 1000 same-direction updates write only nonzero CCR, no GPIO/STBY/zero pulses
+PASS: immediate GPIO coast despite active preload, >=2-tick reversal/re-enable guard, no wait
+PASS: guard tick wrap, ESTOP rejects output and clears STBY immediately
+PASS: real runtime+controller/profile persistent 40mm/s, no re-enable/reset, bounded trace wrap/freeze/dump
+PASS: explicit STOP, zero, transport loss, exact 250ms timeout, health fault and ESTOP bypass ramp immediately
+PASS: STOP preempts stale IDLE/start, ACTIVE step, timing fault and safety snapshot; no restart or replacement fault
+PASS: compact safety snapshot preserves active/fault, NULL validation and nested timing-fault shutdown
+PASS: real >100ms control timing fault still disables output; source/profile tick wrap works
+PASS: production pivot release conserves FF+I through integral clamp; equilibrium has no recurring release step; reversal/STOP/straight restart/250ms timeout clear maneuver state
+PASS: real chassis selects damping in pivot and baseline gains for rolling turn; no profile leaks across mode switch
+PASS: rear-only restart top-up accounts for integral/retained bias, bounded 80ms/40ms escalation, both signs and tick wrap; rear first kick/mode exit/reversal/STOP/timeout preserved
+PASS: rear restart withdraws transient at 40ms after motion, no copy into I; bounded 4 permille/20ms decay; rear first kick keeps 300ms hold
+PASS: rear 49/50cps release and stationary-only increase boundaries; late update adds one step, no overdue catch-up, both signs/tick wrap
+PASS: restart-only assist decays to zero without integral transfer; 49cps pause, rearm without stacking, actual-dt decay, both signs/wrap; legacy steady support retained
+PASS: real chassis front support uses one policy, bounded target ramps; sign/mode/STOP/tick-wrap clear state, normal FF and rear regression assertions retained
+PASS: active front recovery cannot survive STOP/zero/transport loss/health fault/ESTOP/exact 250ms timeout/timing fault/overspeed, including tick wrap
+PASS: both fronts/both signs unload to zero, opposing-I debt and positive-I rebase conserve support; bounded recovery reclassifies rather than piles I
+PASS: 60ms consecutive near-rest, 40ms moving rearm, 300ms timeout+finite fade, no repeated retries at rest, no boost on opposite motion
+PASS: 8000 adversarial target/feedback/dt steps obey load/transient/I/output/slew bounds; sign/mode/zero/reset and invalid inputs clear/preserve state correctly
+PASS: both fronts/signs at 20/40/160/199/200/280 cps and 1/10/20/100ms dt qualify failure at 1500ms, sticky until reset/sign/mode exit; real movement interrupts qualification
+PASS: real front policy/fault manager/runtime trip on both fronts/directions at approximately 20/160/280 cps, including tick wrap; all outputs disabled, latch/reject/explicit clear/new command verified
+PASS: recovery before deadline, moving pivot, rear and NORMAL isolation; legacy 1000ms grace + 750ms stall detection preserved

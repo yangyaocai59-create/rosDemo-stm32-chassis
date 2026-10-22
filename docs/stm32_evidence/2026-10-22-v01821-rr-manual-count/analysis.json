@@ -1,0 +1,44 @@
+{
+  "result": "RR_MANUAL_BASIC_MAPPING_DIRECTION_SCALE_CONSISTENT_NOT_POWERED_VALIDATION",
+  "nominal_counts_per_turn": 1560,
+  "forward_3_turns": 4689,
+  "reverse_3_turns": -4681,
+  "forward_per_turn": 1563.0,
+  "reverse_magnitude_per_turn": 1560.3333333333333,
+  "forward_nominal_error_percent": 0.19230769230769162,
+  "reverse_nominal_error_percent": 0.02136752136752129,
+  "round_trip_residual_counts": 8,
+  "round_trip_equivalent_nominal_wheel_degrees": 1.8461538461538463,
+  "UART_normalized_total_equals_USB_at_all_three_stopped_endpoints": true,
+  "RR_raw_16bit_delta_and_normalized_sign_consistent": true,
+  "other_three_counts_constant_across_all_USB_wheel_frames": true,
+  "wheel_frames": 2698,
+  "status_frames": 1462,
+  "GET_STATUS_commands": 270,
+  "raw_stream_redecoded_matches_logged_wheel_frames": true,
+  "host_crc_errors": 0,
+  "command_sequence_accepted_rejected_unchanged": true,
+  "all_observed_status_IDLE_fault_free_output_disabled": true,
+  "final_counts": [
+    -850,
+    -1709,
+    1326,
+    1647
+  ],
+  "final_speeds": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "ports_closed": true,
+  "powered_motion_sent": false,
+  "firmware_modified": false,
+  "limitations": [
+    "Turn count and marker alignment are operator-reported, not an independent precision angle measurement.",
+    "Eight counts are about1.85deg of nominal wheel angle; hand positioning/gear lash and actual measurement error are not separated.",
+    "This does not prove exact1560counts/rev or absence of every missing pulse.",
+    "No powered/loaded test, motor-drive electrical interference diagnosis, all-four-wheel scale calibration, ROS odometry or traction acceptance.",
+    "Do not adjust the encoder divisor or declare the previous140ms powered feedback gap fixed from this result."
+  ]
+}

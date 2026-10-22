@@ -1,0 +1,103 @@
+{
+  "capture_result": "COMPLETE_NOT_A_TRACKING_PASS",
+  "motion_kind": "pivot",
+  "duration_s_each": 6,
+  "angular_command_mrad_s": 200,
+  "linear_command_mm_s": 0,
+  "directions": [
+    {
+      "direction": "LEFT",
+      "requested_v_mm_s": 0,
+      "requested_w_mrad_s": 200,
+      "commands_sent": 120,
+      "status_samples": 60,
+      "supply_mV_min_max": [
+        10659,
+        10736
+      ],
+      "stopped_status": [
+        700334,
+        600,
+        600,
+        0,
+        134,
+        1,
+        0,
+        2,
+        0,
+        336,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        942,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "direction": "RIGHT",
+      "requested_v_mm_s": 0,
+      "requested_w_mrad_s": -200,
+      "commands_sent": 120,
+      "status_samples": 60,
+      "supply_mV_min_max": [
+        10659,
+        10736
+      ],
+      "stopped_status": [
+        739252,
+        720,
+        720,
+        0,
+        321,
+        1,
+        0,
+        2,
+        0,
+        336,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1129,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "errors": [],
+  "focused_left_repeat": false,
+  "focused_left_only": false,
+  "focused_right_only": false,
+  "physical_setup": "lifted",
+  "final_status": [
+    771796,
+    720,
+    720,
+    0,
+    387,
+    1,
+    0,
+    2,
+    0,
+    336,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1195,
+    0,
+    0,
+    0
+  ],
+  "host_crc_errors": 0
+}

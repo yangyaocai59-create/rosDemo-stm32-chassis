@@ -1,0 +1,24 @@
+test_failures_and_missing (test_imu_quality.QualityTest.test_failures_and_missing) ... ok
+test_stable_window_not_absolute_zero_or_flash_claim (test_imu_quality.QualityTest.test_stable_window_not_absolute_zero_or_flash_claim) ... ok
+test_tick_and_counter_wrap_and_window (test_imu_quality.QualityTest.test_tick_and_counter_wrap_and_window) ... ok
+test_ack_and_raw_suffix_preserved_exactly_once (test_imu_raw_capture.MixedReadTest.test_ack_and_raw_suffix_preserved_exactly_once) ... ok
+test_counter_and_timestamp_wrap (test_imu_raw_drift.RawDriftTest.test_counter_and_timestamp_wrap) ... ok
+test_exact_conversion_and_duplicates (test_imu_raw_drift.RawDriftTest.test_exact_conversion_and_duplicates) ... ok
+test_fractional_mean_not_rounded_si (test_imu_raw_drift.RawDriftTest.test_fractional_mean_not_rounded_si) ... ok
+test_reject_changed_baseline_or_error (test_imu_raw_drift.RawDriftTest.test_reject_changed_baseline_or_error) ... ok
+test_reject_reset_stale_inconsistent_invalid (test_imu_raw_drift.RawDriftTest.test_reject_reset_stale_inconsistent_invalid) ... ok
+test_fragmentation_crc_sequence (test_imu_raw_protocol.ImuRawProtocolTest.test_fragmentation_crc_sequence) ... ok
+test_invalid_schema_scale_bias (test_imu_raw_protocol.ImuRawProtocolTest.test_invalid_schema_scale_bias) ... ok
+test_legacy_and_selector_unchanged (test_imu_raw_protocol.ImuRawProtocolTest.test_legacy_and_selector_unchanged) ... ok
+test_signed_offsets_and_si (test_imu_raw_protocol.ImuRawProtocolTest.test_signed_offsets_and_si) ... ok
+test_all_splits_crc (test_imu_raw_v2.RawV2Test.test_all_splits_crc) ... ok
+test_exact_signed_baseline_and_si (test_imu_raw_v2.RawV2Test.test_exact_signed_baseline_and_si) ... ok
+test_mixed_units_rejected (test_imu_raw_v2.RawV2Test.test_mixed_units_rejected) ... ok
+test_schema_separation_and_range (test_imu_raw_v2.RawV2Test.test_schema_separation_and_range) ... ok
+test_uart_precise_restore_not_integer_inference (test_imu_raw_v2.RawV2Test.test_uart_precise_restore_not_integer_inference) ... ok
+test_v2_drift_uses_milli_baseline (test_imu_raw_v2.RawV2Test.test_v2_drift_uses_milli_baseline) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.014s
+
+OK

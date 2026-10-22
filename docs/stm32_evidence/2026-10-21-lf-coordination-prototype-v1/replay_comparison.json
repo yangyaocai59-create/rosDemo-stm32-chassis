@@ -1,0 +1,96 @@
+{
+  "kind": "PRESCRIBED_OLD_FEEDBACK_NOT_A_PLANT_OR_NEW_TRACKING_TEST",
+  "wheels": {
+    "LF": {
+      "baseline": {
+        "max_abs_PWM": 185.0,
+        "max_abs_FF_plus_I_step": 12.431361198000019,
+        "max_support": 180.648012162,
+        "max_recovery": 35.0,
+        "failure_samples": 0,
+        "support_at_selected_times": {
+          "291883": 138.020108223,
+          "292023": 116.747930526,
+          "292043": 116.823928833,
+          "292243": 130.648004532,
+          "292343": 175.648012162,
+          "292383": 180.6480093,
+          "292443": 151.576363564,
+          "292543": 120.193190574,
+          "292803": 135.822845459,
+          "292923": 154.822849274
+        }
+      },
+      "prototype": {
+        "max_abs_PWM": 183.0,
+        "max_abs_FF_plus_I_step": 8.43136119799999,
+        "max_support": 179.381257057,
+        "max_recovery": 31.359207153,
+        "failure_samples": 0,
+        "support_at_selected_times": {
+          "291883": 141.55333709800001,
+          "292023": 137.932084083,
+          "292043": 138.00808239,
+          "292243": 149.381257057,
+          "292343": 174.381257057,
+          "292383": 179.381254196,
+          "292443": 154.309608459,
+          "292543": 143.39458274900002,
+          "292803": 155.942987442,
+          "292923": 170.942991257
+        }
+      }
+    },
+    "RF": {
+      "baseline": {
+        "max_abs_PWM": 122.0,
+        "max_abs_FF_plus_I_step": 4.205622673000008,
+        "max_support": 120.19453907,
+        "max_recovery": 0.0,
+        "failure_samples": 0,
+        "support_at_selected_times": {
+          "291883": 101.298932076,
+          "292023": 101.49437809,
+          "292043": 101.656744957,
+          "292243": 103.36914730100001,
+          "292343": 103.83974647599999,
+          "292383": 104.00509739,
+          "292443": 103.971631051,
+          "292543": 104.841750145,
+          "292803": 106.440772056,
+          "292923": 107.01523017900001
+        }
+      },
+      "prototype": {
+        "max_abs_PWM": 122.0,
+        "max_abs_FF_plus_I_step": 4.205622673000008,
+        "max_support": 120.19453907,
+        "max_recovery": 0.0,
+        "failure_samples": 0,
+        "support_at_selected_times": {
+          "291883": 101.298932076,
+          "292023": 101.49437809,
+          "292043": 101.656744957,
+          "292243": 103.36914730100001,
+          "292343": 103.83974647599999,
+          "292383": 104.00509739,
+          "292443": 103.971631051,
+          "292543": 104.841750145,
+          "292803": 106.440772056,
+          "292923": 107.01523017900001
+        }
+      }
+    }
+  },
+  "limits": [
+    "Initial private state inherited from the previous conditional fit, not measured on board.",
+    "All recorded speeds/counts are prescribed. No prediction of new RMS error, stopping intervals or actual overshoot is possible.",
+    "This removes/softens specified algorithmic branch discontinuities only, not proof of closed-loop stability.",
+    "Slower withdrawal and lower combined rise may hurt unloading/startup; real validation remains necessary."
+  ],
+  "sha256": {
+    "docs\\stm32_evidence\\2026-10-21-lf-coordination-prototype-v1\\prototype\\wheel_speed_controller.c": "e282ee4144fb3e4549f7a48727c42073184de0018138caafba9d48ed91ed4c42",
+    "docs\\stm32_evidence\\2026-10-21-v01815-lf-cycle-review\\lf_inferred_replay.csv": "0390a703e80dd66f86f450fa0fa84b02343e6d5f998f46240132cf21dd8c8e7e",
+    "docs\\stm32_evidence\\2026-10-21-v01815-lf-cycle-review\\rf_inferred_replay.csv": "e857c6935eb2bde1040e287b7b8b4ab24bdc538ff8fa62334c6ff777e66da165"
+  }
+}

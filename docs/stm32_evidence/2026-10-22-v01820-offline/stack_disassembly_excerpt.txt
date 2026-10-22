@@ -1,0 +1,4803 @@
+<ChassisController_GetFeedforwardBias>
+ 800f738:	push	{r4, r7, lr}
+ 800f73a:	sub	sp, #92	@ 0x5c
+ 800f73c:	add	r7, sp, #0
+ 800f73e:	str	r0, [r7, #20]
+ 800f740:	vstr	s0, [r7, #12]
+ 800f744:	vstr	s1, [r7, #8]
+ 800f748:	str	r2, [r7, #4]
+ 800f74a:	str	r3, [r7, #0]
+ 800f74c:	mov	r3, r1
+ 800f74e:	strb	r3, [r7, #19]
+ 800f750:	ldr	r0, [r7, #20]
+ 800f752:	bl	800f5dc <ChassisController_IsPivot>
+ 800f756:	mov	r3, r0
+ 800f758:	eor.w	r3, r3, #1
+ 800f75c:	uxtb	r3, r3
+ 800f75e:	cmp	r3, #0
+ 800f760:	beq.n	800f770 <ChassisController_GetFeedforwardBias+0x38>
+ 800f762:	ldrb	r3, [r7, #19]
+ 800f764:	mov	r0, r3
+ 800f766:	bl	800f690 <ChassisController_ClearPivotWheel>
+ 800f76a:	mov.w	r3, #0
+ 800f76e:	b.n	800fca6 <ChassisController_GetFeedforwardBias+0x56e>
+ 800f770:	vldr	s0, [r7, #12]
+ 800f774:	bl	800f5a6 <ChassisController_Abs>
+ 800f778:	vmov.f32	s15, s0
+ 800f77c:	vmov.f32	s14, #52	@ 0x41a00000  20.0
+ 800f780:	vcmpe.f32	s15, s14
+ 800f784:	vmrs	APSR_nzcv, fpscr
+ 800f788:	bpl.n	800f798 <ChassisController_GetFeedforwardBias+0x60>
+ 800f78a:	ldrb	r3, [r7, #19]
+ 800f78c:	mov	r0, r3
+ 800f78e:	bl	800f690 <ChassisController_ClearPivotWheel>
+ 800f792:	mov.w	r3, #0
+ 800f796:	b.n	800fca6 <ChassisController_GetFeedforwardBias+0x56e>
+ 800f798:	vldr	s15, [r7, #12]
+ 800f79c:	vcmpe.f32	s15, #0.0
+ 800f7a0:	vmrs	APSR_nzcv, fpscr
+ 800f7a4:	ble.n	800f7aa <ChassisController_GetFeedforwardBias+0x72>
+ 800f7a6:	movs	r3, #1
+ 800f7a8:	b.n	800f7ae <ChassisController_GetFeedforwardBias+0x76>
+ 800f7aa:	mov.w	r3, #4294967295
+ 800f7ae:	strb.w	r3, [r7, #79]	@ 0x4f
+ 800f7b2:	ldrb	r3, [r7, #19]
+ 800f7b4:	ldr	r2, [pc, #664]	@ (800fa50 <ChassisController_GetFeedforwardBias+0x318>)
+ 800f7b6:	ldrsb	r3, [r2, r3]
+ 800f7b8:	ldrsb.w	r2, [r7, #79]	@ 0x4f
+ 800f7bc:	cmp	r2, r3
+ 800f7be:	beq.n	800f7d2 <ChassisController_GetFeedforwardBias+0x9a>
+ 800f7c0:	ldrb	r3, [r7, #19]
+ 800f7c2:	mov	r0, r3
+ 800f7c4:	bl	800f690 <ChassisController_ClearPivotWheel>
+ 800f7c8:	ldrb	r3, [r7, #19]
+ 800f7ca:	ldr	r1, [pc, #644]	@ (800fa50 <ChassisController_GetFeedforwardBias+0x318>)
+ 800f7cc:	ldrb.w	r2, [r7, #79]	@ 0x4f
+ 800f7d0:	strb	r2, [r1, r3]
+ 800f7d2:	ldrsb.w	r3, [r7, #79]	@ 0x4f
+ 800f7d6:	vmov	s15, r3
+ 800f7da:	vcvt.f32.s32	s15, s15
+ 800f7de:	vldr	s14, [r7, #8]
+ 800f7e2:	vmul.f32	s15, s14, s15
+ 800f7e6:	vstr	s15, [r7, #72]	@ 0x48
+ 800f7ea:	vldr	s15, [r7, #72]	@ 0x48
+ 800f7ee:	vldr	s14, [pc, #652]	@ 800fa7c <ChassisController_GetFeedforwardBias+0x344>
+ 800f7f2:	vcmpe.f32	s15, s14
+ 800f7f6:	vmrs	APSR_nzcv, fpscr
+ 800f7fa:	blt.n	800f804 <ChassisController_GetFeedforwardBias+0xcc>
+ 800f7fc:	ldrb	r3, [r7, #19]
+ 800f7fe:	ldr	r2, [pc, #596]	@ (800fa54 <ChassisController_GetFeedforwardBias+0x31c>)
+ 800f800:	movs	r1, #1
+ 800f802:	strb	r1, [r2, r3]
+ 800f804:	ldrb	r3, [r7, #19]
+ 800f806:	mov	r0, r3
+ 800f808:	bl	800f660 <ChassisController_IsRearWheel>
+ 800f80c:	mov	r3, r0
+ 800f80e:	eor.w	r3, r3, #1
+ 800f812:	uxtb	r3, r3
+ 800f814:	cmp	r3, #0
+ 800f816:	beq.n	800f81e <ChassisController_GetFeedforwardBias+0xe6>
+ 800f818:	mov.w	r3, #0
+ 800f81c:	b.n	800fca6 <ChassisController_GetFeedforwardBias+0x56e>
+ 800f81e:	ldrb	r3, [r7, #19]
+ 800f820:	cmp	r3, #3
+ 800f822:	bne.n	800f886 <ChassisController_GetFeedforwardBias+0x14e>
+ 800f824:	ldrsb.w	r3, [r7, #79]	@ 0x4f
+ 800f828:	cmp	r3, #0
+ 800f82a:	ble.n	800f886 <ChassisController_GetFeedforwardBias+0x14e>
+ 800f82c:	ldrb	r3, [r7, #19]
+ 800f82e:	ldr	r2, [pc, #552]	@ (800fa58 <ChassisController_GetFeedforwardBias+0x320>)
+ 800f830:	ldrb	r3, [r2, r3]
+ 800f832:	eor.w	r3, r3, #1
+ 800f836:	uxtb	r3, r3
+ 800f838:	cmp	r3, #0
+ 800f83a:	beq.n	800f86c <ChassisController_GetFeedforwardBias+0x134>
+ 800f83c:	ldrb	r3, [r7, #19]
+ 800f83e:	ldr	r2, [pc, #540]	@ (800fa5c <ChassisController_GetFeedforwardBias+0x324>)
+ 800f840:	lsls	r3, r3, #2
+ 800f842:	add	r3, r2
+ 800f844:	vldr	s15, [r3]
+ 800f848:	vcmp.f32	s15, #0.0
+ 800f84c:	vmrs	APSR_nzcv, fpscr
+ 800f850:	bne.n	800f86c <ChassisController_GetFeedforwardBias+0x134>
+ 800f852:	ldrb	r3, [r7, #19]
+ 800f854:	ldr	r2, [pc, #520]	@ (800fa60 <ChassisController_GetFeedforwardBias+0x328>)
+ 800f856:	lsls	r3, r3, #2
+ 800f858:	add	r3, r2
+ 800f85a:	vldr	s15, [r3]
+ 800f85e:	vcmp.f32	s15, #0.0
+ 800f862:	vmrs	APSR_nzcv, fpscr
+ 800f866:	bne.n	800f86c <ChassisController_GetFeedforwardBias+0x134>
+ 800f868:	movs	r3, #1
+ 800f86a:	b.n	800f86e <ChassisController_GetFeedforwardBias+0x136>
+ 800f86c:	movs	r3, #0
+ 800f86e:	and.w	r3, r3, #1
+ 800f872:	uxtb	r3, r3
+ 800f874:	mov	r0, r3
+ 800f876:	bl	8012b24 <WheelSpeedController_SelectRrRunningSupport>
+ 800f87a:	mov	r3, r0
+ 800f87c:	cmp	r3, #0
+ 800f87e:	beq.n	800f886 <ChassisController_GetFeedforwardBias+0x14e>
+ 800f880:	mov.w	r3, #0
+ 800f884:	b.n	800fca6 <ChassisController_GetFeedforwardBias+0x56e>
+ 800f886:	ldrb	r3, [r7, #19]
+ 800f888:	cmp	r3, #1
+ 800f88a:	bne.n	800f8ee <ChassisController_GetFeedforwardBias+0x1b6>
+ 800f88c:	ldrsb.w	r3, [r7, #79]	@ 0x4f
+ 800f890:	cmp	r3, #0
+ 800f892:	bge.n	800f8ee <ChassisController_GetFeedforwardBias+0x1b6>
+ 800f894:	ldrb	r3, [r7, #19]
+ 800f896:	ldr	r2, [pc, #448]	@ (800fa58 <ChassisController_GetFeedforwardBias+0x320>)
+ 800f898:	ldrb	r3, [r2, r3]
+ 800f89a:	eor.w	r3, r3, #1
+ 800f89e:	uxtb	r3, r3
+ 800f8a0:	cmp	r3, #0
+ 800f8a2:	beq.n	800f8d4 <ChassisController_GetFeedforwardBias+0x19c>
+ 800f8a4:	ldrb	r3, [r7, #19]
+ 800f8a6:	ldr	r2, [pc, #436]	@ (800fa5c <ChassisController_GetFeedforwardBias+0x324>)
+ 800f8a8:	lsls	r3, r3, #2
+ 800f8aa:	add	r3, r2
+ 800f8ac:	vldr	s15, [r3]
+ 800f8b0:	vcmp.f32	s15, #0.0
+ 800f8b4:	vmrs	APSR_nzcv, fpscr
+ 800f8b8:	bne.n	800f8d4 <ChassisController_GetFeedforwardBias+0x19c>
+ 800f8ba:	ldrb	r3, [r7, #19]
+ 800f8bc:	ldr	r2, [pc, #416]	@ (800fa60 <ChassisController_GetFeedforwardBias+0x328>)
+ 800f8be:	lsls	r3, r3, #2
+ 800f8c0:	add	r3, r2
+ 800f8c2:	vldr	s15, [r3]
+ 800f8c6:	vcmp.f32	s15, #0.0
+ 800f8ca:	vmrs	APSR_nzcv, fpscr
+ 800f8ce:	bne.n	800f8d4 <ChassisController_GetFeedforwardBias+0x19c>
+ 800f8d0:	movs	r3, #1
+ 800f8d2:	b.n	800f8d6 <ChassisController_GetFeedforwardBias+0x19e>
+ 800f8d4:	movs	r3, #0
+ 800f8d6:	and.w	r3, r3, #1
+ 800f8da:	uxtb	r3, r3
+ 800f8dc:	mov	r0, r3
+ 800f8de:	bl	8012a44 <WheelSpeedController_SelectLrRunningSupport>
+ 800f8e2:	mov	r3, r0
+ 800f8e4:	cmp	r3, #0
+ 800f8e6:	beq.n	800f8ee <ChassisController_GetFeedforwardBias+0x1b6>
+ 800f8e8:	mov.w	r3, #0
+ 800f8ec:	b.n	800fca6 <ChassisController_GetFeedforwardBias+0x56e>
+ 800f8ee:	ldrb	r3, [r7, #19]
+ 800f8f0:	ldr	r2, [pc, #356]	@ (800fa58 <ChassisController_GetFeedforwardBias+0x320>)
+ 800f8f2:	ldrb	r3, [r2, r3]
+ 800f8f4:	eor.w	r3, r3, #1
+ 800f8f8:	uxtb	r3, r3
+ 800f8fa:	cmp	r3, #0
+ 800f8fc:	beq.w	800fa32 <ChassisController_GetFeedforwardBias+0x2fa>
+ 800f900:	vldr	s15, [r7, #72]	@ 0x48
+ 800f904:	vmov.f32	s14, #52	@ 0x41a00000  20.0
+ 800f908:	vcmpe.f32	s15, s14
+ 800f90c:	vmrs	APSR_nzcv, fpscr
+ 800f910:	bls.n	800f92e <ChassisController_GetFeedforwardBias+0x1f6>
+ 800f912:	vldr	s0, [r7, #8]
+ 800f916:	bl	800f5a6 <ChassisController_Abs>
+ 800f91a:	vmov.f32	s15, s0
+ 800f91e:	vmov.f32	s14, #52	@ 0x41a00000  20.0
+ 800f922:	vcmpe.f32	s15, s14
+ 800f926:	vmrs	APSR_nzcv, fpscr
+ 800f92a:	bhi.w	800faa8 <ChassisController_GetFeedforwardBias+0x370>
+ 800f92e:	ldrb	r3, [r7, #19]
+ 800f930:	ldr	r2, [pc, #292]	@ (800fa58 <ChassisController_GetFeedforwardBias+0x320>)
+ 800f932:	movs	r1, #1
+ 800f934:	strb	r1, [r2, r3]
+ 800f936:	ldrb	r3, [r7, #19]
+ 800f938:	ldr	r1, [pc, #296]	@ (800fa64 <ChassisController_GetFeedforwardBias+0x32c>)
+ 800f93a:	ldr	r2, [r7, #4]
+ 800f93c:	str.w	r2, [r1, r3, lsl #2]
+ 800f940:	ldrb	r3, [r7, #19]
+ 800f942:	mov	r0, r3
+ 800f944:	bl	800f660 <ChassisController_IsRearWheel>
+ 800f948:	mov	r3, r0
+ 800f94a:	cmp	r3, #0
+ 800f94c:	beq.n	800f95c <ChassisController_GetFeedforwardBias+0x224>
+ 800f94e:	ldrb	r3, [r7, #19]
+ 800f950:	ldr	r2, [pc, #256]	@ (800fa54 <ChassisController_GetFeedforwardBias+0x31c>)
+ 800f952:	ldrb	r3, [r2, r3]
+ 800f954:	cmp	r3, #0
+ 800f956:	beq.n	800f95c <ChassisController_GetFeedforwardBias+0x224>
+ 800f958:	movs	r2, #1
+ 800f95a:	b.n	800f95e <ChassisController_GetFeedforwardBias+0x226>
+ 800f95c:	movs	r2, #0
+ 800f95e:	ldrb	r3, [r7, #19]
+ 800f960:	and.w	r2, r2, #1
+ 800f964:	uxtb	r1, r2
+ 800f966:	ldr	r2, [pc, #256]	@ (800fa68 <ChassisController_GetFeedforwardBias+0x330>)
+ 800f968:	strb	r1, [r2, r3]
+ 800f96a:	ldrb	r3, [r7, #19]
+ 800f96c:	ldr	r2, [r7, #4]
+ 800f96e:	adds	r2, #80	@ 0x50
+ 800f970:	ldr	r1, [pc, #248]	@ (800fa6c <ChassisController_GetFeedforwardBias+0x334>)
+ 800f972:	str.w	r2, [r1, r3, lsl #2]
+ 800f976:	ldrb	r3, [r7, #19]
+ 800f978:	ldr	r2, [pc, #244]	@ (800fa70 <ChassisController_GetFeedforwardBias+0x338>)
+ 800f97a:	lsls	r3, r3, #2
+ 800f97c:	add	r3, r2
+ 800f97e:	ldr	r2, [pc, #244]	@ (800fa74 <ChassisController_GetFeedforwardBias+0x33c>)
+ 800f980:	str	r2, [r3, #0]
+ 800f982:	ldrb	r3, [r7, #19]
+ 800f984:	ldr	r2, [pc, #224]	@ (800fa68 <ChassisController_GetFeedforwardBias+0x330>)
+ 800f986:	ldrb	r3, [r2, r3]
+ 800f988:	cmp	r3, #0
+ 800f98a:	beq.w	800faa8 <ChassisController_GetFeedforwardBias+0x370>
+ 800f98e:	add.w	r2, r7, #24
+ 800f992:	ldrb	r3, [r7, #19]
+ 800f994:	mov	r1, r2
+ 800f996:	mov	r0, r3
+ 800f998:	bl	8014ee8 <WheelSpeedController_GetState>
+ 800f99c:	mov	r3, r0
+ 800f99e:	cmp	r3, #0
+ 800f9a0:	beq.w	800faa8 <ChassisController_GetFeedforwardBias+0x370>
+ 800f9a4:	vldr	s14, [r7, #44]	@ 0x2c
+ 800f9a8:	ldrsb.w	r3, [r7, #79]	@ 0x4f
+ 800f9ac:	vmov	s15, r3
+ 800f9b0:	vcvt.f32.s32	s15, s15
+ 800f9b4:	vmul.f32	s15, s14, s15
+ 800f9b8:	vstr	s15, [r7, #60]	@ 0x3c
+ 800f9bc:	vldr	s15, [r7, #60]	@ 0x3c
+ 800f9c0:	vcmpe.f32	s15, #0.0
+ 800f9c4:	vmrs	APSR_nzcv, fpscr
+ 800f9c8:	ble.n	800faa8 <ChassisController_GetFeedforwardBias+0x370>
+ 800f9ca:	vldr	s14, [pc, #172]	@ 800fa78 <ChassisController_GetFeedforwardBias+0x340>
+ 800f9ce:	vldr	s15, [r7, #60]	@ 0x3c
+ 800f9d2:	vsub.f32	s15, s14, s15
+ 800f9d6:	vstr	s15, [r7, #84]	@ 0x54
+ 800f9da:	ldrb	r3, [r7, #19]
+ 800f9dc:	ldr	r2, [pc, #124]	@ (800fa5c <ChassisController_GetFeedforwardBias+0x324>)
+ 800f9de:	lsls	r3, r3, #2
+ 800f9e0:	add	r3, r2
+ 800f9e2:	vldr	s14, [r3]
+ 800f9e6:	ldrsb.w	r3, [r7, #79]	@ 0x4f
+ 800f9ea:	vmov	s15, r3
+ 800f9ee:	vcvt.f32.s32	s15, s15
+ 800f9f2:	vmul.f32	s15, s14, s15
+ 800f9f6:	vstr	s15, [r7, #56]	@ 0x38
+ 800f9fa:	vldr	s14, [r7, #84]	@ 0x54
+ 800f9fe:	vldr	s15, [r7, #56]	@ 0x38
+ 800fa02:	vcmpe.f32	s14, s15
+ 800fa06:	vmrs	APSR_nzcv, fpscr
+ 800fa0a:	bpl.n	800fa10 <ChassisController_GetFeedforwardBias+0x2d8>
+ 800fa0c:	ldr	r3, [r7, #56]	@ 0x38
+ 800fa0e:	str	r3, [r7, #84]	@ 0x54
+ 800fa10:	vldr	s15, [r7, #84]	@ 0x54
+ 800fa14:	vcmpe.f32	s15, #0.0
+ 800fa18:	vmrs	APSR_nzcv, fpscr
+ 800fa1c:	bpl.n	800fa24 <ChassisController_GetFeedforwardBias+0x2ec>
+ 800fa1e:	mov.w	r3, #0
+ 800fa22:	str	r3, [r7, #84]	@ 0x54
+ 800fa24:	ldrb	r3, [r7, #19]
+ 800fa26:	ldr	r2, [pc, #72]	@ (800fa70 <ChassisController_GetFeedforwardBias+0x338>)
+ 800fa28:	lsls	r3, r3, #2
+ 800fa2a:	add	r3, r2
+ 800fa2c:	ldr	r2, [r7, #84]	@ 0x54
+ 800fa2e:	str	r2, [r3, #0]
+ 800fa30:	b.n	800faa8 <ChassisController_GetFeedforwardBias+0x370>
+ 800fa32:	ldrb	r3, [r7, #19]
+ 800fa34:	ldr	r2, [pc, #44]	@ (800fa64 <ChassisController_GetFeedforwardBias+0x32c>)
+ 800fa36:	ldr.w	r3, [r2, r3, lsl #2]
+ 800fa3a:	ldr	r2, [r7, #4]
+ 800fa3c:	subs	r3, r2, r3
+ 800fa3e:	str	r3, [r7, #68]	@ 0x44
+ 800fa40:	ldrb	r3, [r7, #19]
+ 800fa42:	ldr	r2, [pc, #36]	@ (800fa68 <ChassisController_GetFeedforwardBias+0x330>)
+ 800fa44:	ldrb	r3, [r2, r3]
+ 800fa46:	cmp	r3, #0
+ 800fa48:	beq.n	800fa80 <ChassisController_GetFeedforwardBias+0x348>
+ 800fa4a:	movs	r3, #40	@ 0x28
+ 800fa4c:	b.n	800fa84 <ChassisController_GetFeedforwardBias+0x34c>
+ 800fa4e:	nop
+ 800fa50:	.word	0x2000af38
+ 800fa54:	.word	0x2000af6c
+ 800fa58:	.word	0x2000af34
+ 800fa5c:	.word	0x2000af4c
+ 800fa60:	.word	0x2000af5c
+ 800fa64:	.word	0x2000af3c
+ 800fa68:	.word	0x2000af70
+ 800fa6c:	.word	0x2000af84
+ 800fa70:	.word	0x2000af74
+ 800fa74:	.word	0x42700000
+ 800fa78:	.word	0x42700000
+ 800fa7c:	.word	0x42480000
+ 800fa80:	mov.w	r3, #300	@ 0x12c
+ 800fa84:	str	r3, [r7, #64]	@ 0x40
+ 800fa86:	ldr	r2, [r7, #68]	@ 0x44
+ 800fa88:	ldr	r3, [r7, #64]	@ 0x40
+ 800fa8a:	cmp	r2, r3
+ 800fa8c:	bcc.n	800faa8 <ChassisController_GetFeedforwardBias+0x370>
+ 800fa8e:	vldr	s15, [r7, #72]	@ 0x48
+ 800fa92:	vldr	s14, [pc, #-24]	@ 800fa7c <ChassisController_GetFeedforwardBias+0x344>
+ 800fa96:	vcmpe.f32	s15, s14
+ 800fa9a:	vmrs	APSR_nzcv, fpscr
+ 800fa9e:	blt.n	800faa8 <ChassisController_GetFeedforwardBias+0x370>
+ 800faa0:	ldrb	r3, [r7, #19]
+ 800faa2:	ldr	r2, [pc, #528]	@ (800fcb4 <ChassisController_GetFeedforwardBias+0x57c>)
+ 800faa4:	movs	r1, #0
+ 800faa6:	strb	r1, [r2, r3]
+ 800faa8:	ldrb	r3, [r7, #19]
+ 800faaa:	ldr	r2, [pc, #520]	@ (800fcb4 <ChassisController_GetFeedforwardBias+0x57c>)
+ 800faac:	ldrb	r3, [r2, r3]
+ 800faae:	cmp	r3, #0
+ 800fab0:	beq.n	800fb60 <ChassisController_GetFeedforwardBias+0x428>
+ 800fab2:	ldrb	r3, [r7, #19]
+ 800fab4:	ldr	r2, [pc, #512]	@ (800fcb8 <ChassisController_GetFeedforwardBias+0x580>)
+ 800fab6:	ldrb	r3, [r2, r3]
+ 800fab8:	cmp	r3, #0
+ 800faba:	beq.n	800fb36 <ChassisController_GetFeedforwardBias+0x3fe>
+ 800fabc:	vldr	s15, [r7, #72]	@ 0x48
+ 800fac0:	vmov.f32	s14, #52	@ 0x41a00000  20.0
+ 800fac4:	vcmpe.f32	s15, s14
+ 800fac8:	vmrs	APSR_nzcv, fpscr
+ 800facc:	bhi.n	800fb36 <ChassisController_GetFeedforwardBias+0x3fe>
+ 800face:	ldrb	r3, [r7, #19]
+ 800fad0:	ldr	r2, [pc, #488]	@ (800fcbc <ChassisController_GetFeedforwardBias+0x584>)
+ 800fad2:	ldr.w	r3, [r2, r3, lsl #2]
+ 800fad6:	mov	r1, r3
+ 800fad8:	ldr	r0, [r7, #4]
+ 800fada:	bl	800f584 <ChassisController_TimeReached>
+ 800fade:	mov	r3, r0
+ 800fae0:	cmp	r3, #0
+ 800fae2:	beq.n	800fb36 <ChassisController_GetFeedforwardBias+0x3fe>
+ 800fae4:	ldrb	r3, [r7, #19]
+ 800fae6:	ldr	r2, [pc, #472]	@ (800fcc0 <ChassisController_GetFeedforwardBias+0x588>)
+ 800fae8:	lsls	r3, r3, #2
+ 800faea:	add	r3, r2
+ 800faec:	vldr	s15, [r3]
+ 800faf0:	ldrb	r3, [r7, #19]
+ 800faf2:	vmov.f32	s14, #36	@ 0x41200000  10.0
+ 800faf6:	vadd.f32	s15, s15, s14
+ 800fafa:	ldr	r2, [pc, #452]	@ (800fcc0 <ChassisController_GetFeedforwardBias+0x588>)
+ 800fafc:	lsls	r3, r3, #2
+ 800fafe:	add	r3, r2
+ 800fb00:	vstr	s15, [r3]
+ 800fb04:	ldrb	r3, [r7, #19]
+ 800fb06:	ldr	r2, [pc, #440]	@ (800fcc0 <ChassisController_GetFeedforwardBias+0x588>)
+ 800fb08:	lsls	r3, r3, #2
+ 800fb0a:	add	r3, r2
+ 800fb0c:	vldr	s15, [r3]
+ 800fb10:	vldr	s14, [pc, #432]	@ 800fcc4 <ChassisController_GetFeedforwardBias+0x58c>
+ 800fb14:	vcmpe.f32	s15, s14
+ 800fb18:	vmrs	APSR_nzcv, fpscr
+ 800fb1c:	ble.n	800fb2a <ChassisController_GetFeedforwardBias+0x3f2>
+ 800fb1e:	ldrb	r3, [r7, #19]
+ 800fb20:	ldr	r2, [pc, #412]	@ (800fcc0 <ChassisController_GetFeedforwardBias+0x588>)
+ 800fb22:	lsls	r3, r3, #2
+ 800fb24:	add	r3, r2
+ 800fb26:	ldr	r2, [pc, #416]	@ (800fcc8 <ChassisController_GetFeedforwardBias+0x590>)
+ 800fb28:	str	r2, [r3, #0]
+ 800fb2a:	ldrb	r3, [r7, #19]
+ 800fb2c:	ldr	r2, [r7, #4]
+ 800fb2e:	adds	r2, #40	@ 0x28
+ 800fb30:	ldr	r1, [pc, #392]	@ (800fcbc <ChassisController_GetFeedforwardBias+0x584>)
+ 800fb32:	str.w	r2, [r1, r3, lsl #2]
+ 800fb36:	ldrsb.w	r3, [r7, #79]	@ 0x4f
+ 800fb3a:	vmov	s15, r3
+ 800fb3e:	vcvt.f32.s32	s14, s15
+ 800fb42:	ldrb	r3, [r7, #19]
+ 800fb44:	ldr	r2, [pc, #376]	@ (800fcc0 <ChassisController_GetFeedforwardBias+0x588>)
+ 800fb46:	lsls	r3, r3, #2
+ 800fb48:	add	r3, r2
+ 800fb4a:	vldr	s15, [r3]
+ 800fb4e:	ldrb	r3, [r7, #19]
+ 800fb50:	vmul.f32	s15, s14, s15
+ 800fb54:	ldr	r2, [pc, #372]	@ (800fccc <ChassisController_GetFeedforwardBias+0x594>)
+ 800fb56:	lsls	r3, r3, #2
+ 800fb58:	add	r3, r2
+ 800fb5a:	vstr	s15, [r3]
+ 800fb5e:	b.n	800fc9c <ChassisController_GetFeedforwardBias+0x564>
+ 800fb60:	ldrb	r3, [r7, #19]
+ 800fb62:	ldr	r2, [pc, #340]	@ (800fcb8 <ChassisController_GetFeedforwardBias+0x580>)
+ 800fb64:	ldrb	r3, [r2, r3]
+ 800fb66:	cmp	r3, #0
+ 800fb68:	beq.n	800fc60 <ChassisController_GetFeedforwardBias+0x528>
+ 800fb6a:	ldrb	r3, [r7, #19]
+ 800fb6c:	ldr	r2, [pc, #348]	@ (800fccc <ChassisController_GetFeedforwardBias+0x594>)
+ 800fb6e:	lsls	r3, r3, #2
+ 800fb70:	add	r3, r2
+ 800fb72:	vldr	s14, [r3]
+ 800fb76:	ldrb	r3, [r7, #19]
+ 800fb78:	ldr	r2, [pc, #340]	@ (800fcd0 <ChassisController_GetFeedforwardBias+0x598>)
+ 800fb7a:	lsls	r3, r3, #2
+ 800fb7c:	add	r3, r2
+ 800fb7e:	vldr	s15, [r3]
+ 800fb82:	vsub.f32	s14, s14, s15
+ 800fb86:	ldrsb.w	r3, [r7, #79]	@ 0x4f
+ 800fb8a:	vmov	s15, r3
+ 800fb8e:	vcvt.f32.s32	s15, s15
+ 800fb92:	vmul.f32	s15, s14, s15
+ 800fb96:	vstr	s15, [r7, #80]	@ 0x50
+ 800fb9a:	vldr	s15, [r7, #80]	@ 0x50
+ 800fb9e:	vcmpe.f32	s15, #0.0
+ 800fba2:	vmrs	APSR_nzcv, fpscr
+ 800fba6:	bpl.n	800fbae <ChassisController_GetFeedforwardBias+0x476>
+ 800fba8:	mov.w	r3, #0
+ 800fbac:	str	r3, [r7, #80]	@ 0x50
+ 800fbae:	ldrb	r3, [r7, #19]
+ 800fbb0:	ldr	r2, [pc, #284]	@ (800fcd0 <ChassisController_GetFeedforwardBias+0x598>)
+ 800fbb2:	lsls	r3, r3, #2
+ 800fbb4:	add	r3, r2
+ 800fbb6:	vldr	s15, [r3]
+ 800fbba:	ldrb	r4, [r7, #19]
+ 800fbbc:	ldrb	r3, [r7, #19]
+ 800fbbe:	vmov.f32	s0, s15
+ 800fbc2:	mov	r0, r3
+ 800fbc4:	bl	8014570 <WheelSpeedController_ReleaseFeedforwardBias>
+ 800fbc8:	vmov.f32	s15, s0
+ 800fbcc:	ldr	r2, [pc, #256]	@ (800fcd0 <ChassisController_GetFeedforwardBias+0x598>)
+ 800fbce:	lsls	r3, r4, #2
+ 800fbd0:	add	r3, r2
+ 800fbd2:	vstr	s15, [r3]
+ 800fbd6:	vldr	s15, [r7, #72]	@ 0x48
+ 800fbda:	vldr	s14, [pc, #248]	@ 800fcd4 <ChassisController_GetFeedforwardBias+0x59c>
+ 800fbde:	vcmpe.f32	s15, s14
+ 800fbe2:	vmrs	APSR_nzcv, fpscr
+ 800fbe6:	blt.n	800fc2e <ChassisController_GetFeedforwardBias+0x4f6>
+ 800fbe8:	ldr	r3, [r7, #0]
+ 800fbea:	vmov	s15, r3
+ 800fbee:	vcvt.f32.u32	s14, s15
+ 800fbf2:	vldr	s13, [pc, #228]	@ 800fcd8 <ChassisController_GetFeedforwardBias+0x5a0>
+ 800fbf6:	vdiv.f32	s15, s14, s13
+ 800fbfa:	vldr	s14, [pc, #224]	@ 800fcdc <ChassisController_GetFeedforwardBias+0x5a4>
+ 800fbfe:	vmul.f32	s15, s15, s14
+ 800fc02:	vstr	s15, [r7, #52]	@ 0x34
+ 800fc06:	vldr	s14, [r7, #80]	@ 0x50
+ 800fc0a:	vldr	s15, [r7, #52]	@ 0x34
+ 800fc0e:	vcmpe.f32	s14, s15
+ 800fc12:	vmrs	APSR_nzcv, fpscr
+ 800fc16:	ble.n	800fc26 <ChassisController_GetFeedforwardBias+0x4ee>
+ 800fc18:	vldr	s14, [r7, #80]	@ 0x50
+ 800fc1c:	vldr	s15, [r7, #52]	@ 0x34
+ 800fc20:	vsub.f32	s15, s14, s15
+ 800fc24:	b.n	800fc2a <ChassisController_GetFeedforwardBias+0x4f2>
+ 800fc26:	vldr	s15, [pc, #184]	@ 800fce0 <ChassisController_GetFeedforwardBias+0x5a8>
+ 800fc2a:	vstr	s15, [r7, #80]	@ 0x50
+ 800fc2e:	ldrb	r3, [r7, #19]
+ 800fc30:	ldr	r2, [pc, #156]	@ (800fcd0 <ChassisController_GetFeedforwardBias+0x598>)
+ 800fc32:	lsls	r3, r3, #2
+ 800fc34:	add	r3, r2
+ 800fc36:	vldr	s14, [r3]
+ 800fc3a:	ldrsb.w	r3, [r7, #79]	@ 0x4f
+ 800fc3e:	vmov	s15, r3
+ 800fc42:	vcvt.f32.s32	s13, s15
+ 800fc46:	vldr	s15, [r7, #80]	@ 0x50
+ 800fc4a:	vmul.f32	s15, s13, s15
+ 800fc4e:	ldrb	r3, [r7, #19]
+ 800fc50:	vadd.f32	s15, s14, s15
+ 800fc54:	ldr	r2, [pc, #116]	@ (800fccc <ChassisController_GetFeedforwardBias+0x594>)
+ 800fc56:	lsls	r3, r3, #2
+ 800fc58:	add	r3, r2
+ 800fc5a:	vstr	s15, [r3]
+ 800fc5e:	b.n	800fc9c <ChassisController_GetFeedforwardBias+0x564>
+ 800fc60:	ldrb	r3, [r7, #19]
+ 800fc62:	ldr	r2, [pc, #104]	@ (800fccc <ChassisController_GetFeedforwardBias+0x594>)
+ 800fc64:	lsls	r3, r3, #2
+ 800fc66:	add	r3, r2
+ 800fc68:	vldr	s15, [r3]
+ 800fc6c:	ldrb	r4, [r7, #19]
+ 800fc6e:	ldrb	r3, [r7, #19]
+ 800fc70:	vmov.f32	s0, s15
+ 800fc74:	mov	r0, r3
+ 800fc76:	bl	8014570 <WheelSpeedController_ReleaseFeedforwardBias>
+ 800fc7a:	vmov.f32	s15, s0
+ 800fc7e:	ldr	r2, [pc, #76]	@ (800fccc <ChassisController_GetFeedforwardBias+0x594>)
+ 800fc80:	lsls	r3, r4, #2
+ 800fc82:	add	r3, r2
+ 800fc84:	vstr	s15, [r3]
+ 800fc88:	ldrb	r2, [r7, #19]
+ 800fc8a:	ldrb	r3, [r7, #19]
+ 800fc8c:	ldr	r1, [pc, #60]	@ (800fccc <ChassisController_GetFeedforwardBias+0x594>)
+ 800fc8e:	lsls	r2, r2, #2
+ 800fc90:	add	r2, r1
+ 800fc92:	ldr	r2, [r2, #0]
+ 800fc94:	ldr	r1, [pc, #56]	@ (800fcd0 <ChassisController_GetFeedforwardBias+0x598>)
+ 800fc96:	lsls	r3, r3, #2
+ 800fc98:	add	r3, r1
+ 800fc9a:	str	r2, [r3, #0]
+ 800fc9c:	ldrb	r3, [r7, #19]
+ 800fc9e:	ldr	r2, [pc, #44]	@ (800fccc <ChassisController_GetFeedforwardBias+0x594>)
+ 800fca0:	lsls	r3, r3, #2
+ 800fca2:	add	r3, r2
+ 800fca4:	ldr	r3, [r3, #0]
+ 800fca6:	vmov	s15, r3
+ 800fcaa:	vmov.f32	s0, s15
+ 800fcae:	adds	r7, #92	@ 0x5c
+ 800fcb0:	mov	sp, r7
+ 800fcb2:	pop	{r4, r7, pc}
+ 800fcb4:	.word	0x2000af34
+ 800fcb8:	.word	0x2000af70
+ 800fcbc:	.word	0x2000af84
+ 800fcc0:	.word	0x2000af74
+ 800fcc4:	.word	0x42700000
+ 800fcc8:	.word	0x42700000
+ 800fccc:	.word	0x2000af4c
+ 800fcd0:	.word	0x2000af5c
+ 800fcd4:	.word	0x42480000
+ 800fcd8:	.word	0x447a0000
+ 800fcdc:	.word	0x43480000
+ 800fce0:	.word	0x00000000
+
+<ChassisController_Process>
+ 8010430:	push	{r4, r5, r7, lr}
+ 8010432:	vpush	{d8-d9}
+ 8010436:	sub	sp, #224	@ 0xe0
+ 8010438:	add	r7, sp, #0
+ 801043a:	str	r0, [r7, #4]
+ 801043c:	movs	r3, #0
+ 801043e:	str.w	r3, [r7, #220]	@ 0xdc
+ 8010442:	bl	800c8bc <vPortEnterCritical>
+ 8010446:	ldr	r3, [pc, #828]	@ (8010784 <ChassisController_Process+0x354>)
+ 8010448:	ldrb	r3, [r3, #0]
+ 801044a:	eor.w	r3, r3, #1
+ 801044e:	uxtb	r3, r3
+ 8010450:	cmp	r3, #0
+ 8010452:	beq.n	801045a <ChassisController_Process+0x2a>
+ 8010454:	bl	800c908 <vPortExitCritical>
+ 8010458:	b.n	80107dc <ChassisController_Process+0x3ac>
+ 801045a:	ldr	r2, [pc, #808]	@ (8010784 <ChassisController_Process+0x354>)
+ 801045c:	add.w	r3, r7, #188	@ 0xbc
+ 8010460:	adds	r2, #4
+ 8010462:	ldmia.w	r2, {r0, r1}
+ 8010466:	stmia.w	r3, {r0, r1}
+ 801046a:	ldr	r3, [pc, #792]	@ (8010784 <ChassisController_Process+0x354>)
+ 801046c:	add.w	r4, r7, #160	@ 0xa0
+ 8010470:	add.w	r5, r3, #12
+ 8010474:	ldmia	r5!, {r0, r1, r2, r3}
+ 8010476:	stmia	r4!, {r0, r1, r2, r3}
+ 8010478:	ldmia.w	r5, {r0, r1, r2}
+ 801047c:	stmia.w	r4, {r0, r1, r2}
+ 8010480:	ldr	r3, [pc, #768]	@ (8010784 <ChassisController_Process+0x354>)
+ 8010482:	ldr	r3, [r3, #72]	@ 0x48
+ 8010484:	ldr	r2, [r7, #4]
+ 8010486:	subs	r3, r2, r3
+ 8010488:	str.w	r3, [r7, #196]	@ 0xc4
+ 801048c:	bl	800c908 <vPortExitCritical>
+ 8010490:	ldr.w	r3, [r7, #196]	@ 0xc4
+ 8010494:	cmp	r3, #0
+ 8010496:	beq.n	80104a0 <ChassisController_Process+0x70>
+ 8010498:	ldr.w	r3, [r7, #196]	@ 0xc4
+ 801049c:	cmp	r3, #100	@ 0x64
+ 801049e:	bls.n	80104c2 <ChassisController_Process+0x92>
+ 80104a0:	ldr.w	r3, [r7, #196]	@ 0xc4
+ 80104a4:	cmp	r3, #100	@ 0x64
+ 80104a6:	bls.w	80107da <ChassisController_Process+0x3aa>
+ 80104aa:	bl	800c8bc <vPortEnterCritical>
+ 80104ae:	ldr	r3, [pc, #724]	@ (8010784 <ChassisController_Process+0x354>)
+ 80104b0:	ldrb	r3, [r3, #0]
+ 80104b2:	cmp	r3, #0
+ 80104b4:	beq.n	80104bc <ChassisController_Process+0x8c>
+ 80104b6:	movs	r0, #8
+ 80104b8:	bl	800fe9c <ChassisController_FaultLocked>
+ 80104bc:	bl	800c908 <vPortExitCritical>
+ 80104c0:	b.n	80107da <ChassisController_Process+0x3aa>
+ 80104c2:	add.w	r3, r7, #144	@ 0x90
+ 80104c6:	mov	r0, r3
+ 80104c8:	bl	800fd1c <ChassisController_GetSpeeds>
+ 80104cc:	mov	r3, r0
+ 80104ce:	eor.w	r3, r3, #1
+ 80104d2:	uxtb	r3, r3
+ 80104d4:	cmp	r3, #0
+ 80104d6:	beq.n	80104f0 <ChassisController_Process+0xc0>
+ 80104d8:	bl	800c8bc <vPortEnterCritical>
+ 80104dc:	ldr	r3, [pc, #676]	@ (8010784 <ChassisController_Process+0x354>)
+ 80104de:	ldrb	r3, [r3, #0]
+ 80104e0:	cmp	r3, #0
+ 80104e2:	beq.n	80104ea <ChassisController_Process+0xba>
+ 80104e4:	movs	r0, #3
+ 80104e6:	bl	800fe9c <ChassisController_FaultLocked>
+ 80104ea:	bl	800c908 <vPortExitCritical>
+ 80104ee:	b.n	80107dc <ChassisController_Process+0x3ac>
+ 80104f0:	movs	r3, #0
+ 80104f2:	str.w	r3, [r7, #216]	@ 0xd8
+ 80104f6:	b.n	8010654 <ChassisController_Process+0x224>
+ 80104f8:	ldr.w	r3, [r7, #216]	@ 0xd8
+ 80104fc:	lsls	r3, r3, #2
+ 80104fe:	adds	r3, #224	@ 0xe0
+ 8010500:	add	r3, r7
+ 8010502:	subs	r3, #80	@ 0x50
+ 8010504:	vldr	s15, [r3]
+ 8010508:	vmov.f32	s0, s15
+ 801050c:	bl	800f5a6 <ChassisController_Abs>
+ 8010510:	vmov.f32	s15, s0
+ 8010514:	vldr	s14, [pc, #624]	@ 8010788 <ChassisController_Process+0x358>
+ 8010518:	vcmpe.f32	s15, s14
+ 801051c:	vmrs	APSR_nzcv, fpscr
+ 8010520:	ble.n	801053a <ChassisController_Process+0x10a>
+ 8010522:	bl	800c8bc <vPortEnterCritical>
+ 8010526:	ldr	r3, [pc, #604]	@ (8010784 <ChassisController_Process+0x354>)
+ 8010528:	ldrb	r3, [r3, #0]
+ 801052a:	cmp	r3, #0
+ 801052c:	beq.n	8010534 <ChassisController_Process+0x104>
+ 801052e:	movs	r0, #6
+ 8010530:	bl	800fe9c <ChassisController_FaultLocked>
+ 8010534:	bl	800c908 <vPortExitCritical>
+ 8010538:	b.n	80107dc <ChassisController_Process+0x3ac>
+ 801053a:	ldr.w	r3, [r7, #216]	@ 0xd8
+ 801053e:	uxtb	r4, r3
+ 8010540:	ldr.w	r3, [r7, #216]	@ 0xd8
+ 8010544:	lsls	r3, r3, #2
+ 8010546:	adds	r3, #224	@ 0xe0
+ 8010548:	add	r3, r7
+ 801054a:	subs	r3, #64	@ 0x40
+ 801054c:	vldr	s16, [r3]
+ 8010550:	ldr.w	r3, [r7, #216]	@ 0xd8
+ 8010554:	lsls	r3, r3, #2
+ 8010556:	adds	r3, #224	@ 0xe0
+ 8010558:	add	r3, r7
+ 801055a:	subs	r3, #80	@ 0x50
+ 801055c:	vldr	s17, [r3]
+ 8010560:	ldr.w	r3, [r7, #216]	@ 0xd8
+ 8010564:	uxtb	r1, r3
+ 8010566:	ldr.w	r3, [r7, #216]	@ 0xd8
+ 801056a:	lsls	r3, r3, #2
+ 801056c:	adds	r3, #224	@ 0xe0
+ 801056e:	add	r3, r7
+ 8010570:	subs	r3, #64	@ 0x40
+ 8010572:	vldr	s15, [r3]
+ 8010576:	ldr.w	r3, [r7, #216]	@ 0xd8
+ 801057a:	lsls	r3, r3, #2
+ 801057c:	adds	r3, #224	@ 0xe0
+ 801057e:	add	r3, r7
+ 8010580:	subs	r3, #80	@ 0x50
+ 8010582:	vldr	s14, [r3]
+ 8010586:	add.w	r0, r7, #188	@ 0xbc
+ 801058a:	ldr.w	r3, [r7, #196]	@ 0xc4
+ 801058e:	ldr	r2, [r7, #4]
+ 8010590:	vmov.f32	s1, s14
+ 8010594:	vmov.f32	s0, s15
+ 8010598:	bl	800f738 <ChassisController_GetFeedforwardBias>
+ 801059c:	vmov.f32	s18, s0
+ 80105a0:	add.w	r3, r7, #188	@ 0xbc
+ 80105a4:	mov	r0, r3
+ 80105a6:	bl	800f648 <ChassisController_GetWheelControlMode>
+ 80105aa:	mov	r3, r0
+ 80105ac:	mov	r1, r3
+ 80105ae:	add.w	r2, r7, #24
+ 80105b2:	ldr.w	r3, [r7, #216]	@ 0xd8
+ 80105b6:	lsls	r3, r3, #1
+ 80105b8:	add	r3, r2
+ 80105ba:	ldr.w	r2, [r7, #196]	@ 0xc4
+ 80105be:	vmov.f32	s2, s18
+ 80105c2:	vmov.f32	s1, s17
+ 80105c6:	vmov.f32	s0, s16
+ 80105ca:	mov	r0, r4
+ 80105cc:	bl	8014634 <WheelSpeedController_UpdateWithMode>
+ 80105d0:	mov	r3, r0
+ 80105d2:	eor.w	r3, r3, #1
+ 80105d6:	uxtb	r3, r3
+ 80105d8:	cmp	r3, #0
+ 80105da:	bne.n	8010606 <ChassisController_Process+0x1d6>
+ 80105dc:	ldr.w	r3, [r7, #216]	@ 0xd8
+ 80105e0:	uxtb	r0, r3
+ 80105e2:	add.w	r1, r7, #32
+ 80105e6:	ldr.w	r2, [r7, #216]	@ 0xd8
+ 80105ea:	mov	r3, r2
+ 80105ec:	lsls	r3, r3, #3
+ 80105ee:	subs	r3, r3, r2
+ 80105f0:	lsls	r3, r3, #2
+ 80105f2:	add	r3, r1
+ 80105f4:	mov	r1, r3
+ 80105f6:	bl	8014ee8 <WheelSpeedController_GetState>
+ 80105fa:	mov	r3, r0
+ 80105fc:	eor.w	r3, r3, #1
+ 8010600:	uxtb	r3, r3
+ 8010602:	cmp	r3, #0
+ 8010604:	beq.n	801061e <ChassisController_Process+0x1ee>
+ 8010606:	bl	800c8bc <vPortEnterCritical>
+ 801060a:	ldr	r3, [pc, #376]	@ (8010784 <ChassisController_Process+0x354>)
+ 801060c:	ldrb	r3, [r3, #0]
+ 801060e:	cmp	r3, #0
+ 8010610:	beq.n	8010618 <ChassisController_Process+0x1e8>
+ 8010612:	movs	r0, #4
+ 8010614:	bl	800fe9c <ChassisController_FaultLocked>
+ 8010618:	bl	800c908 <vPortExitCritical>
+ 801061c:	b.n	80107dc <ChassisController_Process+0x3ac>
+ 801061e:	ldr.w	r2, [r7, #216]	@ 0xd8
+ 8010622:	mov	r3, r2
+ 8010624:	lsls	r3, r3, #3
+ 8010626:	subs	r3, r3, r2
+ 8010628:	lsls	r3, r3, #2
+ 801062a:	adds	r3, #224	@ 0xe0
+ 801062c:	add	r3, r7
+ 801062e:	subs	r3, #166	@ 0xa6
+ 8010630:	ldrb	r3, [r3, #0]
+ 8010632:	cmp	r3, #0
+ 8010634:	beq.n	801064a <ChassisController_Process+0x21a>
+ 8010636:	movs	r2, #1
+ 8010638:	ldr.w	r3, [r7, #216]	@ 0xd8
+ 801063c:	lsl.w	r3, r2, r3
+ 8010640:	ldr.w	r2, [r7, #220]	@ 0xdc
+ 8010644:	orrs	r3, r2
+ 8010646:	str.w	r3, [r7, #220]	@ 0xdc
+ 801064a:	ldr.w	r3, [r7, #216]	@ 0xd8
+ 801064e:	adds	r3, #1
+ 8010650:	str.w	r3, [r7, #216]	@ 0xd8
+ 8010654:	ldr.w	r3, [r7, #216]	@ 0xd8
+ 8010658:	cmp	r3, #3
+ 801065a:	bls.w	80104f8 <ChassisController_Process+0xc8>
+ 801065e:	bl	800c8bc <vPortEnterCritical>
+ 8010662:	ldr	r3, [pc, #288]	@ (8010784 <ChassisController_Process+0x354>)
+ 8010664:	ldrb	r3, [r3, #0]
+ 8010666:	cmp	r3, #0
+ 8010668:	beq.w	80107d4 <ChassisController_Process+0x3a4>
+ 801066c:	movs	r3, #1
+ 801066e:	strb.w	r3, [r7, #215]	@ 0xd7
+ 8010672:	movs	r3, #0
+ 8010674:	str.w	r3, [r7, #208]	@ 0xd0
+ 8010678:	b.n	80106a6 <ChassisController_Process+0x276>
+ 801067a:	ldr.w	r3, [r7, #208]	@ 0xd0
+ 801067e:	uxtb	r2, r3
+ 8010680:	ldr.w	r3, [r7, #208]	@ 0xd0
+ 8010684:	lsls	r3, r3, #1
+ 8010686:	adds	r3, #224	@ 0xe0
+ 8010688:	add	r3, r7
+ 801068a:	ldrsh.w	r3, [r3, #-200]
+ 801068e:	mov	r1, r3
+ 8010690:	mov	r0, r2
+ 8010692:	bl	8012490 <MotorDriver_SetCommand>
+ 8010696:	mov	r3, r0
+ 8010698:	strb.w	r3, [r7, #215]	@ 0xd7
+ 801069c:	ldr.w	r3, [r7, #208]	@ 0xd0
+ 80106a0:	adds	r3, #1
+ 80106a2:	str.w	r3, [r7, #208]	@ 0xd0
+ 80106a6:	ldrb.w	r3, [r7, #215]	@ 0xd7
+ 80106aa:	cmp	r3, #0
+ 80106ac:	beq.n	80106b6 <ChassisController_Process+0x286>
+ 80106ae:	ldr.w	r3, [r7, #208]	@ 0xd0
+ 80106b2:	cmp	r3, #3
+ 80106b4:	bls.n	801067a <ChassisController_Process+0x24a>
+ 80106b6:	ldrb.w	r3, [r7, #215]	@ 0xd7
+ 80106ba:	eor.w	r3, r3, #1
+ 80106be:	uxtb	r3, r3
+ 80106c0:	cmp	r3, #0
+ 80106c2:	beq.n	80106dc <ChassisController_Process+0x2ac>
+ 80106c4:	bl	80229bc <EmergencyStop_IsLatched>
+ 80106c8:	mov	r3, r0
+ 80106ca:	cmp	r3, #0
+ 80106cc:	beq.n	80106d2 <ChassisController_Process+0x2a2>
+ 80106ce:	movs	r3, #2
+ 80106d0:	b.n	80106d4 <ChassisController_Process+0x2a4>
+ 80106d2:	movs	r3, #5
+ 80106d4:	mov	r0, r3
+ 80106d6:	bl	800fe9c <ChassisController_FaultLocked>
+ 80106da:	b.n	80107d4 <ChassisController_Process+0x3a4>
+ 80106dc:	add.w	r3, r7, #12
+ 80106e0:	mov	r0, r3
+ 80106e2:	bl	80129b0 <MotorDriver_GetStatus>
+ 80106e6:	movs	r3, #0
+ 80106e8:	str.w	r3, [r7, #204]	@ 0xcc
+ 80106ec:	b.n	8010764 <ChassisController_Process+0x334>
+ 80106ee:	ldr.w	r3, [r7, #204]	@ 0xcc
+ 80106f2:	lsls	r3, r3, #1
+ 80106f4:	adds	r3, #224	@ 0xe0
+ 80106f6:	add	r3, r7
+ 80106f8:	ldrsh.w	r2, [r3, #-200]
+ 80106fc:	ldr.w	r3, [r7, #204]	@ 0xcc
+ 8010700:	lsls	r3, r3, #1
+ 8010702:	adds	r3, #224	@ 0xe0
+ 8010704:	add	r3, r7
+ 8010706:	ldrsh.w	r3, [r3, #-210]
+ 801070a:	cmp	r2, r3
+ 801070c:	beq.n	801075a <ChassisController_Process+0x32a>
+ 801070e:	ldr.w	r3, [r7, #204]	@ 0xcc
+ 8010712:	lsls	r3, r3, #1
+ 8010714:	adds	r3, #224	@ 0xe0
+ 8010716:	add	r3, r7
+ 8010718:	ldrsh.w	r2, [r3, #-210]
+ 801071c:	ldr.w	r3, [r7, #204]	@ 0xcc
+ 8010720:	lsls	r3, r3, #1
+ 8010722:	adds	r3, #224	@ 0xe0
+ 8010724:	add	r3, r7
+ 8010726:	strh.w	r2, [r3, #-200]
+ 801072a:	ldr.w	r3, [r7, #204]	@ 0xcc
+ 801072e:	uxtb	r2, r3
+ 8010730:	ldr.w	r3, [r7, #204]	@ 0xcc
+ 8010734:	lsls	r3, r3, #1
+ 8010736:	adds	r3, #224	@ 0xe0
+ 8010738:	add	r3, r7
+ 801073a:	ldrsh.w	r3, [r3, #-200]
+ 801073e:	mov	r1, r3
+ 8010740:	mov	r0, r2
+ 8010742:	bl	80144d0 <WheelSpeedController_PrimeOutput>
+ 8010746:	movs	r2, #1
+ 8010748:	ldr.w	r3, [r7, #204]	@ 0xcc
+ 801074c:	lsl.w	r3, r2, r3
+ 8010750:	ldr.w	r2, [r7, #220]	@ 0xdc
+ 8010754:	orrs	r3, r2
+ 8010756:	str.w	r3, [r7, #220]	@ 0xdc
+ 801075a:	ldr.w	r3, [r7, #204]	@ 0xcc
+ 801075e:	adds	r3, #1
+ 8010760:	str.w	r3, [r7, #204]	@ 0xcc
+ 8010764:	ldr.w	r3, [r7, #204]	@ 0xcc
+ 8010768:	cmp	r3, #3
+ 801076a:	bls.n	80106ee <ChassisController_Process+0x2be>
+ 801076c:	ldr	r2, [pc, #20]	@ (8010784 <ChassisController_Process+0x354>)
+ 801076e:	ldr.w	r3, [r7, #220]	@ 0xdc
+ 8010772:	str	r3, [r2, #64]	@ 0x40
+ 8010774:	ldr	r2, [pc, #12]	@ (8010784 <ChassisController_Process+0x354>)
+ 8010776:	ldr	r3, [r7, #4]
+ 8010778:	str	r3, [r2, #72]	@ 0x48
+ 801077a:	movs	r3, #0
+ 801077c:	str.w	r3, [r7, #200]	@ 0xc8
+ 8010780:	b.n	80107cc <ChassisController_Process+0x39c>
+ 8010782:	nop
+ 8010784:	.word	0x2000aee8
+ 8010788:	.word	0x45098000
+ 801078c:	ldr.w	r3, [r7, #200]	@ 0xc8
+ 8010790:	lsls	r3, r3, #2
+ 8010792:	adds	r3, #224	@ 0xe0
+ 8010794:	add	r3, r7
+ 8010796:	subs	r3, #80	@ 0x50
+ 8010798:	ldr	r2, [r3, #0]
+ 801079a:	ldr	r1, [pc, #76]	@ (80107e8 <ChassisController_Process+0x3b8>)
+ 801079c:	ldr.w	r3, [r7, #200]	@ 0xc8
+ 80107a0:	adds	r3, #10
+ 80107a2:	lsls	r3, r3, #2
+ 80107a4:	add	r3, r1
+ 80107a6:	str	r2, [r3, #0]
+ 80107a8:	ldr.w	r3, [r7, #200]	@ 0xc8
+ 80107ac:	lsls	r3, r3, #1
+ 80107ae:	adds	r3, #224	@ 0xe0
+ 80107b0:	add	r3, r7
+ 80107b2:	ldrsh.w	r1, [r3, #-200]
+ 80107b6:	ldr	r2, [pc, #48]	@ (80107e8 <ChassisController_Process+0x3b8>)
+ 80107b8:	ldr.w	r3, [r7, #200]	@ 0xc8
+ 80107bc:	adds	r3, #28
+ 80107be:	strh.w	r1, [r2, r3, lsl #1]
+ 80107c2:	ldr.w	r3, [r7, #200]	@ 0xc8
+ 80107c6:	adds	r3, #1
+ 80107c8:	str.w	r3, [r7, #200]	@ 0xc8
+ 80107cc:	ldr.w	r3, [r7, #200]	@ 0xc8
+ 80107d0:	cmp	r3, #3
+ 80107d2:	bls.n	801078c <ChassisController_Process+0x35c>
+ 80107d4:	bl	800c908 <vPortExitCritical>
+ 80107d8:	b.n	80107dc <ChassisController_Process+0x3ac>
+ 80107da:	nop
+ 80107dc:	adds	r7, #224	@ 0xe0
+ 80107de:	mov	sp, r7
+ 80107e0:	vpop	{d8-d9}
+ 80107e4:	pop	{r4, r5, r7, pc}
+ 80107e6:	nop
+ 80107e8:	.word	0x2000aee8
+
+<ChassisRuntime_Process>
+ 80116e8:	push	{r4, r7, lr}
+ 80116ea:	sub	sp, #148	@ 0x94
+ 80116ec:	add	r7, sp, #0
+ 80116ee:	str	r0, [r7, #4]
+ 80116f0:	mov	r3, r1
+ 80116f2:	strb	r3, [r7, #3]
+ 80116f4:	bl	800c8bc <vPortEnterCritical>
+ 80116f8:	ldr	r2, [pc, #676]	@ (80119a0 <ChassisRuntime_Process+0x2b8>)
+ 80116fa:	ldrb	r3, [r7, #3]
+ 80116fc:	strb	r3, [r2, #21]
+ 80116fe:	ldr	r3, [pc, #672]	@ (80119a0 <ChassisRuntime_Process+0x2b8>)
+ 8011700:	ldrb	r3, [r3, #0]
+ 8011702:	strb.w	r3, [r7, #140]	@ 0x8c
+ 8011706:	ldrb	r3, [r7, #3]
+ 8011708:	cmp	r3, #0
+ 801170a:	beq.n	8011720 <ChassisRuntime_Process+0x38>
+ 801170c:	ldrb.w	r3, [r7, #140]	@ 0x8c
+ 8011710:	cmp	r3, #2
+ 8011712:	beq.n	8011720 <ChassisRuntime_Process+0x38>
+ 8011714:	ldr	r3, [pc, #648]	@ (80119a0 <ChassisRuntime_Process+0x2b8>)
+ 8011716:	movs	r2, #0
+ 8011718:	strb	r2, [r3, #20]
+ 801171a:	ldr	r3, [pc, #644]	@ (80119a0 <ChassisRuntime_Process+0x2b8>)
+ 801171c:	movs	r2, #4
+ 801171e:	strb	r2, [r3, #2]
+ 8011720:	ldr	r2, [pc, #636]	@ (80119a0 <ChassisRuntime_Process+0x2b8>)
+ 8011722:	add.w	r3, r7, #108	@ 0x6c
+ 8011726:	adds	r2, #4
+ 8011728:	ldmia.w	r2, {r0, r1}
+ 801172c:	stmia.w	r3, {r0, r1}
+ 8011730:	ldr	r2, [pc, #620]	@ (80119a0 <ChassisRuntime_Process+0x2b8>)
+ 8011732:	add.w	r3, r7, #100	@ 0x64
+ 8011736:	adds	r2, #12
+ 8011738:	ldmia.w	r2, {r0, r1}
+ 801173c:	stmia.w	r3, {r0, r1}
+ 8011740:	ldr	r3, [pc, #608]	@ (80119a4 <ChassisRuntime_Process+0x2bc>)
+ 8011742:	ldr	r3, [r3, #0]
+ 8011744:	str.w	r3, [r7, #136]	@ 0x88
+ 8011748:	ldr	r3, [pc, #596]	@ (80119a0 <ChassisRuntime_Process+0x2b8>)
+ 801174a:	ldr	r3, [r3, #28]
+ 801174c:	str.w	r3, [r7, #132]	@ 0x84
+ 8011750:	ldr	r3, [pc, #596]	@ (80119a8 <ChassisRuntime_Process+0x2c0>)
+ 8011752:	ldr	r3, [r3, #0]
+ 8011754:	str.w	r3, [r7, #128]	@ 0x80
+ 8011758:	ldr	r3, [pc, #580]	@ (80119a0 <ChassisRuntime_Process+0x2b8>)
+ 801175a:	ldr	r3, [r3, #24]
+ 801175c:	str	r3, [r7, #124]	@ 0x7c
+ 801175e:	ldr	r3, [pc, #576]	@ (80119a0 <ChassisRuntime_Process+0x2b8>)
+ 8011760:	ldrb	r3, [r3, #20]
+ 8011762:	strb.w	r3, [r7, #123]	@ 0x7b
+ 8011766:	bl	800c908 <vPortExitCritical>
+ 801176a:	bl	80229d4 <EmergencyStop_CanEnableMotor>
+ 801176e:	mov	r3, r0
+ 8011770:	eor.w	r3, r3, #1
+ 8011774:	uxtb	r3, r3
+ 8011776:	cmp	r3, #0
+ 8011778:	beq.n	8011780 <ChassisRuntime_Process+0x98>
+ 801177a:	bl	801121c <ChassisRuntime_SetEstop>
+ 801177e:	b.n	8011ad2 <ChassisRuntime_Process+0x3ea>
+ 8011780:	ldrb	r3, [r7, #3]
+ 8011782:	cmp	r3, #0
+ 8011784:	beq.n	801179e <ChassisRuntime_Process+0xb6>
+ 8011786:	ldrb.w	r3, [r7, #140]	@ 0x8c
+ 801178a:	cmp	r3, #2
+ 801178c:	bne.w	8011abc <ChassisRuntime_Process+0x3d4>
+ 8011790:	movs	r2, #0
+ 8011792:	movs	r1, #2
+ 8011794:	ldr.w	r0, [r7, #128]	@ 0x80
+ 8011798:	bl	80111f8 <ChassisRuntime_SetCurrentFault>
+ 801179c:	b.n	8011abc <ChassisRuntime_Process+0x3d4>
+ 801179e:	ldrb.w	r3, [r7, #140]	@ 0x8c
+ 80117a2:	cmp	r3, #0
+ 80117a4:	beq.w	8011ac0 <ChassisRuntime_Process+0x3d8>
+ 80117a8:	ldrb.w	r3, [r7, #140]	@ 0x8c
+ 80117ac:	cmp	r3, #3
+ 80117ae:	beq.w	8011ac0 <ChassisRuntime_Process+0x3d8>
+ 80117b2:	ldrb.w	r3, [r7, #140]	@ 0x8c
+ 80117b6:	cmp	r3, #4
+ 80117b8:	beq.w	8011ac0 <ChassisRuntime_Process+0x3d8>
+ 80117bc:	ldrb.w	r3, [r7, #123]	@ 0x7b
+ 80117c0:	eor.w	r3, r3, #1
+ 80117c4:	uxtb	r3, r3
+ 80117c6:	cmp	r3, #0
+ 80117c8:	beq.n	80117e0 <ChassisRuntime_Process+0xf8>
+ 80117ca:	ldrb.w	r3, [r7, #140]	@ 0x8c
+ 80117ce:	cmp	r3, #2
+ 80117d0:	bne.w	8011ac4 <ChassisRuntime_Process+0x3dc>
+ 80117d4:	movs	r1, #2
+ 80117d6:	ldr.w	r0, [r7, #128]	@ 0x80
+ 80117da:	bl	8011388 <ChassisRuntime_SetCurrentIdle>
+ 80117de:	b.n	8011ac4 <ChassisRuntime_Process+0x3dc>
+ 80117e0:	ldr	r3, [r7, #124]	@ 0x7c
+ 80117e2:	adds	r3, #250	@ 0xfa
+ 80117e4:	mov	r1, r3
+ 80117e6:	ldr	r0, [r7, #4]
+ 80117e8:	bl	8010ff2 <ChassisRuntime_TimeReached>
+ 80117ec:	mov	r3, r0
+ 80117ee:	cmp	r3, #0
+ 80117f0:	beq.n	80117fe <ChassisRuntime_Process+0x116>
+ 80117f2:	movs	r1, #3
+ 80117f4:	ldr.w	r0, [r7, #128]	@ 0x80
+ 80117f8:	bl	8011388 <ChassisRuntime_SetCurrentIdle>
+ 80117fc:	b.n	8011ad2 <ChassisRuntime_Process+0x3ea>
+ 80117fe:	add.w	r3, r7, #108	@ 0x6c
+ 8011802:	mov	r0, r3
+ 8011804:	bl	80110a8 <ChassisRuntime_IsZeroCommand>
+ 8011808:	mov	r3, r0
+ 801180a:	cmp	r3, #0
+ 801180c:	beq.n	801181a <ChassisRuntime_Process+0x132>
+ 801180e:	movs	r1, #1
+ 8011810:	ldr.w	r0, [r7, #128]	@ 0x80
+ 8011814:	bl	8011388 <ChassisRuntime_SetCurrentIdle>
+ 8011818:	b.n	8011ad2 <ChassisRuntime_Process+0x3ea>
+ 801181a:	ldrb.w	r3, [r7, #140]	@ 0x8c
+ 801181e:	cmp	r3, #1
+ 8011820:	bne.w	801194a <ChassisRuntime_Process+0x262>
+ 8011824:	mov.w	r3, #0
+ 8011828:	str	r3, [r7, #84]	@ 0x54
+ 801182a:	mov.w	r3, #0
+ 801182e:	str	r3, [r7, #88]	@ 0x58
+ 8011830:	add.w	r3, r7, #92	@ 0x5c
+ 8011834:	add.w	r1, r7, #108	@ 0x6c
+ 8011838:	add.w	r0, r7, #84	@ 0x54
+ 801183c:	movs	r2, #10
+ 801183e:	bl	8010e20 <ChassisMotionProfile_Step>
+ 8011842:	movs	r3, #0
+ 8011844:	strb.w	r3, [r7, #143]	@ 0x8f
+ 8011848:	movs	r3, #0
+ 801184a:	strb.w	r3, [r7, #142]	@ 0x8e
+ 801184e:	bl	800c8bc <vPortEnterCritical>
+ 8011852:	ldr	r3, [pc, #332]	@ (80119a0 <ChassisRuntime_Process+0x2b8>)
+ 8011854:	ldrb	r3, [r3, #0]
+ 8011856:	cmp	r3, #1
+ 8011858:	bne.n	80118c8 <ChassisRuntime_Process+0x1e0>
+ 801185a:	ldr	r3, [pc, #324]	@ (80119a0 <ChassisRuntime_Process+0x2b8>)
+ 801185c:	ldrb	r3, [r3, #20]
+ 801185e:	cmp	r3, #0
+ 8011860:	beq.n	80118c8 <ChassisRuntime_Process+0x1e0>
+ 8011862:	ldr	r3, [pc, #324]	@ (80119a8 <ChassisRuntime_Process+0x2c0>)
+ 8011864:	ldr	r3, [r3, #0]
+ 8011866:	ldr.w	r2, [r7, #128]	@ 0x80
+ 801186a:	cmp	r2, r3
+ 801186c:	bne.n	80118c8 <ChassisRuntime_Process+0x1e0>
+ 801186e:	ldr	r3, [pc, #304]	@ (80119a0 <ChassisRuntime_Process+0x2b8>)
+ 8011870:	ldr	r3, [r3, #28]
+ 8011872:	ldr.w	r2, [r7, #132]	@ 0x84
+ 8011876:	cmp	r2, r3
+ 8011878:	bne.n	80118c8 <ChassisRuntime_Process+0x1e0>
+ 801187a:	movs	r3, #1
+ 801187c:	strb.w	r3, [r7, #143]	@ 0x8f
+ 8011880:	add.w	r3, r7, #92	@ 0x5c
+ 8011884:	ldr	r1, [r7, #4]
+ 8011886:	mov	r0, r3
+ 8011888:	bl	8010360 <ChassisController_Start>
+ 801188c:	mov	r3, r0
+ 801188e:	strb.w	r3, [r7, #142]	@ 0x8e
+ 8011892:	ldrb.w	r3, [r7, #142]	@ 0x8e
+ 8011896:	cmp	r3, #0
+ 8011898:	beq.n	80118c8 <ChassisRuntime_Process+0x1e0>
+ 801189a:	ldr	r3, [pc, #260]	@ (80119a0 <ChassisRuntime_Process+0x2b8>)
+ 801189c:	movs	r2, #2
+ 801189e:	strb	r2, [r3, #0]
+ 80118a0:	ldr	r3, [pc, #252]	@ (80119a0 <ChassisRuntime_Process+0x2b8>)
+ 80118a2:	movs	r2, #0
+ 80118a4:	strb	r2, [r3, #1]
+ 80118a6:	ldr	r3, [pc, #248]	@ (80119a0 <ChassisRuntime_Process+0x2b8>)
+ 80118a8:	movs	r2, #0
+ 80118aa:	strb	r2, [r3, #3]
+ 80118ac:	ldr	r3, [pc, #240]	@ (80119a0 <ChassisRuntime_Process+0x2b8>)
+ 80118ae:	movs	r2, #0
+ 80118b0:	strb	r2, [r3, #2]
+ 80118b2:	ldr	r3, [pc, #236]	@ (80119a0 <ChassisRuntime_Process+0x2b8>)
+ 80118b4:	adds	r3, #12
+ 80118b6:	add.w	r2, r7, #92	@ 0x5c
+ 80118ba:	ldmia.w	r2, {r0, r1}
+ 80118be:	stmia.w	r3, {r0, r1}
+ 80118c2:	ldr	r2, [pc, #224]	@ (80119a4 <ChassisRuntime_Process+0x2bc>)
+ 80118c4:	ldr	r3, [r7, #4]
+ 80118c6:	str	r3, [r2, #0]
+ 80118c8:	bl	800c908 <vPortExitCritical>
+ 80118cc:	ldrb.w	r3, [r7, #142]	@ 0x8e
+ 80118d0:	eor.w	r3, r3, #1
+ 80118d4:	uxtb	r3, r3
+ 80118d6:	cmp	r3, #0
+ 80118d8:	beq.n	8011912 <ChassisRuntime_Process+0x22a>
+ 80118da:	ldrb.w	r3, [r7, #143]	@ 0x8f
+ 80118de:	eor.w	r3, r3, #1
+ 80118e2:	uxtb	r3, r3
+ 80118e4:	cmp	r3, #0
+ 80118e6:	bne.w	8011ac8 <ChassisRuntime_Process+0x3e0>
+ 80118ea:	add.w	r3, r7, #8
+ 80118ee:	movs	r2, #76	@ 0x4c
+ 80118f0:	movs	r1, #0
+ 80118f2:	mov	r0, r3
+ 80118f4:	bl	8026400 <memset>
+ 80118f8:	add.w	r3, r7, #8
+ 80118fc:	mov	r0, r3
+ 80118fe:	bl	80108a8 <ChassisController_GetStatus>
+ 8011902:	ldrb	r3, [r7, #9]
+ 8011904:	mov	r2, r3
+ 8011906:	movs	r1, #3
+ 8011908:	ldr.w	r0, [r7, #128]	@ 0x80
+ 801190c:	bl	80111f8 <ChassisRuntime_SetCurrentFault>
+ 8011910:	b.n	8011ad2 <ChassisRuntime_Process+0x3ea>
+ 8011912:	vldr	s15, [r7, #108]	@ 0x6c
+ 8011916:	vldr	s14, [pc, #148]	@ 80119ac <ChassisRuntime_Process+0x2c4>
+ 801191a:	vmul.f32	s15, s15, s14
+ 801191e:	vmov.f32	s0, s15
+ 8011922:	bl	8010fa8 <ChassisRuntime_Round>
+ 8011926:	mov	r4, r0
+ 8011928:	vldr	s15, [r7, #112]	@ 0x70
+ 801192c:	vldr	s14, [pc, #124]	@ 80119ac <ChassisRuntime_Process+0x2c4>
+ 8011930:	vmul.f32	s15, s15, s14
+ 8011934:	vmov.f32	s0, s15
+ 8011938:	bl	8010fa8 <ChassisRuntime_Round>
+ 801193c:	mov	r3, r0
+ 801193e:	mov	r2, r4
+ 8011940:	ldr	r1, [pc, #108]	@ (80119b0 <ChassisRuntime_Process+0x2c8>)
+ 8011942:	movs	r0, #1
+ 8011944:	bl	80250e8 <DebugLog_Printf>
+ 8011948:	b.n	8011ad2 <ChassisRuntime_Process+0x3ea>
+ 801194a:	ldrb.w	r3, [r7, #140]	@ 0x8c
+ 801194e:	cmp	r3, #2
+ 8011950:	bne.w	8011ad2 <ChassisRuntime_Process+0x3ea>
+ 8011954:	add.w	r3, r7, #8
+ 8011958:	movs	r2, #76	@ 0x4c
+ 801195a:	movs	r1, #0
+ 801195c:	mov	r0, r3
+ 801195e:	bl	8026400 <memset>
+ 8011962:	ldr	r2, [r7, #4]
+ 8011964:	ldr.w	r3, [r7, #136]	@ 0x88
+ 8011968:	subs	r3, r2, r3
+ 801196a:	str	r3, [r7, #116]	@ 0x74
+ 801196c:	ldr	r3, [r7, #116]	@ 0x74
+ 801196e:	cmp	r3, #0
+ 8011970:	beq.w	8011acc <ChassisRuntime_Process+0x3e4>
+ 8011974:	add.w	r3, r7, #92	@ 0x5c
+ 8011978:	add.w	r1, r7, #108	@ 0x6c
+ 801197c:	add.w	r0, r7, #100	@ 0x64
+ 8011980:	ldr	r2, [r7, #116]	@ 0x74
+ 8011982:	bl	8010e20 <ChassisMotionProfile_Step>
+ 8011986:	mov	r3, r0
+ 8011988:	eor.w	r3, r3, #1
+ 801198c:	uxtb	r3, r3
+ 801198e:	cmp	r3, #0
+ 8011990:	beq.n	80119b4 <ChassisRuntime_Process+0x2cc>
+ 8011992:	movs	r2, #8
+ 8011994:	movs	r1, #4
+ 8011996:	ldr.w	r0, [r7, #128]	@ 0x80
+ 801199a:	bl	80111f8 <ChassisRuntime_SetCurrentFault>
+ 801199e:	b.n	8011ad2 <ChassisRuntime_Process+0x3ea>
+ 80119a0:	.word	0x2000af94
+ 80119a4:	.word	0x2000afbc
+ 80119a8:	.word	0x2000afc0
+ 80119ac:	.word	0x447a0000
+ 80119b0:	.word	0x08027718
+ 80119b4:	movs	r3, #0
+ 80119b6:	strb.w	r3, [r7, #141]	@ 0x8d
+ 80119ba:	bl	800c8bc <vPortEnterCritical>
+ 80119be:	ldr	r3, [pc, #280]	@ (8011ad8 <ChassisRuntime_Process+0x3f0>)
+ 80119c0:	ldrb	r3, [r3, #0]
+ 80119c2:	cmp	r3, #2
+ 80119c4:	bne.n	8011a16 <ChassisRuntime_Process+0x32e>
+ 80119c6:	ldr	r3, [pc, #272]	@ (8011ad8 <ChassisRuntime_Process+0x3f0>)
+ 80119c8:	ldrb	r3, [r3, #20]
+ 80119ca:	cmp	r3, #0
+ 80119cc:	beq.n	8011a16 <ChassisRuntime_Process+0x32e>
+ 80119ce:	ldr	r3, [pc, #268]	@ (8011adc <ChassisRuntime_Process+0x3f4>)
+ 80119d0:	ldr	r3, [r3, #0]
+ 80119d2:	ldr.w	r2, [r7, #128]	@ 0x80
+ 80119d6:	cmp	r2, r3
+ 80119d8:	bne.n	8011a16 <ChassisRuntime_Process+0x32e>
+ 80119da:	ldr	r3, [pc, #252]	@ (8011ad8 <ChassisRuntime_Process+0x3f0>)
+ 80119dc:	ldr	r3, [r3, #28]
+ 80119de:	ldr.w	r2, [r7, #132]	@ 0x84
+ 80119e2:	cmp	r2, r3
+ 80119e4:	bne.n	8011a16 <ChassisRuntime_Process+0x32e>
+ 80119e6:	add.w	r3, r7, #92	@ 0x5c
+ 80119ea:	ldr	r1, [r7, #4]
+ 80119ec:	mov	r0, r3
+ 80119ee:	bl	801039c <ChassisController_SetCommand>
+ 80119f2:	mov	r3, r0
+ 80119f4:	strb.w	r3, [r7, #141]	@ 0x8d
+ 80119f8:	ldrb.w	r3, [r7, #141]	@ 0x8d
+ 80119fc:	cmp	r3, #0
+ 80119fe:	beq.n	8011a16 <ChassisRuntime_Process+0x32e>
+ 8011a00:	ldr	r3, [pc, #212]	@ (8011ad8 <ChassisRuntime_Process+0x3f0>)
+ 8011a02:	adds	r3, #12
+ 8011a04:	add.w	r2, r7, #92	@ 0x5c
+ 8011a08:	ldmia.w	r2, {r0, r1}
+ 8011a0c:	stmia.w	r3, {r0, r1}
+ 8011a10:	ldr	r2, [pc, #204]	@ (8011ae0 <ChassisRuntime_Process+0x3f8>)
+ 8011a12:	ldr	r3, [r7, #4]
+ 8011a14:	str	r3, [r2, #0]
+ 8011a16:	bl	800c908 <vPortExitCritical>
+ 8011a1a:	ldrb.w	r3, [r7, #141]	@ 0x8d
+ 8011a1e:	eor.w	r3, r3, #1
+ 8011a22:	uxtb	r3, r3
+ 8011a24:	cmp	r3, #0
+ 8011a26:	beq.n	8011a38 <ChassisRuntime_Process+0x350>
+ 8011a28:	bl	8011b9c <ChassisRuntime_IsActive>
+ 8011a2c:	mov	r3, r0
+ 8011a2e:	eor.w	r3, r3, #1
+ 8011a32:	uxtb	r3, r3
+ 8011a34:	cmp	r3, #0
+ 8011a36:	bne.n	8011ad0 <ChassisRuntime_Process+0x3e8>
+ 8011a38:	ldrb.w	r3, [r7, #141]	@ 0x8d
+ 8011a3c:	eor.w	r3, r3, #1
+ 8011a40:	uxtb	r3, r3
+ 8011a42:	cmp	r3, #0
+ 8011a44:	bne.n	8011a6e <ChassisRuntime_Process+0x386>
+ 8011a46:	add.w	r3, r7, #8
+ 8011a4a:	mov	r0, r3
+ 8011a4c:	bl	80108a8 <ChassisController_GetStatus>
+ 8011a50:	mov	r3, r0
+ 8011a52:	eor.w	r3, r3, #1
+ 8011a56:	uxtb	r3, r3
+ 8011a58:	cmp	r3, #0
+ 8011a5a:	bne.n	8011a6e <ChassisRuntime_Process+0x386>
+ 8011a5c:	ldrb	r3, [r7, #8]
+ 8011a5e:	eor.w	r3, r3, #1
+ 8011a62:	uxtb	r3, r3
+ 8011a64:	cmp	r3, #0
+ 8011a66:	bne.n	8011a6e <ChassisRuntime_Process+0x386>
+ 8011a68:	ldrb	r3, [r7, #9]
+ 8011a6a:	cmp	r3, #0
+ 8011a6c:	beq.n	8011a7e <ChassisRuntime_Process+0x396>
+ 8011a6e:	ldrb	r3, [r7, #9]
+ 8011a70:	mov	r2, r3
+ 8011a72:	movs	r1, #4
+ 8011a74:	ldr.w	r0, [r7, #128]	@ 0x80
+ 8011a78:	bl	80111f8 <ChassisRuntime_SetCurrentFault>
+ 8011a7c:	b.n	8011ad2 <ChassisRuntime_Process+0x3ea>
+ 8011a7e:	ldr	r0, [r7, #4]
+ 8011a80:	bl	8010430 <ChassisController_Process>
+ 8011a84:	add.w	r3, r7, #8
+ 8011a88:	mov	r0, r3
+ 8011a8a:	bl	80108a8 <ChassisController_GetStatus>
+ 8011a8e:	mov	r3, r0
+ 8011a90:	eor.w	r3, r3, #1
+ 8011a94:	uxtb	r3, r3
+ 8011a96:	cmp	r3, #0
+ 8011a98:	bne.n	8011aac <ChassisRuntime_Process+0x3c4>
+ 8011a9a:	ldrb	r3, [r7, #8]
+ 8011a9c:	eor.w	r3, r3, #1
+ 8011aa0:	uxtb	r3, r3
+ 8011aa2:	cmp	r3, #0
+ 8011aa4:	bne.n	8011aac <ChassisRuntime_Process+0x3c4>
+ 8011aa6:	ldrb	r3, [r7, #9]
+ 8011aa8:	cmp	r3, #0
+ 8011aaa:	beq.n	8011ad2 <ChassisRuntime_Process+0x3ea>
+ 8011aac:	ldrb	r3, [r7, #9]
+ 8011aae:	mov	r2, r3
+ 8011ab0:	movs	r1, #4
+ 8011ab2:	ldr.w	r0, [r7, #128]	@ 0x80
+ 8011ab6:	bl	80111f8 <ChassisRuntime_SetCurrentFault>
+ 8011aba:	b.n	8011ad2 <ChassisRuntime_Process+0x3ea>
+ 8011abc:	nop
+ 8011abe:	b.n	8011ad2 <ChassisRuntime_Process+0x3ea>
+ 8011ac0:	nop
+ 8011ac2:	b.n	8011ad2 <ChassisRuntime_Process+0x3ea>
+ 8011ac4:	nop
+ 8011ac6:	b.n	8011ad2 <ChassisRuntime_Process+0x3ea>
+ 8011ac8:	nop
+ 8011aca:	b.n	8011ad2 <ChassisRuntime_Process+0x3ea>
+ 8011acc:	nop
+ 8011ace:	b.n	8011ad2 <ChassisRuntime_Process+0x3ea>
+ 8011ad0:	nop
+ 8011ad2:	adds	r7, #148	@ 0x94
+ 8011ad4:	mov	sp, r7
+ 8011ad6:	pop	{r4, r7, pc}
+ 8011ad8:	.word	0x2000af94
+ 8011adc:	.word	0x2000afc0
+ 8011ae0:	.word	0x2000afbc
+
+<DebugLog_DeferToBuffer>
+ 8024e2c:	push	{r7, lr}
+ 8024e2e:	sub	sp, #48	@ 0x30
+ 8024e30:	add	r7, sp, #8
+ 8024e32:	str	r0, [r7, #12]
+ 8024e34:	str	r2, [r7, #4]
+ 8024e36:	str	r3, [r7, #0]
+ 8024e38:	mov	r3, r1
+ 8024e3a:	strb	r3, [r7, #11]
+ 8024e3c:	bl	8005c0c <HAL_GetTick>
+ 8024e40:	mov	r2, r0
+ 8024e42:	ldrb	r3, [r7, #11]
+ 8024e44:	ldr	r1, [pc, #236]	@ (8024f34 <DebugLog_DeferToBuffer+0x108>)
+ 8024e46:	ldr.w	r3, [r1, r3, lsl #2]
+ 8024e4a:	str	r3, [sp, #0]
+ 8024e4c:	mov	r3, r2
+ 8024e4e:	ldr	r2, [pc, #232]	@ (8024f38 <DebugLog_DeferToBuffer+0x10c>)
+ 8024e50:	mov.w	r1, #256	@ 0x100
+ 8024e54:	ldr	r0, [r7, #12]
+ 8024e56:	bl	80262fc <sniprintf>
+ 8024e5a:	str	r0, [r7, #28]
+ 8024e5c:	ldr	r3, [r7, #28]
+ 8024e5e:	cmp	r3, #0
+ 8024e60:	blt.n	8024e68 <DebugLog_DeferToBuffer+0x3c>
+ 8024e62:	ldr	r3, [r7, #28]
+ 8024e64:	cmp	r3, #252	@ 0xfc
+ 8024e66:	bls.n	8024e6c <DebugLog_DeferToBuffer+0x40>
+ 8024e68:	movs	r3, #0
+ 8024e6a:	b.n	8024f2a <DebugLog_DeferToBuffer+0xfe>
+ 8024e6c:	ldr	r3, [r7, #28]
+ 8024e6e:	ldr	r2, [r7, #12]
+ 8024e70:	adds	r0, r2, r3
+ 8024e72:	ldr	r3, [r7, #28]
+ 8024e74:	rsb	r1, r3, #256	@ 0x100
+ 8024e78:	ldr	r3, [r7, #0]
+ 8024e7a:	ldr	r2, [r7, #4]
+ 8024e7c:	bl	80263c4 <vsniprintf>
+ 8024e80:	str	r0, [r7, #24]
+ 8024e82:	ldr	r3, [r7, #24]
+ 8024e84:	cmp	r3, #0
+ 8024e86:	bge.n	8024e8c <DebugLog_DeferToBuffer+0x60>
+ 8024e88:	movs	r3, #0
+ 8024e8a:	b.n	8024f2a <DebugLog_DeferToBuffer+0xfe>
+ 8024e8c:	ldr	r2, [r7, #28]
+ 8024e8e:	ldr	r3, [r7, #24]
+ 8024e90:	add	r3, r2
+ 8024e92:	str	r3, [r7, #36]	@ 0x24
+ 8024e94:	ldr	r3, [r7, #36]	@ 0x24
+ 8024e96:	cmp	r3, #253	@ 0xfd
+ 8024e98:	bls.n	8024e9e <DebugLog_DeferToBuffer+0x72>
+ 8024e9a:	movs	r3, #253	@ 0xfd
+ 8024e9c:	str	r3, [r7, #36]	@ 0x24
+ 8024e9e:	ldr	r3, [r7, #36]	@ 0x24
+ 8024ea0:	adds	r2, r3, #1
+ 8024ea2:	str	r2, [r7, #36]	@ 0x24
+ 8024ea4:	ldr	r2, [r7, #12]
+ 8024ea6:	add	r3, r2
+ 8024ea8:	movs	r2, #13
+ 8024eaa:	strb	r2, [r3, #0]
+ 8024eac:	ldr	r3, [r7, #36]	@ 0x24
+ 8024eae:	adds	r2, r3, #1
+ 8024eb0:	str	r2, [r7, #36]	@ 0x24
+ 8024eb2:	ldr	r2, [r7, #12]
+ 8024eb4:	add	r3, r2
+ 8024eb6:	movs	r2, #10
+ 8024eb8:	strb	r2, [r3, #0]
+ 8024eba:	ldr	r2, [r7, #12]
+ 8024ebc:	ldr	r3, [r7, #36]	@ 0x24
+ 8024ebe:	add	r3, r2
+ 8024ec0:	movs	r2, #0
+ 8024ec2:	strb	r2, [r3, #0]
+ 8024ec4:	movs	r3, #0
+ 8024ec6:	strb.w	r3, [r7, #35]	@ 0x23
+ 8024eca:	bl	800c8bc <vPortEnterCritical>
+ 8024ece:	ldr	r3, [pc, #108]	@ (8024f3c <DebugLog_DeferToBuffer+0x110>)
+ 8024ed0:	ldrb	r3, [r3, #0]
+ 8024ed2:	adds	r3, #1
+ 8024ed4:	uxtb	r3, r3
+ 8024ed6:	and.w	r3, r3, #31
+ 8024eda:	strb	r3, [r7, #23]
+ 8024edc:	ldr	r3, [pc, #96]	@ (8024f40 <DebugLog_DeferToBuffer+0x114>)
+ 8024ede:	ldrb	r3, [r3, #0]
+ 8024ee0:	ldrb	r2, [r7, #23]
+ 8024ee2:	cmp	r2, r3
+ 8024ee4:	beq.n	8024f18 <DebugLog_DeferToBuffer+0xec>
+ 8024ee6:	ldr	r3, [pc, #84]	@ (8024f3c <DebugLog_DeferToBuffer+0x110>)
+ 8024ee8:	ldrb	r3, [r3, #0]
+ 8024eea:	lsls	r3, r3, #8
+ 8024eec:	ldr	r2, [pc, #84]	@ (8024f44 <DebugLog_DeferToBuffer+0x118>)
+ 8024eee:	add	r3, r2
+ 8024ef0:	ldr	r2, [r7, #36]	@ 0x24
+ 8024ef2:	ldr	r1, [r7, #12]
+ 8024ef4:	mov	r0, r3
+ 8024ef6:	bl	8026468 <memcpy>
+ 8024efa:	ldr	r3, [pc, #64]	@ (8024f3c <DebugLog_DeferToBuffer+0x110>)
+ 8024efc:	ldrb	r3, [r3, #0]
+ 8024efe:	mov	r2, r3
+ 8024f00:	ldr	r3, [r7, #36]	@ 0x24
+ 8024f02:	uxth	r1, r3
+ 8024f04:	ldr	r3, [pc, #64]	@ (8024f48 <DebugLog_DeferToBuffer+0x11c>)
+ 8024f06:	strh.w	r1, [r3, r2, lsl #1]
+ 8024f0a:	ldr	r2, [pc, #48]	@ (8024f3c <DebugLog_DeferToBuffer+0x110>)
+ 8024f0c:	ldrb	r3, [r7, #23]
+ 8024f0e:	strb	r3, [r2, #0]
+ 8024f10:	movs	r3, #1
+ 8024f12:	strb.w	r3, [r7, #35]	@ 0x23
+ 8024f16:	b.n	8024f22 <DebugLog_DeferToBuffer+0xf6>
+ 8024f18:	ldr	r3, [pc, #48]	@ (8024f4c <DebugLog_DeferToBuffer+0x120>)
+ 8024f1a:	ldr	r3, [r3, #0]
+ 8024f1c:	adds	r3, #1
+ 8024f1e:	ldr	r2, [pc, #44]	@ (8024f4c <DebugLog_DeferToBuffer+0x120>)
+ 8024f20:	str	r3, [r2, #0]
+ 8024f22:	bl	800c908 <vPortExitCritical>
+ 8024f26:	ldrb.w	r3, [r7, #35]	@ 0x23
+ 8024f2a:	mov	r0, r3
+ 8024f2c:	adds	r7, #40	@ 0x28
+ 8024f2e:	mov	sp, r7
+ 8024f30:	pop	{r7, pc}
+ 8024f32:	nop
+ 8024f34:	.word	0x0802c38c
+ 8024f38:	.word	0x0802ba00
+ 8024f3c:	.word	0x200130b4
+ 8024f40:	.word	0x200130b5
+ 8024f44:	.word	0x20011074
+ 8024f48:	.word	0x20013074
+ 8024f4c:	.word	0x200130c0
+
+<DebugLog_Printf>
+ 80250e8:	push	{r1, r2, r3}
+ 80250ea:	push	{r7, lr}
+ 80250ec:	sub	sp, #60	@ 0x3c
+ 80250ee:	add	r7, sp, #8
+ 80250f0:	mov	r3, r0
+ 80250f2:	strb	r3, [r7, #7]
+ 80250f4:	ldr	r3, [pc, #496]	@ (80252e8 <DebugLog_Printf+0x200>)
+ 80250f6:	ldrb	r3, [r3, #0]
+ 80250f8:	eor.w	r3, r3, #1
+ 80250fc:	uxtb	r3, r3
+ 80250fe:	cmp	r3, #0
+ 8025100:	bne.n	802511a <DebugLog_Printf+0x32>
+ 8025102:	ldr	r3, [r7, #60]	@ 0x3c
+ 8025104:	cmp	r3, #0
+ 8025106:	beq.n	802511a <DebugLog_Printf+0x32>
+ 8025108:	ldrb	r3, [r7, #7]
+ 802510a:	cmp	r3, #3
+ 802510c:	bhi.n	802511a <DebugLog_Printf+0x32>
+ 802510e:	mrs	r3, IPSR
+ 8025112:	str	r3, [r7, #16]
+ 8025114:	ldr	r3, [r7, #16]
+ 8025116:	cmp	r3, #0
+ 8025118:	beq.n	802511e <DebugLog_Printf+0x36>
+ 802511a:	movs	r3, #0
+ 802511c:	b.n	80252da <DebugLog_Printf+0x1f2>
+ 802511e:	movs	r3, #0
+ 8025120:	strb.w	r3, [r7, #43]	@ 0x2b
+ 8025124:	mov.w	r3, #4294967295
+ 8025128:	str	r3, [r7, #36]	@ 0x24
+ 802512a:	bl	800be0c <osKernelGetState>
+ 802512e:	mov	r3, r0
+ 8025130:	cmp	r3, #2
+ 8025132:	bne.n	802519c <DebugLog_Printf+0xb4>
+ 8025134:	bl	800bfea <osThreadGetId>
+ 8025138:	str	r0, [r7, #28]
+ 802513a:	bl	800c8bc <vPortEnterCritical>
+ 802513e:	ldr	r3, [pc, #428]	@ (80252ec <DebugLog_Printf+0x204>)
+ 8025140:	ldr	r3, [r3, #0]
+ 8025142:	cmp	r3, #0
+ 8025144:	beq.n	8025154 <DebugLog_Printf+0x6c>
+ 8025146:	ldr	r3, [pc, #420]	@ (80252ec <DebugLog_Printf+0x204>)
+ 8025148:	ldr	r3, [r3, #0]
+ 802514a:	ldr	r2, [r7, #28]
+ 802514c:	cmp	r2, r3
+ 802514e:	bne.n	8025154 <DebugLog_Printf+0x6c>
+ 8025150:	movs	r3, #1
+ 8025152:	b.n	8025156 <DebugLog_Printf+0x6e>
+ 8025154:	movs	r3, #0
+ 8025156:	strb.w	r3, [r7, #43]	@ 0x2b
+ 802515a:	ldrb.w	r3, [r7, #43]	@ 0x2b
+ 802515e:	and.w	r3, r3, #1
+ 8025162:	strb.w	r3, [r7, #43]	@ 0x2b
+ 8025166:	movs	r3, #0
+ 8025168:	str	r3, [r7, #32]
+ 802516a:	b.n	8025192 <DebugLog_Printf+0xaa>
+ 802516c:	ldr	r3, [r7, #28]
+ 802516e:	cmp	r3, #0
+ 8025170:	beq.n	802518c <DebugLog_Printf+0xa4>
+ 8025172:	ldr	r2, [pc, #380]	@ (80252f0 <DebugLog_Printf+0x208>)
+ 8025174:	ldr	r3, [r7, #32]
+ 8025176:	ldr.w	r3, [r2, r3, lsl #2]
+ 802517a:	ldr	r2, [r7, #28]
+ 802517c:	cmp	r2, r3
+ 802517e:	bne.n	802518c <DebugLog_Printf+0xa4>
+ 8025180:	movs	r3, #1
+ 8025182:	strb.w	r3, [r7, #43]	@ 0x2b
+ 8025186:	ldr	r3, [r7, #32]
+ 8025188:	str	r3, [r7, #36]	@ 0x24
+ 802518a:	b.n	8025198 <DebugLog_Printf+0xb0>
+ 802518c:	ldr	r3, [r7, #32]
+ 802518e:	adds	r3, #1
+ 8025190:	str	r3, [r7, #32]
+ 8025192:	ldr	r3, [r7, #32]
+ 8025194:	cmp	r3, #2
+ 8025196:	bls.n	802516c <DebugLog_Printf+0x84>
+ 8025198:	bl	800c908 <vPortExitCritical>
+ 802519c:	ldrb.w	r3, [r7, #43]	@ 0x2b
+ 80251a0:	cmp	r3, #0
+ 80251a2:	beq.n	80251ee <DebugLog_Printf+0x106>
+ 80251a4:	add.w	r3, r7, #64	@ 0x40
+ 80251a8:	str	r3, [r7, #8]
+ 80251aa:	ldr	r3, [r7, #36]	@ 0x24
+ 80251ac:	cmp	r3, #0
+ 80251ae:	blt.n	80251d0 <DebugLog_Printf+0xe8>
+ 80251b0:	ldr	r3, [r7, #36]	@ 0x24
+ 80251b2:	lsls	r3, r3, #8
+ 80251b4:	ldr	r2, [pc, #316]	@ (80252f4 <DebugLog_Printf+0x20c>)
+ 80251b6:	adds	r0, r3, r2
+ 80251b8:	ldrb	r1, [r7, #7]
+ 80251ba:	ldr	r3, [r7, #8]
+ 80251bc:	ldr	r2, [r7, #60]	@ 0x3c
+ 80251be:	bl	8024e2c <DebugLog_DeferToBuffer>
+ 80251c2:	mov	r3, r0
+ 80251c4:	cmp	r3, #0
+ 80251c6:	ite	ne
+ 80251c8:	movne	r3, #1
+ 80251ca:	moveq	r3, #0
+ 80251cc:	uxtb	r3, r3
+ 80251ce:	b.n	80251e8 <DebugLog_Printf+0x100>
+ 80251d0:	ldrb	r3, [r7, #7]
+ 80251d2:	ldr	r2, [r7, #8]
+ 80251d4:	ldr	r1, [r7, #60]	@ 0x3c
+ 80251d6:	mov	r0, r3
+ 80251d8:	bl	8024f50 <DebugLog_DeferRecord>
+ 80251dc:	mov	r3, r0
+ 80251de:	cmp	r3, #0
+ 80251e0:	ite	ne
+ 80251e2:	movne	r3, #1
+ 80251e4:	moveq	r3, #0
+ 80251e6:	uxtb	r3, r3
+ 80251e8:	strb	r3, [r7, #23]
+ 80251ea:	ldrb	r3, [r7, #23]
+ 80251ec:	b.n	80252da <DebugLog_Printf+0x1f2>
+ 80251ee:	add.w	r3, r7, #15
+ 80251f2:	mov	r0, r3
+ 80251f4:	bl	8024bd0 <DebugLog_Lock>
+ 80251f8:	mov	r3, r0
+ 80251fa:	eor.w	r3, r3, #1
+ 80251fe:	uxtb	r3, r3
+ 8025200:	cmp	r3, #0
+ 8025202:	beq.n	8025208 <DebugLog_Printf+0x120>
+ 8025204:	movs	r3, #0
+ 8025206:	b.n	80252da <DebugLog_Printf+0x1f2>
+ 8025208:	bl	8005c0c <HAL_GetTick>
+ 802520c:	mov	r2, r0
+ 802520e:	ldrb	r3, [r7, #7]
+ 8025210:	ldr	r1, [pc, #228]	@ (80252f8 <DebugLog_Printf+0x210>)
+ 8025212:	ldr.w	r3, [r1, r3, lsl #2]
+ 8025216:	str	r3, [sp, #0]
+ 8025218:	mov	r3, r2
+ 802521a:	ldr	r2, [pc, #224]	@ (80252fc <DebugLog_Printf+0x214>)
+ 802521c:	mov.w	r1, #256	@ 0x100
+ 8025220:	ldr	r0, [pc, #220]	@ (8025300 <DebugLog_Printf+0x218>)
+ 8025222:	bl	80262fc <sniprintf>
+ 8025226:	str	r0, [r7, #24]
+ 8025228:	ldr	r3, [r7, #24]
+ 802522a:	cmp	r3, #0
+ 802522c:	bge.n	802523a <DebugLog_Printf+0x152>
+ 802522e:	ldrb	r3, [r7, #15]
+ 8025230:	mov	r0, r3
+ 8025232:	bl	8024c14 <DebugLog_Unlock>
+ 8025236:	movs	r3, #0
+ 8025238:	b.n	80252da <DebugLog_Printf+0x1f2>
+ 802523a:	ldr	r3, [r7, #24]
+ 802523c:	str	r3, [r7, #44]	@ 0x2c
+ 802523e:	ldr	r3, [r7, #44]	@ 0x2c
+ 8025240:	cmp	r3, #255	@ 0xff
+ 8025242:	bls.n	8025248 <DebugLog_Printf+0x160>
+ 8025244:	movs	r3, #255	@ 0xff
+ 8025246:	str	r3, [r7, #44]	@ 0x2c
+ 8025248:	add.w	r3, r7, #64	@ 0x40
+ 802524c:	str	r3, [r7, #8]
+ 802524e:	ldr	r3, [r7, #44]	@ 0x2c
+ 8025250:	ldr	r2, [pc, #172]	@ (8025300 <DebugLog_Printf+0x218>)
+ 8025252:	adds	r0, r3, r2
+ 8025254:	ldr	r3, [r7, #44]	@ 0x2c
+ 8025256:	rsb	r1, r3, #256	@ 0x100
+ 802525a:	ldr	r3, [r7, #8]
+ 802525c:	ldr	r2, [r7, #60]	@ 0x3c
+ 802525e:	bl	80263c4 <vsniprintf>
+ 8025262:	str	r0, [r7, #24]
+ 8025264:	ldr	r3, [r7, #24]
+ 8025266:	cmp	r3, #0
+ 8025268:	bge.n	8025276 <DebugLog_Printf+0x18e>
+ 802526a:	ldrb	r3, [r7, #15]
+ 802526c:	mov	r0, r3
+ 802526e:	bl	8024c14 <DebugLog_Unlock>
+ 8025272:	movs	r3, #0
+ 8025274:	b.n	80252da <DebugLog_Printf+0x1f2>
+ 8025276:	ldr	r3, [r7, #24]
+ 8025278:	ldr	r2, [r7, #44]	@ 0x2c
+ 802527a:	add	r3, r2
+ 802527c:	str	r3, [r7, #44]	@ 0x2c
+ 802527e:	ldr	r3, [r7, #44]	@ 0x2c
+ 8025280:	cmp	r3, #253	@ 0xfd
+ 8025282:	bls.n	8025288 <DebugLog_Printf+0x1a0>
+ 8025284:	movs	r3, #253	@ 0xfd
+ 8025286:	str	r3, [r7, #44]	@ 0x2c
+ 8025288:	ldr	r3, [r7, #44]	@ 0x2c
+ 802528a:	adds	r2, r3, #1
+ 802528c:	str	r2, [r7, #44]	@ 0x2c
+ 802528e:	ldr	r2, [pc, #112]	@ (8025300 <DebugLog_Printf+0x218>)
+ 8025290:	movs	r1, #13
+ 8025292:	strb	r1, [r2, r3]
+ 8025294:	ldr	r3, [r7, #44]	@ 0x2c
+ 8025296:	adds	r2, r3, #1
+ 8025298:	str	r2, [r7, #44]	@ 0x2c
+ 802529a:	ldr	r2, [pc, #100]	@ (8025300 <DebugLog_Printf+0x218>)
+ 802529c:	movs	r1, #10
+ 802529e:	strb	r1, [r2, r3]
+ 80252a0:	ldr	r2, [pc, #92]	@ (8025300 <DebugLog_Printf+0x218>)
+ 80252a2:	ldr	r3, [r7, #44]	@ 0x2c
+ 80252a4:	add	r3, r2
+ 80252a6:	movs	r2, #0
+ 80252a8:	strb	r2, [r3, #0]
+ 80252aa:	ldr	r3, [r7, #44]	@ 0x2c
+ 80252ac:	uxth	r2, r3
+ 80252ae:	movs	r3, #100	@ 0x64
+ 80252b0:	ldr	r1, [pc, #76]	@ (8025300 <DebugLog_Printf+0x218>)
+ 80252b2:	ldr	r0, [pc, #80]	@ (8025304 <DebugLog_Printf+0x21c>)
+ 80252b4:	bl	8006e58 <HAL_UART_Transmit>
+ 80252b8:	mov	r3, r0
+ 80252ba:	cmp	r3, #0
+ 80252bc:	ite	eq
+ 80252be:	moveq	r3, #1
+ 80252c0:	movne	r3, #0
+ 80252c2:	uxtb	r3, r3
+ 80252c4:	str	r3, [r7, #24]
+ 80252c6:	ldrb	r3, [r7, #15]
+ 80252c8:	mov	r0, r3
+ 80252ca:	bl	8024c14 <DebugLog_Unlock>
+ 80252ce:	ldr	r3, [r7, #24]
+ 80252d0:	cmp	r3, #0
+ 80252d2:	ite	ne
+ 80252d4:	movne	r3, #1
+ 80252d6:	moveq	r3, #0
+ 80252d8:	uxtb	r3, r3
+ 80252da:	mov	r0, r3
+ 80252dc:	adds	r7, #52	@ 0x34
+ 80252de:	mov	sp, r7
+ 80252e0:	ldmia.w	sp!, {r7, lr}
+ 80252e4:	add	sp, #12
+ 80252e6:	bx	lr
+ 80252e8:	.word	0x20011070
+ 80252ec:	.word	0x200130b8
+ 80252f0:	.word	0x200130c4
+ 80252f4:	.word	0x200130d0
+ 80252f8:	.word	0x0802c38c
+ 80252fc:	.word	0x0802ba00
+ 8025300:	.word	0x20010f1c
+ 8025304:	.word	0x2000ae54
+
+<FaultManager_ObserveMotion>
+ 8022d00:	push	{r7, lr}
+ 8022d02:	sub	sp, #104	@ 0x68
+ 8022d04:	add	r7, sp, #0
+ 8022d06:	str	r0, [r7, #12]
+ 8022d08:	str	r2, [r7, #4]
+ 8022d0a:	str	r3, [r7, #0]
+ 8022d0c:	mov	r3, r1
+ 8022d0e:	strb	r3, [r7, #11]
+ 8022d10:	movs	r3, #0
+ 8022d12:	str	r3, [r7, #100]	@ 0x64
+ 8022d14:	movs	r3, #0
+ 8022d16:	str	r3, [r7, #96]	@ 0x60
+ 8022d18:	bl	800c8bc <vPortEnterCritical>
+ 8022d1c:	ldr	r3, [pc, #732]	@ (8022ffc <FaultManager_ObserveMotion+0x2fc>)
+ 8022d1e:	ldrb	r3, [r3, #0]
+ 8022d20:	eor.w	r3, r3, #1
+ 8022d24:	uxtb	r3, r3
+ 8022d26:	cmp	r3, #0
+ 8022d28:	bne.n	8022d48 <FaultManager_ObserveMotion+0x48>
+ 8022d2a:	ldrb	r3, [r7, #11]
+ 8022d2c:	eor.w	r3, r3, #1
+ 8022d30:	uxtb	r3, r3
+ 8022d32:	cmp	r3, #0
+ 8022d34:	bne.n	8022d48 <FaultManager_ObserveMotion+0x48>
+ 8022d36:	ldr	r3, [r7, #4]
+ 8022d38:	cmp	r3, #0
+ 8022d3a:	beq.n	8022d48 <FaultManager_ObserveMotion+0x48>
+ 8022d3c:	ldr	r3, [r7, #0]
+ 8022d3e:	cmp	r3, #0
+ 8022d40:	beq.n	8022d48 <FaultManager_ObserveMotion+0x48>
+ 8022d42:	ldr	r3, [r7, #112]	@ 0x70
+ 8022d44:	cmp	r3, #0
+ 8022d46:	bne.n	8022d52 <FaultManager_ObserveMotion+0x52>
+ 8022d48:	bl	8022b04 <FaultManager_ResetMotionTrackingLocked>
+ 8022d4c:	bl	800c908 <vPortExitCritical>
+ 8022d50:	b.n	8023144 <FaultManager_ObserveMotion+0x444>
+ 8022d52:	ldr	r3, [pc, #684]	@ (8023000 <FaultManager_ObserveMotion+0x300>)
+ 8022d54:	ldrb	r3, [r3, #0]
+ 8022d56:	eor.w	r3, r3, #1
+ 8022d5a:	uxtb	r3, r3
+ 8022d5c:	cmp	r3, #0
+ 8022d5e:	beq.n	8022d92 <FaultManager_ObserveMotion+0x92>
+ 8022d60:	ldr	r3, [pc, #668]	@ (8023000 <FaultManager_ObserveMotion+0x300>)
+ 8022d62:	movs	r2, #1
+ 8022d64:	strb	r2, [r3, #0]
+ 8022d66:	ldr	r2, [pc, #668]	@ (8023004 <FaultManager_ObserveMotion+0x304>)
+ 8022d68:	ldr	r3, [r7, #12]
+ 8022d6a:	str	r3, [r2, #0]
+ 8022d6c:	movs	r3, #0
+ 8022d6e:	str	r3, [r7, #92]	@ 0x5c
+ 8022d70:	b.n	8022d8c <FaultManager_ObserveMotion+0x8c>
+ 8022d72:	ldr	r3, [r7, #92]	@ 0x5c
+ 8022d74:	lsls	r3, r3, #2
+ 8022d76:	ldr	r2, [r7, #4]
+ 8022d78:	add	r3, r2
+ 8022d7a:	ldr	r2, [r3, #0]
+ 8022d7c:	ldr	r1, [pc, #648]	@ (8023008 <FaultManager_ObserveMotion+0x308>)
+ 8022d7e:	ldr	r3, [r7, #92]	@ 0x5c
+ 8022d80:	lsls	r3, r3, #2
+ 8022d82:	add	r3, r1
+ 8022d84:	str	r2, [r3, #0]
+ 8022d86:	ldr	r3, [r7, #92]	@ 0x5c
+ 8022d88:	adds	r3, #1
+ 8022d8a:	str	r3, [r7, #92]	@ 0x5c
+ 8022d8c:	ldr	r3, [r7, #92]	@ 0x5c
+ 8022d8e:	cmp	r3, #3
+ 8022d90:	bls.n	8022d72 <FaultManager_ObserveMotion+0x72>
+ 8022d92:	ldr	r3, [pc, #616]	@ (8022ffc <FaultManager_ObserveMotion+0x2fc>)
+ 8022d94:	movs	r2, #0
+ 8022d96:	str	r2, [r3, #24]
+ 8022d98:	movs	r3, #0
+ 8022d9a:	str	r3, [r7, #88]	@ 0x58
+ 8022d9c:	b.n	8023112 <FaultManager_ObserveMotion+0x412>
+ 8022d9e:	ldr	r3, [r7, #88]	@ 0x58
+ 8022da0:	lsls	r3, r3, #2
+ 8022da2:	ldr	r2, [r7, #4]
+ 8022da4:	add	r3, r2
+ 8022da6:	ldr	r3, [r3, #0]
+ 8022da8:	str	r3, [r7, #84]	@ 0x54
+ 8022daa:	vldr	s0, [r7, #84]	@ 0x54
+ 8022dae:	bl	8022a50 <FaultManager_AbsFloat>
+ 8022db2:	vstr	s0, [r7, #80]	@ 0x50
+ 8022db6:	vldr	s15, [r7, #84]	@ 0x54
+ 8022dba:	vcmpe.f32	s15, #0.0
+ 8022dbe:	vmrs	APSR_nzcv, fpscr
+ 8022dc2:	blt.n	8022dd2 <FaultManager_ObserveMotion+0xd2>
+ 8022dc4:	ldr	r3, [r7, #88]	@ 0x58
+ 8022dc6:	lsls	r3, r3, #2
+ 8022dc8:	ldr	r2, [r7, #0]
+ 8022dca:	add	r3, r2
+ 8022dcc:	vldr	s15, [r3]
+ 8022dd0:	b.n	8022de2 <FaultManager_ObserveMotion+0xe2>
+ 8022dd2:	ldr	r3, [r7, #88]	@ 0x58
+ 8022dd4:	lsls	r3, r3, #2
+ 8022dd6:	ldr	r2, [r7, #0]
+ 8022dd8:	add	r3, r2
+ 8022dda:	vldr	s15, [r3]
+ 8022dde:	vneg.f32	s15, s15
+ 8022de2:	vstr	s15, [r7, #76]	@ 0x4c
+ 8022de6:	vldr	s15, [r7, #80]	@ 0x50
+ 8022dea:	vldr	s14, [pc, #544]	@ 802300c <FaultManager_ObserveMotion+0x30c>
+ 8022dee:	vmul.f32	s15, s15, s14
+ 8022df2:	vstr	s15, [r7, #72]	@ 0x48
+ 8022df6:	ldr	r2, [pc, #528]	@ (8023008 <FaultManager_ObserveMotion+0x308>)
+ 8022df8:	ldr	r3, [r7, #88]	@ 0x58
+ 8022dfa:	lsls	r3, r3, #2
+ 8022dfc:	add	r3, r2
+ 8022dfe:	vldr	s15, [r3]
+ 8022e02:	vldr	s1, [r7, #84]	@ 0x54
+ 8022e06:	vmov.f32	s0, s15
+ 8022e0a:	bl	8022aa6 <FaultManager_TargetDirectionChanged>
+ 8022e0e:	mov	r3, r0
+ 8022e10:	strb.w	r3, [r7, #71]	@ 0x47
+ 8022e14:	ldr	r3, [pc, #492]	@ (8023004 <FaultManager_ObserveMotion+0x304>)
+ 8022e16:	ldr	r3, [r3, #0]
+ 8022e18:	ldr	r2, [r7, #12]
+ 8022e1a:	subs	r3, r2, r3
+ 8022e1c:	movw	r2, #999	@ 0x3e7
+ 8022e20:	cmp	r3, r2
+ 8022e22:	ite	hi
+ 8022e24:	movhi	r3, #1
+ 8022e26:	movls	r3, #0
+ 8022e28:	strb.w	r3, [r7, #70]	@ 0x46
+ 8022e2c:	ldrb.w	r3, [r7, #70]	@ 0x46
+ 8022e30:	cmp	r3, #0
+ 8022e32:	beq.n	8022e82 <FaultManager_ObserveMotion+0x182>
+ 8022e34:	ldrb.w	r3, [r7, #71]	@ 0x47
+ 8022e38:	eor.w	r3, r3, #1
+ 8022e3c:	uxtb	r3, r3
+ 8022e3e:	cmp	r3, #0
+ 8022e40:	beq.n	8022e82 <FaultManager_ObserveMotion+0x182>
+ 8022e42:	vldr	s15, [r7, #80]	@ 0x50
+ 8022e46:	vldr	s14, [pc, #456]	@ 8023010 <FaultManager_ObserveMotion+0x310>
+ 8022e4a:	vcmpe.f32	s15, s14
+ 8022e4e:	vmrs	APSR_nzcv, fpscr
+ 8022e52:	blt.n	8022e82 <FaultManager_ObserveMotion+0x182>
+ 8022e54:	vldr	s14, [r7, #76]	@ 0x4c
+ 8022e58:	vldr	s15, [r7, #72]	@ 0x48
+ 8022e5c:	vcmpe.f32	s14, s15
+ 8022e60:	vmrs	APSR_nzcv, fpscr
+ 8022e64:	bpl.n	8022e82 <FaultManager_ObserveMotion+0x182>
+ 8022e66:	ldr	r3, [r7, #88]	@ 0x58
+ 8022e68:	lsls	r3, r3, #1
+ 8022e6a:	ldr	r2, [r7, #112]	@ 0x70
+ 8022e6c:	add	r3, r2
+ 8022e6e:	ldrsh.w	r3, [r3]
+ 8022e72:	mov	r0, r3
+ 8022e74:	bl	8022a84 <FaultManager_AbsI16>
+ 8022e78:	mov	r3, r0
+ 8022e7a:	cmp	r3, #99	@ 0x63
+ 8022e7c:	ble.n	8022e82 <FaultManager_ObserveMotion+0x182>
+ 8022e7e:	movs	r3, #1
+ 8022e80:	b.n	8022e84 <FaultManager_ObserveMotion+0x184>
+ 8022e82:	movs	r3, #0
+ 8022e84:	strb.w	r3, [r7, #69]	@ 0x45
+ 8022e88:	ldrb.w	r3, [r7, #69]	@ 0x45
+ 8022e8c:	and.w	r3, r3, #1
+ 8022e90:	strb.w	r3, [r7, #69]	@ 0x45
+ 8022e94:	ldr	r3, [r7, #88]	@ 0x58
+ 8022e96:	cmp	r3, #1
+ 8022e98:	bne.n	8022ee6 <FaultManager_ObserveMotion+0x1e6>
+ 8022e9a:	ldrb.w	r3, [r7, #70]	@ 0x46
+ 8022e9e:	cmp	r3, #0
+ 8022ea0:	beq.n	8022ee6 <FaultManager_ObserveMotion+0x1e6>
+ 8022ea2:	ldrb.w	r3, [r7, #71]	@ 0x47
+ 8022ea6:	eor.w	r3, r3, #1
+ 8022eaa:	uxtb	r3, r3
+ 8022eac:	cmp	r3, #0
+ 8022eae:	beq.n	8022ee6 <FaultManager_ObserveMotion+0x1e6>
+ 8022eb0:	vldr	s15, [r7, #84]	@ 0x54
+ 8022eb4:	vldr	s14, [pc, #348]	@ 8023014 <FaultManager_ObserveMotion+0x314>
+ 8022eb8:	vcmpe.f32	s15, s14
+ 8022ebc:	vmrs	APSR_nzcv, fpscr
+ 8022ec0:	bhi.n	8022ee6 <FaultManager_ObserveMotion+0x1e6>
+ 8022ec2:	vldr	s14, [r7, #76]	@ 0x4c
+ 8022ec6:	vldr	s15, [r7, #72]	@ 0x48
+ 8022eca:	vcmpe.f32	s14, s15
+ 8022ece:	vmrs	APSR_nzcv, fpscr
+ 8022ed2:	bpl.n	8022ee6 <FaultManager_ObserveMotion+0x1e6>
+ 8022ed4:	vldr	s0, [r7, #84]	@ 0x54
+ 8022ed8:	bl	8012a78 <WheelSpeedController_IsLrRunningSupportOwned>
+ 8022edc:	mov	r3, r0
+ 8022ede:	cmp	r3, #0
+ 8022ee0:	beq.n	8022ee6 <FaultManager_ObserveMotion+0x1e6>
+ 8022ee2:	movs	r3, #1
+ 8022ee4:	b.n	8022ee8 <FaultManager_ObserveMotion+0x1e8>
+ 8022ee6:	movs	r3, #0
+ 8022ee8:	strb.w	r3, [r7, #68]	@ 0x44
+ 8022eec:	ldrb.w	r3, [r7, #68]	@ 0x44
+ 8022ef0:	and.w	r3, r3, #1
+ 8022ef4:	strb.w	r3, [r7, #68]	@ 0x44
+ 8022ef8:	ldr	r3, [r7, #88]	@ 0x58
+ 8022efa:	cmp	r3, #3
+ 8022efc:	bne.n	8022f4a <FaultManager_ObserveMotion+0x24a>
+ 8022efe:	ldrb.w	r3, [r7, #70]	@ 0x46
+ 8022f02:	cmp	r3, #0
+ 8022f04:	beq.n	8022f4a <FaultManager_ObserveMotion+0x24a>
+ 8022f06:	ldrb.w	r3, [r7, #71]	@ 0x47
+ 8022f0a:	eor.w	r3, r3, #1
+ 8022f0e:	uxtb	r3, r3
+ 8022f10:	cmp	r3, #0
+ 8022f12:	beq.n	8022f4a <FaultManager_ObserveMotion+0x24a>
+ 8022f14:	vldr	s15, [r7, #84]	@ 0x54
+ 8022f18:	vldr	s14, [pc, #244]	@ 8023010 <FaultManager_ObserveMotion+0x310>
+ 8022f1c:	vcmpe.f32	s15, s14
+ 8022f20:	vmrs	APSR_nzcv, fpscr
+ 8022f24:	blt.n	8022f4a <FaultManager_ObserveMotion+0x24a>
+ 8022f26:	vldr	s14, [r7, #76]	@ 0x4c
+ 8022f2a:	vldr	s15, [r7, #72]	@ 0x48
+ 8022f2e:	vcmpe.f32	s14, s15
+ 8022f32:	vmrs	APSR_nzcv, fpscr
+ 8022f36:	bpl.n	8022f4a <FaultManager_ObserveMotion+0x24a>
+ 8022f38:	vldr	s0, [r7, #84]	@ 0x54
+ 8022f3c:	bl	8012b58 <WheelSpeedController_IsRrRunningSupportOwned>
+ 8022f40:	mov	r3, r0
+ 8022f42:	cmp	r3, #0
+ 8022f44:	beq.n	8022f4a <FaultManager_ObserveMotion+0x24a>
+ 8022f46:	movs	r3, #1
+ 8022f48:	b.n	8022f4c <FaultManager_ObserveMotion+0x24c>
+ 8022f4a:	movs	r3, #0
+ 8022f4c:	strb.w	r3, [r7, #67]	@ 0x43
+ 8022f50:	ldrb.w	r3, [r7, #67]	@ 0x43
+ 8022f54:	and.w	r3, r3, #1
+ 8022f58:	strb.w	r3, [r7, #67]	@ 0x43
+ 8022f5c:	ldrb.w	r3, [r7, #69]	@ 0x45
+ 8022f60:	cmp	r3, #0
+ 8022f62:	bne.n	8022f74 <FaultManager_ObserveMotion+0x274>
+ 8022f64:	ldrb.w	r3, [r7, #68]	@ 0x44
+ 8022f68:	cmp	r3, #0
+ 8022f6a:	bne.n	8022f74 <FaultManager_ObserveMotion+0x274>
+ 8022f6c:	ldrb.w	r3, [r7, #67]	@ 0x43
+ 8022f70:	cmp	r3, #0
+ 8022f72:	beq.n	8022f78 <FaultManager_ObserveMotion+0x278>
+ 8022f74:	movs	r3, #1
+ 8022f76:	b.n	8022f7a <FaultManager_ObserveMotion+0x27a>
+ 8022f78:	movs	r3, #0
+ 8022f7a:	strb.w	r3, [r7, #66]	@ 0x42
+ 8022f7e:	ldrb.w	r3, [r7, #66]	@ 0x42
+ 8022f82:	and.w	r3, r3, #1
+ 8022f86:	strb.w	r3, [r7, #66]	@ 0x42
+ 8022f8a:	ldr	r3, [r7, #88]	@ 0x58
+ 8022f8c:	uxtb	r3, r3
+ 8022f8e:	add.w	r2, r7, #20
+ 8022f92:	mov	r1, r2
+ 8022f94:	mov	r0, r3
+ 8022f96:	bl	8014f40 <WheelSpeedController_GetFrontPivotState>
+ 8022f9a:	mov	r3, r0
+ 8022f9c:	cmp	r3, #0
+ 8022f9e:	beq.n	8023018 <FaultManager_ObserveMotion+0x318>
+ 8022fa0:	ldrb.w	r3, [r7, #49]	@ 0x31
+ 8022fa4:	cmp	r3, #0
+ 8022fa6:	beq.n	8023018 <FaultManager_ObserveMotion+0x318>
+ 8022fa8:	ldrb.w	r3, [r7, #52]	@ 0x34
+ 8022fac:	cmp	r3, #0
+ 8022fae:	beq.n	8023018 <FaultManager_ObserveMotion+0x318>
+ 8022fb0:	ldr	r3, [r7, #44]	@ 0x2c
+ 8022fb2:	movw	r2, #1499	@ 0x5db
+ 8022fb6:	cmp	r3, r2
+ 8022fb8:	bls.n	8023018 <FaultManager_ObserveMotion+0x318>
+ 8022fba:	vldr	s15, [r7, #80]	@ 0x50
+ 8022fbe:	vmov.f32	s14, #52	@ 0x41a00000  20.0
+ 8022fc2:	vcmpe.f32	s15, s14
+ 8022fc6:	vmrs	APSR_nzcv, fpscr
+ 8022fca:	blt.n	8023018 <FaultManager_ObserveMotion+0x318>
+ 8022fcc:	vldr	s15, [r7, #84]	@ 0x54
+ 8022fd0:	vcmpe.f32	s15, #0.0
+ 8022fd4:	vmrs	APSR_nzcv, fpscr
+ 8022fd8:	ble.n	8022fe2 <FaultManager_ObserveMotion+0x2e2>
+ 8022fda:	ldrsb.w	r3, [r7, #48]	@ 0x30
+ 8022fde:	cmp	r3, #0
+ 8022fe0:	bgt.n	8022ff8 <FaultManager_ObserveMotion+0x2f8>
+ 8022fe2:	vldr	s15, [r7, #84]	@ 0x54
+ 8022fe6:	vcmpe.f32	s15, #0.0
+ 8022fea:	vmrs	APSR_nzcv, fpscr
+ 8022fee:	bpl.n	8023018 <FaultManager_ObserveMotion+0x318>
+ 8022ff0:	ldrsb.w	r3, [r7, #48]	@ 0x30
+ 8022ff4:	cmp	r3, #0
+ 8022ff6:	bge.n	8023018 <FaultManager_ObserveMotion+0x318>
+ 8022ff8:	movs	r3, #1
+ 8022ffa:	b.n	802301a <FaultManager_ObserveMotion+0x31a>
+ 8022ffc:	.word	0x20010dec
+ 8023000:	.word	0x20010e34
+ 8023004:	.word	0x20010e38
+ 8023008:	.word	0x20010e50
+ 802300c:	.word	0x3e19999a
+ 8023010:	.word	0x43480000
+ 8023014:	.word	0xc3480000
+ 8023018:	movs	r3, #0
+ 802301a:	strb.w	r3, [r7, #65]	@ 0x41
+ 802301e:	ldrb.w	r3, [r7, #65]	@ 0x41
+ 8023022:	and.w	r3, r3, #1
+ 8023026:	strb.w	r3, [r7, #65]	@ 0x41
+ 802302a:	ldr	r2, [pc, #288]	@ (802314c <FaultManager_ObserveMotion+0x44c>)
+ 802302c:	ldr	r3, [r7, #88]	@ 0x58
+ 802302e:	lsls	r3, r3, #2
+ 8023030:	add	r3, r2
+ 8023032:	ldr	r2, [r7, #84]	@ 0x54
+ 8023034:	str	r2, [r3, #0]
+ 8023036:	ldrb.w	r3, [r7, #65]	@ 0x41
+ 802303a:	cmp	r3, #0
+ 802303c:	beq.n	8023076 <FaultManager_ObserveMotion+0x376>
+ 802303e:	movs	r2, #1
+ 8023040:	ldr	r3, [r7, #88]	@ 0x58
+ 8023042:	lsl.w	r3, r2, r3
+ 8023046:	str	r3, [r7, #56]	@ 0x38
+ 8023048:	ldr	r3, [pc, #260]	@ (8023150 <FaultManager_ObserveMotion+0x450>)
+ 802304a:	ldr	r2, [r3, #24]
+ 802304c:	ldr	r3, [r7, #56]	@ 0x38
+ 802304e:	orrs	r3, r2
+ 8023050:	ldr	r2, [pc, #252]	@ (8023150 <FaultManager_ObserveMotion+0x450>)
+ 8023052:	str	r3, [r2, #24]
+ 8023054:	ldr	r3, [pc, #248]	@ (8023150 <FaultManager_ObserveMotion+0x450>)
+ 8023056:	ldr	r2, [r3, #20]
+ 8023058:	ldr	r3, [r7, #56]	@ 0x38
+ 802305a:	ands	r3, r2
+ 802305c:	cmp	r3, #0
+ 802305e:	bne.n	8023068 <FaultManager_ObserveMotion+0x368>
+ 8023060:	ldr	r2, [r7, #100]	@ 0x64
+ 8023062:	ldr	r3, [r7, #56]	@ 0x38
+ 8023064:	orrs	r3, r2
+ 8023066:	str	r3, [r7, #100]	@ 0x64
+ 8023068:	ldr	r3, [pc, #228]	@ (8023150 <FaultManager_ObserveMotion+0x450>)
+ 802306a:	ldr	r2, [r3, #20]
+ 802306c:	ldr	r3, [r7, #56]	@ 0x38
+ 802306e:	orrs	r3, r2
+ 8023070:	ldr	r2, [pc, #220]	@ (8023150 <FaultManager_ObserveMotion+0x450>)
+ 8023072:	str	r3, [r2, #20]
+ 8023074:	b.n	802310c <FaultManager_ObserveMotion+0x40c>
+ 8023076:	ldrb.w	r3, [r7, #66]	@ 0x42
+ 802307a:	eor.w	r3, r3, #1
+ 802307e:	uxtb	r3, r3
+ 8023080:	cmp	r3, #0
+ 8023082:	beq.n	802309a <FaultManager_ObserveMotion+0x39a>
+ 8023084:	ldr	r2, [pc, #204]	@ (8023154 <FaultManager_ObserveMotion+0x454>)
+ 8023086:	ldr	r3, [r7, #88]	@ 0x58
+ 8023088:	add	r3, r2
+ 802308a:	movs	r2, #0
+ 802308c:	strb	r2, [r3, #0]
+ 802308e:	ldr	r2, [pc, #200]	@ (8023158 <FaultManager_ObserveMotion+0x458>)
+ 8023090:	ldr	r3, [r7, #88]	@ 0x58
+ 8023092:	movs	r1, #0
+ 8023094:	str.w	r1, [r2, r3, lsl #2]
+ 8023098:	b.n	802310c <FaultManager_ObserveMotion+0x40c>
+ 802309a:	ldr	r2, [pc, #184]	@ (8023154 <FaultManager_ObserveMotion+0x454>)
+ 802309c:	ldr	r3, [r7, #88]	@ 0x58
+ 802309e:	add	r3, r2
+ 80230a0:	ldrb	r3, [r3, #0]
+ 80230a2:	eor.w	r3, r3, #1
+ 80230a6:	uxtb	r3, r3
+ 80230a8:	cmp	r3, #0
+ 80230aa:	beq.n	80230c2 <FaultManager_ObserveMotion+0x3c2>
+ 80230ac:	ldr	r2, [pc, #164]	@ (8023154 <FaultManager_ObserveMotion+0x454>)
+ 80230ae:	ldr	r3, [r7, #88]	@ 0x58
+ 80230b0:	add	r3, r2
+ 80230b2:	movs	r2, #1
+ 80230b4:	strb	r2, [r3, #0]
+ 80230b6:	ldr	r1, [pc, #160]	@ (8023158 <FaultManager_ObserveMotion+0x458>)
+ 80230b8:	ldr	r3, [r7, #88]	@ 0x58
+ 80230ba:	ldr	r2, [r7, #12]
+ 80230bc:	str.w	r2, [r1, r3, lsl #2]
+ 80230c0:	b.n	802310c <FaultManager_ObserveMotion+0x40c>
+ 80230c2:	ldr	r2, [pc, #148]	@ (8023158 <FaultManager_ObserveMotion+0x458>)
+ 80230c4:	ldr	r3, [r7, #88]	@ 0x58
+ 80230c6:	ldr.w	r3, [r2, r3, lsl #2]
+ 80230ca:	ldr	r2, [r7, #12]
+ 80230cc:	subs	r3, r2, r3
+ 80230ce:	movw	r2, #749	@ 0x2ed
+ 80230d2:	cmp	r3, r2
+ 80230d4:	bls.n	802310c <FaultManager_ObserveMotion+0x40c>
+ 80230d6:	movs	r2, #1
+ 80230d8:	ldr	r3, [r7, #88]	@ 0x58
+ 80230da:	lsl.w	r3, r2, r3
+ 80230de:	str	r3, [r7, #60]	@ 0x3c
+ 80230e0:	ldr	r3, [pc, #108]	@ (8023150 <FaultManager_ObserveMotion+0x450>)
+ 80230e2:	ldr	r2, [r3, #24]
+ 80230e4:	ldr	r3, [r7, #60]	@ 0x3c
+ 80230e6:	orrs	r3, r2
+ 80230e8:	ldr	r2, [pc, #100]	@ (8023150 <FaultManager_ObserveMotion+0x450>)
+ 80230ea:	str	r3, [r2, #24]
+ 80230ec:	ldr	r3, [pc, #96]	@ (8023150 <FaultManager_ObserveMotion+0x450>)
+ 80230ee:	ldr	r2, [r3, #20]
+ 80230f0:	ldr	r3, [r7, #60]	@ 0x3c
+ 80230f2:	ands	r3, r2
+ 80230f4:	cmp	r3, #0
+ 80230f6:	bne.n	8023100 <FaultManager_ObserveMotion+0x400>
+ 80230f8:	ldr	r2, [r7, #100]	@ 0x64
+ 80230fa:	ldr	r3, [r7, #60]	@ 0x3c
+ 80230fc:	orrs	r3, r2
+ 80230fe:	str	r3, [r7, #100]	@ 0x64
+ 8023100:	ldr	r3, [pc, #76]	@ (8023150 <FaultManager_ObserveMotion+0x450>)
+ 8023102:	ldr	r2, [r3, #20]
+ 8023104:	ldr	r3, [r7, #60]	@ 0x3c
+ 8023106:	orrs	r3, r2
+ 8023108:	ldr	r2, [pc, #68]	@ (8023150 <FaultManager_ObserveMotion+0x450>)
+ 802310a:	str	r3, [r2, #20]
+ 802310c:	ldr	r3, [r7, #88]	@ 0x58
+ 802310e:	adds	r3, #1
+ 8023110:	str	r3, [r7, #88]	@ 0x58
+ 8023112:	ldr	r3, [r7, #88]	@ 0x58
+ 8023114:	cmp	r3, #3
+ 8023116:	bls.w	8022d9e <FaultManager_ObserveMotion+0x9e>
+ 802311a:	ldr	r3, [pc, #52]	@ (8023150 <FaultManager_ObserveMotion+0x450>)
+ 802311c:	ldr	r3, [r3, #24]
+ 802311e:	cmp	r3, #0
+ 8023120:	beq.n	802312c <FaultManager_ObserveMotion+0x42c>
+ 8023122:	ldr	r1, [r7, #12]
+ 8023124:	movs	r0, #4
+ 8023126:	bl	8022b78 <FaultManager_LatchLocked>
+ 802312a:	str	r0, [r7, #96]	@ 0x60
+ 802312c:	bl	800c908 <vPortExitCritical>
+ 8023130:	ldr	r3, [r7, #96]	@ 0x60
+ 8023132:	and.w	r3, r3, #4
+ 8023136:	cmp	r3, #0
+ 8023138:	beq.n	8023144 <FaultManager_ObserveMotion+0x444>
+ 802313a:	ldr	r2, [r7, #100]	@ 0x64
+ 802313c:	ldr	r1, [pc, #28]	@ (802315c <FaultManager_ObserveMotion+0x45c>)
+ 802313e:	movs	r0, #3
+ 8023140:	bl	80250e8 <DebugLog_Printf>
+ 8023144:	adds	r7, #104	@ 0x68
+ 8023146:	mov	sp, r7
+ 8023148:	pop	{r7, pc}
+ 802314a:	nop
+ 802314c:	.word	0x20010e50
+ 8023150:	.word	0x20010dec
+ 8023154:	.word	0x20010e3c
+ 8023158:	.word	0x20010e40
+ 802315c:	.word	0x0802b4e0
+
+<StartMotorTask>
+ 800d9c4:	push	{r4, r7, lr}
+ 800d9c6:	sub	sp, #28
+ 800d9c8:	add	r7, sp, #8
+ 800d9ca:	str	r0, [r7, #4]
+ 800d9cc:	bl	8024c80 <DebugLog_RegisterCurrentTaskNonBlocking>
+ 800d9d0:	mov	r3, r0
+ 800d9d2:	eor.w	r3, r3, #1
+ 800d9d6:	uxtb	r3, r3
+ 800d9d8:	cmp	r3, #0
+ 800d9da:	beq.n	800d9e0 <StartMotorTask+0x1c>
+ 800d9dc:	bl	800d680 <Error_Handler>
+ 800d9e0:	ldr	r1, [pc, #308]	@ (800db18 <StartMotorTask+0x154>)
+ 800d9e2:	movs	r0, #1
+ 800d9e4:	bl	80250e8 <DebugLog_Printf>
+ 800d9e8:	bl	8012294 <MotorDriver_Init>
+ 800d9ec:	mov	r3, r0
+ 800d9ee:	eor.w	r3, r3, #1
+ 800d9f2:	uxtb	r3, r3
+ 800d9f4:	cmp	r3, #0
+ 800d9f6:	beq.n	800da04 <StartMotorTask+0x40>
+ 800d9f8:	ldr	r1, [pc, #288]	@ (800db1c <StartMotorTask+0x158>)
+ 800d9fa:	movs	r0, #3
+ 800d9fc:	bl	80250e8 <DebugLog_Printf>
+ 800da00:	bl	800d680 <Error_Handler>
+ 800da04:	ldr	r1, [pc, #280]	@ (800db20 <StartMotorTask+0x15c>)
+ 800da06:	movs	r0, #1
+ 800da08:	bl	80250e8 <DebugLog_Printf>
+ 800da0c:	bl	8011ea0 <EncoderService_Init>
+ 800da10:	mov	r3, r0
+ 800da12:	eor.w	r3, r3, #1
+ 800da16:	uxtb	r3, r3
+ 800da18:	cmp	r3, #0
+ 800da1a:	beq.n	800da28 <StartMotorTask+0x64>
+ 800da1c:	ldr	r1, [pc, #260]	@ (800db24 <StartMotorTask+0x160>)
+ 800da1e:	movs	r0, #3
+ 800da20:	bl	80250e8 <DebugLog_Printf>
+ 800da24:	bl	800d680 <Error_Handler>
+ 800da28:	ldr	r1, [pc, #252]	@ (800db28 <StartMotorTask+0x164>)
+ 800da2a:	movs	r0, #1
+ 800da2c:	bl	80250e8 <DebugLog_Printf>
+ 800da30:	bl	8005c0c <HAL_GetTick>
+ 800da34:	mov	r3, r0
+ 800da36:	mov	r0, r3
+ 800da38:	bl	8014fd8 <WheelSpeedEstimator_Init>
+ 800da3c:	mov	r3, r0
+ 800da3e:	eor.w	r3, r3, #1
+ 800da42:	uxtb	r3, r3
+ 800da44:	cmp	r3, #0
+ 800da46:	beq.n	800da54 <StartMotorTask+0x90>
+ 800da48:	ldr	r1, [pc, #224]	@ (800db2c <StartMotorTask+0x168>)
+ 800da4a:	movs	r0, #3
+ 800da4c:	bl	80250e8 <DebugLog_Printf>
+ 800da50:	bl	800d680 <Error_Handler>
+ 800da54:	movs	r3, #200	@ 0xc8
+ 800da56:	str	r3, [sp, #0]
+ 800da58:	movs	r3, #50	@ 0x32
+ 800da5a:	movs	r2, #20
+ 800da5c:	ldr	r1, [pc, #208]	@ (800db30 <StartMotorTask+0x16c>)
+ 800da5e:	movs	r0, #1
+ 800da60:	bl	80250e8 <DebugLog_Printf>
+ 800da64:	bl	800feec <ChassisController_Init>
+ 800da68:	ldr	r1, [pc, #200]	@ (800db34 <StartMotorTask+0x170>)
+ 800da6a:	movs	r0, #1
+ 800da6c:	bl	80250e8 <DebugLog_Printf>
+ 800da70:	bl	8005c0c <HAL_GetTick>
+ 800da74:	mov	r3, r0
+ 800da76:	mov	r0, r3
+ 800da78:	bl	80113a8 <ChassisRuntime_Init>
+ 800da7c:	bl	801f81c <MotorOpenLoopTest_Init>
+ 800da80:	bl	800be9c <osKernelGetTickCount>
+ 800da84:	str	r0, [r7, #12]
+ 800da86:	bl	800be9c <osKernelGetTickCount>
+ 800da8a:	mov	r3, r0
+ 800da8c:	mov	r1, r3
+ 800da8e:	movs	r0, #0
+ 800da90:	bl	8025584 <ControlTiming_RecordStart>
+ 800da94:	movs	r0, #0
+ 800da96:	bl	8018124 <FaultInjectionTest_ShouldReportHeartbeat>
+ 800da9a:	mov	r3, r0
+ 800da9c:	cmp	r3, #0
+ 800da9e:	beq.n	800daae <StartMotorTask+0xea>
+ 800daa0:	bl	8005c0c <HAL_GetTick>
+ 800daa4:	mov	r3, r0
+ 800daa6:	mov	r1, r3
+ 800daa8:	movs	r0, #0
+ 800daaa:	bl	8022c94 <FaultManager_Heartbeat>
+ 800daae:	bl	8011f98 <EncoderService_Update>
+ 800dab2:	bl	8005c0c <HAL_GetTick>
+ 800dab6:	mov	r3, r0
+ 800dab8:	mov	r0, r3
+ 800daba:	bl	8015164 <WheelSpeedEstimator_Update>
+ 800dabe:	bl	8005c0c <HAL_GetTick>
+ 800dac2:	mov	r4, r0
+ 800dac4:	bl	80200cc <MotorOpenLoopTest_IsActive>
+ 800dac8:	mov	r3, r0
+ 800daca:	cmp	r3, #0
+ 800dacc:	bne.n	800dad8 <StartMotorTask+0x114>
+ 800dace:	bl	8019c5c <ImuStaticTest_IsActive>
+ 800dad2:	mov	r3, r0
+ 800dad4:	cmp	r3, #0
+ 800dad6:	beq.n	800dadc <StartMotorTask+0x118>
+ 800dad8:	movs	r3, #1
+ 800dada:	b.n	800dade <StartMotorTask+0x11a>
+ 800dadc:	movs	r3, #0
+ 800dade:	and.w	r3, r3, #1
+ 800dae2:	uxtb	r3, r3
+ 800dae4:	mov	r1, r3
+ 800dae6:	mov	r0, r4
+ 800dae8:	bl	80116e8 <ChassisRuntime_Process>
+ 800daec:	bl	801f964 <MotorOpenLoopTest_Process>
+ 800daf0:	bl	8005c0c <HAL_GetTick>
+ 800daf4:	mov	r3, r0
+ 800daf6:	mov	r0, r3
+ 800daf8:	bl	8018218 <MotionTrace_Record>
+ 800dafc:	bl	800be9c <osKernelGetTickCount>
+ 800db00:	mov	r2, r0
+ 800db02:	movs	r3, #20
+ 800db04:	ldr	r1, [r7, #12]
+ 800db06:	movs	r0, #0
+ 800db08:	bl	8025614 <ControlTiming_NextWake>
+ 800db0c:	str	r0, [r7, #12]
+ 800db0e:	ldr	r0, [r7, #12]
+ 800db10:	bl	800c048 <osDelayUntil>
+ 800db14:	b.n	800da86 <StartMotorTask+0xc2>
+ 800db16:	nop
+ 800db18:	.word	0x08026e60
+ 800db1c:	.word	0x08026e74
+ 800db20:	.word	0x08026e98
+ 800db24:	.word	0x08026edc
+ 800db28:	.word	0x08026efc
+ 800db2c:	.word	0x08026f70
+ 800db30:	.word	0x08026f9c
+ 800db34:	.word	0x08026fe0
+
+<StartSafetyTask>
+ 800db38:	push	{r7, lr}
+ 800db3a:	sub	sp, #24
+ 800db3c:	add	r7, sp, #8
+ 800db3e:	str	r0, [r7, #4]
+ 800db40:	bl	8024c80 <DebugLog_RegisterCurrentTaskNonBlocking>
+ 800db44:	mov	r3, r0
+ 800db46:	eor.w	r3, r3, #1
+ 800db4a:	uxtb	r3, r3
+ 800db4c:	cmp	r3, #0
+ 800db4e:	beq.n	800db54 <StartSafetyTask+0x1c>
+ 800db50:	bl	800d680 <Error_Handler>
+ 800db54:	ldr	r1, [pc, #216]	@ (800dc30 <StartSafetyTask+0xf8>)
+ 800db56:	movs	r0, #1
+ 800db58:	bl	80250e8 <DebugLog_Printf>
+ 800db5c:	bl	800be9c <osKernelGetTickCount>
+ 800db60:	str	r0, [r7, #12]
+ 800db62:	bl	800be9c <osKernelGetTickCount>
+ 800db66:	mov	r3, r0
+ 800db68:	mov	r1, r3
+ 800db6a:	movs	r0, #1
+ 800db6c:	bl	8025584 <ControlTiming_RecordStart>
+ 800db70:	bl	8005c0c <HAL_GetTick>
+ 800db74:	str	r0, [r7, #8]
+ 800db76:	movs	r0, #1
+ 800db78:	bl	8018124 <FaultInjectionTest_ShouldReportHeartbeat>
+ 800db7c:	mov	r3, r0
+ 800db7e:	cmp	r3, #0
+ 800db80:	beq.n	800db8a <StartSafetyTask+0x52>
+ 800db82:	ldr	r1, [r7, #8]
+ 800db84:	movs	r0, #1
+ 800db86:	bl	8022c94 <FaultManager_Heartbeat>
+ 800db8a:	ldr	r0, [pc, #168]	@ (800dc34 <StartSafetyTask+0xfc>)
+ 800db8c:	bl	8011c14 <ChassisRuntime_GetStatus>
+ 800db90:	mov	r3, r0
+ 800db92:	cmp	r3, #0
+ 800db94:	beq.n	800dbc8 <StartSafetyTask+0x90>
+ 800db96:	ldr	r0, [pc, #160]	@ (800dc38 <StartSafetyTask+0x100>)
+ 800db98:	bl	80108a8 <ChassisController_GetStatus>
+ 800db9c:	mov	r3, r0
+ 800db9e:	cmp	r3, #0
+ 800dba0:	beq.n	800dbc8 <StartSafetyTask+0x90>
+ 800dba2:	ldr	r1, [pc, #152]	@ (800dc3c <StartSafetyTask+0x104>)
+ 800dba4:	ldr	r0, [pc, #152]	@ (800dc40 <StartSafetyTask+0x108>)
+ 800dba6:	bl	8018168 <FaultInjectionTest_FilterMeasuredSpeed>
+ 800dbaa:	ldr	r3, [pc, #136]	@ (800dc34 <StartSafetyTask+0xfc>)
+ 800dbac:	ldrb	r3, [r3, #0]
+ 800dbae:	cmp	r3, #2
+ 800dbb0:	ite	eq
+ 800dbb2:	moveq	r3, #1
+ 800dbb4:	movne	r3, #0
+ 800dbb6:	uxtb	r1, r3
+ 800dbb8:	ldr	r3, [pc, #136]	@ (800dc44 <StartSafetyTask+0x10c>)
+ 800dbba:	str	r3, [sp, #0]
+ 800dbbc:	ldr	r3, [pc, #124]	@ (800dc3c <StartSafetyTask+0x104>)
+ 800dbbe:	ldr	r2, [pc, #136]	@ (800dc48 <StartSafetyTask+0x110>)
+ 800dbc0:	ldr	r0, [r7, #8]
+ 800dbc2:	bl	8022d00 <FaultManager_ObserveMotion>
+ 800dbc6:	b.n	800dbd8 <StartSafetyTask+0xa0>
+ 800dbc8:	movs	r3, #0
+ 800dbca:	str	r3, [sp, #0]
+ 800dbcc:	movs	r3, #0
+ 800dbce:	movs	r2, #0
+ 800dbd0:	movs	r1, #0
+ 800dbd2:	ldr	r0, [r7, #8]
+ 800dbd4:	bl	8022d00 <FaultManager_ObserveMotion>
+ 800dbd8:	ldr	r0, [r7, #8]
+ 800dbda:	bl	8023160 <FaultManager_Process>
+ 800dbde:	bl	802333c <FaultManager_HasCriticalFault>
+ 800dbe2:	mov	r3, r0
+ 800dbe4:	cmp	r3, #0
+ 800dbe6:	beq.n	800dbee <StartSafetyTask+0xb6>
+ 800dbe8:	ldr	r0, [r7, #8]
+ 800dbea:	bl	80115d0 <ChassisRuntime_LatchHealthFault>
+ 800dbee:	ldr	r0, [r7, #8]
+ 800dbf0:	bl	8011ae4 <ChassisRuntime_SafetyProcess>
+ 800dbf4:	ldr	r0, [r7, #8]
+ 800dbf6:	bl	80107ec <ChassisController_SafetyProcess>
+ 800dbfa:	bl	801ffdc <MotorOpenLoopTest_SafetyProcess>
+ 800dbfe:	bl	8022a0c <EmergencyStop_TakeTripNotice>
+ 800dc02:	mov	r3, r0
+ 800dc04:	cmp	r3, #0
+ 800dc06:	beq.n	800dc10 <StartSafetyTask+0xd8>
+ 800dc08:	ldr	r1, [pc, #64]	@ (800dc4c <StartSafetyTask+0x114>)
+ 800dc0a:	movs	r0, #3
+ 800dc0c:	bl	80250e8 <DebugLog_Printf>
+ 800dc10:	ldr	r0, [r7, #8]
+ 800dc12:	bl	802353c <WatchdogService_Process>
+ 800dc16:	bl	800be9c <osKernelGetTickCount>
+ 800dc1a:	mov	r2, r0
+ 800dc1c:	movs	r3, #10
+ 800dc1e:	ldr	r1, [r7, #12]
+ 800dc20:	movs	r0, #1
+ 800dc22:	bl	8025614 <ControlTiming_NextWake>
+ 800dc26:	str	r0, [r7, #12]
+ 800dc28:	ldr	r0, [r7, #12]
+ 800dc2a:	bl	800c048 <osDelayUntil>
+ 800dc2e:	b.n	800db62 <StartSafetyTask+0x2a>
+ 800dc30:	.word	0x0802702c
+ 800dc34:	.word	0x2000ab68
+ 800dc38:	.word	0x2000ab90
+ 800dc3c:	.word	0x2000abdc
+ 800dc40:	.word	0x2000abb8
+ 800dc44:	.word	0x2000abc8
+ 800dc48:	.word	0x2000ab9c
+ 800dc4c:	.word	0x08027040
+
+<WheelSpeedController_FrontSupport>
+ 8012f04:	push	{r7, lr}
+ 8012f06:	vpush	{d8}
+ 8012f0a:	sub	sp, #144	@ 0x90
+ 8012f0c:	add	r7, sp, #0
+ 8012f0e:	mov	r3, r0
+ 8012f10:	vstr	s0, [r7, #16]
+ 8012f14:	vstr	s1, [r7, #12]
+ 8012f18:	str	r1, [r7, #8]
+ 8012f1a:	str	r2, [r7, #4]
+ 8012f1c:	strb	r3, [r7, #23]
+ 8012f1e:	ldrb	r2, [r7, #23]
+ 8012f20:	mov	r3, r2
+ 8012f22:	lsls	r3, r3, #3
+ 8012f24:	add	r3, r2
+ 8012f26:	lsls	r3, r3, #2
+ 8012f28:	ldr	r2, [pc, #680]	@ (80131d4 <WheelSpeedController_FrontSupport+0x2d0>)
+ 8012f2a:	add	r3, r2
+ 8012f2c:	str.w	r3, [r7, #132]	@ 0x84
+ 8012f30:	ldrb	r2, [r7, #23]
+ 8012f32:	mov	r3, r2
+ 8012f34:	lsls	r3, r3, #3
+ 8012f36:	subs	r3, r3, r2
+ 8012f38:	lsls	r3, r3, #2
+ 8012f3a:	ldr	r2, [pc, #668]	@ (80131d8 <WheelSpeedController_FrontSupport+0x2d4>)
+ 8012f3c:	add	r3, r2
+ 8012f3e:	str.w	r3, [r7, #128]	@ 0x80
+ 8012f42:	vldr	s0, [r7, #16]
+ 8012f46:	bl	8012c8a <WheelSpeedController_Abs>
+ 8012f4a:	vstr	s0, [r7, #124]	@ 0x7c
+ 8012f4e:	vldr	s15, [r7, #16]
+ 8012f52:	vcmpe.f32	s15, #0.0
+ 8012f56:	vmrs	APSR_nzcv, fpscr
+ 8012f5a:	ble.n	8012f60 <WheelSpeedController_FrontSupport+0x5c>
+ 8012f5c:	movs	r3, #1
+ 8012f5e:	b.n	8012f64 <WheelSpeedController_FrontSupport+0x60>
+ 8012f60:	mov.w	r3, #4294967295
+ 8012f64:	strb.w	r3, [r7, #123]	@ 0x7b
+ 8012f68:	ldr	r3, [r7, #8]
+ 8012f6a:	vmov	s15, r3
+ 8012f6e:	vcvt.f32.u32	s14, s15
+ 8012f72:	vldr	s13, [pc, #616]	@ 80131dc <WheelSpeedController_FrontSupport+0x2d8>
+ 8012f76:	vdiv.f32	s15, s14, s13
+ 8012f7a:	vstr	s15, [r7, #116]	@ 0x74
+ 8012f7e:	ldrb	r3, [r7, #23]
+ 8012f80:	vldr	s0, [r7, #16]
+ 8012f84:	mov	r0, r3
+ 8012f86:	bl	8012d64 <WheelSpeedController_GetPivotLoadFeedforward>
+ 8012f8a:	vmov.f32	s15, s0
+ 8012f8e:	vmov.f32	s0, s15
+ 8012f92:	bl	8012c8a <WheelSpeedController_Abs>
+ 8012f96:	vstr	s0, [r7, #112]	@ 0x70
+ 8012f9a:	ldrsb.w	r3, [r7, #123]	@ 0x7b
+ 8012f9e:	vmov	s15, r3
+ 8012fa2:	vcvt.f32.s32	s15, s15
+ 8012fa6:	vldr	s14, [r7, #12]
+ 8012faa:	vmul.f32	s15, s14, s15
+ 8012fae:	vstr	s15, [r7, #108]	@ 0x6c
+ 8012fb2:	vldr	s14, [r7, #124]	@ 0x7c
+ 8012fb6:	vldr	s15, [r7, #108]	@ 0x6c
+ 8012fba:	vsub.f32	s15, s14, s15
+ 8012fbe:	vstr	s15, [r7, #104]	@ 0x68
+ 8012fc2:	vldr	s15, [r7, #124]	@ 0x7c
+ 8012fc6:	vldr	s14, [pc, #536]	@ 80131e0 <WheelSpeedController_FrontSupport+0x2dc>
+ 8012fca:	vmul.f32	s15, s15, s14
+ 8012fce:	vmov.f32	s1, #52	@ 0x41a00000  20.0
+ 8012fd2:	vmov.f32	s0, s15
+ 8012fd6:	bl	80261b4 <fmaxf>
+ 8012fda:	vstr	s0, [r7, #100]	@ 0x64
+ 8012fde:	vldr	s15, [r7, #100]	@ 0x64
+ 8012fe2:	vneg.f32	s15, s15
+ 8012fe6:	vldr	s14, [r7, #104]	@ 0x68
+ 8012fea:	vcmpe.f32	s14, s15
+ 8012fee:	vmrs	APSR_nzcv, fpscr
+ 8012ff2:	ite	mi
+ 8012ff4:	movmi	r3, #1
+ 8012ff6:	movpl	r3, #0
+ 8012ff8:	strb.w	r3, [r7, #99]	@ 0x63
+ 8012ffc:	mov.w	r3, #0
+ 8013000:	str.w	r3, [r7, #140]	@ 0x8c
+ 8013004:	movs	r3, #0
+ 8013006:	strb.w	r3, [r7, #139]	@ 0x8b
+ 801300a:	ldr.w	r3, [r7, #132]	@ 0x84
+ 801300e:	ldrb	r3, [r3, #29]
+ 8013010:	eor.w	r3, r3, #1
+ 8013014:	uxtb	r3, r3
+ 8013016:	cmp	r3, #0
+ 8013018:	bne.n	801302a <WheelSpeedController_FrontSupport+0x126>
+ 801301a:	ldr.w	r3, [r7, #132]	@ 0x84
+ 801301e:	ldrsb.w	r3, [r3, #28]
+ 8013022:	ldrsb.w	r2, [r7, #123]	@ 0x7b
+ 8013026:	cmp	r2, r3
+ 8013028:	beq.n	801304c <WheelSpeedController_FrontSupport+0x148>
+ 801302a:	ldrb	r3, [r7, #23]
+ 801302c:	mov	r0, r3
+ 801302e:	bl	8012c0c <WheelSpeedController_ClearFront>
+ 8013032:	ldr.w	r3, [r7, #132]	@ 0x84
+ 8013036:	movs	r2, #1
+ 8013038:	strb	r2, [r3, #29]
+ 801303a:	ldr.w	r3, [r7, #132]	@ 0x84
+ 801303e:	ldrb.w	r2, [r7, #123]	@ 0x7b
+ 8013042:	strb	r2, [r3, #28]
+ 8013044:	ldr.w	r3, [r7, #132]	@ 0x84
+ 8013048:	ldr	r2, [r7, #112]	@ 0x70
+ 801304a:	str	r2, [r3, #0]
+ 801304c:	ldr.w	r3, [r7, #132]	@ 0x84
+ 8013050:	vldr	s15, [r3]
+ 8013054:	vmov.f32	s1, s15
+ 8013058:	vldr	s0, [r7, #112]	@ 0x70
+ 801305c:	bl	8026204 <fminf>
+ 8013060:	vmov.f32	s15, s0
+ 8013064:	ldr.w	r3, [r7, #132]	@ 0x84
+ 8013068:	vstr	s15, [r3]
+ 801306c:	ldrb	r3, [r7, #23]
+ 801306e:	cmp	r3, #0
+ 8013070:	bne.n	801307e <WheelSpeedController_FrontSupport+0x17a>
+ 8013072:	ldrsb.w	r3, [r7, #123]	@ 0x7b
+ 8013076:	cmp	r3, #0
+ 8013078:	bge.n	801307e <WheelSpeedController_FrontSupport+0x17a>
+ 801307a:	movs	r3, #1
+ 801307c:	b.n	8013080 <WheelSpeedController_FrontSupport+0x17c>
+ 801307e:	movs	r3, #0
+ 8013080:	strb.w	r3, [r7, #98]	@ 0x62
+ 8013084:	ldrb.w	r3, [r7, #98]	@ 0x62
+ 8013088:	and.w	r3, r3, #1
+ 801308c:	strb.w	r3, [r7, #98]	@ 0x62
+ 8013090:	ldrb.w	r3, [r7, #98]	@ 0x62
+ 8013094:	cmp	r3, #0
+ 8013096:	beq.n	80130d6 <WheelSpeedController_FrontSupport+0x1d2>
+ 8013098:	ldr	r3, [pc, #328]	@ (80131e4 <WheelSpeedController_FrontSupport+0x2e0>)
+ 801309a:	ldrb	r3, [r3, #8]
+ 801309c:	eor.w	r3, r3, #1
+ 80130a0:	uxtb	r3, r3
+ 80130a2:	cmp	r3, #0
+ 80130a4:	beq.n	80130c0 <WheelSpeedController_FrontSupport+0x1bc>
+ 80130a6:	ldr	r3, [pc, #316]	@ (80131e4 <WheelSpeedController_FrontSupport+0x2e0>)
+ 80130a8:	movs	r2, #1
+ 80130aa:	strb	r2, [r3, #8]
+ 80130ac:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80130b0:	ldr	r3, [r3, #12]
+ 80130b2:	cmp	r3, #39	@ 0x27
+ 80130b4:	ite	hi
+ 80130b6:	movhi	r3, #1
+ 80130b8:	movls	r3, #0
+ 80130ba:	uxtb	r2, r3
+ 80130bc:	ldr	r3, [pc, #292]	@ (80131e4 <WheelSpeedController_FrontSupport+0x2e0>)
+ 80130be:	strb	r2, [r3, #9]
+ 80130c0:	ldr	r3, [pc, #288]	@ (80131e4 <WheelSpeedController_FrontSupport+0x2e0>)
+ 80130c2:	ldr	r3, [r3, #0]
+ 80130c4:	mov.w	r2, #600	@ 0x258
+ 80130c8:	ldr	r1, [r7, #8]
+ 80130ca:	mov	r0, r3
+ 80130cc:	bl	8012ecc <WheelSpeedController_AddTime>
+ 80130d0:	mov	r3, r0
+ 80130d2:	ldr	r2, [pc, #272]	@ (80131e4 <WheelSpeedController_FrontSupport+0x2e0>)
+ 80130d4:	str	r3, [r2, #0]
+ 80130d6:	ldrb.w	r3, [r7, #99]	@ 0x63
+ 80130da:	cmp	r3, #0
+ 80130dc:	beq.n	80130f2 <WheelSpeedController_FrontSupport+0x1ee>
+ 80130de:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80130e2:	ldr	r3, [r3, #16]
+ 80130e4:	movs	r2, #60	@ 0x3c
+ 80130e6:	ldr	r1, [r7, #8]
+ 80130e8:	mov	r0, r3
+ 80130ea:	bl	8012ecc <WheelSpeedController_AddTime>
+ 80130ee:	mov	r3, r0
+ 80130f0:	b.n	80130f4 <WheelSpeedController_FrontSupport+0x1f0>
+ 80130f2:	movs	r3, #0
+ 80130f4:	ldr.w	r2, [r7, #132]	@ 0x84
+ 80130f8:	str	r3, [r2, #16]
+ 80130fa:	vldr	s15, [r7, #124]	@ 0x7c
+ 80130fe:	vmov.f32	s14, #80	@ 0x3e800000  0.250
+ 8013102:	vmul.f32	s15, s15, s14
+ 8013106:	vmov.f32	s1, #52	@ 0x41a00000  20.0
+ 801310a:	vmov.f32	s0, s15
+ 801310e:	bl	8026204 <fminf>
+ 8013112:	vstr	s0, [r7, #92]	@ 0x5c
+ 8013116:	vldr	s0, [r7, #12]
+ 801311a:	bl	8012c8a <WheelSpeedController_Abs>
+ 801311e:	vmov.f32	s14, s0
+ 8013122:	vldr	s15, [r7, #92]	@ 0x5c
+ 8013126:	vcmpe.f32	s15, s14
+ 801312a:	vmrs	APSR_nzcv, fpscr
+ 801312e:	blt.n	8013144 <WheelSpeedController_FrontSupport+0x240>
+ 8013130:	ldr.w	r3, [r7, #132]	@ 0x84
+ 8013134:	ldr	r3, [r3, #8]
+ 8013136:	movs	r2, #60	@ 0x3c
+ 8013138:	ldr	r1, [r7, #8]
+ 801313a:	mov	r0, r3
+ 801313c:	bl	8012ecc <WheelSpeedController_AddTime>
+ 8013140:	mov	r3, r0
+ 8013142:	b.n	8013146 <WheelSpeedController_FrontSupport+0x242>
+ 8013144:	movs	r3, #0
+ 8013146:	ldr.w	r2, [r7, #132]	@ 0x84
+ 801314a:	str	r3, [r2, #8]
+ 801314c:	vldr	s15, [r7, #108]	@ 0x6c
+ 8013150:	vldr	s14, [pc, #148]	@ 80131e8 <WheelSpeedController_FrontSupport+0x2e4>
+ 8013154:	vcmpe.f32	s15, s14
+ 8013158:	vmrs	APSR_nzcv, fpscr
+ 801315c:	blt.n	8013172 <WheelSpeedController_FrontSupport+0x26e>
+ 801315e:	ldr.w	r3, [r7, #132]	@ 0x84
+ 8013162:	ldr	r3, [r3, #12]
+ 8013164:	movs	r2, #40	@ 0x28
+ 8013166:	ldr	r1, [r7, #8]
+ 8013168:	mov	r0, r3
+ 801316a:	bl	8012ecc <WheelSpeedController_AddTime>
+ 801316e:	mov	r3, r0
+ 8013170:	b.n	8013174 <WheelSpeedController_FrontSupport+0x270>
+ 8013172:	movs	r3, #0
+ 8013174:	ldr.w	r2, [r7, #132]	@ 0x84
+ 8013178:	str	r3, [r2, #12]
+ 801317a:	ldrb.w	r3, [r7, #98]	@ 0x62
+ 801317e:	cmp	r3, #0
+ 8013180:	beq.n	8013192 <WheelSpeedController_FrontSupport+0x28e>
+ 8013182:	ldr.w	r3, [r7, #132]	@ 0x84
+ 8013186:	ldr	r3, [r3, #12]
+ 8013188:	cmp	r3, #39	@ 0x27
+ 801318a:	bls.n	8013192 <WheelSpeedController_FrontSupport+0x28e>
+ 801318c:	ldr	r3, [pc, #84]	@ (80131e4 <WheelSpeedController_FrontSupport+0x2e0>)
+ 801318e:	movs	r2, #1
+ 8013190:	strb	r2, [r3, #9]
+ 8013192:	ldr.w	r3, [r7, #132]	@ 0x84
+ 8013196:	ldrb.w	r3, [r3, #32]
+ 801319a:	eor.w	r3, r3, #1
+ 801319e:	uxtb	r3, r3
+ 80131a0:	cmp	r3, #0
+ 80131a2:	beq.n	80131f4 <WheelSpeedController_FrontSupport+0x2f0>
+ 80131a4:	vldr	s0, [r7, #12]
+ 80131a8:	bl	8012c8a <WheelSpeedController_Abs>
+ 80131ac:	vmov.f32	s14, s0
+ 80131b0:	vldr	s15, [r7, #92]	@ 0x5c
+ 80131b4:	vcmpe.f32	s15, s14
+ 80131b8:	vmrs	APSR_nzcv, fpscr
+ 80131bc:	blt.n	80131ec <WheelSpeedController_FrontSupport+0x2e8>
+ 80131be:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80131c2:	ldr	r3, [r3, #24]
+ 80131c4:	movw	r2, #1500	@ 0x5dc
+ 80131c8:	ldr	r1, [r7, #8]
+ 80131ca:	mov	r0, r3
+ 80131cc:	bl	8012ecc <WheelSpeedController_AddTime>
+ 80131d0:	mov	r3, r0
+ 80131d2:	b.n	80131ee <WheelSpeedController_FrontSupport+0x2ea>
+ 80131d4:	.word	0x2000b07c
+ 80131d8:	.word	0x2000afec
+ 80131dc:	.word	0x447a0000
+ 80131e0:	.word	0x3dcccccd
+ 80131e4:	.word	0x2000b10c
+ 80131e8:	.word	0x42480000
+ 80131ec:	movs	r3, #0
+ 80131ee:	ldr.w	r2, [r7, #132]	@ 0x84
+ 80131f2:	str	r3, [r2, #24]
+ 80131f4:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80131f8:	ldrb.w	r3, [r3, #32]
+ 80131fc:	eor.w	r3, r3, #1
+ 8013200:	uxtb	r3, r3
+ 8013202:	cmp	r3, #0
+ 8013204:	beq.n	8013218 <WheelSpeedController_FrontSupport+0x314>
+ 8013206:	ldr.w	r3, [r7, #132]	@ 0x84
+ 801320a:	ldr	r3, [r3, #12]
+ 801320c:	cmp	r3, #39	@ 0x27
+ 801320e:	bls.n	8013218 <WheelSpeedController_FrontSupport+0x314>
+ 8013210:	ldr.w	r3, [r7, #132]	@ 0x84
+ 8013214:	movs	r2, #0
+ 8013216:	strb	r2, [r3, #31]
+ 8013218:	ldr.w	r3, [r7, #132]	@ 0x84
+ 801321c:	ldr	r3, [r3, #8]
+ 801321e:	cmp	r3, #59	@ 0x3b
+ 8013220:	bls.n	80132c8 <WheelSpeedController_FrontSupport+0x3c4>
+ 8013222:	ldr.w	r3, [r7, #132]	@ 0x84
+ 8013226:	ldrb	r3, [r3, #31]
+ 8013228:	eor.w	r3, r3, #1
+ 801322c:	uxtb	r3, r3
+ 801322e:	cmp	r3, #0
+ 8013230:	beq.n	80132c8 <WheelSpeedController_FrontSupport+0x3c4>
+ 8013232:	ldr.w	r3, [r7, #132]	@ 0x84
+ 8013236:	ldrb.w	r3, [r3, #32]
+ 801323a:	eor.w	r3, r3, #1
+ 801323e:	uxtb	r3, r3
+ 8013240:	cmp	r3, #0
+ 8013242:	beq.n	80132c8 <WheelSpeedController_FrontSupport+0x3c4>
+ 8013244:	ldr.w	r3, [r7, #132]	@ 0x84
+ 8013248:	movs	r2, #1
+ 801324a:	strb	r2, [r3, #30]
+ 801324c:	ldr.w	r3, [r7, #132]	@ 0x84
+ 8013250:	movs	r2, #1
+ 8013252:	strb	r2, [r3, #31]
+ 8013254:	ldr.w	r3, [r7, #132]	@ 0x84
+ 8013258:	movs	r2, #0
+ 801325a:	str	r2, [r3, #20]
+ 801325c:	ldrb.w	r3, [r7, #98]	@ 0x62
+ 8013260:	cmp	r3, #0
+ 8013262:	beq.n	801329a <WheelSpeedController_FrontSupport+0x396>
+ 8013264:	ldr	r3, [pc, #608]	@ (80134c8 <WheelSpeedController_FrontSupport+0x5c4>)
+ 8013266:	ldrb	r3, [r3, #9]
+ 8013268:	eor.w	r3, r3, #1
+ 801326c:	uxtb	r3, r3
+ 801326e:	cmp	r3, #0
+ 8013270:	beq.n	801329a <WheelSpeedController_FrontSupport+0x396>
+ 8013272:	ldr	r3, [pc, #596]	@ (80134c8 <WheelSpeedController_FrontSupport+0x5c4>)
+ 8013274:	ldrb	r3, [r3, #11]
+ 8013276:	eor.w	r3, r3, #1
+ 801327a:	uxtb	r3, r3
+ 801327c:	cmp	r3, #0
+ 801327e:	beq.n	801329a <WheelSpeedController_FrontSupport+0x396>
+ 8013280:	ldr	r3, [pc, #580]	@ (80134c8 <WheelSpeedController_FrontSupport+0x5c4>)
+ 8013282:	ldr	r3, [r3, #0]
+ 8013284:	add.w	r3, r3, #300	@ 0x12c
+ 8013288:	cmp.w	r3, #600	@ 0x258
+ 801328c:	bhi.n	801329a <WheelSpeedController_FrontSupport+0x396>
+ 801328e:	ldr	r3, [pc, #568]	@ (80134c8 <WheelSpeedController_FrontSupport+0x5c4>)
+ 8013290:	movs	r2, #1
+ 8013292:	strb	r2, [r3, #10]
+ 8013294:	ldr	r3, [pc, #560]	@ (80134c8 <WheelSpeedController_FrontSupport+0x5c4>)
+ 8013296:	movs	r2, #0
+ 8013298:	str	r2, [r3, #4]
+ 801329a:	ldr.w	r3, [r7, #128]	@ 0x80
+ 801329e:	vldr	s14, [r3, #20]
+ 80132a2:	ldrsb.w	r3, [r7, #123]	@ 0x7b
+ 80132a6:	vmov	s15, r3
+ 80132aa:	vcvt.f32.s32	s15, s15
+ 80132ae:	vmul.f32	s15, s14, s15
+ 80132b2:	vcmpe.f32	s15, #0.0
+ 80132b6:	vmrs	APSR_nzcv, fpscr
+ 80132ba:	bpl.n	80132ec <WheelSpeedController_FrontSupport+0x3e8>
+ 80132bc:	ldr.w	r3, [r7, #128]	@ 0x80
+ 80132c0:	mov.w	r2, #0
+ 80132c4:	str	r2, [r3, #20]
+ 80132c6:	b.n	80132ec <WheelSpeedController_FrontSupport+0x3e8>
+ 80132c8:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80132cc:	ldrb	r3, [r3, #30]
+ 80132ce:	cmp	r3, #0
+ 80132d0:	beq.n	80132ec <WheelSpeedController_FrontSupport+0x3e8>
+ 80132d2:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80132d6:	ldr	r3, [r3, #20]
+ 80132d8:	mov.w	r2, #300	@ 0x12c
+ 80132dc:	ldr	r1, [r7, #8]
+ 80132de:	mov	r0, r3
+ 80132e0:	bl	8012ecc <WheelSpeedController_AddTime>
+ 80132e4:	mov	r2, r0
+ 80132e6:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80132ea:	str	r2, [r3, #20]
+ 80132ec:	ldrb.w	r3, [r7, #99]	@ 0x63
+ 80132f0:	cmp	r3, #0
+ 80132f2:	beq.w	8013478 <WheelSpeedController_FrontSupport+0x574>
+ 80132f6:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80132fa:	ldr	r3, [r3, #16]
+ 80132fc:	cmp	r3, #59	@ 0x3b
+ 80132fe:	bls.w	80135e2 <WheelSpeedController_FrontSupport+0x6de>
+ 8013302:	vldr	s15, [r7, #104]	@ 0x68
+ 8013306:	vneg.f32	s14, s15
+ 801330a:	vldr	s15, [r7, #100]	@ 0x64
+ 801330e:	vsub.f32	s15, s14, s15
+ 8013312:	vldr	s2, [pc, #440]	@ 80134cc <WheelSpeedController_FrontSupport+0x5c8>
+ 8013316:	vmov.f32	s1, #52	@ 0x41a00000  20.0
+ 801331a:	vmov.f32	s0, s15
+ 801331e:	bl	8012cbe <WheelSpeedController_Clamp>
+ 8013322:	vstr	s0, [r7, #80]	@ 0x50
+ 8013326:	ldr.w	r3, [r7, #132]	@ 0x84
+ 801332a:	vldr	s14, [r3, #4]
+ 801332e:	vldr	s15, [r7, #116]	@ 0x74
+ 8013332:	vldr	s13, [pc, #412]	@ 80134d0 <WheelSpeedController_FrontSupport+0x5cc>
+ 8013336:	vmul.f32	s15, s15, s13
+ 801333a:	vmov.f32	s1, s15
+ 801333e:	vmov.f32	s0, s14
+ 8013342:	bl	8026204 <fminf>
+ 8013346:	vstr	s0, [r7, #76]	@ 0x4c
+ 801334a:	vldr	s14, [r7, #80]	@ 0x50
+ 801334e:	vldr	s15, [r7, #116]	@ 0x74
+ 8013352:	vmul.f32	s16, s14, s15
+ 8013356:	vldr	s15, [r7, #116]	@ 0x74
+ 801335a:	vldr	s14, [pc, #372]	@ 80134d0 <WheelSpeedController_FrontSupport+0x5cc>
+ 801335e:	vmul.f32	s14, s15, s14
+ 8013362:	vldr	s15, [r7, #76]	@ 0x4c
+ 8013366:	vsub.f32	s15, s14, s15
+ 801336a:	vldr	s1, [pc, #360]	@ 80134d4 <WheelSpeedController_FrontSupport+0x5d0>
+ 801336e:	vmov.f32	s0, s15
+ 8013372:	bl	80261b4 <fmaxf>
+ 8013376:	vmov.f32	s15, s0
+ 801337a:	vmov.f32	s1, s15
+ 801337e:	vmov.f32	s0, s16
+ 8013382:	bl	8026204 <fminf>
+ 8013386:	vstr	s0, [r7, #72]	@ 0x48
+ 801338a:	ldr.w	r3, [r7, #132]	@ 0x84
+ 801338e:	vldr	s15, [r3]
+ 8013392:	vmov.f32	s1, s15
+ 8013396:	vldr	s0, [r7, #72]	@ 0x48
+ 801339a:	bl	8026204 <fminf>
+ 801339e:	vstr	s0, [r7, #68]	@ 0x44
+ 80133a2:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80133a6:	vldr	s14, [r3]
+ 80133aa:	vldr	s15, [r7, #68]	@ 0x44
+ 80133ae:	vsub.f32	s15, s14, s15
+ 80133b2:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80133b6:	vstr	s15, [r3]
+ 80133ba:	ldr.w	r3, [r7, #128]	@ 0x80
+ 80133be:	vldr	s15, [r3, #20]
+ 80133c2:	vneg.f32	s14, s15
+ 80133c6:	ldrsb.w	r3, [r7, #123]	@ 0x7b
+ 80133ca:	vmov	s15, r3
+ 80133ce:	vcvt.f32.s32	s15, s15
+ 80133d2:	vmul.f32	s15, s14, s15
+ 80133d6:	vstr	s15, [r7, #64]	@ 0x40
+ 80133da:	vldr	s15, [r7, #64]	@ 0x40
+ 80133de:	vcmpe.f32	s15, #0.0
+ 80133e2:	vmrs	APSR_nzcv, fpscr
+ 80133e6:	ble.n	801341e <WheelSpeedController_FrontSupport+0x51a>
+ 80133e8:	ldr.w	r3, [r7, #128]	@ 0x80
+ 80133ec:	vldr	s16, [r3, #20]
+ 80133f0:	ldrsb.w	r3, [r7, #123]	@ 0x7b
+ 80133f4:	vmov	s15, r3
+ 80133f8:	vcvt.f32.s32	s17, s15
+ 80133fc:	vldr	s1, [r7, #64]	@ 0x40
+ 8013400:	vldr	s0, [r7, #68]	@ 0x44
+ 8013404:	bl	8026204 <fminf>
+ 8013408:	vmov.f32	s15, s0
+ 801340c:	vmul.f32	s15, s17, s15
+ 8013410:	vadd.f32	s15, s16, s15
+ 8013414:	ldr.w	r3, [r7, #128]	@ 0x80
+ 8013418:	vstr	s15, [r3, #20]
+ 801341c:	b.n	80135e2 <WheelSpeedController_FrontSupport+0x6de>
+ 801341e:	ldr.w	r3, [r7, #128]	@ 0x80
+ 8013422:	vldr	s16, [r3, #20]
+ 8013426:	ldrsb.w	r3, [r7, #123]	@ 0x7b
+ 801342a:	vmov	s15, r3
+ 801342e:	vcvt.f32.s32	s17, s15
+ 8013432:	ldr.w	r3, [r7, #128]	@ 0x80
+ 8013436:	vldr	s14, [r3, #20]
+ 801343a:	ldrsb.w	r3, [r7, #123]	@ 0x7b
+ 801343e:	vmov	s15, r3
+ 8013442:	vcvt.f32.s32	s15, s15
+ 8013446:	vmul.f32	s13, s14, s15
+ 801344a:	vldr	s14, [r7, #72]	@ 0x48
+ 801344e:	vldr	s15, [r7, #68]	@ 0x44
+ 8013452:	vsub.f32	s15, s14, s15
+ 8013456:	vmov.f32	s1, s15
+ 801345a:	vmov.f32	s0, s13
+ 801345e:	bl	8026204 <fminf>
+ 8013462:	vmov.f32	s15, s0
+ 8013466:	vmul.f32	s15, s17, s15
+ 801346a:	vsub.f32	s15, s16, s15
+ 801346e:	ldr.w	r3, [r7, #128]	@ 0x80
+ 8013472:	vstr	s15, [r3, #20]
+ 8013476:	b.n	80135e2 <WheelSpeedController_FrontSupport+0x6de>
+ 8013478:	ldr.w	r3, [r7, #132]	@ 0x84
+ 801347c:	ldr	r3, [r3, #8]
+ 801347e:	cmp	r3, #59	@ 0x3b
+ 8013480:	bls.n	80134e0 <WheelSpeedController_FrontSupport+0x5dc>
+ 8013482:	ldr.w	r3, [r7, #132]	@ 0x84
+ 8013486:	vldr	s15, [r3]
+ 801348a:	vldr	s14, [r7, #112]	@ 0x70
+ 801348e:	vsub.f32	s14, s14, s15
+ 8013492:	vldr	s15, [r7, #116]	@ 0x74
+ 8013496:	vldr	s13, [pc, #52]	@ 80134cc <WheelSpeedController_FrontSupport+0x5c8>
+ 801349a:	vmul.f32	s15, s15, s13
+ 801349e:	vmov.f32	s1, s15
+ 80134a2:	vmov.f32	s0, s14
+ 80134a6:	bl	8026204 <fminf>
+ 80134aa:	vstr	s0, [r7, #140]	@ 0x8c
+ 80134ae:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80134b2:	vldr	s14, [r3]
+ 80134b6:	vldr	s15, [r7, #140]	@ 0x8c
+ 80134ba:	vadd.f32	s15, s14, s15
+ 80134be:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80134c2:	vstr	s15, [r3]
+ 80134c6:	b.n	80135e2 <WheelSpeedController_FrontSupport+0x6de>
+ 80134c8:	.word	0x2000b10c
+ 80134cc:	.word	0x43480000
+ 80134d0:	.word	0x43c80000
+ 80134d4:	.word	0x00000000
+ 80134d8:	.word	0x42480000
+ 80134dc:	.word	0x42200000
+ 80134e0:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80134e4:	ldrb	r3, [r3, #30]
+ 80134e6:	eor.w	r3, r3, #1
+ 80134ea:	uxtb	r3, r3
+ 80134ec:	cmp	r3, #0
+ 80134ee:	beq.n	80135e2 <WheelSpeedController_FrontSupport+0x6de>
+ 80134f0:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80134f4:	vldr	s15, [r3, #4]
+ 80134f8:	vcmp.f32	s15, #0.0
+ 80134fc:	vmrs	APSR_nzcv, fpscr
+ 8013500:	bne.n	80135e2 <WheelSpeedController_FrontSupport+0x6de>
+ 8013502:	vldr	s15, [r7, #108]	@ 0x6c
+ 8013506:	vldr	s14, [pc, #-48]	@ 80134d8 <WheelSpeedController_FrontSupport+0x5d4>
+ 801350a:	vcmpe.f32	s15, s14
+ 801350e:	vmrs	APSR_nzcv, fpscr
+ 8013512:	blt.n	80135e2 <WheelSpeedController_FrontSupport+0x6de>
+ 8013514:	vldr	s14, [r7, #104]	@ 0x68
+ 8013518:	vldr	s15, [r7, #100]	@ 0x64
+ 801351c:	vcmpe.f32	s14, s15
+ 8013520:	vmrs	APSR_nzcv, fpscr
+ 8013524:	ble.n	80135e2 <WheelSpeedController_FrontSupport+0x6de>
+ 8013526:	ldr.w	r3, [r7, #128]	@ 0x80
+ 801352a:	vldr	s14, [r3, #20]
+ 801352e:	ldrsb.w	r3, [r7, #123]	@ 0x7b
+ 8013532:	vmov	s15, r3
+ 8013536:	vcvt.f32.s32	s15, s15
+ 801353a:	vmul.f32	s15, s14, s15
+ 801353e:	vstr	s15, [r7, #88]	@ 0x58
+ 8013542:	ldr.w	r3, [r7, #132]	@ 0x84
+ 8013546:	ldr	r3, [r3, #12]
+ 8013548:	cmp	r3, #39	@ 0x27
+ 801354a:	bls.n	80135e2 <WheelSpeedController_FrontSupport+0x6de>
+ 801354c:	ldr.w	r3, [r7, #132]	@ 0x84
+ 8013550:	ldrb.w	r3, [r3, #32]
+ 8013554:	eor.w	r3, r3, #1
+ 8013558:	uxtb	r3, r3
+ 801355a:	cmp	r3, #0
+ 801355c:	beq.n	80135e2 <WheelSpeedController_FrontSupport+0x6de>
+ 801355e:	vldr	s15, [r7, #88]	@ 0x58
+ 8013562:	vcmpe.f32	s15, #0.0
+ 8013566:	vmrs	APSR_nzcv, fpscr
+ 801356a:	blt.n	80135e2 <WheelSpeedController_FrontSupport+0x6de>
+ 801356c:	vldr	s14, [r7, #104]	@ 0x68
+ 8013570:	vldr	s15, [r7, #100]	@ 0x64
+ 8013574:	vsub.f32	s15, s14, s15
+ 8013578:	vldr	s1, [pc, #-160]	@ 80134dc <WheelSpeedController_FrontSupport+0x5d8>
+ 801357c:	vmov.f32	s0, s15
+ 8013580:	bl	8026204 <fminf>
+ 8013584:	vstr	s0, [r7, #84]	@ 0x54
+ 8013588:	ldr.w	r3, [r7, #132]	@ 0x84
+ 801358c:	vldr	s15, [r3]
+ 8013590:	vldr	s14, [r7, #112]	@ 0x70
+ 8013594:	vsub.f32	s13, s14, s15
+ 8013598:	vldr	s14, [r7, #84]	@ 0x54
+ 801359c:	vldr	s15, [r7, #116]	@ 0x74
+ 80135a0:	vmul.f32	s15, s14, s15
+ 80135a4:	vmov.f32	s1, s15
+ 80135a8:	vmov.f32	s0, s13
+ 80135ac:	bl	8026204 <fminf>
+ 80135b0:	vstr	s0, [r7, #140]	@ 0x8c
+ 80135b4:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80135b8:	vldr	s14, [r3]
+ 80135bc:	vldr	s15, [r7, #140]	@ 0x8c
+ 80135c0:	vadd.f32	s15, s14, s15
+ 80135c4:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80135c8:	vstr	s15, [r3]
+ 80135cc:	vldr	s15, [r7, #140]	@ 0x8c
+ 80135d0:	vcmpe.f32	s15, #0.0
+ 80135d4:	vmrs	APSR_nzcv, fpscr
+ 80135d8:	ite	gt
+ 80135da:	movgt	r3, #1
+ 80135dc:	movle	r3, #0
+ 80135de:	strb.w	r3, [r7, #139]	@ 0x8b
+ 80135e2:	ldrb.w	r3, [r7, #98]	@ 0x62
+ 80135e6:	cmp	r3, #0
+ 80135e8:	beq.n	80135f6 <WheelSpeedController_FrontSupport+0x6f2>
+ 80135ea:	ldr	r3, [pc, #856]	@ (8013944 <WheelSpeedController_FrontSupport+0xa40>)
+ 80135ec:	ldrb	r3, [r3, #10]
+ 80135ee:	cmp	r3, #0
+ 80135f0:	beq.n	80135f6 <WheelSpeedController_FrontSupport+0x6f2>
+ 80135f2:	movs	r3, #1
+ 80135f4:	b.n	80135f8 <WheelSpeedController_FrontSupport+0x6f4>
+ 80135f6:	movs	r3, #0
+ 80135f8:	strb.w	r3, [r7, #63]	@ 0x3f
+ 80135fc:	ldrb.w	r3, [r7, #63]	@ 0x3f
+ 8013600:	and.w	r3, r3, #1
+ 8013604:	strb.w	r3, [r7, #63]	@ 0x3f
+ 8013608:	ldrb.w	r3, [r7, #63]	@ 0x3f
+ 801360c:	cmp	r3, #0
+ 801360e:	beq.n	801363c <WheelSpeedController_FrontSupport+0x738>
+ 8013610:	ldr	r3, [pc, #816]	@ (8013944 <WheelSpeedController_FrontSupport+0xa40>)
+ 8013612:	ldr	r3, [r3, #0]
+ 8013614:	cmp.w	r3, #600	@ 0x258
+ 8013618:	bcs.n	801362e <WheelSpeedController_FrontSupport+0x72a>
+ 801361a:	ldr.w	r3, [r7, #132]	@ 0x84
+ 801361e:	ldr	r3, [r3, #20]
+ 8013620:	cmp.w	r3, #300	@ 0x12c
+ 8013624:	bcc.n	8013632 <WheelSpeedController_FrontSupport+0x72e>
+ 8013626:	ldr	r3, [pc, #796]	@ (8013944 <WheelSpeedController_FrontSupport+0xa40>)
+ 8013628:	ldr	r3, [r3, #4]
+ 801362a:	cmp	r3, #99	@ 0x63
+ 801362c:	bls.n	8013632 <WheelSpeedController_FrontSupport+0x72e>
+ 801362e:	movs	r3, #1
+ 8013630:	b.n	8013634 <WheelSpeedController_FrontSupport+0x730>
+ 8013632:	movs	r3, #0
+ 8013634:	and.w	r3, r3, #1
+ 8013638:	uxtb	r3, r3
+ 801363a:	b.n	8013650 <WheelSpeedController_FrontSupport+0x74c>
+ 801363c:	ldr.w	r3, [r7, #132]	@ 0x84
+ 8013640:	ldr	r3, [r3, #20]
+ 8013642:	movw	r2, #299	@ 0x12b
+ 8013646:	cmp	r3, r2
+ 8013648:	ite	hi
+ 801364a:	movhi	r3, #1
+ 801364c:	movls	r3, #0
+ 801364e:	uxtb	r3, r3
+ 8013650:	strb.w	r3, [r7, #62]	@ 0x3e
+ 8013654:	ldr.w	r3, [r7, #132]	@ 0x84
+ 8013658:	ldrb	r3, [r3, #30]
+ 801365a:	cmp	r3, #0
+ 801365c:	beq.n	8013694 <WheelSpeedController_FrontSupport+0x790>
+ 801365e:	ldrb.w	r3, [r7, #62]	@ 0x3e
+ 8013662:	cmp	r3, #0
+ 8013664:	bne.n	8013678 <WheelSpeedController_FrontSupport+0x774>
+ 8013666:	ldr.w	r3, [r7, #132]	@ 0x84
+ 801366a:	ldr	r3, [r3, #12]
+ 801366c:	cmp	r3, #39	@ 0x27
+ 801366e:	bhi.n	8013678 <WheelSpeedController_FrontSupport+0x774>
+ 8013670:	ldrb.w	r3, [r7, #99]	@ 0x63
+ 8013674:	cmp	r3, #0
+ 8013676:	beq.n	8013694 <WheelSpeedController_FrontSupport+0x790>
+ 8013678:	ldr.w	r3, [r7, #132]	@ 0x84
+ 801367c:	movs	r2, #0
+ 801367e:	strb	r2, [r3, #30]
+ 8013680:	ldrb.w	r3, [r7, #63]	@ 0x3f
+ 8013684:	cmp	r3, #0
+ 8013686:	beq.n	8013694 <WheelSpeedController_FrontSupport+0x790>
+ 8013688:	ldr	r3, [pc, #696]	@ (8013944 <WheelSpeedController_FrontSupport+0xa40>)
+ 801368a:	movs	r2, #0
+ 801368c:	strb	r2, [r3, #10]
+ 801368e:	ldr	r3, [pc, #692]	@ (8013944 <WheelSpeedController_FrontSupport+0xa40>)
+ 8013690:	movs	r2, #1
+ 8013692:	strb	r2, [r3, #11]
+ 8013694:	movs	r3, #0
+ 8013696:	strb.w	r3, [r7, #138]	@ 0x8a
+ 801369a:	ldr.w	r3, [r7, #132]	@ 0x84
+ 801369e:	ldrb	r3, [r3, #30]
+ 80136a0:	eor.w	r3, r3, #1
+ 80136a4:	uxtb	r3, r3
+ 80136a6:	cmp	r3, #0
+ 80136a8:	beq.n	8013790 <WheelSpeedController_FrontSupport+0x88c>
+ 80136aa:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80136ae:	ldrb.w	r3, [r3, #32]
+ 80136b2:	eor.w	r3, r3, #1
+ 80136b6:	uxtb	r3, r3
+ 80136b8:	cmp	r3, #0
+ 80136ba:	beq.n	8013790 <WheelSpeedController_FrontSupport+0x88c>
+ 80136bc:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80136c0:	ldr	r3, [r3, #12]
+ 80136c2:	cmp	r3, #39	@ 0x27
+ 80136c4:	bls.n	8013790 <WheelSpeedController_FrontSupport+0x88c>
+ 80136c6:	vldr	s15, [r7, #104]	@ 0x68
+ 80136ca:	vcmpe.f32	s15, #0.0
+ 80136ce:	vmrs	APSR_nzcv, fpscr
+ 80136d2:	blt.n	8013790 <WheelSpeedController_FrontSupport+0x88c>
+ 80136d4:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80136d8:	vldr	s15, [r3, #4]
+ 80136dc:	vcmpe.f32	s15, #0.0
+ 80136e0:	vmrs	APSR_nzcv, fpscr
+ 80136e4:	ble.n	8013790 <WheelSpeedController_FrontSupport+0x88c>
+ 80136e6:	ldr.w	r3, [r7, #128]	@ 0x80
+ 80136ea:	vldr	s14, [r3, #20]
+ 80136ee:	ldrsb.w	r3, [r7, #123]	@ 0x7b
+ 80136f2:	vmov	s15, r3
+ 80136f6:	vcvt.f32.s32	s15, s15
+ 80136fa:	vmul.f32	s15, s14, s15
+ 80136fe:	vldr	s14, [pc, #584]	@ 8013948 <WheelSpeedController_FrontSupport+0xa44>
+ 8013702:	vsub.f32	s15, s14, s15
+ 8013706:	vldr	s1, [pc, #580]	@ 801394c <WheelSpeedController_FrontSupport+0xa48>
+ 801370a:	vmov.f32	s0, s15
+ 801370e:	bl	80261b4 <fmaxf>
+ 8013712:	vstr	s0, [r7, #56]	@ 0x38
+ 8013716:	ldr.w	r3, [r7, #132]	@ 0x84
+ 801371a:	vldr	s16, [r3, #4]
+ 801371e:	vldr	s15, [r7, #116]	@ 0x74
+ 8013722:	vldr	s14, [pc, #556]	@ 8013950 <WheelSpeedController_FrontSupport+0xa4c>
+ 8013726:	vmul.f32	s15, s15, s14
+ 801372a:	vmov.f32	s1, s15
+ 801372e:	vldr	s0, [r7, #56]	@ 0x38
+ 8013732:	bl	8026204 <fminf>
+ 8013736:	vmov.f32	s15, s0
+ 801373a:	vmov.f32	s1, s15
+ 801373e:	vmov.f32	s0, s16
+ 8013742:	bl	8026204 <fminf>
+ 8013746:	vstr	s0, [r7, #52]	@ 0x34
+ 801374a:	ldr.w	r3, [r7, #128]	@ 0x80
+ 801374e:	vldr	s14, [r3, #20]
+ 8013752:	ldrsb.w	r3, [r7, #123]	@ 0x7b
+ 8013756:	vmov	s15, r3
+ 801375a:	vcvt.f32.s32	s13, s15
+ 801375e:	vldr	s15, [r7, #52]	@ 0x34
+ 8013762:	vmul.f32	s15, s13, s15
+ 8013766:	vadd.f32	s15, s14, s15
+ 801376a:	ldr.w	r3, [r7, #128]	@ 0x80
+ 801376e:	vstr	s15, [r3, #20]
+ 8013772:	ldr.w	r3, [r7, #132]	@ 0x84
+ 8013776:	vldr	s14, [r3, #4]
+ 801377a:	vldr	s15, [r7, #52]	@ 0x34
+ 801377e:	vsub.f32	s15, s14, s15
+ 8013782:	ldr.w	r3, [r7, #132]	@ 0x84
+ 8013786:	vstr	s15, [r3, #4]
+ 801378a:	movs	r3, #1
+ 801378c:	strb.w	r3, [r7, #138]	@ 0x8a
+ 8013790:	vldr	s15, [r7, #124]	@ 0x7c
+ 8013794:	vldr	s13, [pc, #444]	@ 8013954 <WheelSpeedController_FrontSupport+0xa50>
+ 8013798:	vdiv.f32	s14, s15, s13
+ 801379c:	vmov.f32	s1, #112	@ 0x3f800000  1.0
+ 80137a0:	vmov.f32	s0, s14
+ 80137a4:	bl	8026204 <fminf>
+ 80137a8:	vstr	s0, [r7, #48]	@ 0x30
+ 80137ac:	vldr	s15, [r7, #48]	@ 0x30
+ 80137b0:	vldr	s14, [pc, #404]	@ 8013948 <WheelSpeedController_FrontSupport+0xa44>
+ 80137b4:	vmul.f32	s15, s15, s14
+ 80137b8:	vstr	s15, [r7, #44]	@ 0x2c
+ 80137bc:	ldr.w	r3, [r7, #128]	@ 0x80
+ 80137c0:	vldr	s14, [r3, #20]
+ 80137c4:	ldrsb.w	r3, [r7, #123]	@ 0x7b
+ 80137c8:	vmov	s15, r3
+ 80137cc:	vcvt.f32.s32	s15, s15
+ 80137d0:	vmul.f32	s15, s14, s15
+ 80137d4:	vstr	s15, [r7, #40]	@ 0x28
+ 80137d8:	vldr	s14, [pc, #364]	@ 8013948 <WheelSpeedController_FrontSupport+0xa44>
+ 80137dc:	vldr	s15, [r7, #40]	@ 0x28
+ 80137e0:	vsub.f32	s15, s14, s15
+ 80137e4:	vldr	s2, [r7, #44]	@ 0x2c
+ 80137e8:	vldr	s1, [pc, #352]	@ 801394c <WheelSpeedController_FrontSupport+0xa48>
+ 80137ec:	vmov.f32	s0, s15
+ 80137f0:	bl	8012cbe <WheelSpeedController_Clamp>
+ 80137f4:	vstr	s0, [r7, #36]	@ 0x24
+ 80137f8:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80137fc:	ldrb	r3, [r3, #30]
+ 80137fe:	cmp	r3, #0
+ 8013800:	beq.n	801386c <WheelSpeedController_FrontSupport+0x968>
+ 8013802:	vldr	s15, [r7, #116]	@ 0x74
+ 8013806:	vldr	s14, [pc, #336]	@ 8013958 <WheelSpeedController_FrontSupport+0xa54>
+ 801380a:	vmul.f32	s16, s15, s14
+ 801380e:	vldr	s15, [r7, #116]	@ 0x74
+ 8013812:	vldr	s14, [pc, #324]	@ 8013958 <WheelSpeedController_FrontSupport+0xa54>
+ 8013816:	vmul.f32	s14, s15, s14
+ 801381a:	vldr	s15, [r7, #140]	@ 0x8c
+ 801381e:	vsub.f32	s15, s14, s15
+ 8013822:	vldr	s1, [pc, #296]	@ 801394c <WheelSpeedController_FrontSupport+0xa48>
+ 8013826:	vmov.f32	s0, s15
+ 801382a:	bl	80261b4 <fmaxf>
+ 801382e:	vmov.f32	s15, s0
+ 8013832:	vmov.f32	s1, s15
+ 8013836:	vmov.f32	s0, s16
+ 801383a:	bl	8026204 <fminf>
+ 801383e:	vstr	s0, [r7, #32]
+ 8013842:	ldr.w	r3, [r7, #132]	@ 0x84
+ 8013846:	vldr	s14, [r3, #4]
+ 801384a:	vldr	s15, [r7, #32]
+ 801384e:	vadd.f32	s15, s14, s15
+ 8013852:	vmov.f32	s1, s15
+ 8013856:	vldr	s0, [r7, #36]	@ 0x24
+ 801385a:	bl	8026204 <fminf>
+ 801385e:	vmov.f32	s15, s0
+ 8013862:	ldr.w	r3, [r7, #132]	@ 0x84
+ 8013866:	vstr	s15, [r3, #4]
+ 801386a:	b.n	80138ca <WheelSpeedController_FrontSupport+0x9c6>
+ 801386c:	ldrb.w	r3, [r7, #138]	@ 0x8a
+ 8013870:	eor.w	r3, r3, #1
+ 8013874:	uxtb	r3, r3
+ 8013876:	cmp	r3, #0
+ 8013878:	beq.n	80138ca <WheelSpeedController_FrontSupport+0x9c6>
+ 801387a:	ldr.w	r3, [r7, #132]	@ 0x84
+ 801387e:	vldr	s14, [r3, #4]
+ 8013882:	vldr	s15, [r7, #116]	@ 0x74
+ 8013886:	vldr	s13, [pc, #212]	@ 801395c <WheelSpeedController_FrontSupport+0xa58>
+ 801388a:	vmul.f32	s15, s15, s13
+ 801388e:	vsub.f32	s15, s14, s15
+ 8013892:	vldr	s1, [pc, #184]	@ 801394c <WheelSpeedController_FrontSupport+0xa48>
+ 8013896:	vmov.f32	s0, s15
+ 801389a:	bl	80261b4 <fmaxf>
+ 801389e:	vmov.f32	s15, s0
+ 80138a2:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80138a6:	vstr	s15, [r3, #4]
+ 80138aa:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80138ae:	vldr	s15, [r3, #4]
+ 80138b2:	vmov.f32	s1, s15
+ 80138b6:	vldr	s0, [r7, #36]	@ 0x24
+ 80138ba:	bl	8026204 <fminf>
+ 80138be:	vmov.f32	s15, s0
+ 80138c2:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80138c6:	vstr	s15, [r3, #4]
+ 80138ca:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80138ce:	vldr	s15, [r3, #4]
+ 80138d2:	vmov.f32	s1, s15
+ 80138d6:	vldr	s0, [r7, #36]	@ 0x24
+ 80138da:	bl	8026204 <fminf>
+ 80138de:	vmov.f32	s15, s0
+ 80138e2:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80138e6:	vstr	s15, [r3, #4]
+ 80138ea:	ldrb.w	r3, [r7, #98]	@ 0x62
+ 80138ee:	cmp	r3, #0
+ 80138f0:	beq.n	801398e <WheelSpeedController_FrontSupport+0xa8a>
+ 80138f2:	ldr	r3, [pc, #80]	@ (8013944 <WheelSpeedController_FrontSupport+0xa40>)
+ 80138f4:	ldrb	r3, [r3, #10]
+ 80138f6:	cmp	r3, #0
+ 80138f8:	beq.n	801398e <WheelSpeedController_FrontSupport+0xa8a>
+ 80138fa:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80138fe:	ldrb	r3, [r3, #30]
+ 8013900:	cmp	r3, #0
+ 8013902:	beq.n	801398e <WheelSpeedController_FrontSupport+0xa8a>
+ 8013904:	ldr.w	r3, [r7, #132]	@ 0x84
+ 8013908:	vldr	s14, [r3]
+ 801390c:	vldr	s15, [r7, #112]	@ 0x70
+ 8013910:	vldr	s13, [pc, #76]	@ 8013960 <WheelSpeedController_FrontSupport+0xa5c>
+ 8013914:	vsub.f32	s15, s15, s13
+ 8013918:	vcmpe.f32	s14, s15
+ 801391c:	vmrs	APSR_nzcv, fpscr
+ 8013920:	blt.n	8013964 <WheelSpeedController_FrontSupport+0xa60>
+ 8013922:	ldr.w	r3, [r7, #132]	@ 0x84
+ 8013926:	vldr	s14, [r3, #4]
+ 801392a:	vldr	s15, [r7, #36]	@ 0x24
+ 801392e:	vldr	s13, [pc, #48]	@ 8013960 <WheelSpeedController_FrontSupport+0xa5c>
+ 8013932:	vsub.f32	s15, s15, s13
+ 8013936:	vcmpe.f32	s14, s15
+ 801393a:	vmrs	APSR_nzcv, fpscr
+ 801393e:	blt.n	8013964 <WheelSpeedController_FrontSupport+0xa60>
+ 8013940:	movs	r3, #1
+ 8013942:	b.n	8013966 <WheelSpeedController_FrontSupport+0xa62>
+ 8013944:	.word	0x2000b10c
+ 8013948:	.word	0x42480000
+ 801394c:	.word	0x00000000
+ 8013950:	.word	0x42200000
+ 8013954:	.word	0x43200000
+ 8013958:	.word	0x437a0000
+ 801395c:	.word	0x43c80000
+ 8013960:	.word	0x3a83126f
+ 8013964:	movs	r3, #0
+ 8013966:	strb	r3, [r7, #31]
+ 8013968:	ldrb	r3, [r7, #31]
+ 801396a:	and.w	r3, r3, #1
+ 801396e:	strb	r3, [r7, #31]
+ 8013970:	ldrb	r3, [r7, #31]
+ 8013972:	cmp	r3, #0
+ 8013974:	beq.n	8013988 <WheelSpeedController_FrontSupport+0xa84>
+ 8013976:	ldr	r3, [pc, #212]	@ (8013a4c <WheelSpeedController_FrontSupport+0xb48>)
+ 8013978:	ldr	r3, [r3, #4]
+ 801397a:	movs	r2, #100	@ 0x64
+ 801397c:	ldr	r1, [r7, #8]
+ 801397e:	mov	r0, r3
+ 8013980:	bl	8012ecc <WheelSpeedController_AddTime>
+ 8013984:	mov	r3, r0
+ 8013986:	b.n	801398a <WheelSpeedController_FrontSupport+0xa86>
+ 8013988:	movs	r3, #0
+ 801398a:	ldr	r2, [pc, #192]	@ (8013a4c <WheelSpeedController_FrontSupport+0xb48>)
+ 801398c:	str	r3, [r2, #4]
+ 801398e:	ldr.w	r3, [r7, #132]	@ 0x84
+ 8013992:	ldr	r3, [r3, #24]
+ 8013994:	movw	r2, #1499	@ 0x5db
+ 8013998:	cmp	r3, r2
+ 801399a:	bls.n	80139d2 <WheelSpeedController_FrontSupport+0xace>
+ 801399c:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80139a0:	ldrb	r3, [r3, #31]
+ 80139a2:	cmp	r3, #0
+ 80139a4:	beq.n	80139d2 <WheelSpeedController_FrontSupport+0xace>
+ 80139a6:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80139aa:	ldrb	r3, [r3, #30]
+ 80139ac:	eor.w	r3, r3, #1
+ 80139b0:	uxtb	r3, r3
+ 80139b2:	cmp	r3, #0
+ 80139b4:	beq.n	80139d2 <WheelSpeedController_FrontSupport+0xace>
+ 80139b6:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80139ba:	vldr	s15, [r3, #4]
+ 80139be:	vcmp.f32	s15, #0.0
+ 80139c2:	vmrs	APSR_nzcv, fpscr
+ 80139c6:	bne.n	80139d2 <WheelSpeedController_FrontSupport+0xace>
+ 80139c8:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80139cc:	movs	r2, #1
+ 80139ce:	strb.w	r2, [r3, #32]
+ 80139d2:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80139d6:	ldr	r3, [r3, #8]
+ 80139d8:	cmp	r3, #59	@ 0x3b
+ 80139da:	bhi.n	8013a08 <WheelSpeedController_FrontSupport+0xb04>
+ 80139dc:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80139e0:	ldrb	r3, [r3, #30]
+ 80139e2:	cmp	r3, #0
+ 80139e4:	bne.n	8013a08 <WheelSpeedController_FrontSupport+0xb04>
+ 80139e6:	ldr.w	r3, [r7, #132]	@ 0x84
+ 80139ea:	vldr	s15, [r3, #4]
+ 80139ee:	vcmpe.f32	s15, #0.0
+ 80139f2:	vmrs	APSR_nzcv, fpscr
+ 80139f6:	bgt.n	8013a08 <WheelSpeedController_FrontSupport+0xb04>
+ 80139f8:	ldrb.w	r3, [r7, #138]	@ 0x8a
+ 80139fc:	cmp	r3, #0
+ 80139fe:	bne.n	8013a08 <WheelSpeedController_FrontSupport+0xb04>
+ 8013a00:	ldrb.w	r3, [r7, #139]	@ 0x8b
+ 8013a04:	cmp	r3, #0
+ 8013a06:	beq.n	8013a0c <WheelSpeedController_FrontSupport+0xb08>
+ 8013a08:	movs	r3, #1
+ 8013a0a:	b.n	8013a0e <WheelSpeedController_FrontSupport+0xb0a>
+ 8013a0c:	movs	r3, #0
+ 8013a0e:	and.w	r3, r3, #1
+ 8013a12:	uxtb	r2, r3
+ 8013a14:	ldr	r3, [r7, #4]
+ 8013a16:	strb	r2, [r3, #0]
+ 8013a18:	ldrsb.w	r3, [r7, #123]	@ 0x7b
+ 8013a1c:	vmov	s15, r3
+ 8013a20:	vcvt.f32.s32	s14, s15
+ 8013a24:	ldr.w	r3, [r7, #132]	@ 0x84
+ 8013a28:	vldr	s13, [r3]
+ 8013a2c:	ldr.w	r3, [r7, #132]	@ 0x84
+ 8013a30:	vldr	s15, [r3, #4]
+ 8013a34:	vadd.f32	s15, s13, s15
+ 8013a38:	vmul.f32	s15, s14, s15
+ 8013a3c:	vmov.f32	s0, s15
+ 8013a40:	adds	r7, #144	@ 0x90
+ 8013a42:	mov	sp, r7
+ 8013a44:	vpop	{d8}
+ 8013a48:	pop	{r7, pc}
+ 8013a4a:	nop
+ 8013a4c:	.word	0x2000b10c
+
+<WheelSpeedController_IsLrRunningSupportOwned>
+ 8012a78:	push	{r7}
+ 8012a7a:	sub	sp, #12
+ 8012a7c:	add	r7, sp, #0
+ 8012a7e:	vstr	s0, [r7, #4]
+ 8012a82:	ldr	r3, [pc, #108]	@ (8012af0 <WheelSpeedController_IsLrRunningSupportOwned+0x78>)
+ 8012a84:	ldrb	r3, [r3, #20]
+ 8012a86:	cmp	r3, #0
+ 8012a88:	beq.n	8012ada <WheelSpeedController_IsLrRunningSupportOwned+0x62>
+ 8012a8a:	vldr	s15, [r7, #4]
+ 8012a8e:	vabs.f32	s15, s15
+ 8012a92:	vldr	s14, [pc, #96]	@ 8012af4 <WheelSpeedController_IsLrRunningSupportOwned+0x7c>
+ 8012a96:	vcmp.f32	s15, s14
+ 8012a9a:	vmrs	APSR_nzcv, fpscr
+ 8012a9e:	ite	hi
+ 8012aa0:	movhi	r3, #1
+ 8012aa2:	movls	r3, #0
+ 8012aa4:	uxtb	r3, r3
+ 8012aa6:	eor.w	r3, r3, #1
+ 8012aaa:	uxtb	r3, r3
+ 8012aac:	cmp	r3, #0
+ 8012aae:	beq.n	8012ada <WheelSpeedController_IsLrRunningSupportOwned+0x62>
+ 8012ab0:	vldr	s15, [r7, #4]
+ 8012ab4:	vmov.f32	s14, #180	@ 0xc1a00000 -20.0
+ 8012ab8:	vcmpe.f32	s15, s14
+ 8012abc:	vmrs	APSR_nzcv, fpscr
+ 8012ac0:	bhi.n	8012ada <WheelSpeedController_IsLrRunningSupportOwned+0x62>
+ 8012ac2:	ldr	r3, [pc, #52]	@ (8012af8 <WheelSpeedController_IsLrRunningSupportOwned+0x80>)
+ 8012ac4:	vldr	s15, [r3, #28]
+ 8012ac8:	vldr	s14, [r7, #4]
+ 8012acc:	vcmp.f32	s14, s15
+ 8012ad0:	vmrs	APSR_nzcv, fpscr
+ 8012ad4:	bne.n	8012ada <WheelSpeedController_IsLrRunningSupportOwned+0x62>
+ 8012ad6:	movs	r3, #1
+ 8012ad8:	b.n	8012adc <WheelSpeedController_IsLrRunningSupportOwned+0x64>
+ 8012ada:	movs	r3, #0
+ 8012adc:	and.w	r3, r3, #1
+ 8012ae0:	uxtb	r3, r3
+ 8012ae2:	mov	r0, r3
+ 8012ae4:	adds	r7, #12
+ 8012ae6:	mov	sp, r7
+ 8012ae8:	ldr.w	r7, [sp], #4
+ 8012aec:	bx	lr
+ 8012aee:	nop
+ 8012af0:	.word	0x2000b118
+ 8012af4:	.word	0x7f7fffff
+ 8012af8:	.word	0x2000afec
+
+<WheelSpeedController_IsRrRunningSupportOwned>
+ 8012b58:	push	{r7}
+ 8012b5a:	sub	sp, #12
+ 8012b5c:	add	r7, sp, #0
+ 8012b5e:	vstr	s0, [r7, #4]
+ 8012b62:	ldr	r3, [pc, #108]	@ (8012bd0 <WheelSpeedController_IsRrRunningSupportOwned+0x78>)
+ 8012b64:	ldrb	r3, [r3, #20]
+ 8012b66:	cmp	r3, #0
+ 8012b68:	beq.n	8012bba <WheelSpeedController_IsRrRunningSupportOwned+0x62>
+ 8012b6a:	vldr	s15, [r7, #4]
+ 8012b6e:	vabs.f32	s15, s15
+ 8012b72:	vldr	s14, [pc, #96]	@ 8012bd4 <WheelSpeedController_IsRrRunningSupportOwned+0x7c>
+ 8012b76:	vcmp.f32	s15, s14
+ 8012b7a:	vmrs	APSR_nzcv, fpscr
+ 8012b7e:	ite	hi
+ 8012b80:	movhi	r3, #1
+ 8012b82:	movls	r3, #0
+ 8012b84:	uxtb	r3, r3
+ 8012b86:	eor.w	r3, r3, #1
+ 8012b8a:	uxtb	r3, r3
+ 8012b8c:	cmp	r3, #0
+ 8012b8e:	beq.n	8012bba <WheelSpeedController_IsRrRunningSupportOwned+0x62>
+ 8012b90:	vldr	s15, [r7, #4]
+ 8012b94:	vmov.f32	s14, #52	@ 0x41a00000  20.0
+ 8012b98:	vcmpe.f32	s15, s14
+ 8012b9c:	vmrs	APSR_nzcv, fpscr
+ 8012ba0:	blt.n	8012bba <WheelSpeedController_IsRrRunningSupportOwned+0x62>
+ 8012ba2:	ldr	r3, [pc, #52]	@ (8012bd8 <WheelSpeedController_IsRrRunningSupportOwned+0x80>)
+ 8012ba4:	vldr	s15, [r3, #84]	@ 0x54
+ 8012ba8:	vldr	s14, [r7, #4]
+ 8012bac:	vcmp.f32	s14, s15
+ 8012bb0:	vmrs	APSR_nzcv, fpscr
+ 8012bb4:	bne.n	8012bba <WheelSpeedController_IsRrRunningSupportOwned+0x62>
+ 8012bb6:	movs	r3, #1
+ 8012bb8:	b.n	8012bbc <WheelSpeedController_IsRrRunningSupportOwned+0x64>
+ 8012bba:	movs	r3, #0
+ 8012bbc:	and.w	r3, r3, #1
+ 8012bc0:	uxtb	r3, r3
+ 8012bc2:	mov	r0, r3
+ 8012bc4:	adds	r7, #12
+ 8012bc6:	mov	sp, r7
+ 8012bc8:	ldr.w	r7, [sp], #4
+ 8012bcc:	bx	lr
+ 8012bce:	nop
+ 8012bd0:	.word	0x2000b130
+ 8012bd4:	.word	0x7f7fffff
+ 8012bd8:	.word	0x2000afec
+
+<WheelSpeedController_LrRunningSupport>
+ 8013a50:	push	{r7, lr}
+ 8013a52:	vpush	{d8}
+ 8013a56:	sub	sp, #88	@ 0x58
+ 8013a58:	add	r7, sp, #0
+ 8013a5a:	vstr	s0, [r7, #12]
+ 8013a5e:	vstr	s1, [r7, #8]
+ 8013a62:	str	r0, [r7, #4]
+ 8013a64:	str	r1, [r7, #0]
+ 8013a66:	ldr	r3, [pc, #688]	@ (8013d18 <WheelSpeedController_LrRunningSupport+0x2c8>)
+ 8013a68:	str	r3, [r7, #80]	@ 0x50
+ 8013a6a:	ldr	r3, [pc, #688]	@ (8013d1c <WheelSpeedController_LrRunningSupport+0x2cc>)
+ 8013a6c:	str	r3, [r7, #76]	@ 0x4c
+ 8013a6e:	ldr	r3, [r7, #80]	@ 0x50
+ 8013a70:	ldrb	r3, [r3, #21]
+ 8013a72:	cmp	r3, #0
+ 8013a74:	bne.n	8013a86 <WheelSpeedController_LrRunningSupport+0x36>
+ 8013a76:	ldr	r3, [r7, #80]	@ 0x50
+ 8013a78:	vldr	s15, [r3]
+ 8013a7c:	vcmpe.f32	s15, #0.0
+ 8013a80:	vmrs	APSR_nzcv, fpscr
+ 8013a84:	ble.n	8013a8a <WheelSpeedController_LrRunningSupport+0x3a>
+ 8013a86:	movs	r3, #1
+ 8013a88:	b.n	8013a8c <WheelSpeedController_LrRunningSupport+0x3c>
+ 8013a8a:	movs	r3, #0
+ 8013a8c:	strb.w	r3, [r7, #75]	@ 0x4b
+ 8013a90:	ldrb.w	r3, [r7, #75]	@ 0x4b
+ 8013a94:	and.w	r3, r3, #1
+ 8013a98:	strb.w	r3, [r7, #75]	@ 0x4b
+ 8013a9c:	vldr	s15, [r7, #12]
+ 8013aa0:	vneg.f32	s15, s15
+ 8013aa4:	vstr	s15, [r7, #68]	@ 0x44
+ 8013aa8:	vldr	s15, [r7, #8]
+ 8013aac:	vneg.f32	s15, s15
+ 8013ab0:	vstr	s15, [r7, #64]	@ 0x40
+ 8013ab4:	vldr	s14, [r7, #68]	@ 0x44
+ 8013ab8:	vldr	s15, [r7, #64]	@ 0x40
+ 8013abc:	vsub.f32	s15, s14, s15
+ 8013ac0:	vstr	s15, [r7, #60]	@ 0x3c
+ 8013ac4:	vldr	s15, [r7, #68]	@ 0x44
+ 8013ac8:	vldr	s14, [pc, #596]	@ 8013d20 <WheelSpeedController_LrRunningSupport+0x2d0>
+ 8013acc:	vmul.f32	s15, s15, s14
+ 8013ad0:	vmov.f32	s1, #52	@ 0x41a00000  20.0
+ 8013ad4:	vmov.f32	s0, s15
+ 8013ad8:	bl	80261b4 <fmaxf>
+ 8013adc:	vstr	s0, [r7, #56]	@ 0x38
+ 8013ae0:	vldr	s15, [r7, #68]	@ 0x44
+ 8013ae4:	vmov.f32	s14, #80	@ 0x3e800000  0.250
+ 8013ae8:	vmul.f32	s15, s15, s14
+ 8013aec:	vmov.f32	s1, #52	@ 0x41a00000  20.0
+ 8013af0:	vmov.f32	s0, s15
+ 8013af4:	bl	8026204 <fminf>
+ 8013af8:	vstr	s0, [r7, #52]	@ 0x34
+ 8013afc:	ldr	r3, [r7, #4]
+ 8013afe:	vmov	s15, r3
+ 8013b02:	vcvt.f32.u32	s14, s15
+ 8013b06:	vldr	s13, [pc, #540]	@ 8013d24 <WheelSpeedController_LrRunningSupport+0x2d4>
+ 8013b0a:	vdiv.f32	s15, s14, s13
+ 8013b0e:	vstr	s15, [r7, #48]	@ 0x30
+ 8013b12:	vldr	s15, [r7, #64]	@ 0x40
+ 8013b16:	vcmpe.f32	s15, #0.0
+ 8013b1a:	vmrs	APSR_nzcv, fpscr
+ 8013b1e:	blt.n	8013b4c <WheelSpeedController_LrRunningSupport+0xfc>
+ 8013b20:	vldr	s14, [r7, #60]	@ 0x3c
+ 8013b24:	vldr	s15, [r7, #56]	@ 0x38
+ 8013b28:	vcmpe.f32	s14, s15
+ 8013b2c:	vmrs	APSR_nzcv, fpscr
+ 8013b30:	bgt.n	8013b48 <WheelSpeedController_LrRunningSupport+0xf8>
+ 8013b32:	vldr	s15, [r7, #8]
+ 8013b36:	vabs.f32	s15, s15
+ 8013b3a:	vldr	s14, [r7, #52]	@ 0x34
+ 8013b3e:	vcmpe.f32	s14, s15
+ 8013b42:	vmrs	APSR_nzcv, fpscr
+ 8013b46:	blt.n	8013b4c <WheelSpeedController_LrRunningSupport+0xfc>
+ 8013b48:	movs	r3, #1
+ 8013b4a:	b.n	8013b4e <WheelSpeedController_LrRunningSupport+0xfe>
+ 8013b4c:	movs	r3, #0
+ 8013b4e:	strb.w	r3, [r7, #47]	@ 0x2f
+ 8013b52:	ldrb.w	r3, [r7, #47]	@ 0x2f
+ 8013b56:	and.w	r3, r3, #1
+ 8013b5a:	strb.w	r3, [r7, #47]	@ 0x2f
+ 8013b5e:	vldr	s14, [r7, #64]	@ 0x40
+ 8013b62:	vldr	s15, [r7, #68]	@ 0x44
+ 8013b66:	vcmpe.f32	s14, s15
+ 8013b6a:	vmrs	APSR_nzcv, fpscr
+ 8013b6e:	ite	gt
+ 8013b70:	movgt	r3, #1
+ 8013b72:	movle	r3, #0
+ 8013b74:	strb.w	r3, [r7, #46]	@ 0x2e
+ 8013b78:	vldr	s15, [r7, #64]	@ 0x40
+ 8013b7c:	vldr	s14, [pc, #436]	@ 8013d34 <WheelSpeedController_LrRunningSupport+0x2e4>
+ 8013b80:	vcmpe.f32	s15, s14
+ 8013b84:	vmrs	APSR_nzcv, fpscr
+ 8013b88:	blt.n	8013ba4 <WheelSpeedController_LrRunningSupport+0x154>
+ 8013b8a:	vldr	s15, [r7, #60]	@ 0x3c
+ 8013b8e:	vabs.f32	s15, s15
+ 8013b92:	vldr	s14, [r7, #56]	@ 0x38
+ 8013b96:	vcmpe.f32	s14, s15
+ 8013b9a:	vmrs	APSR_nzcv, fpscr
+ 8013b9e:	blt.n	8013ba4 <WheelSpeedController_LrRunningSupport+0x154>
+ 8013ba0:	movs	r3, #1
+ 8013ba2:	b.n	8013ba6 <WheelSpeedController_LrRunningSupport+0x156>
+ 8013ba4:	movs	r3, #0
+ 8013ba6:	strb.w	r3, [r7, #45]	@ 0x2d
+ 8013baa:	ldrb.w	r3, [r7, #45]	@ 0x2d
+ 8013bae:	and.w	r3, r3, #1
+ 8013bb2:	strb.w	r3, [r7, #45]	@ 0x2d
+ 8013bb6:	ldrb.w	r3, [r7, #47]	@ 0x2f
+ 8013bba:	cmp	r3, #0
+ 8013bbc:	beq.n	8013bd0 <WheelSpeedController_LrRunningSupport+0x180>
+ 8013bbe:	ldr	r3, [r7, #80]	@ 0x50
+ 8013bc0:	ldr	r3, [r3, #8]
+ 8013bc2:	movs	r2, #60	@ 0x3c
+ 8013bc4:	ldr	r1, [r7, #4]
+ 8013bc6:	mov	r0, r3
+ 8013bc8:	bl	8012ecc <WheelSpeedController_AddTime>
+ 8013bcc:	mov	r3, r0
+ 8013bce:	b.n	8013bd2 <WheelSpeedController_LrRunningSupport+0x182>
+ 8013bd0:	movs	r3, #0
+ 8013bd2:	ldr	r2, [r7, #80]	@ 0x50
+ 8013bd4:	str	r3, [r2, #8]
+ 8013bd6:	ldrb.w	r3, [r7, #45]	@ 0x2d
+ 8013bda:	cmp	r3, #0
+ 8013bdc:	beq.n	8013bf0 <WheelSpeedController_LrRunningSupport+0x1a0>
+ 8013bde:	ldr	r3, [r7, #80]	@ 0x50
+ 8013be0:	ldr	r3, [r3, #12]
+ 8013be2:	movs	r2, #100	@ 0x64
+ 8013be4:	ldr	r1, [r7, #4]
+ 8013be6:	mov	r0, r3
+ 8013be8:	bl	8012ecc <WheelSpeedController_AddTime>
+ 8013bec:	mov	r3, r0
+ 8013bee:	b.n	8013bf2 <WheelSpeedController_LrRunningSupport+0x1a2>
+ 8013bf0:	movs	r3, #0
+ 8013bf2:	ldr	r2, [r7, #80]	@ 0x50
+ 8013bf4:	str	r3, [r2, #12]
+ 8013bf6:	ldr	r3, [r7, #80]	@ 0x50
+ 8013bf8:	ldrb	r3, [r3, #22]
+ 8013bfa:	cmp	r3, #0
+ 8013bfc:	beq.n	8013c14 <WheelSpeedController_LrRunningSupport+0x1c4>
+ 8013bfe:	ldr	r3, [r7, #80]	@ 0x50
+ 8013c00:	ldr	r3, [r3, #16]
+ 8013c02:	mov.w	r2, #600	@ 0x258
+ 8013c06:	ldr	r1, [r7, #4]
+ 8013c08:	mov	r0, r3
+ 8013c0a:	bl	8012ecc <WheelSpeedController_AddTime>
+ 8013c0e:	mov	r2, r0
+ 8013c10:	ldr	r3, [r7, #80]	@ 0x50
+ 8013c12:	str	r2, [r3, #16]
+ 8013c14:	ldr	r3, [r7, #80]	@ 0x50
+ 8013c16:	ldrb	r3, [r3, #22]
+ 8013c18:	eor.w	r3, r3, #1
+ 8013c1c:	uxtb	r3, r3
+ 8013c1e:	cmp	r3, #0
+ 8013c20:	beq.n	8013c3c <WheelSpeedController_LrRunningSupport+0x1ec>
+ 8013c22:	ldr	r3, [r7, #80]	@ 0x50
+ 8013c24:	ldr	r3, [r3, #8]
+ 8013c26:	cmp	r3, #59	@ 0x3b
+ 8013c28:	bls.n	8013c3c <WheelSpeedController_LrRunningSupport+0x1ec>
+ 8013c2a:	ldr	r3, [r7, #80]	@ 0x50
+ 8013c2c:	movs	r2, #1
+ 8013c2e:	strb	r2, [r3, #21]
+ 8013c30:	ldr	r3, [r7, #80]	@ 0x50
+ 8013c32:	movs	r2, #1
+ 8013c34:	strb	r2, [r3, #22]
+ 8013c36:	ldr	r3, [r7, #80]	@ 0x50
+ 8013c38:	ldr	r2, [r7, #4]
+ 8013c3a:	str	r2, [r3, #16]
+ 8013c3c:	ldrb.w	r3, [r7, #46]	@ 0x2e
+ 8013c40:	cmp	r3, #0
+ 8013c42:	bne.n	8013c64 <WheelSpeedController_LrRunningSupport+0x214>
+ 8013c44:	vldr	s15, [r7, #64]	@ 0x40
+ 8013c48:	vcmpe.f32	s15, #0.0
+ 8013c4c:	vmrs	APSR_nzcv, fpscr
+ 8013c50:	bmi.n	8013c64 <WheelSpeedController_LrRunningSupport+0x214>
+ 8013c52:	ldr	r3, [r7, #80]	@ 0x50
+ 8013c54:	ldr	r3, [r3, #16]
+ 8013c56:	cmp.w	r3, #600	@ 0x258
+ 8013c5a:	bcs.n	8013c64 <WheelSpeedController_LrRunningSupport+0x214>
+ 8013c5c:	ldr	r3, [r7, #80]	@ 0x50
+ 8013c5e:	ldr	r3, [r3, #12]
+ 8013c60:	cmp	r3, #39	@ 0x27
+ 8013c62:	bls.n	8013c6a <WheelSpeedController_LrRunningSupport+0x21a>
+ 8013c64:	ldr	r3, [r7, #80]	@ 0x50
+ 8013c66:	movs	r2, #0
+ 8013c68:	strb	r2, [r3, #21]
+ 8013c6a:	ldr	r3, [pc, #188]	@ (8013d28 <WheelSpeedController_LrRunningSupport+0x2d8>)
+ 8013c6c:	str	r3, [r7, #40]	@ 0x28
+ 8013c6e:	ldr	r3, [r7, #76]	@ 0x4c
+ 8013c70:	vldr	s15, [r3, #20]
+ 8013c74:	vneg.f32	s15, s15
+ 8013c78:	vldr	s1, [pc, #196]	@ 8013d40 <WheelSpeedController_LrRunningSupport+0x2f0>
+ 8013c7c:	vmov.f32	s0, s15
+ 8013c80:	bl	80261b4 <fmaxf>
+ 8013c84:	vmov.f32	s14, s0
+ 8013c88:	vldr	s15, [r7, #40]	@ 0x28
+ 8013c8c:	vsub.f32	s15, s15, s14
+ 8013c90:	vldr	s1, [pc, #172]	@ 8013d40 <WheelSpeedController_LrRunningSupport+0x2f0>
+ 8013c94:	vmov.f32	s0, s15
+ 8013c98:	bl	80261b4 <fmaxf>
+ 8013c9c:	vstr	s0, [r7, #36]	@ 0x24
+ 8013ca0:	ldr	r3, [r7, #80]	@ 0x50
+ 8013ca2:	vldr	s15, [r3]
+ 8013ca6:	vmov.f32	s1, s15
+ 8013caa:	vldr	s0, [r7, #36]	@ 0x24
+ 8013cae:	bl	8026204 <fminf>
+ 8013cb2:	vmov.f32	s15, s0
+ 8013cb6:	ldr	r3, [r7, #80]	@ 0x50
+ 8013cb8:	vstr	s15, [r3]
+ 8013cbc:	ldr	r3, [r7, #80]	@ 0x50
+ 8013cbe:	ldrb	r3, [r3, #21]
+ 8013cc0:	cmp	r3, #0
+ 8013cc2:	beq.n	8013d74 <WheelSpeedController_LrRunningSupport+0x324>
+ 8013cc4:	ldrb.w	r3, [r7, #47]	@ 0x2f
+ 8013cc8:	cmp	r3, #0
+ 8013cca:	beq.n	8013d74 <WheelSpeedController_LrRunningSupport+0x324>
+ 8013ccc:	vldr	s14, [r7, #60]	@ 0x3c
+ 8013cd0:	vldr	s15, [r7, #56]	@ 0x38
+ 8013cd4:	vsub.f32	s15, s14, s15
+ 8013cd8:	vldr	s1, [pc, #100]	@ 8013d40 <WheelSpeedController_LrRunningSupport+0x2f0>
+ 8013cdc:	vmov.f32	s0, s15
+ 8013ce0:	bl	80261b4 <fmaxf>
+ 8013ce4:	vmov.f32	s15, s0
+ 8013ce8:	vadd.f32	s15, s15, s15
+ 8013cec:	vldr	s1, [pc, #60]	@ 8013d2c <WheelSpeedController_LrRunningSupport+0x2dc>
+ 8013cf0:	vmov.f32	s0, s15
+ 8013cf4:	bl	8026204 <fminf>
+ 8013cf8:	vstr	s0, [r7, #32]
+ 8013cfc:	vldr	s15, [r7, #8]
+ 8013d00:	vabs.f32	s15, s15
+ 8013d04:	vldr	s14, [r7, #52]	@ 0x34
+ 8013d08:	vcmpe.f32	s14, s15
+ 8013d0c:	vmrs	APSR_nzcv, fpscr
+ 8013d10:	blt.n	8013d44 <WheelSpeedController_LrRunningSupport+0x2f4>
+ 8013d12:	ldr	r3, [pc, #28]	@ (8013d30 <WheelSpeedController_LrRunningSupport+0x2e0>)
+ 8013d14:	b.n	8013d46 <WheelSpeedController_LrRunningSupport+0x2f6>
+ 8013d16:	nop
+ 8013d18:	.word	0x2000b118
+ 8013d1c:	.word	0x2000b008
+ 8013d20:	.word	0x3dcccccd
+ 8013d24:	.word	0x447a0000
+ 8013d28:	.word	0x42700000
+ 8013d2c:	.word	0x437a0000
+ 8013d30:	.word	0x437a0000
+ 8013d34:	.word	0x42480000
+ 8013d38:	.word	0x42200000
+ 8013d3c:	.word	0x43c80000
+ 8013d40:	.word	0x00000000
+ 8013d44:	ldr	r3, [r7, #32]
+ 8013d46:	str	r3, [r7, #28]
+ 8013d48:	ldr	r3, [r7, #80]	@ 0x50
+ 8013d4a:	vldr	s14, [r3]
+ 8013d4e:	vldr	s13, [r7, #28]
+ 8013d52:	vldr	s15, [r7, #48]	@ 0x30
+ 8013d56:	vmul.f32	s15, s13, s15
+ 8013d5a:	vadd.f32	s15, s14, s15
+ 8013d5e:	vmov.f32	s1, s15
+ 8013d62:	vldr	s0, [r7, #36]	@ 0x24
+ 8013d66:	bl	8026204 <fminf>
+ 8013d6a:	vmov.f32	s15, s0
+ 8013d6e:	ldr	r3, [r7, #80]	@ 0x50
+ 8013d70:	vstr	s15, [r3]
+ 8013d74:	movs	r3, #0
+ 8013d76:	strb.w	r3, [r7, #87]	@ 0x57
+ 8013d7a:	ldrb.w	r3, [r7, #46]	@ 0x2e
+ 8013d7e:	eor.w	r3, r3, #1
+ 8013d82:	uxtb	r3, r3
+ 8013d84:	cmp	r3, #0
+ 8013d86:	beq.n	8013e4c <WheelSpeedController_LrRunningSupport+0x3fc>
+ 8013d88:	vldr	s15, [r7, #64]	@ 0x40
+ 8013d8c:	vldr	s14, [pc, #-92]	@ 8013d34 <WheelSpeedController_LrRunningSupport+0x2e4>
+ 8013d90:	vcmpe.f32	s15, s14
+ 8013d94:	vmrs	APSR_nzcv, fpscr
+ 8013d98:	blt.n	8013e4c <WheelSpeedController_LrRunningSupport+0x3fc>
+ 8013d9a:	ldr	r3, [r7, #80]	@ 0x50
+ 8013d9c:	ldr	r3, [r3, #4]
+ 8013d9e:	cmp	r3, #39	@ 0x27
+ 8013da0:	bls.n	8013e4c <WheelSpeedController_LrRunningSupport+0x3fc>
+ 8013da2:	ldr	r3, [r7, #80]	@ 0x50
+ 8013da4:	ldr	r3, [r3, #16]
+ 8013da6:	cmp.w	r3, #600	@ 0x258
+ 8013daa:	bcs.n	8013e4c <WheelSpeedController_LrRunningSupport+0x3fc>
+ 8013dac:	ldr	r3, [r7, #80]	@ 0x50
+ 8013dae:	vldr	s15, [r3]
+ 8013db2:	vcmpe.f32	s15, #0.0
+ 8013db6:	vmrs	APSR_nzcv, fpscr
+ 8013dba:	ble.n	8013e4c <WheelSpeedController_LrRunningSupport+0x3fc>
+ 8013dbc:	ldr	r3, [r7, #76]	@ 0x4c
+ 8013dbe:	vldr	s15, [r3, #20]
+ 8013dc2:	vldr	s14, [pc, #-144]	@ 8013d34 <WheelSpeedController_LrRunningSupport+0x2e4>
+ 8013dc6:	vadd.f32	s15, s15, s14
+ 8013dca:	vldr	s1, [pc, #-140]	@ 8013d40 <WheelSpeedController_LrRunningSupport+0x2f0>
+ 8013dce:	vmov.f32	s0, s15
+ 8013dd2:	bl	80261b4 <fmaxf>
+ 8013dd6:	vstr	s0, [r7, #24]
+ 8013dda:	ldr	r3, [r7, #80]	@ 0x50
+ 8013ddc:	vldr	s16, [r3]
+ 8013de0:	vldr	s15, [r7, #48]	@ 0x30
+ 8013de4:	vldr	s14, [pc, #-176]	@ 8013d38 <WheelSpeedController_LrRunningSupport+0x2e8>
+ 8013de8:	vmul.f32	s15, s15, s14
+ 8013dec:	vmov.f32	s1, s15
+ 8013df0:	vldr	s0, [r7, #24]
+ 8013df4:	bl	8026204 <fminf>
+ 8013df8:	vmov.f32	s15, s0
+ 8013dfc:	vmov.f32	s1, s15
+ 8013e00:	vmov.f32	s0, s16
+ 8013e04:	bl	8026204 <fminf>
+ 8013e08:	vstr	s0, [r7, #20]
+ 8013e0c:	ldr	r3, [r7, #76]	@ 0x4c
+ 8013e0e:	vldr	s14, [r3, #20]
+ 8013e12:	vldr	s15, [r7, #20]
+ 8013e16:	vsub.f32	s15, s14, s15
+ 8013e1a:	ldr	r3, [r7, #76]	@ 0x4c
+ 8013e1c:	vstr	s15, [r3, #20]
+ 8013e20:	ldr	r3, [r7, #80]	@ 0x50
+ 8013e22:	vldr	s14, [r3]
+ 8013e26:	vldr	s15, [r7, #20]
+ 8013e2a:	vsub.f32	s15, s14, s15
+ 8013e2e:	ldr	r3, [r7, #80]	@ 0x50
+ 8013e30:	vstr	s15, [r3]
+ 8013e34:	vldr	s15, [r7, #20]
+ 8013e38:	vcmpe.f32	s15, #0.0
+ 8013e3c:	vmrs	APSR_nzcv, fpscr
+ 8013e40:	ite	gt
+ 8013e42:	movgt	r3, #1
+ 8013e44:	movle	r3, #0
+ 8013e46:	strb.w	r3, [r7, #87]	@ 0x57
+ 8013e4a:	b.n	8013e86 <WheelSpeedController_LrRunningSupport+0x436>
+ 8013e4c:	ldr	r3, [r7, #80]	@ 0x50
+ 8013e4e:	ldrb	r3, [r3, #21]
+ 8013e50:	eor.w	r3, r3, #1
+ 8013e54:	uxtb	r3, r3
+ 8013e56:	cmp	r3, #0
+ 8013e58:	beq.n	8013e86 <WheelSpeedController_LrRunningSupport+0x436>
+ 8013e5a:	ldr	r3, [r7, #80]	@ 0x50
+ 8013e5c:	vldr	s14, [r3]
+ 8013e60:	vldr	s15, [r7, #48]	@ 0x30
+ 8013e64:	vldr	s13, [pc, #-300]	@ 8013d3c <WheelSpeedController_LrRunningSupport+0x2ec>
+ 8013e68:	vmul.f32	s15, s15, s13
+ 8013e6c:	vsub.f32	s15, s14, s15
+ 8013e70:	vldr	s1, [pc, #-308]	@ 8013d40 <WheelSpeedController_LrRunningSupport+0x2f0>
+ 8013e74:	vmov.f32	s0, s15
+ 8013e78:	bl	80261b4 <fmaxf>
+ 8013e7c:	vmov.f32	s15, s0
+ 8013e80:	ldr	r3, [r7, #80]	@ 0x50
+ 8013e82:	vstr	s15, [r3]
+ 8013e86:	ldr	r3, [r7, #80]	@ 0x50
+ 8013e88:	ldr	r3, [r3, #12]
+ 8013e8a:	cmp	r3, #99	@ 0x63
+ 8013e8c:	bls.n	8013eb0 <WheelSpeedController_LrRunningSupport+0x460>
+ 8013e8e:	ldr	r3, [r7, #80]	@ 0x50
+ 8013e90:	vldr	s15, [r3]
+ 8013e94:	vcmp.f32	s15, #0.0
+ 8013e98:	vmrs	APSR_nzcv, fpscr
+ 8013e9c:	bne.n	8013eb0 <WheelSpeedController_LrRunningSupport+0x460>
+ 8013e9e:	ldr	r3, [r7, #80]	@ 0x50
+ 8013ea0:	movs	r2, #0
+ 8013ea2:	strb	r2, [r3, #22]
+ 8013ea4:	ldr	r3, [r7, #80]	@ 0x50
+ 8013ea6:	movs	r2, #0
+ 8013ea8:	str	r2, [r3, #16]
+ 8013eaa:	ldr	r3, [r7, #80]	@ 0x50
+ 8013eac:	movs	r2, #0
+ 8013eae:	str	r2, [r3, #8]
+ 8013eb0:	ldrb.w	r3, [r7, #75]	@ 0x4b
+ 8013eb4:	cmp	r3, #0
+ 8013eb6:	bne.n	8013ed8 <WheelSpeedController_LrRunningSupport+0x488>
+ 8013eb8:	ldr	r3, [r7, #80]	@ 0x50
+ 8013eba:	ldrb	r3, [r3, #21]
+ 8013ebc:	cmp	r3, #0
+ 8013ebe:	bne.n	8013ed8 <WheelSpeedController_LrRunningSupport+0x488>
+ 8013ec0:	ldr	r3, [r7, #80]	@ 0x50
+ 8013ec2:	vldr	s15, [r3]
+ 8013ec6:	vcmpe.f32	s15, #0.0
+ 8013eca:	vmrs	APSR_nzcv, fpscr
+ 8013ece:	bgt.n	8013ed8 <WheelSpeedController_LrRunningSupport+0x488>
+ 8013ed0:	ldrb.w	r3, [r7, #87]	@ 0x57
+ 8013ed4:	cmp	r3, #0
+ 8013ed6:	beq.n	8013edc <WheelSpeedController_LrRunningSupport+0x48c>
+ 8013ed8:	movs	r3, #1
+ 8013eda:	b.n	8013ede <WheelSpeedController_LrRunningSupport+0x48e>
+ 8013edc:	movs	r3, #0
+ 8013ede:	and.w	r3, r3, #1
+ 8013ee2:	uxtb	r2, r3
+ 8013ee4:	ldr	r3, [r7, #0]
+ 8013ee6:	strb	r2, [r3, #0]
+ 8013ee8:	ldr	r3, [r7, #80]	@ 0x50
+ 8013eea:	vldr	s15, [r3]
+ 8013eee:	vneg.f32	s15, s15
+ 8013ef2:	vmov.f32	s0, s15
+ 8013ef6:	adds	r7, #88	@ 0x58
+ 8013ef8:	mov	sp, r7
+ 8013efa:	vpop	{d8}
+ 8013efe:	pop	{r7, pc}
+
+<WheelSpeedController_RrRunningSupport>
+ 8013f00:	push	{r7, lr}
+ 8013f02:	vpush	{d8}
+ 8013f06:	sub	sp, #88	@ 0x58
+ 8013f08:	add	r7, sp, #0
+ 8013f0a:	vstr	s0, [r7, #12]
+ 8013f0e:	vstr	s1, [r7, #8]
+ 8013f12:	str	r0, [r7, #4]
+ 8013f14:	str	r1, [r7, #0]
+ 8013f16:	ldr	r3, [pc, #668]	@ (80141b4 <WheelSpeedController_RrRunningSupport+0x2b4>)
+ 8013f18:	str	r3, [r7, #80]	@ 0x50
+ 8013f1a:	ldr	r3, [pc, #668]	@ (80141b8 <WheelSpeedController_RrRunningSupport+0x2b8>)
+ 8013f1c:	str	r3, [r7, #76]	@ 0x4c
+ 8013f1e:	ldr	r3, [r7, #80]	@ 0x50
+ 8013f20:	ldrb	r3, [r3, #21]
+ 8013f22:	cmp	r3, #0
+ 8013f24:	bne.n	8013f36 <WheelSpeedController_RrRunningSupport+0x36>
+ 8013f26:	ldr	r3, [r7, #80]	@ 0x50
+ 8013f28:	vldr	s15, [r3]
+ 8013f2c:	vcmpe.f32	s15, #0.0
+ 8013f30:	vmrs	APSR_nzcv, fpscr
+ 8013f34:	ble.n	8013f3a <WheelSpeedController_RrRunningSupport+0x3a>
+ 8013f36:	movs	r3, #1
+ 8013f38:	b.n	8013f3c <WheelSpeedController_RrRunningSupport+0x3c>
+ 8013f3a:	movs	r3, #0
+ 8013f3c:	strb.w	r3, [r7, #75]	@ 0x4b
+ 8013f40:	ldrb.w	r3, [r7, #75]	@ 0x4b
+ 8013f44:	and.w	r3, r3, #1
+ 8013f48:	strb.w	r3, [r7, #75]	@ 0x4b
+ 8013f4c:	ldr	r3, [r7, #12]
+ 8013f4e:	str	r3, [r7, #68]	@ 0x44
+ 8013f50:	ldr	r3, [r7, #8]
+ 8013f52:	str	r3, [r7, #64]	@ 0x40
+ 8013f54:	vldr	s14, [r7, #68]	@ 0x44
+ 8013f58:	vldr	s15, [r7, #64]	@ 0x40
+ 8013f5c:	vsub.f32	s15, s14, s15
+ 8013f60:	vstr	s15, [r7, #60]	@ 0x3c
+ 8013f64:	vldr	s15, [r7, #68]	@ 0x44
+ 8013f68:	vldr	s14, [pc, #592]	@ 80141bc <WheelSpeedController_RrRunningSupport+0x2bc>
+ 8013f6c:	vmul.f32	s15, s15, s14
+ 8013f70:	vmov.f32	s1, #52	@ 0x41a00000  20.0
+ 8013f74:	vmov.f32	s0, s15
+ 8013f78:	bl	80261b4 <fmaxf>
+ 8013f7c:	vstr	s0, [r7, #56]	@ 0x38
+ 8013f80:	vldr	s15, [r7, #68]	@ 0x44
+ 8013f84:	vmov.f32	s14, #80	@ 0x3e800000  0.250
+ 8013f88:	vmul.f32	s15, s15, s14
+ 8013f8c:	vmov.f32	s1, #52	@ 0x41a00000  20.0
+ 8013f90:	vmov.f32	s0, s15
+ 8013f94:	bl	8026204 <fminf>
+ 8013f98:	vstr	s0, [r7, #52]	@ 0x34
+ 8013f9c:	ldr	r3, [r7, #4]
+ 8013f9e:	vmov	s15, r3
+ 8013fa2:	vcvt.f32.u32	s14, s15
+ 8013fa6:	vldr	s13, [pc, #536]	@ 80141c0 <WheelSpeedController_RrRunningSupport+0x2c0>
+ 8013faa:	vdiv.f32	s15, s14, s13
+ 8013fae:	vstr	s15, [r7, #48]	@ 0x30
+ 8013fb2:	vldr	s15, [r7, #64]	@ 0x40
+ 8013fb6:	vcmpe.f32	s15, #0.0
+ 8013fba:	vmrs	APSR_nzcv, fpscr
+ 8013fbe:	blt.n	8013fec <WheelSpeedController_RrRunningSupport+0xec>
+ 8013fc0:	vldr	s14, [r7, #60]	@ 0x3c
+ 8013fc4:	vldr	s15, [r7, #56]	@ 0x38
+ 8013fc8:	vcmpe.f32	s14, s15
+ 8013fcc:	vmrs	APSR_nzcv, fpscr
+ 8013fd0:	bgt.n	8013fe8 <WheelSpeedController_RrRunningSupport+0xe8>
+ 8013fd2:	vldr	s15, [r7, #8]
+ 8013fd6:	vabs.f32	s15, s15
+ 8013fda:	vldr	s14, [r7, #52]	@ 0x34
+ 8013fde:	vcmpe.f32	s14, s15
+ 8013fe2:	vmrs	APSR_nzcv, fpscr
+ 8013fe6:	blt.n	8013fec <WheelSpeedController_RrRunningSupport+0xec>
+ 8013fe8:	movs	r3, #1
+ 8013fea:	b.n	8013fee <WheelSpeedController_RrRunningSupport+0xee>
+ 8013fec:	movs	r3, #0
+ 8013fee:	strb.w	r3, [r7, #47]	@ 0x2f
+ 8013ff2:	ldrb.w	r3, [r7, #47]	@ 0x2f
+ 8013ff6:	and.w	r3, r3, #1
+ 8013ffa:	strb.w	r3, [r7, #47]	@ 0x2f
+ 8013ffe:	vldr	s14, [r7, #64]	@ 0x40
+ 8014002:	vldr	s15, [r7, #68]	@ 0x44
+ 8014006:	vcmpe.f32	s14, s15
+ 801400a:	vmrs	APSR_nzcv, fpscr
+ 801400e:	ite	gt
+ 8014010:	movgt	r3, #1
+ 8014012:	movle	r3, #0
+ 8014014:	strb.w	r3, [r7, #46]	@ 0x2e
+ 8014018:	vldr	s15, [r7, #64]	@ 0x40
+ 801401c:	vldr	s14, [pc, #432]	@ 80141d0 <WheelSpeedController_RrRunningSupport+0x2d0>
+ 8014020:	vcmpe.f32	s15, s14
+ 8014024:	vmrs	APSR_nzcv, fpscr
+ 8014028:	blt.n	8014044 <WheelSpeedController_RrRunningSupport+0x144>
+ 801402a:	vldr	s15, [r7, #60]	@ 0x3c
+ 801402e:	vabs.f32	s15, s15
+ 8014032:	vldr	s14, [r7, #56]	@ 0x38
+ 8014036:	vcmpe.f32	s14, s15
+ 801403a:	vmrs	APSR_nzcv, fpscr
+ 801403e:	blt.n	8014044 <WheelSpeedController_RrRunningSupport+0x144>
+ 8014040:	movs	r3, #1
+ 8014042:	b.n	8014046 <WheelSpeedController_RrRunningSupport+0x146>
+ 8014044:	movs	r3, #0
+ 8014046:	strb.w	r3, [r7, #45]	@ 0x2d
+ 801404a:	ldrb.w	r3, [r7, #45]	@ 0x2d
+ 801404e:	and.w	r3, r3, #1
+ 8014052:	strb.w	r3, [r7, #45]	@ 0x2d
+ 8014056:	ldrb.w	r3, [r7, #47]	@ 0x2f
+ 801405a:	cmp	r3, #0
+ 801405c:	beq.n	8014070 <WheelSpeedController_RrRunningSupport+0x170>
+ 801405e:	ldr	r3, [r7, #80]	@ 0x50
+ 8014060:	ldr	r3, [r3, #8]
+ 8014062:	movs	r2, #60	@ 0x3c
+ 8014064:	ldr	r1, [r7, #4]
+ 8014066:	mov	r0, r3
+ 8014068:	bl	8012ecc <WheelSpeedController_AddTime>
+ 801406c:	mov	r3, r0
+ 801406e:	b.n	8014072 <WheelSpeedController_RrRunningSupport+0x172>
+ 8014070:	movs	r3, #0
+ 8014072:	ldr	r2, [r7, #80]	@ 0x50
+ 8014074:	str	r3, [r2, #8]
+ 8014076:	ldrb.w	r3, [r7, #45]	@ 0x2d
+ 801407a:	cmp	r3, #0
+ 801407c:	beq.n	8014090 <WheelSpeedController_RrRunningSupport+0x190>
+ 801407e:	ldr	r3, [r7, #80]	@ 0x50
+ 8014080:	ldr	r3, [r3, #12]
+ 8014082:	movs	r2, #100	@ 0x64
+ 8014084:	ldr	r1, [r7, #4]
+ 8014086:	mov	r0, r3
+ 8014088:	bl	8012ecc <WheelSpeedController_AddTime>
+ 801408c:	mov	r3, r0
+ 801408e:	b.n	8014092 <WheelSpeedController_RrRunningSupport+0x192>
+ 8014090:	movs	r3, #0
+ 8014092:	ldr	r2, [r7, #80]	@ 0x50
+ 8014094:	str	r3, [r2, #12]
+ 8014096:	ldr	r3, [r7, #80]	@ 0x50
+ 8014098:	ldrb	r3, [r3, #22]
+ 801409a:	cmp	r3, #0
+ 801409c:	beq.n	80140b4 <WheelSpeedController_RrRunningSupport+0x1b4>
+ 801409e:	ldr	r3, [r7, #80]	@ 0x50
+ 80140a0:	ldr	r3, [r3, #16]
+ 80140a2:	mov.w	r2, #600	@ 0x258
+ 80140a6:	ldr	r1, [r7, #4]
+ 80140a8:	mov	r0, r3
+ 80140aa:	bl	8012ecc <WheelSpeedController_AddTime>
+ 80140ae:	mov	r2, r0
+ 80140b0:	ldr	r3, [r7, #80]	@ 0x50
+ 80140b2:	str	r2, [r3, #16]
+ 80140b4:	ldr	r3, [r7, #80]	@ 0x50
+ 80140b6:	ldrb	r3, [r3, #22]
+ 80140b8:	eor.w	r3, r3, #1
+ 80140bc:	uxtb	r3, r3
+ 80140be:	cmp	r3, #0
+ 80140c0:	beq.n	80140dc <WheelSpeedController_RrRunningSupport+0x1dc>
+ 80140c2:	ldr	r3, [r7, #80]	@ 0x50
+ 80140c4:	ldr	r3, [r3, #8]
+ 80140c6:	cmp	r3, #59	@ 0x3b
+ 80140c8:	bls.n	80140dc <WheelSpeedController_RrRunningSupport+0x1dc>
+ 80140ca:	ldr	r3, [r7, #80]	@ 0x50
+ 80140cc:	movs	r2, #1
+ 80140ce:	strb	r2, [r3, #21]
+ 80140d0:	ldr	r3, [r7, #80]	@ 0x50
+ 80140d2:	movs	r2, #1
+ 80140d4:	strb	r2, [r3, #22]
+ 80140d6:	ldr	r3, [r7, #80]	@ 0x50
+ 80140d8:	ldr	r2, [r7, #4]
+ 80140da:	str	r2, [r3, #16]
+ 80140dc:	ldrb.w	r3, [r7, #46]	@ 0x2e
+ 80140e0:	cmp	r3, #0
+ 80140e2:	bne.n	8014104 <WheelSpeedController_RrRunningSupport+0x204>
+ 80140e4:	vldr	s15, [r7, #64]	@ 0x40
+ 80140e8:	vcmpe.f32	s15, #0.0
+ 80140ec:	vmrs	APSR_nzcv, fpscr
+ 80140f0:	bmi.n	8014104 <WheelSpeedController_RrRunningSupport+0x204>
+ 80140f2:	ldr	r3, [r7, #80]	@ 0x50
+ 80140f4:	ldr	r3, [r3, #16]
+ 80140f6:	cmp.w	r3, #600	@ 0x258
+ 80140fa:	bcs.n	8014104 <WheelSpeedController_RrRunningSupport+0x204>
+ 80140fc:	ldr	r3, [r7, #80]	@ 0x50
+ 80140fe:	ldr	r3, [r3, #12]
+ 8014100:	cmp	r3, #39	@ 0x27
+ 8014102:	bls.n	801410a <WheelSpeedController_RrRunningSupport+0x20a>
+ 8014104:	ldr	r3, [r7, #80]	@ 0x50
+ 8014106:	movs	r2, #0
+ 8014108:	strb	r2, [r3, #21]
+ 801410a:	ldr	r3, [pc, #184]	@ (80141c4 <WheelSpeedController_RrRunningSupport+0x2c4>)
+ 801410c:	str	r3, [r7, #40]	@ 0x28
+ 801410e:	ldr	r3, [r7, #76]	@ 0x4c
+ 8014110:	vldr	s15, [r3, #20]
+ 8014114:	vldr	s1, [pc, #196]	@ 80141dc <WheelSpeedController_RrRunningSupport+0x2dc>
+ 8014118:	vmov.f32	s0, s15
+ 801411c:	bl	80261b4 <fmaxf>
+ 8014120:	vmov.f32	s14, s0
+ 8014124:	vldr	s15, [r7, #40]	@ 0x28
+ 8014128:	vsub.f32	s15, s15, s14
+ 801412c:	vldr	s1, [pc, #172]	@ 80141dc <WheelSpeedController_RrRunningSupport+0x2dc>
+ 8014130:	vmov.f32	s0, s15
+ 8014134:	bl	80261b4 <fmaxf>
+ 8014138:	vstr	s0, [r7, #36]	@ 0x24
+ 801413c:	ldr	r3, [r7, #80]	@ 0x50
+ 801413e:	vldr	s15, [r3]
+ 8014142:	vmov.f32	s1, s15
+ 8014146:	vldr	s0, [r7, #36]	@ 0x24
+ 801414a:	bl	8026204 <fminf>
+ 801414e:	vmov.f32	s15, s0
+ 8014152:	ldr	r3, [r7, #80]	@ 0x50
+ 8014154:	vstr	s15, [r3]
+ 8014158:	ldr	r3, [r7, #80]	@ 0x50
+ 801415a:	ldrb	r3, [r3, #21]
+ 801415c:	cmp	r3, #0
+ 801415e:	beq.n	8014210 <WheelSpeedController_RrRunningSupport+0x310>
+ 8014160:	ldrb.w	r3, [r7, #47]	@ 0x2f
+ 8014164:	cmp	r3, #0
+ 8014166:	beq.n	8014210 <WheelSpeedController_RrRunningSupport+0x310>
+ 8014168:	vldr	s14, [r7, #60]	@ 0x3c
+ 801416c:	vldr	s15, [r7, #56]	@ 0x38
+ 8014170:	vsub.f32	s15, s14, s15
+ 8014174:	vldr	s1, [pc, #100]	@ 80141dc <WheelSpeedController_RrRunningSupport+0x2dc>
+ 8014178:	vmov.f32	s0, s15
+ 801417c:	bl	80261b4 <fmaxf>
+ 8014180:	vmov.f32	s15, s0
+ 8014184:	vadd.f32	s15, s15, s15
+ 8014188:	vldr	s1, [pc, #60]	@ 80141c8 <WheelSpeedController_RrRunningSupport+0x2c8>
+ 801418c:	vmov.f32	s0, s15
+ 8014190:	bl	8026204 <fminf>
+ 8014194:	vstr	s0, [r7, #32]
+ 8014198:	vldr	s15, [r7, #8]
+ 801419c:	vabs.f32	s15, s15
+ 80141a0:	vldr	s14, [r7, #52]	@ 0x34
+ 80141a4:	vcmpe.f32	s14, s15
+ 80141a8:	vmrs	APSR_nzcv, fpscr
+ 80141ac:	blt.n	80141e0 <WheelSpeedController_RrRunningSupport+0x2e0>
+ 80141ae:	ldr	r3, [pc, #28]	@ (80141cc <WheelSpeedController_RrRunningSupport+0x2cc>)
+ 80141b0:	b.n	80141e2 <WheelSpeedController_RrRunningSupport+0x2e2>
+ 80141b2:	nop
+ 80141b4:	.word	0x2000b130
+ 80141b8:	.word	0x2000b040
+ 80141bc:	.word	0x3dcccccd
+ 80141c0:	.word	0x447a0000
+ 80141c4:	.word	0x42700000
+ 80141c8:	.word	0x437a0000
+ 80141cc:	.word	0x437a0000
+ 80141d0:	.word	0x42480000
+ 80141d4:	.word	0x42200000
+ 80141d8:	.word	0x43c80000
+ 80141dc:	.word	0x00000000
+ 80141e0:	ldr	r3, [r7, #32]
+ 80141e2:	str	r3, [r7, #28]
+ 80141e4:	ldr	r3, [r7, #80]	@ 0x50
+ 80141e6:	vldr	s14, [r3]
+ 80141ea:	vldr	s13, [r7, #28]
+ 80141ee:	vldr	s15, [r7, #48]	@ 0x30
+ 80141f2:	vmul.f32	s15, s13, s15
+ 80141f6:	vadd.f32	s15, s14, s15
+ 80141fa:	vmov.f32	s1, s15
+ 80141fe:	vldr	s0, [r7, #36]	@ 0x24
+ 8014202:	bl	8026204 <fminf>
+ 8014206:	vmov.f32	s15, s0
+ 801420a:	ldr	r3, [r7, #80]	@ 0x50
+ 801420c:	vstr	s15, [r3]
+ 8014210:	movs	r3, #0
+ 8014212:	strb.w	r3, [r7, #87]	@ 0x57
+ 8014216:	ldrb.w	r3, [r7, #46]	@ 0x2e
+ 801421a:	eor.w	r3, r3, #1
+ 801421e:	uxtb	r3, r3
+ 8014220:	cmp	r3, #0
+ 8014222:	beq.n	80142e8 <WheelSpeedController_RrRunningSupport+0x3e8>
+ 8014224:	vldr	s15, [r7, #64]	@ 0x40
+ 8014228:	vldr	s14, [pc, #-92]	@ 80141d0 <WheelSpeedController_RrRunningSupport+0x2d0>
+ 801422c:	vcmpe.f32	s15, s14
+ 8014230:	vmrs	APSR_nzcv, fpscr
+ 8014234:	blt.n	80142e8 <WheelSpeedController_RrRunningSupport+0x3e8>
+ 8014236:	ldr	r3, [r7, #80]	@ 0x50
+ 8014238:	ldr	r3, [r3, #4]
+ 801423a:	cmp	r3, #39	@ 0x27
+ 801423c:	bls.n	80142e8 <WheelSpeedController_RrRunningSupport+0x3e8>
+ 801423e:	ldr	r3, [r7, #80]	@ 0x50
+ 8014240:	ldr	r3, [r3, #16]
+ 8014242:	cmp.w	r3, #600	@ 0x258
+ 8014246:	bcs.n	80142e8 <WheelSpeedController_RrRunningSupport+0x3e8>
+ 8014248:	ldr	r3, [r7, #80]	@ 0x50
+ 801424a:	vldr	s15, [r3]
+ 801424e:	vcmpe.f32	s15, #0.0
+ 8014252:	vmrs	APSR_nzcv, fpscr
+ 8014256:	ble.n	80142e8 <WheelSpeedController_RrRunningSupport+0x3e8>
+ 8014258:	ldr	r3, [r7, #76]	@ 0x4c
+ 801425a:	vldr	s15, [r3, #20]
+ 801425e:	vldr	s14, [pc, #-144]	@ 80141d0 <WheelSpeedController_RrRunningSupport+0x2d0>
+ 8014262:	vsub.f32	s15, s14, s15
+ 8014266:	vldr	s1, [pc, #-140]	@ 80141dc <WheelSpeedController_RrRunningSupport+0x2dc>
+ 801426a:	vmov.f32	s0, s15
+ 801426e:	bl	80261b4 <fmaxf>
+ 8014272:	vstr	s0, [r7, #24]
+ 8014276:	ldr	r3, [r7, #80]	@ 0x50
+ 8014278:	vldr	s16, [r3]
+ 801427c:	vldr	s15, [r7, #48]	@ 0x30
+ 8014280:	vldr	s14, [pc, #-176]	@ 80141d4 <WheelSpeedController_RrRunningSupport+0x2d4>
+ 8014284:	vmul.f32	s15, s15, s14
+ 8014288:	vmov.f32	s1, s15
+ 801428c:	vldr	s0, [r7, #24]
+ 8014290:	bl	8026204 <fminf>
+ 8014294:	vmov.f32	s15, s0
+ 8014298:	vmov.f32	s1, s15
+ 801429c:	vmov.f32	s0, s16
+ 80142a0:	bl	8026204 <fminf>
+ 80142a4:	vstr	s0, [r7, #20]
+ 80142a8:	ldr	r3, [r7, #76]	@ 0x4c
+ 80142aa:	vldr	s14, [r3, #20]
+ 80142ae:	vldr	s15, [r7, #20]
+ 80142b2:	vadd.f32	s15, s14, s15
+ 80142b6:	ldr	r3, [r7, #76]	@ 0x4c
+ 80142b8:	vstr	s15, [r3, #20]
+ 80142bc:	ldr	r3, [r7, #80]	@ 0x50
+ 80142be:	vldr	s14, [r3]
+ 80142c2:	vldr	s15, [r7, #20]
+ 80142c6:	vsub.f32	s15, s14, s15
+ 80142ca:	ldr	r3, [r7, #80]	@ 0x50
+ 80142cc:	vstr	s15, [r3]
+ 80142d0:	vldr	s15, [r7, #20]
+ 80142d4:	vcmpe.f32	s15, #0.0
+ 80142d8:	vmrs	APSR_nzcv, fpscr
+ 80142dc:	ite	gt
+ 80142de:	movgt	r3, #1
+ 80142e0:	movle	r3, #0
+ 80142e2:	strb.w	r3, [r7, #87]	@ 0x57
+ 80142e6:	b.n	8014322 <WheelSpeedController_RrRunningSupport+0x422>
+ 80142e8:	ldr	r3, [r7, #80]	@ 0x50
+ 80142ea:	ldrb	r3, [r3, #21]
+ 80142ec:	eor.w	r3, r3, #1
+ 80142f0:	uxtb	r3, r3
+ 80142f2:	cmp	r3, #0
+ 80142f4:	beq.n	8014322 <WheelSpeedController_RrRunningSupport+0x422>
+ 80142f6:	ldr	r3, [r7, #80]	@ 0x50
+ 80142f8:	vldr	s14, [r3]
+ 80142fc:	vldr	s15, [r7, #48]	@ 0x30
+ 8014300:	vldr	s13, [pc, #-300]	@ 80141d8 <WheelSpeedController_RrRunningSupport+0x2d8>
+ 8014304:	vmul.f32	s15, s15, s13
+ 8014308:	vsub.f32	s15, s14, s15
+ 801430c:	vldr	s1, [pc, #-308]	@ 80141dc <WheelSpeedController_RrRunningSupport+0x2dc>
+ 8014310:	vmov.f32	s0, s15
+ 8014314:	bl	80261b4 <fmaxf>
+ 8014318:	vmov.f32	s15, s0
+ 801431c:	ldr	r3, [r7, #80]	@ 0x50
+ 801431e:	vstr	s15, [r3]
+ 8014322:	ldr	r3, [r7, #80]	@ 0x50
+ 8014324:	ldr	r3, [r3, #12]
+ 8014326:	cmp	r3, #99	@ 0x63
+ 8014328:	bls.n	801434c <WheelSpeedController_RrRunningSupport+0x44c>
+ 801432a:	ldr	r3, [r7, #80]	@ 0x50
+ 801432c:	vldr	s15, [r3]
+ 8014330:	vcmp.f32	s15, #0.0
+ 8014334:	vmrs	APSR_nzcv, fpscr
+ 8014338:	bne.n	801434c <WheelSpeedController_RrRunningSupport+0x44c>
+ 801433a:	ldr	r3, [r7, #80]	@ 0x50
+ 801433c:	movs	r2, #0
+ 801433e:	strb	r2, [r3, #22]
+ 8014340:	ldr	r3, [r7, #80]	@ 0x50
+ 8014342:	movs	r2, #0
+ 8014344:	str	r2, [r3, #16]
+ 8014346:	ldr	r3, [r7, #80]	@ 0x50
+ 8014348:	movs	r2, #0
+ 801434a:	str	r2, [r3, #8]
+ 801434c:	ldrb.w	r3, [r7, #75]	@ 0x4b
+ 8014350:	cmp	r3, #0
+ 8014352:	bne.n	8014374 <WheelSpeedController_RrRunningSupport+0x474>
+ 8014354:	ldr	r3, [r7, #80]	@ 0x50
+ 8014356:	ldrb	r3, [r3, #21]
+ 8014358:	cmp	r3, #0
+ 801435a:	bne.n	8014374 <WheelSpeedController_RrRunningSupport+0x474>
+ 801435c:	ldr	r3, [r7, #80]	@ 0x50
+ 801435e:	vldr	s15, [r3]
+ 8014362:	vcmpe.f32	s15, #0.0
+ 8014366:	vmrs	APSR_nzcv, fpscr
+ 801436a:	bgt.n	8014374 <WheelSpeedController_RrRunningSupport+0x474>
+ 801436c:	ldrb.w	r3, [r7, #87]	@ 0x57
+ 8014370:	cmp	r3, #0
+ 8014372:	beq.n	8014378 <WheelSpeedController_RrRunningSupport+0x478>
+ 8014374:	movs	r3, #1
+ 8014376:	b.n	801437a <WheelSpeedController_RrRunningSupport+0x47a>
+ 8014378:	movs	r3, #0
+ 801437a:	and.w	r3, r3, #1
+ 801437e:	uxtb	r2, r3
+ 8014380:	ldr	r3, [r7, #0]
+ 8014382:	strb	r2, [r3, #0]
+ 8014384:	ldr	r3, [r7, #80]	@ 0x50
+ 8014386:	ldr	r3, [r3, #0]
+ 8014388:	vmov	s15, r3
+ 801438c:	vmov.f32	s0, s15
+ 8014390:	adds	r7, #88	@ 0x58
+ 8014392:	mov	sp, r7
+ 8014394:	vpop	{d8}
+ 8014398:	pop	{r7, pc}
+ 801439a:	nop
+
+<WheelSpeedController_SelectLrRunningSupport>
+ 8012a44:	push	{r7}
+ 8012a46:	sub	sp, #12
+ 8012a48:	add	r7, sp, #0
+ 8012a4a:	mov	r3, r0
+ 8012a4c:	strb	r3, [r7, #7]
+ 8012a4e:	ldrb	r3, [r7, #7]
+ 8012a50:	cmp	r3, #0
+ 8012a52:	beq.n	8012a62 <WheelSpeedController_SelectLrRunningSupport+0x1e>
+ 8012a54:	ldr	r3, [pc, #28]	@ (8012a74 <WheelSpeedController_SelectLrRunningSupport+0x30>)
+ 8012a56:	ldr	r3, [r3, #4]
+ 8012a58:	cmp	r3, #39	@ 0x27
+ 8012a5a:	bls.n	8012a62 <WheelSpeedController_SelectLrRunningSupport+0x1e>
+ 8012a5c:	ldr	r3, [pc, #20]	@ (8012a74 <WheelSpeedController_SelectLrRunningSupport+0x30>)
+ 8012a5e:	movs	r2, #1
+ 8012a60:	strb	r2, [r3, #20]
+ 8012a62:	ldr	r3, [pc, #16]	@ (8012a74 <WheelSpeedController_SelectLrRunningSupport+0x30>)
+ 8012a64:	ldrb	r3, [r3, #20]
+ 8012a66:	mov	r0, r3
+ 8012a68:	adds	r7, #12
+ 8012a6a:	mov	sp, r7
+ 8012a6c:	ldr.w	r7, [sp], #4
+ 8012a70:	bx	lr
+ 8012a72:	nop
+ 8012a74:	.word	0x2000b118
+
+<WheelSpeedController_SelectRrRunningSupport>
+ 8012b24:	push	{r7}
+ 8012b26:	sub	sp, #12
+ 8012b28:	add	r7, sp, #0
+ 8012b2a:	mov	r3, r0
+ 8012b2c:	strb	r3, [r7, #7]
+ 8012b2e:	ldrb	r3, [r7, #7]
+ 8012b30:	cmp	r3, #0
+ 8012b32:	beq.n	8012b42 <WheelSpeedController_SelectRrRunningSupport+0x1e>
+ 8012b34:	ldr	r3, [pc, #28]	@ (8012b54 <WheelSpeedController_SelectRrRunningSupport+0x30>)
+ 8012b36:	ldr	r3, [r3, #4]
+ 8012b38:	cmp	r3, #39	@ 0x27
+ 8012b3a:	bls.n	8012b42 <WheelSpeedController_SelectRrRunningSupport+0x1e>
+ 8012b3c:	ldr	r3, [pc, #20]	@ (8012b54 <WheelSpeedController_SelectRrRunningSupport+0x30>)
+ 8012b3e:	movs	r2, #1
+ 8012b40:	strb	r2, [r3, #20]
+ 8012b42:	ldr	r3, [pc, #16]	@ (8012b54 <WheelSpeedController_SelectRrRunningSupport+0x30>)
+ 8012b44:	ldrb	r3, [r3, #20]
+ 8012b46:	mov	r0, r3
+ 8012b48:	adds	r7, #12
+ 8012b4a:	mov	sp, r7
+ 8012b4c:	ldr.w	r7, [sp], #4
+ 8012b50:	bx	lr
+ 8012b52:	nop
+ 8012b54:	.word	0x2000b130
+
+<WheelSpeedController_UpdateWithMode>
+ 8014634:	push	{r7, lr}
+ 8014636:	sub	sp, #88	@ 0x58
+ 8014638:	add	r7, sp, #0
+ 801463a:	vstr	s0, [r7, #16]
+ 801463e:	vstr	s1, [r7, #12]
+ 8014642:	vstr	s2, [r7, #8]
+ 8014646:	str	r2, [r7, #4]
+ 8014648:	str	r3, [r7, #0]
+ 801464a:	mov	r3, r0
+ 801464c:	strb	r3, [r7, #23]
+ 801464e:	mov	r3, r1
+ 8014650:	strb	r3, [r7, #22]
+ 8014652:	ldr	r3, [pc, #460]	@ (8014820 <WheelSpeedController_UpdateWithMode+0x1ec>)
+ 8014654:	str	r3, [r7, #64]	@ 0x40
+ 8014656:	ldr	r3, [pc, #460]	@ (8014824 <WheelSpeedController_UpdateWithMode+0x1f0>)
+ 8014658:	str	r3, [r7, #60]	@ 0x3c
+ 801465a:	movs	r3, #0
+ 801465c:	strb	r3, [r7, #30]
+ 801465e:	ldrb	r3, [r7, #23]
+ 8014660:	mov	r0, r3
+ 8014662:	bl	8012c68 <WheelSpeedController_IsWheelValid>
+ 8014666:	mov	r3, r0
+ 8014668:	eor.w	r3, r3, #1
+ 801466c:	uxtb	r3, r3
+ 801466e:	cmp	r3, #0
+ 8014670:	bne.n	80146f2 <WheelSpeedController_UpdateWithMode+0xbe>
+ 8014672:	ldr	r3, [r7, #0]
+ 8014674:	cmp	r3, #0
+ 8014676:	beq.n	80146f2 <WheelSpeedController_UpdateWithMode+0xbe>
+ 8014678:	ldrb	r3, [r7, #22]
+ 801467a:	cmp	r3, #0
+ 801467c:	beq.n	8014684 <WheelSpeedController_UpdateWithMode+0x50>
+ 801467e:	ldrb	r3, [r7, #22]
+ 8014680:	cmp	r3, #1
+ 8014682:	bne.n	80146f2 <WheelSpeedController_UpdateWithMode+0xbe>
+ 8014684:	vldr	s15, [r7, #16]
+ 8014688:	vabs.f32	s15, s15
+ 801468c:	vldr	s14, [pc, #408]	@ 8014828 <WheelSpeedController_UpdateWithMode+0x1f4>
+ 8014690:	vcmp.f32	s15, s14
+ 8014694:	vmrs	APSR_nzcv, fpscr
+ 8014698:	bhi.n	80146f2 <WheelSpeedController_UpdateWithMode+0xbe>
+ 801469a:	vldr	s15, [r7, #12]
+ 801469e:	vabs.f32	s15, s15
+ 80146a2:	vldr	s14, [pc, #388]	@ 8014828 <WheelSpeedController_UpdateWithMode+0x1f4>
+ 80146a6:	vcmp.f32	s15, s14
+ 80146aa:	vmrs	APSR_nzcv, fpscr
+ 80146ae:	bhi.n	80146f2 <WheelSpeedController_UpdateWithMode+0xbe>
+ 80146b0:	vldr	s14, [r7, #8]
+ 80146b4:	vldr	s15, [r7, #8]
+ 80146b8:	vcmp.f32	s14, s15
+ 80146bc:	vmrs	APSR_nzcv, fpscr
+ 80146c0:	bne.n	80146f2 <WheelSpeedController_UpdateWithMode+0xbe>
+ 80146c2:	vldr	s15, [r7, #8]
+ 80146c6:	vldr	s14, [pc, #356]	@ 801482c <WheelSpeedController_UpdateWithMode+0x1f8>
+ 80146ca:	vcmpe.f32	s15, s14
+ 80146ce:	vmrs	APSR_nzcv, fpscr
+ 80146d2:	bgt.n	80146f2 <WheelSpeedController_UpdateWithMode+0xbe>
+ 80146d4:	vldr	s15, [r7, #8]
+ 80146d8:	vldr	s14, [pc, #340]	@ 8014830 <WheelSpeedController_UpdateWithMode+0x1fc>
+ 80146dc:	vcmpe.f32	s15, s14
+ 80146e0:	vmrs	APSR_nzcv, fpscr
+ 80146e4:	bmi.n	80146f2 <WheelSpeedController_UpdateWithMode+0xbe>
+ 80146e6:	ldr	r3, [r7, #4]
+ 80146e8:	cmp	r3, #0
+ 80146ea:	beq.n	80146f2 <WheelSpeedController_UpdateWithMode+0xbe>
+ 80146ec:	ldr	r3, [r7, #4]
+ 80146ee:	cmp	r3, #100	@ 0x64
+ 80146f0:	bls.n	80146f6 <WheelSpeedController_UpdateWithMode+0xc2>
+ 80146f2:	movs	r3, #0
+ 80146f4:	b.n	8014e5e <WheelSpeedController_UpdateWithMode+0x82a>
+ 80146f6:	ldrb	r3, [r7, #23]
+ 80146f8:	cmp	r3, #1
+ 80146fa:	bne.n	801472e <WheelSpeedController_UpdateWithMode+0xfa>
+ 80146fc:	ldr	r3, [pc, #308]	@ (8014834 <WheelSpeedController_UpdateWithMode+0x200>)
+ 80146fe:	ldrb	r3, [r3, #20]
+ 8014700:	cmp	r3, #0
+ 8014702:	beq.n	801472e <WheelSpeedController_UpdateWithMode+0xfa>
+ 8014704:	ldrb	r3, [r7, #22]
+ 8014706:	cmp	r3, #1
+ 8014708:	bne.n	801472e <WheelSpeedController_UpdateWithMode+0xfa>
+ 801470a:	vldr	s15, [r7, #16]
+ 801470e:	vmov.f32	s14, #180	@ 0xc1a00000 -20.0
+ 8014712:	vcmpe.f32	s15, s14
+ 8014716:	vmrs	APSR_nzcv, fpscr
+ 801471a:	bhi.n	801472e <WheelSpeedController_UpdateWithMode+0xfa>
+ 801471c:	vldr	s15, [r7, #8]
+ 8014720:	vcmp.f32	s15, #0.0
+ 8014724:	vmrs	APSR_nzcv, fpscr
+ 8014728:	beq.n	801472e <WheelSpeedController_UpdateWithMode+0xfa>
+ 801472a:	movs	r3, #0
+ 801472c:	b.n	8014e5e <WheelSpeedController_UpdateWithMode+0x82a>
+ 801472e:	ldrb	r2, [r7, #23]
+ 8014730:	mov	r3, r2
+ 8014732:	lsls	r3, r3, #3
+ 8014734:	subs	r3, r3, r2
+ 8014736:	lsls	r3, r3, #2
+ 8014738:	ldr	r2, [pc, #252]	@ (8014838 <WheelSpeedController_UpdateWithMode+0x204>)
+ 801473a:	add	r3, r2
+ 801473c:	str	r3, [r7, #56]	@ 0x38
+ 801473e:	vldr	s2, [pc, #252]	@ 801483c <WheelSpeedController_UpdateWithMode+0x208>
+ 8014742:	vldr	s1, [pc, #252]	@ 8014840 <WheelSpeedController_UpdateWithMode+0x20c>
+ 8014746:	vldr	s0, [r7, #16]
+ 801474a:	bl	8012cbe <WheelSpeedController_Clamp>
+ 801474e:	vstr	s0, [r7, #52]	@ 0x34
+ 8014752:	ldrb	r3, [r7, #23]
+ 8014754:	cmp	r3, #3
+ 8014756:	bne.n	801478a <WheelSpeedController_UpdateWithMode+0x156>
+ 8014758:	ldr	r3, [pc, #232]	@ (8014844 <WheelSpeedController_UpdateWithMode+0x210>)
+ 801475a:	ldrb	r3, [r3, #20]
+ 801475c:	cmp	r3, #0
+ 801475e:	beq.n	801478a <WheelSpeedController_UpdateWithMode+0x156>
+ 8014760:	ldrb	r3, [r7, #22]
+ 8014762:	cmp	r3, #1
+ 8014764:	bne.n	801478a <WheelSpeedController_UpdateWithMode+0x156>
+ 8014766:	vldr	s15, [r7, #52]	@ 0x34
+ 801476a:	vmov.f32	s14, #52	@ 0x41a00000  20.0
+ 801476e:	vcmpe.f32	s15, s14
+ 8014772:	vmrs	APSR_nzcv, fpscr
+ 8014776:	blt.n	801478a <WheelSpeedController_UpdateWithMode+0x156>
+ 8014778:	vldr	s15, [r7, #8]
+ 801477c:	vcmp.f32	s15, #0.0
+ 8014780:	vmrs	APSR_nzcv, fpscr
+ 8014784:	beq.n	801478a <WheelSpeedController_UpdateWithMode+0x156>
+ 8014786:	movs	r3, #0
+ 8014788:	b.n	8014e5e <WheelSpeedController_UpdateWithMode+0x82a>
+ 801478a:	ldrb	r3, [r7, #23]
+ 801478c:	cmp	r3, #3
+ 801478e:	bne.n	80147d8 <WheelSpeedController_UpdateWithMode+0x1a4>
+ 8014790:	ldrb	r3, [r7, #22]
+ 8014792:	cmp	r3, #1
+ 8014794:	bne.n	80147a8 <WheelSpeedController_UpdateWithMode+0x174>
+ 8014796:	vldr	s15, [r7, #52]	@ 0x34
+ 801479a:	vmov.f32	s14, #52	@ 0x41a00000  20.0
+ 801479e:	vcmpe.f32	s15, s14
+ 80147a2:	vmrs	APSR_nzcv, fpscr
+ 80147a6:	bpl.n	80147ae <WheelSpeedController_UpdateWithMode+0x17a>
+ 80147a8:	bl	8012afc <WheelSpeedController_ClearRrRunningSupport>
+ 80147ac:	b.n	80147d8 <WheelSpeedController_UpdateWithMode+0x1a4>
+ 80147ae:	vldr	s15, [r7, #12]
+ 80147b2:	vldr	s14, [pc, #148]	@ 8014848 <WheelSpeedController_UpdateWithMode+0x214>
+ 80147b6:	vcmpe.f32	s15, s14
+ 80147ba:	vmrs	APSR_nzcv, fpscr
+ 80147be:	blt.n	80147d2 <WheelSpeedController_UpdateWithMode+0x19e>
+ 80147c0:	ldr	r3, [pc, #128]	@ (8014844 <WheelSpeedController_UpdateWithMode+0x210>)
+ 80147c2:	ldr	r3, [r3, #4]
+ 80147c4:	movs	r2, #40	@ 0x28
+ 80147c6:	ldr	r1, [r7, #4]
+ 80147c8:	mov	r0, r3
+ 80147ca:	bl	8012ecc <WheelSpeedController_AddTime>
+ 80147ce:	mov	r3, r0
+ 80147d0:	b.n	80147d4 <WheelSpeedController_UpdateWithMode+0x1a0>
+ 80147d2:	movs	r3, #0
+ 80147d4:	ldr	r2, [pc, #108]	@ (8014844 <WheelSpeedController_UpdateWithMode+0x210>)
+ 80147d6:	str	r3, [r2, #4]
+ 80147d8:	ldrb	r3, [r7, #23]
+ 80147da:	cmp	r3, #1
+ 80147dc:	bne.n	8014856 <WheelSpeedController_UpdateWithMode+0x222>
+ 80147de:	ldrb	r3, [r7, #22]
+ 80147e0:	cmp	r3, #1
+ 80147e2:	bne.n	80147f6 <WheelSpeedController_UpdateWithMode+0x1c2>
+ 80147e4:	vldr	s15, [r7, #52]	@ 0x34
+ 80147e8:	vmov.f32	s14, #180	@ 0xc1a00000 -20.0
+ 80147ec:	vcmpe.f32	s15, s14
+ 80147f0:	vmrs	APSR_nzcv, fpscr
+ 80147f4:	ble.n	80147fc <WheelSpeedController_UpdateWithMode+0x1c8>
+ 80147f6:	bl	8012a1c <WheelSpeedController_ClearLrRunningSupport>
+ 80147fa:	b.n	8014856 <WheelSpeedController_UpdateWithMode+0x222>
+ 80147fc:	vldr	s15, [r7, #12]
+ 8014800:	vldr	s14, [pc, #72]	@ 801484c <WheelSpeedController_UpdateWithMode+0x218>
+ 8014804:	vcmpe.f32	s15, s14
+ 8014808:	vmrs	APSR_nzcv, fpscr
+ 801480c:	bhi.n	8014850 <WheelSpeedController_UpdateWithMode+0x21c>
+ 801480e:	ldr	r3, [pc, #36]	@ (8014834 <WheelSpeedController_UpdateWithMode+0x200>)
+ 8014810:	ldr	r3, [r3, #4]
+ 8014812:	movs	r2, #40	@ 0x28
+ 8014814:	ldr	r1, [r7, #4]
+ 8014816:	mov	r0, r3
+ 8014818:	bl	8012ecc <WheelSpeedController_AddTime>
+ 801481c:	mov	r3, r0
+ 801481e:	b.n	8014852 <WheelSpeedController_UpdateWithMode+0x21e>
+ 8014820:	.word	0xc3960000
+ 8014824:	.word	0x43960000
+ 8014828:	.word	0x7f7fffff
+ 801482c:	.word	0x43960000
+ 8014830:	.word	0xc3960000
+ 8014834:	.word	0x2000b118
+ 8014838:	.word	0x2000afec
+ 801483c:	.word	0x44c80000
+ 8014840:	.word	0xc4c80000
+ 8014844:	.word	0x2000b130
+ 8014848:	.word	0x42480000
+ 801484c:	.word	0xc2480000
+ 8014850:	movs	r3, #0
+ 8014852:	ldr	r2, [pc, #764]	@ (8014b50 <WheelSpeedController_UpdateWithMode+0x51c>)
+ 8014854:	str	r3, [r2, #4]
+ 8014856:	ldrb	r3, [r7, #22]
+ 8014858:	cmp	r3, #1
+ 801485a:	bne.n	8014876 <WheelSpeedController_UpdateWithMode+0x242>
+ 801485c:	vldr	s0, [r7, #52]	@ 0x34
+ 8014860:	bl	8012c8a <WheelSpeedController_Abs>
+ 8014864:	vmov.f32	s15, s0
+ 8014868:	vmov.f32	s14, #52	@ 0x41a00000  20.0
+ 801486c:	vcmpe.f32	s15, s14
+ 8014870:	vmrs	APSR_nzcv, fpscr
+ 8014874:	bpl.n	801487e <WheelSpeedController_UpdateWithMode+0x24a>
+ 8014876:	ldrb	r3, [r7, #23]
+ 8014878:	mov	r0, r3
+ 801487a:	bl	8012c0c <WheelSpeedController_ClearFront>
+ 801487e:	vldr	s0, [r7, #52]	@ 0x34
+ 8014882:	bl	8012c8a <WheelSpeedController_Abs>
+ 8014886:	vmov.f32	s15, s0
+ 801488a:	vmov.f32	s14, #112	@ 0x3f800000  1.0
+ 801488e:	vcmpe.f32	s15, s14
+ 8014892:	vmrs	APSR_nzcv, fpscr
+ 8014896:	bpl.n	8014976 <WheelSpeedController_UpdateWithMode+0x342>
+ 8014898:	ldr	r3, [r7, #4]
+ 801489a:	vmov	s15, r3
+ 801489e:	vcvt.f32.u32	s14, s15
+ 80148a2:	vldr	s13, [pc, #720]	@ 8014b74 <WheelSpeedController_UpdateWithMode+0x540>
+ 80148a6:	vdiv.f32	s15, s14, s13
+ 80148aa:	vldr	s14, [pc, #712]	@ 8014b74 <WheelSpeedController_UpdateWithMode+0x540>
+ 80148ae:	vmul.f32	s15, s15, s14
+ 80148b2:	vstr	s15, [r7, #32]
+ 80148b6:	ldrb	r3, [r7, #23]
+ 80148b8:	ldr	r2, [pc, #664]	@ (8014b54 <WheelSpeedController_UpdateWithMode+0x520>)
+ 80148ba:	lsls	r3, r3, #2
+ 80148bc:	add	r3, r2
+ 80148be:	vldr	s14, [r3]
+ 80148c2:	vldr	s15, [r7, #32]
+ 80148c6:	vsub.f32	s13, s14, s15
+ 80148ca:	ldrb	r3, [r7, #23]
+ 80148cc:	ldr	r2, [pc, #644]	@ (8014b54 <WheelSpeedController_UpdateWithMode+0x520>)
+ 80148ce:	lsls	r3, r3, #2
+ 80148d0:	add	r3, r2
+ 80148d2:	vldr	s14, [r3]
+ 80148d6:	vldr	s15, [r7, #32]
+ 80148da:	vadd.f32	s15, s14, s15
+ 80148de:	vmov.f32	s2, s15
+ 80148e2:	vmov.f32	s1, s13
+ 80148e6:	vldr	s0, [pc, #624]	@ 8014b58 <WheelSpeedController_UpdateWithMode+0x524>
+ 80148ea:	bl	8012cbe <WheelSpeedController_Clamp>
+ 80148ee:	vstr	s0, [r7, #68]	@ 0x44
+ 80148f2:	ldr	r3, [r7, #56]	@ 0x38
+ 80148f4:	mov.w	r2, #0
+ 80148f8:	str	r2, [r3, #0]
+ 80148fa:	ldr	r3, [r7, #56]	@ 0x38
+ 80148fc:	ldr	r2, [r7, #12]
+ 80148fe:	str	r2, [r3, #4]
+ 8014900:	vldr	s15, [r7, #12]
+ 8014904:	vneg.f32	s15, s15
+ 8014908:	ldr	r3, [r7, #56]	@ 0x38
+ 801490a:	vstr	s15, [r3, #8]
+ 801490e:	ldr	r3, [r7, #56]	@ 0x38
+ 8014910:	mov.w	r2, #0
+ 8014914:	str	r2, [r3, #12]
+ 8014916:	ldr	r3, [r7, #56]	@ 0x38
+ 8014918:	mov.w	r2, #0
+ 801491c:	str	r2, [r3, #16]
+ 801491e:	ldr	r3, [r7, #56]	@ 0x38
+ 8014920:	mov.w	r2, #0
+ 8014924:	str	r2, [r3, #20]
+ 8014926:	vldr	s0, [r7, #68]	@ 0x44
+ 801492a:	bl	8012d10 <WheelSpeedController_RoundToInt16>
+ 801492e:	mov	r3, r0
+ 8014930:	mov	r2, r3
+ 8014932:	ldr	r3, [r7, #56]	@ 0x38
+ 8014934:	strh	r2, [r3, #24]
+ 8014936:	vldr	s15, [r7, #68]	@ 0x44
+ 801493a:	vcmp.f32	s15, #0.0
+ 801493e:	vmrs	APSR_nzcv, fpscr
+ 8014942:	ite	ne
+ 8014944:	movne	r3, #1
+ 8014946:	moveq	r3, #0
+ 8014948:	uxtb	r2, r3
+ 801494a:	ldr	r3, [r7, #56]	@ 0x38
+ 801494c:	strb	r2, [r3, #26]
+ 801494e:	ldrb	r3, [r7, #23]
+ 8014950:	ldr	r2, [pc, #512]	@ (8014b54 <WheelSpeedController_UpdateWithMode+0x520>)
+ 8014952:	lsls	r3, r3, #2
+ 8014954:	add	r3, r2
+ 8014956:	ldr	r2, [r7, #68]	@ 0x44
+ 8014958:	str	r2, [r3, #0]
+ 801495a:	ldrb	r3, [r7, #23]
+ 801495c:	ldr	r2, [pc, #508]	@ (8014b5c <WheelSpeedController_UpdateWithMode+0x528>)
+ 801495e:	lsls	r3, r3, #2
+ 8014960:	add	r3, r2
+ 8014962:	mov.w	r2, #0
+ 8014966:	str	r2, [r3, #0]
+ 8014968:	ldr	r3, [r7, #56]	@ 0x38
+ 801496a:	ldrsh.w	r2, [r3, #24]
+ 801496e:	ldr	r3, [r7, #0]
+ 8014970:	strh	r2, [r3, #0]
+ 8014972:	movs	r3, #1
+ 8014974:	b.n	8014e5e <WheelSpeedController_UpdateWithMode+0x82a>
+ 8014976:	ldrb	r3, [r7, #23]
+ 8014978:	ldr	r2, [pc, #480]	@ (8014b5c <WheelSpeedController_UpdateWithMode+0x528>)
+ 801497a:	lsls	r3, r3, #2
+ 801497c:	add	r3, r2
+ 801497e:	vldr	s15, [r3]
+ 8014982:	vcmpe.f32	s15, #0.0
+ 8014986:	vmrs	APSR_nzcv, fpscr
+ 801498a:	ble.n	801499a <WheelSpeedController_UpdateWithMode+0x366>
+ 801498c:	vldr	s15, [r7, #52]	@ 0x34
+ 8014990:	vcmpe.f32	s15, #0.0
+ 8014994:	vmrs	APSR_nzcv, fpscr
+ 8014998:	bmi.n	80149be <WheelSpeedController_UpdateWithMode+0x38a>
+ 801499a:	ldrb	r3, [r7, #23]
+ 801499c:	ldr	r2, [pc, #444]	@ (8014b5c <WheelSpeedController_UpdateWithMode+0x528>)
+ 801499e:	lsls	r3, r3, #2
+ 80149a0:	add	r3, r2
+ 80149a2:	vldr	s15, [r3]
+ 80149a6:	vcmpe.f32	s15, #0.0
+ 80149aa:	vmrs	APSR_nzcv, fpscr
+ 80149ae:	bpl.n	80149c6 <WheelSpeedController_UpdateWithMode+0x392>
+ 80149b0:	vldr	s15, [r7, #52]	@ 0x34
+ 80149b4:	vcmpe.f32	s15, #0.0
+ 80149b8:	vmrs	APSR_nzcv, fpscr
+ 80149bc:	ble.n	80149c6 <WheelSpeedController_UpdateWithMode+0x392>
+ 80149be:	ldr	r3, [r7, #56]	@ 0x38
+ 80149c0:	mov.w	r2, #0
+ 80149c4:	str	r2, [r3, #20]
+ 80149c6:	vldr	s14, [r7, #52]	@ 0x34
+ 80149ca:	vldr	s15, [r7, #12]
+ 80149ce:	vsub.f32	s15, s14, s15
+ 80149d2:	vstr	s15, [r7, #48]	@ 0x30
+ 80149d6:	ldrb	r3, [r7, #23]
+ 80149d8:	vldr	s0, [r7, #52]	@ 0x34
+ 80149dc:	mov	r0, r3
+ 80149de:	bl	8012e50 <WheelSpeedController_GetFeedforward>
+ 80149e2:	vmov.f32	s14, s0
+ 80149e6:	vldr	s15, [r7, #8]
+ 80149ea:	vadd.f32	s15, s15, s14
+ 80149ee:	vstr	s15, [r7, #84]	@ 0x54
+ 80149f2:	ldrb	r3, [r7, #22]
+ 80149f4:	cmp	r3, #1
+ 80149f6:	bne.n	8014aec <WheelSpeedController_UpdateWithMode+0x4b8>
+ 80149f8:	ldrb	r3, [r7, #23]
+ 80149fa:	mov	r0, r3
+ 80149fc:	bl	8012bdc <WheelSpeedController_IsFront>
+ 8014a00:	mov	r3, r0
+ 8014a02:	cmp	r3, #0
+ 8014a04:	beq.n	8014a48 <WheelSpeedController_UpdateWithMode+0x414>
+ 8014a06:	vldr	s0, [r7, #52]	@ 0x34
+ 8014a0a:	bl	8012c8a <WheelSpeedController_Abs>
+ 8014a0e:	vmov.f32	s15, s0
+ 8014a12:	vmov.f32	s14, #52	@ 0x41a00000  20.0
+ 8014a16:	vcmpe.f32	s15, s14
+ 8014a1a:	vmrs	APSR_nzcv, fpscr
+ 8014a1e:	blt.n	8014aec <WheelSpeedController_UpdateWithMode+0x4b8>
+ 8014a20:	add.w	r2, r7, #30
+ 8014a24:	ldrb	r3, [r7, #23]
+ 8014a26:	ldr	r1, [r7, #4]
+ 8014a28:	vldr	s1, [r7, #12]
+ 8014a2c:	vldr	s0, [r7, #52]	@ 0x34
+ 8014a30:	mov	r0, r3
+ 8014a32:	bl	8012f04 <WheelSpeedController_FrontSupport>
+ 8014a36:	vmov.f32	s14, s0
+ 8014a3a:	vldr	s15, [r7, #84]	@ 0x54
+ 8014a3e:	vadd.f32	s15, s15, s14
+ 8014a42:	vstr	s15, [r7, #84]	@ 0x54
+ 8014a46:	b.n	8014aec <WheelSpeedController_UpdateWithMode+0x4b8>
+ 8014a48:	ldrb	r3, [r7, #23]
+ 8014a4a:	vldr	s0, [r7, #52]	@ 0x34
+ 8014a4e:	mov	r0, r3
+ 8014a50:	bl	8012d64 <WheelSpeedController_GetPivotLoadFeedforward>
+ 8014a54:	vmov.f32	s14, s0
+ 8014a58:	vldr	s15, [r7, #84]	@ 0x54
+ 8014a5c:	vadd.f32	s15, s15, s14
+ 8014a60:	vstr	s15, [r7, #84]	@ 0x54
+ 8014a64:	ldrb	r3, [r7, #23]
+ 8014a66:	cmp	r3, #1
+ 8014a68:	bne.n	8014aa8 <WheelSpeedController_UpdateWithMode+0x474>
+ 8014a6a:	vldr	s15, [r7, #52]	@ 0x34
+ 8014a6e:	vmov.f32	s14, #180	@ 0xc1a00000 -20.0
+ 8014a72:	vcmpe.f32	s15, s14
+ 8014a76:	vmrs	APSR_nzcv, fpscr
+ 8014a7a:	bhi.n	8014aa8 <WheelSpeedController_UpdateWithMode+0x474>
+ 8014a7c:	ldr	r3, [pc, #208]	@ (8014b50 <WheelSpeedController_UpdateWithMode+0x51c>)
+ 8014a7e:	ldrb	r3, [r3, #20]
+ 8014a80:	cmp	r3, #0
+ 8014a82:	beq.n	8014aa8 <WheelSpeedController_UpdateWithMode+0x474>
+ 8014a84:	add.w	r3, r7, #30
+ 8014a88:	mov	r1, r3
+ 8014a8a:	ldr	r0, [r7, #4]
+ 8014a8c:	vldr	s1, [r7, #12]
+ 8014a90:	vldr	s0, [r7, #52]	@ 0x34
+ 8014a94:	bl	8013a50 <WheelSpeedController_LrRunningSupport>
+ 8014a98:	vmov.f32	s14, s0
+ 8014a9c:	vldr	s15, [r7, #84]	@ 0x54
+ 8014aa0:	vadd.f32	s15, s15, s14
+ 8014aa4:	vstr	s15, [r7, #84]	@ 0x54
+ 8014aa8:	ldrb	r3, [r7, #23]
+ 8014aaa:	cmp	r3, #3
+ 8014aac:	bne.n	8014aec <WheelSpeedController_UpdateWithMode+0x4b8>
+ 8014aae:	vldr	s15, [r7, #52]	@ 0x34
+ 8014ab2:	vmov.f32	s14, #52	@ 0x41a00000  20.0
+ 8014ab6:	vcmpe.f32	s15, s14
+ 8014aba:	vmrs	APSR_nzcv, fpscr
+ 8014abe:	blt.n	8014aec <WheelSpeedController_UpdateWithMode+0x4b8>
+ 8014ac0:	ldr	r3, [pc, #156]	@ (8014b60 <WheelSpeedController_UpdateWithMode+0x52c>)
+ 8014ac2:	ldrb	r3, [r3, #20]
+ 8014ac4:	cmp	r3, #0
+ 8014ac6:	beq.n	8014aec <WheelSpeedController_UpdateWithMode+0x4b8>
+ 8014ac8:	add.w	r3, r7, #30
+ 8014acc:	mov	r1, r3
+ 8014ace:	ldr	r0, [r7, #4]
+ 8014ad0:	vldr	s1, [r7, #12]
+ 8014ad4:	vldr	s0, [r7, #52]	@ 0x34
+ 8014ad8:	bl	8013f00 <WheelSpeedController_RrRunningSupport>
+ 8014adc:	vmov.f32	s14, s0
+ 8014ae0:	vldr	s15, [r7, #84]	@ 0x54
+ 8014ae4:	vadd.f32	s15, s15, s14
+ 8014ae8:	vstr	s15, [r7, #84]	@ 0x54
+ 8014aec:	ldr	r3, [pc, #116]	@ (8014b64 <WheelSpeedController_UpdateWithMode+0x530>)
+ 8014aee:	str	r3, [r7, #80]	@ 0x50
+ 8014af0:	ldrb	r3, [r7, #22]
+ 8014af2:	cmp	r3, #1
+ 8014af4:	bne.n	8014b7e <WheelSpeedController_UpdateWithMode+0x54a>
+ 8014af6:	vldr	s15, [r7, #52]	@ 0x34
+ 8014afa:	vcmpe.f32	s15, #0.0
+ 8014afe:	vmrs	APSR_nzcv, fpscr
+ 8014b02:	ble.n	8014b16 <WheelSpeedController_UpdateWithMode+0x4e2>
+ 8014b04:	vldr	s14, [r7, #12]
+ 8014b08:	vldr	s15, [r7, #52]	@ 0x34
+ 8014b0c:	vcmpe.f32	s14, s15
+ 8014b10:	vmrs	APSR_nzcv, fpscr
+ 8014b14:	bgt.n	8014b36 <WheelSpeedController_UpdateWithMode+0x502>
+ 8014b16:	vldr	s15, [r7, #52]	@ 0x34
+ 8014b1a:	vcmpe.f32	s15, #0.0
+ 8014b1e:	vmrs	APSR_nzcv, fpscr
+ 8014b22:	bpl.n	8014b7e <WheelSpeedController_UpdateWithMode+0x54a>
+ 8014b24:	vldr	s14, [r7, #12]
+ 8014b28:	vldr	s15, [r7, #52]	@ 0x34
+ 8014b2c:	vcmpe.f32	s14, s15
+ 8014b30:	vmrs	APSR_nzcv, fpscr
+ 8014b34:	bpl.n	8014b7e <WheelSpeedController_UpdateWithMode+0x54a>
+ 8014b36:	ldr	r3, [pc, #48]	@ (8014b68 <WheelSpeedController_UpdateWithMode+0x534>)
+ 8014b38:	str	r3, [r7, #80]	@ 0x50
+ 8014b3a:	vldr	s15, [r7, #52]	@ 0x34
+ 8014b3e:	vcmpe.f32	s15, #0.0
+ 8014b42:	vmrs	APSR_nzcv, fpscr
+ 8014b46:	ble.n	8014b78 <WheelSpeedController_UpdateWithMode+0x544>
+ 8014b48:	mov.w	r3, #0
+ 8014b4c:	str	r3, [r7, #64]	@ 0x40
+ 8014b4e:	b.n	8014b7e <WheelSpeedController_UpdateWithMode+0x54a>
+ 8014b50:	.word	0x2000b118
+ 8014b54:	.word	0x2000b05c
+ 8014b58:	.word	0x00000000
+ 8014b5c:	.word	0x2000b06c
+ 8014b60:	.word	0x2000b130
+ 8014b64:	.word	0x3d4ccccd
+ 8014b68:	.word	0x3e19999a
+ 8014b6c:	.word	0x42480000
+ 8014b70:	.word	0xc2480000
+ 8014b74:	.word	0x447a0000
+ 8014b78:	mov.w	r3, #0
+ 8014b7c:	str	r3, [r7, #60]	@ 0x3c
+ 8014b7e:	vldr	s14, [r7, #80]	@ 0x50
+ 8014b82:	vldr	s15, [r7, #48]	@ 0x30
+ 8014b86:	vmul.f32	s15, s14, s15
+ 8014b8a:	vstr	s15, [r7, #44]	@ 0x2c
+ 8014b8e:	ldr	r3, [r7, #56]	@ 0x38
+ 8014b90:	ldr	r3, [r3, #20]
+ 8014b92:	str	r3, [r7, #40]	@ 0x28
+ 8014b94:	vldr	s15, [r7, #48]	@ 0x30
+ 8014b98:	vmov.f32	s14, #80	@ 0x3e800000  0.250
+ 8014b9c:	vmul.f32	s14, s15, s14
+ 8014ba0:	ldr	r3, [r7, #4]
+ 8014ba2:	vmov	s15, r3
+ 8014ba6:	vcvt.f32.u32	s13, s15
+ 8014baa:	vldr	s12, [pc, #-56]	@ 8014b74 <WheelSpeedController_UpdateWithMode+0x540>
+ 8014bae:	vdiv.f32	s15, s13, s12
+ 8014bb2:	vmul.f32	s15, s14, s15
+ 8014bb6:	vldr	s14, [r7, #40]	@ 0x28
+ 8014bba:	vadd.f32	s15, s14, s15
+ 8014bbe:	vstr	s15, [r7, #76]	@ 0x4c
+ 8014bc2:	ldrb	r3, [r7, #30]
+ 8014bc4:	cmp	r3, #0
+ 8014bc6:	beq.n	8014be2 <WheelSpeedController_UpdateWithMode+0x5ae>
+ 8014bc8:	vldr	s14, [r7, #48]	@ 0x30
+ 8014bcc:	vldr	s15, [r7, #52]	@ 0x34
+ 8014bd0:	vmul.f32	s15, s14, s15
+ 8014bd4:	vcmpe.f32	s15, #0.0
+ 8014bd8:	vmrs	APSR_nzcv, fpscr
+ 8014bdc:	ble.n	8014be2 <WheelSpeedController_UpdateWithMode+0x5ae>
+ 8014bde:	ldr	r3, [r7, #40]	@ 0x28
+ 8014be0:	str	r3, [r7, #76]	@ 0x4c
+ 8014be2:	vldr	s2, [pc, #-120]	@ 8014b6c <WheelSpeedController_UpdateWithMode+0x538>
+ 8014be6:	vldr	s1, [pc, #-120]	@ 8014b70 <WheelSpeedController_UpdateWithMode+0x53c>
+ 8014bea:	vldr	s0, [r7, #76]	@ 0x4c
+ 8014bee:	bl	8012cbe <WheelSpeedController_Clamp>
+ 8014bf2:	vstr	s0, [r7, #76]	@ 0x4c
+ 8014bf6:	vldr	s14, [r7, #84]	@ 0x54
+ 8014bfa:	vldr	s15, [r7, #44]	@ 0x2c
+ 8014bfe:	vadd.f32	s15, s14, s15
+ 8014c02:	vldr	s14, [r7, #76]	@ 0x4c
+ 8014c06:	vadd.f32	s15, s14, s15
+ 8014c0a:	vstr	s15, [r7, #72]	@ 0x48
+ 8014c0e:	vldr	s14, [r7, #72]	@ 0x48
+ 8014c12:	vldr	s15, [r7, #60]	@ 0x3c
+ 8014c16:	vcmpe.f32	s14, s15
+ 8014c1a:	vmrs	APSR_nzcv, fpscr
+ 8014c1e:	bgt.n	8014c32 <WheelSpeedController_UpdateWithMode+0x5fe>
+ 8014c20:	vldr	s14, [r7, #72]	@ 0x48
+ 8014c24:	vldr	s15, [r7, #64]	@ 0x40
+ 8014c28:	vcmpe.f32	s14, s15
+ 8014c2c:	vmrs	APSR_nzcv, fpscr
+ 8014c30:	bpl.n	8014c36 <WheelSpeedController_UpdateWithMode+0x602>
+ 8014c32:	movs	r3, #1
+ 8014c34:	b.n	8014c38 <WheelSpeedController_UpdateWithMode+0x604>
+ 8014c36:	movs	r3, #0
+ 8014c38:	strb.w	r3, [r7, #39]	@ 0x27
+ 8014c3c:	ldrb.w	r3, [r7, #39]	@ 0x27
+ 8014c40:	and.w	r3, r3, #1
+ 8014c44:	strb.w	r3, [r7, #39]	@ 0x27
+ 8014c48:	vldr	s14, [r7, #72]	@ 0x48
+ 8014c4c:	vldr	s15, [r7, #60]	@ 0x3c
+ 8014c50:	vcmpe.f32	s14, s15
+ 8014c54:	vmrs	APSR_nzcv, fpscr
+ 8014c58:	ble.n	8014c68 <WheelSpeedController_UpdateWithMode+0x634>
+ 8014c5a:	vldr	s15, [r7, #48]	@ 0x30
+ 8014c5e:	vcmpe.f32	s15, #0.0
+ 8014c62:	vmrs	APSR_nzcv, fpscr
+ 8014c66:	bgt.n	8014c88 <WheelSpeedController_UpdateWithMode+0x654>
+ 8014c68:	vldr	s14, [r7, #72]	@ 0x48
+ 8014c6c:	vldr	s15, [r7, #64]	@ 0x40
+ 8014c70:	vcmpe.f32	s14, s15
+ 8014c74:	vmrs	APSR_nzcv, fpscr
+ 8014c78:	bpl.n	8014ca4 <WheelSpeedController_UpdateWithMode+0x670>
+ 8014c7a:	vldr	s15, [r7, #48]	@ 0x30
+ 8014c7e:	vcmpe.f32	s15, #0.0
+ 8014c82:	vmrs	APSR_nzcv, fpscr
+ 8014c86:	bpl.n	8014ca4 <WheelSpeedController_UpdateWithMode+0x670>
+ 8014c88:	ldr	r3, [r7, #40]	@ 0x28
+ 8014c8a:	str	r3, [r7, #76]	@ 0x4c
+ 8014c8c:	vldr	s14, [r7, #84]	@ 0x54
+ 8014c90:	vldr	s15, [r7, #44]	@ 0x2c
+ 8014c94:	vadd.f32	s15, s14, s15
+ 8014c98:	vldr	s14, [r7, #76]	@ 0x4c
+ 8014c9c:	vadd.f32	s15, s14, s15
+ 8014ca0:	vstr	s15, [r7, #72]	@ 0x48
+ 8014ca4:	vldr	s2, [r7, #60]	@ 0x3c
+ 8014ca8:	vldr	s1, [r7, #64]	@ 0x40
+ 8014cac:	vldr	s0, [r7, #72]	@ 0x48
+ 8014cb0:	bl	8012cbe <WheelSpeedController_Clamp>
+ 8014cb4:	vstr	s0, [r7, #72]	@ 0x48
+ 8014cb8:	ldr	r3, [r7, #4]
+ 8014cba:	vmov	s15, r3
+ 8014cbe:	vcvt.f32.u32	s14, s15
+ 8014cc2:	vldr	s13, [pc, #-336]	@ 8014b74 <WheelSpeedController_UpdateWithMode+0x540>
+ 8014cc6:	vdiv.f32	s15, s14, s13
+ 8014cca:	vldr	s14, [pc, #-344]	@ 8014b74 <WheelSpeedController_UpdateWithMode+0x540>
+ 8014cce:	vmul.f32	s15, s15, s14
+ 8014cd2:	vstr	s15, [r7, #32]
+ 8014cd6:	ldrb	r3, [r7, #23]
+ 8014cd8:	ldr	r2, [pc, #396]	@ (8014e68 <WheelSpeedController_UpdateWithMode+0x834>)
+ 8014cda:	lsls	r3, r3, #2
+ 8014cdc:	add	r3, r2
+ 8014cde:	vldr	s14, [r3]
+ 8014ce2:	vldr	s15, [r7, #32]
+ 8014ce6:	vsub.f32	s13, s14, s15
+ 8014cea:	ldrb	r3, [r7, #23]
+ 8014cec:	ldr	r2, [pc, #376]	@ (8014e68 <WheelSpeedController_UpdateWithMode+0x834>)
+ 8014cee:	lsls	r3, r3, #2
+ 8014cf0:	add	r3, r2
+ 8014cf2:	vldr	s14, [r3]
+ 8014cf6:	vldr	s15, [r7, #32]
+ 8014cfa:	vadd.f32	s15, s14, s15
+ 8014cfe:	vmov.f32	s2, s15
+ 8014d02:	vmov.f32	s1, s13
+ 8014d06:	vldr	s0, [r7, #72]	@ 0x48
+ 8014d0a:	bl	8012cbe <WheelSpeedController_Clamp>
+ 8014d0e:	vstr	s0, [r7, #68]	@ 0x44
+ 8014d12:	vldr	s14, [r7, #68]	@ 0x44
+ 8014d16:	vldr	s15, [r7, #72]	@ 0x48
+ 8014d1a:	vcmp.f32	s14, s15
+ 8014d1e:	vmrs	APSR_nzcv, fpscr
+ 8014d22:	ite	ne
+ 8014d24:	movne	r3, #1
+ 8014d26:	moveq	r3, #0
+ 8014d28:	strb	r3, [r7, #31]
+ 8014d2a:	ldrb	r3, [r7, #31]
+ 8014d2c:	cmp	r3, #0
+ 8014d2e:	beq.n	8014de8 <WheelSpeedController_UpdateWithMode+0x7b4>
+ 8014d30:	ldrb	r3, [r7, #23]
+ 8014d32:	ldr	r2, [pc, #308]	@ (8014e68 <WheelSpeedController_UpdateWithMode+0x834>)
+ 8014d34:	lsls	r3, r3, #2
+ 8014d36:	add	r3, r2
+ 8014d38:	vldr	s15, [r3]
+ 8014d3c:	vldr	s14, [r7, #72]	@ 0x48
+ 8014d40:	vcmpe.f32	s14, s15
+ 8014d44:	vmrs	APSR_nzcv, fpscr
+ 8014d48:	ble.n	8014d58 <WheelSpeedController_UpdateWithMode+0x724>
+ 8014d4a:	vldr	s15, [r7, #48]	@ 0x30
+ 8014d4e:	vcmpe.f32	s15, #0.0
+ 8014d52:	vmrs	APSR_nzcv, fpscr
+ 8014d56:	bgt.n	8014d80 <WheelSpeedController_UpdateWithMode+0x74c>
+ 8014d58:	ldrb	r3, [r7, #23]
+ 8014d5a:	ldr	r2, [pc, #268]	@ (8014e68 <WheelSpeedController_UpdateWithMode+0x834>)
+ 8014d5c:	lsls	r3, r3, #2
+ 8014d5e:	add	r3, r2
+ 8014d60:	vldr	s15, [r3]
+ 8014d64:	vldr	s14, [r7, #72]	@ 0x48
+ 8014d68:	vcmpe.f32	s14, s15
+ 8014d6c:	vmrs	APSR_nzcv, fpscr
+ 8014d70:	bpl.n	8014de8 <WheelSpeedController_UpdateWithMode+0x7b4>
+ 8014d72:	vldr	s15, [r7, #48]	@ 0x30
+ 8014d76:	vcmpe.f32	s15, #0.0
+ 8014d7a:	vmrs	APSR_nzcv, fpscr
+ 8014d7e:	bpl.n	8014de8 <WheelSpeedController_UpdateWithMode+0x7b4>
+ 8014d80:	ldr	r3, [r7, #40]	@ 0x28
+ 8014d82:	str	r3, [r7, #76]	@ 0x4c
+ 8014d84:	vldr	s14, [r7, #84]	@ 0x54
+ 8014d88:	vldr	s15, [r7, #44]	@ 0x2c
+ 8014d8c:	vadd.f32	s14, s14, s15
+ 8014d90:	vldr	s15, [r7, #76]	@ 0x4c
+ 8014d94:	vadd.f32	s15, s14, s15
+ 8014d98:	vldr	s2, [r7, #60]	@ 0x3c
+ 8014d9c:	vldr	s1, [r7, #64]	@ 0x40
+ 8014da0:	vmov.f32	s0, s15
+ 8014da4:	bl	8012cbe <WheelSpeedController_Clamp>
+ 8014da8:	vstr	s0, [r7, #72]	@ 0x48
+ 8014dac:	ldrb	r3, [r7, #23]
+ 8014dae:	ldr	r2, [pc, #184]	@ (8014e68 <WheelSpeedController_UpdateWithMode+0x834>)
+ 8014db0:	lsls	r3, r3, #2
+ 8014db2:	add	r3, r2
+ 8014db4:	vldr	s14, [r3]
+ 8014db8:	vldr	s15, [r7, #32]
+ 8014dbc:	vsub.f32	s13, s14, s15
+ 8014dc0:	ldrb	r3, [r7, #23]
+ 8014dc2:	ldr	r2, [pc, #164]	@ (8014e68 <WheelSpeedController_UpdateWithMode+0x834>)
+ 8014dc4:	lsls	r3, r3, #2
+ 8014dc6:	add	r3, r2
+ 8014dc8:	vldr	s14, [r3]
+ 8014dcc:	vldr	s15, [r7, #32]
+ 8014dd0:	vadd.f32	s15, s14, s15
+ 8014dd4:	vmov.f32	s2, s15
+ 8014dd8:	vmov.f32	s1, s13
+ 8014ddc:	vldr	s0, [r7, #72]	@ 0x48
+ 8014de0:	bl	8012cbe <WheelSpeedController_Clamp>
+ 8014de4:	vstr	s0, [r7, #68]	@ 0x44
+ 8014de8:	ldr	r3, [r7, #56]	@ 0x38
+ 8014dea:	ldr	r2, [r7, #52]	@ 0x34
+ 8014dec:	str	r2, [r3, #0]
+ 8014dee:	ldr	r3, [r7, #56]	@ 0x38
+ 8014df0:	ldr	r2, [r7, #12]
+ 8014df2:	str	r2, [r3, #4]
+ 8014df4:	ldr	r3, [r7, #56]	@ 0x38
+ 8014df6:	ldr	r2, [r7, #48]	@ 0x30
+ 8014df8:	str	r2, [r3, #8]
+ 8014dfa:	ldr	r3, [r7, #56]	@ 0x38
+ 8014dfc:	ldr	r2, [r7, #84]	@ 0x54
+ 8014dfe:	str	r2, [r3, #12]
+ 8014e00:	ldr	r3, [r7, #56]	@ 0x38
+ 8014e02:	ldr	r2, [r7, #44]	@ 0x2c
+ 8014e04:	str	r2, [r3, #16]
+ 8014e06:	ldr	r3, [r7, #56]	@ 0x38
+ 8014e08:	ldr	r2, [r7, #76]	@ 0x4c
+ 8014e0a:	str	r2, [r3, #20]
+ 8014e0c:	vldr	s0, [r7, #68]	@ 0x44
+ 8014e10:	bl	8012d10 <WheelSpeedController_RoundToInt16>
+ 8014e14:	mov	r3, r0
+ 8014e16:	mov	r2, r3
+ 8014e18:	ldr	r3, [r7, #56]	@ 0x38
+ 8014e1a:	strh	r2, [r3, #24]
+ 8014e1c:	ldrb.w	r3, [r7, #39]	@ 0x27
+ 8014e20:	cmp	r3, #0
+ 8014e22:	bne.n	8014e2a <WheelSpeedController_UpdateWithMode+0x7f6>
+ 8014e24:	ldrb	r3, [r7, #31]
+ 8014e26:	cmp	r3, #0
+ 8014e28:	beq.n	8014e2e <WheelSpeedController_UpdateWithMode+0x7fa>
+ 8014e2a:	movs	r3, #1
+ 8014e2c:	b.n	8014e30 <WheelSpeedController_UpdateWithMode+0x7fc>
+ 8014e2e:	movs	r3, #0
+ 8014e30:	and.w	r3, r3, #1
+ 8014e34:	uxtb	r2, r3
+ 8014e36:	ldr	r3, [r7, #56]	@ 0x38
+ 8014e38:	strb	r2, [r3, #26]
+ 8014e3a:	ldrb	r3, [r7, #23]
+ 8014e3c:	ldr	r2, [pc, #40]	@ (8014e68 <WheelSpeedController_UpdateWithMode+0x834>)
+ 8014e3e:	lsls	r3, r3, #2
+ 8014e40:	add	r3, r2
+ 8014e42:	ldr	r2, [r7, #68]	@ 0x44
+ 8014e44:	str	r2, [r3, #0]
+ 8014e46:	ldrb	r3, [r7, #23]
+ 8014e48:	ldr	r2, [pc, #32]	@ (8014e6c <WheelSpeedController_UpdateWithMode+0x838>)
+ 8014e4a:	lsls	r3, r3, #2
+ 8014e4c:	add	r3, r2
+ 8014e4e:	ldr	r2, [r7, #52]	@ 0x34
+ 8014e50:	str	r2, [r3, #0]
+ 8014e52:	ldr	r3, [r7, #56]	@ 0x38
+ 8014e54:	ldrsh.w	r2, [r3, #24]
+ 8014e58:	ldr	r3, [r7, #0]
+ 8014e5a:	strh	r2, [r3, #0]
+ 8014e5c:	movs	r3, #1
+ 8014e5e:	mov	r0, r3
+ 8014e60:	adds	r7, #88	@ 0x58
+ 8014e62:	mov	sp, r7
+ 8014e64:	pop	{r7, pc}
+ 8014e66:	nop
+ 8014e68:	.word	0x2000b05c
+ 8014e6c:	.word	0x2000b06c

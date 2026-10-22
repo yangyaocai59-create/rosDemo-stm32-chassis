@@ -1,0 +1,65 @@
+CASE wheel=2 target=-160.0 feedback=0 dt=20ms
+t=20 pwm=-20 ff=-124.598 p=-8.000 i=0.000 load=45.000 recovery=0.000 recovering=0 exhausted=0 still_ms=20 faults=0
+t=40 pwm=-40 ff=-124.598 p=-8.000 i=0.000 load=45.000 recovery=0.000 recovering=0 exhausted=0 still_ms=40 faults=0
+t=60 pwm=-60 ff=-129.598 p=-8.000 i=0.000 load=45.000 recovery=5.000 recovering=1 exhausted=1 still_ms=60 faults=0
+t=100 pwm=-100 ff=-139.598 p=-8.000 i=0.000 load=45.000 recovery=15.000 recovering=1 exhausted=1 still_ms=60 faults=0
+t=200 pwm=-173 ff=-164.598 p=-8.000 i=0.000 load=45.000 recovery=40.000 recovering=1 exhausted=1 still_ms=60 faults=0
+t=300 pwm=-183 ff=-174.598 p=-8.000 i=0.000 load=45.000 recovery=50.000 recovering=1 exhausted=1 still_ms=60 faults=0
+t=360 pwm=-175 ff=-166.598 p=-8.000 i=0.000 load=45.000 recovery=42.000 recovering=0 exhausted=1 still_ms=60 faults=0
+t=500 pwm=-133 ff=-124.598 p=-8.000 i=0.000 load=45.000 recovery=0.000 recovering=0 exhausted=1 still_ms=60 faults=0
+t=1000 pwm=-133 ff=-124.598 p=-8.000 i=0.000 load=45.000 recovery=0.000 recovering=0 exhausted=1 still_ms=60 faults=0
+t=1800 pwm=-133 ff=-124.598 p=-8.000 i=0.000 load=45.000 recovery=0.000 recovering=0 exhausted=1 still_ms=60 faults=4
+t=6000 pwm=-133 ff=-124.598 p=-8.000 i=0.000 load=45.000 recovery=0.000 recovering=0 exhausted=1 still_ms=60 faults=4
+first_fault_ms=1500
+CASE wheel=2 target=-199.0 feedback=0 dt=20ms
+t=20 pwm=-20 ff=-130.156 p=-9.950 i=0.000 load=45.000 recovery=0.000 recovering=0 exhausted=0 still_ms=20 faults=0
+t=40 pwm=-40 ff=-130.156 p=-9.950 i=0.000 load=45.000 recovery=0.000 recovering=0 exhausted=0 still_ms=40 faults=0
+t=60 pwm=-60 ff=-135.156 p=-9.950 i=0.000 load=45.000 recovery=5.000 recovering=1 exhausted=1 still_ms=60 faults=0
+t=100 pwm=-100 ff=-145.156 p=-9.950 i=0.000 load=45.000 recovery=15.000 recovering=1 exhausted=1 still_ms=60 faults=0
+t=200 pwm=-180 ff=-170.156 p=-9.950 i=0.000 load=45.000 recovery=40.000 recovering=1 exhausted=1 still_ms=60 faults=0
+t=300 pwm=-190 ff=-180.156 p=-9.950 i=0.000 load=45.000 recovery=50.000 recovering=1 exhausted=1 still_ms=60 faults=0
+t=360 pwm=-182 ff=-172.156 p=-9.950 i=0.000 load=45.000 recovery=42.000 recovering=0 exhausted=1 still_ms=60 faults=0
+t=500 pwm=-140 ff=-130.156 p=-9.950 i=0.000 load=45.000 recovery=0.000 recovering=0 exhausted=1 still_ms=60 faults=0
+t=1000 pwm=-140 ff=-130.156 p=-9.950 i=0.000 load=45.000 recovery=0.000 recovering=0 exhausted=1 still_ms=60 faults=0
+t=1800 pwm=-140 ff=-130.156 p=-9.950 i=0.000 load=45.000 recovery=0.000 recovering=0 exhausted=1 still_ms=60 faults=4
+t=6000 pwm=-140 ff=-130.156 p=-9.950 i=0.000 load=45.000 recovery=0.000 recovering=0 exhausted=1 still_ms=60 faults=4
+first_fault_ms=1500
+CASE wheel=2 target=-200.0 feedback=0 dt=20ms
+t=20 pwm=-20 ff=-130.298 p=-10.000 i=0.000 load=45.000 recovery=0.000 recovering=0 exhausted=0 still_ms=20 faults=0
+t=40 pwm=-40 ff=-130.298 p=-10.000 i=0.000 load=45.000 recovery=0.000 recovering=0 exhausted=0 still_ms=40 faults=0
+t=60 pwm=-60 ff=-135.298 p=-10.000 i=0.000 load=45.000 recovery=5.000 recovering=1 exhausted=1 still_ms=60 faults=0
+t=100 pwm=-100 ff=-145.298 p=-10.000 i=0.000 load=45.000 recovery=15.000 recovering=1 exhausted=1 still_ms=60 faults=0
+t=200 pwm=-180 ff=-170.298 p=-10.000 i=0.000 load=45.000 recovery=40.000 recovering=1 exhausted=1 still_ms=60 faults=0
+t=300 pwm=-190 ff=-180.298 p=-10.000 i=0.000 load=45.000 recovery=50.000 recovering=1 exhausted=1 still_ms=60 faults=0
+t=360 pwm=-182 ff=-172.298 p=-10.000 i=0.000 load=45.000 recovery=42.000 recovering=0 exhausted=1 still_ms=60 faults=0
+t=500 pwm=-140 ff=-130.298 p=-10.000 i=0.000 load=45.000 recovery=0.000 recovering=0 exhausted=1 still_ms=60 faults=0
+t=1000 pwm=-140 ff=-130.298 p=-10.000 i=0.000 load=45.000 recovery=0.000 recovering=0 exhausted=1 still_ms=60 faults=0
+t=1800 pwm=-140 ff=-130.298 p=-10.000 i=0.000 load=45.000 recovery=0.000 recovering=0 exhausted=1 still_ms=60 faults=4
+t=6000 pwm=-140 ff=-130.298 p=-10.000 i=0.000 load=45.000 recovery=0.000 recovering=0 exhausted=1 still_ms=60 faults=4
+first_fault_ms=1500
+CASE wheel=2 target=-280.0 feedback=0 dt=20ms
+t=20 pwm=-20 ff=-141.697 p=-14.000 i=0.000 load=45.000 recovery=0.000 recovering=0 exhausted=0 still_ms=20 faults=0
+t=40 pwm=-40 ff=-141.697 p=-14.000 i=0.000 load=45.000 recovery=0.000 recovering=0 exhausted=0 still_ms=40 faults=0
+t=60 pwm=-60 ff=-146.697 p=-14.000 i=0.000 load=45.000 recovery=5.000 recovering=1 exhausted=1 still_ms=60 faults=0
+t=100 pwm=-100 ff=-156.697 p=-14.000 i=0.000 load=45.000 recovery=15.000 recovering=1 exhausted=1 still_ms=60 faults=0
+t=200 pwm=-196 ff=-181.697 p=-14.000 i=0.000 load=45.000 recovery=40.000 recovering=1 exhausted=1 still_ms=60 faults=0
+t=300 pwm=-206 ff=-191.697 p=-14.000 i=0.000 load=45.000 recovery=50.000 recovering=1 exhausted=1 still_ms=60 faults=0
+t=360 pwm=-198 ff=-183.697 p=-14.000 i=0.000 load=45.000 recovery=42.000 recovering=0 exhausted=1 still_ms=60 faults=0
+t=500 pwm=-156 ff=-141.697 p=-14.000 i=0.000 load=45.000 recovery=0.000 recovering=0 exhausted=1 still_ms=60 faults=0
+t=1000 pwm=-156 ff=-141.697 p=-14.000 i=0.000 load=45.000 recovery=0.000 recovering=0 exhausted=1 still_ms=60 faults=0
+t=1800 pwm=-156 ff=-141.697 p=-14.000 i=0.000 load=45.000 recovery=0.000 recovering=0 exhausted=1 still_ms=60 faults=4
+t=6000 pwm=-156 ff=-141.697 p=-14.000 i=0.000 load=45.000 recovery=0.000 recovering=0 exhausted=1 still_ms=60 faults=4
+first_fault_ms=1500
+CASE wheel=0 target=160.0 feedback=0 dt=20ms
+t=20 pwm=20 ff=135.160 p=8.000 i=0.000 load=60.000 recovery=0.000 recovering=0 exhausted=0 still_ms=20 faults=0
+t=40 pwm=40 ff=135.160 p=8.000 i=0.000 load=60.000 recovery=0.000 recovering=0 exhausted=0 still_ms=40 faults=0
+t=60 pwm=60 ff=140.160 p=8.000 i=0.000 load=60.000 recovery=5.000 recovering=1 exhausted=1 still_ms=60 faults=0
+t=100 pwm=100 ff=150.160 p=8.000 i=0.000 load=60.000 recovery=15.000 recovering=1 exhausted=1 still_ms=60 faults=0
+t=200 pwm=183 ff=175.160 p=8.000 i=0.000 load=60.000 recovery=40.000 recovering=1 exhausted=1 still_ms=60 faults=0
+t=300 pwm=193 ff=185.160 p=8.000 i=0.000 load=60.000 recovery=50.000 recovering=1 exhausted=1 still_ms=60 faults=0
+t=360 pwm=185 ff=177.160 p=8.000 i=0.000 load=60.000 recovery=42.000 recovering=0 exhausted=1 still_ms=60 faults=0
+t=500 pwm=143 ff=135.160 p=8.000 i=0.000 load=60.000 recovery=0.000 recovering=0 exhausted=1 still_ms=60 faults=0
+t=1000 pwm=143 ff=135.160 p=8.000 i=0.000 load=60.000 recovery=0.000 recovering=0 exhausted=1 still_ms=60 faults=0
+t=1800 pwm=143 ff=135.160 p=8.000 i=0.000 load=60.000 recovery=0.000 recovering=0 exhausted=1 still_ms=60 faults=4
+t=6000 pwm=143 ff=135.160 p=8.000 i=0.000 load=60.000 recovery=0.000 recovering=0 exhausted=1 still_ms=60 faults=4
+first_fault_ms=1500

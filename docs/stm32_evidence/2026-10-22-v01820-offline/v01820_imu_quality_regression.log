@@ -1,0 +1,23 @@
+PASS: production calibration guard, all four wheels, stale snapshots, active command/controller/diagnostic/fault/ESTOP/STBY rejection and tick wrap; no motor writes
+PASS: DRDY-only acquisition, ISR timestamp, stale caller clock, coalesced edges, read race, stale edge and missing INT timeout
+PASS: actual A/B storage cold restore, old MPU6050/profile/format/CRC rejection, sequence wrap, holes and full journals
+PASS: failures at all 10 Flash words, unlock and readback corruption preserve previous committed record; no erase API
+PASS: exact signed milli-RAW cold restore, integer v2 rejection, coarse view, bounds and all 10 torn-write positions
+PASS: actual 500-sample calibration, MPU6500 temperature, duplicate/motion/owner gates, cancel, old bias preservation and corrected units
+PASS: persistence blocks a concurrent calibration start; bias-range rejection and RAM-only bias on save failure preserve old Flash
+PASS: cold startup orchestration restores compatible bias without recalibration or additional Flash programming
+PASS: full-window wheel/interlock checks, invalid/recovery/read-error/missed/raced/gapped data abort, STD-only rejection and tick wrap
+PASS: Cancel/new Start during validation cannot append or commit the old calibration generation
+PASS: actual 500-sample fractional calibration, exact Flash/service reboot chain and zero modeled mean without zeroing slow rotation
+MPU6500 profile fingerprint=0x53974331; format=3 record_size=40 WHO/algorithm=0x0270 scale=1000
+Application/Sensors/imu_service.c:97:16: error: 'ImuService_AbsI32' defined but not used [-Werror=unused-function]
+   97 | static int32_t ImuService_AbsI32(int32_t value)
+      |                ^~~~~~~~~~~~~~~~~
+cc1.exe: all warnings being treated as errors
+MPU6500 native build failed
+At E:\DEMO\rosDemo\Tools\tests\run_mpu6500_polling_tests.ps1:14 char:32
++     if ($LASTEXITCODE -ne 0) { throw 'MPU6500 native build failed' }
++                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (MPU6500 native build failed:String) [], RuntimeException
+    + FullyQualifiedErrorId : MPU6500 native build failed
+ 

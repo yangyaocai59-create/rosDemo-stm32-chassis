@@ -1,0 +1,193 @@
+$ frozen .17 object
+
+$ prototype object
+
+$ isolation build
+
+$ isolation
+PASS: 80000 updates: RF/rear both modes, LF NORMAL/forward PIVOT bit-identical to frozen .17; reset/prime/bias/invalid dt included
+PASS: 40010 LF bidirectional PIVOT updates after confirmed motion bit-identical to frozen .17, including later stall/recovery/overspeed
+
+$ first_start build
+
+$ first_start
+PASS: LF reverse special extension: absolute 600ms maximum, no target-change reset, no retries at rest; late entry keeps old 300ms pulse; 1500ms failure retained, dt1..100ms
+PASS: confirmed movement or FIRST overspeed ends extension; later real stall uses original 300ms pulse, unchanged effort/slew/shared-I caps
+PASS: invalid dt/NaN preserve first-start state; sign/mode/low-target/zero/reset clear it; resetting RF cannot change LF startup state
+INFO: prototype private first-start state size=12 bytes; no public state layout change
+
+$ coordination build
+
+$ coordination
+PASS: both fronts load+transient rise <=250/s, fall <=400/s; existing individual caps, 50-permille shared I/recovery, PWM and slew bounds remain
+PASS: confirmed moving underspeed restores bounded load BEFORE near-rest without simultaneous positive I; band/opposite motion/opposing-I gates retained
+PASS: both fronts/directions, 20/40/160/280/1600 cps, dt1/10/20/25/59/60/100ms: sustained overspeed unloads fully; continuous rest still has finite failure
+
+$ motion_core build
+
+$ motion_core
+PASS: explicit front/direction pivot load table, zero and 1/20/80/160/280/1600 cps ramp/clamp, rear zero; NORMAL/legacy feedforward remains original, invalid lookup rejected
+PASS: stale caller/new heartbeat, true 250/251ms timeout, latch/clear and tick wrap
+PASS: bounded linear/angular startup, reversal crosses zero, invalid dt/NaN rejected
+PASS: all four production PI outputs obey slew across reversal/zero, immediate Reset and finite inputs
+PASS: all wheels/both directions conserve FF+I and PWM at assist release; bounded residual holds at equilibrium, unwinds with error, invalid inputs rejected
+PASS: four-wheel bidirectional pivot overspeed damping; unchanged startup/underspeed/normal gains, no reverse braking, slew/integral/output limits and invalid-mode guard
+PASS: no overdue catch-up loop, exact deadline/late slots, timing statistics and tick wrap
+
+$ runtime build
+
+$ runtime
+PASS: real runtime+controller/profile persistent 40mm/s, no re-enable/reset, bounded trace wrap/freeze/dump
+PASS: explicit STOP, zero, transport loss, exact 250ms timeout, health fault and ESTOP bypass ramp immediately
+PASS: STOP preempts stale IDLE/start, ACTIVE step, timing fault and safety snapshot; no restart or replacement fault
+PASS: compact safety snapshot preserves active/fault, NULL validation and nested timing-fault shutdown
+PASS: real >100ms control timing fault still disables output; source/profile tick wrap works
+PASS: production pivot release conserves FF+I through integral clamp; equilibrium has no recurring release step; reversal/STOP/straight restart/250ms timeout clear maneuver state
+PASS: real chassis selects damping in pivot and baseline gains for rolling turn; no profile leaks across mode switch
+PASS: rear-only restart top-up accounts for integral/retained bias, bounded 80ms/40ms escalation, both signs and tick wrap; rear first kick/mode exit/reversal/STOP/timeout preserved
+PASS: rear restart withdraws transient at 40ms after motion, no copy into I; bounded 4 permille/20ms decay; rear first kick keeps 300ms hold
+PASS: rear 49/50cps release and stationary-only increase boundaries; late update adds one step, no overdue catch-up, both signs/tick wrap
+PASS: restart-only assist decays to zero without integral transfer; 49cps pause, rearm without stacking, actual-dt decay, both signs/wrap; legacy steady support retained
+PASS: real chassis front support uses one policy, bounded target ramps; sign/mode/STOP/tick-wrap clear state, normal FF and rear regression assertions retained
+PASS: active front recovery cannot survive STOP/zero/transport loss/health fault/ESTOP/exact 250ms timeout/timing fault/overspeed, including tick wrap
+PASS: partial front recovery-to-I handoff clears BOTH buckets on all eight safety shutdown paths, including tick wrap
+PASS: pending 40ms front load confirmation never delays STOP/zero/transport loss/health fault/ESTOP/exact 250ms timeout/timing fault/overspeed shutdown, including tick wrap
+
+$ front_pivot build
+
+$ front_pivot
+PASS: both fronts restore bounded moving load; opposing-I debt and recovery handoff conserve support; no duplicate positive I
+PASS: 60ms consecutive near-rest, 40ms moving rearm, 300ms timeout+finite fade, no repeated retries at rest, no boost on opposite motion
+PASS: 8000 adversarial target/feedback/dt steps obey load/transient/I/output/slew bounds; sign/mode/zero/reset and invalid inputs clear/preserve state correctly
+PASS: both fronts/signs at 20/40/160/199/200/280 cps and 1/10/20/100ms dt qualify failure at 1500ms, sticky until reset/sign/mode exit; real movement interrupts qualification
+
+$ front_handoff build
+
+$ front_handoff
+PASS: front handoff preserves positive steady I, conserves FF+I during bounded transfer, shares 50-permille authority, no last-transfer double integration
+PASS: inherited steady I and temporary support withdraw on sustained overspeed; unconfirmed movement fades; continuous rest still fails; both fronts/signs, variable dt
+
+$ load_confirmation build
+
+$ load_confirmation
+PASS: both fronts/signs at 20/40/160/280/1600 cps ignore 1..59ms load-withdrawal pulses while P damping and I unwind act immediately
+PASS: both fronts error-scaled load withdrawal reaches zero after 60ms confirmation, for 1/10/20/25/59/60/100ms steps
+PASS: separated 40ms excursions never accumulate; exact target+band resets qualification, moving underspeed retains original net integral correction
+PASS: transient recovery terminates and fades on FIRST overspeed sample, without waiting for load confirmation
+PASS: sign/mode/low-target/zero/Reset clear qualification; invalid dt never advances state
+
+$ recovery_safety build
+
+$ recovery_safety
+PASS: real front policy/fault manager/runtime trip on both fronts/directions at approximately 20/160/280 cps, including tick wrap; all outputs disabled, latch/reject/explicit clear/new command verified
+PASS: recovery before deadline, moving pivot, rear and NORMAL isolation; legacy 1000ms grace + 750ms stall detection preserved
+
+$ extended safety build
+
+$ extended safety
+PASS: LF extended 400ms first-start phase clears immediately on all 8 real runtime safety paths, including tick wrap; all four outputs disabled
+
+$ motor driver build
+
+$ motor driver
+PASS: 1000 same-direction updates write only nonzero CCR, no GPIO/STBY/zero pulses
+PASS: immediate GPIO coast despite active preload, >=2-tick reversal/re-enable guard, no wait
+PASS: guard tick wrap, ESTOP rejects output and clears STBY immediately
+
+$ unchanged USB tests
+PASS: 14 coherent production-transport snapshots; stale caller, IRQ interleavings, 50/51ms, tick wrap, DTR, deconfigure, queue flush
+PASS: 50 production parser STOP/GET_STATUS/restart cycles; 0x0150 preserved; real SOF 51ms/DTR/deconfigure stop; no automatic replay
+PASS: telemetry reserve, 15 FIFO + 3 retry + 1 in-flight; exact overflow accounting and FIFO order
+PASS: USBD_BUSY keeps frame queued for retry without false drop
+PASS: DTR flush removes FIFO/retry data but preserves in-flight buffer ownership
+PASS: SOF timeout guard, buffer ownership, deconfiguration and no queued replay
+PASS: full battery/IMU + preexisting burst + VELOCITY/STOP/GET_STATUS; ACKs/sequence/0x0150, zero drop
+PASS: near-full telemetry yields reserved replies and deferred fresh samples; no sequence consumption on deferral
+PASS: excessive stalled-host burst remains bounded, records real control drops and still executes STOP
+PASS: 50 production parser STOP/GET_STATUS/restart cycles; 0x0150 preserved; real SOF 51ms/DTR/deconfigure stop; no automatic replay
+PASS: signed RAW, scales, baseline, temperature, state/flags and 52-byte layout; legacy unchanged
+PASS: malformed selectors rejected; invalid bias zeroed; fresh calibration baseline and flags visible
+PASS: selector does not refresh motion command; RAW mode retains real SOF/DTR/deconfigure stops
+PASS: session expiry before/after parsing; RAW backpressure/STOP burst/sequence/0x0150; single snapshot per IMU frame
+PASS: RAW v2 exact signed milli-baseline/format/scale, coarse RAW v1 compatibility, precise SI and DTR fallback
+PASS: independent DRDY/USB clocks, 9/10/11 ms sample timestamps, SI/RAW and tick wrap; no artificial duplicate/skip
+PASS: immediate fault/calibration/recovery state, 100 ms stalled health, explicit query, TX retry cursor and source-count wrap
+PASS: pre-scheduler logging, task-local nesting, no USB UART/mutex wait, deferred original timestamp
+PASS: finite log queue, truncation, full/UART-failure accounting, mutex retry and ISR rejection
+PASS: permanent motor/safety/IMU producers are independent and never acquire UART/mutex
+
+$ baseline ARM object ONLY
+
+$ candidate ARM object ONLY
+
+$ ARM object size NOT firmware
+   text	   data	    bss	    dec	    hex	filename
+   5738	      0	    288	   6026	   178a	E:\DEMO\rosDemo\build\prototypes\lf_first_start_v1\baseline_arm.o
+   6418	      0	    300	   6718	   1a3e	E:\DEMO\rosDemo\build\prototypes\lf_first_start_v1\candidate_arm.o
+
+$ fixed recorded feedback command comparison
+{
+  "kind": "COMMAND_COMPARISON_ON_FIXED_RECORDED_FEEDBACK_NOT_A_PHYSICAL_PREDICTION",
+  "trials": {
+    "first": {
+      "source_sha256": "1da3a37a91397e31bf93f0110722edd9644e619fb54c4165796ab35662880f8d",
+      "baseline": {
+        "samples": 87,
+        "peak_pwm_abs": 183.0,
+        "peak_recovery_permille": 39.0,
+        "recovery_entry_ms": 547522,
+        "recovery_exit_ms": 547822,
+        "full_support_first_ms": null,
+        "full_support_frame_accounting_ms": 0,
+        "failure_ms": 549182,
+        "first_elapsed_at_exit": null,
+        "full_hold_at_exit": null
+      },
+      "prototype": {
+        "samples": 87,
+        "peak_pwm_abs": 209.0,
+        "peak_recovery_permille": 50.0,
+        "recovery_entry_ms": 547522,
+        "recovery_exit_ms": 548022,
+        "full_support_first_ms": 547922,
+        "full_support_frame_accounting_ms": 100,
+        "failure_ms": 549182,
+        "first_elapsed_at_exit": 560.0,
+        "full_hold_at_exit": 100.0
+      }
+    },
+    "repeat": {
+      "source_sha256": "6510782049fcf5288b589b653d43daed985764f4801e5153b56fd01e670cf02d",
+      "baseline": {
+        "samples": 86,
+        "peak_pwm_abs": 183.0,
+        "peak_recovery_permille": 27.0,
+        "recovery_entry_ms": 1285342,
+        "recovery_exit_ms": 1285642,
+        "full_support_first_ms": null,
+        "full_support_frame_accounting_ms": 0,
+        "failure_ms": 1286982,
+        "first_elapsed_at_exit": null,
+        "full_hold_at_exit": null
+      },
+      "prototype": {
+        "samples": 86,
+        "peak_pwm_abs": 209.0,
+        "peak_recovery_permille": 50.0,
+        "recovery_entry_ms": 1285342,
+        "recovery_exit_ms": 1285842,
+        "full_support_first_ms": 1285742,
+        "full_support_frame_accounting_ms": 100,
+        "failure_ms": 1286982,
+        "first_elapsed_at_exit": 560.0,
+        "full_hold_at_exit": 100.0
+      }
+    }
+  },
+  "limits": [
+    "The same feedback is forced into both controllers. Real feedback could differ.",
+    "Higher/longer commanded effort is intentional but not evidence the real wheel starts.",
+    "Failure time remains unchanged for these fixed inputs; no safety gate relaxed.",
+    "No serial, motion, production file modification, firmware link or flash."
+  ]
+}

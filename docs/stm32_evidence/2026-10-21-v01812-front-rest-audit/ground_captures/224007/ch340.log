@@ -1,0 +1,960 @@
+[0002212162] [INFO ] NONE test disarmed; all motor outputs disabled
+[0002212162] [DEBUG] USB SNAP STOP task=2212162 now=2212162 last=2212162 age=0 sof=2211181
+[0002212162] [DEBUG] USB SNAP cfg=1 mon=1 seen=1 alive=1 ctrl=1 dtr=1 open=1 events=1/0/19
+[0002212268] [INFO ] ENC L: LF raw=62936 d=0 total=-2600 dir=STOP | LR raw=4294963387 d=0 total=-3909 dir=STOP
+[0002212278] [INFO ] ENC R: RF raw=62724 d=0 total=2812 dir=STOP | RR raw=61662 d=0 total=3874 dir=STOP
+[0002212288] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002212297] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002212445] [INFO ] ENC L: LF raw=62936 d=0 total=-2600 dir=STOP | LR raw=4294963387 d=0 total=-3909 dir=STOP
+[0002212455] [INFO ] ENC R: RF raw=62724 d=0 total=2812 dir=STOP | RR raw=61662 d=0 total=3874 dir=STOP
+[0002212465] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002212474] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002212645] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1264/352
+[0002212655] [INFO ] ENC L: LF raw=62936 d=0 total=-2600 dir=STOP | LR raw=4294963387 d=0 total=-3909 dir=STOP
+[0002212666] [INFO ] ENC R: RF raw=62724 d=0 total=2812 dir=STOP | RR raw=61662 d=0 total=3874 dir=STOP
+[0002212675] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002212685] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002212695] [INFO ] IMU RAW: a=[170,74,8457] temp=2277 g=[-54,18,150] samples=221254 errors=0
+[0002212703] [INFO ] IMU SI: a_mmps2=[203,88,10123] w_mrads=[-14,4,39] temp_mC=27820 bias=0
+[0002212712] [INFO ] IMU QUALITY: epoch=1 drdy=221276 missed=0 race=0 timeout=0 cal=0 persist=0
+[0002212845] [INFO ] ENC L: LF raw=62936 d=0 total=-2600 dir=STOP | LR raw=4294963387 d=0 total=-3909 dir=STOP
+[0002212855] [INFO ] ENC R: RF raw=62724 d=0 total=2812 dir=STOP | RR raw=61662 d=0 total=3874 dir=STOP
+[0002212865] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002212875] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002213045] [INFO ] ENC L: LF raw=62936 d=0 total=-2600 dir=STOP | LR raw=4294963387 d=0 total=-3909 dir=STOP
+[0002213055] [INFO ] ENC R: RF raw=62724 d=0 total=2812 dir=STOP | RR raw=61662 d=0 total=3874 dir=STOP
+[0002213065] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002213075] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002213245] [INFO ] ENC L: LF raw=62936 d=0 total=-2600 dir=STOP | LR raw=4294963387 d=0 total=-3909 dir=STOP
+[0002213255] [INFO ] ENC R: RF raw=62724 d=0 total=2812 dir=STOP | RR raw=61662 d=0 total=3874 dir=STOP
+[0002213265] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002213275] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002213445] [INFO ] ENC L: LF raw=62936 d=0 total=-2600 dir=STOP | LR raw=4294963387 d=0 total=-3909 dir=STOP
+[0002213455] [INFO ] ENC R: RF raw=62724 d=0 total=2812 dir=STOP | RR raw=61662 d=0 total=3874 dir=STOP
+[0002213465] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002213474] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002213645] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1264/352
+[0002213655] [INFO ] ENC L: LF raw=62936 d=0 total=-2600 dir=STOP | LR raw=4294963387 d=0 total=-3909 dir=STOP
+[0002213666] [INFO ] ENC R: RF raw=62724 d=0 total=2812 dir=STOP | RR raw=61662 d=0 total=3874 dir=STOP
+[0002213675] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002213685] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002213694] [INFO ] IMU RAW: a=[175,67,8487] temp=2280 g=[-51,21,146] samples=221354 errors=0
+[0002213703] [INFO ] IMU SI: a_mmps2=[209,80,10159] w_mrads=[-13,5,38] temp_mC=27829 bias=0
+[0002213711] [INFO ] IMU QUALITY: epoch=1 drdy=221376 missed=0 race=0 timeout=0 cal=0 persist=0
+[0002213845] [INFO ] ENC L: LF raw=62936 d=0 total=-2600 dir=STOP | LR raw=4294963387 d=0 total=-3909 dir=STOP
+[0002213855] [INFO ] ENC R: RF raw=62724 d=0 total=2812 dir=STOP | RR raw=61662 d=0 total=3874 dir=STOP
+[0002213865] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002213875] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002214045] [INFO ] ENC L: LF raw=62936 d=0 total=-2600 dir=STOP | LR raw=4294963387 d=0 total=-3909 dir=STOP
+[0002214055] [INFO ] ENC R: RF raw=62724 d=0 total=2812 dir=STOP | RR raw=61662 d=0 total=3874 dir=STOP
+[0002214065] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002214075] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002214245] [INFO ] ENC L: LF raw=62936 d=0 total=-2600 dir=STOP | LR raw=4294963387 d=0 total=-3909 dir=STOP
+[0002214255] [INFO ] ENC R: RF raw=62724 d=0 total=2812 dir=STOP | RR raw=61662 d=0 total=3874 dir=STOP
+[0002214265] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002214275] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002214445] [INFO ] ENC L: LF raw=62936 d=0 total=-2600 dir=STOP | LR raw=4294963387 d=0 total=-3909 dir=STOP
+[0002214455] [INFO ] ENC R: RF raw=62724 d=0 total=2812 dir=STOP | RR raw=61662 d=0 total=3874 dir=STOP
+[0002214465] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002214475] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002214645] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1264/352
+[0002214655] [INFO ] ENC L: LF raw=62936 d=0 total=-2600 dir=STOP | LR raw=4294963387 d=0 total=-3909 dir=STOP
+[0002214666] [INFO ] ENC R: RF raw=62724 d=0 total=2812 dir=STOP | RR raw=61662 d=0 total=3874 dir=STOP
+[0002214675] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002214685] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002214694] [INFO ] IMU RAW: a=[164,71,8471] temp=2283 g=[-59,20,145] samples=221454 errors=0
+[0002214703] [INFO ] IMU SI: a_mmps2=[196,84,10140] w_mrads=[-15,5,38] temp_mC=27837 bias=0
+[0002214711] [INFO ] IMU QUALITY: epoch=1 drdy=221476 missed=0 race=0 timeout=0 cal=0 persist=0
+[0002214845] [INFO ] ENC L: LF raw=62936 d=0 total=-2600 dir=STOP | LR raw=4294963387 d=0 total=-3909 dir=STOP
+[0002214855] [INFO ] ENC R: RF raw=62724 d=0 total=2812 dir=STOP | RR raw=61662 d=0 total=3874 dir=STOP
+[0002214865] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002214874] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002215045] [INFO ] ENC L: LF raw=62936 d=0 total=-2600 dir=STOP | LR raw=4294963387 d=0 total=-3909 dir=STOP
+[0002215055] [INFO ] ENC R: RF raw=62724 d=0 total=2812 dir=STOP | RR raw=61662 d=0 total=3874 dir=STOP
+[0002215065] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002215074] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002215245] [INFO ] ENC L: LF raw=62936 d=0 total=-2600 dir=STOP | LR raw=4294963387 d=0 total=-3909 dir=STOP
+[0002215255] [INFO ] ENC R: RF raw=62724 d=0 total=2812 dir=STOP | RR raw=61662 d=0 total=3874 dir=STOP
+[0002215265] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002215274] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002215445] [INFO ] ENC L: LF raw=62936 d=0 total=-2600 dir=STOP | LR raw=4294963387 d=0 total=-3909 dir=STOP
+[0002215455] [INFO ] ENC R: RF raw=62724 d=0 total=2812 dir=STOP | RR raw=61662 d=0 total=3874 dir=STOP
+[0002215465] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002215475] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002215645] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1264/352
+[0002215655] [INFO ] ENC L: LF raw=62936 d=0 total=-2600 dir=STOP | LR raw=4294963387 d=0 total=-3909 dir=STOP
+[0002215666] [INFO ] ENC R: RF raw=62724 d=0 total=2812 dir=STOP | RR raw=61662 d=0 total=3874 dir=STOP
+[0002215675] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002215685] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002215695] [INFO ] IMU RAW: a=[167,76,8465] temp=2277 g=[-51,21,150] samples=221554 errors=0
+[0002215703] [INFO ] IMU SI: a_mmps2=[199,90,10133] w_mrads=[-13,5,39] temp_mC=27820 bias=0
+[0002215712] [INFO ] IMU QUALITY: epoch=1 drdy=221576 missed=0 race=0 timeout=0 cal=0 persist=0
+[0002215845] [INFO ] ENC L: LF raw=62936 d=0 total=-2600 dir=STOP | LR raw=4294963387 d=0 total=-3909 dir=STOP
+[0002215855] [INFO ] ENC R: RF raw=62724 d=0 total=2812 dir=STOP | RR raw=61662 d=0 total=3874 dir=STOP
+[0002215865] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002215874] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002216045] [INFO ] ENC L: LF raw=62936 d=0 total=-2600 dir=STOP | LR raw=4294963387 d=0 total=-3909 dir=STOP
+[0002216055] [INFO ] ENC R: RF raw=62724 d=0 total=2812 dir=STOP | RR raw=61662 d=0 total=3874 dir=STOP
+[0002216065] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002216074] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+HOST_PHASE RIGHT_motion
+[0002216182] [INFO ] Chassis runtime IDLE -> ACTIVE: vx=0mm/s wz=-350mrad/s
+[0002216252] [INFO ] ENC L: LF raw=62936 d=0 total=-2600 dir=STOP | LR raw=4294963388 d=1 total=-3908 dir=POS
+[0002216263] [INFO ] ENC R: RF raw=62724 d=0 total=2812 dir=STOP | RR raw=61662 d=0 total=3874 dir=STOP
+[0002216272] [INFO ] SPD L: LF dc=1 cps=14 rpm_x10=5 mmps=1 stop=0 | LR dc=1 cps=24 rpm_x10=9 mmps=3 stop=0
+[0002216282] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002216445] [INFO ] ENC L: LF raw=62962 d=4 total=-2574 dir=POS | LR raw=4294963438 d=8 total=-3858 dir=POS
+[0002216455] [INFO ] ENC R: RF raw=62755 d=-5 total=2781 dir=NEG | RR raw=61731 d=-11 total=3805 dir=NEG
+[0002216465] [INFO ] SPD L: LF dc=2 cps=121 rpm_x10=46 mmps=15 stop=0 | LR dc=7 cps=333 rpm_x10=128 mmps=43 stop=0
+[0002216475] [INFO ] SPD R: RF dc=-4 cps=-198 rpm_x10=-76 mmps=-25 stop=0 | RR dc=-10 cps=-465 rpm_x10=-179 mmps=-60 stop=0
+[0002216645] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1264/352
+[0002216655] [INFO ] ENC L: LF raw=62989 d=2 total=-2547 dir=POS | LR raw=4294963497 d=7 total=-3799 dir=POS
+[0002216666] [INFO ] ENC R: RF raw=62793 d=-4 total=2743 dir=NEG | RR raw=61823 d=-8 total=3713 dir=NEG
+[0002216675] [INFO ] SPD L: LF dc=2 cps=122 rpm_x10=47 mmps=16 stop=0 | LR dc=7 cps=305 rpm_x10=117 mmps=40 stop=0
+[0002216686] [INFO ] SPD R: RF dc=-2 cps=-152 rpm_x10=-58 mmps=-19 stop=0 | RR dc=-9 cps=-438 rpm_x10=-168 mmps=-57 stop=0
+[0002216697] [INFO ] IMU RAW: a=[127,336,8306] temp=2284 g=[-47,24,-595] samples=221655 errors=0
+[0002216706] [INFO ] IMU SI: a_mmps2=[152,402,9943] w_mrads=[-12,6,-158] temp_mC=27840 bias=0
+[0002216715] [INFO ] IMU QUALITY: epoch=1 drdy=221677 missed=0 race=0 timeout=0 cal=0 persist=0
+[0002216845] [INFO ] ENC L: LF raw=63027 d=4 total=-2509 dir=POS | LR raw=4294963581 d=8 total=-3715 dir=POS
+[0002216855] [INFO ] ENC R: RF raw=62825 d=-3 total=2711 dir=NEG | RR raw=61907 d=-9 total=3629 dir=NEG
+[0002216865] [INFO ] SPD L: LF dc=4 cps=197 rpm_x10=75 mmps=25 stop=0 | LR dc=7 cps=393 rpm_x10=151 mmps=51 stop=0
+[0002216875] [INFO ] SPD R: RF dc=-5 cps=-194 rpm_x10=-74 mmps=-25 stop=0 | RR dc=-8 cps=-416 rpm_x10=-160 mmps=-54 stop=0
+[0002217045] [INFO ] ENC L: LF raw=63065 d=5 total=-2471 dir=POS | LR raw=4294963656 d=7 total=-3640 dir=POS
+[0002217055] [INFO ] ENC R: RF raw=62871 d=-5 total=2665 dir=NEG | RR raw=61988 d=-8 total=3548 dir=NEG
+[0002217065] [INFO ] SPD L: LF dc=3 cps=184 rpm_x10=71 mmps=24 stop=0 | LR dc=8 cps=378 rpm_x10=145 mmps=49 stop=0
+[0002217075] [INFO ] SPD R: RF dc=-5 cps=-242 rpm_x10=-93 mmps=-31 stop=0 | RR dc=-8 cps=-401 rpm_x10=-154 mmps=-52 stop=0
+[0002217134] [INFO ] BAT: raw=1174 filtered=1186 adc=956mV supply=10516mV state=MONITOR_ONLY samples=22171 errors=0
+[0002217245] [INFO ] ENC L: LF raw=63104 d=3 total=-2432 dir=POS | LR raw=4294963732 d=7 total=-3564 dir=POS
+[0002217255] [INFO ] ENC R: RF raw=62920 d=-5 total=2616 dir=NEG | RR raw=62067 d=-8 total=3469 dir=NEG
+[0002217265] [INFO ] SPD L: LF dc=5 cps=206 rpm_x10=79 mmps=27 stop=0 | LR dc=7 cps=361 rpm_x10=139 mmps=47 stop=0
+[0002217275] [INFO ] SPD R: RF dc=-5 cps=-247 rpm_x10=-95 mmps=-32 stop=0 | RR dc=-8 cps=-392 rpm_x10=-151 mmps=-51 stop=0
+[0002217445] [INFO ] ENC L: LF raw=63151 d=6 total=-2385 dir=POS | LR raw=4294963800 d=7 total=-3496 dir=POS
+[0002217455] [INFO ] ENC R: RF raw=62969 d=-6 total=2567 dir=NEG | RR raw=62141 d=-8 total=3395 dir=NEG
+[0002217465] [INFO ] SPD L: LF dc=6 cps=272 rpm_x10=104 mmps=35 stop=0 | LR dc=7 cps=338 rpm_x10=130 mmps=44 stop=0
+[0002217475] [INFO ] SPD R: RF dc=-5 cps=-266 rpm_x10=-102 mmps=-34 stop=0 | RR dc=-7 cps=-364 rpm_x10=-140 mmps=-47 stop=0
+[0002217645] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1264/352
+[0002217655] [INFO ] ENC L: LF raw=63197 d=3 total=-2339 dir=POS | LR raw=4294963875 d=7 total=-3421 dir=POS
+[0002217666] [INFO ] ENC R: RF raw=63022 d=-4 total=2514 dir=NEG | RR raw=62213 d=-6 total=3323 dir=NEG
+[0002217675] [INFO ] SPD L: LF dc=3 cps=180 rpm_x10=69 mmps=23 stop=0 | LR dc=7 cps=365 rpm_x10=140 mmps=47 stop=0
+[0002217686] [INFO ] SPD R: RF dc=-5 cps=-239 rpm_x10=-92 mmps=-31 stop=0 | RR dc=-6 cps=-333 rpm_x10=-128 mmps=-43 stop=0
+[0002217697] [INFO ] IMU RAW: a=[358,99,8373] temp=2282 g=[-60,37,-565] samples=221755 errors=0
+[0002217706] [INFO ] IMU SI: a_mmps2=[428,118,10023] w_mrads=[-15,9,-150] temp_mC=27834 bias=0
+[0002217715] [INFO ] IMU QUALITY: epoch=1 drdy=221777 missed=0 race=0 timeout=0 cal=0 persist=0
+[0002217845] [INFO ] ENC L: LF raw=63234 d=4 total=-2302 dir=POS | LR raw=4294963943 d=7 total=-3353 dir=POS
+[0002217855] [INFO ] ENC R: RF raw=63086 d=-7 total=2450 dir=NEG | RR raw=62278 d=-7 total=3258 dir=NEG
+[0002217865] [INFO ] SPD L: LF dc=5 cps=217 rpm_x10=83 mmps=28 stop=0 | LR dc=8 cps=364 rpm_x10=140 mmps=47 stop=0
+[0002217875] [INFO ] SPD R: RF dc=-6 cps=-339 rpm_x10=-130 mmps=-44 stop=0 | RR dc=-6 cps=-317 rpm_x10=-121 mmps=-41 stop=0
+[0002218045] [INFO ] ENC L: LF raw=63287 d=5 total=-2249 dir=POS | LR raw=4294964021 d=7 total=-3275 dir=POS
+[0002218055] [INFO ] ENC R: RF raw=63131 d=-4 total=2405 dir=NEG | RR raw=62340 d=-6 total=3196 dir=NEG
+[0002218065] [INFO ] SPD L: LF dc=6 cps=276 rpm_x10=106 mmps=36 stop=0 | LR dc=7 cps=361 rpm_x10=138 mmps=47 stop=0
+[0002218075] [INFO ] SPD R: RF dc=-4 cps=-216 rpm_x10=-83 mmps=-28 stop=0 | RR dc=-7 cps=-314 rpm_x10=-121 mmps=-41 stop=0
+[0002218245] [INFO ] ENC L: LF raw=63338 d=5 total=-2198 dir=POS | LR raw=4294964090 d=7 total=-3206 dir=POS
+[0002218255] [INFO ] ENC R: RF raw=63182 d=-5 total=2354 dir=NEG | RR raw=62402 d=-6 total=3134 dir=NEG
+[0002218265] [INFO ] SPD L: LF dc=6 cps=263 rpm_x10=101 mmps=34 stop=0 | LR dc=7 cps=348 rpm_x10=134 mmps=45 stop=0
+[0002218275] [INFO ] SPD R: RF dc=-5 cps=-257 rpm_x10=-99 mmps=-33 stop=0 | RR dc=-6 cps=-303 rpm_x10=-116 mmps=-39 stop=0
+[0002218445] [INFO ] ENC L: LF raw=63393 d=6 total=-2143 dir=POS | LR raw=4294964160 d=7 total=-3136 dir=POS
+[0002218455] [INFO ] ENC R: RF raw=63203 d=0 total=2333 dir=STOP | RR raw=62467 d=-7 total=3069 dir=NEG
+[0002218465] [INFO ] SPD L: LF dc=6 cps=281 rpm_x10=108 mmps=36 stop=0 | LR dc=6 cps=334 rpm_x10=128 mmps=43 stop=0
+[0002218475] [INFO ] SPD R: RF dc=0 cps=-28 rpm_x10=-11 mmps=-3 stop=0 | RR dc=-5 cps=-304 rpm_x10=-117 mmps=-39 stop=0
+[0002218645] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1264/352
+[0002218655] [INFO ] ENC L: LF raw=63450 d=7 total=-2086 dir=POS | LR raw=4294964228 d=7 total=-3068 dir=POS
+[0002218666] [INFO ] ENC R: RF raw=63235 d=-7 total=2301 dir=NEG | RR raw=62529 d=-7 total=3007 dir=NEG
+[0002218675] [INFO ] SPD L: LF dc=7 cps=315 rpm_x10=121 mmps=41 stop=0 | LR dc=6 cps=327 rpm_x10=125 mmps=42 stop=0
+[0002218686] [INFO ] SPD R: RF dc=-7 cps=-282 rpm_x10=-108 mmps=-36 stop=0 | RR dc=-6 cps=-320 rpm_x10=-123 mmps=-41 stop=0
+[0002218697] [INFO ] IMU RAW: a=[88,-101,8056] temp=2280 g=[-70,7,-613] samples=221855 errors=0
+[0002218706] [INFO ] IMU SI: a_mmps2=[105,-120,9643] w_mrads=[-18,1,-163] temp_mC=27829 bias=0
+[0002218715] [INFO ] IMU QUALITY: epoch=1 drdy=221877 missed=0 race=0 timeout=0 cal=0 persist=0
+[0002218845] [INFO ] ENC L: LF raw=63507 d=4 total=-2029 dir=POS | LR raw=4294964290 d=7 total=-3006 dir=POS
+[0002218855] [INFO ] ENC R: RF raw=63299 d=-5 total=2237 dir=NEG | RR raw=62590 d=-6 total=2946 dir=NEG
+[0002218865] [INFO ] SPD L: LF dc=4 cps=227 rpm_x10=87 mmps=29 stop=0 | LR dc=6 cps=309 rpm_x10=118 mmps=40 stop=0
+[0002218875] [INFO ] SPD R: RF dc=-4 cps=-252 rpm_x10=-96 mmps=-32 stop=0 | RR dc=-6 cps=-302 rpm_x10=-116 mmps=-39 stop=0
+[0002219045] [INFO ] ENC L: LF raw=63544 d=3 total=-1992 dir=POS | LR raw=4294964348 d=5 total=-2948 dir=POS
+[0002219055] [INFO ] ENC R: RF raw=63334 d=-1 total=2202 dir=NEG | RR raw=62652 d=-6 total=2884 dir=NEG
+[0002219065] [INFO ] SPD L: LF dc=3 cps=169 rpm_x10=65 mmps=22 stop=0 | LR dc=6 cps=288 rpm_x10=110 mmps=37 stop=0
+[0002219075] [INFO ] SPD R: RF dc=-3 cps=-135 rpm_x10=-52 mmps=-17 stop=0 | RR dc=-6 cps=-306 rpm_x10=-117 mmps=-40 stop=0
+[0002219245] [INFO ] ENC L: LF raw=63584 d=5 total=-1952 dir=POS | LR raw=4294964408 d=5 total=-2888 dir=POS
+[0002219255] [INFO ] ENC R: RF raw=63352 d=-2 total=2184 dir=NEG | RR raw=62714 d=-7 total=2822 dir=NEG
+[0002219265] [INFO ] SPD L: LF dc=3 cps=195 rpm_x10=75 mmps=25 stop=0 | LR dc=6 cps=294 rpm_x10=113 mmps=38 stop=0
+[0002219275] [INFO ] SPD R: RF dc=-4 cps=-128 rpm_x10=-49 mmps=-16 stop=0 | RR dc=-7 cps=-325 rpm_x10=-125 mmps=-42 stop=0
+[0002219445] [INFO ] ENC L: LF raw=63620 d=5 total=-1916 dir=POS | LR raw=4294964458 d=5 total=-2838 dir=POS
+[0002219455] [INFO ] ENC R: RF raw=63394 d=-4 total=2142 dir=NEG | RR raw=62746 d=-1 total=2790 dir=NEG
+[0002219465] [INFO ] SPD L: LF dc=3 cps=180 rpm_x10=69 mmps=23 stop=0 | LR dc=5 cps=239 rpm_x10=92 mmps=31 stop=0
+[0002219475] [INFO ] SPD R: RF dc=-5 cps=-224 rpm_x10=-86 mmps=-29 stop=0 | RR dc=-3 cps=-125 rpm_x10=-48 mmps=-16 stop=0
+[0002219645] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1264/352
+[0002219655] [INFO ] ENC L: LF raw=63648 d=2 total=-1888 dir=POS | LR raw=4294964505 d=5 total=-2791 dir=POS
+[0002219666] [INFO ] ENC R: RF raw=63434 d=-5 total=2102 dir=NEG | RR raw=62801 d=-9 total=2735 dir=NEG
+[0002219675] [INFO ] SPD L: LF dc=2 cps=110 rpm_x10=42 mmps=14 stop=0 | LR dc=4 cps=229 rpm_x10=88 mmps=30 stop=0
+[0002219686] [INFO ] SPD R: RF dc=-4 cps=-207 rpm_x10=-79 mmps=-27 stop=0 | RR dc=-9 cps=-372 rpm_x10=-143 mmps=-48 stop=0
+[0002219697] [INFO ] IMU RAW: a=[220,58,8466] temp=2283 g=[-58,27,-561] samples=221955 errors=0
+[0002219706] [INFO ] IMU SI: a_mmps2=[263,69,10134] w_mrads=[-15,7,-149] temp_mC=27837 bias=0
+[0002219714] [INFO ] IMU QUALITY: epoch=1 drdy=221977 missed=0 race=0 timeout=0 cal=0 persist=0
+[0002219845] [INFO ] ENC L: LF raw=63676 d=3 total=-1860 dir=POS | LR raw=4294964563 d=7 total=-2733 dir=POS
+[0002219855] [INFO ] ENC R: RF raw=63473 d=-4 total=2063 dir=NEG | RR raw=62873 d=-7 total=2663 dir=NEG
+[0002219865] [INFO ] SPD L: LF dc=5 cps=185 rpm_x10=71 mmps=24 stop=0 | LR dc=6 cps=306 rpm_x10=118 mmps=40 stop=0
+[0002219875] [INFO ] SPD R: RF dc=-3 cps=-178 rpm_x10=-68 mmps=-23 stop=0 | RR dc=-6 cps=-332 rpm_x10=-127 mmps=-43 stop=0
+[0002220045] [INFO ] ENC L: LF raw=63733 d=6 total=-1803 dir=POS | LR raw=4294964622 d=6 total=-2674 dir=POS
+[0002220055] [INFO ] ENC R: RF raw=63502 d=-3 total=2034 dir=NEG | RR raw=62936 d=-6 total=2600 dir=NEG
+[0002220065] [INFO ] SPD L: LF dc=5 cps=288 rpm_x10=110 mmps=37 stop=0 | LR dc=5 cps=278 rpm_x10=107 mmps=36 stop=0
+[0002220075] [INFO ] SPD R: RF dc=-3 cps=-137 rpm_x10=-52 mmps=-17 stop=0 | RR dc=-6 cps=-313 rpm_x10=-120 mmps=-40 stop=0
+[0002220245] [INFO ] ENC L: LF raw=63793 d=6 total=-1743 dir=POS | LR raw=4294964678 d=5 total=-2618 dir=POS
+[0002220255] [INFO ] ENC R: RF raw=63522 d=0 total=2014 dir=STOP | RR raw=63000 d=-6 total=2536 dir=NEG
+[0002220265] [INFO ] SPD L: LF dc=5 cps=289 rpm_x10=111 mmps=37 stop=0 | LR dc=5 cps=267 rpm_x10=102 mmps=35 stop=0
+[0002220275] [INFO ] SPD R: RF dc=0 cps=-39 rpm_x10=-15 mmps=-5 stop=0 | RR dc=-6 cps=-310 rpm_x10=-119 mmps=-40 stop=0
+[0002220445] [INFO ] ENC L: LF raw=63852 d=5 total=-1684 dir=POS | LR raw=4294964742 d=7 total=-2554 dir=POS
+[0002220455] [INFO ] ENC R: RF raw=63522 d=0 total=2014 dir=STOP | RR raw=63060 d=-6 total=2476 dir=NEG
+[0002220465] [INFO ] SPD L: LF dc=5 cps=275 rpm_x10=106 mmps=36 stop=0 | LR dc=7 cps=331 rpm_x10=127 mmps=43 stop=0
+[0002220475] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=-6 cps=-300 rpm_x10=-115 mmps=-39 stop=0
+[0002220645] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1264/352
+[0002220655] [INFO ] ENC L: LF raw=63906 d=5 total=-1630 dir=POS | LR raw=4294964805 d=6 total=-2491 dir=POS
+[0002220666] [INFO ] ENC R: RF raw=63523 d=0 total=2013 dir=STOP | RR raw=63120 d=-6 total=2416 dir=NEG
+[0002220675] [INFO ] SPD L: LF dc=6 cps=269 rpm_x10=103 mmps=35 stop=0 | LR dc=7 cps=321 rpm_x10=123 mmps=42 stop=0
+[0002220686] [INFO ] SPD R: RF dc=-1 cps=-21 rpm_x10=-8 mmps=-2 stop=0 | RR dc=-6 cps=-297 rpm_x10=-114 mmps=-38 stop=0
+[0002220697] [INFO ] IMU RAW: a=[-227,-43,8526] temp=2273 g=[-34,42,-623] samples=222055 errors=0
+[0002220705] [INFO ] IMU SI: a_mmps2=[-271,-51,10206] w_mrads=[-9,11,-166] temp_mC=27808 bias=0
+[0002220714] [INFO ] IMU QUALITY: epoch=1 drdy=222077 missed=0 race=0 timeout=0 cal=0 persist=0
+[0002220845] [INFO ] ENC L: LF raw=63966 d=7 total=-1570 dir=POS | LR raw=4294964870 d=5 total=-2426 dir=POS
+[0002220855] [INFO ] ENC R: RF raw=63541 d=-1 total=1995 dir=NEG | RR raw=63187 d=-6 total=2349 dir=NEG
+[0002220865] [INFO ] SPD L: LF dc=8 cps=341 rpm_x10=131 mmps=44 stop=0 | LR dc=5 cps=288 rpm_x10=111 mmps=37 stop=0
+[0002220876] [INFO ] SPD R: RF dc=0 cps=-57 rpm_x10=-22 mmps=-7 stop=0 | RR dc=-6 cps=-324 rpm_x10=-124 mmps=-42 stop=0
+[0002221045] [INFO ] ENC L: LF raw=64017 d=5 total=-1519 dir=POS | LR raw=4294964917 d=5 total=-2379 dir=POS
+[0002221055] [INFO ] ENC R: RF raw=63541 d=0 total=1995 dir=STOP | RR raw=63248 d=-6 total=2288 dir=NEG
+[0002221065] [INFO ] SPD L: LF dc=6 cps=249 rpm_x10=95 mmps=32 stop=0 | LR dc=6 cps=260 rpm_x10=100 mmps=34 stop=0
+[0002221076] [INFO ] SPD R: RF dc=-1 cps=-14 rpm_x10=-5 mmps=-1 stop=0 | RR dc=-5 cps=-288 rpm_x10=-111 mmps=-37 stop=0
+[0002221245] [INFO ] ENC L: LF raw=64064 d=2 total=-1472 dir=POS | LR raw=4294964963 d=4 total=-2333 dir=POS
+[0002221255] [INFO ] ENC R: RF raw=63595 d=-8 total=1941 dir=NEG | RR raw=63316 d=-7 total=2220 dir=NEG
+[0002221265] [INFO ] SPD L: LF dc=2 cps=170 rpm_x10=65 mmps=22 stop=0 | LR dc=4 cps=205 rpm_x10=79 mmps=26 stop=0
+[0002221275] [INFO ] SPD R: RF dc=-6 cps=-324 rpm_x10=-124 mmps=-42 stop=0 | RR dc=-7 cps=-351 rpm_x10=-135 mmps=-46 stop=0
+[0002221445] [INFO ] ENC L: LF raw=64090 d=3 total=-1446 dir=POS | LR raw=4294965001 d=5 total=-2295 dir=POS
+[0002221455] [INFO ] ENC R: RF raw=63619 d=0 total=1917 dir=STOP | RR raw=63371 d=-4 total=2165 dir=NEG
+[0002221465] [INFO ] SPD L: LF dc=4 cps=162 rpm_x10=62 mmps=21 stop=0 | LR dc=4 cps=200 rpm_x10=76 mmps=26 stop=0
+[0002221476] [INFO ] SPD R: RF dc=0 cps=-47 rpm_x10=-18 mmps=-6 stop=0 | RR dc=-5 cps=-248 rpm_x10=-95 mmps=-32 stop=0
+[0002221645] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1264/352
+[0002221655] [INFO ] ENC L: LF raw=64141 d=6 total=-1395 dir=POS | LR raw=4294965041 d=4 total=-2255 dir=POS
+[0002221666] [INFO ] ENC R: RF raw=63638 d=-2 total=1898 dir=NEG | RR raw=63424 d=-6 total=2112 dir=NEG
+[0002221676] [INFO ] SPD L: LF dc=5 cps=262 rpm_x10=100 mmps=34 stop=0 | LR dc=3 cps=166 rpm_x10=64 mmps=21 stop=0
+[0002221687] [INFO ] SPD R: RF dc=-5 cps=-162 rpm_x10=-62 mmps=-21 stop=0 | RR dc=-6 cps=-289 rpm_x10=-111 mmps=-37 stop=0
+[0002221698] [INFO ] IMU RAW: a=[555,58,8517] temp=2281 g=[-83,-24,-190] samples=222155 errors=0
+[0002221707] [INFO ] IMU SI: a_mmps2=[664,69,10195] w_mrads=[-22,-6,-50] temp_mC=27832 bias=0
+[0002221715] [INFO ] IMU QUALITY: epoch=1 drdy=222177 missed=0 race=0 timeout=0 cal=0 persist=0
+[0002221845] [INFO ] ENC L: LF raw=64202 d=6 total=-1334 dir=POS | LR raw=4294965090 d=8 total=-2206 dir=POS
+[0002221855] [INFO ] ENC R: RF raw=63676 d=-5 total=1860 dir=NEG | RR raw=63483 d=-5 total=2053 dir=NEG
+[0002221865] [INFO ] SPD L: LF dc=6 cps=309 rpm_x10=119 mmps=40 stop=0 | LR dc=8 cps=331 rpm_x10=127 mmps=43 stop=0
+[0002221876] [INFO ] SPD R: RF dc=-5 cps=-220 rpm_x10=-84 mmps=-28 stop=0 | RR dc=-6 cps=-282 rpm_x10=-108 mmps=-37 stop=0
+[0002222045] [INFO ] ENC L: LF raw=64241 d=3 total=-1295 dir=POS | LR raw=4294965150 d=6 total=-2146 dir=POS
+[0002222055] [INFO ] ENC R: RF raw=63723 d=-5 total=1813 dir=NEG | RR raw=63541 d=-6 total=1995 dir=NEG
+[0002222065] [INFO ] SPD L: LF dc=4 cps=175 rpm_x10=67 mmps=23 stop=0 | LR dc=6 cps=288 rpm_x10=110 mmps=37 stop=0
+[0002222075] [INFO ] SPD R: RF dc=-6 cps=-255 rpm_x10=-98 mmps=-33 stop=0 | RR dc=-6 cps=-295 rpm_x10=-113 mmps=-38 stop=0
+[0002222134] [INFO ] BAT: raw=1173 filtered=1175 adc=947mV supply=10417mV state=MONITOR_ONLY samples=22221 errors=0
+HOST_PHASE RIGHT_stopping
+[0002222174] [INFO ] Chassis runtime ACTIVE -> IDLE: explicit stop; motors disabled
+[0002222174] [INFO ] NONE test disarmed; all motor outputs disabled
+[0002222174] [DEBUG] USB SNAP STOP task=2222174 now=2222174 last=2222174 age=0 sof=2221171
+[0002222174] [DEBUG] USB SNAP cfg=1 mon=1 seen=1 alive=1 ctrl=1 dtr=1 open=1 events=1/0/19
+[0002222276] [INFO ] ENC L: LF raw=64260 d=0 total=-1276 dir=STOP | LR raw=4294965188 d=-1 total=-2108 dir=NEG
+[0002222286] [INFO ] ENC R: RF raw=63764 d=0 total=1772 dir=STOP | RR raw=63583 d=0 total=1953 dir=STOP
+[0002222295] [INFO ] SPD L: LF dc=0 cps=18 rpm_x10=7 mmps=2 stop=0 | LR dc=1 cps=42 rpm_x10=16 mmps=5 stop=0
+[0002222305] [INFO ] SPD R: RF dc=0 cps=-57 rpm_x10=-21 mmps=-7 stop=0 | RR dc=0 cps=-54 rpm_x10=-20 mmps=-7 stop=0
+[0002222445] [INFO ] ENC L: LF raw=64260 d=0 total=-1276 dir=STOP | LR raw=4294965189 d=0 total=-2107 dir=STOP
+[0002222455] [INFO ] ENC R: RF raw=63764 d=0 total=1772 dir=STOP | RR raw=63583 d=0 total=1953 dir=STOP
+[0002222465] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=2 rpm_x10=0 mmps=0 stop=0
+[0002222474] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002222645] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1264/352
+[0002222655] [INFO ] ENC L: LF raw=64260 d=0 total=-1276 dir=STOP | LR raw=4294965189 d=0 total=-2107 dir=STOP
+[0002222666] [INFO ] ENC R: RF raw=63764 d=0 total=1772 dir=STOP | RR raw=63583 d=0 total=1953 dir=STOP
+[0002222675] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002222685] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002222695] [INFO ] IMU RAW: a=[188,59,8477] temp=2282 g=[-54,22,145] samples=222254 errors=0
+[0002222703] [INFO ] IMU SI: a_mmps2=[225,70,10147] w_mrads=[-14,5,38] temp_mC=27834 bias=0
+[0002222712] [INFO ] IMU QUALITY: epoch=1 drdy=222276 missed=0 race=0 timeout=0 cal=0 persist=0
+[0002222845] [INFO ] ENC L: LF raw=64260 d=0 total=-1276 dir=STOP | LR raw=4294965189 d=0 total=-2107 dir=STOP
+[0002222855] [INFO ] ENC R: RF raw=63764 d=0 total=1772 dir=STOP | RR raw=63583 d=0 total=1953 dir=STOP
+[0002222865] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002222875] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002223045] [INFO ] ENC L: LF raw=64260 d=0 total=-1276 dir=STOP | LR raw=4294965189 d=0 total=-2107 dir=STOP
+[0002223055] [INFO ] ENC R: RF raw=63764 d=0 total=1772 dir=STOP | RR raw=63583 d=0 total=1953 dir=STOP
+[0002223065] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002223075] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002223245] [INFO ] ENC L: LF raw=64260 d=0 total=-1276 dir=STOP | LR raw=4294965189 d=0 total=-2107 dir=STOP
+[0002223255] [INFO ] ENC R: RF raw=63764 d=0 total=1772 dir=STOP | RR raw=63583 d=0 total=1953 dir=STOP
+[0002223265] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002223275] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002223445] [INFO ] ENC L: LF raw=64260 d=0 total=-1276 dir=STOP | LR raw=4294965189 d=0 total=-2107 dir=STOP
+[0002223455] [INFO ] ENC R: RF raw=63764 d=0 total=1772 dir=STOP | RR raw=63583 d=0 total=1953 dir=STOP
+[0002223465] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002223475] [INFO ] SPD R: HOST_PHASE RIGHT_trace
+RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002223645] [INFO ] TRACE t=2219642 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002223654] [INFO ] TRACE LF dc=2 raw=100 target=280 cps=115 ff_x10=1362 p_x10=82 i_x10=108 pwm=155
+[0002223664] [INFO ] TRACE LR dc=5 raw=250 target=280 cps=241 ff_x10=869 p_x10=19 i_x10=176 pwm=107
+[0002223673] [INFO ] TRACE RF dc=-5 raw=-250 target=-280 cps=-209 ff_x10=-1236 p_x10=-35 i_x10=-103 pwm=-138
+[0002223683] [INFO ] TRACE RR dc=-9 raw=-450 target=-280 cps=-340 ff_x10=-993 p_x10=90 i_x10=-131 pwm=-103
+[0002223892] [INFO ] TRACE t=2219662 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002223901] [INFO ] TRACE LF dc=2 raw=100 target=280 cps=110 ff_x10=1370 p_x10=84 i_x10=108 pwm=156
+[0002223910] [INFO ] TRACE LR dc=4 raw=200 target=280 cps=229 ff_x10=869 p_x10=25 i_x10=178 pwm=107
+[0002223920] [INFO ] TRACE RF dc=-4 raw=-200 target=-280 cps=-207 ff_x10=-1239 p_x10=-36 i_x10=-103 pwm=-138
+[0002223930] [INFO ] TRACE RR dc=-9 raw=-450 target=-280 cps=-372 ff_x10=-993 p_x10=136 i_x10=-126 pwm=-98
+[0002224139] [INFO ] TRACE t=2219682 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002224148] [INFO ] TRACE LF dc=2 raw=100 target=280 cps=107 ff_x10=1378 p_x10=86 i_x10=109 pwm=157
+[0002224157] [INFO ] TRACE LR dc=4 raw=200 target=280 cps=221 ff_x10=869 p_x10=29 i_x10=181 pwm=108
+[0002224167] [INFO ] TRACE RF dc=-5 raw=-250 target=-280 cps=-219 ff_x10=-1243 p_x10=-30 i_x10=-103 pwm=-138
+[0002224177] [INFO ] TRACE RR dc=-8 raw=-400 target=-280 cps=-380 ff_x10=-993 p_x10=148 i_x10=-121 pwm=-97
+[0002224386] [INFO ] TRACE t=2219702 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002224395] [INFO ] TRACE LF dc=2 raw=100 target=280 cps=105 ff_x10=1386 p_x10=87 i_x10=110 pwm=158
+[0002224404] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=243 ff_x10=869 p_x10=18 i_x10=183 pwm=107
+[0002224414] [INFO ] TRACE RF dc=-4 raw=-200 target=-280 cps=-213 ff_x10=-1246 p_x10=-33 i_x10=-103 pwm=-138
+[0002224423] [INFO ] TRACE RR dc=-8 raw=-400 target=-280 cps=-385 ff_x10=-993 p_x10=157 i_x10=-116 pwm=-95
+[0002224633] [INFO ] TRACE t=2219722 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002224642] [INFO ] TRACE LF dc=2 raw=100 target=280 cps=103 ff_x10=1394 p_x10=88 i_x10=111 pwm=159
+[0002224651] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=259 ff_x10=869 p_x10=10 i_x10=184 pwm=106
+[0002224661] [INFO ] TRACE RF dc=-4 raw=-200 target=-280 cps=-209 ff_x10=-1250 p_x10=-35 i_x10=-103 pwm=-139
+[0002224671] [INFO ] TRACE RR dc=-7 raw=-350 target=-280 cps=-375 ff_x10=-993 p_x10=142 i_x10=-111 pwm=-96
+[0002224880] [INFO ] TRACE t=2219742 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002224889] [INFO ] TRACE LF dc=3 raw=150 target=280 cps=117 ff_x10=1402 p_x10=81 i_x10=111 pwm=160
+[0002224898] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=271 ff_x10=869 p_x10=4 i_x10=184 pwm=106
+[0002224908] [INFO ] TRACE RF dc=-4 raw=-200 target=-280 cps=-207 ff_x10=-1253 p_x10=-36 i_x10=-103 pwm=-139
+[0002224918] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-353 ff_x10=-993 p_x10=109 i_x10=-107 pwm=-99
+[0002225127] [INFO ] TRACE t=2219762 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002225136] [INFO ] TRACE LF dc=4 raw=200 target=280 cps=140 ff_x10=1410 p_x10=69 i_x10=110 pwm=159
+[0002225145] [INFO ] TRACE LR dc=7 raw=350 target=280 cps=293 ff_x10=869 p_x10=-19 i_x10=184 pwm=103
+[0002225154] [INFO ] TRACE RF dc=-3 raw=-150 target=-280 cps=-190 ff_x10=-1257 p_x10=-44 i_x10=-104 pwm=-141
+[0002225165] [INFO ] TRACE RR dc=-7 raw=-350 target=-280 cps=-352 ff_x10=-993 p_x10=108 i_x10=-104 pwm=-99
+[0002225374] [INFO ] TRACE t=2219782 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002225383] [INFO ] TRACE LF dc=2 raw=100 target=280 cps=129 ff_x10=1418 p_x10=75 i_x10=109 pwm=160
+[0002225392] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=295 ff_x10=869 p_x10=-22 i_x10=183 pwm=103
+[0002225402] [INFO ] TRACE RF dc=-4 raw=-200 target=-280 cps=-193 ff_x10=-1261 p_x10=-43 i_x10=-104 pwm=-141
+[0002225412] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-337 ff_x10=-993 p_x10=85 i_x10=-101 pwm=-101
+[0002225621] [INFO ] TRACE t=2219802 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002225630] [INFO ] TRACE LF dc=4 raw=200 target=280 cps=149 ff_x10=1426 p_x10=65 i_x10=108 pwm=160
+[0002225639] [INFO ] TRACE LR dc=7 raw=350 target=280 cps=311 ff_x10=869 p_x10=-45 i_x10=182 pwm=101
+[0002225649] [INFO ] TRACE RF dc=-3 raw=-150 target=-280 cps=-180 ff_x10=-1266 p_x10=-49 i_x10=-104 pwm=-142
+[0002225658] [INFO ] TRACE RR dc=-7 raw=-350 target=-280 cps=-341 ff_x10=-993 p_x10=90 i_x10=-98 pwm=-100
+[0002225868] [INFO ] TRACE t=2219822 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002225877] [INFO ] TRACE LF dc=4 raw=200 target=280 cps=163 ff_x10=1434 p_x10=58 i_x10=106 pwm=160
+[0002225887] [INFO ] TRACE LR dc=5 raw=250 target=280 cps=293 ff_x10=869 p_x10=-19 i_x10=181 pwm=103
+[0002225896] [INFO ] TRACE RF dc=-4 raw=-200 target=-280 cps=-186 ff_x10=-1271 p_x10=-47 i_x10=-104 pwm=-142
+[0002225906] [INFO ] TRACE RR dc=-7 raw=-350 target=-280 cps=-343 ff_x10=-993 p_x10=94 i_x10=-95 pwm=-99
+[0002226115] [INFO ] TRACE t=2219842 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002226124] [INFO ] TRACE LF dc=3 raw=150 target=280 cps=159 ff_x10=1440 p_x10=60 i_x10=106 pwm=161
+[0002226134] [INFO ] TRACE LR dc=7 raw=350 target=280 cps=309 ff_x10=869 p_x10=-43 i_x10=179 pwm=101
+[0002226143] [INFO ] TRACE RF dc=-4 raw=-200 target=-280 cps=-190 ff_x10=-1275 p_x10=-45 i_x10=-104 pwm=-143
+[0002226153] [INFO ] TRACE RR dc=-7 raw=-350 target=-280 cps=-345 ff_x10=-993 p_x10=97 i_x10=-92 pwm=-99
+[0002226363] [INFO ] TRACE t=2219862 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002226372] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=185 ff_x10=1446 p_x10=47 i_x10=104 pwm=160
+[0002226382] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=306 ff_x10=869 p_x10=-39 i_x10=178 pwm=101
+[0002226391] [INFO ] TRACE RF dc=-3 raw=-150 target=-280 cps=-178 ff_x10=-1280 p_x10=-50 i_x10=-105 pwm=-144
+[0002226401] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-332 ff_x10=-993 p_x10=77 i_x10=-89 pwm=-100
+[0002226610] [INFO ] TRACE t=2219882 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002226619] [INFO ] TRACE LF dc=3 raw=150 target=280 cps=175 ff_x10=1451 p_x10=52 i_x10=105 pwm=161
+[0002226629] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=304 ff_x10=869 p_x10=-36 i_x10=177 pwm=101
+[0002226638] [INFO ] TRACE RF dc=-4 raw=-200 target=-280 cps=-184 ff_x10=-1285 p_x10=-47 i_x10=-104 pwm=-144
+[0002226648] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-323 ff_x10=-993 p_x10=63 i_x10=-87 pwm=-102
+[0002226857] [INFO ] TRACE t=2219902 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002226866] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=211 ff_x10=1456 p_x10=34 i_x10=103 pwm=159
+[0002226875] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=303 ff_x10=869 p_x10=-34 i_x10=176 pwm=101
+[0002226884] [INFO ] TRACE RF dc=-2 raw=-100 target=-280 cps=-160 ff_x10=-1290 p_x10=-60 i_x10=-106 pwm=-146
+[0002226894] [INFO ] TRACE RR dc=-7 raw=-350 target=-280 cps=-330 ff_x10=-993 p_x10=75 i_x10=-84 pwm=-100
+[0002227103] [INFO ] TRACE t=2219922 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002227112] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=222 ff_x10=1459 p_x10=29 i_x10=102 pwm=159
+[0002227121] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=302 ff_x10=869 p_x10=-32 i_x10=175 pwm=101
+[0002227131] [INFO ] TRACE RF dc=-4 raw=-200 target=-280 cps=-171 ff_x10=-1296 p_x10=-54 i_x10=-105 pwm=-146
+[0002227140] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-322 ff_x10=-993 p_x10=61 i_x10=-82 pwm=-101
+[0002227151] [INFO ] BAT: raw=1207 filtered=1208 adc=973mV supply=10703mV state=MONITOR_ONLY samples=22271 errors=0
+[0002227350] [INFO ] TRACE t=2219942 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002227359] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=244 ff_x10=1462 p_x10=18 i_x10=101 pwm=158
+[0002227369] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=301 ff_x10=869 p_x10=-31 i_x10=174 pwm=101
+[0002227378] [INFO ] TRACE RF dc=-3 raw=-150 target=-280 cps=-165 ff_x10=-1301 p_x10=-57 i_x10=-105 pwm=-147
+[0002227388] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-315 ff_x10=-993 p_x10=52 i_x10=-81 pwm=-102
+[0002227597] [INFO ] TRACE t=2219962 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002227606] [INFO ] TRACE LF dc=7 raw=350 target=280 cps=274 ff_x10=1462 p_x10=3 i_x10=102 pwm=157
+[0002227615] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=301 ff_x10=869 p_x10=-30 i_x10=173 pwm=101
+[0002227624] [INFO ] TRACE RF dc=-3 raw=-150 target=-280 cps=-161 ff_x10=-1307 p_x10=-59 i_x10=-105 pwm=-147
+[0002227634] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-311 ff_x10=-993 p_x10=45 i_x10=-79 pwm=-103
+[0002227843] [INFO ] TRACE t=2219982 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002227852] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=281 ff_x10=1462 p_x10=-1 i_x10=102 pwm=156
+[0002227861] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=300 ff_x10=869 p_x10=-30 i_x10=172 pwm=101
+[0002227871] [INFO ] TRACE RF dc=-3 raw=-150 target=-280 cps=-157 ff_x10=-1313 p_x10=-61 i_x10=-106 pwm=-148
+[0002227881] [INFO ] TRACE RR dc=-7 raw=-350 target=-280 cps=-322 ff_x10=-993 p_x10=62 i_x10=-77 pwm=-101
+[0002228090] [INFO ] TRACE t=2220002 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002228099] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=287 ff_x10=1462 p_x10=-9 i_x10=101 pwm=156
+[0002228108] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=300 ff_x10=869 p_x10=-29 i_x10=171 pwm=101
+[0002228118] [INFO ] TRACE RF dc=-3 raw=-150 target=-280 cps=-155 ff_x10=-1319 p_x10=-62 i_x10=-106 pwm=-149
+[0002228127] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-315 ff_x10=-993 p_x10=52 i_x10=-75 pwm=-102
+[0002228336] [INFO ] TRACE t=2220022 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002228345] [INFO ] TRACE LF dc=7 raw=350 target=280 cps=305 ff_x10=1462 p_x10=-36 i_x10=100 pwm=153
+[0002228354] [INFO ] TRACE LR dc=5 raw=250 target=280 cps=286 ff_x10=869 p_x10=-8 i_x10=170 pwm=103
+[0002228364] [INFO ] TRACE RF dc=-1 raw=-50 target=-280 cps=-125 ff_x10=-1325 p_x10=-77 i_x10=-107 pwm=-151
+[0002228373] [INFO ] TRACE RR dc=-7 raw=-350 target=-280 cps=-325 ff_x10=-993 p_x10=67 i_x10=-73 pwm=-100
+[0002228583] [INFO ] TRACE t=2220042 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002228592] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=303 ff_x10=1462 p_x10=-34 i_x10=99 pwm=153
+[0002228601] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=290 ff_x10=869 p_x10=-14 i_x10=170 pwm=103
+[0002228611] [INFO ] TRACE RF dc=-3 raw=-150 target=-280 cps=-132 ff_x10=-1333 p_x10=-74 i_x10=-107 pwm=-152
+[0002228621] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-318 ff_x10=-993 p_x10=56 i_x10=-71 pwm=-101
+[0002228830] [INFO ] TRACE t=2220062 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002228839] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=288 ff_x10=1462 p_x10=-11 i_x10=99 pwm=155
+[0002228848] [INFO ] TRACE LR dc=5 raw=250 target=280 cps=278 ff_x10=869 p_x10=1 i_x10=170 pwm=104
+[0002228857] [INFO ] TRACE RF dc=-3 raw=-150 target=-280 cps=-137 ff_x10=-1340 p_x10=-71 i_x10=-107 pwm=-152
+[0002228868] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-313 ff_x10=-993 p_x10=48 i_x10=-69 pwm=-101
+[0002229077] [INFO ] TRACE t=2220082 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002229086] [INFO ] TRACE LF dc=7 raw=350 target=280 cps=305 ff_x10=1462 p_x10=-37 i_x10=97 pwm=152
+[0002229095] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=284 ff_x10=869 p_x10=-6 i_x10=170 pwm=103
+[0002229104] [INFO ] TRACE RF dc=-2 raw=-100 target=-280 cps=-126 ff_x10=-1348 p_x10=-76 i_x10=-107 pwm=-153
+[0002229114] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-309 ff_x10=-993 p_x10=42 i_x10=-68 pwm=-102
+[0002229323] [INFO ] TRACE t=2220102 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002229332] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=289 ff_x10=1462 p_x10=-13 i_x10=97 pwm=155
+[0002229341] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=289 ff_x10=869 p_x10=-12 i_x10=169 pwm=103
+[0002229350] [INFO ] TRACE RF dc=-4 raw=-200 target=-280 cps=-147 ff_x10=-1355 p_x10=-66 i_x10=-106 pwm=-153
+[0002229360] [INFO ] TRACE RR dc=-7 raw=-350 target=-280 cps=-320 ff_x10=-993 p_x10=60 i_x10=-66 pwm=-100
+[0002229569] [INFO ] TRACE t=2220122 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002229578] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=292 ff_x10=1462 p_x10=-18 i_x10=96 pwm=154
+[0002229587] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=292 ff_x10=869 p_x10=-17 i_x10=169 pwm=102
+[0002229596] [INFO ] TRACE RF dc=-4 raw=-200 target=-280 cps=-162 ff_x10=-1362 p_x10=-59 i_x10=-105 pwm=-153
+[0002229606] [INFO ] TRACE RR dc=-7 raw=-350 target=-280 cps=-329 ff_x10=-993 p_x10=72 i_x10=-64 pwm=-98
+[0002229815] [INFO ] TRACE t=2220142 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002229824] [INFO ] TRACE LF dc=7 raw=350 target=280 cps=309 ff_x10=1422 p_x10=-42 i_x10=95 pwm=148
+[0002229833] [INFO ] TRACE LR dc=5 raw=250 target=280 cps=280 ff_x10=869 p_x10=0 i_x10=169 pwm=104
+[0002229842] [INFO ] TRACE RF dc=-2 raw=-100 target=-280 cps=-144 ff_x10=-1368 p_x10=-68 i_x10=-106 pwm=-154
+[0002229852] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-320 ff_x10=-993 p_x10=60 i_x10=-62 pwm=-99
+[0002230061] [INFO ] TRACE t=2220162 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002230070] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=306 ff_x10=1422 p_x10=-38 i_x10=93 pwm=148
+[0002230080] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=285 ff_x10=869 p_x10=-7 i_x10=169 pwm=103
+[0002230089] [INFO ] TRACE RF dc=-2 raw=-100 target=-280 cps=-131 ff_x10=-1375 p_x10=-74 i_x10=-107 pwm=-156
+[0002230099] [INFO ] TRACE RR dc=-7 raw=-350 target=-280 cps=-329 ff_x10=-993 p_x10=72 i_x10=-59 pwm=-98
+[0002230308] [INFO ] TRACE t=2220182 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002230317] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=304 ff_x10=1422 p_x10=-35 i_x10=92 pwm=148
+[0002230326] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=289 ff_x10=869 p_x10=-13 i_x10=168 pwm=102
+[0002230335] [INFO ] TRACE RF dc=-2 raw=-100 target=-280 cps=-122 ff_x10=-1382 p_x10=-78 i_x10=-107 pwm=-157
+[0002230345] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-320 ff_x10=-993 p_x10=60 i_x10=-57 pwm=-99
+[0002230555] [INFO ] TRACE t=2220202 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002230564] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=289 ff_x10=1422 p_x10=-12 i_x10=92 pwm=150
+[0002230573] [INFO ] TRACE LR dc=5 raw=250 target=280 cps=278 ff_x10=869 p_x10=1 i_x10=168 pwm=104
+[0002230582] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=-87 ff_x10=-1390 p_x10=-96 i_x10=-109 pwm=-160
+[0002230592] [INFO ] TRACE RR dc=-7 raw=-350 target=-280 cps=-329 ff_x10=-993 p_x10=72 i_x10=-55 pwm=-98
+[0002230801] [INFO ] TRACE t=2220222 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002230810] [INFO ] TRACE LF dc=7 raw=350 target=280 cps=306 ff_x10=1422 p_x10=-38 i_x10=91 pwm=148
+[0002230819] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=284 ff_x10=869 p_x10=-5 i_x10=168 pwm=103
+[0002230829] [INFO ] TRACE RF dc=-1 raw=-50 target=-280 cps=-76 ff_x10=-1398 p_x10=-101 i_x10=-111 pwm=-161
+[0002230838] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-320 ff_x10=-993 p_x10=60 i_x10=-53 pwm=-99
+[0002231047] [INFO ] TRACE t=2220242 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002231056] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=304 ff_x10=1422 p_x10=-35 i_x10=89 pwm=148
+[0002231066] [INFO ] TRACE LR dc=5 raw=250 target=280 cps=274 ff_x10=869 p_x10=3 i_x10=168 pwm=104
+[0002231075] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=-54 ff_x10=-1406 p_x10=-112 i_x10=-115 pwm=-163
+[0002231084] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-314 ff_x10=-993 p_x10=51 i_x10=-51 pwm=-99
+[0002231293] [INFO ] TRACE t=2220262 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002231302] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=289 ff_x10=1422 p_x10=-12 i_x10=89 pwm=150
+[0002231311] [INFO ] TRACE LR dc=5 raw=250 target=280 cps=267 ff_x10=869 p_x10=6 i_x10=169 pwm=105
+[0002231321] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=-39 ff_x10=-1406 p_x10=-120 i_x10=-127 pwm=-165
+[0002231330] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-310 ff_x10=-993 p_x10=44 i_x10=-50 pwm=-100
+[0002231539] [INFO ] TRACE t=2220282 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002231548] [INFO ] TRACE LF dc=7 raw=350 target=280 cps=306 ff_x10=1422 p_x10=-38 i_x10=88 pwm=147
+[0002231557] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=276 ff_x10=869 p_x10=1 i_x10=169 pwm=104
+[0002231567] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=-28 ff_x10=-1406 p_x10=-126 i_x10=-139 pwm=-167
+[0002231576] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-307 ff_x10=-993 p_x10=40 i_x10=-48 pwm=-100
+[0002231785] [INFO ] TRACE t=2220302 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002231794] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=304 ff_x10=1422 p_x10=-35 i_x10=87 pwm=147
+[0002231803] [INFO ] TRACE LR dc=7 raw=350 target=280 cps=297 ff_x10=869 p_x10=-25 i_x10=168 pwm=101
+[0002231812] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=-20 ff_x10=-1406 p_x10=-130 i_x10=-152 pwm=-169
+[0002231822] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-305 ff_x10=-993 p_x10=37 i_x10=-47 pwm=-100
+[0002232031] [INFO ] TRACE t=2220322 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002232040] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=303 ff_x10=1422 p_x10=-33 i_x10=85 pwm=147
+[0002232049] [INFO ] TRACE LR dc=7 raw=350 target=280 cps=312 ff_x10=869 p_x10=-47 i_x10=167 pwm=99
+[0002232058] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=-14 ff_x10=-1406 p_x10=-133 i_x10=-166 pwm=-171
+[0002232068] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-303 ff_x10=-993 p_x10=34 i_x10=-46 pwm=-100
+[0002232234] [INFO ] BAT: raw=1211 filtered=1208 adc=973mV supply=10703mV state=MONITOR_ONLY samples=22322 errors=0
+[0002232277] [INFO ] TRACE t=2220342 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002232286] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=302 ff_x10=1422 p_x10=-32 i_x10=84 pwm=148
+[0002232295] [INFO ] TRACE LR dc=7 raw=350 target=280 cps=323 ff_x10=869 p_x10=-63 i_x10=165 pwm=97
+[0002232304] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=-10 ff_x10=-1406 p_x10=-135 i_x10=-179 pwm=-172
+[0002232314] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-302 ff_x10=-993 p_x10=33 i_x10=-45 pwm=-101
+[0002232523] [INFO ] TRACE t=2220362 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002232532] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=301 ff_x10=1422 p_x10=-31 i_x10=83 pwm=148
+[0002232541] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=316 ff_x10=869 p_x10=-53 i_x10=163 pwm=98
+[0002232550] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=-7 ff_x10=-1647 p_x10=-136 i_x10=0 pwm=-178
+[0002232560] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-301 ff_x10=-993 p_x10=31 i_x10=-44 pwm=-101
+[0002232769] [INFO ] TRACE t=2220382 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002232778] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=301 ff_x10=1422 p_x10=-30 i_x10=82 pwm=147
+[0002232787] [INFO ] TRACE LR dc=7 raw=350 target=280 cps=326 ff_x10=869 p_x10=-68 i_x10=161 pwm=96
+[0002232797] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=-5 ff_x10=-1697 p_x10=-137 i_x10=0 pwm=-184
+[0002232806] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-301 ff_x10=-993 p_x10=30 i_x10=-43 pwm=-101
+[0002233015] [INFO ] TRACE t=2220402 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002233024] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=300 ff_x10=1422 p_x10=-30 i_x10=81 pwm=147
+[0002233033] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=318 ff_x10=869 p_x10=-56 i_x10=159 pwm=97
+[0002233042] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=-3 ff_x10=-1747 p_x10=-138 i_x10=0 pwm=-189
+[0002233051] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-301 ff_x10=-993 p_x10=30 i_x10=-42 pwm=-100
+[0002233260] [INFO ] TRACE t=2220422 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002233269] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=300 ff_x10=1422 p_x10=-29 i_x10=80 pwm=147
+[0002233278] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=313 ff_x10=869 p_x10=-48 i_x10=157 pwm=98
+[0002233288] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=0 ff_x10=-1797 p_x10=-140 i_x10=0 pwm=-194
+[0002233297] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-300 ff_x10=-993 p_x10=29 i_x10=-41 pwm=-100
+[0002233506] [INFO ] TRACE t=2220442 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002233515] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=286 ff_x10=1422 p_x10=-8 i_x10=80 pwm=150
+[0002233524] [INFO ] TRACE LR dc=7 raw=350 target=280 cps=323 ff_x10=869 p_x10=-64 i_x10=155 pwm=96
+[0002233534] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=0 ff_x10=-1847 p_x10=-140 i_x10=0 pwm=-199
+[0002233543] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-300 ff_x10=-993 p_x10=29 i_x10=-40 pwm=-100
+[0002233752] [INFO ] TRACE t=2220462 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002233761] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=275 ff_x10=1422 p_x10=2 i_x10=80 pwm=151
+[0002233770] [INFO ] TRACE LR dc=7 raw=350 target=280 cps=331 ff_x10=869 p_x10=-75 i_x10=152 pwm=95
+[0002233780] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=0 ff_x10=-1897 p_x10=-140 i_x10=0 pwm=-204
+[0002233789] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-300 ff_x10=-993 p_x10=29 i_x10=-39 pwm=-100
+[0002233998] [INFO ] TRACE t=2220482 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002234007] [INFO ] TRACE LF dc=7 raw=350 target=280 cps=297 ff_x10=1422 p_x10=-24 i_x10=79 pwm=148
+[0002234016] [INFO ] TRACE LR dc=7 raw=350 target=280 cps=336 ff_x10=869 p_x10=-83 i_x10=150 pwm=94
+[0002234026] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=0 ff_x10=-1918 p_x10=-140 i_x10=0 pwm=-206
+[0002234034] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-300 ff_x10=-993 p_x10=29 i_x10=-38 pwm=-100
+[0002234243] [INFO ] TRACE t=2220502 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002234252] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=297 ff_x10=1422 p_x10=-25 i_x10=79 pwm=148
+[0002234261] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=326 ff_x10=869 p_x10=-68 i_x10=147 pwm=95
+[0002234271] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=0 ff_x10=-1918 p_x10=-140 i_x10=0 pwm=-206
+[0002234280] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-300 ff_x10=-993 p_x10=29 i_x10=-37 pwm=-100
+[0002234489] [INFO ] TRACE t=2220522 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002234498] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=284 ff_x10=1422 p_x10=-5 i_x10=78 pwm=150
+[0002234507] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=318 ff_x10=869 p_x10=-56 i_x10=145 pwm=96
+[0002234516] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=0 ff_x10=-1918 p_x10=-140 i_x10=0 pwm=-206
+[0002234526] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-300 ff_x10=-993 p_x10=29 i_x10=-36 pwm=-100
+[0002234734] [INFO ] TRACE t=2220542 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002234743] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=288 ff_x10=1422 p_x10=-11 i_x10=78 pwm=149
+[0002234752] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=313 ff_x10=869 p_x10=-48 i_x10=144 pwm=96
+[0002234762] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=0 ff_x10=-1918 p_x10=-140 i_x10=0 pwm=-206
+[0002234771] [INFO ] TRACE RR dc=-7 raw=-350 target=-280 cps=-314 ff_x10=-993 p_x10=50 i_x10=-34 pwm=-98
+[0002234980] [INFO ] TRACE t=2220562 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002234989] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=277 ff_x10=1422 p_x10=1 i_x10=78 pwm=150
+[0002234998] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=309 ff_x10=869 p_x10=-43 i_x10=142 pwm=97
+[0002235007] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=0 ff_x10=-1918 p_x10=-140 i_x10=0 pwm=-206
+[0002235017] [INFO ] TRACE RR dc=-5 raw=-250 target=-280 cps=-295 ff_x10=-993 p_x10=22 i_x10=-33 pwm=-100
+[0002235226] [INFO ] TRACE t=2220582 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002235235] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=269 ff_x10=1422 p_x10=5 i_x10=79 pwm=151
+[0002235244] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=306 ff_x10=869 p_x10=-39 i_x10=141 pwm=97
+[0002235253] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=0 ff_x10=-1918 p_x10=-140 i_x10=0 pwm=-206
+[0002235263] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-297 ff_x10=-993 p_x10=24 i_x10=-32 pwm=-100
+[0002235472] [INFO ] TRACE t=2220602 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002235481] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=264 ff_x10=1422 p_x10=8 i_x10=80 pwm=151
+[0002235490] [INFO ] TRACE LR dc=7 raw=350 target=280 cps=319 ff_x10=869 p_x10=-57 i_x10=139 pwm=95
+[0002235500] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=0 ff_x10=-1918 p_x10=-140 i_x10=0 pwm=-206
+[0002235509] [INFO ] TRACE RR dc=-7 raw=-350 target=-280 cps=-312 ff_x10=-993 p_x10=47 i_x10=-31 pwm=-98
+[0002235718] [INFO ] TRACE t=2220622 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002235727] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=260 ff_x10=1422 p_x10=10 i_x10=81 pwm=151
+[0002235736] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=313 ff_x10=869 p_x10=-49 i_x10=137 pwm=96
+[0002235746] [INFO ] TRACE RF dc=-1 raw=-50 target=-280 cps=-14 ff_x10=-1918 p_x10=-133 i_x10=0 pwm=-205
+[0002235755] [INFO ] TRACE RR dc=-5 raw=-250 target=-280 cps=-294 ff_x10=-993 p_x10=20 i_x10=-30 pwm=-100
+[0002235964] [INFO ] TRACE t=2220642 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002235973] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=257 ff_x10=1422 p_x10=11 i_x10=82 pwm=152
+[0002235982] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=309 ff_x10=869 p_x10=-43 i_x10=136 pwm=96
+[0002235991] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=-10 ff_x10=-1918 p_x10=-135 i_x10=0 pwm=-205
+[0002236001] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-296 ff_x10=-993 p_x10=22 i_x10=-29 pwm=-100
+[0002236210] [INFO ] TRACE t=2220662 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002236219] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=269 ff_x10=1422 p_x10=5 i_x10=82 pwm=151
+[0002236228] [INFO ] TRACE LR dc=7 raw=350 target=280 cps=321 ff_x10=869 p_x10=-60 i_x10=134 pwm=94
+[0002236237] [INFO ] TRACE RF dc=-1 raw=-50 target=-280 cps=-21 ff_x10=-1838 p_x10=-129 i_x10=0 pwm=-197
+[0002236247] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-297 ff_x10=-993 p_x10=24 i_x10=-29 pwm=-100
+[0002236456] [INFO ] TRACE t=2220682 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002236465] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=263 ff_x10=1422 p_x10=8 i_x10=83 pwm=151
+[0002236474] [INFO ] TRACE LR dc=7 raw=350 target=280 cps=329 ff_x10=869 p_x10=-73 i_x10=132 pwm=93
+[0002236483] [INFO ] TRACE RF dc=-1 raw=-50 target=-280 cps=-29 ff_x10=-1758 p_x10=-125 i_x10=0 pwm=-188
+[0002236493] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-297 ff_x10=-993 p_x10=25 i_x10=-28 pwm=-100
+[0002236702] [INFO ] TRACE t=2220702 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002236711] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=274 ff_x10=1422 p_x10=3 i_x10=83 pwm=151
+[0002236720] [INFO ] TRACE LR dc=7 raw=350 target=280 cps=335 ff_x10=869 p_x10=-81 i_x10=129 pwm=92
+[0002236729] [INFO ] TRACE RF dc=-3 raw=-150 target=-280 cps=-64 ff_x10=-1678 p_x10=-108 i_x10=0 pwm=-179
+[0002236739] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-298 ff_x10=-993 p_x10=26 i_x10=-27 pwm=-99
+[0002236948] [INFO ] TRACE t=2220722 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002236957] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=281 ff_x10=1422 p_x10=-1 i_x10=83 pwm=151
+[0002236966] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=325 ff_x10=869 p_x10=-66 i_x10=127 pwm=93
+[0002236975] [INFO ] TRACE RF dc=-2 raw=-100 target=-280 cps=-74 ff_x10=-1598 p_x10=-103 i_x10=0 pwm=-170
+[0002236985] [INFO ] TRACE RR dc=-7 raw=-350 target=-280 cps=-313 ff_x10=-993 p_x10=48 i_x10=-25 pwm=-97
+[0002237194] [INFO ] TRACE t=2220742 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002237203] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=286 ff_x10=1422 p_x10=-9 i_x10=83 pwm=150
+[0002237212] [INFO ] TRACE LR dc=7 raw=350 target=280 cps=332 ff_x10=869 p_x10=-77 i_x10=124 pwm=92
+[0002237222] [INFO ] TRACE RF dc=-2 raw=-100 target=-280 cps=-81 ff_x10=-1518 p_x10=-99 i_x10=0 pwm=-162
+[0002237231] [INFO ] TRACE RR dc=-7 raw=-350 target=-280 cps=-323 ff_x10=-993 p_x10=64 i_x10=-23 pwm=-95
+[0002237241] [INFO ] BAT: raw=1209 filtered=1208 adc=973mV supply=10703mV state=MONITOR_ONLY samples=22372 errors=0
+[0002237440] [INFO ] TRACE t=2220762 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002237449] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=276 ff_x10=1422 p_x10=2 i_x10=83 pwm=151
+[0002237458] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=323 ff_x10=869 p_x10=-63 i_x10=122 pwm=93
+[0002237468] [INFO ] TRACE RF dc=-2 raw=-100 target=-280 cps=-86 ff_x10=-1438 p_x10=-96 i_x10=0 pwm=-153
+[0002237477] [INFO ] TRACE RR dc=-8 raw=-400 target=-280 cps=-345 ff_x10=-993 p_x10=97 i_x10=-20 pwm=-92
+[0002237686] [INFO ] TRACE t=2220782 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002237695] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=283 ff_x10=1422 p_x10=-3 i_x10=83 pwm=150
+[0002237704] [INFO ] TRACE LR dc=7 raw=350 target=280 cps=330 ff_x10=869 p_x10=-75 i_x10=119 pwm=91
+[0002237713] [INFO ] TRACE RF dc=-3 raw=-150 target=-280 cps=-104 ff_x10=-1418 p_x10=-87 i_x10=-8 pwm=-151
+[0002237723] [INFO ] TRACE RR dc=-7 raw=-350 target=-280 cps=-346 ff_x10=-993 p_x10=99 i_x10=-17 pwm=-91
+[0002237932] [INFO ] TRACE t=2220802 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002237941] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=287 ff_x10=1422 p_x10=-10 i_x10=83 pwm=150
+[0002237950] [INFO ] TRACE LR dc=7 raw=350 target=280 cps=336 ff_x10=869 p_x10=-83 i_x10=117 pwm=90
+[0002237959] [INFO ] TRACE RF dc=-1 raw=-50 target=-280 cps=-89 ff_x10=-1418 p_x10=-95 i_x10=-18 pwm=-153
+[0002237969] [INFO ] TRACE RR dc=-7 raw=-350 target=-280 cps=-347 ff_x10=-993 p_x10=100 i_x10=-13 pwm=-91
+[0002238178] [INFO ] TRACE t=2220822 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002238187] [INFO ] TRACE LF dc=7 raw=350 target=280 cps=305 ff_x10=1422 p_x10=-37 i_x10=82 pwm=147
+[0002238196] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=325 ff_x10=869 p_x10=-67 i_x10=114 pwm=92
+[0002238205] [INFO ] TRACE RF dc=-2 raw=-100 target=-280 cps=-92 ff_x10=-1418 p_x10=-94 i_x10=-27 pwm=-154
+[0002238215] [INFO ] TRACE RR dc=-7 raw=-350 target=-280 cps=-348 ff_x10=-993 p_x10=101 i_x10=-10 pwm=-90
+[0002238424] [INFO ] TRACE t=2220842 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002238433] [INFO ] TRACE LF dc=7 raw=350 target=280 cps=318 ff_x10=1382 p_x10=-56 i_x10=80 pwm=141
+[0002238442] [INFO ] TRACE LR dc=5 raw=250 target=280 cps=304 ff_x10=869 p_x10=-35 i_x10=113 pwm=95
+[0002238452] [INFO ] TRACE RF dc=-1 raw=-50 target=-280 cps=-80 ff_x10=-1418 p_x10=-100 i_x10=-37 pwm=-156
+[0002238461] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-334 ff_x10=-993 p_x10=80 i_x10=-7 pwm=-92
+[0002238670] [INFO ] TRACE t=2220862 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002238679] [INFO ] TRACE LF dc=8 raw=400 target=280 cps=341 ff_x10=1342 p_x10=-91 i_x10=77 pwm=133
+[0002238688] [INFO ] TRACE LR dc=5 raw=250 target=280 cps=288 ff_x10=869 p_x10=-11 i_x10=113 pwm=97
+[0002238698] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=-57 ff_x10=-1418 p_x10=-111 i_x10=-48 pwm=-158
+[0002238707] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-324 ff_x10=-993 p_x10=65 i_x10=-5 pwm=-93
+[0002238916] [INFO ] TRACE t=2220882 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002238926] [INFO ] TRACE LF dc=7 raw=350 target=280 cps=344 ff_x10=1302 p_x10=-94 i_x10=74 pwm=128
+[0002238935] [INFO ] TRACE LR dc=5 raw=250 target=280 cps=277 ff_x10=869 p_x10=1 i_x10=113 pwm=98
+[0002238944] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=-40 ff_x10=-1418 p_x10=-119 i_x10=-60 pwm=-160
+[0002238953] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-317 ff_x10=-993 p_x10=55 i_x10=-3 pwm=-94
+[0002239162] [INFO ] TRACE t=2220902 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002239171] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=317 ff_x10=1262 p_x10=-54 i_x10=72 pwm=128
+[0002239180] [INFO ] TRACE LR dc=4 raw=200 target=280 cps=255 ff_x10=869 p_x10=12 i_x10=114 pwm=100
+[0002239190] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=-29 ff_x10=-1418 p_x10=-125 i_x10=-73 pwm=-162
+[0002239199] [INFO ] TRACE RR dc=-7 raw=-350 target=-280 cps=-326 ff_x10=-993 p_x10=69 i_x10=-1 pwm=-93
+[0002239408] [INFO ] TRACE t=2220922 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002239417] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=312 ff_x10=1222 p_x10=-47 i_x10=70 pwm=125
+[0002239426] [INFO ] TRACE LR dc=5 raw=250 target=280 cps=253 ff_x10=869 p_x10=13 i_x10=116 pwm=100
+[0002239436] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=-20 ff_x10=-1418 p_x10=-129 i_x10=-86 pwm=-163
+[0002239445] [INFO ] TRACE RR dc=-5 raw=-250 target=-280 cps=-304 ff_x10=-993 p_x10=36 i_x10=0 pwm=-96
+[0002239654] [INFO ] TRACE t=2220942 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002239664] [INFO ] TRACE LF dc=4 raw=200 target=280 cps=280 ff_x10=1222 p_x10=0 i_x10=70 pwm=129
+[0002239673] [INFO ] TRACE LR dc=3 raw=150 target=280 cps=224 ff_x10=869 p_x10=28 i_x10=118 pwm=102
+[0002239682] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=-14 ff_x10=-1418 p_x10=-132 i_x10=-99 pwm=-165
+[0002239692] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-303 ff_x10=-993 p_x10=34 i_x10=1 pwm=-96
+[0002239901] [INFO ] TRACE t=2220962 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002239910] [INFO ] TRACE LF dc=4 raw=200 target=280 cps=257 ff_x10=1222 p_x10=11 i_x10=71 pwm=131
+[0002239919] [INFO ] TRACE LR dc=5 raw=250 target=280 cps=231 ff_x10=869 p_x10=24 i_x10=121 pwm=102
+[0002239929] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=-10 ff_x10=-1418 p_x10=-135 i_x10=-113 pwm=-167
+[0002239938] [INFO ] TRACE RR dc=-7 raw=-350 target=-280 cps=-316 ff_x10=-993 p_x10=54 i_x10=2 pwm=-94
+[0002240147] [INFO ] TRACE t=2220982 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002240156] [INFO ] TRACE LF dc=4 raw=200 target=280 cps=240 ff_x10=1222 p_x10=19 i_x10=73 pwm=132
+[0002240166] [INFO ] TRACE LR dc=5 raw=250 target=280 cps=236 ff_x10=869 p_x10=21 i_x10=123 pwm=101
+[0002240175] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=-7 ff_x10=-1581 p_x10=-136 i_x10=0 pwm=-172
+[0002240184] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-311 ff_x10=-993 p_x10=46 i_x10=4 pwm=-94
+[0002240393] [INFO ] TRACE t=2221002 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002240402] [INFO ] TRACE LF dc=4 raw=200 target=280 cps=229 ff_x10=1222 p_x10=25 i_x10=76 pwm=132
+[0002240411] [INFO ] TRACE LR dc=5 raw=250 target=280 cps=240 ff_x10=869 p_x10=20 i_x10=125 pwm=101
+[0002240421] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=-5 ff_x10=-1631 p_x10=-137 i_x10=0 pwm=-177
+[0002240430] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-308 ff_x10=-993 p_x10=41 i_x10=5 pwm=-95
+[0002240639] [INFO ] TRACE t=2221022 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002240648] [INFO ] TRACE LF dc=4 raw=200 target=280 cps=220 ff_x10=1222 p_x10=29 i_x10=79 pwm=133
+[0002240657] [INFO ] TRACE LR dc=5 raw=250 target=280 cps=243 ff_x10=869 p_x10=18 i_x10=127 pwm=102
+[0002240667] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=-3 ff_x10=-1681 p_x10=-138 i_x10=0 pwm=-182
+[0002240676] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-306 ff_x10=-993 p_x10=38 i_x10=7 pwm=-95
+[0002240885] [INFO ] TRACE t=2221042 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002240894] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=229 ff_x10=1222 p_x10=25 i_x10=81 pwm=133
+[0002240903] [INFO ] TRACE LR dc=5 raw=250 target=280 cps=245 ff_x10=869 p_x10=17 i_x10=129 pwm=102
+[0002240912] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=0 ff_x10=-1731 p_x10=-140 i_x10=0 pwm=-187
+[0002240921] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-304 ff_x10=-993 p_x10=35 i_x10=8 pwm=-95
+[0002241131] [INFO ] TRACE t=2221062 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002241140] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=249 ff_x10=1222 p_x10=15 i_x10=83 pwm=132
+[0002241149] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=260 ff_x10=869 p_x10=9 i_x10=130 pwm=101
+[0002241158] [INFO ] TRACE RF dc=-1 raw=-50 target=-280 cps=-14 ff_x10=-1781 p_x10=-133 i_x10=0 pwm=-191
+[0002241169] [INFO ] TRACE RR dc=-5 raw=-250 target=-280 cps=-288 ff_x10=-993 p_x10=12 i_x10=8 pwm=-97
+[0002241377] [INFO ] TRACE t=2221082 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002241386] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=249 ff_x10=1222 p_x10=15 i_x10=85 pwm=132
+[0002241395] [INFO ] TRACE LR dc=5 raw=250 target=280 cps=257 ff_x10=869 p_x10=11 i_x10=131 pwm=101
+[0002241404] [INFO ] TRACE RF dc=-2 raw=-100 target=-280 cps=-38 ff_x10=-1831 p_x10=-120 i_x10=0 pwm=-195
+[0002241414] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-292 ff_x10=-993 p_x10=16 i_x10=9 pwm=-97
+[0002241623] [INFO ] TRACE t=2221102 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002241632] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=249 ff_x10=1222 p_x10=15 i_x10=86 pwm=132
+[0002241641] [INFO ] TRACE LR dc=5 raw=250 target=280 cps=255 ff_x10=869 p_x10=12 i_x10=132 pwm=101
+[0002241650] [INFO ] TRACE RF dc=-5 raw=-250 target=-280 cps=-99 ff_x10=-1881 p_x10=-90 i_x10=0 pwm=-197
+[0002241660] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-294 ff_x10=-993 p_x10=20 i_x10=9 pwm=-96
+[0002241869] [INFO ] TRACE t=2221122 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002241878] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=264 ff_x10=1222 p_x10=8 i_x10=87 pwm=132
+[0002241887] [INFO ] TRACE LR dc=5 raw=250 target=280 cps=253 ff_x10=869 p_x10=13 i_x10=133 pwm=102
+[0002241896] [INFO ] TRACE RF dc=-4 raw=-200 target=-280 cps=-127 ff_x10=-1801 p_x10=-76 i_x10=0 pwm=-188
+[0002241906] [INFO ] TRACE RR dc=-7 raw=-350 target=-280 cps=-310 ff_x10=-993 p_x10=44 i_x10=11 pwm=-94
+[0002242115] [INFO ] TRACE t=2221142 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002242124] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=260 ff_x10=1222 p_x10=10 i_x10=88 pwm=132
+[0002242133] [INFO ] TRACE LR dc=4 raw=200 target=280 cps=238 ff_x10=869 p_x10=21 i_x10=136 pwm=103
+[0002242142] [INFO ] TRACE RF dc=-6 raw=-300 target=-280 cps=-177 ff_x10=-1721 p_x10=-51 i_x10=0 pwm=-177
+[0002242152] [INFO ] TRACE RR dc=-8 raw=-400 target=-280 cps=-335 ff_x10=-993 p_x10=82 i_x10=14 pwm=-90
+[0002242334] [INFO ] BAT: raw=1210 filtered=1209 adc=974mV supply=10714mV state=MONITOR_ONLY samples=22423 errors=0
+[0002242361] [INFO ] TRACE t=2221162 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002242370] [INFO ] TRACE LF dc=4 raw=200 target=280 cps=242 ff_x10=1222 p_x10=18 i_x10=90 pwm=133
+[0002242380] [INFO ] TRACE LR dc=5 raw=250 target=280 cps=241 ff_x10=869 p_x10=19 i_x10=137 pwm=103
+[0002242389] [INFO ] TRACE RF dc=-7 raw=-350 target=-280 cps=-226 ff_x10=-1641 p_x10=-27 i_x10=0 pwm=-167
+[0002242398] [INFO ] TRACE RR dc=-7 raw=-350 target=-280 cps=-339 ff_x10=-993 p_x10=88 i_x10=17 pwm=-89
+[0002242607] [INFO ] TRACE t=2221182 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002242616] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=244 ff_x10=1222 p_x10=17 i_x10=92 pwm=133
+[0002242625] [INFO ] TRACE LR dc=4 raw=200 target=280 cps=229 ff_x10=869 p_x10=25 i_x10=140 pwm=104
+[0002242634] [INFO ] TRACE RF dc=-6 raw=-300 target=-280 cps=-247 ff_x10=-1561 p_x10=-16 i_x10=0 pwm=-158
+[0002242644] [INFO ] TRACE RR dc=-8 raw=-400 target=-280 cps=-357 ff_x10=-993 p_x10=114 i_x10=20 pwm=-86
+[0002242853] [INFO ] TRACE t=2221202 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002242862] [INFO ] TRACE LF dc=4 raw=200 target=280 cps=232 ff_x10=1222 p_x10=24 i_x10=94 pwm=134
+[0002242872] [INFO ] TRACE LR dc=5 raw=250 target=280 cps=235 ff_x10=869 p_x10=22 i_x10=142 pwm=103
+[0002242881] [INFO ] TRACE RF dc=-8 raw=-400 target=-280 cps=-291 ff_x10=-1481 p_x10=15 i_x10=0 pwm=-147
+[0002242890] [INFO ] TRACE RR dc=-7 raw=-350 target=-280 cps=-355 ff_x10=-993 p_x10=111 i_x10=24 pwm=-86
+[0002243099] [INFO ] TRACE t=2221222 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002243108] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=237 ff_x10=1222 p_x10=21 i_x10=96 pwm=134
+[0002243117] [INFO ] TRACE LR dc=3 raw=150 target=280 cps=211 ff_x10=869 p_x10=34 i_x10=146 pwm=105
+[0002243126] [INFO ] TRACE RF dc=-7 raw=-350 target=-280 cps=-307 ff_x10=-1418 p_x10=40 i_x10=1 pwm=-138
+[0002243136] [INFO ] TRACE RR dc=-7 raw=-350 target=-280 cps=-353 ff_x10=-993 p_x10=109 i_x10=28 pwm=-86
+[0002243345] [INFO ] TRACE t=2221242 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002243354] [INFO ] TRACE LF dc=2 raw=100 target=280 cps=198 ff_x10=1222 p_x10=41 i_x10=100 pwm=137
+[0002243363] [INFO ] TRACE LR dc=4 raw=200 target=280 cps=207 ff_x10=869 p_x10=36 i_x10=149 pwm=106
+[0002243372] [INFO ] TRACE RF dc=-8 raw=-400 target=-280 cps=-334 ff_x10=-1378 p_x10=80 i_x10=2 pwm=-130
+[0002243382] [INFO ] TRACE RR dc=-7 raw=-350 target=-280 cps=-352 ff_x10=-993 p_x10=107 i_x10=31 pwm=-85
+[0002243591] [INFO ] TRACE t=2221262 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002243600] [INFO ] TRACE LF dc=2 raw=100 target=280 cps=170 ff_x10=1223 p_x10=55 i_x10=105 pwm=138
+[0002243609] [INFO ] TRACE LR dc=4 raw=200 target=280 cps=205 ff_x10=869 p_x10=37 i_x10=153 pwm=106
+[0002243619] [INFO ] TRACE RF dc=-6 raw=-300 target=-280 cps=-324 ff_x10=-1338 p_x10=65 i_x10=2 pwm=-127
+[0002243628] [INFO ] TRACE RR dc=-7 raw=-350 target=-280 cps=-351 ff_x10=-993 p_x10=106 i_x10=35 pwm=-85
+[0002243837] [INFO ] TRACE t=2221282 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002243846] [INFO ] TRACE LF dc=3 raw=150 target=280 cps=164 ff_x10=1229 p_x10=58 i_x10=105 pwm=139
+[0002243855] [INFO ] TRACE LR dc=2 raw=100 target=280 cps=175 ff_x10=869 p_x10=52 i_x10=158 pwm=108
+[0002243864] [INFO ] TRACE RF dc=-4 raw=-200 target=-280 cps=-288 ff_x10=-1338 p_x10=12 i_x10=2 pwm=-132
+[0002243874] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-337 ff_x10=-993 p_x10=84 i_x10=38 pwm=-87
+[0002244083] [INFO ] TRACE t=2221302 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002244092] [INFO ] TRACE LF dc=2 raw=100 target=280 cps=145 ff_x10=1235 p_x10=67 i_x10=106 pwm=141
+[0002244101] [INFO ] TRACE LR dc=5 raw=250 target=280 cps=196 ff_x10=869 p_x10=41 i_x10=163 pwm=107
+[0002244110] [INFO ] TRACE RF dc=-4 raw=-200 target=-280 cps=-263 ff_x10=-1338 p_x10=-8 i_x10=1 pwm=-134
+[0002244120] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-326 ff_x10=-993 p_x10=68 i_x10=40 pwm=-88
+[0002244329] [INFO ] TRACE t=2221322 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002244338] [INFO ] TRACE LF dc=1 raw=50 target=280 cps=118 ff_x10=1241 p_x10=81 i_x10=108 pwm=143
+[0002244347] [INFO ] TRACE LR dc=4 raw=200 target=280 cps=197 ff_x10=869 p_x10=41 i_x10=167 pwm=108
+[0002244356] [INFO ] TRACE RF dc=-2 raw=-100 target=-280 cps=-216 ff_x10=-1338 p_x10=-31 i_x10=-1 pwm=-137
+[0002244366] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-318 ff_x10=-993 p_x10=57 i_x10=42 pwm=-89
+[0002244575] [INFO ] TRACE t=2221342 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002244584] [INFO ] TRACE LF dc=3 raw=150 target=280 cps=127 ff_x10=1249 p_x10=76 i_x10=107 pwm=143
+[0002244593] [INFO ] TRACE LR dc=4 raw=200 target=280 cps=198 ff_x10=869 p_x10=41 i_x10=171 pwm=108
+[0002244602] [INFO ] TRACE RF dc=-2 raw=-100 target=-280 cps=-183 ff_x10=-1338 p_x10=-48 i_x10=-6 pwm=-139
+[0002244612] [INFO ] TRACE RR dc=-5 raw=-250 target=-280 cps=-299 ff_x10=-993 p_x10=27 i_x10=43 pwm=-92
+[0002244821] [INFO ] TRACE t=2221362 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002244830] [INFO ] TRACE LF dc=4 raw=200 target=280 cps=148 ff_x10=1257 p_x10=66 i_x10=106 pwm=143
+[0002244839] [INFO ] TRACE LR dc=3 raw=150 target=280 cps=184 ff_x10=869 p_x10=48 i_x10=176 pwm=109
+[0002244848] [INFO ] TRACE RF dc=-3 raw=-150 target=-280 cps=-173 ff_x10=-1338 p_x10=-53 i_x10=-11 pwm=-140
+[0002244858] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-299 ff_x10=-993 p_x10=28 i_x10=44 pwm=-92
+[0002245067] [INFO ] TRACE t=2221382 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002245076] [INFO ] TRACE LF dc=2 raw=100 target=280 cps=134 ff_x10=1264 p_x10=73 i_x10=107 pwm=144
+[0002245085] [INFO ] TRACE LR dc=4 raw=200 target=280 cps=188 ff_x10=869 p_x10=45 i_x10=180 pwm=110
+[0002245094] [INFO ] TRACE RF dc=-2 raw=-100 target=-280 cps=-152 ff_x10=-1338 p_x10=-63 i_x10=-18 pwm=-142
+[0002245104] [INFO ] TRACE RR dc=-5 raw=-250 target=-280 cps=-285 ff_x10=-993 p_x10=6 i_x10=44 pwm=-94
+[0002245313] [INFO ] TRACE t=2221402 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002245322] [INFO ] TRACE LF dc=2 raw=100 target=280 cps=124 ff_x10=1271 p_x10=78 i_x10=107 pwm=146
+[0002245331] [INFO ] TRACE LR dc=4 raw=200 target=280 cps=192 ff_x10=869 p_x10=44 i_x10=185 pwm=110
+[0002245340] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=-109 ff_x10=-1338 p_x10=-85 i_x10=-26 pwm=-145
+[0002245350] [INFO ] TRACE RR dc=-5 raw=-250 target=-280 cps=-275 ff_x10=-993 p_x10=-2 i_x10=44 pwm=-95
+[0002245559] [INFO ] TRACE t=2221422 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002245568] [INFO ] TRACE LF dc=4 raw=200 target=280 cps=146 ff_x10=1279 p_x10=67 i_x10=106 pwm=145
+[0002245577] [INFO ] TRACE LR dc=3 raw=150 target=280 cps=180 ff_x10=869 p_x10=50 i_x10=190 pwm=111
+[0002245587] [INFO ] TRACE RF dc=-1 raw=-50 target=-280 cps=-92 ff_x10=-1338 p_x10=-94 i_x10=-36 pwm=-147
+[0002245596] [INFO ] TRACE RR dc=-5 raw=-250 target=-280 cps=-268 ff_x10=-993 p_x10=-6 i_x10=43 pwm=-96
+[0002245805] [INFO ] TRACE t=2221442 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002245814] [INFO ] TRACE LF dc=3 raw=150 target=280 cps=147 ff_x10=1286 p_x10=66 i_x10=106 pwm=146
+[0002245823] [INFO ] TRACE LR dc=5 raw=250 target=280 cps=200 ff_x10=869 p_x10=40 i_x10=194 pwm=110
+[0002245832] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=-65 ff_x10=-1338 p_x10=-107 i_x10=-46 pwm=-149
+[0002245842] [INFO ] TRACE RR dc=-4 raw=-200 target=-280 cps=-248 ff_x10=-993 p_x10=-16 i_x10=42 pwm=-97
+[0002246051] [INFO ] TRACE t=2221462 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002246060] [INFO ] TRACE LF dc=4 raw=200 target=280 cps=162 ff_x10=1292 p_x10=59 i_x10=105 pwm=146
+[0002246070] [INFO ] TRACE LR dc=4 raw=200 target=280 cps=200 ff_x10=869 p_x10=40 i_x10=198 pwm=111
+[0002246079] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=-47 ff_x10=-1338 p_x10=-116 i_x10=-58 pwm=-151
+[0002246088] [INFO ] TRACE RR dc=-5 raw=-250 target=-280 cps=-248 ff_x10=-993 p_x10=-15 i_x10=40 pwm=-97
+[0002246297] [INFO ] TRACE t=2221482 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002246306] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=187 ff_x10=1298 p_x10=46 i_x10=104 pwm=145
+[0002246315] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=228 ff_x10=869 p_x10=26 i_x10=200 pwm=110
+[0002246324] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=-33 ff_x10=-1338 p_x10=-123 i_x10=-70 pwm=-153
+[0002246334] [INFO ] TRACE RR dc=-5 raw=-250 target=-280 cps=-249 ff_x10=-993 p_x10=-15 i_x10=38 pwm=-97
+[0002246543] [INFO ] TRACE t=2221502 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002246552] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=205 ff_x10=1303 p_x10=37 i_x10=103 pwm=144
+[0002246561] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=249 ff_x10=869 p_x10=15 i_x10=202 pwm=109
+[0002246570] [INFO ] TRACE RF dc=0 raw=0 target=-280 cps=-24 ff_x10=-1338 p_x10=-128 i_x10=-83 pwm=-155
+[0002246580] [INFO ] TRACE RR dc=-5 raw=-250 target=-280 cps=-249 ff_x10=-993 p_x10=-15 i_x10=37 pwm=-97
+[0002246789] [INFO ] TRACE t=2221522 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002246798] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=218 ff_x10=1307 p_x10=31 i_x10=103 pwm=144
+[0002246807] [INFO ] TRACE LR dc=4 raw=200 target=280 cps=235 ff_x10=869 p_x10=22 i_x10=204 pwm=110
+[0002246817] [INFO ] TRACE RF dc=-2 raw=-100 target=-280 cps=-45 ff_x10=-1338 p_x10=-117 i_x10=-95 pwm=-155
+[0002246826] [INFO ] TRACE RR dc=-4 raw=-200 target=-280 cps=-235 ff_x10=-993 p_x10=-22 i_x10=35 pwm=-98
+[0002247035] [INFO ] TRACE t=2221542 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002247044] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=227 ff_x10=1310 p_x10=26 i_x10=102 pwm=144
+[0002247053] [INFO ] TRACE LR dc=4 raw=200 target=280 cps=225 ff_x10=869 p_x10=27 i_x10=207 pwm=110
+[0002247062] [INFO ] TRACE RF dc=-2 raw=-100 target=-280 cps=-61 ff_x10=-1338 p_x10=-109 i_x10=-106 pwm=-155
+[0002247072] [INFO ] TRACE RR dc=-5 raw=-250 target=-280 cps=-239 ff_x10=-993 p_x10=-20 i_x10=32 pwm=-98
+[0002247281] [INFO ] TRACE t=2221562 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002247290] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=233 ff_x10=1312 p_x10=23 i_x10=102 pwm=144
+[0002247299] [INFO ] TRACE LR dc=3 raw=150 target=280 cps=203 ff_x10=869 p_x10=38 i_x10=211 pwm=112
+[0002247308] [INFO ] TRACE RF dc=-4 raw=-200 target=-280 cps=-100 ff_x10=-1344 p_x10=-89 i_x10=-108 pwm=-154
+[0002247318] [INFO ] TRACE RR dc=-5 raw=-250 target=-280 cps=-242 ff_x10=-993 p_x10=-19 i_x10=31 pwm=-98
+[0002247334] [INFO ] BAT: raw=1211 filtered=1209 adc=974mV supply=10714mV state=MONITOR_ONLY samples=22473 errors=0
+[0002247527] [INFO ] TRACE t=2221582 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002247536] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=238 ff_x10=1315 p_x10=21 i_x10=102 pwm=144
+[0002247545] [INFO ] TRACE LR dc=4 raw=200 target=280 cps=202 ff_x10=869 p_x10=39 i_x10=215 pwm=112
+[0002247554] [INFO ] TRACE RF dc=-2 raw=-100 target=-280 cps=-100 ff_x10=-1352 p_x10=-90 i_x10=-109 pwm=-155
+[0002247565] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-258 ff_x10=-993 p_x10=-10 i_x10=29 pwm=-97
+[0002247773] [INFO ] TRACE t=2221602 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002247782] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=255 ff_x10=1315 p_x10=12 i_x10=103 pwm=143
+[0002247791] [INFO ] TRACE LR dc=3 raw=150 target=280 cps=187 ff_x10=869 p_x10=46 i_x10=220 pwm=114
+[0002247800] [INFO ] TRACE RF dc=-3 raw=-150 target=-280 cps=-114 ff_x10=-1360 p_x10=-83 i_x10=-110 pwm=-155
+[0002247810] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-270 ff_x10=-993 p_x10=-5 i_x10=29 pwm=-97
+[0002248019] [INFO ] TRACE t=2221622 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002248028] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=254 ff_x10=1315 p_x10=13 i_x10=104 pwm=143
+[0002248037] [INFO ] TRACE LR dc=2 raw=100 target=280 cps=162 ff_x10=869 p_x10=59 i_x10=225 pwm=115
+[0002248046] [INFO ] TRACE RF dc=-4 raw=-200 target=-280 cps=-139 ff_x10=-1368 p_x10=-70 i_x10=-109 pwm=-155
+[0002248056] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-279 ff_x10=-993 p_x10=0 i_x10=29 pwm=-96
+[0002248265] [INFO ] TRACE t=2221642 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002248274] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=267 ff_x10=1315 p_x10=6 i_x10=105 pwm=143
+[0002248283] [INFO ] TRACE LR dc=4 raw=200 target=280 cps=173 ff_x10=869 p_x10=53 i_x10=231 pwm=115
+[0002248292] [INFO ] TRACE RF dc=-2 raw=-100 target=-280 cps=-127 ff_x10=-1376 p_x10=-76 i_x10=-109 pwm=-156
+[0002248302] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-285 ff_x10=-993 p_x10=6 i_x10=29 pwm=-96
+[0002248511] [INFO ] TRACE t=2221662 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002248520] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=262 ff_x10=1315 p_x10=9 i_x10=106 pwm=143
+[0002248529] [INFO ] TRACE LR dc=3 raw=150 target=280 cps=166 ff_x10=869 p_x10=57 i_x10=237 pwm=116
+[0002248538] [INFO ] TRACE RF dc=-5 raw=-250 target=-280 cps=-162 ff_x10=-1384 p_x10=-58 i_x10=-106 pwm=-155
+[0002248548] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-289 ff_x10=-993 p_x10=12 i_x10=30 pwm=-95
+[0002248757] [INFO ] TRACE t=2221682 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002248767] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=273 ff_x10=1315 p_x10=3 i_x10=106 pwm=143
+[0002248776] [INFO ] TRACE LR dc=3 raw=150 target=280 cps=161 ff_x10=869 p_x10=59 i_x10=242 pwm=117
+[0002248785] [INFO ] TRACE RF dc=-3 raw=-150 target=-280 cps=-159 ff_x10=-1391 p_x10=-60 i_x10=-106 pwm=-156
+[0002248795] [INFO ] TRACE RR dc=-7 raw=-350 target=-280 cps=-306 ff_x10=-993 p_x10=38 i_x10=31 pwm=-92
+[0002249003] [INFO ] TRACE t=2221702 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002249012] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=266 ff_x10=1315 p_x10=7 i_x10=107 pwm=143
+[0002249022] [INFO ] TRACE LR dc=4 raw=200 target=280 cps=172 ff_x10=869 p_x10=53 i_x10=248 pwm=117
+[0002249031] [INFO ] TRACE RF dc=-3 raw=-150 target=-280 cps=-156 ff_x10=-1397 p_x10=-62 i_x10=-106 pwm=-157
+[0002249041] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-304 ff_x10=-993 p_x10=36 i_x10=32 pwm=-92
+[0002249250] [INFO ] TRACE t=2221722 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002249259] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=261 ff_x10=1315 p_x10=9 i_x10=108 pwm=143
+[0002249269] [INFO ] TRACE LR dc=4 raw=200 target=280 cps=180 ff_x10=869 p_x10=50 i_x10=253 pwm=117
+[0002249278] [INFO ] TRACE RF dc=-4 raw=-200 target=-280 cps=-168 ff_x10=-1403 p_x10=-55 i_x10=-105 pwm=-157
+[0002249288] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-303 ff_x10=-993 p_x10=33 i_x10=33 pwm=-93
+[0002249497] [INFO ] TRACE t=2221742 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002249506] [INFO ] TRACE LF dc=7 raw=350 target=280 cps=286 ff_x10=1315 p_x10=-9 i_x10=108 pwm=141
+[0002249516] [INFO ] TRACE LR dc=4 raw=200 target=280 cps=186 ff_x10=869 p_x10=47 i_x10=258 pwm=117
+[0002249525] [INFO ] TRACE RF dc=-2 raw=-100 target=-280 cps=-149 ff_x10=-1409 p_x10=-65 i_x10=-106 pwm=-158
+[0002249535] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-302 ff_x10=-993 p_x10=32 i_x10=34 pwm=-93
+[0002249745] [INFO ] TRACE t=2221762 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002249753] [INFO ] TRACE LF dc=7 raw=350 target=280 cps=304 ff_x10=1315 p_x10=-36 i_x10=106 pwm=139
+[0002249763] [INFO ] TRACE LR dc=5 raw=250 target=280 cps=204 ff_x10=869 p_x10=38 i_x10=261 pwm=117
+[0002249772] [INFO ] TRACE RF dc=-3 raw=-150 target=-280 cps=-149 ff_x10=-1415 p_x10=-65 i_x10=-106 pwm=-159
+[0002249783] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-301 ff_x10=-993 p_x10=31 i_x10=35 pwm=-93
+[0002249992] [INFO ] TRACE t=2221782 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002250001] [INFO ] TRACE LF dc=7 raw=350 target=280 cps=317 ff_x10=1275 p_x10=-55 i_x10=104 pwm=132
+[0002250011] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=231 ff_x10=869 p_x10=24 i_x10=264 pwm=116
+[0002250020] [INFO ] TRACE RF dc=-5 raw=-250 target=-280 cps=-178 ff_x10=-1418 p_x10=-51 i_x10=-109 pwm=-158
+[0002250030] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-301 ff_x10=-993 p_x10=30 i_x10=36 pwm=-93
+[0002250239] [INFO ] TRACE t=2221802 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002250248] [INFO ] TRACE LF dc=7 raw=350 target=280 cps=327 ff_x10=1235 p_x10=-69 i_x10=102 pwm=127
+[0002250257] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=251 ff_x10=869 p_x10=14 i_x10=265 pwm=115
+[0002250267] [INFO ] TRACE RF dc=-3 raw=-150 target=-280 cps=-170 ff_x10=-1418 p_x10=-55 i_x10=-115 pwm=-159
+[0002250277] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-300 ff_x10=-993 p_x10=30 i_x10=37 pwm=-93
+[0002250486] [INFO ] TRACE t=2221822 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002250495] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=319 ff_x10=1195 p_x10=-57 i_x10=100 pwm=124
+[0002250505] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=265 ff_x10=869 p_x10=7 i_x10=266 pwm=114
+[0002250514] [INFO ] TRACE RF dc=-5 raw=-250 target=-280 cps=-192 ff_x10=-1418 p_x10=-43 i_x10=-119 pwm=-158
+[0002250524] [INFO ] TRACE RR dc=-5 raw=-250 target=-280 cps=-286 ff_x10=-993 p_x10=8 i_x10=38 pwm=-95
+[0002250732] [INFO ] TRACE t=2221842 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002250741] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=313 ff_x10=1155 p_x10=-49 i_x10=99 pwm=120
+[0002250750] [INFO ] TRACE LR dc=8 raw=400 target=280 cps=303 ff_x10=869 p_x10=-34 i_x10=265 pwm=110
+[0002250760] [INFO ] TRACE RF dc=-5 raw=-250 target=-280 cps=-209 ff_x10=-1418 p_x10=-35 i_x10=-123 pwm=-158
+[0002250770] [INFO ] TRACE RR dc=-5 raw=-250 target=-280 cps=-275 ff_x10=-993 p_x10=-2 i_x10=37 pwm=-96
+[0002250979] [INFO ] TRACE t=2221862 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002250988] [INFO ] TRACE LF dc=6 raw=300 target=280 cps=309 ff_x10=1115 p_x10=-43 i_x10=97 pwm=117
+[0002250997] [INFO ] TRACE LR dc=8 raw=400 target=280 cps=331 ff_x10=869 p_x10=-75 i_x10=262 pwm=106
+[0002251007] [INFO ] TRACE RF dc=-5 raw=-250 target=-280 cps=-220 ff_x10=-1418 p_x10=-29 i_x10=-125 pwm=-157
+[0002251017] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-282 ff_x10=-993 p_x10=3 i_x10=37 pwm=-95
+[0002251225] [INFO ] TRACE t=2221882 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002251234] [INFO ] TRACE LF dc=5 raw=250 target=280 cps=292 ff_x10=1115 p_x10=-18 i_x10=96 pwm=119
+[0002251243] [INFO ] TRACE LR dc=7 raw=350 target=280 cps=336 ff_x10=869 p_x10=-83 i_x10=260 pwm=105
+[0002251252] [INFO ] TRACE RF dc=-5 raw=-250 target=-280 cps=-229 ff_x10=-1418 p_x10=-25 i_x10=-128 pwm=-157
+[0002251262] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-287 ff_x10=-993 p_x10=10 i_x10=38 pwm=-94
+[0002251471] [INFO ] TRACE t=2221902 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002251480] [INFO ] TRACE LF dc=4 raw=200 target=280 cps=266 ff_x10=1115 p_x10=7 i_x10=97 pwm=122
+[0002251489] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=326 ff_x10=869 p_x10=-68 i_x10=257 pwm=106
+[0002251499] [INFO ] TRACE RF dc=-4 raw=-200 target=-280 cps=-220 ff_x10=-1418 p_x10=-29 i_x10=-131 pwm=-158
+[0002251508] [INFO ] TRACE RR dc=-5 raw=-250 target=-280 cps=-276 ff_x10=-993 p_x10=-1 i_x10=38 pwm=-96
+[0002251717] [INFO ] TRACE t=2221922 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002251726] [INFO ] TRACE LF dc=4 raw=200 target=280 cps=247 ff_x10=1115 p_x10=16 i_x10=99 pwm=123
+[0002251735] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=318 ff_x10=869 p_x10=-56 i_x10=256 pwm=107
+[0002251745] [INFO ] TRACE RF dc=-4 raw=-200 target=-280 cps=-214 ff_x10=-1418 p_x10=-32 i_x10=-134 pwm=-159
+[0002251755] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-283 ff_x10=-993 p_x10=4 i_x10=38 pwm=-95
+[0002251963] [INFO ] TRACE t=2221942 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002251972] [INFO ] TRACE LF dc=4 raw=200 target=280 cps=233 ff_x10=1115 p_x10=23 i_x10=101 pwm=124
+[0002251981] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=313 ff_x10=869 p_x10=-48 i_x10=254 pwm=107
+[0002251991] [INFO ] TRACE RF dc=-5 raw=-250 target=-280 cps=-224 ff_x10=-1418 p_x10=-27 i_x10=-137 pwm=-158
+[0002252000] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-288 ff_x10=-993 p_x10=11 i_x10=38 pwm=-94
+[0002252209] [INFO ] TRACE t=2221962 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002252218] [INFO ] TRACE LF dc=4 raw=200 target=280 cps=224 ff_x10=1116 p_x10=28 i_x10=102 pwm=125
+[0002252227] [INFO ] TRACE LR dc=5 raw=250 target=280 cps=295 ff_x10=869 p_x10=-21 i_x10=253 pwm=110
+[0002252237] [INFO ] TRACE RF dc=-5 raw=-250 target=-280 cps=-232 ff_x10=-1418 p_x10=-24 i_x10=-140 pwm=-158
+[0002252247] [INFO ] TRACE RR dc=-5 raw=-250 target=-280 cps=-277 ff_x10=-993 p_x10=-1 i_x10=38 pwm=-96
+[0002252334] [INFO ] BAT: raw=1209 filtered=1209 adc=974mV supply=10714mV state=MONITOR_ONLY samples=22523 errors=0
+[0002252455] [INFO ] TRACE t=2221982 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002252464] [INFO ] TRACE LF dc=3 raw=150 target=280 cps=202 ff_x10=1119 p_x10=38 i_x10=103 pwm=126
+[0002252473] [INFO ] TRACE LR dc=5 raw=250 target=280 cps=282 ff_x10=869 p_x10=-2 i_x10=253 pwm=112
+[0002252482] [INFO ] TRACE RF dc=-5 raw=-250 target=-280 cps=-237 ff_x10=-1418 p_x10=-21 i_x10=-142 pwm=-158
+[0002252492] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-283 ff_x10=-993 p_x10=4 i_x10=38 pwm=-95
+[0002252701] [INFO ] TRACE t=2222002 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002252710] [INFO ] TRACE LF dc=4 raw=200 target=280 cps=202 ff_x10=1123 p_x10=39 i_x10=103 pwm=127
+[0002252719] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=287 ff_x10=869 p_x10=-9 i_x10=253 pwm=111
+[0002252729] [INFO ] TRACE RF dc=-4 raw=-200 target=-280 cps=-226 ff_x10=-1418 p_x10=-27 i_x10=-144 pwm=-159
+[0002252738] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-288 ff_x10=-993 p_x10=11 i_x10=39 pwm=-94
+[0002252947] [INFO ] TRACE t=2222022 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002252956] [INFO ] TRACE LF dc=2 raw=100 target=280 cps=172 ff_x10=1127 p_x10=53 i_x10=105 pwm=129
+[0002252966] [INFO ] TRACE LR dc=5 raw=250 target=280 cps=276 ff_x10=869 p_x10=2 i_x10=253 pwm=112
+[0002252975] [INFO ] TRACE RF dc=-5 raw=-250 target=-280 cps=-233 ff_x10=-1418 p_x10=-23 i_x10=-147 pwm=-159
+[0002252985] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-291 ff_x10=-993 p_x10=16 i_x10=39 pwm=-94
+[0002253194] [INFO ] TRACE t=2222042 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002253203] [INFO ] TRACE LF dc=3 raw=150 target=280 cps=166 ff_x10=1133 p_x10=57 i_x10=105 pwm=130
+[0002253212] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=283 ff_x10=869 p_x10=-3 i_x10=253 pwm=112
+[0002253221] [INFO ] TRACE RF dc=-5 raw=-250 target=-280 cps=-238 ff_x10=-1418 p_x10=-21 i_x10=-149 pwm=-159
+[0002253231] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-294 ff_x10=-993 p_x10=20 i_x10=40 pwm=-93
+[0002253440] [INFO ] TRACE t=2222062 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002253449] [INFO ] TRACE LF dc=4 raw=200 target=280 cps=175 ff_x10=1138 p_x10=52 i_x10=105 pwm=130
+[0002253458] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=288 ff_x10=869 p_x10=-11 i_x10=252 pwm=111
+[0002253468] [INFO ] TRACE RF dc=-6 raw=-300 target=-280 cps=-255 ff_x10=-1418 p_x10=-12 i_x10=-150 pwm=-158
+[0002253478] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-295 ff_x10=-993 p_x10=22 i_x10=40 pwm=-93
+[0002253687] [INFO ] TRACE t=2222082 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002253696] [INFO ] TRACE LF dc=2 raw=100 target=280 cps=154 ff_x10=1143 p_x10=63 i_x10=106 pwm=131
+[0002253705] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=291 ff_x10=869 p_x10=-16 i_x10=252 pwm=111
+[0002253715] [INFO ] TRACE RF dc=-6 raw=-300 target=-280 cps=-268 ff_x10=-1418 p_x10=-6 i_x10=-151 pwm=-158
+[0002253725] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-296 ff_x10=-993 p_x10=24 i_x10=41 pwm=-93
+[0002253933] [INFO ] TRACE t=2222102 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002253942] [INFO ] TRACE LF dc=4 raw=200 target=280 cps=167 ff_x10=1150 p_x10=56 i_x10=105 pwm=131
+[0002253952] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=293 ff_x10=869 p_x10=-19 i_x10=251 pwm=110
+[0002253961] [INFO ] TRACE RF dc=-6 raw=-300 target=-280 cps=-277 ff_x10=-1418 p_x10=-1 i_x10=-151 pwm=-157
+[0002253971] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-297 ff_x10=-993 p_x10=25 i_x10=42 pwm=-92
+[0002254180] [INFO ] TRACE t=2222122 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002254189] [INFO ] TRACE LF dc=3 raw=150 target=280 cps=162 ff_x10=1155 p_x10=59 i_x10=105 pwm=132
+[0002254199] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=295 ff_x10=869 p_x10=-22 i_x10=251 pwm=110
+[0002254208] [INFO ] TRACE RF dc=-5 raw=-250 target=-280 cps=-269 ff_x10=-1418 p_x10=-5 i_x10=-152 pwm=-158
+[0002254218] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-298 ff_x10=-993 p_x10=26 i_x10=43 pwm=-92
+[0002254427] [INFO ] TRACE t=2222142 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002254436] [INFO ] TRACE LF dc=2 raw=100 target=280 cps=144 ff_x10=1161 p_x10=68 i_x10=106 pwm=134
+[0002254446] [INFO ] TRACE LR dc=6 raw=300 target=280 cps=296 ff_x10=869 p_x10=-24 i_x10=250 pwm=110
+[0002254455] [INFO ] TRACE RF dc=-5 raw=-250 target=-280 cps=-263 ff_x10=-1418 p_x10=-8 i_x10=-152 pwm=-158
+[0002254465] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-298 ff_x10=-993 p_x10=27 i_x10=44 pwm=-92
+[0002254674] [INFO ] TRACE t=2222162 dt=20 req=0/-350 applied=0/-350 state=2 stop=0 fault=0 stby=1
+[0002254683] [INFO ] TRACE LF dc=3 raw=150 target=280 cps=146 ff_x10=1168 p_x10=67 i_x10=106 pwm=134
+[0002254692] [INFO ] TRACE LR dc=5 raw=250 target=280 cps=283 ff_x10=869 p_x10=-4 i_x10=250 pwm=112
+[0002254702] [INFO ] TRACE RF dc=-6 raw=-300 target=-280 cps=-274 ff_x10=-1418 p_x10=-3 i_x10=-153 pwm=-157
+[0002254712] [INFO ] TRACE RR dc=-6 raw=-300 target=-280 cps=-299 ff_x10=-993 p_x10=27 i_x10=45 pwm=-92
+[0002254921] [INFO ] TRACE t=2222182 dt=20 req=0/0 applied=0/0 state=1 stop=2 fault=0 stby=0
+[0002254930] [INFO ] TRACE LF dc=3 raw=150 target=280 cps=147 ff_x10=0 p_x10=0 i_x10=0 pwm=0
+[0002254939] [INFO ] TRACE LR dc=5 raw=250 target=280 cps=273 ff_x10=0 p_x10=0 i_x10=0 pwm=0
+[0002254947] [INFO ] TRACE RF dc=-5 raw=-250 target=-280 cps=-267 ff_x10=0 p_x10=0 i_x10=0 pwm=0
+[0002254956] [INFO ] TRACE RR dc=-4 raw=-200 target=-280 cps=-270 ff_x10=0 p_x10=0 i_x10=0 pwm=0
+[0002254965] [INFO ] TRACE END; units req/applied=mm/s,mrad/s cps=counts/s pwm=permille
+[0002255172] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1264/352
+[0002255182] [INFO ] ENC L: LF raw=64260 d=0 total=-1276 dir=STOP | LR raw=4294965189 d=0 total=-2107 dir=STOP
+[0002255192] [INFO ] ENC R: RF raw=63764 d=0 total=1772 dir=STOP | RR raw=63583 d=0 total=1953 dir=STOP
+[0002255202] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002255211] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002255221] [INFO ] IMU RAW: a=[182,49,8469] temp=2284 g=[-55,26,141] samples=225507 errors=0
+[0002255230] [INFO ] IMU SI: a_mmps2=[217,58,10138] w_mrads=[-14,6,37] temp_mC=27840 bias=0
+[0002255238] [INFO ] IMU QUALITY: epoch=1 drdy=225529 missed=0 race=0 timeout=0 cal=0 persist=0
+HOST_PHASE final_stop
+[0002255304] [INFO ] NONE test disarmed; all motor outputs disabled
+[0002255304] [DEBUG] USB SNAP STOP task=2255304 now=2255304 last=2255304 age=0 sof=2254147
+[0002255304] [DEBUG] USB SNAP cfg=1 mon=1 seen=1 alive=1 ctrl=1 dtr=1 open=1 events=1/0/19
+[0002255395] [INFO ] ENC L: LF raw=64260 d=0 total=-1276 dir=STOP | LR raw=4294965189 d=0 total=-2107 dir=STOP
+[0002255405] [INFO ] ENC R: RF raw=63764 d=0 total=1772 dir=STOP | RR raw=63583 d=0 total=1953 dir=STOP
+[0002255415] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002255424] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002255572] [INFO ] ENC L: LF raw=64260 d=0 total=-1276 dir=STOP | LR raw=4294965189 d=0 total=-2107 dir=STOP
+[0002255582] [INFO ] ENC R: RF raw=63764 d=0 total=1772 dir=STOP | RR raw=63583 d=0 total=1953 dir=STOP
+[0002255592] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002255601] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002255772] [INFO ] ENC L: LF raw=64260 d=0 total=-1276 dir=STOP | LR raw=4294965189 d=0 total=-2107 dir=STOP
+[0002255782] [INFO ] ENC R: RF raw=63764 d=0 total=1772 dir=STOP | RR raw=63583 d=0 total=1953 dir=STOP
+[0002255792] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002255801] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002255972] [INFO ] ENC L: LF raw=64260 d=0 total=-1276 dir=STOP | LR raw=4294965189 d=0 total=-2107 dir=STOP
+[0002255982] [INFO ] ENC R: RF raw=63764 d=0 total=1772 dir=STOP | RR raw=63583 d=0 total=1953 dir=STOP
+[0002255992] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0002256001] [INFO ] SPD R: 

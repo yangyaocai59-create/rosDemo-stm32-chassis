@@ -1,0 +1,29 @@
+{
+  "note": "Same v0.18.11, same LEFT +350 mrad/s for 6s; each trace is final 127 ACTIVE samples, not independent mechanical ground truth.",
+  "previous": {
+    "mean_cps": 224.43,
+    "rms_error_cps": 162.66,
+    "raw_zero_percent": 22.05,
+    "max_consecutive_zero_interval_ms": 500,
+    "mean_abs_pwm_permille": 165.75,
+    "max_ff_plus_i_step_permille": 1.5,
+    "max_ff_plus_i_step_when_ff_reduces_permille": 0
+  },
+  "repeat1": {
+    "mean_cps": 221.22,
+    "rms_error_cps": 157.39,
+    "raw_zero_percent": 20.47,
+    "longest_zero_ms": 500,
+    "peak_abs_cps": 497,
+    "mean_abs_pwm": 162.66
+  },
+  "repeat2": {
+    "mean_cps": 293.32,
+    "rms_error_cps": 61.71,
+    "raw_zero_percent": 0.0,
+    "longest_zero_ms": 0,
+    "peak_abs_cps": 391,
+    "mean_abs_pwm": 144.35
+  },
+  "onsite_observation": "User could not clearly see whether RF physically stopped."
+}

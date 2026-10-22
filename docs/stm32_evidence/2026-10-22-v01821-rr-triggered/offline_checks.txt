@@ -1,0 +1,19 @@
+2026-10-22, Asia/Singapore. Offline checks only; no hardware ports opened.
+
+python docs/stm32_evidence/2026-10-22-v01821-rr-triggered/analyze_event.py
+PASS: 65 velocity commands; 6 consecutive 20 ms RR zero-delta intervals;
+883 saved wheel payloads independently unpacked and matched to decoded records;
+167 production source hashes and all four 0.18.21 firmware artifact hashes unchanged.
+CRC scope: acquisition reported zero; complete CRC-bearing wire frames not saved.
+Original video not received; physical rotation not independently verified.
+
+python build/hardware_tests/test_rr_plateau_trigger.py
+PASS: 6 unittest methods (historical gap replay, no-motion startup, continuous
+counts, short plateau/duplicates, timestamp wrap/latching, inactivity/discontinuity).
+Ran 6 tests in 0.032s. OK.
+
+git diff --check
+PASS (exit 0); existing LF-to-CRLF worktree notices only.
+
+These checks do not establish encoder electrical integrity, true wheel tracking,
+or chassis/ROS acceptance. No firmware change, flash, new motion or Git push.

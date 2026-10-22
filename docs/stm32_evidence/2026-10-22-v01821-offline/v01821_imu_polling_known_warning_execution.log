@@ -1,0 +1,4 @@
+PASS: DRDY-only acquisition, ISR timestamp, stale caller clock, coalesced edges, read race, stale edge and missing INT timeout
+PASS: MPU6500 reset/configuration/readback, 14-byte signed decode, nominal die temperature, CS and HAL error paths
+PASS: actual service startup/wait/recovery, identity/reset/scale mismatch rejection, timestamp/units, tick wrap
+PASS: valid six-axis data cannot enable legacy USB/UART calibration or Flash writes

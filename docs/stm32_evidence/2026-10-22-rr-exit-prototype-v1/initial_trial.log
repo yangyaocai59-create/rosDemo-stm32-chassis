@@ -1,0 +1,7 @@
+Initial unsaved native trial, reconstructed verbatim assertion from tool output:
+Assertion failed: s_rr_running.temporary_permille==0 && s_rr_running.spent, file docs/stm32_evidence/2026-10-22-rr-exit-prototype-v1/test_fast.c, line 47
+
+The first prototype allowed the filtered settled counter to rearm while fresh
+raw evidence still indicated overspeed. Corrected the offline prototype only:
+settled/rearm now require no fast overspeed and no accelerating contradiction.
+The original test assertion was retained, not weakened. Final runner reruns it.

@@ -1,0 +1,59 @@
+{
+  "kind": "OFFLINE_PROTOTYPE_ONLY_NOT_A_FIRMWARE_RELEASE",
+  "native_pass_groups": 42,
+  "usb_pass_groups": 20,
+  "warnings": 0,
+  "production_source_test_hashes_unchanged": 132,
+  "production_hex_unchanged": true,
+  "serial_opened": false,
+  "motion_sent": false,
+  "firmware_linked": false,
+  "flashed": false,
+  "hardware_tested": false,
+  "isolation_steps": 80000,
+  "ARM_object_sizes": "   text\t   data\t    bss\t    dec\t    hex\tfilename\n   5506\t      0\t    288\t   5794\t   16a2\tE:\\DEMO\\rosDemo\\build\\prototypes\\lf_coordination_v1\\baseline_arm.o\n   6010\t      0\t    288\t   6298\t   189a\tE:\\DEMO\\rosDemo\\build\\prototypes\\lf_coordination_v1\\candidate_arm.o\n",
+  "static_stack_lines": {
+    "baseline": [
+      "E:\\DEMO\\rosDemo\\docs\\stm32_evidence\\2026-10-21-v01815-lf-cycle-review\\source_snapshot\\wheel_speed_controller.c:148:14:WheelSpeedController_FrontSupport\t136\tstatic",
+      "E:\\DEMO\\rosDemo\\docs\\stm32_evidence\\2026-10-21-v01815-lf-cycle-review\\source_snapshot\\wheel_speed_controller.c:400:6:WheelSpeedController_UpdateWithMode\t96\tstatic"
+    ],
+    "candidate": [
+      "E:\\DEMO\\rosDemo\\docs\\stm32_evidence\\2026-10-21-lf-coordination-prototype-v1\\prototype\\wheel_speed_controller.c:148:14:WheelSpeedController_FrontSupport\t160\tstatic",
+      "E:\\DEMO\\rosDemo\\docs\\stm32_evidence\\2026-10-21-lf-coordination-prototype-v1\\prototype\\wheel_speed_controller.c:449:6:WheelSpeedController_UpdateWithMode\t96\tstatic"
+    ]
+  },
+  "prototype_hashes": {
+    "chassis_config.h": "d135bb847057595bf6965408e8ab3a7e47ecfb0b2e1c85bba4a2cf3e8b383047",
+    "motor_driver.h": "906df9369cabea75a3913541fd52271ef7bb877a4e7513f0b184e0418681429a",
+    "wheel_speed_controller.c": "e282ee4144fb3e4549f7a48727c42073184de0018138caafba9d48ed91ed4c42",
+    "wheel_speed_controller.h": "836110055ab2e64a459942dc2dc433c46b8b916879b47bb6c127530286bb9171",
+    "wheel_speed_control_config.h": "f6bd3ccd0ee98446ed93153cd87cd4292a62cd7633c9139f5307ba597d8fd0fc"
+  },
+  "files": {
+    "compare_recorded_feedback.py": "66b7ee6e0936f3ba2372e788bc5604984f419050ed47360d696b37503a05eef5",
+    "lf_baseline_prescribed.csv": "0390a703e80dd66f86f450fa0fa84b02343e6d5f998f46240132cf21dd8c8e7e",
+    "lf_prototype_prescribed.csv": "9c3b3f96966e74e2464cac260336fb3a7b401098c2a51977ffe9d7620121a99f",
+    "README.md": "f86852ef5f15e601c5760ac316febfb768d57fe65e5a2fe2d73c8560d83b0180",
+    "replay_comparison.json": "c9efcaf6c1c293886af2a2e2e82cc657c44f299260886838ac1d8c9ae5c7de38",
+    "replay_prototype.c": "2303f37955f870fa176c0d26a007730e0c265b627daaf6fd2d34a638fa7bb249",
+    "rf_baseline_prescribed.csv": "e857c6935eb2bde1040e287b7b8b4ab24bdc538ff8fa62334c6ff777e66da165",
+    "rf_prototype_prescribed.csv": "e857c6935eb2bde1040e287b7b8b4ab24bdc538ff8fa62334c6ff777e66da165",
+    "run_tests.py": "f179be941969183ab997443d6d9aea3729ba11cb22cca8fad41bf54c5bd8e009",
+    "test_isolation.c": "169e0250c7aeed692cf5dffad1477dfc2ea5b880ba0dc905c65997a878b721c3",
+    "test_policy.c": "24bd5e4a934de1d403aa317c3fcf9f81e2a09be5742942a00978353c079b41f4",
+    "prototype\\chassis_config.h": "d135bb847057595bf6965408e8ab3a7e47ecfb0b2e1c85bba4a2cf3e8b383047",
+    "prototype\\motor_driver.h": "906df9369cabea75a3913541fd52271ef7bb877a4e7513f0b184e0418681429a",
+    "prototype\\wheel_speed_controller.c": "e282ee4144fb3e4549f7a48727c42073184de0018138caafba9d48ed91ed4c42",
+    "prototype\\wheel_speed_controller.h": "836110055ab2e64a459942dc2dc433c46b8b916879b47bb6c127530286bb9171",
+    "prototype\\wheel_speed_control_config.h": "f6bd3ccd0ee98446ed93153cd87cd4292a62cd7633c9139f5307ba597d8fd0fc",
+    "regression\\test_front_load_confirmation.c": "05a94dc3f23c16dc68af97d00a49dbee6c093f658e08968a38f20d7834fb0f0b",
+    "regression\\test_front_pivot.c": "eeee0bb168421c0e200079dd3172814bc7dcded38fd34651285c40e68c572e4c",
+    "regression\\test_front_support_handoff.c": "769d580ef431588c36014e62c6aaf082fff1ee3d277b91b294a902e24131d5d0"
+  },
+  "limits": [
+    "Prescribed feedback/artificial private seeds are not a physical plant.",
+    "Aggregate support budgets exclude P/error-I, sign/mode/target changes and opposing-I reset.",
+    "Object compilation is NOT a complete linked ARM firmware or on-board stack/timing proof.",
+    "Lower coordinated rise/slower load withdrawal can alter breakaway and unloading transients."
+  ]
+}

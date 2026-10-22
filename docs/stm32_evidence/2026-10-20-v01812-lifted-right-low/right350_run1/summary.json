@@ -1,0 +1,70 @@
+{
+  "capture_result": "COMPLETE_NOT_A_TRACKING_PASS",
+  "motion_kind": "pivot",
+  "duration_s_each": 6,
+  "angular_command_mrad_s": 350,
+  "linear_command_mm_s": 0,
+  "directions": [
+    {
+      "direction": "RIGHT",
+      "requested_v_mm_s": 0,
+      "requested_w_mrad_s": -350,
+      "commands_sent": 120,
+      "status_samples": 60,
+      "supply_mV_min_max": [
+        10659,
+        10758
+      ],
+      "stopped_status": [
+        572864,
+        360,
+        360,
+        0,
+        134,
+        1,
+        0,
+        2,
+        0,
+        336,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        542,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "errors": [],
+  "focused_left_repeat": false,
+  "focused_left_only": false,
+  "focused_right_only": true,
+  "physical_setup": "lifted",
+  "final_status": [
+    605360,
+    360,
+    360,
+    0,
+    200,
+    1,
+    0,
+    2,
+    0,
+    336,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    608,
+    0,
+    0,
+    0
+  ],
+  "host_crc_errors": 0
+}

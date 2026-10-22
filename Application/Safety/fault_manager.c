@@ -10,6 +10,8 @@
 #include "FreeRTOS.h"
 #include "debug_log.h"
 #include "task.h"
+#include "wheel_speed_controller.h"
+#include "wheel_speed_control_config.h"
 
 #define FAULT_MANAGER_TASK_BIT(task) (1UL << (uint32_t)(task))
 
@@ -129,6 +131,8 @@ void FaultManager_Init(uint32_t now_ms)
     (long)FAULT_MANAGER_STALL_MIN_TARGET_CPS,
     (unsigned long)FAULT_MANAGER_STALL_STARTUP_GRACE_MS,
     (unsigned long)FAULT_MANAGER_STALL_DETECT_MS);
+  DEBUG_LOG_INFO("Front pivot no-motion recovery limit=%lums; failure latches wheel stall",
+    (unsigned long)WHEEL_SPEED_FRONT_NO_MOTION_LIMIT_MS);
 }
 
 void FaultManager_Heartbeat(FaultManagerTask task, uint32_t now_ms)
@@ -198,15 +202,62 @@ void FaultManager_ObserveMotion(
     const bool grace_complete =
       ((now_ms - s_motion_start_ms) >=
        FAULT_MANAGER_STALL_STARTUP_GRACE_MS);
-    const bool stall_condition =
+    const bool legacy_stall_condition =
       grace_complete &&
       (!direction_changed) &&
       (target_magnitude >= FAULT_MANAGER_STALL_MIN_TARGET_CPS) &&
       (directed_speed < minimum_speed) &&
       (FaultManager_AbsI16(output_permille[wheel]) >=
        FAULT_MANAGER_STALL_MIN_OUTPUT_PERMILLE);
+    /* After confirmed-motion/zero-legacy-bias ownership, a
+     * continuous LR reverse running failure must not lose its safety timer
+     * when the bounded temporary support fades below the old PWM gate.
+     * Keep the complete legacy predicate above, OR this narrow extra path.
+     * Retain its 1000ms grace, >=200cps, <15% speed and 750ms qualification.
+     * Ownership, not active/spent/pulse age, qualifies this path; thus pulse
+     * withdrawal cannot restart the timer. Existing latch/all-wheel stop owns
+     * shutdown. No control output, fault code or threshold is raised. */
+    const bool lr_running_stall_condition =
+      (wheel == MOTOR_DRIVER_WHEEL_LR) &&
+      grace_complete && (!direction_changed) &&
+      (target <= -FAULT_MANAGER_STALL_MIN_TARGET_CPS) &&
+      (directed_speed < minimum_speed) &&
+      WheelSpeedController_IsLrRunningSupportOwned(target);
+    /* RR forward has the same independent-of-PWM continuity requirement.
+     * Preserve BOTH old predicates and every old threshold/timer/latch. */
+    const bool rr_running_stall_condition =
+      (wheel == MOTOR_DRIVER_WHEEL_RR) &&
+      grace_complete && (!direction_changed) &&
+      (target >= FAULT_MANAGER_STALL_MIN_TARGET_CPS) &&
+      (directed_speed < minimum_speed) &&
+      WheelSpeedController_IsRrRunningSupportOwned(target);
+    const bool stall_condition = legacy_stall_condition ||
+      lr_running_stall_condition || rr_running_stall_condition;
+    WheelSpeedFrontPivotState front;
+    /* Same motor-task policy snapshot as the live maneuver, read under this
+     * critical section. Rear/NORMAL/below-policy-target behavior is unchanged.
+     * No speed-ratio/output/grace gate may mask an exhausted recovery failure.
+     * The policy already qualified 1.5s of continuous near-rest. */
+    const bool front_recovery_failed =
+      WheelSpeedController_GetFrontPivotState((MotorDriverWheel)wheel, &front) &&
+      front.active && front.recovery_failed &&
+      (front.no_motion_ms >= WHEEL_SPEED_FRONT_NO_MOTION_LIMIT_MS) &&
+      (target_magnitude >= WHEEL_SPEED_CONTROL_PIVOT_STATIONARY_CPS) &&
+      (((target > 0.0f) && (front.sign > 0)) ||
+       ((target < 0.0f) && (front.sign < 0)));
 
     s_previous_targets[wheel] = target;
+    if (front_recovery_failed)
+    {
+      const uint32_t wheel_bit = (1UL << wheel);
+      s_status.current_stalled_wheel_mask |= wheel_bit;
+      if ((s_status.latched_stalled_wheel_mask & wheel_bit) == 0U)
+      {
+        newly_stalled_mask |= wheel_bit;
+      }
+      s_status.latched_stalled_wheel_mask |= wheel_bit;
+      continue;
+    }
     if (!stall_condition)
     {
       s_stall_condition_active[wheel] = false;

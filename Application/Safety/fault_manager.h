@@ -62,7 +62,9 @@ void FaultManager_MarkSystemInitComplete(uint32_t now_ms);
 
 /**
  * Observe the production controller only. Diagnostics and IDLE never generate
- * a wheel-stall fault.
+ * a wheel-stall fault. An exhausted front-pivot recovery with a qualified
+ * no-motion deadline latches the existing wheel-stall fault below the legacy
+ * >=200 cps stall gate as well; safetyTask then stops the entire runtime.
  */
 void FaultManager_ObserveMotion(
   uint32_t now_ms,

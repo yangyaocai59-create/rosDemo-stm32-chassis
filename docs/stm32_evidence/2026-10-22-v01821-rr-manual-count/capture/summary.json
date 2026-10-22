@@ -1,0 +1,166 @@
+{
+  "test": "MANUAL RR wheel count, NOT powered motion",
+  "timezone": "Asia/Singapore",
+  "firmware_identity": "User-reported .21, no independent readback",
+  "setup": "User confirms VM off, encoders powered, all wheels lifted/fixed",
+  "serial_tx_allowed": [
+    "GET_STATUS 0x04"
+  ],
+  "debug_writes": 0,
+  "motion_commands": 0,
+  "reset_requested": false,
+  "fault_clear_sent": false,
+  "calibration_sent": false,
+  "nominal_counts_per_rev": 1560,
+  "phases": [
+    {
+      "label": "manual_forward",
+      "turns_user_reported": 3,
+      "start_counts": [
+        -850,
+        -1709,
+        1326,
+        1639
+      ],
+      "end_counts": [
+        -850,
+        -1709,
+        1326,
+        6328
+      ],
+      "delta": [
+        0,
+        0,
+        0,
+        4689
+      ],
+      "RR_counts_per_turn": 1563.0,
+      "wheel_sample_ms": 1243023,
+      "uart_rr": {
+        "t_ms": 1242921,
+        "raw": 59208,
+        "delta": 0,
+        "total": 6328
+      }
+    },
+    {
+      "label": "manual_reverse",
+      "turns_user_reported": 3,
+      "start_counts": [
+        -850,
+        -1709,
+        1326,
+        6328
+      ],
+      "end_counts": [
+        -850,
+        -1709,
+        1326,
+        1647
+      ],
+      "delta": [
+        0,
+        0,
+        0,
+        -4681
+      ],
+      "RR_counts_per_turn": -1560.3333333333333,
+      "wheel_sample_ms": 1301963,
+      "uart_rr": {
+        "t_ms": 1301921,
+        "raw": 63889,
+        "delta": 0,
+        "total": 1647
+      }
+    }
+  ],
+  "errors": [],
+  "result": "MANUAL_COUNTS_CAPTURED_REVIEW_REQUIRED",
+  "control_path": "E:\\DEMO\\rosDemo\\build\\hardware_tests\\rr_manual_count_20261022_111450_238446\\operator_phase.json",
+  "out": "E:\\DEMO\\rosDemo\\build\\hardware_tests\\rr_manual_count_20261022_111450_238446",
+  "last_status": [
+    1301958,
+    120,
+    120,
+    0,
+    270,
+    1,
+    0,
+    2,
+    0,
+    336,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    486,
+    0,
+    0,
+    0
+  ],
+  "last_wheel": [
+    1301963,
+    -850,
+    -1709,
+    1326,
+    1647,
+    0,
+    0,
+    0,
+    0
+  ],
+  "last_uart_rr": {
+    "t_ms": 1301921,
+    "raw": 63889,
+    "delta": 0,
+    "total": 1647
+  },
+  "host_crc_errors": 0,
+  "stage": "finished",
+  "baseline": {
+    "counts": [
+      -850,
+      -1709,
+      1326,
+      1639
+    ],
+    "sample_ms": 1170023,
+    "status": [
+      1170024,
+      120,
+      120,
+      0,
+      6,
+      1,
+      0,
+      2,
+      0,
+      336,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      222,
+      0,
+      0,
+      0
+    ],
+    "uart_rr": {
+      "t_ms": 1169921,
+      "raw": 63897,
+      "delta": 0,
+      "total": 1639
+    }
+  },
+  "round_trip_delta": [
+    0,
+    0,
+    0,
+    8
+  ],
+  "ports_closed": true
+}

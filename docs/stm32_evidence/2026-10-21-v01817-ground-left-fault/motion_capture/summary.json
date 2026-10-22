@@ -1,0 +1,373 @@
+{
+  "capture_result": "INCOMPLETE",
+  "motion_kind": "pivot",
+  "duration_s_each": 6,
+  "angular_command_mrad_s": 300,
+  "linear_command_mm_s": 0,
+  "directions": [],
+  "errors": [
+    "Motion fault: (549268, 275, 275, 1, 46, 3, 5, 6, 0, 464, 0, 0, 3, -7, 8, 13, 444, 0, 0, 0)",
+    "cleanup: Chassis not safely stopped: (549886, 275, 275, 2, 50, 3, 5, 6, 0, 464, 0, 0, 0, 0, 0, 0, 448, 0, 0, 0)"
+  ],
+  "focused_left_repeat": false,
+  "focused_left_only": true,
+  "focused_right_only": false,
+  "physical_setup": "ground",
+  "timezone": "Asia/Singapore",
+  "observe_recovery_fault": false,
+  "clear_prior_health_fault_once_authorized": false,
+  "tx_commands": [
+    {
+      "phase": "initial",
+      "elapsed_s": 0.0,
+      "type": 2,
+      "seq": 1,
+      "payload_hex": ""
+    },
+    {
+      "phase": "initial",
+      "elapsed_s": 0.0,
+      "type": 4,
+      "seq": 2,
+      "payload_hex": ""
+    },
+    {
+      "phase": "initial",
+      "elapsed_s": 0.0,
+      "type": 4,
+      "seq": 3,
+      "payload_hex": ""
+    },
+    {
+      "phase": "initial",
+      "elapsed_s": 0.5,
+      "type": 4,
+      "seq": 4,
+      "payload_hex": ""
+    },
+    {
+      "phase": "initial",
+      "elapsed_s": 1.0,
+      "type": 4,
+      "seq": 5,
+      "payload_hex": ""
+    },
+    {
+      "phase": "initial",
+      "elapsed_s": 1.5,
+      "type": 4,
+      "seq": 6,
+      "payload_hex": ""
+    },
+    {
+      "phase": "initial",
+      "elapsed_s": 2.0,
+      "type": 4,
+      "seq": 7,
+      "payload_hex": ""
+    },
+    {
+      "phase": "initial",
+      "elapsed_s": 2.5,
+      "type": 4,
+      "seq": 8,
+      "payload_hex": ""
+    },
+    {
+      "phase": "initial",
+      "elapsed_s": 3.0,
+      "type": 4,
+      "seq": 9,
+      "payload_hex": ""
+    },
+    {
+      "phase": "initial",
+      "elapsed_s": 3.5,
+      "type": 4,
+      "seq": 10,
+      "payload_hex": ""
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 0.0,
+      "type": 1,
+      "seq": 11,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 0.06300000000010186,
+      "type": 1,
+      "seq": 12,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 0.11000000000058208,
+      "type": 1,
+      "seq": 13,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 0.15600000000085856,
+      "type": 1,
+      "seq": 14,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 0.20300000000133878,
+      "type": 1,
+      "seq": 15,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 0.25,
+      "type": 1,
+      "seq": 16,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 0.31300000000010186,
+      "type": 1,
+      "seq": 17,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 0.3600000000005821,
+      "type": 1,
+      "seq": 18,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 0.40600000000085856,
+      "type": 1,
+      "seq": 19,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 0.4530000000013388,
+      "type": 1,
+      "seq": 20,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 0.5,
+      "type": 1,
+      "seq": 21,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 0.5630000000001019,
+      "type": 1,
+      "seq": 22,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 0.6100000000005821,
+      "type": 1,
+      "seq": 23,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 0.6560000000008586,
+      "type": 1,
+      "seq": 24,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 0.7030000000013388,
+      "type": 1,
+      "seq": 25,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 0.75,
+      "type": 1,
+      "seq": 26,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 0.8130000000001019,
+      "type": 1,
+      "seq": 27,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 0.8600000000005821,
+      "type": 1,
+      "seq": 28,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 0.9060000000008586,
+      "type": 1,
+      "seq": 29,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 0.9530000000013388,
+      "type": 1,
+      "seq": 30,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 1.0,
+      "type": 1,
+      "seq": 31,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 1.0630000000001019,
+      "type": 1,
+      "seq": 32,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 1.110000000000582,
+      "type": 1,
+      "seq": 33,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 1.1720000000004802,
+      "type": 1,
+      "seq": 34,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 1.2030000000013388,
+      "type": 1,
+      "seq": 35,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 1.25,
+      "type": 1,
+      "seq": 36,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 1.3130000000001019,
+      "type": 1,
+      "seq": 37,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 1.360000000000582,
+      "type": 1,
+      "seq": 38,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 1.4060000000008586,
+      "type": 1,
+      "seq": 39,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 1.4530000000013388,
+      "type": 1,
+      "seq": 40,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 1.5,
+      "type": 1,
+      "seq": 41,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 1.5630000000001019,
+      "type": 1,
+      "seq": 42,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 1.610000000000582,
+      "type": 1,
+      "seq": 43,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 1.6560000000008586,
+      "type": 1,
+      "seq": 44,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 1.7030000000013388,
+      "type": 1,
+      "seq": 45,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 1.75,
+      "type": 1,
+      "seq": 46,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 1.8130000000001019,
+      "type": 1,
+      "seq": 47,
+      "payload_hex": "000000002c010000"
+    },
+    {
+      "phase": "LEFT_motion",
+      "elapsed_s": 1.8280000000013388,
+      "type": 2,
+      "seq": 48,
+      "payload_hex": ""
+    },
+    {
+      "phase": "final_stop",
+      "elapsed_s": 0.0,
+      "type": 4,
+      "seq": 49,
+      "payload_hex": ""
+    },
+    {
+      "phase": "final_stop",
+      "elapsed_s": 0.5,
+      "type": 4,
+      "seq": 50,
+      "payload_hex": ""
+    }
+  ],
+  "final_host_stop_sent": true,
+  "host_crc_errors": 0
+}

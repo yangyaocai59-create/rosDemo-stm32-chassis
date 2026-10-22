@@ -1,0 +1,134 @@
+{
+  "kind": "inferred_initial_state_replay_not_private_telemetry_or_a_physical_plant",
+  "wheel": {
+    "LF": {
+      "seed_t": 296221,
+      "seed_load_permille": 60,
+      "fitted_initial_printed_bin_fraction": 0.86,
+      "fitted_I_at_seed": 15.200999999999999,
+      "fit_samples": 127,
+      "tested_candidates": 220,
+      "compatible_candidates": 58,
+      "distinct_recovering_hold_signatures_among_compatible": 1,
+      "max_abs_error_permille_vs_printed": {
+        "ff": 0.08289185000000998,
+        "p": 0.09891204000000003,
+        "i": 0.09568907999999987
+      },
+      "pwm_rounding_mismatches": 0,
+      "max_pwm_discrepancy_permille": 0.0,
+      "recovery_start_times": [
+        297681,
+        298441
+      ],
+      "recovery_exit_events": [
+        {
+          "t": 297781,
+          "directed_speed_cps": 88.04664612,
+          "moving_ms": 40,
+          "recovery_age_ms": 100,
+          "remaining_transient_permille": 40.46037674,
+          "I_directed_permille": 0.0,
+          "still_underspeed": true
+        },
+        {
+          "t": 298601,
+          "directed_speed_cps": 125.40606689,
+          "moving_ms": 40,
+          "recovery_age_ms": 160,
+          "remaining_transient_permille": 36.85865784,
+          "I_directed_permille": 0.0,
+          "still_underspeed": true
+        }
+      ],
+      "moving_underspeed_integral_held_samples": 10,
+      "moving_underspeed_integral_held_accounted_ms": 200,
+      "max_no_motion_ms": 160.0
+    },
+    "RF": {
+      "seed_t": 296261,
+      "seed_load_permille": 25,
+      "fitted_initial_printed_bin_fraction": 0.26,
+      "fitted_I_at_seed": 0.131,
+      "fit_samples": 125,
+      "tested_candidates": 160,
+      "compatible_candidates": 152,
+      "distinct_recovering_hold_signatures_among_compatible": 1,
+      "max_abs_error_permille_vs_printed": {
+        "ff": 0.08423766999999316,
+        "p": 0.09798278999999988,
+        "i": 0.09907431999999994
+      },
+      "pwm_rounding_mismatches": 0,
+      "max_pwm_discrepancy_permille": 0.0,
+      "recovery_start_times": [
+        296421,
+        296901,
+        297361,
+        297941,
+        298341
+      ],
+      "recovery_exit_events": [
+        {
+          "t": 296561,
+          "directed_speed_cps": 123.61515808,
+          "moving_ms": 40,
+          "recovery_age_ms": 140,
+          "remaining_transient_permille": 30.8546257,
+          "I_directed_permille": -0.0,
+          "still_underspeed": true
+        },
+        {
+          "t": 297021,
+          "directed_speed_cps": 143.10704041,
+          "moving_ms": 40,
+          "recovery_age_ms": 120,
+          "remaining_transient_permille": 26.19163513,
+          "I_directed_permille": -0.0,
+          "still_underspeed": true
+        },
+        {
+          "t": 297461,
+          "directed_speed_cps": 116.0643692,
+          "moving_ms": 40,
+          "recovery_age_ms": 100,
+          "remaining_transient_permille": 21.47665977,
+          "I_directed_permille": -0.0,
+          "still_underspeed": true
+        },
+        {
+          "t": 298041,
+          "directed_speed_cps": 165.59767151,
+          "moving_ms": 40,
+          "recovery_age_ms": 100,
+          "remaining_transient_permille": 23.3248291,
+          "I_directed_permille": -0.02584747,
+          "still_underspeed": false
+        },
+        {
+          "t": 298461,
+          "directed_speed_cps": 113.04813385,
+          "moving_ms": 40,
+          "recovery_age_ms": 120,
+          "remaining_transient_permille": 26.05797195,
+          "I_directed_permille": -0.0,
+          "still_underspeed": true
+        }
+      ],
+      "moving_underspeed_integral_held_samples": 14,
+      "moving_underspeed_integral_held_accounted_ms": 280,
+      "max_no_motion_ms": 160.0
+    }
+  },
+  "limits": [
+    "Initial private state is inferred, not directly observed. LF starts from full load 60, RF from load25 after initial overspeed; both begin recovery=0/moving_ms=40.",
+    "Grid fitting selects values within first printed cps/I bins; compatible candidates are only this tested family, not proof of unique private state.",
+    "Same recorded feedback is prescribed; there is no motor, ground friction, driver current, supply-transient or changed-controller response model.",
+    "Replay fit supports the identified existing branch sequence, not sole physical cause or proof that a proposed policy will improve real motion."
+  ],
+  "sha256": {
+    "docs\\stm32_evidence\\2026-10-21-v01814-ground-pivot\\capture\\trace_parsed.json": "941368bc6f1440affdd524a803df4743df9a8a7c752452c5d3031d61689a5e42",
+    "docs\\stm32_evidence\\2026-10-21-v01814-handoff-review\\source_snapshot\\wheel_speed_controller.c": "e4ed9822fb7f1b564fd9ac1be2a4ab1f706a3368f61ea3e4b6668f5438cc7402",
+    "docs\\stm32_evidence\\2026-10-21-v01814-handoff-review\\front_replay.c": "e4b85ece597dd0456008fb68a2b807f90317d06181b59e7ebbb98b551b331d9c"
+  }
+}

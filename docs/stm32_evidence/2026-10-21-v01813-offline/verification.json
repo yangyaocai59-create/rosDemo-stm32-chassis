@@ -1,0 +1,39 @@
+{
+  "result": "PASS",
+  "firmware": "0.18.13-front-recovery-failsafe",
+  "build": "Debug clean, GNU STM32 14.3.1+st.2",
+  "hex_records": 11057,
+  "hex_data_bytes": 176776,
+  "hex_bin_explicit_data_equal": true,
+  "binary_gap_bytes": 8,
+  "binary_gap_fill": "0x00 default objcopy; HEX leaves unused alignment bytes unwritten",
+  "binary_gap_addresses": [
+    "0x8000188",
+    "0x8000189",
+    "0x800018a",
+    "0x800018b",
+    "0x800018c",
+    "0x800018d",
+    "0x800018e",
+    "0x800018f"
+  ],
+  "bytes": 176784,
+  "highest": "0x802b28f",
+  "stack": "0x20020000",
+  "reset": "0x800f439",
+  "errors": 0,
+  "warnings": 0,
+  "memory_bytes": {
+    "RAM": 80704,
+    "CCMRAM": 0,
+    "FLASH": 176784
+  },
+  "sha256": {
+    "hex": "09759895c7aa9dee66ad3ed5b5b2fbd57ad2faa244a67d8f1cd79dc8767de63a",
+    "bin": "e13047f804747a8f7db7c4df4549d220f238d9113e0e29cfd29954a1cf0f5732",
+    "elf": "41ef23d39ecccd7edcbe4b192b4c8431e3e3a5fc28c5f53f6d3efeb9989437c2",
+    "map": "f142918e7c83dcdeed79ec4e056642e0cec0534aa47269ccecddaa8ee76074e3"
+  },
+  "hardware_tested": false,
+  "flashed": false
+}

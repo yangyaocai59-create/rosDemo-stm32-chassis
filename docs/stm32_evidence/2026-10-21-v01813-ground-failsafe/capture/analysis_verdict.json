@@ -1,0 +1,97 @@
+{
+  "verdict": "PASS_OBSERVED_RF_RECOVERY_FAILURE_SHUTDOWN_NOT_A_PIVOT_TRACKING_PASS",
+  "fault_uart_ms": 676282,
+  "wheel_mask": "0x04 (RF)",
+  "rf_near_rest_runs": [
+    {
+      "first_ms": 673762,
+      "last_ms": 673902,
+      "samples": 8,
+      "accounted_dt_ms": 160,
+      "timestamp_span_ms": 140,
+      "left_censored": true,
+      "right_censored": false
+    },
+    {
+      "first_ms": 674222,
+      "last_ms": 674342,
+      "samples": 7,
+      "accounted_dt_ms": 140,
+      "timestamp_span_ms": 120,
+      "left_censored": false,
+      "right_censored": false
+    },
+    {
+      "first_ms": 674802,
+      "last_ms": 676282,
+      "samples": 75,
+      "accounted_dt_ms": 1500,
+      "timestamp_span_ms": 1480,
+      "left_censored": false,
+      "right_censored": true
+    }
+  ],
+  "rf_raw_zero_runs": [
+    {
+      "first_ms": 673762,
+      "last_ms": 673862,
+      "samples": 6,
+      "accounted_dt_ms": 120,
+      "timestamp_span_ms": 100,
+      "left_censored": true,
+      "right_censored": false
+    },
+    {
+      "first_ms": 673902,
+      "last_ms": 673902,
+      "samples": 1,
+      "accounted_dt_ms": 20,
+      "timestamp_span_ms": 0,
+      "left_censored": false,
+      "right_censored": false
+    },
+    {
+      "first_ms": 674122,
+      "last_ms": 674322,
+      "samples": 11,
+      "accounted_dt_ms": 220,
+      "timestamp_span_ms": 200,
+      "left_censored": false,
+      "right_censored": false
+    },
+    {
+      "first_ms": 674722,
+      "last_ms": 676282,
+      "samples": 79,
+      "accounted_dt_ms": 1580,
+      "timestamp_span_ms": 1560,
+      "left_censored": false,
+      "right_censored": true
+    }
+  ],
+  "first_fault_trace_ms": 676302,
+  "trace_after_fault_uart_ms": 20,
+  "first_fault_status_ms": 676326,
+  "host_elapsed_to_fault_s": 4.829000000000178,
+  "final_status_uptime_ms": 710076,
+  "no_stop_after_motion": true,
+  "no_clear_fault": true,
+  "velocity_commands_sent": 97,
+  "accepted_delta": 95,
+  "rejected_delta": 2,
+  "timing_records": 11,
+  "min_stack_free_reported_motor_safety": [
+    1272,
+    344
+  ],
+  "identity_limit": "User-reported flash; no fresh version banner or Flash readback captured.",
+  "measurement_limit": "STBY/PWM are firmware trace state, not independent electrical/current measurements; no physical RF observation supplied yet.",
+  "hashes": {
+    "ch340.log": "dea74a40204dbe0d99906d14b71f626312306419c789b13eb2a535fedb3c9c9f",
+    "summary.json": "64c18391c8bf6d7e38cce5ef3a56190fae32f370a9a533fc08ad3a3114708192",
+    "decoded.json": "0301145626501e4ea822c1f60b2bfa3b2421a6f8ddced6a153c53d14aff7e66c",
+    "usb_frames.jsonl": "4339439111fa9fd7439057db3c42cecce6ab750d4bd41134fcf80f0de29227b2",
+    "trace_parsed.json": "e096738303b4ad9fe2f26d40a740d32ed06e85abfaea54cdd8f28f3ffa14f219",
+    "analysis.json": "f30231f25df155d90380ab9d6b79adeb5c526e1905c7b32fd272541bde0fe0ae"
+  }
+}

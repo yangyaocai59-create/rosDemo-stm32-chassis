@@ -1,0 +1,102 @@
+{
+  "note": "GET_STATUS only; no STOP, velocity, CLEAR_FAULT, debug writes, reset or calibration.",
+  "timezone": "Asia/Singapore",
+  "duration_s": 3.0,
+  "ports": [
+    {
+      "port": "COM8",
+      "vid": 6790,
+      "pid": 29987,
+      "serial": ""
+    },
+    {
+      "port": "COM4",
+      "vid": 1155,
+      "pid": 22336,
+      "serial": "338536803133"
+    }
+  ],
+  "errors": [],
+  "host_crc_errors": 0,
+  "version_lines": [],
+  "timing_lines": [
+    "[0000143443] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1272/352",
+    "[0000144443] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1272/352",
+    "[0000145443] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1272/352"
+  ],
+  "reset_lines": []
+}
+
+[0000143043] [INFO ] ENC L: LF raw=65533 d=0 total=-3 dir=STOP | LR raw=3 d=0 total=3 dir=STOP
+[0000143052] [INFO ] ENC R: RF raw=2 d=0 total=-2 dir=STOP | RR raw=65534 d=0 total=2 dir=STOP
+[0000143061] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000143070] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000143243] [INFO ] ENC L: LF raw=65533 d=0 total=-3 dir=STOP | LR raw=3 d=0 total=3 dir=STOP
+[0000143252] [INFO ] ENC R: RF raw=2 d=0 total=-2 dir=STOP | RR raw=65534 d=0 total=2 dir=STOP
+[0000143261] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000143270] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000143443] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1272/352
+[0000143453] [INFO ] ENC L: LF raw=65533 d=0 total=-3 dir=STOP | LR raw=3 d=0 total=3 dir=STOP
+[0000143462] [INFO ] ENC R: RF raw=2 d=0 total=-2 dir=STOP | RR raw=65534 d=0 total=2 dir=STOP
+[0000143471] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000143481] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000143490] [INFO ] IMU RAW: a=[144,59,8457] temp=2236 g=[-48,11,143] samples=14317 errors=0
+[0000143499] [INFO ] IMU SI: a_mmps2=[172,70,10123] w_mrads=[-12,2,38] temp_mC=27697 bias=0
+[0000143507] [INFO ] IMU QUALITY: epoch=1 drdy=14339 missed=0 race=0 timeout=0 cal=0 persist=0
+[0000143643] [INFO ] ENC L: LF raw=65533 d=0 total=-3 dir=STOP | LR raw=3 d=0 total=3 dir=STOP
+[0000143652] [INFO ] ENC R: RF raw=2 d=0 total=-2 dir=STOP | RR raw=65534 d=0 total=2 dir=STOP
+[0000143661] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000143670] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000143843] [INFO ] ENC L: LF raw=65533 d=0 total=-3 dir=STOP | LR raw=3 d=0 total=3 dir=STOP
+[0000143852] [INFO ] ENC R: RF raw=2 d=0 total=-2 dir=STOP | RR raw=65534 d=0 total=2 dir=STOP
+[0000143861] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000143870] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000144043] [INFO ] ENC L: LF raw=65533 d=0 total=-3 dir=STOP | LR raw=3 d=0 total=3 dir=STOP
+[0000144052] [INFO ] ENC R: RF raw=2 d=0 total=-2 dir=STOP | RR raw=65534 d=0 total=2 dir=STOP
+[0000144061] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000144070] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000144243] [INFO ] ENC L: LF raw=65533 d=0 total=-3 dir=STOP | LR raw=3 d=0 total=3 dir=STOP
+[0000144252] [INFO ] ENC R: RF raw=2 d=0 total=-2 dir=STOP | RR raw=65534 d=0 total=2 dir=STOP
+[0000144261] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000144270] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000144443] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1272/352
+[0000144454] [INFO ] ENC L: LF raw=65533 d=0 total=-3 dir=STOP | LR raw=3 d=0 total=3 dir=STOP
+[0000144463] [INFO ] ENC R: RF raw=2 d=0 total=-2 dir=STOP | RR raw=65534 d=0 total=2 dir=STOP
+[0000144471] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000144481] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000144491] [INFO ] IMU RAW: a=[152,51,8479] temp=2238 g=[-52,5,146] samples=14417 errors=0
+[0000144499] [INFO ] IMU SI: a_mmps2=[181,61,10150] w_mrads=[-13,1,38] temp_mC=27703 bias=0
+[0000144508] [INFO ] IMU QUALITY: epoch=1 drdy=14439 missed=0 race=0 timeout=0 cal=0 persist=0
+[0000144643] [INFO ] ENC L: LF raw=65533 d=0 total=-3 dir=STOP | LR raw=3 d=0 total=3 dir=STOP
+[0000144652] [INFO ] ENC R: RF raw=2 d=0 total=-2 dir=STOP | RR raw=65534 d=0 total=2 dir=STOP
+[0000144661] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000144670] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000144843] [INFO ] ENC L: LF raw=65533 d=0 total=-3 dir=STOP | LR raw=3 d=0 total=3 dir=STOP
+[0000144852] [INFO ] ENC R: RF raw=2 d=0 total=-2 dir=STOP | RR raw=65534 d=0 total=2 dir=STOP
+[0000144861] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000144870] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000145043] [INFO ] ENC L: LF raw=65533 d=0 total=-3 dir=STOP | LR raw=3 d=0 total=3 dir=STOP
+[0000145052] [INFO ] ENC R: RF raw=2 d=0 total=-2 dir=STOP | RR raw=65534 d=0 total=2 dir=STOP
+[0000145061] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000145070] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000145243] [INFO ] ENC L: LF raw=65533 d=0 total=-3 dir=STOP | LR raw=3 d=0 total=3 dir=STOP
+[0000145252] [INFO ] ENC R: RF raw=2 d=0 total=-2 dir=STOP | RR raw=65534 d=0 total=2 dir=STOP
+[0000145261] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000145270] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000145428] [INFO ] BAT: raw=1189 filtered=1190 adc=959mV supply=10549mV state=MONITOR_ONLY samples=1454 errors=0
+[0000145443] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=1272/352
+[0000145454] [INFO ] ENC L: LF raw=65533 d=0 total=-3 dir=STOP | LR raw=3 d=0 total=3 dir=STOP
+[0000145463] [INFO ] ENC R: RF raw=2 d=0 total=-2 dir=STOP | RR raw=65534 d=0 total=2 dir=STOP
+[0000145472] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000145481] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000145491] [INFO ] IMU RAW: a=[142,56,8443] temp=2235 g=[-54,2,146] samples=14517 errors=0
+[0000145499] [INFO ] IMU SI: a_mmps2=[169,67,10107] w_mrads=[-14,0,38] temp_mC=27694 bias=0
+[0000145508] [INFO ] IMU QUALITY: epoch=1 drdy=14539 missed=0 race=0 timeout=0 cal=0 persist=0
+[0000145643] [INFO ] ENC L: LF raw=65533 d=0 total=-3 dir=STOP | LR raw=3 d=0 total=3 dir=STOP
+[0000145652] [INFO ] ENC R: RF raw=2 d=0 total=-2 dir=STOP | RR raw=65534 d=0 total=2 dir=STOP
+[0000145661] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000145671] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000145843] [INFO ] ENC L: LF raw=65533 d=0 total=-3 dir=STOP | LR raw=3 d=0 total=3 dir=STOP
+[0000145852] [INFO ] ENC R: RF raw=2 d=0 total=-2 dir=STOP | RR raw=65534 d=0 total=2 dir=STOP
+[0000145861] [INFO ] SPD L: LF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | LR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1
+[0000145871] [INFO ] SPD R: RF dc=0 cps=0 rpm_x10=0 mmps=0 stop=1 | RR dc=0 cps=0 rpm_x10=0 mmps=0 stop=1

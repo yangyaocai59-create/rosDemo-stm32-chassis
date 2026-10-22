@@ -1,0 +1,215 @@
+{
+  "result": "COMPLETED_ONE_LONG_LEFT_NOT_REPEATABILITY_OR_ENCODER_TRUTH_ACCEPTANCE",
+  "motion_seconds": 19.95300000000043,
+  "approx_IMU_yaw_deg": 180.5795495065789,
+  "host_baseline_wz_mrad_s": 39.07565789473684,
+  "commands_sent_and_accepted": 319,
+  "new_rejected": 0,
+  "new_firmware_faults": 0,
+  "motion_supply_mV_min_max": [
+    10186,
+    10494
+  ],
+  "prior_fault_clear_count": 1,
+  "final_state": "IDLE/EXPLICIT, zero speeds, outputs disabled",
+  "net_counts_including_coast": [
+    -4455,
+    -5088,
+    4599,
+    5106
+  ],
+  "encoder_yaw_deg_if_existing_ROS_effective_track_395mm": 182.7341772151899,
+  "geometry_assumption": "Wheel diameter65mm,1560counts/rev;395mm effective ROS track is only a calculation assumption, not firmware change/calibration",
+  "usb_zero_net_count_plateaus_after_1s": {
+    "LF": [
+      {
+        "first_source_ms": 2842903,
+        "last_source_ms": 2843143,
+        "span_ms": 240,
+        "count": -3834
+      },
+      {
+        "first_source_ms": 2844343,
+        "last_source_ms": 2844543,
+        "span_ms": 200,
+        "count": -4120
+      }
+    ],
+    "LR": [
+      {
+        "first_source_ms": 2842303,
+        "last_source_ms": 2842403,
+        "span_ms": 100,
+        "count": -5455
+      },
+      {
+        "first_source_ms": 2854803,
+        "last_source_ms": 2855143,
+        "span_ms": 340,
+        "count": -8575
+      }
+    ],
+    "RF": [
+      {
+        "first_source_ms": 2843603,
+        "last_source_ms": 2843803,
+        "span_ms": 200,
+        "count": 4553
+      },
+      {
+        "first_source_ms": 2848543,
+        "last_source_ms": 2848803,
+        "span_ms": 260,
+        "count": 5723
+      },
+      {
+        "first_source_ms": 2849203,
+        "last_source_ms": 2849443,
+        "span_ms": 240,
+        "count": 5828
+      }
+    ],
+    "RR": [
+      {
+        "first_source_ms": 2848743,
+        "last_source_ms": 2848843,
+        "span_ms": 100,
+        "count": 7170
+      }
+    ]
+  },
+  "tail_only_source_span_ms": [
+    2854063,
+    2856583
+  ],
+  "tail_only_wheel_metrics": {
+    "LF": {
+      "mean_cps": -250.6535433070866,
+      "zero_delta_samples": 0,
+      "pwm_range": [
+        -164,
+        -129
+      ]
+    },
+    "LR": {
+      "mean_cps": -211.5511811023622,
+      "zero_delta_samples": 20,
+      "pwm_range": [
+        -112,
+        -68
+      ]
+    },
+    "RF": {
+      "mean_cps": 222.68503937007873,
+      "zero_delta_samples": 0,
+      "pwm_range": [
+        89,
+        128
+      ]
+    },
+    "RR": {
+      "mean_cps": 244.48818897637796,
+      "zero_delta_samples": 0,
+      "pwm_range": [
+        108,
+        137
+      ]
+    }
+  },
+  "tail_only_longest_LR_zero_delta_run": {
+    "sample_times_ms": [
+      2854783,
+      2854803,
+      2854823,
+      2854843,
+      2854863,
+      2854883,
+      2854903,
+      2854923,
+      2854943,
+      2854963,
+      2854983,
+      2855003,
+      2855023,
+      2855043,
+      2855063,
+      2855083,
+      2855103,
+      2855123,
+      2855143,
+      2855163
+    ],
+    "intervals_covered_ms": 400,
+    "pwm_permille": [
+      -84,
+      -87,
+      -89,
+      -91,
+      -92,
+      -94,
+      -95,
+      -96,
+      -98,
+      -99,
+      -101,
+      -102,
+      -103,
+      -104,
+      -105,
+      -107,
+      -108,
+      -109,
+      -110,
+      -111
+    ],
+    "ff_x10": [
+      -856,
+      -856,
+      -856,
+      -856,
+      -856,
+      -856,
+      -856,
+      -856,
+      -856,
+      -856,
+      -856,
+      -856,
+      -856,
+      -856,
+      -856,
+      -856,
+      -856,
+      -856,
+      -856,
+      -856
+    ],
+    "i_x10": [
+      79,
+      71,
+      61,
+      51,
+      41,
+      30,
+      18,
+      7,
+      -4,
+      -16,
+      -28,
+      -40,
+      -52,
+      -64,
+      -76,
+      -88,
+      -100,
+      -112,
+      -124,
+      -136
+    ]
+  },
+  "note": "128-frame internal ring retains only final ~2.54s, not PWM for all 20s. USB net plateaus are not independently verified physical stops.",
+  "operator_report": "Four wheels basically continuous, no obvious abnormality",
+  "independent_video_or_external_angle_received": false,
+  "payload_redecode_matches": 1266,
+  "firmware_source_hashes_unchanged": 167
+}

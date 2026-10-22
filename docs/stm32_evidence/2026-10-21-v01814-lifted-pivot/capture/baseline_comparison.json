@@ -1,0 +1,196 @@
+{
+  "baseline_folder": "build\\hardware_tests\\loaded_pivot_compare_20261021_132338",
+  "candidate_folder": "build\\hardware_tests\\loaded_pivot_compare_20261021_141513",
+  "baseline": {
+    "LEFT": {
+      "active_trace_samples": 127,
+      "wheel": {
+        "LF": {
+          "mean_cps": -164.03,
+          "rms_error_cps": 9.88,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 48.79,
+          "max_ff_plus_i_step_permille": 0.2,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "LR": {
+          "mean_cps": -166.42,
+          "rms_error_cps": 11.9,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 43.65,
+          "max_ff_plus_i_step_permille": 0.2,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "RF": {
+          "mean_cps": 163.28,
+          "rms_error_cps": 9.19,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 48.69,
+          "max_ff_plus_i_step_permille": 0.1,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "RR": {
+          "mean_cps": 166.81,
+          "rms_error_cps": 13.26,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 48.43,
+          "max_ff_plus_i_step_permille": 0.2,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        }
+      },
+      "net_counts": [
+        -1040,
+        -1309,
+        1078,
+        1329
+      ]
+    },
+    "RIGHT": {
+      "active_trace_samples": 127,
+      "wheel": {
+        "LF": {
+          "mean_cps": 165.36,
+          "rms_error_cps": 11.23,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 48.93,
+          "max_ff_plus_i_step_permille": 0.2,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "LR": {
+          "mean_cps": 165.07,
+          "rms_error_cps": 15.23,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 48.43,
+          "max_ff_plus_i_step_permille": 0.2,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "RF": {
+          "mean_cps": -161.99,
+          "rms_error_cps": 10.89,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 47.47,
+          "max_ff_plus_i_step_permille": 0.1,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "RR": {
+          "mean_cps": -167.19,
+          "rms_error_cps": 13.12,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 47.88,
+          "max_ff_plus_i_step_permille": 0.2,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        }
+      },
+      "net_counts": [
+        1055,
+        1262,
+        -1078,
+        -1314
+      ]
+    }
+  },
+  "candidate": {
+    "LEFT": {
+      "active_trace_samples": 127,
+      "wheel": {
+        "LF": {
+          "mean_cps": -165.35,
+          "rms_error_cps": 10.77,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 49.42,
+          "max_ff_plus_i_step_permille": 0.2,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "LR": {
+          "mean_cps": -166.86,
+          "rms_error_cps": 12.92,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 43.55,
+          "max_ff_plus_i_step_permille": 0.2,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "RF": {
+          "mean_cps": 164.55,
+          "rms_error_cps": 9.45,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 49.28,
+          "max_ff_plus_i_step_permille": 0.1,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "RR": {
+          "mean_cps": 166.94,
+          "rms_error_cps": 12.71,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 48.46,
+          "max_ff_plus_i_step_permille": 0.2,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        }
+      },
+      "net_counts": [
+        -1045,
+        -1304,
+        1095,
+        1329
+      ]
+    },
+    "RIGHT": {
+      "active_trace_samples": 127,
+      "wheel": {
+        "LF": {
+          "mean_cps": 164.82,
+          "rms_error_cps": 10.46,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 48.36,
+          "max_ff_plus_i_step_permille": 0.2,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "LR": {
+          "mean_cps": 165.09,
+          "rms_error_cps": 12.52,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 48.31,
+          "max_ff_plus_i_step_permille": 0.2,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "RF": {
+          "mean_cps": -163.06,
+          "rms_error_cps": 20.29,
+          "raw_zero_percent": 0.79,
+          "max_consecutive_zero_interval_ms": 20,
+          "mean_abs_pwm_permille": 47.21,
+          "max_ff_plus_i_step_permille": 0.3,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "RR": {
+          "mean_cps": -166.18,
+          "rms_error_cps": 12.95,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 47.22,
+          "max_ff_plus_i_step_permille": 0.2,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        }
+      },
+      "net_counts": [
+        1063,
+        1270,
+        -1087,
+        -1321
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "result": "LONG_TURN_FAILED_FIRMWARE_LR_STALL_NOT_180_DEG_OR_ENCODER_ACCEPTANCE",
+  "fault_wheel": "LR",
+  "fault_wheel_mask": "0x02",
+  "fault_time_ms": 2555822,
+  "firmware_runtime_fault": 5,
+  "controller_fault": 0,
+  "first_active_status_ms": 2551028,
+  "first_active_to_latch_ms": 4794,
+  "last_motion_sample_host_elapsed_s": 4.811999999999898,
+  "approximate_IMU_angle_deg": 46.64073576232632,
+  "host_only_baseline_mrad_s": 40.24013157894737,
+  "angle_is_approximate_not_independent_heading": true,
+  "LR_zero_net_plateau_source_ms": [
+    2555203,
+    2555803
+  ],
+  "LR_zero_net_plateau_stamp_span_ms": 600,
+  "LR_prior_short_plateau_source_ms": [
+    2555003,
+    2555143
+  ],
+  "LR_count_change_between_plateaus": -1,
+  "commands_sent": 78,
+  "accepted": 77,
+  "rejected": 1,
+  "payload_redecode_matches": 287,
+  "observed_operator_report": "LR kept turning; no visible pause",
+  "physical_rotation_independently_verified": false,
+  "fault_cleared_or_retried": false,
+  "detailed_PWM_ring_retrieved": false,
+  "missing_trace_reason": "Runner aborted immediately on state-rejected ACK; normal-only dump path was not entered. Ports closed after stop; not reopened solely to avoid reset risk.",
+  "final_zero_speed_output_disabled": true,
+  "current_state": "FAULT latched; must not resume without further authorization",
+  "firmware_source_hashes_unchanged": 167
+}

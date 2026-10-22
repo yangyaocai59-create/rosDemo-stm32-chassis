@@ -1,0 +1,41 @@
+{
+  "result": "PASS",
+  "firmware": "0.18.15-front-support-handoff",
+  "build": "Debug clean, GNU STM32 14.3.1+st.2",
+  "motion_pass_lines": 38,
+  "usb_pass_lines": 20,
+  "hex_records": 11074,
+  "hex_data_bytes": 177044,
+  "hex_bin_explicit_data_equal": true,
+  "binary_gap_bytes": 8,
+  "binary_gap_fill": "0x00 default objcopy; HEX leaves unused alignment bytes unwritten",
+  "binary_gap_addresses": [
+    "0x8000188",
+    "0x8000189",
+    "0x800018a",
+    "0x800018b",
+    "0x800018c",
+    "0x800018d",
+    "0x800018e",
+    "0x800018f"
+  ],
+  "bytes": 177052,
+  "highest": "0x802b39b",
+  "stack": "0x20020000",
+  "reset": "0x800f439",
+  "errors": 0,
+  "warnings": 0,
+  "memory_bytes": {
+    "RAM": 80720,
+    "CCMRAM": 0,
+    "FLASH": 177052
+  },
+  "sha256": {
+    "hex": "55e8b5b9563822dcf1595b1fa86d321dc6ebeaea81f7608c7ffbdbef184b2ba5",
+    "bin": "0d4c01cc957606579938e75e7e0368f18618c3a3fbb49ba999bc81bab7b2fc01",
+    "elf": "d793e6cda5eaa86566bed691976ab9921c09c16d3838fe6e29573e95a24496b8",
+    "map": "9e0c64a7605e6c4a1690edfa79e67ce713bbc7d663add5e1b1600351e04232d1"
+  },
+  "hardware_tested": false,
+  "flashed": false
+}

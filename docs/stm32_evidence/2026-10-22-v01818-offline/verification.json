@@ -1,0 +1,52 @@
+{
+  "result": "PASS",
+  "firmware": "0.18.18-lf-first-start-window",
+  "build": "Debug clean, GNU STM32 14.3.1+st.2",
+  "motion_pass_lines": 47,
+  "usb_pass_lines": 20,
+  "errors": 0,
+  "warnings": 0,
+  "memory_bytes": {
+    "RAM": 80728,
+    "CCMRAM": 0,
+    "FLASH": 177964
+  },
+  "static_stack_lines": [
+    "E:/DEMO/rosDemo/Application/Chassis/wheel_speed_controller.c:164:14:WheelSpeedController_FrontSupport\t160\tstatic",
+    "E:/DEMO/rosDemo/Application/Chassis/wheel_speed_controller.c:480:6:WheelSpeedController_UpdateWithMode\t96\tstatic",
+    "E:/DEMO/rosDemo/Application/Safety/fault_manager.c:159:6:FaultManager_ObserveMotion\t104\tstatic",
+    "E:/DEMO/rosDemo/Core/Src/freertos.c:343:6:StartSafetyTask\t32\tstatic"
+  ],
+  "hex_records": 11131,
+  "hex_data_bytes": 177956,
+  "hex_bin_explicit_data_equal": true,
+  "bytes": 177964,
+  "binary_gap_bytes": 8,
+  "binary_gap_addresses": [
+    "0x8000188",
+    "0x8000189",
+    "0x800018a",
+    "0x800018b",
+    "0x800018c",
+    "0x800018d",
+    "0x800018e",
+    "0x800018f"
+  ],
+  "binary_gap_fill": "0x00 default objcopy; HEX leaves alignment bytes unwritten",
+  "highest": "0x802b72b",
+  "stack": "0x20020000",
+  "reset": "0x800f439",
+  "sha256": {
+    "hex": "077c0fc81b6e03197146f614c8b51d33e89d0c7184cc7f8ced345d749dfb6442",
+    "bin": "9562556d6d867b209216eecd097829bb85fe7a5fa16f083d572c19988b425f29",
+    "elf": "e4aa24507b8951939f971e62e4f014e448d0f43bde8c511916e3c8832ded4783",
+    "map": "d21a605466d9ced290af090c03580c78b81d1ada7ae405b9e7ba1db1cd1b2886"
+  },
+  "flashed": false,
+  "hardware_tested": false,
+  "serial_opened": false,
+  "motion_sent": false,
+  "fault_cleared": false,
+  "isolation_updates": 120010,
+  "production_code_matches_offline_prototype": true
+}

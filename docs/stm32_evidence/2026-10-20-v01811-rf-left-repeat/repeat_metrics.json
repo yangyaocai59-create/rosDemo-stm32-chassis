@@ -1,0 +1,326 @@
+{
+  "LEFT1": {
+    "LF": {
+      "mean_cps": -284.5,
+      "rms_error_cps": 23.54,
+      "raw_zero_percent": 0.0,
+      "longest_zero_ms": 0,
+      "zero_runs": [],
+      "peak_abs_cps": 358,
+      "mean_abs_pwm": 149.62
+    },
+    "LR": {
+      "mean_cps": -282.34,
+      "rms_error_cps": 26.85,
+      "raw_zero_percent": 0.0,
+      "longest_zero_ms": 0,
+      "zero_runs": [],
+      "peak_abs_cps": 322,
+      "mean_abs_pwm": 98.17
+    },
+    "RF": {
+      "mean_cps": 221.22,
+      "rms_error_cps": 157.39,
+      "raw_zero_percent": 20.47,
+      "longest_zero_ms": 500,
+      "zero_runs": [
+        {
+          "start_ms": 1043562,
+          "last_zero_ms": 1044042,
+          "zero_intervals_ms": 500,
+          "left_censored": false,
+          "right_censored": false,
+          "first": {
+            "dc": 0,
+            "raw": 0,
+            "target": 280,
+            "cps": 112,
+            "ff_x10": 1559,
+            "p_x10": 83,
+            "i_x10": -24,
+            "pwm": 162
+          },
+          "last": {
+            "dc": 0,
+            "raw": 0,
+            "target": 280,
+            "cps": 0,
+            "ff_x10": 1559,
+            "p_x10": 140,
+            "i_x10": 299,
+            "pwm": 200
+          },
+          "next": {
+            "t": 1044062,
+            "dt": 20,
+            "req_v": 0,
+            "req_w": 350,
+            "applied_v": 0,
+            "applied_w": 350,
+            "state": 2,
+            "stop": 0,
+            "fault": 0,
+            "stby": 1,
+            "phase": "LEFT1_trace",
+            "wheels": {
+              "LF": {
+                "dc": -5,
+                "raw": -250,
+                "target": -280,
+                "cps": -249,
+                "ff_x10": -1525,
+                "p_x10": -15,
+                "i_x10": 8,
+                "pwm": -153
+              },
+              "LR": {
+                "dc": -7,
+                "raw": -350,
+                "target": -280,
+                "cps": -309,
+                "ff_x10": -915,
+                "p_x10": 43,
+                "i_x10": -63,
+                "pwm": -94
+              },
+              "RF": {
+                "dc": 1,
+                "raw": 50,
+                "target": 280,
+                "cps": 14,
+                "ff_x10": 1559,
+                "p_x10": 133,
+                "i_x10": 312,
+                "pwm": 201
+              },
+              "RR": {
+                "dc": 7,
+                "raw": 350,
+                "target": 280,
+                "cps": 312,
+                "ff_x10": 1031,
+                "p_x10": -47,
+                "i_x10": 41,
+                "pwm": 103
+              }
+            }
+          }
+        },
+        {
+          "start_ms": 1044082,
+          "last_zero_ms": 1044082,
+          "zero_intervals_ms": 20,
+          "left_censored": false,
+          "right_censored": false,
+          "first": {
+            "dc": 0,
+            "raw": 0,
+            "target": 280,
+            "cps": 10,
+            "ff_x10": 1559,
+            "p_x10": 135,
+            "i_x10": 326,
+            "pwm": 202
+          },
+          "last": {
+            "dc": 0,
+            "raw": 0,
+            "target": 280,
+            "cps": 10,
+            "ff_x10": 1559,
+            "p_x10": 135,
+            "i_x10": 326,
+            "pwm": 202
+          },
+          "next": {
+            "t": 1044102,
+            "dt": 20,
+            "req_v": 0,
+            "req_w": 350,
+            "applied_v": 0,
+            "applied_w": 350,
+            "state": 2,
+            "stop": 0,
+            "fault": 0,
+            "stby": 1,
+            "phase": "LEFT1_trace",
+            "wheels": {
+              "LF": {
+                "dc": -6,
+                "raw": -300,
+                "target": -280,
+                "cps": -274,
+                "ff_x10": -1525,
+                "p_x10": -3,
+                "i_x10": 6,
+                "pwm": -152
+              },
+              "LR": {
+                "dc": -6,
+                "raw": -300,
+                "target": -280,
+                "cps": -305,
+                "ff_x10": -915,
+                "p_x10": 36,
+                "i_x10": -60,
+                "pwm": -94
+              },
+              "RF": {
+                "dc": 1,
+                "raw": 50,
+                "target": 280,
+                "cps": 21,
+                "ff_x10": 1559,
+                "p_x10": 129,
+                "i_x10": 339,
+                "pwm": 203
+              },
+              "RR": {
+                "dc": 6,
+                "raw": 300,
+                "target": 280,
+                "cps": 296,
+                "ff_x10": 1031,
+                "p_x10": -22,
+                "i_x10": 40,
+                "pwm": 105
+              }
+            }
+          }
+        }
+      ],
+      "peak_abs_cps": 497,
+      "mean_abs_pwm": 162.66
+    },
+    "RR": {
+      "mean_cps": 305.22,
+      "rms_error_cps": 52.28,
+      "raw_zero_percent": 0.0,
+      "longest_zero_ms": 0,
+      "zero_runs": [],
+      "peak_abs_cps": 384,
+      "mean_abs_pwm": 103.65
+    }
+  },
+  "LEFT2": {
+    "LF": {
+      "mean_cps": -286.39,
+      "rms_error_cps": 39.5,
+      "raw_zero_percent": 0.0,
+      "longest_zero_ms": 0,
+      "zero_runs": [],
+      "peak_abs_cps": 360,
+      "mean_abs_pwm": 163.32
+    },
+    "LR": {
+      "mean_cps": -253.33,
+      "rms_error_cps": 69.72,
+      "raw_zero_percent": 5.51,
+      "longest_zero_ms": 140,
+      "zero_runs": [
+        {
+          "start_ms": 1083702,
+          "last_zero_ms": 1083822,
+          "zero_intervals_ms": 140,
+          "left_censored": false,
+          "right_censored": false,
+          "first": {
+            "dc": 0,
+            "raw": 0,
+            "target": -280,
+            "cps": -106,
+            "ff_x10": -915,
+            "p_x10": -87,
+            "i_x10": -66,
+            "pwm": -107
+          },
+          "last": {
+            "dc": 0,
+            "raw": 0,
+            "target": -280,
+            "cps": -14,
+            "ff_x10": -1403,
+            "p_x10": -133,
+            "i_x10": -112,
+            "pwm": -155
+          },
+          "next": {
+            "t": 1083842,
+            "dt": 20,
+            "req_v": 0,
+            "req_w": 350,
+            "applied_v": 0,
+            "applied_w": 350,
+            "state": 2,
+            "stop": 0,
+            "fault": 0,
+            "stby": 1,
+            "phase": "LEFT2_trace",
+            "wheels": {
+              "LF": {
+                "dc": -6,
+                "raw": -300,
+                "target": -280,
+                "cps": -283,
+                "ff_x10": -1525,
+                "p_x10": 4,
+                "i_x10": -106,
+                "pwm": -163
+              },
+              "LR": {
+                "dc": -1,
+                "raw": -50,
+                "target": -280,
+                "cps": -24,
+                "ff_x10": -1403,
+                "p_x10": -128,
+                "i_x10": -125,
+                "pwm": -166
+              },
+              "RF": {
+                "dc": 6,
+                "raw": 300,
+                "target": 280,
+                "cps": 352,
+                "ff_x10": 1559,
+                "p_x10": -107,
+                "i_x10": -178,
+                "pwm": 127
+              },
+              "RR": {
+                "dc": 5,
+                "raw": 250,
+                "target": 280,
+                "cps": 240,
+                "ff_x10": 1031,
+                "p_x10": 20,
+                "i_x10": 32,
+                "pwm": 108
+              }
+            }
+          }
+        }
+      ],
+      "peak_abs_cps": 343,
+      "mean_abs_pwm": 97.24
+    },
+    "RF": {
+      "mean_cps": 293.32,
+      "rms_error_cps": 61.71,
+      "raw_zero_percent": 0.0,
+      "longest_zero_ms": 0,
+      "zero_runs": [],
+      "peak_abs_cps": 391,
+      "mean_abs_pwm": 144.35
+    },
+    "RR": {
+      "mean_cps": 277.33,
+      "rms_error_cps": 28.61,
+      "raw_zero_percent": 0.0,
+      "longest_zero_ms": 0,
+      "zero_runs": [],
+      "peak_abs_cps": 333,
+      "mean_abs_pwm": 101.22
+    }
+  }
+}

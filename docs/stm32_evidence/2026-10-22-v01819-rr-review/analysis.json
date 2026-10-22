@@ -1,0 +1,650 @@
+{
+  "kind": "OFFLINE_DIAGNOSIS_CONDITIONAL_C_REPLAY_NOT_FIRMWARE_OR_PLANT",
+  "print_quantization_match_within_one_unit": true,
+  "six_seed_branch_times_stable": true,
+  "conditional_replays": {
+    "low_prior_restart_0": {
+      "seed_shift": -0.49,
+      "initial_finished_restart_hypothesis": false,
+      "frozen_0_18_18_RR_RF_csv_bit_identical": true,
+      "metrics": {
+        "RR": {
+          "max_printed_difference": {
+            "cps": 1,
+            "ff_x10": 1,
+            "p_x10": 1,
+            "i_x10": 1,
+            "pwm": 1
+          },
+          "exact_pwm_rows": 120,
+          "post_seed_rows": 126
+        },
+        "RF": {
+          "max_printed_difference": {
+            "cps": 1,
+            "ff_x10": 1,
+            "p_x10": 0,
+            "i_x10": 1,
+            "pwm": 1
+          },
+          "exact_pwm_rows": 110,
+          "post_seed_rows": 126
+        }
+      },
+      "entry_ms": 1078642,
+      "release_ms": 1078722,
+      "held_ms": 80,
+      "RR_target_actual_cps": 240.642288208,
+      "entry_bias_permille": 47.634624481,
+      "RR_max_positive_I_plus_legacy_bias_permille": 62.232774734,
+      "RR_max_abs_integral_permille": 16.656831741,
+      "RR_peak": {
+        "t": 1078902.0,
+        "rr_target": 240.642288208,
+        "rr_measured": 404.437774658,
+        "rr_ff": 104.505569458,
+        "rr_p": -24.569324493,
+        "rr_i": 13.754853249,
+        "rr_pwm": 94.0,
+        "rr_bias": 7.634624481,
+        "rr_steady_bias": 0.0,
+        "rr_restart_active": 0.0,
+        "rr_restart_age": 260.0,
+        "rf_measured": 309.421691895,
+        "rf_ff": 128.981826782,
+        "rf_p": -10.316910744,
+        "rf_i": 2.423518896,
+        "rf_pwm": 121.0,
+        "rf_load": 38.900192261,
+        "rf_recovery": 0.0,
+        "rf_overspeed_ms": 60.0
+      },
+      "RF_recovery_max_permille": 0.0
+    },
+    "mid_prior_restart_0": {
+      "seed_shift": 0,
+      "initial_finished_restart_hypothesis": false,
+      "frozen_0_18_18_RR_RF_csv_bit_identical": true,
+      "metrics": {
+        "RR": {
+          "max_printed_difference": {
+            "cps": 0,
+            "ff_x10": 0,
+            "p_x10": 0,
+            "i_x10": 1,
+            "pwm": 0
+          },
+          "exact_pwm_rows": 126,
+          "post_seed_rows": 126
+        },
+        "RF": {
+          "max_printed_difference": {
+            "cps": 1,
+            "ff_x10": 1,
+            "p_x10": 0,
+            "i_x10": 1,
+            "pwm": 1
+          },
+          "exact_pwm_rows": 122,
+          "post_seed_rows": 126
+        }
+      },
+      "entry_ms": 1078642,
+      "release_ms": 1078722,
+      "held_ms": 80,
+      "RR_target_actual_cps": 240.642288208,
+      "entry_bias_permille": 47.591537476,
+      "RR_max_positive_I_plus_legacy_bias_permille": 62.232718468,
+      "RR_max_abs_integral_permille": 16.699821472,
+      "RR_peak": {
+        "t": 1078902.0,
+        "rr_target": 240.642288208,
+        "rr_measured": 404.437927246,
+        "rr_ff": 104.462486267,
+        "rr_p": -24.569347382,
+        "rr_i": 13.797832489,
+        "rr_pwm": 94.0,
+        "rr_bias": 7.591537476,
+        "rr_steady_bias": 0.0,
+        "rr_restart_active": 0.0,
+        "rr_restart_age": 260.0,
+        "rf_measured": 309.421844482,
+        "rf_ff": 129.019546509,
+        "rf_p": -10.316933632,
+        "rf_i": 2.470750809,
+        "rf_pwm": 121.0,
+        "rf_load": 38.937911987,
+        "rf_recovery": 0.0,
+        "rf_overspeed_ms": 60.0
+      },
+      "RF_recovery_max_permille": 0.0
+    },
+    "high_prior_restart_0": {
+      "seed_shift": 0.49,
+      "initial_finished_restart_hypothesis": false,
+      "frozen_0_18_18_RR_RF_csv_bit_identical": true,
+      "metrics": {
+        "RR": {
+          "max_printed_difference": {
+            "cps": 1,
+            "ff_x10": 0,
+            "p_x10": 0,
+            "i_x10": 1,
+            "pwm": 1
+          },
+          "exact_pwm_rows": 119,
+          "post_seed_rows": 126
+        },
+        "RF": {
+          "max_printed_difference": {
+            "cps": 1,
+            "ff_x10": 1,
+            "p_x10": 1,
+            "i_x10": 1,
+            "pwm": 1
+          },
+          "exact_pwm_rows": 119,
+          "post_seed_rows": 126
+        }
+      },
+      "entry_ms": 1078642,
+      "release_ms": 1078722,
+      "held_ms": 80,
+      "RR_target_actual_cps": 240.642288208,
+      "entry_bias_permille": 47.548454285,
+      "RR_max_positive_I_plus_legacy_bias_permille": 62.232669830999995,
+      "RR_max_abs_integral_permille": 16.742815018,
+      "RR_peak": {
+        "t": 1078902.0,
+        "rr_target": 240.642288208,
+        "rr_measured": 404.438079834,
+        "rr_ff": 104.419403076,
+        "rr_p": -24.56937027,
+        "rr_i": 13.840812683,
+        "rr_pwm": 94.0,
+        "rr_bias": 7.548454285,
+        "rr_steady_bias": 0.0,
+        "rr_restart_active": 0.0,
+        "rr_restart_age": 260.0,
+        "rf_measured": 309.42199707,
+        "rf_ff": 129.057281494,
+        "rf_p": -10.31695652,
+        "rf_i": 2.517982244,
+        "rf_pwm": 121.0,
+        "rf_load": 38.975643158,
+        "rf_recovery": 0.0,
+        "rf_overspeed_ms": 60.0
+      },
+      "RF_recovery_max_permille": 0.0
+    },
+    "low_prior_restart_1": {
+      "seed_shift": -0.49,
+      "initial_finished_restart_hypothesis": true,
+      "frozen_0_18_18_RR_RF_csv_bit_identical": true,
+      "metrics": {
+        "RR": {
+          "max_printed_difference": {
+            "cps": 1,
+            "ff_x10": 1,
+            "p_x10": 1,
+            "i_x10": 1,
+            "pwm": 1
+          },
+          "exact_pwm_rows": 120,
+          "post_seed_rows": 126
+        },
+        "RF": {
+          "max_printed_difference": {
+            "cps": 1,
+            "ff_x10": 1,
+            "p_x10": 0,
+            "i_x10": 1,
+            "pwm": 1
+          },
+          "exact_pwm_rows": 110,
+          "post_seed_rows": 126
+        }
+      },
+      "entry_ms": 1078642,
+      "release_ms": 1078722,
+      "held_ms": 80,
+      "RR_target_actual_cps": 240.642288208,
+      "entry_bias_permille": 47.634624481,
+      "RR_max_positive_I_plus_legacy_bias_permille": 62.232774734,
+      "RR_max_abs_integral_permille": 16.656831741,
+      "RR_peak": {
+        "t": 1078902.0,
+        "rr_target": 240.642288208,
+        "rr_measured": 404.437774658,
+        "rr_ff": 104.505569458,
+        "rr_p": -24.569324493,
+        "rr_i": 13.754853249,
+        "rr_pwm": 94.0,
+        "rr_bias": 7.634624481,
+        "rr_steady_bias": 0.0,
+        "rr_restart_active": 0.0,
+        "rr_restart_age": 260.0,
+        "rf_measured": 309.421691895,
+        "rf_ff": 128.981826782,
+        "rf_p": -10.316910744,
+        "rf_i": 2.423518896,
+        "rf_pwm": 121.0,
+        "rf_load": 38.900192261,
+        "rf_recovery": 0.0,
+        "rf_overspeed_ms": 60.0
+      },
+      "RF_recovery_max_permille": 0.0
+    },
+    "mid_prior_restart_1": {
+      "seed_shift": 0,
+      "initial_finished_restart_hypothesis": true,
+      "frozen_0_18_18_RR_RF_csv_bit_identical": true,
+      "metrics": {
+        "RR": {
+          "max_printed_difference": {
+            "cps": 0,
+            "ff_x10": 0,
+            "p_x10": 0,
+            "i_x10": 1,
+            "pwm": 0
+          },
+          "exact_pwm_rows": 126,
+          "post_seed_rows": 126
+        },
+        "RF": {
+          "max_printed_difference": {
+            "cps": 1,
+            "ff_x10": 1,
+            "p_x10": 0,
+            "i_x10": 1,
+            "pwm": 1
+          },
+          "exact_pwm_rows": 122,
+          "post_seed_rows": 126
+        }
+      },
+      "entry_ms": 1078642,
+      "release_ms": 1078722,
+      "held_ms": 80,
+      "RR_target_actual_cps": 240.642288208,
+      "entry_bias_permille": 47.591537476,
+      "RR_max_positive_I_plus_legacy_bias_permille": 62.232718468,
+      "RR_max_abs_integral_permille": 16.699821472,
+      "RR_peak": {
+        "t": 1078902.0,
+        "rr_target": 240.642288208,
+        "rr_measured": 404.437927246,
+        "rr_ff": 104.462486267,
+        "rr_p": -24.569347382,
+        "rr_i": 13.797832489,
+        "rr_pwm": 94.0,
+        "rr_bias": 7.591537476,
+        "rr_steady_bias": 0.0,
+        "rr_restart_active": 0.0,
+        "rr_restart_age": 260.0,
+        "rf_measured": 309.421844482,
+        "rf_ff": 129.019546509,
+        "rf_p": -10.316933632,
+        "rf_i": 2.470750809,
+        "rf_pwm": 121.0,
+        "rf_load": 38.937911987,
+        "rf_recovery": 0.0,
+        "rf_overspeed_ms": 60.0
+      },
+      "RF_recovery_max_permille": 0.0
+    },
+    "high_prior_restart_1": {
+      "seed_shift": 0.49,
+      "initial_finished_restart_hypothesis": true,
+      "frozen_0_18_18_RR_RF_csv_bit_identical": true,
+      "metrics": {
+        "RR": {
+          "max_printed_difference": {
+            "cps": 1,
+            "ff_x10": 0,
+            "p_x10": 0,
+            "i_x10": 1,
+            "pwm": 1
+          },
+          "exact_pwm_rows": 119,
+          "post_seed_rows": 126
+        },
+        "RF": {
+          "max_printed_difference": {
+            "cps": 1,
+            "ff_x10": 1,
+            "p_x10": 1,
+            "i_x10": 1,
+            "pwm": 1
+          },
+          "exact_pwm_rows": 119,
+          "post_seed_rows": 126
+        }
+      },
+      "entry_ms": 1078642,
+      "release_ms": 1078722,
+      "held_ms": 80,
+      "RR_target_actual_cps": 240.642288208,
+      "entry_bias_permille": 47.548454285,
+      "RR_max_positive_I_plus_legacy_bias_permille": 62.232669830999995,
+      "RR_max_abs_integral_permille": 16.742815018,
+      "RR_peak": {
+        "t": 1078902.0,
+        "rr_target": 240.642288208,
+        "rr_measured": 404.438079834,
+        "rr_ff": 104.419403076,
+        "rr_p": -24.56937027,
+        "rr_i": 13.840812683,
+        "rr_pwm": 94.0,
+        "rr_bias": 7.548454285,
+        "rr_steady_bias": 0.0,
+        "rr_restart_active": 0.0,
+        "rr_restart_age": 260.0,
+        "rf_measured": 309.42199707,
+        "rf_ff": 129.057281494,
+        "rf_p": -10.31695652,
+        "rf_i": 2.517982244,
+        "rf_pwm": 121.0,
+        "rf_load": 38.975643158,
+        "rf_recovery": 0.0,
+        "rf_overspeed_ms": 60.0
+      },
+      "RF_recovery_max_permille": 0.0
+    }
+  },
+  "initial_seed_hypotheses": {
+    "RR": "printed midpoint+small shift; prior motion true; initial legacy total bias=0; both finished-restart flags tested",
+    "RF": "printed midpoint+small shift; recovery=0; FF excess assigned to adaptive load; moving40ms"
+  },
+  "RR_zero_episodes": [
+    {
+      "first_zero_row_ms": 1078562,
+      "last_zero_row_ms": 1078642,
+      "covered_sample_intervals_ms": 100
+    },
+    {
+      "first_zero_row_ms": 1078682,
+      "last_zero_row_ms": 1078702,
+      "covered_sample_intervals_ms": 40
+    }
+  ],
+  "conditional_states": [
+    {
+      "t": 1078542.0,
+      "rr_target": 240.642288208,
+      "rr_measured": 106.058166504,
+      "rr_ff": 96.870948792,
+      "rr_p": 6.729206085,
+      "rr_i": 8.576245308,
+      "rr_pwm": 112.0,
+      "rr_bias": 0.0,
+      "rr_steady_bias": 0.0,
+      "rr_restart_active": 0.0,
+      "rr_restart_age": 0.0,
+      "rf_measured": 159.943237305,
+      "rf_ff": 123.401260376,
+      "rf_p": 4.034952641,
+      "rf_i": 3.901425838,
+      "rf_pwm": 131.0,
+      "rf_load": 33.319625854,
+      "rf_recovery": 0.0,
+      "rf_overspeed_ms": 0.0
+    },
+    {
+      "t": 1078562.0,
+      "rr_target": 240.642288208,
+      "rr_measured": 75.755828857,
+      "rr_ff": 96.870948792,
+      "rr_p": 8.244322777,
+      "rr_i": 9.400677681,
+      "rr_pwm": 115.0,
+      "rr_bias": 0.0,
+      "rr_steady_bias": 0.0,
+      "rr_restart_active": 0.0,
+      "rr_restart_age": 0.0,
+      "rf_measured": 171.388031006,
+      "rf_ff": 124.201263428,
+      "rf_p": 3.462713003,
+      "rf_i": 3.901425838,
+      "rf_pwm": 132.0,
+      "rf_load": 34.119625092,
+      "rf_recovery": 0.0,
+      "rf_overspeed_ms": 0.0
+    },
+    {
+      "t": 1078622.0,
+      "rr_target": 240.642288208,
+      "rr_measured": 27.607807159,
+      "rr_ff": 96.870948792,
+      "rr_p": 10.651724815,
+      "rr_i": 12.408460617,
+      "rr_pwm": 120.0,
+      "rr_bias": 0.0,
+      "rr_steady_bias": 0.0,
+      "rr_restart_active": 0.0,
+      "rr_restart_age": 0.0,
+      "rf_measured": 150.505844116,
+      "rf_ff": 126.601257324,
+      "rf_p": 4.506822109,
+      "rf_i": 3.901425838,
+      "rf_pwm": 135.0,
+      "rf_load": 36.519622803,
+      "rf_recovery": 0.0,
+      "rf_overspeed_ms": 0.0
+    },
+    {
+      "t": 1078642.0,
+      "rr_target": 240.642288208,
+      "rr_measured": 19.719861984,
+      "rr_ff": 144.462493896,
+      "rr_p": 11.046121597,
+      "rr_i": 12.408460617,
+      "rr_pwm": 140.0,
+      "rr_bias": 47.591537476,
+      "rr_steady_bias": 0.0,
+      "rr_restart_active": 1.0,
+      "rr_restart_age": 0.0,
+      "rf_measured": 136.0756073,
+      "rf_ff": 127.401260376,
+      "rf_p": 5.22833395,
+      "rf_i": 3.901425838,
+      "rf_pwm": 137.0,
+      "rf_load": 37.31962204,
+      "rf_recovery": 0.0,
+      "rf_overspeed_ms": 0.0
+    },
+    {
+      "t": 1078662.0,
+      "rr_target": 240.642288208,
+      "rr_measured": 28.371330261,
+      "rr_ff": 144.462493896,
+      "rr_p": 10.613548279,
+      "rr_i": 12.408460617,
+      "rr_pwm": 160.0,
+      "rr_bias": 47.591537476,
+      "rr_steady_bias": 0.0,
+      "rr_restart_active": 1.0,
+      "rr_restart_age": 20.0,
+      "rf_measured": 154.33972168,
+      "rf_ff": 128.201263428,
+      "rf_p": 4.315128326,
+      "rf_i": 3.901425838,
+      "rf_pwm": 136.0,
+      "rf_load": 38.119621277,
+      "rf_recovery": 0.0,
+      "rf_overspeed_ms": 0.0
+    },
+    {
+      "t": 1078702.0,
+      "rr_target": 240.642288208,
+      "rr_measured": 14.475168228,
+      "rr_ff": 144.462493896,
+      "rr_p": 11.308356285,
+      "rr_i": 14.641180992,
+      "rr_pwm": 170.0,
+      "rr_bias": 47.591537476,
+      "rr_steady_bias": 0.0,
+      "rr_restart_active": 1.0,
+      "rr_restart_age": 60.0,
+      "rf_measured": 162.418228149,
+      "rf_ff": 129.801254272,
+      "rf_p": 3.911203146,
+      "rf_i": 3.901425838,
+      "rf_pwm": 138.0,
+      "rf_load": 39.719619751,
+      "rf_recovery": 0.0,
+      "rf_overspeed_ms": 0.0
+    },
+    {
+      "t": 1078722.0,
+      "rr_target": 240.642288208,
+      "rr_measured": 53.196548462,
+      "rr_ff": 140.462493896,
+      "rr_p": 9.372286797,
+      "rr_i": 15.578409195,
+      "rr_pwm": 165.0,
+      "rr_bias": 43.591537476,
+      "rr_steady_bias": 0.0,
+      "rr_restart_active": 0.0,
+      "rr_restart_age": 80.0,
+      "rf_measured": 187.441589355,
+      "rf_ff": 130.383987427,
+      "rf_p": 2.660034895,
+      "rf_i": 3.901425838,
+      "rf_pwm": 137.0,
+      "rf_load": 40.302349091,
+      "rf_recovery": 0.0,
+      "rf_overspeed_ms": 0.0
+    },
+    {
+      "t": 1078802.0,
+      "rr_target": 240.642288208,
+      "rr_measured": 252.956207275,
+      "rr_ff": 124.462486267,
+      "rr_p": -1.847087979,
+      "rr_i": 16.638252258,
+      "rr_pwm": 139.0,
+      "rr_bias": 27.591537476,
+      "rr_steady_bias": 0.0,
+      "rr_restart_active": 0.0,
+      "rr_restart_age": 160.0,
+      "rf_measured": 247.792999268,
+      "rf_ff": 131.558746338,
+      "rf_p": -1.072606683,
+      "rf_i": 3.934332848,
+      "rf_pwm": 134.0,
+      "rf_load": 41.477104187,
+      "rf_recovery": 0.0,
+      "rf_overspeed_ms": 0.0
+    },
+    {
+      "t": 1078902.0,
+      "rr_target": 240.642288208,
+      "rr_measured": 404.437927246,
+      "rr_ff": 104.462486267,
+      "rr_p": -24.569347382,
+      "rr_i": 13.797832489,
+      "rr_pwm": 94.0,
+      "rr_bias": 7.591537476,
+      "rr_steady_bias": 0.0,
+      "rr_restart_active": 0.0,
+      "rr_restart_age": 260.0,
+      "rf_measured": 309.421844482,
+      "rf_ff": 129.019546509,
+      "rf_p": -10.316933632,
+      "rf_i": 2.470750809,
+      "rf_pwm": 121.0,
+      "rf_load": 38.937911987,
+      "rf_recovery": 0.0,
+      "rf_overspeed_ms": 60.0
+    },
+    {
+      "t": 1078942.0,
+      "rr_target": 240.642288208,
+      "rr_measured": 349.203033447,
+      "rr_ff": 96.870948792,
+      "rr_p": -16.28411293,
+      "rr_i": 12.513818741,
+      "rr_pwm": 93.0,
+      "rr_bias": 0.0,
+      "rr_steady_bias": 0.0,
+      "rr_restart_active": 0.0,
+      "rr_restart_age": 300.0,
+      "rf_measured": 280.317260742,
+      "rf_ff": 128.064788818,
+      "rf_p": -5.951246262,
+      "rf_i": 2.013366699,
+      "rf_pwm": 124.0,
+      "rf_load": 37.983158112,
+      "rf_recovery": 0.0,
+      "rf_overspeed_ms": 60.0
+    }
+  ],
+  "snapshot_sha256": {
+    "Application/Chassis/chassis_config.h": "d135bb847057595bf6965408e8ab3a7e47ecfb0b2e1c85bba4a2cf3e8b383047",
+    "Application/Chassis/chassis_controller.c": "66f258e54cf7baeb1be8b071899b35612ee09d91f913f35c226323c2d337f685",
+    "Application/Chassis/chassis_controller.h": "d6129978f1651138036321434dcabce45288ed1d25df699ef7720f7d1cb458eb",
+    "Application/Chassis/chassis_kinematics.c": "635dc4c5b19f7625bc7df5e36d2bbfa6ac659ca1e3b38103f8c0b19317c1dba3",
+    "Application/Chassis/chassis_kinematics.h": "b5a00bf6c1abd1b66697ec9fb35e6116516faf5c4d8445cb80b6a74819dff505",
+    "Application/Chassis/chassis_motion_profile.c": "2c40a85f702a00649516304f71bf725eaae0bd749769de1128303230ba6c47ea",
+    "Application/Chassis/chassis_motion_profile.h": "7a4f5bed9b3f09eec0b056ab9a121b5e882fb8c82a08db3733d37d4f3c78a3ee",
+    "Application/Diagnostics/motion_trace.c": "01a1d97550a068a4c9e6dc28618ad267382322f56edd0591d802f070a760ecd9",
+    "Application/Chassis/motor_driver.h": "906df9369cabea75a3913541fd52271ef7bb877a4e7513f0b184e0418681429a",
+    "Tools/tests/motion/test_runtime_motion.c": "0652dc782308bbd3340d989922748ef2837e11731aa674e7c910629ddee692f5",
+    "Application/Chassis/wheel_speed_controller.c": "a452e58508b7b1383838891cef6879d3c868e37c3b37ae19805207dd6d0c1c22",
+    "Application/Chassis/wheel_speed_controller.h": "df9772b7c41f5c35c79a2a7064ff6985fb47ca4644f0c19edd59089abeddaba7",
+    "Application/Chassis/wheel_speed_control_config.h": "e60bc5a76a79c3f237690908b0483f395c2a9354f7087dfb0fa692e6edece71d",
+    "Application/Chassis/wheel_speed_estimator.c": "254ec5c8b4d71015e927e7f92b6a9f5042ea7cbd531b60e818ba01c06a797d05"
+  },
+  "input_capture_sha256": {
+    "analysis.json": "65be3645f63063fc8c876387337780c388ffe8c18211dc13d61ce526b9fca539",
+    "baseline_comparison.json": "74df28e343df93b9d86f23003afa8b6f8c0d643ccb4c22928f35148f8032e38a",
+    "ch340.log": "350d4424c870a7ff8dcc154e5c90acd3fa74df62e06d667ba35e895faae8194d",
+    "decoded.json": "907e6b89ba19b018cf54bbd5ecc432b5c1b007570d104be581dbcc1c174be1d1",
+    "summary.json": "e696c034bbc1c6534fdec5833d61f19e92022e4ebea55ab06d719493d79fe938",
+    "trace_parsed.json": "055963e62c9b74a9f7e309243748edccd4604f8f7a4d96a5a001c21586616a8c",
+    "usb_frames.jsonl": "8b92ff67cfd4aded5fe91bc94882363c228b5073d5ebae077d32f1ad3d0652c6"
+  },
+  "frozen_0_18_18_snapshot_sha256": {
+    "docs\\stm32_evidence\\2026-10-22-v01819-offline\\baseline_0.18.18\\chassis_config.h": "d135bb847057595bf6965408e8ab3a7e47ecfb0b2e1c85bba4a2cf3e8b383047",
+    "docs\\stm32_evidence\\2026-10-22-v01819-offline\\baseline_0.18.18\\chassis_controller.c": "2ad2a9b0248d7e360f4b3995f4003c33467e2668f7be59189bc10a0cac535683",
+    "docs\\stm32_evidence\\2026-10-22-v01819-offline\\baseline_0.18.18\\chassis_controller.h": "d6129978f1651138036321434dcabce45288ed1d25df699ef7720f7d1cb458eb",
+    "docs\\stm32_evidence\\2026-10-22-v01819-offline\\baseline_0.18.18\\chassis_kinematics.c": "635dc4c5b19f7625bc7df5e36d2bbfa6ac659ca1e3b38103f8c0b19317c1dba3",
+    "docs\\stm32_evidence\\2026-10-22-v01819-offline\\baseline_0.18.18\\chassis_kinematics.h": "b5a00bf6c1abd1b66697ec9fb35e6116516faf5c4d8445cb80b6a74819dff505",
+    "docs\\stm32_evidence\\2026-10-22-v01819-offline\\baseline_0.18.18\\chassis_motion_profile.c": "2c40a85f702a00649516304f71bf725eaae0bd749769de1128303230ba6c47ea",
+    "docs\\stm32_evidence\\2026-10-22-v01819-offline\\baseline_0.18.18\\chassis_motion_profile.h": "7a4f5bed9b3f09eec0b056ab9a121b5e882fb8c82a08db3733d37d4f3c78a3ee",
+    "docs\\stm32_evidence\\2026-10-22-v01819-offline\\baseline_0.18.18\\fault_manager.c": "5edd3b8762caa9fefc0584716600487f7b5398065dbdad20a04bf0c62fcae0df",
+    "docs\\stm32_evidence\\2026-10-22-v01819-offline\\baseline_0.18.18\\fault_manager.h": "6bfb4921e80b936466caed3ebdd7caf5775b23e38d7dc7792c7a9afa7331b2be",
+    "docs\\stm32_evidence\\2026-10-22-v01819-offline\\baseline_0.18.18\\firmware_info.h": "2b724454c0c72f4a885e50b786f29ab86959ae5fa06317eeae23859417ae2571",
+    "docs\\stm32_evidence\\2026-10-22-v01819-offline\\baseline_0.18.18\\motion_trace.c": "01a1d97550a068a4c9e6dc28618ad267382322f56edd0591d802f070a760ecd9",
+    "docs\\stm32_evidence\\2026-10-22-v01819-offline\\baseline_0.18.18\\motor_driver.h": "906df9369cabea75a3913541fd52271ef7bb877a4e7513f0b184e0418681429a",
+    "docs\\stm32_evidence\\2026-10-22-v01819-offline\\baseline_0.18.18\\run_motion_tests.ps1": "45f2428d4eb143898925e599fa30979a73fd9ee972d985528912af5e18965dbc",
+    "docs\\stm32_evidence\\2026-10-22-v01819-offline\\baseline_0.18.18\\test_runtime_motion.c": "16a59ff60532fff0f4a6711777a21ed6809c9b0dbaeba998820e8fa0d2dd8c94",
+    "docs\\stm32_evidence\\2026-10-22-v01819-offline\\baseline_0.18.18\\wheel_speed_controller.c": "ca04c8075c823a8fcebcb087d45ea1bda00de0c3327847bf768c90441c79a114",
+    "docs\\stm32_evidence\\2026-10-22-v01819-offline\\baseline_0.18.18\\wheel_speed_controller.h": "836110055ab2e64a459942dc2dc433c46b8b916879b47bb6c127530286bb9171",
+    "docs\\stm32_evidence\\2026-10-22-v01819-offline\\baseline_0.18.18\\wheel_speed_control_config.h": "cd633a37e90e5839ae85bde75eb8748910d0fd49fbcca33f0446cc5bf420cfd1",
+    "docs\\stm32_evidence\\2026-10-22-v01819-offline\\baseline_0.18.18\\wheel_speed_estimator.c": "254ec5c8b4d71015e927e7f92b6a9f5042ea7cbd531b60e818ba01c06a797d05"
+  },
+  "production_source_test_items_unchanged": 149,
+  "four_firmware_artifacts_unchanged": true,
+  "unchanged_firmware_sha256": {
+    "hex": "28f17192a690fafb1c95b725dac1831cee9480ff55eb8476132f245b8f81a2bd",
+    "bin": "2b907da5e541408919cf1a06c9e020ae837cafb741752b003473d7a8d32d41b8",
+    "elf": "2351c7ce32c8d6eb3f8431d51f2cd8990afd067052e9df1aeb74898e904b8463",
+    "map": "930202029d6a475dd10f14b95715e43239d7d98b9e341fc4cca6ba2fabcec0bc"
+  },
+  "serial_opened": false,
+  "motion_sent": false,
+  "fault_cleared": false,
+  "production_modified": false,
+  "firmware_linked": false,
+  "flashed": false,
+  "limits": [
+    "Initial hidden states are inferred, not unique or directly measured.",
+    "Six seed/history combinations are sensitivity checks, not exhaustive private-state reconstruction.",
+    "Same prescribed counts do not predict wheel response after changing the controller.",
+    "RR no-count gaps precede support; this replay cannot identify the first physical/electrical cause.",
+    "Other wheels reacting together does not identify causality or exclude power/mechanical effects.",
+    "The internal ring covers only the final 2.54 seconds, not startup or long-term stability."
+  ]
+}

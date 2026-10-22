@@ -1,0 +1,453 @@
+{
+  "kind": "OFFLINE_DIAGNOSIS_NOT_A_CANDIDATE_OR_PLANT_MODEL",
+  "all_seed_metrics": {
+    "low": {
+      "LF": {
+        "max_printed_difference": {
+          "cps": 1,
+          "ff_x10": 1,
+          "p_x10": 1,
+          "i_x10": 1,
+          "pwm": 1
+        },
+        "exact_pwm_rows": 119,
+        "post_seed_rows": 126
+      },
+      "LR": {
+        "max_printed_difference": {
+          "cps": 1,
+          "ff_x10": 0,
+          "p_x10": 0,
+          "i_x10": 1,
+          "pwm": 1
+        },
+        "exact_pwm_rows": 118,
+        "post_seed_rows": 126
+      },
+      "RF": {
+        "max_printed_difference": {
+          "cps": 1,
+          "ff_x10": 1,
+          "p_x10": 1,
+          "i_x10": 1,
+          "pwm": 1
+        },
+        "exact_pwm_rows": 122,
+        "post_seed_rows": 126
+      },
+      "RR": {
+        "max_printed_difference": {
+          "cps": 1,
+          "ff_x10": 0,
+          "p_x10": 0,
+          "i_x10": 1,
+          "pwm": 1
+        },
+        "exact_pwm_rows": 117,
+        "post_seed_rows": 126
+      }
+    },
+    "mid": {
+      "LF": {
+        "max_printed_difference": {
+          "cps": 1,
+          "ff_x10": 1,
+          "p_x10": 0,
+          "i_x10": 1,
+          "pwm": 1
+        },
+        "exact_pwm_rows": 124,
+        "post_seed_rows": 126
+      },
+      "LR": {
+        "max_printed_difference": {
+          "cps": 0,
+          "ff_x10": 0,
+          "p_x10": 0,
+          "i_x10": 1,
+          "pwm": 1
+        },
+        "exact_pwm_rows": 122,
+        "post_seed_rows": 126
+      },
+      "RF": {
+        "max_printed_difference": {
+          "cps": 1,
+          "ff_x10": 1,
+          "p_x10": 1,
+          "i_x10": 1,
+          "pwm": 1
+        },
+        "exact_pwm_rows": 125,
+        "post_seed_rows": 126
+      },
+      "RR": {
+        "max_printed_difference": {
+          "cps": 1,
+          "ff_x10": 0,
+          "p_x10": 0,
+          "i_x10": 1,
+          "pwm": 0
+        },
+        "exact_pwm_rows": 126,
+        "post_seed_rows": 126
+      }
+    },
+    "high": {
+      "LF": {
+        "max_printed_difference": {
+          "cps": 0,
+          "ff_x10": 0,
+          "p_x10": 0,
+          "i_x10": 1,
+          "pwm": 1
+        },
+        "exact_pwm_rows": 125,
+        "post_seed_rows": 126
+      },
+      "LR": {
+        "max_printed_difference": {
+          "cps": 0,
+          "ff_x10": 0,
+          "p_x10": 1,
+          "i_x10": 1,
+          "pwm": 1
+        },
+        "exact_pwm_rows": 115,
+        "post_seed_rows": 126
+      },
+      "RF": {
+        "max_printed_difference": {
+          "cps": 0,
+          "ff_x10": 1,
+          "p_x10": 0,
+          "i_x10": 1,
+          "pwm": 1
+        },
+        "exact_pwm_rows": 122,
+        "post_seed_rows": 126
+      },
+      "RR": {
+        "max_printed_difference": {
+          "cps": 0,
+          "ff_x10": 1,
+          "p_x10": 1,
+          "i_x10": 1,
+          "pwm": 1
+        },
+        "exact_pwm_rows": 121,
+        "post_seed_rows": 126
+      }
+    }
+  },
+  "hidden_seed_screen_cases": 275,
+  "RR_matching_hidden_seeds": [
+    {
+      "episode_seed_ms": 120,
+      "stop_age_seed_ms": 140,
+      "RR_max_printed_difference": 1,
+      "RR_match_within_one_unit": true
+    },
+    {
+      "episode_seed_ms": 140,
+      "stop_age_seed_ms": 140,
+      "RR_max_printed_difference": 1,
+      "RR_match_within_one_unit": true
+    },
+    {
+      "episode_seed_ms": 160,
+      "stop_age_seed_ms": 140,
+      "RR_max_printed_difference": 1,
+      "RR_match_within_one_unit": true
+    },
+    {
+      "episode_seed_ms": 180,
+      "stop_age_seed_ms": 140,
+      "RR_max_printed_difference": 1,
+      "RR_match_within_one_unit": true
+    },
+    {
+      "episode_seed_ms": 200,
+      "stop_age_seed_ms": 140,
+      "RR_max_printed_difference": 1,
+      "RR_match_within_one_unit": true
+    },
+    {
+      "episode_seed_ms": 220,
+      "stop_age_seed_ms": 140,
+      "RR_max_printed_difference": 1,
+      "RR_match_within_one_unit": true
+    },
+    {
+      "episode_seed_ms": 240,
+      "stop_age_seed_ms": 140,
+      "RR_max_printed_difference": 1,
+      "RR_match_within_one_unit": true
+    },
+    {
+      "episode_seed_ms": 260,
+      "stop_age_seed_ms": 140,
+      "RR_max_printed_difference": 1,
+      "RR_match_within_one_unit": true
+    },
+    {
+      "episode_seed_ms": 280,
+      "stop_age_seed_ms": 140,
+      "RR_max_printed_difference": 1,
+      "RR_match_within_one_unit": true
+    },
+    {
+      "episode_seed_ms": 300,
+      "stop_age_seed_ms": 140,
+      "RR_max_printed_difference": 1,
+      "RR_match_within_one_unit": true
+    },
+    {
+      "episode_seed_ms": 320,
+      "stop_age_seed_ms": 140,
+      "RR_max_printed_difference": 1,
+      "RR_match_within_one_unit": true
+    },
+    {
+      "episode_seed_ms": 340,
+      "stop_age_seed_ms": 140,
+      "RR_max_printed_difference": 1,
+      "RR_match_within_one_unit": true
+    }
+  ],
+  "update_order_outputs_private_diagnostic_fields_identical": true,
+  "actual_estimator_and_manual_reconstruction_identical_wheel_samples": 508,
+  "RR_input_only_change_other_three_wheels_identical": true,
+  "filter_recovery_lag": {
+    "target_actual_cps": 240.642288208,
+    "nominal_filter_ms": 50,
+    "sample_ms": 20,
+    "raw_one_count_quantum_cps": 50,
+    "window40_one_count_quantum_cps": 25,
+    "first_recovered_count_ms": 162682,
+    "first_raw_over_target_plus_margin_ms": 162762,
+    "first_40ms_count_window_over_target_plus_margin_ms": 162762,
+    "first_two_consecutive_raw_over_margin_ms": 162782,
+    "first_filtered_over_target_ms": 162802,
+    "raw_margin_to_filtered_delay_ms": 40,
+    "window40_margin_to_filtered_delay_ms": 40,
+    "raw_two_sample_margin_to_filtered_delay_ms": 20,
+    "combined_FF_I_at_162642": 156.870950698,
+    "combined_FF_I_at_162782": 156.870942116,
+    "I_increase_during_handoff_permille": 2.4000005730000016,
+    "note": "Earlier raw/window detections are diagnostic comparisons, not proposed or validated new control thresholds."
+  },
+  "conditional_event_rows": [
+    {
+      "t": 162542.0,
+      "wheel": 3.0,
+      "target": 240.642288208,
+      "raw": 0.0,
+      "measured": 16.5,
+      "ff": 125.25,
+      "p": 0.0,
+      "i": 11.350000381,
+      "pwm": 148.0,
+      "temporary": 28.379051208,
+      "active": 1.0,
+      "episode": 200.0,
+      "moving": 0.0,
+      "load": 0.0,
+      "recovery": 0.0
+    },
+    {
+      "t": 162622.0,
+      "wheel": 3.0,
+      "target": 240.642288208,
+      "raw": 0.0,
+      "measured": 0.0,
+      "ff": 145.25,
+      "p": 12.032114983,
+      "i": 11.350000381,
+      "pwm": 169.0,
+      "temporary": 48.379051208,
+      "active": 1.0,
+      "episode": 280.0,
+      "moving": 0.0,
+      "load": 0.0,
+      "recovery": 0.0
+    },
+    {
+      "t": 162642.0,
+      "wheel": 3.0,
+      "target": 240.642288208,
+      "raw": 0.0,
+      "measured": 0.0,
+      "ff": 145.520950317,
+      "p": 12.032114983,
+      "i": 11.350000381,
+      "pwm": 169.0,
+      "temporary": 48.650001526,
+      "active": 1.0,
+      "episode": 300.0,
+      "moving": 0.0,
+      "load": 0.0,
+      "recovery": 0.0
+    },
+    {
+      "t": 162682.0,
+      "wheel": 3.0,
+      "target": 240.642288208,
+      "raw": 50.0,
+      "measured": 14.285715103,
+      "ff": 145.520950317,
+      "p": 11.317828178,
+      "i": 11.350000381,
+      "pwm": 168.0,
+      "temporary": 48.650001526,
+      "active": 1.0,
+      "episode": 340.0,
+      "moving": 0.0,
+      "load": 0.0,
+      "recovery": 0.0
+    },
+    {
+      "t": 162722.0,
+      "wheel": 3.0,
+      "target": 240.642288208,
+      "raw": 250.0,
+      "measured": 99.125366211,
+      "ff": 145.520950317,
+      "p": 7.075846195,
+      "i": 11.350000381,
+      "pwm": 164.0,
+      "temporary": 48.650001526,
+      "active": 1.0,
+      "episode": 380.0,
+      "moving": 20.0,
+      "load": 0.0,
+      "recovery": 0.0
+    },
+    {
+      "t": 162742.0,
+      "wheel": 3.0,
+      "target": 240.642288208,
+      "raw": 200.0,
+      "measured": 127.94669342,
+      "ff": 144.720947266,
+      "p": 5.63477993,
+      "i": 12.150000572,
+      "pwm": 163.0,
+      "temporary": 47.850002289,
+      "active": 1.0,
+      "episode": 400.0,
+      "moving": 40.0,
+      "load": 0.0,
+      "recovery": 0.0
+    },
+    {
+      "t": 162762.0,
+      "wheel": 3.0,
+      "target": 240.642288208,
+      "raw": 350.0,
+      "measured": 191.39050293,
+      "ff": 143.920944214,
+      "p": 2.462589264,
+      "i": 12.950000763,
+      "pwm": 159.0,
+      "temporary": 47.049999237,
+      "active": 1.0,
+      "episode": 420.0,
+      "moving": 40.0,
+      "load": 0.0,
+      "recovery": 0.0
+    },
+    {
+      "t": 162782.0,
+      "wheel": 3.0,
+      "target": 240.642288208,
+      "raw": 300.0,
+      "measured": 222.421783447,
+      "ff": 143.120941162,
+      "p": 0.911025226,
+      "i": 13.750000954,
+      "pwm": 158.0,
+      "temporary": 46.25,
+      "active": 1.0,
+      "episode": 440.0,
+      "moving": 40.0,
+      "load": 0.0,
+      "recovery": 0.0
+    },
+    {
+      "t": 162802.0,
+      "wheel": 3.0,
+      "target": 240.642288208,
+      "raw": 400.0,
+      "measured": 273.158416748,
+      "ff": 135.120941162,
+      "p": -4.877419472,
+      "i": 13.587420464,
+      "pwm": 144.0,
+      "temporary": 38.25,
+      "active": 0.0,
+      "episode": 460.0,
+      "moving": 40.0,
+      "load": 0.0,
+      "recovery": 0.0
+    },
+    {
+      "t": 162902.0,
+      "wheel": 3.0,
+      "target": 240.642288208,
+      "raw": 400.0,
+      "measured": 349.998199463,
+      "ff": 96.870948792,
+      "p": -16.40338707,
+      "i": 11.563975334,
+      "pwm": 92.0,
+      "temporary": 0.0,
+      "active": 0.0,
+      "episode": 560.0,
+      "moving": 40.0,
+      "load": 0.0,
+      "recovery": 0.0
+    }
+  ],
+  "source_snapshot_sha256": {
+    "Application/Chassis/chassis_config.h": "d135bb847057595bf6965408e8ab3a7e47ecfb0b2e1c85bba4a2cf3e8b383047",
+    "Application/Chassis/chassis_controller.c": "564d04c8a85533fd20667190ede3b7ae339b232f77ec88ec46863239379930da",
+    "Application/Chassis/chassis_controller.h": "d6129978f1651138036321434dcabce45288ed1d25df699ef7720f7d1cb458eb",
+    "Application/Chassis/chassis_kinematics.c": "635dc4c5b19f7625bc7df5e36d2bbfa6ac659ca1e3b38103f8c0b19317c1dba3",
+    "Application/Chassis/chassis_kinematics.h": "b5a00bf6c1abd1b66697ec9fb35e6116516faf5c4d8445cb80b6a74819dff505",
+    "Application/Chassis/chassis_motion_profile.c": "2c40a85f702a00649516304f71bf725eaae0bd749769de1128303230ba6c47ea",
+    "Application/Chassis/chassis_motion_profile.h": "7a4f5bed9b3f09eec0b056ab9a121b5e882fb8c82a08db3733d37d4f3c78a3ee",
+    "Application/Safety/fault_manager.c": "a182d59f363750f754cb7137de5141204b315d651fe57c9d7e68e075a67d42c4",
+    "Application/Diagnostics/motion_trace.c": "01a1d97550a068a4c9e6dc28618ad267382322f56edd0591d802f070a760ecd9",
+    "Application/Chassis/motor_driver.h": "906df9369cabea75a3913541fd52271ef7bb877a4e7513f0b184e0418681429a",
+    "Tools/tests/motion/test_runtime_motion.c": "b1e47e691a151b1f5330ec6d5473a1a4195d5510865847835fffaa9628c5ea5c",
+    "Application/Chassis/wheel_speed_controller.c": "734775b787868901a30f777fb851ba0ca74a8671d91fe2fdffdd0a16f839bfaa",
+    "Application/Chassis/wheel_speed_controller.h": "d94e6f451109864e30e7488267c6dca101184860ff0b62663f4d8f237b09c521",
+    "Application/Chassis/wheel_speed_control_config.h": "cb9ea1cc8170502c6e9581b68b564ac560b5d987f25d9b4bb86f0fd8f8d4c534",
+    "Application/Chassis/wheel_speed_estimator.c": "254ec5c8b4d71015e927e7f92b6a9f5042ea7cbd531b60e818ba01c06a797d05"
+  },
+  "input_capture_sha256": {
+    "analysis.json": "0b861e7a75d677708c054775da3b5e03b32e617f8ee2fc8f16bc7cf6e9678cc8",
+    "baseline_comparison.json": "e53f33fe80933e513904fbf47b766a4f830a67972296e4b81feafd3b83b549eb",
+    "ch340.log": "9354850152970a79b8f55b1d80645604f3ce68b9dd2230b0be75671cb6ae3635",
+    "decoded.json": "1448f0115a24672c3ccdc4138619fc6a12fe2b1fc0c76e482db811eb3364e548",
+    "summary.json": "a3a25d53a651b4528e959609abbaed5dafc26be0eb1331e56ff4ecda63616857",
+    "trace_parsed.json": "4240a3e81c5fc07bbb5934e245464f193e7ec87096a1332cab0e016887559bbb",
+    "usb_frames.jsonl": "1d975a08d453096fd81d4614f51a1ac31eb88bc5dd41977106ecf14bb3595ba7"
+  },
+  "production_source_test_items_unchanged": 158,
+  "four_firmware_artifacts_unchanged": true,
+  "serial_opened": false,
+  "motion_sent": false,
+  "production_modified": false,
+  "firmware_linked": false,
+  "flashed": false,
+  "limitations": [
+    "Initial sub-print-resolution values and policy ownership/history are hypotheses, not measured private state.",
+    "Front initial recovery=0 and adaptive load assigned all FF excess; matching is not unique proof.",
+    "RR seed stop age140ms inferred from later forced zero; ring begins inside an existing gap.",
+    "The 275 timer/stop-age screens use a midpoint quantization seed, not all continuous possibilities.",
+    "Prescribed feedback replay cannot predict the wheel response to changing control.",
+    "No physical cause, supply adequacy, or causal direction between wheels is established."
+  ]
+}

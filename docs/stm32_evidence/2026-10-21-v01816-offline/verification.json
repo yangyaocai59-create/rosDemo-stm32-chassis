@@ -1,0 +1,47 @@
+{
+  "result": "PASS",
+  "firmware": "0.18.16-lf-support-coordination",
+  "build": "Debug clean, GNU STM32 14.3.1+st.2",
+  "motion_pass_lines": 42,
+  "usb_pass_lines": 20,
+  "hex_records": 11105,
+  "hex_data_bytes": 177548,
+  "hex_bin_explicit_data_equal": true,
+  "binary_gap_bytes": 8,
+  "binary_gap_fill": "0x00 default objcopy; HEX leaves unused alignment bytes unwritten",
+  "binary_gap_addresses": [
+    "0x8000188",
+    "0x8000189",
+    "0x800018a",
+    "0x800018b",
+    "0x800018c",
+    "0x800018d",
+    "0x800018e",
+    "0x800018f"
+  ],
+  "bytes": 177556,
+  "highest": "0x802b593",
+  "stack": "0x20020000",
+  "reset": "0x800f439",
+  "errors": 0,
+  "warnings": 0,
+  "memory_bytes": {
+    "RAM": 80720,
+    "CCMRAM": 0,
+    "FLASH": 177556
+  },
+  "static_stack_lines": [
+    "E:/DEMO/rosDemo/Application/Chassis/wheel_speed_controller.c:148:14:WheelSpeedController_FrontSupport\t160\tstatic",
+    "E:/DEMO/rosDemo/Application/Chassis/wheel_speed_controller.c:449:6:WheelSpeedController_UpdateWithMode\t96\tstatic",
+    "E:/DEMO/rosDemo/Application/Safety/fault_manager.c:159:6:FaultManager_ObserveMotion\t104\tstatic",
+    "E:/DEMO/rosDemo/Core/Src/freertos.c:343:6:StartSafetyTask\t32\tstatic"
+  ],
+  "sha256": {
+    "hex": "e67a36800caf447839c2a68a5bcdcf8fac18286085b37251844e97954cab2ede",
+    "bin": "dbde5172bbb4fd359cb6cafa93689837d5bbf8d7321bac9a4543140eb1df6783",
+    "elf": "fe958900ceaf878d45a8618c1de0ebd17a151d5ca98dee58b86dcbc3f94dab3a",
+    "map": "4a3c42ead6bcf37d61a23e31615eba09b11639d571158b4794572830a30db012"
+  },
+  "hardware_tested": false,
+  "flashed": false
+}

@@ -1,0 +1,44 @@
+{
+  "kind": "offline_diagnosis_not_a_motor_model_or_candidate_firmware",
+  "capture": "docs\\stm32_evidence\\2026-10-21-v01813-ground-failsafe\\repeat_134912",
+  "rf_window": {
+    "first_ms": 1845602,
+    "last_ms": 1848122,
+    "samples": 127,
+    "dt_ms": 20
+  },
+  "actual_kinematic_target_magnitude_cps": 160.4281826366305,
+  "rf_displayed_cps_mean": 115.05511811023622,
+  "qualified_overspeed_times_ms": [
+    1846022,
+    1846062,
+    1847102,
+    1847142,
+    1847162,
+    1847182,
+    1847202
+  ],
+  "nominal_load_withdrawal_permille": 28.0,
+  "normal_I_net_addition_if_unheld_permille": 28.020362723651036,
+  "recorded_ff_plus_i_start_end_permille": [
+    114.7,
+    114.8
+  ],
+  "recorded_ff_plus_i_net_change_permille": 0.09999999999999432,
+  "predicted_net_change_permille": 0.02036272365103642,
+  "max_per_step_balance_discrepancy_permille": 0.0968495796603574,
+  "not_implemented_60ms_qualification_on_frozen_feedback_times": [
+    1847182,
+    1847202
+  ],
+  "limits": [
+    "Initial filter state inferred within printed truncation bin; not full-precision MCU readback.",
+    "Trace has no separate load/recovery/hold state. Balance is source-and-observation inference, not a direct private-state measurement.",
+    "Prescribed feedback and arithmetic do not prove the physical cause of speed excursions or predict behavior after a control change."
+  ],
+  "sha256": {
+    "docs\\stm32_evidence\\2026-10-21-v01813-ground-failsafe\\repeat_134912\\trace_parsed.json": "81630acde5c6586782a16aee54637d437d0f8e4dac0b55d6120c12e56295d629",
+    "docs\\stm32_evidence\\2026-10-21-v01813-underspeed-review\\source_snapshot\\wheel_speed_controller.c": "e073fbc98778d724cd0be0f77a1b53cef943f73976c207ffbfc841f7cc34212e",
+    "docs\\stm32_evidence\\2026-10-21-v01813-underspeed-review\\source_snapshot\\wheel_speed_control_config.h": "6b00169e2af0ece6bdaee9985968672072dde983d3499b4053c9df70ec788ef9"
+  }
+}

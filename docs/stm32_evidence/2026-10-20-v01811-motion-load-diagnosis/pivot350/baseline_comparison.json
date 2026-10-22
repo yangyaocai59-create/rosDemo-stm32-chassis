@@ -1,0 +1,196 @@
+{
+  "baseline_folder": "build\\hardware_tests\\loaded_pivot_compare_20261020_190121",
+  "candidate_folder": "build\\hardware_tests\\loaded_pivot_compare_20261020_193201",
+  "baseline": {
+    "LEFT": {
+      "active_trace_samples": 127,
+      "wheel": {
+        "LF": {
+          "mean_cps": -261.12,
+          "rms_error_cps": 108.61,
+          "raw_zero_percent": 7.09,
+          "max_consecutive_zero_interval_ms": 180,
+          "mean_abs_pwm_permille": 156.23,
+          "max_ff_plus_i_step_permille": 51.3,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 1.0
+        },
+        "LR": {
+          "mean_cps": -269.32,
+          "rms_error_cps": 50.44,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 99.17,
+          "max_ff_plus_i_step_permille": 0.8,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "RF": {
+          "mean_cps": 274.62,
+          "rms_error_cps": 137.4,
+          "raw_zero_percent": 6.3,
+          "max_consecutive_zero_interval_ms": 140,
+          "mean_abs_pwm_permille": 158.31,
+          "max_ff_plus_i_step_permille": 60.0,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 1.2
+        },
+        "RR": {
+          "mean_cps": 291.8,
+          "rms_error_cps": 99.85,
+          "raw_zero_percent": 7.09,
+          "max_consecutive_zero_interval_ms": 180,
+          "mean_abs_pwm_permille": 111.18,
+          "max_ff_plus_i_step_permille": 42.4,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 5.0
+        }
+      },
+      "net_counts": [
+        -1518,
+        -1844,
+        1708,
+        1889
+      ]
+    },
+    "RIGHT": {
+      "active_trace_samples": 127,
+      "wheel": {
+        "LF": {
+          "mean_cps": 237.26,
+          "rms_error_cps": 80.63,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 147.07,
+          "max_ff_plus_i_step_permille": 0.5,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0.5
+        },
+        "LR": {
+          "mean_cps": 284.57,
+          "rms_error_cps": 52.86,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 111.24,
+          "max_ff_plus_i_step_permille": 0.8,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "RF": {
+          "mean_cps": -316.28,
+          "rms_error_cps": 58.12,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 146.41,
+          "max_ff_plus_i_step_permille": 0.8,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0.8
+        },
+        "RR": {
+          "mean_cps": -272.39,
+          "rms_error_cps": 30.57,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 96.23,
+          "max_ff_plus_i_step_permille": 0.3,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        }
+      },
+      "net_counts": [
+        1483,
+        1802,
+        -1742,
+        -1875
+      ]
+    }
+  },
+  "candidate": {
+    "LEFT": {
+      "active_trace_samples": 127,
+      "wheel": {
+        "LF": {
+          "mean_cps": -279.8,
+          "rms_error_cps": 24.98,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 151.39,
+          "max_ff_plus_i_step_permille": 0.4,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "LR": {
+          "mean_cps": -281.91,
+          "rms_error_cps": 22.22,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 95.35,
+          "max_ff_plus_i_step_permille": 0.3,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "RF": {
+          "mean_cps": 224.43,
+          "rms_error_cps": 162.66,
+          "raw_zero_percent": 22.05,
+          "max_consecutive_zero_interval_ms": 500,
+          "mean_abs_pwm_permille": 165.75,
+          "max_ff_plus_i_step_permille": 1.5,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "RR": {
+          "mean_cps": 303.46,
+          "rms_error_cps": 63.35,
+          "raw_zero_percent": 0.79,
+          "max_consecutive_zero_interval_ms": 20,
+          "mean_abs_pwm_permille": 106.54,
+          "max_ff_plus_i_step_permille": 0.8,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        }
+      },
+      "net_counts": [
+        -1646,
+        -1863,
+        1571,
+        1899
+      ]
+    },
+    "RIGHT": {
+      "active_trace_samples": 127,
+      "wheel": {
+        "LF": {
+          "mean_cps": 258.72,
+          "rms_error_cps": 66.95,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 148.04,
+          "max_ff_plus_i_step_permille": 0.8,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "LR": {
+          "mean_cps": 284.24,
+          "rms_error_cps": 48.47,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 107.56,
+          "max_ff_plus_i_step_permille": 0.7,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "RF": {
+          "mean_cps": -296.55,
+          "rms_error_cps": 49.63,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 141.39,
+          "max_ff_plus_i_step_permille": 0.6,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        },
+        "RR": {
+          "mean_cps": -277.8,
+          "rms_error_cps": 24.39,
+          "raw_zero_percent": 0,
+          "max_consecutive_zero_interval_ms": 0,
+          "mean_abs_pwm_permille": 95.43,
+          "max_ff_plus_i_step_permille": 0.3,
+          "max_ff_plus_i_step_when_ff_reduces_permille": 0
+        }
+      },
+      "net_counts": [
+        1612,
+        1826,
+        -1643,
+        -1905
+      ]
+    }
+  }
+}

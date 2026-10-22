@@ -29,9 +29,23 @@ static const EncoderWheel s_encoder_wheels[MOTOR_DRIVER_WHEEL_COUNT] = {
 };
 
 static ChassisControllerStatus s_status;
+/* Stop/reset/start invalidates any in-flight RR observation/update. */
+static uint32_t s_control_generation;
+typedef struct
+{
+  int32_t delta_counts;
+  uint32_t sample_period_ms;
+  uint32_t sample_time_ms;
+} ChassisRrCountSample;
 static bool s_pivot_breakaway_active[MOTOR_DRIVER_WHEEL_COUNT];
 static int8_t s_pivot_breakaway_sign[MOTOR_DRIVER_WHEEL_COUNT];
 static uint32_t s_pivot_breakaway_start_ms[MOTOR_DRIVER_WHEEL_COUNT];
+static float s_pivot_applied_bias[MOTOR_DRIVER_WHEEL_COUNT];
+static float s_pivot_steady_bias[MOTOR_DRIVER_WHEEL_COUNT];
+static bool s_pivot_has_moved[MOTOR_DRIVER_WHEEL_COUNT];
+static bool s_pivot_rear_restart[MOTOR_DRIVER_WHEEL_COUNT];
+static float s_pivot_restart_bias[MOTOR_DRIVER_WHEEL_COUNT];
+static uint32_t s_pivot_next_raise_ms[MOTOR_DRIVER_WHEEL_COUNT];
 
 static bool ChassisController_TimeReached(uint32_t now_ms,
                                           uint32_t deadline_ms)
@@ -44,44 +58,110 @@ static float ChassisController_Abs(float value)
   return (value < 0.0f) ? -value : value;
 }
 
-static float ChassisController_GetFeedforwardBias(
-  const ChassisVelocityCommand *command,
-  MotorDriverWheel wheel,
-  float target_counts_per_second,
-  float measured_counts_per_second,
-  uint32_t now_ms)
+static bool ChassisController_IsPivot(
+  const ChassisVelocityCommand *command)
 {
-  const bool is_pivot =
+  return
     (command != NULL) &&
     (ChassisController_Abs(command->linear_x_m_s) <=
      CHASSIS_CONTROLLER_PIVOT_LINEAR_MAX_M_S) &&
     (ChassisController_Abs(command->angular_z_rad_s) >=
      CHASSIS_CONTROLLER_PIVOT_ANGULAR_MIN_RAD_S);
+}
 
-  if (!is_pivot)
+static WheelSpeedControlMode ChassisController_GetWheelControlMode(
+  const ChassisVelocityCommand *command)
+{
+  return ChassisController_IsPivot(command) ?
+    WHEEL_SPEED_CONTROL_MODE_PIVOT : WHEEL_SPEED_CONTROL_MODE_NORMAL;
+}
+
+static bool ChassisController_IsRearWheel(MotorDriverWheel wheel)
+{
+  return (wheel == MOTOR_DRIVER_WHEEL_LR) ||
+         (wheel == MOTOR_DRIVER_WHEEL_RR);
+}
+
+static void ChassisController_ClearPivotWheel(MotorDriverWheel wheel)
+{
+  if (wheel == MOTOR_DRIVER_WHEEL_LR)
   {
-    s_pivot_breakaway_active[wheel] = false;
-    s_pivot_breakaway_sign[wheel] = 0;
+    WheelSpeedController_ClearLrRunningSupport();
+  }
+  if (wheel == MOTOR_DRIVER_WHEEL_RR)
+  {
+    WheelSpeedController_ClearRrRunningSupport();
+  }
+  s_pivot_breakaway_active[wheel] = false;
+  s_pivot_breakaway_sign[wheel] = 0;
+  s_pivot_breakaway_start_ms[wheel] = 0U;
+  s_pivot_applied_bias[wheel] = 0.0f;
+  s_pivot_steady_bias[wheel] = 0.0f;
+  s_pivot_has_moved[wheel] = false;
+  s_pivot_rear_restart[wheel] = false;
+  s_pivot_restart_bias[wheel] = 0.0f;
+  s_pivot_next_raise_ms[wheel] = 0U;
+}
+
+static float ChassisController_GetFeedforwardBias(
+  const ChassisVelocityCommand *command,
+  MotorDriverWheel wheel,
+  float target_counts_per_second,
+  float measured_counts_per_second,
+  uint32_t now_ms,
+  uint32_t elapsed_ms)
+{
+  if (!ChassisController_IsPivot(command))
+  {
+    ChassisController_ClearPivotWheel(wheel);
     return 0.0f;
   }
 
   if (ChassisController_Abs(target_counts_per_second) <
       WHEEL_SPEED_CONTROL_PIVOT_STATIONARY_CPS)
   {
-    s_pivot_breakaway_active[wheel] = false;
-    s_pivot_breakaway_sign[wheel] = 0;
+    ChassisController_ClearPivotWheel(wheel);
     return 0.0f;
   }
 
   const int8_t target_sign = target_counts_per_second > 0.0f ? 1 : -1;
   if (s_pivot_breakaway_sign[wheel] != target_sign)
   {
-    s_pivot_breakaway_active[wheel] = false;
+    ChassisController_ClearPivotWheel(wheel);
     s_pivot_breakaway_sign[wheel] = target_sign;
   }
 
   const float signed_speed = measured_counts_per_second *
     (float)target_sign;
+  if (signed_speed >= WHEEL_SPEED_CONTROL_PIVOT_RELEASE_CPS)
+  {
+    s_pivot_has_moved[wheel] = true;
+  }
+  if (!ChassisController_IsRearWheel(wheel))
+  {
+    /* Front support and I headroom must be coordinated in one PI update.
+     * Do not stack the legacy chassis startup kick on the front policy. */
+    return 0.0f;
+  }
+  if ((wheel == MOTOR_DRIVER_WHEEL_RR) && (target_sign > 0) &&
+      WheelSpeedController_SelectRrRunningSupport(
+        (!s_pivot_breakaway_active[wheel]) &&
+        (s_pivot_applied_bias[wheel] == 0.0f) &&
+        (s_pivot_steady_bias[wheel] == 0.0f)))
+  {
+    /* Never stack this running policy on first-start/residual legacy bias. */
+    return 0.0f;
+  }
+  if ((wheel == MOTOR_DRIVER_WHEEL_LR) && (target_sign < 0) &&
+      WheelSpeedController_SelectLrRunningSupport(
+        (!s_pivot_breakaway_active[wheel]) &&
+        (s_pivot_applied_bias[wheel] == 0.0f) &&
+        (s_pivot_steady_bias[wheel] == 0.0f)))
+  {
+    /* Handoff only at zero legacy bias after confirmed motion; new PI-local
+     * support owns the existing rear authority, never stacked on old kick. */
+    return 0.0f;
+  }
   if (!s_pivot_breakaway_active[wheel])
   {
     if ((signed_speed <= WHEEL_SPEED_CONTROL_PIVOT_STATIONARY_CPS) ||
@@ -90,37 +170,122 @@ static float ChassisController_GetFeedforwardBias(
     {
       s_pivot_breakaway_active[wheel] = true;
       s_pivot_breakaway_start_ms[wheel] = now_ms;
+      /* Latch at entry. Seeing motion during the FIRST kick must not
+       * retroactively turn that kick into a short rear restart. */
+      s_pivot_rear_restart[wheel] =
+        ChassisController_IsRearWheel(wheel) && s_pivot_has_moved[wheel];
+      s_pivot_next_raise_ms[wheel] = now_ms +
+        WHEEL_SPEED_CONTROL_REAR_RESTART_RAISE_DELAY_MS;
+      s_pivot_restart_bias[wheel] =
+        WHEEL_SPEED_CONTROL_PIVOT_BREAKAWAY_PERMILLE;
+
+      if (s_pivot_rear_restart[wheel])
+      {
+        WheelSpeedControllerState control;
+        if (WheelSpeedController_GetState(wheel, &control))
+        {
+          const float support = control.integrator_permille *
+            (float)target_sign;
+          if (support > 0.0f)
+          {
+            /* Do not add a second complete kick on top of integral support
+             * retained by the bumpless handoff. Keep any existing bias. */
+            float top_up = WHEEL_SPEED_CONTROL_PIVOT_BREAKAWAY_PERMILLE -
+              support;
+            const float retained = s_pivot_applied_bias[wheel] *
+              (float)target_sign;
+            if (top_up < retained) { top_up = retained; }
+            if (top_up < 0.0f) { top_up = 0.0f; }
+            s_pivot_restart_bias[wheel] = top_up;
+          }
+        }
+      }
     }
   }
   else
   {
     const uint32_t held_ms = now_ms - s_pivot_breakaway_start_ms[wheel];
-    if ((held_ms >= WHEEL_SPEED_CONTROL_PIVOT_HOLD_MS) &&
+    const uint32_t minimum_hold_ms = s_pivot_rear_restart[wheel] ?
+      WHEEL_SPEED_CONTROL_REAR_RESTART_HOLD_MS :
+      WHEEL_SPEED_CONTROL_PIVOT_HOLD_MS;
+    if ((held_ms >= minimum_hold_ms) &&
         (signed_speed >= WHEEL_SPEED_CONTROL_PIVOT_RELEASE_CPS))
     {
       s_pivot_breakaway_active[wheel] = false;
     }
   }
 
-  return s_pivot_breakaway_active[wheel] ?
-    ((target_sign > 0) ? WHEEL_SPEED_CONTROL_PIVOT_BREAKAWAY_PERMILLE :
-                          -WHEEL_SPEED_CONTROL_PIVOT_BREAKAWAY_PERMILLE) :
-    0.0f;
+  if (s_pivot_breakaway_active[wheel])
+  {
+    if (s_pivot_rear_restart[wheel] &&
+        (signed_speed <= WHEEL_SPEED_CONTROL_PIVOT_STATIONARY_CPS) &&
+        ChassisController_TimeReached(now_ms, s_pivot_next_raise_ms[wheel]))
+    {
+      /* Restore the original kick authority if the lower top-up really
+       * cannot start the loaded wheel. Never catch up multiple steps. */
+      s_pivot_restart_bias[wheel] +=
+        WHEEL_SPEED_CONTROL_REAR_RESTART_RAISE_STEP_PERMILLE;
+      if (s_pivot_restart_bias[wheel] >
+          WHEEL_SPEED_CONTROL_PIVOT_BREAKAWAY_PERMILLE)
+      {
+        s_pivot_restart_bias[wheel] =
+          WHEEL_SPEED_CONTROL_PIVOT_BREAKAWAY_PERMILLE;
+      }
+      s_pivot_next_raise_ms[wheel] = now_ms +
+        WHEEL_SPEED_CONTROL_REAR_RESTART_RAISE_PERIOD_MS;
+    }
+    s_pivot_applied_bias[wheel] = (float)target_sign *
+      s_pivot_restart_bias[wheel];
+  }
+  else if (s_pivot_rear_restart[wheel])
+  {
+    /* Only pre-existing load support may enter the integral. Restart-only
+     * effort stays separate and is withdrawn gradually once moving. */
+    float temporary = (s_pivot_applied_bias[wheel] -
+      s_pivot_steady_bias[wheel]) * (float)target_sign;
+    if (temporary < 0.0f) { temporary = 0.0f; }
+    s_pivot_steady_bias[wheel] =
+      WheelSpeedController_ReleaseFeedforwardBias(
+        wheel, s_pivot_steady_bias[wheel]);
+    if (signed_speed >= WHEEL_SPEED_CONTROL_PIVOT_RELEASE_CPS)
+    {
+      const float maximum_decay =
+        WHEEL_SPEED_CONTROL_REAR_RESTART_DECAY_PERMILLE_PER_SECOND *
+        ((float)elapsed_ms / 1000.0f);
+      temporary = temporary > maximum_decay ?
+        temporary - maximum_decay : 0.0f;
+    }
+    /* In the hysteresis band, pause withdrawal instead of removing the
+     * support from a slowing wheel. At <=20 cps the active branch re-arms. */
+    s_pivot_applied_bias[wheel] = s_pivot_steady_bias[wheel] +
+      (float)target_sign * temporary;
+  }
+  else
+  {
+    /* Removing 60 permille abruptly caused loaded wheels to stop again.
+     * Rebase the existing integral, retaining only what does not fit there.
+     * The following PI update therefore sees no step in feedforward + I. */
+    s_pivot_applied_bias[wheel] =
+      WheelSpeedController_ReleaseFeedforwardBias(
+        wheel, s_pivot_applied_bias[wheel]);
+    s_pivot_steady_bias[wheel] = s_pivot_applied_bias[wheel];
+  }
+  return s_pivot_applied_bias[wheel];
 }
 
 static void ChassisController_ResetWheelControllers(void)
 {
+  ++s_control_generation;
   for (uint32_t wheel = 0U; wheel < MOTOR_DRIVER_WHEEL_COUNT; ++wheel)
   {
     (void)WheelSpeedController_Reset((MotorDriverWheel)wheel);
-    s_pivot_breakaway_active[wheel] = false;
-    s_pivot_breakaway_sign[wheel] = 0;
-    s_pivot_breakaway_start_ms[wheel] = 0U;
+    ChassisController_ClearPivotWheel((MotorDriverWheel)wheel);
   }
 }
 
 static bool ChassisController_GetSpeeds(
-  float measured_counts_per_second[MOTOR_DRIVER_WHEEL_COUNT])
+  float measured_counts_per_second[MOTOR_DRIVER_WHEEL_COUNT],
+  ChassisRrCountSample *rr_counts)
 {
   WheelSpeedState speeds[ENCODER_WHEEL_COUNT];
 
@@ -140,6 +305,13 @@ static bool ChassisController_GetSpeeds(
     }
     measured_counts_per_second[wheel] =
       speed->filtered_counts_per_second;
+  }
+  if (rr_counts != NULL)
+  {
+    const WheelSpeedState *rr = &speeds[s_encoder_wheels[MOTOR_DRIVER_WHEEL_RR]];
+    rr_counts->delta_counts = rr->delta_counts;
+    rr_counts->sample_period_ms = rr->sample_period_ms;
+    rr_counts->sample_time_ms = rr->sample_time_ms;
   }
   return true;
 }
@@ -254,7 +426,8 @@ static bool ChassisController_StartInternal(
     return false;
   }
 
-  if (!ChassisController_GetSpeeds(measured))
+  /* First start intentionally carries no recovery-exit history. */
+  if (!ChassisController_GetSpeeds(measured, NULL))
   {
     taskENTER_CRITICAL();
     s_status.fault = CHASSIS_CONTROLLER_FAULT_SPEED_SNAPSHOT;
@@ -279,7 +452,7 @@ static bool ChassisController_StartInternal(
       taskEXIT_CRITICAL();
       return false;
     }
-    if ((!WheelSpeedController_UpdateWithFeedforwardBias(
+    if ((!WheelSpeedController_UpdateWithMode(
           (MotorDriverWheel)wheel,
           targets.counts_per_second[wheel],
           measured[wheel],
@@ -288,7 +461,9 @@ static bool ChassisController_StartInternal(
             (MotorDriverWheel)wheel,
             targets.counts_per_second[wheel],
             measured[wheel],
-            now_ms),
+            now_ms,
+            CHASSIS_SPEED_SAMPLE_PERIOD_MS),
+          ChassisController_GetWheelControlMode(command),
           CHASSIS_SPEED_SAMPLE_PERIOD_MS,
           &outputs[wheel])) ||
         (!WheelSpeedController_GetState((MotorDriverWheel)wheel, &control)))
@@ -403,6 +578,8 @@ void ChassisController_Process(uint32_t now_ms)
   int16_t outputs[MOTOR_DRIVER_WHEEL_COUNT];
   uint32_t limited_mask = 0U;
   uint32_t elapsed_ms;
+  uint32_t generation;
+  ChassisRrCountSample rr_counts;
 
   taskENTER_CRITICAL();
   if (!s_status.active)
@@ -413,6 +590,7 @@ void ChassisController_Process(uint32_t now_ms)
   command = s_status.command;
   targets = s_status.targets;
   elapsed_ms = now_ms - s_status.last_control_ms;
+  generation = s_control_generation;
   taskEXIT_CRITICAL();
 
   if ((elapsed_ms == 0U) || (elapsed_ms > CHASSIS_CONTROLLER_MAX_STEP_MS))
@@ -420,7 +598,7 @@ void ChassisController_Process(uint32_t now_ms)
     if (elapsed_ms > CHASSIS_CONTROLLER_MAX_STEP_MS)
     {
       taskENTER_CRITICAL();
-      if (s_status.active)
+      if (s_status.active && (s_control_generation == generation))
       {
         ChassisController_FaultLocked(
           CHASSIS_CONTROLLER_FAULT_CONTROL_TIMING);
@@ -430,10 +608,10 @@ void ChassisController_Process(uint32_t now_ms)
     return;
   }
 
-  if (!ChassisController_GetSpeeds(measured))
+  if (!ChassisController_GetSpeeds(measured, &rr_counts))
   {
     taskENTER_CRITICAL();
-    if (s_status.active)
+    if (s_status.active && (s_control_generation == generation))
     {
       ChassisController_FaultLocked(
         CHASSIS_CONTROLLER_FAULT_SPEED_SNAPSHOT);
@@ -448,7 +626,7 @@ void ChassisController_Process(uint32_t now_ms)
         CHASSIS_CONTROLLER_OVERSPEED_CPS)
     {
       taskENTER_CRITICAL();
-      if (s_status.active)
+      if (s_status.active && (s_control_generation == generation))
       {
         ChassisController_FaultLocked(CHASSIS_CONTROLLER_FAULT_OVERSPEED);
       }
@@ -456,7 +634,23 @@ void ChassisController_Process(uint32_t now_ms)
       return;
     }
 
-    if ((!WheelSpeedController_UpdateWithFeedforwardBias(
+    /* RR evidence, owner selection and PI consumption form one bounded
+     * transaction against task-level STOP/health resets. Never hold this
+     * lock for the other three PI updates, I/O waits or logging. Priority-4
+     * ESTOP still directly shuts the power stage down through its ISR. */
+    const bool rr_locked = wheel == MOTOR_DRIVER_WHEEL_RR;
+    if (rr_locked)
+    {
+      taskENTER_CRITICAL();
+      if ((!s_status.active) || (s_control_generation != generation))
+      {
+        taskEXIT_CRITICAL();
+        return;
+      }
+      WheelSpeedController_ObserveRrRecoveryCounts(rr_counts.delta_counts,
+        rr_counts.sample_period_ms, rr_counts.sample_time_ms, now_ms);
+    }
+    const bool control_ok = WheelSpeedController_UpdateWithMode(
           (MotorDriverWheel)wheel,
           targets.counts_per_second[wheel],
           measured[wheel],
@@ -465,14 +659,20 @@ void ChassisController_Process(uint32_t now_ms)
             (MotorDriverWheel)wheel,
             targets.counts_per_second[wheel],
             measured[wheel],
-            now_ms),
+            now_ms,
+            elapsed_ms),
+          ChassisController_GetWheelControlMode(&command),
           elapsed_ms,
-          &outputs[wheel])) ||
-        (!WheelSpeedController_GetState((MotorDriverWheel)wheel,
-                                        &controls[wheel])))
+          &outputs[wheel]) &&
+        WheelSpeedController_GetState((MotorDriverWheel)wheel, &controls[wheel]);
+    if (rr_locked)
+    {
+      taskEXIT_CRITICAL();
+    }
+    if (!control_ok)
     {
       taskENTER_CRITICAL();
-      if (s_status.active)
+      if (s_status.active && (s_control_generation == generation))
       {
         ChassisController_FaultLocked(
           CHASSIS_CONTROLLER_FAULT_CONTROL_UPDATE);
@@ -487,7 +687,7 @@ void ChassisController_Process(uint32_t now_ms)
   }
 
   taskENTER_CRITICAL();
-  if (s_status.active)
+  if (s_status.active && (s_control_generation == generation))
   {
     bool outputs_ok = true;
 

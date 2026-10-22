@@ -1,0 +1,29 @@
+{
+  "note": "Exploratory position clue, not proof of mechanical binding. Assumes continuous encoder coordinate and nominal 1560 counts/wheel rev. No power-cycle/reset commands were sent between these runs.",
+  "events": [
+    {
+      "capture": "build\\hardware_tests\\loaded_pivot_compare_20261020_193201",
+      "direction": "LEFT",
+      "zero_start_ms": 605302,
+      "last_zero_ms": 605782,
+      "rf_count": 1293,
+      "rf_count_mod_nominal_1560": 1293
+    },
+    {
+      "capture": "build\\hardware_tests\\loaded_pivot_compare_20261020_193919",
+      "direction": "LEFT1",
+      "zero_start_ms": 1043562,
+      "last_zero_ms": 1044042,
+      "rf_count": 1293,
+      "rf_count_mod_nominal_1560": 1293
+    },
+    {
+      "capture": "build\\hardware_tests\\loaded_pivot_compare_20261020_194513",
+      "direction": "LEFT",
+      "zero_start_ms": 1396782,
+      "last_zero_ms": 1397442,
+      "rf_count": 4423,
+      "rf_count_mod_nominal_1560": 1303
+    }
+  ]
+}

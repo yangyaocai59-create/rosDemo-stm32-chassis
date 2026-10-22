@@ -1,0 +1,97 @@
+PASS: explicit front/direction pivot load table, zero and 1/20/80/160/280/1600 cps ramp/clamp, rear zero; NORMAL/legacy feedforward remains original, invalid lookup rejected
+PASS: stale caller/new heartbeat, true 250/251ms timeout, latch/clear and tick wrap
+PASS: bounded linear/angular startup, reversal crosses zero, invalid dt/NaN rejected
+PASS: all four production PI outputs obey slew across reversal/zero, immediate Reset and finite inputs
+PASS: all wheels/both directions conserve FF+I and PWM at assist release; bounded residual holds at equilibrium, unwinds with error, invalid inputs rejected
+PASS: four-wheel bidirectional pivot overspeed damping; unchanged startup/underspeed/normal gains, no reverse braking, slew/integral/output limits and invalid-mode guard
+PASS: no overdue catch-up loop, exact deadline/late slots, timing statistics and tick wrap
+PASS: 1000 same-direction updates write only nonzero CCR, no GPIO/STBY/zero pulses
+PASS: immediate GPIO coast despite active preload, >=2-tick reversal/re-enable guard, no wait
+PASS: guard tick wrap, ESTOP rejects output and clears STBY immediately
+PASS: real runtime+controller/profile persistent 40mm/s, no re-enable/reset, bounded trace wrap/freeze/dump
+PASS: explicit STOP, zero, transport loss, exact 250ms timeout, health fault and ESTOP bypass ramp immediately
+PASS: STOP preempts stale IDLE/start, ACTIVE step, timing fault and safety snapshot; no restart or replacement fault
+PASS: compact safety snapshot preserves active/fault, NULL validation and nested timing-fault shutdown
+PASS: real >100ms control timing fault still disables output; source/profile tick wrap works
+PASS: production pivot release conserves FF+I through integral clamp; equilibrium has no recurring release step; reversal/STOP/straight restart/250ms timeout clear maneuver state
+PASS: real chassis selects damping in pivot and baseline gains for rolling turn; no profile leaks across mode switch
+PASS: legacy rear restart top-up except owned LR reverse/RR forward; both running budgets checked separately; both directions retain other-wheel, first-kick/mode/reversal/STOP/timeout checks
+PASS: rear restart withdraws transient at 40ms after motion, no copy into I; bounded 4 permille/20ms decay; rear first kick keeps 300ms hold
+PASS: rear 49/50cps release and stationary-only increase boundaries; late update adds one step, no overdue catch-up, both signs/tick wrap
+PASS: restart-only assist decays to zero without integral transfer; 49cps pause, rearm without stacking, actual-dt decay, both signs/wrap; legacy steady support retained
+PASS: real chassis front support uses one policy, bounded target ramps; sign/mode/STOP/tick-wrap clear state, normal FF and rear regression assertions retained
+PASS: active front recovery cannot survive STOP/zero/transport loss/health fault/ESTOP/exact 250ms timeout/timing fault/overspeed, including tick wrap
+PASS: partial front recovery-to-I handoff clears BOTH buckets on all eight safety shutdown paths, including tick wrap
+PASS: pending 40ms front load confirmation never delays STOP/zero/transport loss/health fault/ESTOP/exact 250ms timeout/timing fault/overspeed shutdown, including tick wrap
+PASS: both fronts restore bounded moving load; opposing-I debt and recovery handoff conserve support; no duplicate positive I
+PASS: 60ms consecutive near-rest, 40ms moving rearm, 300ms timeout+finite fade, no repeated retries at rest, no boost on opposite motion
+PASS: 8000 adversarial target/feedback/dt steps obey load/transient/I/output/slew bounds; sign/mode/zero/reset and invalid inputs clear/preserve state correctly
+PASS: both fronts/signs at 20/40/160/199/200/280 cps and 1/10/20/100ms dt qualify failure at 1500ms, sticky until reset/sign/mode exit; real movement interrupts qualification
+PASS: front handoff preserves positive steady I, conserves FF+I during bounded transfer, shares 50-permille authority, no last-transfer double integration
+PASS: inherited steady I and temporary support withdraw on sustained overspeed; unconfirmed movement fades; continuous rest still fails; both fronts/signs, variable dt
+PASS: both fronts/signs at 20/40/160/280/1600 cps ignore 1..59ms load-withdrawal pulses while P damping and I unwind act immediately
+PASS: both fronts error-scaled load withdrawal reaches zero after 60ms confirmation, for 1/10/20/25/59/60/100ms steps
+PASS: separated 40ms excursions never accumulate; exact target+band resets qualification, moving underspeed retains original net integral correction
+PASS: transient recovery terminates and fades on FIRST overspeed sample, without waiting for load confirmation
+PASS: sign/mode/low-target/zero/Reset clear qualification; invalid dt never advances state
+PASS: both fronts load+transient rise <=250/s, fall <=400/s; existing individual caps, 50-permille shared I/recovery, PWM and slew bounds remain
+PASS: confirmed moving underspeed restores bounded load BEFORE near-rest without simultaneous positive I; band/opposite motion/opposing-I gates retained
+PASS: both fronts/directions, 20/40/160/280/1600 cps, dt1/10/20/25/59/60/100ms: sustained overspeed unloads fully; continuous rest still has finite failure
+PASS: 80000 updates: RF/rear both modes, LF NORMAL/forward PIVOT bit-identical to frozen .17; reset/prime/bias/invalid dt included
+PASS: 40010 LF bidirectional PIVOT updates after confirmed motion bit-identical to frozen .17, including later stall/recovery/overspeed
+PASS: LF reverse special extension exits on first update reaching 600ms, no target-change reset or retries at rest; late entry keeps old 300ms pulse; 1500ms failure retained, dt1..100ms
+PASS: confirmed movement or FIRST overspeed ends extension; later real stall uses original 300ms pulse, unchanged effort/slew/shared-I caps
+PASS: invalid dt/NaN preserve first-start state; sign/mode/low-target/zero/reset clear it; resetting RF cannot change LF startup state
+INFO: private first-start state size=12 bytes; no public state layout change
+PASS: LF extended 400ms first-start phase clears immediately on all 8 real runtime safety paths, including tick wrap; all four outputs disabled
+PASS: real front policy/fault manager/runtime trip on both fronts/directions at approximately 20/160/280 cps, including tick wrap; all outputs disabled, latch/reject/explicit clear/new command verified
+PASS: recovery before deadline, moving pivot, rear and NORMAL isolation; legacy 1000ms grace + 750ms stall detection preserved
+PASS: LR reverse 60ms confirmation, one bounded episode/no rest retries, 600ms cutoff+finite fade, 20..1600cps dt1..100ms; I+temporary<=60, I/PWM/slew/rise caps
+PASS: separated underspeed pulses cannot accumulate; FIRST overspeed stops rise/withdraws temporary; confirmed settled recovery rearms only after zero temporary
+PASS: shared budget and conservative A-to-I reclassification cover opposing/zero/positive and saturated I; no full extra kick on retained I, overspeed fully unloads temporary
+PASS: invalid dt/NaN/stacked caller bias preserve state; RF reset cannot affect LR; opposite motion ends rise; sign/low-target/mode/Reset clear new history
+PASS: 30000 adversarial LR running steps: target changes do not reset finite episode; output/I/shared authority/controlled-rise bounds across opposite motion and dt1..100ms
+PASS: real runtime STOP/zero/transport/health/ESTOP/exact250ms/timing/overspeed immediately disable four outputs and clear LR support, including tick wrap
+PASS: LR owned low-output stall trips at exact 1000+750ms, including tick wrap; recovery never clears latch
+PASS: legacy output-qualified guard retained for every wheel/direction; new path only owned LR reverse >=200cps below 15%, coherent target required
+PASS: speed/ownership/target/direction/inactive/NULL reset semantics, no accumulation of repeated 160ms gaps, including tick wrap
+PASS: ownership query read-only; rejects stale target/nonfinite, clears on NORMAL/sign/reset; acquisition uses actual PI updates
+PASS: frozen .18 complete original runtime 15 groups retained and passing; changed LR expectations replaced only in current tests
+PASS: 80000 unchanged scope excluding LR reverse/RR forward pivot updates bit-identical to frozen .18
+PASS: 10000 startup updates bit-identical to frozen .18
+PASS: 30000 LR running control outputs/private states bit-identical to validated v2 prototype
+PASS: 204 real runtime/fault-manager audits: no added stall delay, latch/all-output shutdown/reject/explicit-clear/no-auto-resume, including tick wrap
+PASS: RR forward 60ms confirmation, one bounded episode/no rest retries, 600ms cutoff+finite fade, 20..1600cps dt1..100ms; I+temporary<=60, I/PWM/slew/rise caps
+PASS: separated underspeed pulses cannot accumulate; FIRST overspeed stops rise/withdraws temporary; confirmed settled recovery rearms only after zero temporary
+PASS: shared budget and conservative A-to-I reclassification cover opposing/zero/positive and saturated I; no full extra kick on retained I, overspeed fully unloads temporary
+PASS: invalid dt/NaN/stacked caller bias preserve state; RF reset cannot affect RR; opposite motion ends rise; sign/low-target/mode/Reset clear new history
+PASS: 30000 adversarial RR running steps: target changes do not reset finite episode; output/I/shared authority/controlled-rise bounds across opposite motion and dt1..100ms
+PASS: real runtime STOP/zero/transport/health/ESTOP/exact250ms/timing/overspeed immediately disable four outputs and clear RR support, including tick wrap
+PASS: RR owned low-output stall trips at exact 1000+750ms, including tick wrap; recovery never clears latch
+PASS: legacy output-qualified guard retained for every wheel/direction; new path only owned RR forward >=200cps below 15%, coherent target required
+PASS: speed/ownership/target/direction/inactive/NULL reset semantics, no accumulation of repeated 160ms gaps, including tick wrap
+PASS: ownership query read-only; rejects stale target/nonfinite, clears on NORMAL/sign/reset; acquisition uses actual PI updates
+PASS: RR requires 40ms confirmed prior motion and zero-legacy-bias caller permission; ownership remains across bounded pulse exit
+PASS: actual chassis cannot acquire RR while old pulse/applied/steady bias remains; zero-bias handoff and chassis-clear lifetime verified
+PASS: frozen .19 complete original runtime 15 groups retained; only two owned-RR legacy waveforms replaced in current tests
+PASS: 80000 non-RR-forward scope updates and LR private states bit-identical to frozen .19
+PASS: 10000 first start updates and LR private states bit-identical to frozen .19
+PASS: 30000 RR owned running outputs/private states bit-identical to validated prototype
+PASS: 204 RR actual runtime/fault-manager audits: no added delay; latch/four-output shutdown/reject/explicit-clear/no-auto-resume, tick wrap
+PASS: fresh two-sample window +40ms confirmation exits before filtered overspeed, bounded fade/no I copy, finite/no rest retry, ownership retained, settled rearm, tick wrap
+PASS: isolated spikes, following positive-low/zero/opposite samples, separated excursions and 250cps quantization do not qualify early exit
+PASS: duplicate/out-of-order/stale/future/zero-or-long-period/extreme/missing input cannot reuse confirmation; filtered fallback remains valid
+PASS: early channel accepts 15..30ms samples only; other valid control dt1..100ms safely use original filtered policy
+PASS: target change resets evidence without resetting finite episode; RR reset clears all new history
+PASS: 30000 adversarial count/filter/dt/wrap updates preserve shared authority, output/I/slew/rise bounds
+PASS: target20..1600 and sample15..30ms early-exit then renewed complete standstill: finite withdrawal, no temporary retry/rearm, persistent safety owner, PWM bound
+PASS: actual chassis consumes timestamped RR snapshots; early-exit active/fading state clears on all 8 immediate runtime shutdowns, four outputs zero, tick wrap
+PASS: 30 STOP/health/transport interleavings at capture, snapshot, RR unlock, output commit and pending-inside-RR boundaries: no stale RR state/output resurrection, wrap
+PASS: STOP followed immediately by new start cannot accept prior-generation RR observation or output commit
+PASS: simulated unmasked priority-4 ESTOP direct power cutoff during RR transaction is not undone by output commit
+PASS: 30000 RR running updates without fast observations identical to frozen .20
+PASS: 80000 scope updates/exported LR state identical to frozen .20
+PASS: 80000 unrelated-scope updates unchanged with injected RR observations
+PASS: 10000 first-start updates/exported LR state identical to frozen .20
+PASS: 408 paired actual fault-manager/runtime cases: no added stall delay, latch/four-stop/reject/explicit-clear/no-auto-resume, wrap and post-fast-exit
+PASS: production .21 all-four-wheel replay exactly matches approved prototype across three conditional seeds; prescribed feedback, NOT physical prediction
