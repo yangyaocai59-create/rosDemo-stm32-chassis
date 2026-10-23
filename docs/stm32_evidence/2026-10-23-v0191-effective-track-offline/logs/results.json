@@ -1,0 +1,8 @@
+{
+  "strict": "PASS: .40rad/s => +/-603.516cps, both wheels per side share targets; physical210/effective395 kept distinct\nPASS: right-turn symmetry and small .10rad/s command retained without hidden floor\nPASS: 1271 mixed forward/reverse/turn commands round-trip consistently with curvature-preserving saturation\nPASS: straight targets unchanged; NULL/NaN/invalid limit rejected\n",
+  "optimized": "PASS: .40rad/s => +/-603.516cps, both wheels per side share targets; physical210/effective395 kept distinct\nPASS: right-turn symmetry and small .10rad/s command retained without hidden floor\nPASS: 1271 mixed forward/reverse/turn commands round-trip consistently with curvature-preserving saturation\nPASS: straight targets unchanged; NULL/NaN/invalid limit rejected\n",
+  "analyzer": "PASS: .40rad/s => +/-603.516cps, both wheels per side share targets; physical210/effective395 kept distinct\nPASS: right-turn symmetry and small .10rad/s command retained without hidden floor\nPASS: 1271 mixed forward/reverse/turn commands round-trip consistently with curvature-preserving saturation\nPASS: straight targets unchanged; NULL/NaN/invalid limit rejected\n",
+  "runtime_strict": "PASS: real runtime both turn directions/wrap retain .40rad/s and +/-604cps targets for15.2s supplied-feedback simulation, then STOP disables four outputs\n",
+  "runtime_optimized": "PASS: real runtime both turn directions/wrap retain .40rad/s and +/-604cps targets for15.2s supplied-feedback simulation, then STOP disables four outputs\n",
+  "runtime_analyzer": "PASS: real runtime both turn directions/wrap retain .40rad/s and +/-604cps targets for15.2s supplied-feedback simulation, then STOP disables four outputs\n"
+}

@@ -55,9 +55,9 @@ bool ChassisKinematics_ToWheelTargets(
   }
 
   left_linear = command->linear_x_m_s -
-    command->angular_z_rad_s * (CHASSIS_WHEEL_TRACK_M * 0.5f);
+    command->angular_z_rad_s * (CHASSIS_EFFECTIVE_TRACK_M * 0.5f);
   right_linear = command->linear_x_m_s +
-    command->angular_z_rad_s * (CHASSIS_WHEEL_TRACK_M * 0.5f);
+    command->angular_z_rad_s * (CHASSIS_EFFECTIVE_TRACK_M * 0.5f);
   left_cps = left_linear * counts_per_metre;
   right_cps = right_linear * counts_per_metre;
 
@@ -121,6 +121,6 @@ bool ChassisKinematics_FromWheelSpeeds(
     (estimate->left_linear_m_s + estimate->right_linear_m_s);
   estimate->angular_z_rad_s =
     (estimate->right_linear_m_s - estimate->left_linear_m_s) /
-    CHASSIS_WHEEL_TRACK_M;
+    CHASSIS_EFFECTIVE_TRACK_M;
   return true;
 }

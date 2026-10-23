@@ -1,0 +1,4 @@
+PASS: .40rad/s => +/-603.516cps, both wheels per side share targets; physical210/effective395 kept distinct
+PASS: right-turn symmetry and small .10rad/s command retained without hidden floor
+PASS: 1271 mixed forward/reverse/turn commands round-trip consistently with curvature-preserving saturation
+PASS: straight targets unchanged; NULL/NaN/invalid limit rejected

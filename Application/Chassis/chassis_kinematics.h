@@ -40,7 +40,8 @@ typedef struct
 } ChassisVelocityEstimate;
 
 /**
- * Convert a chassis command to four wheel encoder rates.
+ * Convert a chassis command to four wheel encoder rates using the configured
+ * effective skid-steer track. Both forward/inverse conversions share it.
  *
  * If either side exceeds max_abs_counts_per_second, all wheel targets are
  * scaled by the same factor so the requested curvature is preserved.

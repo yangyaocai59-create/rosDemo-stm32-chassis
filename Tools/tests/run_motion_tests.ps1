@@ -6,4 +6,6 @@ Push-Location -LiteralPath $motionRoot
 try {
     & python -B Tools/tests/motion/run_simplified_tests.py
     if ($LASTEXITCODE -ne 0) { throw 'simplified motion regression failed' }
+    & python -B Tools/tests/motion/run_effective_track_tests.py
+    if ($LASTEXITCODE -ne 0) { throw 'effective track regression failed' }
 } finally { Pop-Location }

@@ -19,7 +19,7 @@
   (CHASSIS_ENCODER_PPR * CHASSIS_ENCODER_QUADRATURE_MULTIPLIER * \
    CHASSIS_MOTOR_GEAR_RATIO)
 
-/* Initial measured chassis geometry. SI units are used by runtime APIs. */
+/* Physical chassis dimensions. Effective skid-steer geometry is separate. */
 #define CHASSIS_WHEEL_DIAMETER_MM              65U
 #define CHASSIS_WHEEL_TRACK_MM                 210U
 #define CHASSIS_WHEELBASE_MM                   180U
@@ -30,6 +30,12 @@
 #define CHASSIS_WHEEL_CIRCUMFERENCE_M          \
   (CHASSIS_PI_F * CHASSIS_WHEEL_DIAMETER_M)
 #define CHASSIS_WHEEL_TRACK_M                  0.210f
+
+/* Provisional skid-steer effective track, matching the existing ROS odometry
+ * setting. Used in BOTH command allocation and wheel-to-body estimation.
+ * Physical 210mm dimension above remains unchanged; no encoder scaling.
+ * Ground/tyre dependent: 395mm is an existing assumption, not a new fit. */
+#define CHASSIS_EFFECTIVE_TRACK_M              0.395f
 #define CHASSIS_WHEELBASE_M                    0.180f
 
 /* Wheel-speed acquisition and filtering parameters. */
