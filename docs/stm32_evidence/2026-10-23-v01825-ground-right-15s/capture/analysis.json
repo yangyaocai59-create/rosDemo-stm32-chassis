@@ -1,0 +1,127 @@
+{
+  "folder": "build\\hardware_tests\\v01825_ground_right_20261023_050829",
+  "motion_seconds": 14.17200000000048,
+  "complete_trace_frames": 128,
+  "trace_header": {
+    "schema": 3,
+    "count": 128,
+    "reason": 1,
+    "mask": 8,
+    "trigger": 315483,
+    "trigger_seq": 355,
+    "post_left": 0
+  },
+  "active_trace_span_ms": [
+    313443,
+    315983
+  ],
+  "snapshot_flags": [
+    0
+  ],
+  "vm_mV_range": [
+    10494,
+    10967
+  ],
+  "accepted_delta": 226,
+  "rejected_delta": 1,
+  "final_status": [
+    369120,
+    466,
+    466,
+    1,
+    281,
+    3,
+    5,
+    6,
+    0,
+    464,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    574,
+    0,
+    0,
+    0
+  ],
+  "final_stopped_verified": true,
+  "fault_cleared": false,
+  "protocol_counter_deltas": {
+    "crc": 0,
+    "overflow": 0,
+    "drop": 0
+  },
+  "trace_final_stby": 1,
+  "trace_final_pin": 1,
+  "trace_final_ccr": [
+    1184,
+    982,
+    1444,
+    1167
+  ],
+  "end_of_capture_stopped": true,
+  "wheels": {
+    "LF": {
+      "trace_mean_target_cps": 240,
+      "trace_mean_filtered_cps": 264.625,
+      "trace_mean_raw_cps": 262.890625,
+      "trace_pwm_magnitude_range": [
+        132,
+        150
+      ],
+      "trace_mean_pwm_magnitude": 140.296875,
+      "trace_mean_directional_i": -5.36015625,
+      "trace_i_at_cap_samples": 0,
+      "trace_zero_dc_samples": 0,
+      "trace_request_applied_mismatch_samples": 0,
+      "whole_capture_net_counts": 3381
+    },
+    "LR": {
+      "trace_mean_target_cps": 240,
+      "trace_mean_filtered_cps": 242.140625,
+      "trace_mean_raw_cps": 241.796875,
+      "trace_pwm_magnitude_range": [
+        106,
+        120
+      ],
+      "trace_mean_pwm_magnitude": 112.3984375,
+      "trace_mean_directional_i": 31.521875,
+      "trace_i_at_cap_samples": 0,
+      "trace_zero_dc_samples": 0,
+      "trace_request_applied_mismatch_samples": 0,
+      "whole_capture_net_counts": 3362
+    },
+    "RF": {
+      "trace_mean_target_cps": 240,
+      "trace_mean_filtered_cps": 236.6171875,
+      "trace_mean_raw_cps": 232.8125,
+      "trace_pwm_magnitude_range": [
+        143,
+        172
+      ],
+      "trace_mean_pwm_magnitude": 151.359375,
+      "trace_mean_directional_i": 15.040625,
+      "trace_i_at_cap_samples": 0,
+      "trace_zero_dc_samples": 11,
+      "trace_request_applied_mismatch_samples": 0,
+      "whole_capture_net_counts": -2790
+    },
+    "RR": {
+      "trace_mean_target_cps": 240,
+      "trace_mean_filtered_cps": 198.6484375,
+      "trace_mean_raw_cps": 194.140625,
+      "trace_pwm_magnitude_range": [
+        90,
+        139
+      ],
+      "trace_mean_pwm_magnitude": 100.6875,
+      "trace_mean_directional_i": 5.3140625,
+      "trace_i_at_cap_samples": 0,
+      "trace_zero_dc_samples": 29,
+      "trace_request_applied_mismatch_samples": 0,
+      "whole_capture_net_counts": -3342
+    }
+  }
+}

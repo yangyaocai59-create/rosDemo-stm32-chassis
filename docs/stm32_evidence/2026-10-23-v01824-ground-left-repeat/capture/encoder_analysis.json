@@ -1,0 +1,222 @@
+[
+  {
+    "header": {
+      "schema": 3,
+      "count": 128,
+      "reason": 1,
+      "mask": 4,
+      "trigger": 271363,
+      "trigger_seq": 310,
+      "post_left": 0
+    },
+    "source_span_ms": [
+      269323,
+      271863
+    ],
+    "snapshot_flags": [
+      0
+    ],
+    "wheels": {
+      "LF": {
+        "config_bad_values": [
+          0
+        ],
+        "config_bad_frames": [],
+        "sampled_vs_total_mismatches": [],
+        "live_ahead_or_behind_frames": [
+          {
+            "t": 270063,
+            "raw_delta": -1
+          },
+          {
+            "t": 270083,
+            "raw_delta": -1
+          },
+          {
+            "t": 270583,
+            "raw_delta": -1
+          },
+          {
+            "t": 270663,
+            "raw_delta": -1
+          },
+          {
+            "t": 270963,
+            "raw_delta": -1
+          },
+          {
+            "t": 271043,
+            "raw_delta": -1
+          },
+          {
+            "t": 271243,
+            "raw_delta": -1
+          },
+          {
+            "t": 271363,
+            "raw_delta": -1
+          },
+          {
+            "t": 271743,
+            "raw_delta": -1
+          }
+        ],
+        "zero_runs_at_least_3_frames": []
+      },
+      "LR": {
+        "config_bad_values": [
+          0
+        ],
+        "config_bad_frames": [],
+        "sampled_vs_total_mismatches": [],
+        "live_ahead_or_behind_frames": [
+          {
+            "t": 269383,
+            "raw_delta": -1
+          },
+          {
+            "t": 269483,
+            "raw_delta": -1
+          },
+          {
+            "t": 270023,
+            "raw_delta": -1
+          },
+          {
+            "t": 270043,
+            "raw_delta": -1
+          },
+          {
+            "t": 270243,
+            "raw_delta": -1
+          },
+          {
+            "t": 271423,
+            "raw_delta": -1
+          }
+        ],
+        "zero_runs_at_least_3_frames": []
+      },
+      "RF": {
+        "config_bad_values": [
+          0
+        ],
+        "config_bad_frames": [],
+        "sampled_vs_total_mismatches": [],
+        "live_ahead_or_behind_frames": [
+          {
+            "t": 269523,
+            "raw_delta": -1
+          },
+          {
+            "t": 269543,
+            "raw_delta": -1
+          },
+          {
+            "t": 269583,
+            "raw_delta": -1
+          },
+          {
+            "t": 269903,
+            "raw_delta": -1
+          },
+          {
+            "t": 271023,
+            "raw_delta": -1
+          }
+        ],
+        "zero_runs_at_least_3_frames": [
+          {
+            "first_t": 271323,
+            "last_t": 271643,
+            "samples": 17,
+            "sum_sample_period_ms": 340,
+            "sampled_counts": [
+              62787
+            ],
+            "live_counts": [
+              62787
+            ],
+            "ab_values": [
+              3
+            ],
+            "config_bad_values": [
+              0
+            ],
+            "pwm_first_last": [
+              134,
+              156
+            ],
+            "ccr_first_last": [
+              1125,
+              1310
+            ],
+            "i_x10_first_last": [
+              -245,
+              -62
+            ],
+            "total_values": [
+              2749
+            ]
+          }
+        ]
+      },
+      "RR": {
+        "config_bad_values": [
+          0
+        ],
+        "config_bad_frames": [],
+        "sampled_vs_total_mismatches": [],
+        "live_ahead_or_behind_frames": [
+          {
+            "t": 270803,
+            "raw_delta": -1
+          },
+          {
+            "t": 271023,
+            "raw_delta": -1
+          },
+          {
+            "t": 271563,
+            "raw_delta": -1
+          }
+        ],
+        "zero_runs_at_least_3_frames": [
+          {
+            "first_t": 271663,
+            "last_t": 271743,
+            "samples": 5,
+            "sum_sample_period_ms": 100,
+            "sampled_counts": [
+              62820
+            ],
+            "live_counts": [
+              62820
+            ],
+            "ab_values": [
+              0
+            ],
+            "config_bad_values": [
+              0
+            ],
+            "pwm_first_last": [
+              100,
+              108
+            ],
+            "ccr_first_last": [
+              840,
+              907
+            ],
+            "i_x10_first_last": [
+              -33,
+              4
+            ],
+            "total_values": [
+              2716
+            ]
+          }
+        ]
+      }
+    }
+  }
+]

@@ -3,7 +3,9 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-/* Read-only bounded diagnostics. Never submits commands or owns outputs. */
+/* Only motorTask, after output processing. Diagnostic-only first-anomaly
+ * pre/post capture; never submits commands or owns outputs. Frozen data survive
+ * later motion until dumped (or MCU resets). */
 void MotionTrace_Record(uint32_t now_ms);
 /* Call only while stopped. Recording freezes until telemetry finishes dumping. */
 bool MotionTrace_RequestDump(void);

@@ -1,0 +1,3 @@
+PASS: 1000 same-direction updates write only nonzero CCR, no GPIO/STBY/zero pulses
+PASS: immediate GPIO coast despite active preload, >=2-tick reversal/re-enable guard, no wait
+PASS: guard tick wrap, ESTOP rejects output and clears STBY immediately

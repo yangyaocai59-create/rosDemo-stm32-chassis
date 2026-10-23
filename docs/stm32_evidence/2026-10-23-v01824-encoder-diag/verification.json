@@ -1,0 +1,55 @@
+{
+  "version": "0.18.24-encoder-diag-candidate",
+  "result": "SOFTWARE_PASS_NOT_HARDWARE_VALIDATED",
+  "memory_bytes": {
+    "RAM": 101384,
+    "CCMRAM": 0,
+    "FLASH": 189824
+  },
+  "ring_bytes": 39936,
+  "trace_schema": 3,
+  "compiler_frames": {
+    "StartMotorTask": 40,
+    "MotionTrace_Record": 360,
+    "MotionTrace_Snapshot": 472,
+    "EncoderDiagnostics_Read": 176,
+    "EncoderService_GetSnapshot": 32
+  },
+  "motor_application_stack_subtotal": 1080,
+  "motor_stack_bytes": 2048,
+  "complete_worst_case_stack_bound": false,
+  "real_encoder_update_checks": 40000,
+  "encoder_test_modes": [
+    "strict",
+    "O2",
+    "analyzer"
+  ],
+  "trace_tests": {
+    "native_modes": 3,
+    "groups_each": 9,
+    "runtime_differential_rows": 1712,
+    "runtime_byte_identical": true,
+    "signed_counter_roundtrip": true,
+    "malformed_exports_rejected": 8,
+    "hardware_validated": false
+  },
+  "usb_groups": 20,
+  "normal_identity_updates": 40000,
+  "build_warnings": 0,
+  "build_errors": 0,
+  "hex_bin_checked": true,
+  "prior_artifacts_unchanged": true,
+  "flashed": false,
+  "motion_sent": false,
+  "fault_cleared": false,
+  "serial_opened": false,
+  "hardware_tested": false,
+  "git_committed": false,
+  "pushed": false,
+  "sha256": {
+    "hex": "81c0a77df2068b9c95988b14386ee48a3af02f8fef729d168d75b80e58360e38",
+    "bin": "93721ad2a5609a66e72421a10d35e278e08297f27dd9e2e6287a24c35e7d9e70",
+    "elf": "c8b5877d8e46114d06b3f00e1a5caea87697bdd54807943abcba3796cb4643d7",
+    "map": "cb20e1be2262bed5025ecd6214787398782aa092c8d46654cf9e356aa5c9f03b"
+  }
+}

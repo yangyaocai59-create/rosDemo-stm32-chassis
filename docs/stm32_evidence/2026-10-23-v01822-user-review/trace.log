@@ -1,0 +1,3 @@
+TRACE_CAPACITY,128,156,19968,3460,6000
+PASS: six-second run retains only 128 samples, 2540ms endpoint span; midpoint event overwritten
+PASS: actual recorder permits mixed pre-STOP runtime and post-STOP output snapshots; not a torque/waveform measurement

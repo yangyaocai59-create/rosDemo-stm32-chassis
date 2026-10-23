@@ -1,0 +1,31 @@
+PASS: all four wheels/both directions preserve midpoint anomaly, 25 post frames, no live log
+PASS: healthy 30-second run and normal STOP, bounded rolling retention
+PASS: isolated low sample and stale/missing sample cannot qualify sustained low feedback
+PASS: early STOP closes capture, later motion cannot overwrite; dump/rearm and motion pause
+PASS: task STOP is deferred outside snapshot; asynchronous E-stop boundary explicitly marked
+PASS: timestamp wrap does not break cadence or trigger/post window
+PASS: fault transition freezes immediately without modifying fault/control
+PASS: UART failure aborts after first failed write and preserves whole capture for retry
+TRACE2 BEGIN schema=2 count=2 reason=2 mask=0 trigger=20 trigger_seq=2 post_left=25
+TRACE t=0 dt=20 req=0/0 applied=0/0 state=2 stop=0 fault=0 stby=1
+TRACE2 SNAP seq=1 speed_t=0 control_t=0 flags=0 arr=8399 bdtr=32768 ccer=4369 dirs=0 pin=1
+TRACE LF dc=5 raw=240 target=240 cps=240 ff_x10=1000 p_x10=0 i_x10=500 pwm=150
+TRACE2 LF total_hi=4294967040 total_lo=5 request=150 ctrl=150 ccr=1260 limited=0 obs=2
+TRACE LR dc=5 raw=240 target=240 cps=240 ff_x10=1000 p_x10=0 i_x10=500 pwm=150
+TRACE2 LR total_hi=4294967040 total_lo=4 request=150 ctrl=150 ccr=1260 limited=0 obs=2
+TRACE RF dc=5 raw=240 target=240 cps=240 ff_x10=1000 p_x10=0 i_x10=500 pwm=150
+TRACE2 RF total_hi=4294967040 total_lo=3 request=150 ctrl=150 ccr=1260 limited=0 obs=2
+TRACE RR dc=5 raw=240 target=240 cps=240 ff_x10=1000 p_x10=0 i_x10=500 pwm=150
+TRACE2 RR total_hi=4294967040 total_lo=2 request=150 ctrl=150 ccr=1260 limited=0 obs=2
+TRACE t=20 dt=20 req=0/0 applied=0/0 state=1 stop=0 fault=0 stby=0
+TRACE2 SNAP seq=2 speed_t=20 control_t=20 flags=0 arr=8399 bdtr=32768 ccer=4369 dirs=0 pin=0
+TRACE LF dc=5 raw=240 target=240 cps=240 ff_x10=1000 p_x10=0 i_x10=500 pwm=150
+TRACE2 LF total_hi=4294967040 total_lo=10 request=150 ctrl=150 ccr=1260 limited=0 obs=2
+TRACE LR dc=5 raw=240 target=240 cps=240 ff_x10=1000 p_x10=0 i_x10=500 pwm=150
+TRACE2 LR total_hi=4294967040 total_lo=9 request=150 ctrl=150 ccr=1260 limited=0 obs=2
+TRACE RF dc=5 raw=240 target=240 cps=240 ff_x10=1000 p_x10=0 i_x10=500 pwm=150
+TRACE2 RF total_hi=4294967040 total_lo=8 request=150 ctrl=150 ccr=1260 limited=0 obs=2
+TRACE RR dc=5 raw=240 target=240 cps=240 ff_x10=1000 p_x10=0 i_x10=500 pwm=150
+TRACE2 RR total_hi=4294967040 total_lo=7 request=150 ctrl=150 ccr=1260 limited=0 obs=2
+TRACE END; schema=2 req/applied=mm/s,mrad/s cps=counts/s pwm=permille
+PASS: signed 64-bit totals preserved; frame=248 ring=31744 bytes

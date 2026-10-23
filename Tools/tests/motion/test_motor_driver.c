@@ -6,7 +6,8 @@
 #include "motor_driver.h"
 
 GPIO_TypeDef test_gpio;
-TIM_HandleTypeDef htim8 = {.arr=8399U};
+static TestTimerRegisters registers;
+TIM_HandleTypeDef htim8 = {.arr=8399U, .Instance=&registers};
 static uint32_t tick, primask;
 static bool estop;
 static unsigned compare_writes, zero_writes, stby_writes, direction_writes;
@@ -63,6 +64,15 @@ int main(void)
   tick=2; UpdateEvent(); assert_zero_before_direction=true;
   assert(MotorDriver_SetCommand(MOTOR_DRIVER_WHEEL_LF,100));
   UpdateEvent(); assert(Applied(MOTOR_DRIVER_WHEEL_LF)==100);
+  MotorDriverDiagnostics diag;
+  const unsigned diag_writes = compare_writes + direction_writes + stby_writes;
+  registers.BDTR=0x8000U; registers.CCER=0x1111U;
+  assert(MotorDriver_GetDiagnostics(&diag));
+  assert(diag.compare[0]==840U && diag.auto_reload==8399U);
+  assert(diag.bdtr==0x8000U && diag.ccer==0x1111U);
+  assert(diag.standby_pin && (diag.direction_bits & 3U)==1U);
+  assert(diag_writes==compare_writes + direction_writes + stby_writes);
+  assert(!MotorDriver_GetDiagnostics(NULL));
   const unsigned before_zero=zero_writes, before_dir=direction_writes,
     before_stby=stby_writes, before_compare=compare_writes;
   for(unsigned i=0;i<1000;i++)

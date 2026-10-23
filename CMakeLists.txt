@@ -57,6 +57,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/Application/Communication/usb_cdc_transport.c
     ${CMAKE_CURRENT_SOURCE_DIR}/Application/Diagnostics/fault_injection_test.c
     ${CMAKE_CURRENT_SOURCE_DIR}/Application/Diagnostics/motion_trace.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Diagnostics/encoder_diagnostics.c
     ${CMAKE_CURRENT_SOURCE_DIR}/Application/Diagnostics/imu_static_test.c
     ${CMAKE_CURRENT_SOURCE_DIR}/Application/Diagnostics/imu_calibration_guard.c
     ${CMAKE_CURRENT_SOURCE_DIR}/Application/Diagnostics/imu_spi_identity_test.c

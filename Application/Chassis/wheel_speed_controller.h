@@ -54,6 +54,14 @@ typedef struct
 /** Initialize all controller instances with zero output and integral state. */
 void WheelSpeedController_Init(void);
 
+/** Unified pivot ownership, for the existing >=200cps severe-stall guard.
+ * Read under the same critical-section contract as the legacy owner APIs. */
+bool WheelSpeedController_IsUnifiedPivotOwned(MotorDriverWheel wheel,
+                                             float observed_target_cps);
+/* Mode ownership only; safety uses its observed target without requiring exact
+ * equality with a target that motorTask may have refreshed in between getters. */
+bool WheelSpeedController_IsUnifiedPivotMode(MotorDriverWheel wheel);
+
 /* Internal chassis/PI handshake. No USB or public-state layout change.
  * Selection requires old startup bias zero and prior confirmed motion. */
 bool WheelSpeedController_SelectLrRunningSupport(bool may_start);
@@ -146,7 +154,9 @@ bool WheelSpeedController_UpdateWithMode(
 bool WheelSpeedController_GetState(MotorDriverWheel wheel,
                                    WheelSpeedControllerState *state);
 
-/** Copy maneuver-local front support state; false for rear/invalid/NULL. */
+/** Legacy-named internal safety view, no wire layout change. Unified builds
+ * report any active pivot wheel (recovery_permille=0, no pulses); legacy or
+ * inactive instances retain the old front-only view. Invalid/NULL is false. */
 bool WheelSpeedController_GetFrontPivotState(
   MotorDriverWheel wheel, WheelSpeedFrontPivotState *state);
 

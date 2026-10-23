@@ -1,0 +1,451 @@
+[
+  {
+    "header": {
+      "schema": 3,
+      "count": 114,
+      "reason": 1,
+      "mask": 1,
+      "trigger": 73083,
+      "trigger_seq": 89,
+      "post_left": 0
+    },
+    "source_span_ms": [
+      71323,
+      73583
+    ],
+    "snapshot_flags": [
+      0
+    ],
+    "wheels": {
+      "LF": {
+        "config_bad_values": [
+          0
+        ],
+        "config_bad_frames": [],
+        "sampled_vs_total_mismatches": [],
+        "live_ahead_or_behind_frames": [
+          {
+            "t": 72963,
+            "raw_delta": -1
+          },
+          {
+            "t": 73083,
+            "raw_delta": -1
+          }
+        ],
+        "zero_runs_at_least_3_frames": [
+          {
+            "first_t": 71323,
+            "last_t": 71383,
+            "samples": 4,
+            "sum_sample_period_ms": 80,
+            "sampled_counts": [
+              0
+            ],
+            "live_counts": [
+              0
+            ],
+            "ab_values": [
+              1
+            ],
+            "config_bad_values": [
+              0
+            ],
+            "pwm_first_last": [
+              -20,
+              -80
+            ],
+            "ccr_first_last": [
+              168,
+              672
+            ],
+            "i_x10_first_last": [
+              0,
+              0
+            ],
+            "total_values": [
+              0
+            ]
+          },
+          {
+            "first_t": 71423,
+            "last_t": 71463,
+            "samples": 3,
+            "sum_sample_period_ms": 60,
+            "sampled_counts": [
+              65535
+            ],
+            "live_counts": [
+              65535
+            ],
+            "ab_values": [
+              0
+            ],
+            "config_bad_values": [
+              0
+            ],
+            "pwm_first_last": [
+              -120,
+              -147
+            ],
+            "ccr_first_last": [
+              1008,
+              1234
+            ],
+            "i_x10_first_last": [
+              0,
+              -8
+            ],
+            "total_values": [
+              -1
+            ]
+          },
+          {
+            "first_t": 71503,
+            "last_t": 71923,
+            "samples": 22,
+            "sum_sample_period_ms": 440,
+            "sampled_counts": [
+              65534
+            ],
+            "live_counts": [
+              65534
+            ],
+            "ab_values": [
+              2
+            ],
+            "config_bad_values": [
+              0
+            ],
+            "pwm_first_last": [
+              -159,
+              -187
+            ],
+            "ccr_first_last": [
+              1335,
+              1570
+            ],
+            "i_x10_first_last": [
+              -28,
+              -280
+            ],
+            "total_values": [
+              -2
+            ]
+          }
+        ]
+      },
+      "LR": {
+        "config_bad_values": [
+          0
+        ],
+        "config_bad_frames": [],
+        "sampled_vs_total_mismatches": [],
+        "live_ahead_or_behind_frames": [
+          {
+            "t": 71923,
+            "raw_delta": -1
+          },
+          {
+            "t": 72143,
+            "raw_delta": -1
+          },
+          {
+            "t": 72343,
+            "raw_delta": -1
+          },
+          {
+            "t": 72443,
+            "raw_delta": -1
+          },
+          {
+            "t": 72483,
+            "raw_delta": -1
+          },
+          {
+            "t": 72563,
+            "raw_delta": -1
+          },
+          {
+            "t": 72603,
+            "raw_delta": -1
+          }
+        ],
+        "zero_runs_at_least_3_frames": [
+          {
+            "first_t": 71323,
+            "last_t": 71363,
+            "samples": 3,
+            "sum_sample_period_ms": 60,
+            "sampled_counts": [
+              0
+            ],
+            "live_counts": [
+              0
+            ],
+            "ab_values": [
+              3
+            ],
+            "config_bad_values": [
+              0
+            ],
+            "pwm_first_last": [
+              -20,
+              -60
+            ],
+            "ccr_first_last": [
+              168,
+              504
+            ],
+            "i_x10_first_last": [
+              0,
+              0
+            ],
+            "total_values": [
+              0
+            ]
+          },
+          {
+            "first_t": 71403,
+            "last_t": 71443,
+            "samples": 3,
+            "sum_sample_period_ms": 60,
+            "sampled_counts": [
+              4294967295
+            ],
+            "live_counts": [
+              4294967295
+            ],
+            "ab_values": [
+              1
+            ],
+            "config_bad_values": [
+              0
+            ],
+            "pwm_first_last": [
+              -72,
+              -83
+            ],
+            "ccr_first_last": [
+              604,
+              697
+            ],
+            "i_x10_first_last": [
+              -8,
+              -22
+            ],
+            "total_values": [
+              -1
+            ]
+          },
+          {
+            "first_t": 71483,
+            "last_t": 71683,
+            "samples": 11,
+            "sum_sample_period_ms": 220,
+            "sampled_counts": [
+              4294967294
+            ],
+            "live_counts": [
+              4294967294
+            ],
+            "ab_values": [
+              0
+            ],
+            "config_bad_values": [
+              0
+            ],
+            "pwm_first_last": [
+              -94,
+              -114
+            ],
+            "ccr_first_last": [
+              789,
+              957
+            ],
+            "i_x10_first_last": [
+              -39,
+              -158
+            ],
+            "total_values": [
+              -2
+            ]
+          },
+          {
+            "first_t": 71723,
+            "last_t": 71863,
+            "samples": 8,
+            "sum_sample_period_ms": 160,
+            "sampled_counts": [
+              4294967293
+            ],
+            "live_counts": [
+              4294967293
+            ],
+            "ab_values": [
+              2
+            ],
+            "config_bad_values": [
+              0
+            ],
+            "pwm_first_last": [
+              -115,
+              -124
+            ],
+            "ccr_first_last": [
+              966,
+              1041
+            ],
+            "i_x10_first_last": [
+              -180,
+              -264
+            ],
+            "total_values": [
+              -3
+            ]
+          }
+        ]
+      },
+      "RF": {
+        "config_bad_values": [
+          0
+        ],
+        "config_bad_frames": [],
+        "sampled_vs_total_mismatches": [],
+        "live_ahead_or_behind_frames": [
+          {
+            "t": 71423,
+            "raw_delta": -1
+          },
+          {
+            "t": 71803,
+            "raw_delta": -1
+          },
+          {
+            "t": 72143,
+            "raw_delta": -1
+          },
+          {
+            "t": 72203,
+            "raw_delta": -1
+          },
+          {
+            "t": 72243,
+            "raw_delta": -1
+          },
+          {
+            "t": 72523,
+            "raw_delta": -1
+          },
+          {
+            "t": 72763,
+            "raw_delta": -1
+          },
+          {
+            "t": 72863,
+            "raw_delta": -1
+          }
+        ],
+        "zero_runs_at_least_3_frames": [
+          {
+            "first_t": 71323,
+            "last_t": 71383,
+            "samples": 4,
+            "sum_sample_period_ms": 80,
+            "sampled_counts": [
+              0
+            ],
+            "live_counts": [
+              0
+            ],
+            "ab_values": [
+              2
+            ],
+            "config_bad_values": [
+              0
+            ],
+            "pwm_first_last": [
+              20,
+              80
+            ],
+            "ccr_first_last": [
+              168,
+              672
+            ],
+            "i_x10_first_last": [
+              0,
+              0
+            ],
+            "total_values": [
+              0
+            ]
+          }
+        ]
+      },
+      "RR": {
+        "config_bad_values": [
+          0
+        ],
+        "config_bad_frames": [],
+        "sampled_vs_total_mismatches": [],
+        "live_ahead_or_behind_frames": [
+          {
+            "t": 71723,
+            "raw_delta": -1
+          },
+          {
+            "t": 72043,
+            "raw_delta": -1
+          },
+          {
+            "t": 72343,
+            "raw_delta": -1
+          },
+          {
+            "t": 72803,
+            "raw_delta": -1
+          },
+          {
+            "t": 73343,
+            "raw_delta": -1
+          }
+        ],
+        "zero_runs_at_least_3_frames": [
+          {
+            "first_t": 71403,
+            "last_t": 71463,
+            "samples": 4,
+            "sum_sample_period_ms": 80,
+            "sampled_counts": [
+              65534
+            ],
+            "live_counts": [
+              65534
+            ],
+            "ab_values": [
+              3
+            ],
+            "config_bad_values": [
+              0
+            ],
+            "pwm_first_last": [
+              81,
+              99
+            ],
+            "ccr_first_last": [
+              680,
+              831
+            ],
+            "i_x10_first_last": [
+              7,
+              29
+            ],
+            "total_values": [
+              2
+            ]
+          }
+        ]
+      }
+    }
+  }
+]

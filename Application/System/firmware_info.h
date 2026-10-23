@@ -7,7 +7,7 @@
 #define APPLICATION_SYSTEM_FIRMWARE_INFO_H_
 
 #define FIRMWARE_NAME       "rosDemo Four-Wheel Differential Chassis"
-#define FIRMWARE_VERSION    "0.18.21-rr-recovery-exit"
+#define FIRMWARE_VERSION    "0.18.25-pivot-guard-candidate"
 #define FIRMWARE_MCU        "STM32F407ZGT6"
 
 #endif /* APPLICATION_SYSTEM_FIRMWARE_INFO_H_ */

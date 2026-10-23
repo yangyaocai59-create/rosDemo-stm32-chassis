@@ -1,0 +1,5 @@
+PASS: all four wheels/both signs/6 targets; fixed FF, PWM300/I50/slew1000 limits and reset
+PASS: PI integrates every unsaturated tick in both signs, retains I at equilibrium and across same-direction target updates; overspeed unwinds
+PASS: startup slew/PWM saturation anti-windup, negative I cancels excess FF, reversal clears old direction state
+PASS: near-rest deadline resets on recovery, reports sticky failure at1500ms, target below20 excluded
+PASS: independent state; invalid/conflicting owner calls transactional; zero and NORMAL exit clear pivot state

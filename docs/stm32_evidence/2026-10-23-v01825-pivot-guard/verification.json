@@ -1,0 +1,67 @@
+{
+  "version": "0.18.25-pivot-guard-candidate",
+  "result": "SOFTWARE_PASS_NOT_HARDWARE_VALIDATED",
+  "changed_from_0_18_24": [
+    "Application/Chassis/unified_pivot_control.h",
+    "Application/Chassis/wheel_speed_controller.c",
+    "Application/Chassis/wheel_speed_controller.h",
+    "Application/Safety/fault_manager.c",
+    "Application/System/firmware_info.h",
+    "Tools/tests/motion/test_unified_pivot.c",
+    "Tools/tests/motion/test_unified_runtime.c"
+  ],
+  "memory_bytes": {
+    "RAM": 101472,
+    "CCMRAM": 0,
+    "FLASH": 190648
+  },
+  "guard_grace_ms": 1000,
+  "guard_warning_ms": 250,
+  "guard_failure_ms": 2000,
+  "guard_recovery_ms": 100,
+  "guard_test_modes": [
+    "strict",
+    "O2",
+    "analyzer"
+  ],
+  "guard_groups_each": 5,
+  "guard_runtime_groups_each": 3,
+  "compiler_frames": {
+    "StartSafetyTask": 32,
+    "FaultManager_ObserveMotion": 128,
+    "PivotFeedbackGuard_Update": 96
+  },
+  "safety_application_stack_subtotal": 256,
+  "safety_stack_bytes": 1024,
+  "complete_worst_case_stack_bound": false,
+  "trace_tests": {
+    "native_modes": 3,
+    "groups_each": 9,
+    "runtime_differential_rows": 2208,
+    "runtime_byte_identical": true,
+    "signed_counter_roundtrip": true,
+    "malformed_exports_rejected": 8,
+    "hardware_validated": false
+  },
+  "usb_groups": 20,
+  "normal_identity_updates": 40000,
+  "build_warnings": 0,
+  "build_errors": 0,
+  "hex_bin_checked": true,
+  "prior_artifacts_unchanged": true,
+  "flashed": false,
+  "motion_sent": false,
+  "fault_cleared": false,
+  "serial_opened": false,
+  "hardware_tested": false,
+  "motor_thermal_bound_validated": false,
+  "current_sensing_available": false,
+  "git_committed": false,
+  "pushed": false,
+  "sha256": {
+    "hex": "4f934328923a2608d22e029ee8e8f4519856af954947cb8c6bb0d2ed98637a8d",
+    "bin": "532192b95ff6de2c5fce7c33bac0c1400f6bb4c41515cc690d3b7d9c514c6779",
+    "elf": "f03d0eb1eb43f65754a14cff195081cdebf8d044312f7a95b5df32a4cc38ef66",
+    "map": "f0353b7a86227d9f0ae62130e96944611fe1c0ef33a175910a6fde30480695e9"
+  }
+}

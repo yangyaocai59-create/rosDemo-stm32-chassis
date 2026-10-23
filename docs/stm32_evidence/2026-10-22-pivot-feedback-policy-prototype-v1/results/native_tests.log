@@ -1,0 +1,10 @@
+PASS: independent four-wheel state; one failed lane cannot mutate others
+PASS: 400ms feedback gap warns then recovers in all 4 lanes/both signs
+PASS: exact 750ms no-progress bound, duplicate samples, faded PWM and sticky fault
+PASS: 1000ms startup grace plus bounded no-progress deadline, uint32 tick wrap
+PASS: sparse pulses and zero-net chatter cannot hide severe failure beyond 1500ms
+PASS: isolated healthy-speed spikes do not reset continuous severe episode
+PASS: stale/backwards/inconsistent/invalid evidence fails boundedly, not as progress
+PASS: newer-producer/older-caller tick and signed position overflow rejection
+PASS: lower-target path explicitly out of scope, direction change starts a new phase
+PASS: skipped producer samples use cumulative progress; duplicate/stale gaps remain bounded

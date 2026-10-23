@@ -1,0 +1,127 @@
+{
+  "folder": "build\\hardware_tests\\v01824_ground_left_20261023_044622",
+  "motion_seconds": 5.655999999999949,
+  "complete_trace_frames": 80,
+  "trace_header": {
+    "schema": 3,
+    "count": 80,
+    "reason": 1,
+    "mask": 2,
+    "trigger": 777703,
+    "trigger_seq": 390,
+    "post_left": 0
+  },
+  "active_trace_span_ms": [
+    776623,
+    778203
+  ],
+  "snapshot_flags": [
+    0
+  ],
+  "vm_mV_range": [
+    10615,
+    10978
+  ],
+  "accepted_delta": 90,
+  "rejected_delta": 1,
+  "final_status": [
+    809426,
+    416,
+    416,
+    3,
+    141,
+    3,
+    5,
+    6,
+    0,
+    464,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    573,
+    0,
+    0,
+    0
+  ],
+  "final_stopped_verified": true,
+  "fault_cleared": true,
+  "protocol_counter_deltas": {
+    "crc": 0,
+    "overflow": 0,
+    "drop": 0
+  },
+  "trace_final_stby": 1,
+  "trace_final_pin": 1,
+  "trace_final_ccr": [
+    1176,
+    991,
+    1125,
+    705
+  ],
+  "end_of_capture_stopped": true,
+  "wheels": {
+    "LF": {
+      "trace_mean_target_cps": 225,
+      "trace_mean_filtered_cps": 215.2,
+      "trace_mean_raw_cps": 228.125,
+      "trace_pwm_magnitude_range": [
+        20,
+        193
+      ],
+      "trace_mean_pwm_magnitude": 158.5875,
+      "trace_mean_directional_i": 17.78125,
+      "trace_i_at_cap_samples": 0,
+      "trace_zero_dc_samples": 32,
+      "trace_request_applied_mismatch_samples": 0,
+      "whole_capture_net_counts": -1215
+    },
+    "LR": {
+      "trace_mean_target_cps": 225,
+      "trace_mean_filtered_cps": 59.125,
+      "trace_mean_raw_cps": 73.75,
+      "trace_pwm_magnitude_range": [
+        20,
+        148
+      ],
+      "trace_mean_pwm_magnitude": 124.425,
+      "trace_mean_directional_i": 33.1825,
+      "trace_i_at_cap_samples": 23,
+      "trace_zero_dc_samples": 59,
+      "trace_request_applied_mismatch_samples": 0,
+      "whole_capture_net_counts": -1189
+    },
+    "RF": {
+      "trace_mean_target_cps": 225,
+      "trace_mean_filtered_cps": 259.4375,
+      "trace_mean_raw_cps": 267.5,
+      "trace_pwm_magnitude_range": [
+        20,
+        167
+      ],
+      "trace_mean_pwm_magnitude": 136.1875,
+      "trace_mean_directional_i": -5.50125,
+      "trace_i_at_cap_samples": 0,
+      "trace_zero_dc_samples": 8,
+      "trace_request_applied_mismatch_samples": 0,
+      "whole_capture_net_counts": 1500
+    },
+    "RR": {
+      "trace_mean_target_cps": 225,
+      "trace_mean_filtered_cps": 248.5,
+      "trace_mean_raw_cps": 258.125,
+      "trace_pwm_magnitude_range": [
+        20,
+        115
+      ],
+      "trace_mean_pwm_magnitude": 90.8375,
+      "trace_mean_directional_i": -1.4949999999999999,
+      "trace_i_at_cap_samples": 0,
+      "trace_zero_dc_samples": 8,
+      "trace_request_applied_mismatch_samples": 0,
+      "whole_capture_net_counts": 1378
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "firmware": "0.18.23-trace-candidate",
+  "result": "DIAGNOSTIC_SOFTWARE_PASS_NOT_LOADED_ACCEPTANCE",
+  "trace_tests": {
+    "native_modes": 3,
+    "groups_each": 9,
+    "runtime_differential_rows": 1712,
+    "runtime_byte_identical": true,
+    "signed_counter_roundtrip": true,
+    "malformed_exports_rejected": 7,
+    "hardware_validated": false
+  },
+  "usb_groups": 20,
+  "normal_identity_updates": 40000,
+  "memory_bytes": {
+    "RAM": 93144,
+    "CCMRAM": 0,
+    "FLASH": 188920
+  },
+  "trace_ring_bytes": 31744,
+  "build_warnings": 0,
+  "build_errors": 0,
+  "hex_bin_explicit_bytes_equal": true,
+  "binary_gap_fill": 0,
+  "motor_snapshot_stack_chain": [
+    "StartMotorTask",
+    "MotionTrace_Record",
+    "MotionTrace_Snapshot",
+    "MotorDriver_GetDiagnostics"
+  ],
+  "compiler_frames": {
+    "StartMotorTask": 40,
+    "MotionTrace_Record": 296,
+    "MotionTrace_Snapshot": 392,
+    "MotorDriver_GetDiagnostics": 64
+  },
+  "motor_application_stack_subtotal": 792,
+  "motor_allocated_stack": 2048,
+  "complete_worst_case_stack_bound": false,
+  "hardware_stack_watermark_measured": false,
+  "prior_artifacts_unchanged": true,
+  "control_parameters_unchanged_from_0_18_22": true,
+  "safety_predicates_unchanged_from_0_18_22": true,
+  "flashed": false,
+  "serial_opened": false,
+  "motion_sent": false,
+  "hardware_tested": false,
+  "new_commit_created": false,
+  "pushed": false,
+  "sha256": {
+    "hex": "1402b0548ab13315fa4a2667118821544e3f73543bf2d02e2c48acf21d8ff4b7",
+    "bin": "f810ac9a135d65b6b4bfd53a56e38e51af273a5ef0442ca5fe0e615787e9eb01",
+    "elf": "fe190b1afa72f6e18322ca13e3d5f12ed2a739a8bb1293005c00fe18d1894125",
+    "map": "dc790febd2e5be469f68a6c960d783607f67e575c99d33f5ae0522a2eb05c01d"
+  }
+}

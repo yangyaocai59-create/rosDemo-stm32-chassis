@@ -52,6 +52,7 @@ static MotorDriverStatus s_status;
 static int8_t s_electrical_sign[MOTOR_DRIVER_WHEEL_COUNT];
 static bool s_zero_pending[MOTOR_DRIVER_WHEEL_COUNT];
 static uint32_t s_zero_since_ms[MOTOR_DRIVER_WHEEL_COUNT];
+static int16_t s_diagnostic_request[MOTOR_DRIVER_WHEEL_COUNT];
 
 static bool MotorDriver_IsWheelValid(MotorDriverWheel wheel)
 {
@@ -236,6 +237,7 @@ bool MotorDriver_SetCommand(MotorDriverWheel wheel, int16_t command_permille)
 
   const int8_t requested_sign = (electrical_command > 0) ? 1 :
     ((electrical_command < 0) ? -1 : 0);
+  s_diagnostic_request[wheel] = saturated_command;
   const uint32_t now_ms = HAL_GetTick();
   if ((requested_sign == 0) ||
       ((s_electrical_sign[wheel] != 0) &&
@@ -311,6 +313,7 @@ bool MotorDriver_Coast(MotorDriverWheel wheel)
   }
   s_electrical_sign[wheel] = 0;
   s_status.command_permille[wheel] = 0;
+  s_diagnostic_request[wheel] = 0;
   if (previous_primask == 0U) { __enable_irq(); }
   return true;
 }
@@ -338,6 +341,7 @@ void MotorDriver_ForceSafeState(void)
                                GPIO_PIN_RESET,
                                GPIO_PIN_RESET);
     s_status.command_permille[wheel] = 0;
+    s_diagnostic_request[wheel] = 0;
     s_electrical_sign[wheel] = 0;
     s_zero_pending[wheel] = true;
     s_zero_since_ms[wheel] = HAL_GetTick();
@@ -345,6 +349,29 @@ void MotorDriver_ForceSafeState(void)
 
   s_status.standby_enabled = false;
   s_status.initialized = false;
+}
+
+bool MotorDriver_GetDiagnostics(MotorDriverDiagnostics *diagnostics)
+{
+  if (diagnostics == NULL) { return false; }
+  *diagnostics = (MotorDriverDiagnostics){0};
+  for (uint32_t w = 0U; w < MOTOR_DRIVER_WHEEL_COUNT; ++w)
+  {
+    const MotorDriverChannel *c = &s_channels[w];
+    diagnostics->compare[w] = __HAL_TIM_GET_COMPARE(c->timer, c->channel);
+    diagnostics->requested_permille[w] = s_diagnostic_request[w];
+    if ((c->in1_port->ODR & c->in1_pin) != 0U)
+      diagnostics->direction_bits |= (uint16_t)(1U << (2U * w));
+    if ((c->in2_port->ODR & c->in2_pin) != 0U)
+      diagnostics->direction_bits |= (uint16_t)(2U << (2U * w));
+    if (s_zero_pending[w]) diagnostics->guard_mask |= (uint8_t)(1U << w);
+  }
+  diagnostics->auto_reload = __HAL_TIM_GET_AUTORELOAD(s_channels[0].timer);
+  diagnostics->bdtr = s_channels[0].timer->Instance->BDTR;
+  diagnostics->ccer = s_channels[0].timer->Instance->CCER;
+  diagnostics->standby_pin =
+    (MOTOR_STBY_1_GPIO_Port->ODR & MOTOR_STBY_1_Pin) != 0U;
+  return true;
 }
 
 bool MotorDriver_GetStatus(MotorDriverStatus *status)

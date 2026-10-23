@@ -3,8 +3,9 @@
 #include <stdbool.h>
 #include <stdint.h>
 typedef enum {GPIO_PIN_RESET, GPIO_PIN_SET} GPIO_PinState;
-typedef struct { uint16_t pins; } GPIO_TypeDef;
-typedef struct { uint32_t arr, preload[4], active[4]; } TIM_HandleTypeDef;
+typedef struct { union { uint32_t pins; uint32_t ODR; }; } GPIO_TypeDef;
+typedef struct { uint32_t BDTR, CCER; } TestTimerRegisters;
+typedef struct { uint32_t arr, preload[4], active[4]; TestTimerRegisters *Instance; } TIM_HandleTypeDef;
 extern GPIO_TypeDef test_gpio;
 extern TIM_HandleTypeDef htim8;
 #define HAL_OK 0
@@ -17,6 +18,7 @@ void __disable_irq(void);
 void __enable_irq(void);
 void Test_SetCompare(TIM_HandleTypeDef *, uint32_t, uint32_t);
 #define __HAL_TIM_GET_AUTORELOAD(t) ((t)->arr)
+#define __HAL_TIM_GET_COMPARE(t,c) ((t)->preload[c])
 #define __HAL_TIM_SET_COMPARE(t,c,v) Test_SetCompare(t,c,v)
 #define LF_IN1_Pin (1U<<0)
 #define LF_IN2_Pin (1U<<1)

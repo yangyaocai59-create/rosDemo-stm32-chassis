@@ -1,0 +1,7 @@
+PASS: explicit front/direction pivot load table, zero and 1/20/80/160/280/1600 cps ramp/clamp, rear zero; NORMAL/legacy feedforward remains original, invalid lookup rejected
+PASS: stale caller/new heartbeat, true 250/251ms timeout, latch/clear and tick wrap
+PASS: bounded linear/angular startup, reversal crosses zero, invalid dt/NaN rejected
+PASS: all four production PI outputs obey slew across reversal/zero, immediate Reset and finite inputs
+PASS: all wheels/both directions conserve FF+I and PWM at assist release; bounded residual holds at equilibrium, unwinds with error, invalid inputs rejected
+PASS: four-wheel bidirectional pivot overspeed damping; unchanged startup/underspeed/normal gains, no reverse braking, slew/integral/output limits and invalid-mode guard
+PASS: no overdue catch-up loop, exact deadline/late slots, timing statistics and tick wrap

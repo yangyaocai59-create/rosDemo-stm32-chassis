@@ -1,0 +1,89 @@
+{
+  "result": "SCOPED_SOFTWARE_PASS_NOT_HARDWARE_ACCEPTED",
+  "firmware": "0.18.22-unified-pivot-candidate",
+  "candidate_pi_groups": 5,
+  "candidate_runtime_groups": 5,
+  "candidate_modes": [
+    "strict",
+    "O2",
+    "fanalyzer"
+  ],
+  "driver_groups": 3,
+  "legacy_reference_only_groups": 7,
+  "normal_byte_identical_updates": 40000,
+  "usb_groups": 20,
+  "imu_python_tests": 19,
+  "strict_extended_native_imu_suite_rerun": false,
+  "native_imu_limitation": "Unchanged baseline disabled-calibration/probe unused ImuService_AbsI32 diagnostic; no claim that full strict extended native suite passes.",
+  "build": "Debug clean GNU STM32 14.3.1+st.2, 95 steps",
+  "build_warnings": 0,
+  "build_errors": 0,
+  "memory_bytes": {
+    "RAM": 80856,
+    "CCMRAM": 0,
+    "FLASH": 185200
+  },
+  "hex_records": 11583,
+  "hex_bin_explicit_data_equal": true,
+  "binary_gap_bytes": 8,
+  "gap_fill": "BIN 0x00; HEX leaves alignment gaps unwritten",
+  "bytes": 185200,
+  "highest": "0x802d36f",
+  "stack_pointer": "0x20020000",
+  "reset_vector": "0x800f439",
+  "application_stack_subtotals": {
+    "motor_pi": {
+      "functions": [
+        "StartMotorTask",
+        "ChassisRuntime_Process",
+        "ChassisController_Process",
+        "WheelSpeedController_UpdateWithMode",
+        "UnifiedPivot_Update"
+      ],
+      "compiler_frame_bytes": [
+        40,
+        160,
+        272,
+        152,
+        144
+      ],
+      "application_subtotal_bytes": 768,
+      "allocated_bytes": 2048,
+      "complete_worst_case_bound": false
+    },
+    "safety_guard": {
+      "functions": [
+        "StartSafetyTask",
+        "FaultManager_ObserveMotion",
+        "WheelSpeedController_GetFrontPivotState",
+        "WheelSpeedController_GetPivotLoadFeedforward"
+      ],
+      "compiler_frame_bytes": [
+        32,
+        112,
+        80,
+        24
+      ],
+      "application_subtotal_bytes": 248,
+      "allocated_bytes": 1024,
+      "complete_worst_case_bound": false
+    }
+  },
+  "stack_hardware_watermark_measured": false,
+  "source_items": 172,
+  "old_0.18.21_artifacts_unchanged": true,
+  "loaded_ff_calibrated": false,
+  "flashed": false,
+  "hardware_tested": false,
+  "serial_opened": false,
+  "motion_sent": false,
+  "fault_cleared": false,
+  "new_commit_created": false,
+  "pushed": false,
+  "sha256": {
+    "hex": "94bd41c2b9b770019d5cc397aba043f88d37f449f490153d51336edf4c2ff478",
+    "bin": "c0dafc59fb8db386657bed0ac357dd0459e4d4982d7ac2156e57135687a9d98d",
+    "elf": "287b1e4377e739a6b734aef4f46fc66963d00e00d6fdb26c479d610ee9bea1a9",
+    "map": "4d7b453309f1cbdea22518922d7879b6599d718003f5346b7cab38c6868cb6e9"
+  }
+}

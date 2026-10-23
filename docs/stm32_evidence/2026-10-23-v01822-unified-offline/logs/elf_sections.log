@@ -1,0 +1,57 @@
+
+E:\DEMO\rosDemo\build\Debug\rosDemo.elf:     file format elf32-littlearm
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .isr_vector   00000188  08000000  08000000  00001000  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  1 .text         000278fc  08000190  08000190  00001190  2**4
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .rodata       000056e0  08027a8c  08027a8c  00028a8c  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  3 .ARM.extab    00000000  0802d16c  0802d16c  0002f1f4  2**0
+                  CONTENTS, READONLY
+  4 .ARM          00000008  0802d16c  0802d16c  0002e16c  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  5 .preinit_array 00000000  0802d174  0802d174  0002f1f4  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  6 .init_array   00000004  0802d174  0802d174  0002e174  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  7 .fini_array   00000004  0802d178  0802d178  0002e178  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  8 .ccmram       00000000  10000000  10000000  0002f1f4  2**0
+                  CONTENTS
+  9 .data         000001f4  20000000  0802d17c  0002f000  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+ 10 .tdata        00000000  200001f4  200001f4  0002f1f4  2**2
+                  CONTENTS, ALLOC, LOAD, DATA, THREAD_LOCAL
+ 11 .tbss         00000000  200001f4  200001f4  00000000  2**2
+                  ALLOC, THREAD_LOCAL
+ 12 .bss          000133e0  200001f8  0802d370  0002f1f8  2**3
+                  ALLOC
+ 13 ._user_heap_stack 00000600  200135d8  0802d370  0002f5d8  2**0
+                  ALLOC
+ 14 .ARM.attributes 00000030  00000000  00000000  0002f1f4  2**0
+                  CONTENTS, READONLY
+ 15 .comment      00000043  00000000  00000000  0002f224  2**0
+                  CONTENTS, READONLY
+ 16 .debug_info   00048674  00000000  00000000  0002f267  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 17 .debug_abbrev 0000cf1c  00000000  00000000  000778db  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 18 .debug_aranges 00003840  00000000  00000000  000847f8  2**3
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 19 .debug_rnglists 00002bbd  00000000  00000000  00088038  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 20 .debug_macro  0002fc80  00000000  00000000  0008abf5  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 21 .debug_line   0004c03f  00000000  00000000  000ba875  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 22 .debug_str    000fa044  00000000  00000000  001068b4  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 23 .debug_frame  0000d9e8  00000000  00000000  002008f8  2**2
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 24 .debug_line_str 00000129  00000000  00000000  0020e2e0  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 25 .debug_loclists 000017ae  00000000  00000000  0020e409  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS

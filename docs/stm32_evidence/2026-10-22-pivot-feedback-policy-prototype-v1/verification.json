@@ -1,0 +1,209 @@
+{
+  "result": "PASS_ISOLATED_RULE_TESTS_NOT_FIRMWARE_OR_PHYSICAL_RECOVERY_VALIDATION",
+  "native_test_groups": 10,
+  "replay_cases": 21,
+  "cases": {
+    "successful_left_USB_LF": {
+      "samples": 400,
+      "warning_samples": 7,
+      "first_fault": null,
+      "first_fault_is_counterfactual": false,
+      "warm_start_assumption": false,
+      "synthetic_after_source_ms": null
+    },
+    "successful_left_USB_LR": {
+      "samples": 400,
+      "warning_samples": 4,
+      "first_fault": null,
+      "first_fault_is_counterfactual": false,
+      "warm_start_assumption": false,
+      "synthetic_after_source_ms": null
+    },
+    "successful_left_USB_RF": {
+      "samples": 400,
+      "warning_samples": 7,
+      "first_fault": null,
+      "first_fault_is_counterfactual": false,
+      "warm_start_assumption": false,
+      "synthetic_after_source_ms": null
+    },
+    "successful_left_USB_RR": {
+      "samples": 400,
+      "warning_samples": 0,
+      "first_fault": null,
+      "first_fault_is_counterfactual": false,
+      "warm_start_assumption": false,
+      "synthetic_after_source_ms": null
+    },
+    "successful_left_trace_LF": {
+      "samples": 127,
+      "warning_samples": 0,
+      "first_fault": null,
+      "first_fault_is_counterfactual": false,
+      "warm_start_assumption": true,
+      "synthetic_after_source_ms": null
+    },
+    "successful_left_trace_LR": {
+      "samples": 127,
+      "warning_samples": 14,
+      "first_fault": null,
+      "first_fault_is_counterfactual": false,
+      "warm_start_assumption": true,
+      "synthetic_after_source_ms": null
+    },
+    "successful_left_trace_RF": {
+      "samples": 127,
+      "warning_samples": 0,
+      "first_fault": null,
+      "first_fault_is_counterfactual": false,
+      "warm_start_assumption": true,
+      "synthetic_after_source_ms": null
+    },
+    "successful_left_trace_RR": {
+      "samples": 127,
+      "warning_samples": 0,
+      "first_fault": null,
+      "first_fault_is_counterfactual": false,
+      "warm_start_assumption": true,
+      "synthetic_after_source_ms": null
+    },
+    "failed_left_USB_LF": {
+      "samples": 97,
+      "warning_samples": 0,
+      "first_fault": null,
+      "first_fault_is_counterfactual": false,
+      "warm_start_assumption": false,
+      "synthetic_after_source_ms": null
+    },
+    "failed_left_USB_LR": {
+      "samples": 97,
+      "warning_samples": 11,
+      "first_fault": null,
+      "first_fault_is_counterfactual": false,
+      "warm_start_assumption": false,
+      "synthetic_after_source_ms": null
+    },
+    "failed_left_USB_RF": {
+      "samples": 97,
+      "warning_samples": 0,
+      "first_fault": null,
+      "first_fault_is_counterfactual": false,
+      "warm_start_assumption": false,
+      "synthetic_after_source_ms": null
+    },
+    "failed_left_USB_RR": {
+      "samples": 97,
+      "warning_samples": 0,
+      "first_fault": null,
+      "first_fault_is_counterfactual": false,
+      "warm_start_assumption": false,
+      "synthetic_after_source_ms": null
+    },
+    "failed_right_USB_LF": {
+      "samples": 104,
+      "warning_samples": 0,
+      "first_fault": null,
+      "first_fault_is_counterfactual": false,
+      "warm_start_assumption": false,
+      "synthetic_after_source_ms": null
+    },
+    "failed_right_USB_LR": {
+      "samples": 104,
+      "warning_samples": 0,
+      "first_fault": null,
+      "first_fault_is_counterfactual": false,
+      "warm_start_assumption": false,
+      "synthetic_after_source_ms": null
+    },
+    "failed_right_USB_RF": {
+      "samples": 104,
+      "warning_samples": 11,
+      "first_fault": null,
+      "first_fault_is_counterfactual": false,
+      "warm_start_assumption": false,
+      "synthetic_after_source_ms": null
+    },
+    "failed_right_USB_RR": {
+      "samples": 104,
+      "warning_samples": 0,
+      "first_fault": null,
+      "first_fault_is_counterfactual": false,
+      "warm_start_assumption": false,
+      "synthetic_after_source_ms": null
+    },
+    "failed_right_trace_LF": {
+      "samples": 127,
+      "warning_samples": 0,
+      "first_fault": null,
+      "first_fault_is_counterfactual": false,
+      "warm_start_assumption": true,
+      "synthetic_after_source_ms": null
+    },
+    "failed_right_trace_LR": {
+      "samples": 127,
+      "warning_samples": 0,
+      "first_fault": null,
+      "first_fault_is_counterfactual": false,
+      "warm_start_assumption": true,
+      "synthetic_after_source_ms": null
+    },
+    "failed_right_trace_RF": {
+      "samples": 127,
+      "warning_samples": 30,
+      "first_fault": null,
+      "first_fault_is_counterfactual": false,
+      "warm_start_assumption": true,
+      "synthetic_after_source_ms": null
+    },
+    "failed_right_trace_RF__SYNTHETIC_FROZEN_EXTENSION": {
+      "samples": 207,
+      "warning_samples": 41,
+      "first_fault": [
+        3944703,
+        2,
+        3943943,
+        3943723
+      ],
+      "first_fault_is_counterfactual": true,
+      "warm_start_assumption": true,
+      "synthetic_after_source_ms": 3944463
+    },
+    "failed_right_trace_RR": {
+      "samples": 127,
+      "warning_samples": 0,
+      "first_fault": null,
+      "first_fault_is_counterfactual": false,
+      "warm_start_assumption": true,
+      "synthetic_after_source_ms": null
+    }
+  },
+  "optimized_native_test_groups": 10,
+  "gcc_static_analyzer_pass": true,
+  "isolated_cortex_m4_object_compile_pass": true,
+  "protected_source_hashes_unchanged": 167,
+  "firmware_artifacts_unchanged": {
+    "hex": "5a86aab0eb54cca6dd0e80834aaaece244f735c4e617cd1e04c65209333e402b",
+    "bin": "e84dca4a500af870c177b9fbf4c49c53110ea4bb421d64056c3200d218410b1e",
+    "elf": "cca8bbd84281dd0c70ab4036ff426ca4399ccc859905ed4c37c782d2fc3cf511",
+    "map": "65408f41f1e9051c9e31c396b53d2ab211875bc5a5edca84bccb87c9630d63e5"
+  },
+  "hardware_access": false,
+  "production_changes": false,
+  "new_firmware_generated": false,
+  "source_observations": {
+    "right_fault_mask": "0x04",
+    "right_fault_time_ms": 3944482,
+    "right_raw_zero_tail_intervals_ms": 520,
+    "operator_report": "Four wheels looked continuous; no clear abnormality",
+    "external_180_degree_acceptance": "FAILED_TO_COMPLETE; left run canceled; no independent external angle result"
+  },
+  "limits": [
+    "USB-only replay assumes fixed +/-240cps target after startup and has no PWM measurement.",
+    "Tail replay assumes healthy prehistory; it is not complete internal-state reconstruction.",
+    "No mechanical motor/ground/encoder-noise model or verified A/B waveforms.",
+    "Sparse pulses can postpone the 750ms raw no-progress deadline; 1500ms severe cap bounds that case.",
+    "Lower targets, controller safety snapshots, fault injection and task/transport integration are not implemented.",
+    "Windows GCC undefined-behavior sanitizer linker unavailable: cannot find -lubsan; strict ordinary native tests pass.",
+    "Not proof of electrical/thermal safety or permission to ignore missing counts."
+  ]
+}

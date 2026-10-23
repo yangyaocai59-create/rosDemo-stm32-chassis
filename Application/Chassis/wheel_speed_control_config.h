@@ -11,6 +11,21 @@
 #ifndef APPLICATION_CHASSIS_WHEEL_SPEED_CONTROL_CONFIG_H_
 #define APPLICATION_CHASSIS_WHEEL_SPEED_CONTROL_CONFIG_H_
 
+/* Candidate .22: continuous FF+PI, no startup/running pulse. Four independent
+ * states with separately editable gains. Set to 0 only
+ * for explicit legacy regression/reference builds, not the delivered image. */
+#ifndef WHEEL_SPEED_UNIFIED_PIVOT_ENABLED
+#define WHEEL_SPEED_UNIFIED_PIVOT_ENABLED 1
+#endif
+#define WHEEL_SPEED_PIVOT_LF_KP 0.050f
+#define WHEEL_SPEED_PIVOT_LF_KI 0.250f
+#define WHEEL_SPEED_PIVOT_LR_KP 0.050f
+#define WHEEL_SPEED_PIVOT_LR_KI 0.250f
+#define WHEEL_SPEED_PIVOT_RF_KP 0.050f
+#define WHEEL_SPEED_PIVOT_RF_KI 0.250f
+#define WHEEL_SPEED_PIVOT_RR_KP 0.050f
+#define WHEEL_SPEED_PIVOT_RR_KI 0.250f
+
 /* Controller units: target/measurement in encoder counts/s, output in permille. */
 #define WHEEL_SPEED_CONTROL_KP_PERMILLE_PER_CPS          0.050f
 #define WHEEL_SPEED_CONTROL_KI_PERMILLE_PER_CPS_SECOND   0.250f
@@ -24,7 +39,9 @@
  * Never used for straight/rolling motion, startup or underspeed. */
 #define WHEEL_SPEED_CONTROL_PIVOT_OVERSPEED_KP             0.150f
 
-/* Candidate running-load CEILINGS for a pivot, NOT straight.
+/* Provisional pivot FF offsets, NOT a completed loaded calibration.
+ * Candidate .22 uses these as FIXED feedforward terms, not adaptive ceilings.
+ * Legacy/reference builds below retain the old adaptive behavior.
  * Front/rear load differs in same-wheel/same-direction ground captures.
  * Rear offsets remain zero to retain the tested 0.18.10 behavior.
  * Ramp from zero to full by 160 cps instead of a full step near zero. */

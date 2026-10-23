@@ -111,6 +111,11 @@ static float ChassisController_GetFeedforwardBias(
   uint32_t now_ms,
   uint32_t elapsed_ms)
 {
+  if(WHEEL_SPEED_UNIFIED_PIVOT_ENABLED && ChassisController_IsPivot(command))
+  {
+    ChassisController_ClearPivotWheel(wheel);
+    return 0.0f; /* sole compensation owner is the per-wheel common PI policy */
+  }
   if (!ChassisController_IsPivot(command))
   {
     ChassisController_ClearPivotWheel(wheel);
@@ -634,12 +639,12 @@ void ChassisController_Process(uint32_t now_ms)
       return;
     }
 
-    /* RR evidence, owner selection and PI consumption form one bounded
-     * transaction against task-level STOP/health resets. Never hold this
-     * lock for the other three PI updates, I/O waits or logging. Priority-4
-     * ESTOP still directly shuts the power stage down through its ISR. */
-    const bool rr_locked = wheel == MOTOR_DRIVER_WHEEL_RR;
-    if (rr_locked)
+    /* Candidate common policy: each per-wheel PI update is serialized
+     * against task-level STOP/health resets. No I/O waits or logging in
+     * this transaction. Legacy builds retain the original RR-only lock.
+     * Priority-4 ESTOP still directly shuts down the power-stage ISR. */
+    const bool control_locked = WHEEL_SPEED_UNIFIED_PIVOT_ENABLED || wheel == MOTOR_DRIVER_WHEEL_RR;
+    if (control_locked)
     {
       taskENTER_CRITICAL();
       if ((!s_status.active) || (s_control_generation != generation))
@@ -647,8 +652,9 @@ void ChassisController_Process(uint32_t now_ms)
         taskEXIT_CRITICAL();
         return;
       }
-      WheelSpeedController_ObserveRrRecoveryCounts(rr_counts.delta_counts,
-        rr_counts.sample_period_ms, rr_counts.sample_time_ms, now_ms);
+      if(!WHEEL_SPEED_UNIFIED_PIVOT_ENABLED)
+        WheelSpeedController_ObserveRrRecoveryCounts(rr_counts.delta_counts,
+          rr_counts.sample_period_ms, rr_counts.sample_time_ms, now_ms);
     }
     const bool control_ok = WheelSpeedController_UpdateWithMode(
           (MotorDriverWheel)wheel,
@@ -665,7 +671,7 @@ void ChassisController_Process(uint32_t now_ms)
           elapsed_ms,
           &outputs[wheel]) &&
         WheelSpeedController_GetState((MotorDriverWheel)wheel, &controls[wheel]);
-    if (rr_locked)
+    if (control_locked)
     {
       taskEXIT_CRITICAL();
     }

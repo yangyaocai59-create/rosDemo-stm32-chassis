@@ -1,0 +1,87 @@
+[
+  {
+    "repo": "linorobot/linorobot2_hardware",
+    "ref": "jazzy",
+    "commit": "1ed605af61a806f6bb593709da8bc8f9cec0cbdf",
+    "files": [
+      {
+        "file": "firmware/src/firmware.ino",
+        "url": "https://raw.githubusercontent.com/linorobot/linorobot2_hardware/1ed605af61a806f6bb593709da8bc8f9cec0cbdf/firmware/src/firmware.ino",
+        "sha256": "a038a40cf4c73215ae745e479e32c47af04c98e0dd1865cc3b521383437be94e"
+      },
+      {
+        "file": "LICENSE",
+        "url": "https://github.com/linorobot/linorobot2_hardware/blob/1ed605af61a806f6bb593709da8bc8f9cec0cbdf/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "kind": "upstream_license"
+      }
+    ],
+    "license_status": "downloaded"
+  },
+  {
+    "repo": "fictionlab/diff_drive_lib",
+    "ref": "1.5",
+    "commit": "2a97c8e2d930dc439cf37b62bbe734e184d71b41",
+    "files": [
+      {
+        "file": "src/wheel_controller.cpp",
+        "url": "https://raw.githubusercontent.com/fictionlab/diff_drive_lib/2a97c8e2d930dc439cf37b62bbe734e184d71b41/src/wheel_controller.cpp",
+        "sha256": "905206e46638911cd928c6336fe7283aca5e92d96301069480b36cf63e05d221"
+      },
+      {
+        "file": "src/diff_drive_controller.cpp",
+        "url": "https://raw.githubusercontent.com/fictionlab/diff_drive_lib/2a97c8e2d930dc439cf37b62bbe734e184d71b41/src/diff_drive_controller.cpp",
+        "sha256": "f979debed8c31aa9bc2cd3805a5b696b2c9517384bb0f4443bfa3281a5ff56ea"
+      },
+      {
+        "file": "LICENSE",
+        "url": "https://github.com/fictionlab/diff_drive_lib/blob/2a97c8e2d930dc439cf37b62bbe734e184d71b41/LICENSE",
+        "sha256": "41a3eb123543861a01dfa4d11b5301112149bba5d8ff938e66396f65885ad0fe",
+        "kind": "upstream_license"
+      }
+    ],
+    "license_status": "downloaded"
+  },
+  {
+    "repo": "vedderb/bldc",
+    "ref": "master",
+    "commit": "abc9217fb2b7ee3821f1742bc32b269173643319",
+    "files": [
+      {
+        "file": "motor/mc_interface.c",
+        "url": "https://raw.githubusercontent.com/vedderb/bldc/abc9217fb2b7ee3821f1742bc32b269173643319/motor/mc_interface.c",
+        "sha256": "7af5bcb5f525a092645661b218da170e97c9b1ca247073907c817898d94836ad"
+      },
+      {
+        "file": "timeout.c",
+        "url": "https://raw.githubusercontent.com/vedderb/bldc/abc9217fb2b7ee3821f1742bc32b269173643319/timeout.c",
+        "sha256": "c2c53be9898023187d8fd090f7d80e1887ba5104e1070f12da2cf1a13d9f4c12"
+      }
+    ],
+    "license_status": "not_found_in_api_or_root_do_not_assume_reuse_permission"
+  },
+  {
+    "repo": "ArduPilot/ardupilot",
+    "ref": "master",
+    "commit": "2badacc9a607b2d45c42f28006e68a4424192fe3",
+    "files": [
+      {
+        "file": "Rover/crash_check.cpp",
+        "url": "https://raw.githubusercontent.com/ArduPilot/ardupilot/2badacc9a607b2d45c42f28006e68a4424192fe3/Rover/crash_check.cpp",
+        "sha256": "1e75cc4937a1787e77719d668eed8b7f3e27ee4bda85fe00d9cbf8b3ba37eab0"
+      },
+      {
+        "file": "Rover/Parameters.cpp",
+        "url": "https://raw.githubusercontent.com/ArduPilot/ardupilot/2badacc9a607b2d45c42f28006e68a4424192fe3/Rover/Parameters.cpp",
+        "sha256": "0923235e8585149eee3bc2e75d045c0bb1e2482ea1cf2836878db0356abdcbe4"
+      },
+      {
+        "file": "COPYING.txt",
+        "url": "https://github.com/ArduPilot/ardupilot/blob/2badacc9a607b2d45c42f28006e68a4424192fe3/COPYING.txt",
+        "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+        "kind": "upstream_license"
+      }
+    ],
+    "license_status": "downloaded"
+  }
+]

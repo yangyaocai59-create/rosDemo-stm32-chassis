@@ -12,6 +12,7 @@
 #include "task.h"
 #include "wheel_speed_controller.h"
 #include "wheel_speed_control_config.h"
+#include "pivot_feedback_guard.h"
 
 #define FAULT_MANAGER_TASK_BIT(task) (1UL << (uint32_t)(task))
 
@@ -51,6 +52,8 @@ static uint32_t s_motion_start_ms;
 static bool s_stall_condition_active[MOTOR_DRIVER_WHEEL_COUNT];
 static uint32_t s_stall_condition_start_ms[MOTOR_DRIVER_WHEEL_COUNT];
 static float s_previous_targets[MOTOR_DRIVER_WHEEL_COUNT];
+static PivotFeedbackGuard s_pivot_guard[MOTOR_DRIVER_WHEEL_COUNT];
+static uint32_t s_pivot_warning_mask;
 
 static float FaultManager_AbsFloat(float value)
 {
@@ -74,11 +77,13 @@ static void FaultManager_ResetMotionTrackingLocked(void)
   s_motion_active = false;
   s_motion_start_ms = 0U;
   s_status.current_stalled_wheel_mask = 0U;
+  s_pivot_warning_mask=0U;
   for (uint32_t wheel = 0U; wheel < MOTOR_DRIVER_WHEEL_COUNT; ++wheel)
   {
     s_stall_condition_active[wheel] = false;
     s_stall_condition_start_ms[wheel] = 0U;
     s_previous_targets[wheel] = 0.0f;
+    s_pivot_guard[wheel]=(PivotFeedbackGuard){0};
   }
 }
 
@@ -131,8 +136,9 @@ void FaultManager_Init(uint32_t now_ms)
     (long)FAULT_MANAGER_STALL_MIN_TARGET_CPS,
     (unsigned long)FAULT_MANAGER_STALL_STARTUP_GRACE_MS,
     (unsigned long)FAULT_MANAGER_STALL_DETECT_MS);
-  DEBUG_LOG_INFO("Front pivot no-motion recovery limit=%lums; failure latches wheel stall",
-    (unsigned long)WHEEL_SPEED_FRONT_NO_MOTION_LIMIT_MS);
+  DEBUG_LOG_INFO("Unified pivot guard: grace=%lums warn=%lums persistent-low=%lums recovery=%lums; speed-only",
+    (unsigned long)PIVOT_GUARD_GRACE_MS,(unsigned long)PIVOT_GUARD_WARN_MS,
+    (unsigned long)PIVOT_GUARD_STOP_MS,(unsigned long)PIVOT_GUARD_RECOVER_MS);
 }
 
 void FaultManager_Heartbeat(FaultManagerTask task, uint32_t now_ms)
@@ -188,6 +194,8 @@ void FaultManager_ObserveMotion(
   }
 
   s_status.current_stalled_wheel_mask = 0U;
+  const uint32_t previous_warning_mask=s_pivot_warning_mask;
+  s_pivot_warning_mask=0U;
   for (uint32_t wheel = 0U; wheel < MOTOR_DRIVER_WHEEL_COUNT; ++wheel)
   {
     const float target = target_counts_per_second[wheel];
@@ -202,6 +210,26 @@ void FaultManager_ObserveMotion(
     const bool grace_complete =
       ((now_ms - s_motion_start_ms) >=
        FAULT_MANAGER_STALL_STARTUP_GRACE_MS);
+    const bool unified_owned=WheelSpeedController_IsUnifiedPivotMode((MotorDriverWheel)wheel);
+    const bool unified_failed=PivotFeedbackGuard_Update(&s_pivot_guard[wheel],
+      unified_owned,target,measured_counts_per_second[wheel],now_ms);
+    if (s_pivot_guard[wheel].warning) s_pivot_warning_mask|=1UL<<wheel;
+    if (unified_owned)
+    {
+      s_stall_condition_active[wheel]=false;
+      s_stall_condition_start_ms[wheel]=0U;
+      /* A single guard owns pivot qualification. Do not let the retained
+       * 750ms or legacy 1.5s report short-circuit this staged policy. */
+      s_previous_targets[wheel]=target;
+      if (unified_failed)
+      {
+        const uint32_t bit=1UL<<wheel;
+        s_status.current_stalled_wheel_mask|=bit;
+        if (!(s_status.latched_stalled_wheel_mask&bit)) newly_stalled_mask|=bit;
+        s_status.latched_stalled_wheel_mask|=bit;
+      }
+      continue;
+    }
     const bool legacy_stall_condition =
       grace_complete &&
       (!direction_changed) &&
@@ -235,7 +263,8 @@ void FaultManager_ObserveMotion(
       lr_running_stall_condition || rr_running_stall_condition;
     WheelSpeedFrontPivotState front;
     /* Same motor-task policy snapshot as the live maneuver, read under this
-     * critical section. Rear/NORMAL/below-policy-target behavior is unchanged.
+     * critical section. Candidate unified pivot applies this finite near-rest
+     * qualification to all four wheels. NORMAL is unchanged.
      * No speed-ratio/output/grace gate may mask an exhausted recovery failure.
      * The policy already qualified 1.5s of continuous near-rest. */
     const bool front_recovery_failed =
@@ -288,7 +317,12 @@ void FaultManager_ObserveMotion(
     new_faults = FaultManager_LatchLocked(
       FAULT_MANAGER_FAULT_WHEEL_STALL, now_ms);
   }
+  const uint32_t warning_mask=s_pivot_warning_mask;
   taskEXIT_CRITICAL();
+
+  if (previous_warning_mask!=warning_mask)
+    DEBUG_LOG_WARN("Pivot feedback guard suspect_mask=0x%02lX; persistent low feedback latches at %lums",
+      (unsigned long)warning_mask,(unsigned long)PIVOT_GUARD_STOP_MS);
 
   if ((new_faults & FAULT_MANAGER_FAULT_WHEEL_STALL) != 0U)
   {

@@ -1,0 +1,5 @@
+PASS: four independent wheels/both signs/targets/wrap, warning250, grace1000 + failure2000, sticky failure
+PASS: brief and recoverable low-feedback episodes warn and recover without latching
+PASS: one short speed spike and hysteresis-band motion cannot endlessly reset a genuine failure
+PASS: mode exit/zero-low target/direction change reset only their maneuver state
+PASS: low target160 with speed21 is still bounded; legacy low-speed gap not retained

@@ -1,0 +1,131 @@
+cmake_minimum_required(VERSION 3.22)
+
+#
+# This file is generated only once,
+# and is not re-generated if converter is called multiple times.
+#
+# User is free to modify the file as much as necessary
+#
+
+# Setup compiler settings
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+set(CMAKE_C_EXTENSIONS ON)
+
+
+# Define the build type
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE "Debug")
+endif()
+
+# Set the project name
+set(CMAKE_PROJECT_NAME rosDemo)
+
+# Enable compile command to ease indexing with e.g. clangd
+set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
+
+# Core project settings
+project(${CMAKE_PROJECT_NAME})
+message("Build type: " ${CMAKE_BUILD_TYPE})
+
+# Enable CMake support for ASM and C languages
+enable_language(C ASM)
+
+# Create an executable object type
+add_executable(${CMAKE_PROJECT_NAME})
+
+# Add STM32CubeMX generated sources
+add_subdirectory(cmake/stm32cubemx)
+
+# Link directories setup
+target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
+    # Add user defined library search paths
+)
+
+# Add sources to executable
+target_sources(${CMAKE_PROJECT_NAME} PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Board/board_config.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Chassis/chassis_controller.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Chassis/chassis_kinematics.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Chassis/chassis_motion_profile.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Chassis/chassis_runtime.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Chassis/encoder_service.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Chassis/motor_driver.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Chassis/wheel_speed_controller.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Chassis/wheel_speed_estimator.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Communication/chassis_usb_protocol.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Communication/usb_cdc_transport.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Diagnostics/fault_injection_test.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Diagnostics/motion_trace.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Diagnostics/encoder_diagnostics.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Diagnostics/imu_static_test.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Diagnostics/imu_calibration_guard.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Diagnostics/imu_spi_identity_test.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Diagnostics/chassis_ground_test.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Diagnostics/chassis_motion_test.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Diagnostics/chassis_runtime_test.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Diagnostics/four_wheel_speed_control_test.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Diagnostics/motor_open_loop_test.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Diagnostics/motor_characterization_test.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Diagnostics/motor_speed_control_test.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Power/battery_monitor.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Safety/emergency_stop.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Safety/fault_manager.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Safety/watchdog_service.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Sensors/imu_service.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Sensors/mpu6050.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Sensors/mpu6500.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Sensors/mpu_spi_probe.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Services/debug_log.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Services/control_timing.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Storage/imu_bias_storage.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/System/system_status.c
+)
+
+# Add include paths
+target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Board
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Chassis
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Communication
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Diagnostics
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Power
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Safety
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Sensors
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Services
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/Storage
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application/System
+)
+
+# Add project symbols (macros)
+target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
+    # Add user defined symbols
+    $<$<CONFIG:Debug>:MOTOR_OPEN_LOOP_TEST_ENABLED=1>
+    $<$<CONFIG:Debug>:FAULT_INJECTION_TEST_ENABLED=1>
+)
+
+# Remove wrong libob.a library dependency when using cpp files
+list(REMOVE_ITEM CMAKE_C_IMPLICIT_LINK_LIBRARIES ob)
+
+# Add linked libraries
+target_link_libraries(${CMAKE_PROJECT_NAME}
+    stm32cubemx
+
+    # Add user defined libraries
+)
+
+# Always regenerate the flashable Intel HEX image from the just-linked ELF.
+# Keeping this in the user-owned top-level file avoids touching CubeMX CMake.
+get_filename_component(STM32_TOOLCHAIN_BIN_DIR "${CMAKE_C_COMPILER}" DIRECTORY)
+find_program(STM32_OBJCOPY_EXECUTABLE
+    NAMES arm-none-eabi-objcopy arm-none-eabi-objcopy.exe
+    HINTS "${STM32_TOOLCHAIN_BIN_DIR}"
+    REQUIRED
+)
+add_custom_command(TARGET ${CMAKE_PROJECT_NAME} POST_BUILD
+    COMMAND ${STM32_OBJCOPY_EXECUTABLE}
+            -O ihex
+            $<TARGET_FILE:${CMAKE_PROJECT_NAME}>
+            $<TARGET_FILE_DIR:${CMAKE_PROJECT_NAME}>/${CMAKE_PROJECT_NAME}.hex
+    COMMENT "Generating ${CMAKE_PROJECT_NAME}.hex"
+    VERBATIM
+)

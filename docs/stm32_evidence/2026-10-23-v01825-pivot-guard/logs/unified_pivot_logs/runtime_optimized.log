@@ -1,0 +1,5 @@
+PASS: actual runtime/FM all four wheels/both directions/wrap trip finitely; fault latches, rejects and explicit clear does not resume
+PASS: STOP/zero/transport/health/ESTOP/exact250ms timeout/timing/overspeed clear all memory and outputs, including wrap
+PASS: task STOP at 6 reachable controller critical-exit boundaries cannot resurrect per-wheel I or outputs
+PASS: 20s persistent pivot targets/both directions/wrap keep four independent FF+PI outputs active with no pulse/re-enable gaps
+PASS: STOP at 2 reachable first-start runtime boundaries cannot enable or restart stale output

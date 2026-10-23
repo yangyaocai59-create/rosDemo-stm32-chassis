@@ -9,6 +9,7 @@
 #include <math.h>
 
 #include "wheel_speed_control_config.h"
+#include "unified_pivot_control.h"
 
 typedef struct
 {
@@ -59,6 +60,26 @@ static WheelSpeedControllerState s_states[MOTOR_DRIVER_WHEEL_COUNT];
 static float s_previous_output[MOTOR_DRIVER_WHEEL_COUNT];
 static float s_previous_target[MOTOR_DRIVER_WHEEL_COUNT];
 static WheelSpeedFrontPivotState s_front_pivot[MOTOR_DRIVER_WHEEL_COUNT];
+static UnifiedPivotState s_unified_pivot[MOTOR_DRIVER_WHEEL_COUNT];
+static const float s_pivot_pi[MOTOR_DRIVER_WHEEL_COUNT][2]={
+  {WHEEL_SPEED_PIVOT_LF_KP,WHEEL_SPEED_PIVOT_LF_KI},
+  {WHEEL_SPEED_PIVOT_LR_KP,WHEEL_SPEED_PIVOT_LR_KI},
+  {WHEEL_SPEED_PIVOT_RF_KP,WHEEL_SPEED_PIVOT_RF_KI},
+  {WHEEL_SPEED_PIVOT_RR_KP,WHEEL_SPEED_PIVOT_RR_KI}
+};
+
+bool WheelSpeedController_IsUnifiedPivotMode(MotorDriverWheel wheel)
+{
+  return WHEEL_SPEED_UNIFIED_PIVOT_ENABLED && (uint32_t)wheel<MOTOR_DRIVER_WHEEL_COUNT &&
+    s_unified_pivot[wheel].active;
+}
+
+bool WheelSpeedController_IsUnifiedPivotOwned(MotorDriverWheel wheel,float target)
+{
+  return WHEEL_SPEED_UNIFIED_PIVOT_ENABLED && (uint32_t)wheel<MOTOR_DRIVER_WHEEL_COUNT &&
+    s_unified_pivot[wheel].active && isfinite(target) &&
+    target==s_states[wheel].target_counts_per_second;
+}
 
 /* LF reverse first-start history. No public or wire layout changes. */
 typedef struct
@@ -773,6 +794,7 @@ bool WheelSpeedController_Reset(MotorDriverWheel wheel)
   s_states[wheel].limited = false;
   s_previous_output[wheel] = 0.0f;
   s_previous_target[wheel] = 0.0f;
+  s_unified_pivot[wheel]=(UnifiedPivotState){0};
   WheelSpeedController_ClearFront(wheel);
   return true;
 }
@@ -863,6 +885,41 @@ bool WheelSpeedController_UpdateWithMode(
       (elapsed_ms == 0U) || (elapsed_ms > 100U))
   {
     return false;
+  }
+
+  if(WHEEL_SPEED_UNIFIED_PIVOT_ENABLED && mode==WHEEL_SPEED_CONTROL_MODE_PIVOT &&
+     fabsf(target_counts_per_second)>=WHEEL_SPEED_CONTROL_ZERO_TARGET_CPS)
+  {
+    if(feedforward_bias_permille!=0) return false; /* no second startup owner */
+    state=&s_states[wheel];
+    target=WheelSpeedController_Clamp(target_counts_per_second,
+      -WHEEL_SPEED_CONTROL_TARGET_LIMIT_CPS,WHEEL_SPEED_CONTROL_TARGET_LIMIT_CPS);
+    float new_i=state->integrator_permille, ff,p,actual;
+    bool new_limited;
+    UnifiedPivotState next=s_unified_pivot[wheel];
+    if(!UnifiedPivot_Update(&next,target,measured_counts_per_second,
+       fabsf(WheelSpeedController_GetFeedforward(wheel,target)),
+       fabsf(WheelSpeedController_GetPivotLoadFeedforward(wheel,target)),
+       s_pivot_pi[wheel][0],s_pivot_pi[wheel][1],elapsed_ms,s_previous_output[wheel],
+       &new_i,&ff,&p,&actual,&new_limited)) return false;
+    state->target_counts_per_second=target;
+    state->measured_counts_per_second=measured_counts_per_second;
+    state->error_counts_per_second=target-measured_counts_per_second;
+    state->feedforward_permille=ff;
+    state->proportional_permille=p;
+    state->integrator_permille=new_i;
+    state->command_permille=WheelSpeedController_RoundToInt16(actual);
+    state->limited=new_limited;
+    s_unified_pivot[wheel]=next;
+    s_previous_output[wheel]=actual;
+    s_previous_target[wheel]=target;
+    *command_permille=state->command_permille;
+    return true;
+  }
+  if(WHEEL_SPEED_UNIFIED_PIVOT_ENABLED && s_unified_pivot[wheel].active)
+  {
+    s_unified_pivot[wheel]=(UnifiedPivotState){0};
+    s_states[wheel].integrator_permille=0;
   }
 
   /* Explicit owner contract: never stack a caller's legacy bias on this
@@ -1119,6 +1176,16 @@ bool WheelSpeedController_GetState(MotorDriverWheel wheel,
 bool WheelSpeedController_GetFrontPivotState(
   MotorDriverWheel wheel, WheelSpeedFrontPivotState *state)
 {
+  if(WHEEL_SPEED_UNIFIED_PIVOT_ENABLED && (uint32_t)wheel<MOTOR_DRIVER_WHEEL_COUNT &&
+     state!=NULL && s_unified_pivot[wheel].active)
+  {
+    const UnifiedPivotState *u=&s_unified_pivot[wheel];
+    *state=(WheelSpeedFrontPivotState){.active=true,.sign=u->sign,
+      .load_permille=fabsf(WheelSpeedController_GetPivotLoadFeedforward(wheel,
+        s_states[wheel].target_counts_per_second)),.recovery_permille=0,
+      .no_motion_ms=u->no_motion_ms,.exhausted=u->failed,.recovery_failed=u->failed};
+    return true;
+  }
   if ((!WheelSpeedController_IsFront(wheel)) || (state == NULL))
   {
     return false;

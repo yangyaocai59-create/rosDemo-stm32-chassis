@@ -77,6 +77,19 @@ void MotorDriver_ForceSafeState(void);
 /** Copy the current software-visible motor output state. */
 bool MotorDriver_GetStatus(MotorDriverStatus *status);
 
+/* Read-only diagnostic registers. Caller serializes task writers; a high
+ * priority E-stop can still interrupt, so trace brackets this with latch reads.
+ * CCR is the readable preload register, NOT a measured pin waveform. */
+typedef struct
+{
+  uint32_t compare[MOTOR_DRIVER_WHEEL_COUNT];
+  int16_t requested_permille[MOTOR_DRIVER_WHEEL_COUNT];
+  uint32_t auto_reload, bdtr, ccer;
+  uint16_t direction_bits;
+  uint8_t standby_pin, guard_mask;
+} MotorDriverDiagnostics;
+bool MotorDriver_GetDiagnostics(MotorDriverDiagnostics *diagnostics);
+
 #ifdef __cplusplus
 }
 #endif

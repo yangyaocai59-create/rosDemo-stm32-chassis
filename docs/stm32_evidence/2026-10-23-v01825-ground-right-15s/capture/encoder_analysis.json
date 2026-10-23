@@ -1,0 +1,206 @@
+[
+  {
+    "header": {
+      "schema": 3,
+      "count": 128,
+      "reason": 1,
+      "mask": 8,
+      "trigger": 315483,
+      "trigger_seq": 355,
+      "post_left": 0
+    },
+    "source_span_ms": [
+      313443,
+      315983
+    ],
+    "snapshot_flags": [
+      0
+    ],
+    "wheels": {
+      "LF": {
+        "config_bad_values": [
+          0
+        ],
+        "config_bad_frames": [],
+        "sampled_vs_total_mismatches": [],
+        "live_ahead_or_behind_frames": [
+          {
+            "t": 313463,
+            "raw_delta": 1
+          },
+          {
+            "t": 313483,
+            "raw_delta": 1
+          },
+          {
+            "t": 313823,
+            "raw_delta": 1
+          },
+          {
+            "t": 314963,
+            "raw_delta": 1
+          },
+          {
+            "t": 315123,
+            "raw_delta": 1
+          },
+          {
+            "t": 315623,
+            "raw_delta": 1
+          }
+        ],
+        "zero_runs_at_least_3_frames": []
+      },
+      "LR": {
+        "config_bad_values": [
+          0
+        ],
+        "config_bad_frames": [],
+        "sampled_vs_total_mismatches": [],
+        "live_ahead_or_behind_frames": [
+          {
+            "t": 314503,
+            "raw_delta": 1
+          },
+          {
+            "t": 314543,
+            "raw_delta": 1
+          },
+          {
+            "t": 314663,
+            "raw_delta": 1
+          },
+          {
+            "t": 315383,
+            "raw_delta": 1
+          }
+        ],
+        "zero_runs_at_least_3_frames": []
+      },
+      "RF": {
+        "config_bad_values": [
+          0
+        ],
+        "config_bad_frames": [],
+        "sampled_vs_total_mismatches": [],
+        "live_ahead_or_behind_frames": [
+          {
+            "t": 313663,
+            "raw_delta": 1
+          },
+          {
+            "t": 314163,
+            "raw_delta": 1
+          },
+          {
+            "t": 314843,
+            "raw_delta": 1
+          },
+          {
+            "t": 315023,
+            "raw_delta": 1
+          },
+          {
+            "t": 315183,
+            "raw_delta": 1
+          }
+        ],
+        "zero_runs_at_least_3_frames": [
+          {
+            "first_t": 315783,
+            "last_t": 315983,
+            "samples": 11,
+            "sum_sample_period_ms": 220,
+            "sampled_counts": [
+              62687
+            ],
+            "live_counts": [
+              62687
+            ],
+            "ab_values": [
+              2
+            ],
+            "config_bad_values": [
+              0
+            ],
+            "pwm_first_last": [
+              -157,
+              -172
+            ],
+            "ccr_first_last": [
+              1318,
+              1444
+            ],
+            "i_x10_first_last": [
+              -125,
+              -235
+            ],
+            "total_values": [
+              2849
+            ]
+          }
+        ]
+      },
+      "RR": {
+        "config_bad_values": [
+          0
+        ],
+        "config_bad_frames": [],
+        "sampled_vs_total_mismatches": [],
+        "live_ahead_or_behind_frames": [
+          {
+            "t": 313823,
+            "raw_delta": 1
+          },
+          {
+            "t": 314543,
+            "raw_delta": 1
+          },
+          {
+            "t": 314683,
+            "raw_delta": 1
+          },
+          {
+            "t": 315183,
+            "raw_delta": 1
+          }
+        ],
+        "zero_runs_at_least_3_frames": [
+          {
+            "first_t": 315423,
+            "last_t": 315983,
+            "samples": 29,
+            "sum_sample_period_ms": 580,
+            "sampled_counts": [
+              62644
+            ],
+            "live_counts": [
+              62644
+            ],
+            "ab_values": [
+              2
+            ],
+            "config_bad_values": [
+              0
+            ],
+            "pwm_first_last": [
+              -101,
+              -139
+            ],
+            "ccr_first_last": [
+              848,
+              1167
+            ],
+            "i_x10_first_last": [
+              -6,
+              -332
+            ],
+            "total_values": [
+              2892
+            ]
+          }
+        ]
+      }
+    }
+  }
+]
