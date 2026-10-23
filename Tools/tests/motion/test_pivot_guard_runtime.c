@@ -1,5 +1,5 @@
 #define main UnusedLegacyMain
-#include "test_front_recovery_safety.c"
+#include "unified_runtime_fixture.h"
 #undef main
 #include "pivot_feedback_guard.h"
 int main(void)

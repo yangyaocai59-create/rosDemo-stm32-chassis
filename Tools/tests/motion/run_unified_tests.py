@@ -65,12 +65,5 @@ run('driver_build', [CC] + flags + ['-ITools/tests/motion/stubs'] + includes[1:]
     ['Tools/tests/motion/test_motor_driver.c', 'Application/Chassis/motor_driver.c', '-o', binary])
 run('driver', [binary])
 
-# Retained fallback remains testable, but is not the shipped candidate law.
-binary = ROOT / 'build/tests/unified_legacy_core.exe'
-run('legacy_core_build', [CC] + flags + ['-DWHEEL_SPEED_UNIFIED_PIVOT_ENABLED=0'] + includes +
-    ['Tools/tests/motion/test_motion_core.c', 'Application/Chassis/chassis_motion_profile.c',
-     'Application/Chassis/wheel_speed_controller.c', 'Application/Safety/fault_manager.c',
-     'Application/Services/control_timing.c', '-lm', '-o', binary])
-run('legacy_core', [binary])
 (OUT / 'results.json').write_text(json.dumps(RESULTS, indent=2) + '\n', encoding='utf-8')
 print('PASS: unified candidate regression complete; prescribed feedback is not loaded hardware validation')

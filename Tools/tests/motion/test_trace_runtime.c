@@ -2,7 +2,7 @@
  * inputs must produce identical commands and fault timing. No motor model. */
 #define main UnusedLegacyMain
 #define WheelSpeedEstimator_GetSnapshot LegacySnapshot
-#include "test_front_recovery_safety.c"
+#include "unified_runtime_fixture.h"
 #undef WheelSpeedEstimator_GetSnapshot
 #undef main
 bool WheelSpeedEstimator_GetSnapshot(WheelSpeedState states[4]);

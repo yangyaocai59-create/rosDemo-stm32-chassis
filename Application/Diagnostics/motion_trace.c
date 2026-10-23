@@ -236,6 +236,19 @@ bool MotionTrace_ProcessDump(void)
   --s_dump_remaining;
   const bool last=s_dump_remaining==0U;
   taskEXIT_CRITICAL();
+  if (header) {
+    static ChassisRuntimeEvent events[CHASSIS_RUNTIME_EVENT_CAPACITY];
+    uint32_t overwritten;
+    const uint32_t count=ChassisRuntime_GetEvents(events, &overwritten);
+    TRACE_PRINT("RUNTIME_EVENTS count=%lu overwritten=%lu", (unsigned long)count,
+                (unsigned long)overwritten);
+    for (uint32_t i=0U; i<count; ++i) {
+      const ChassisRuntimeEvent *e=&events[i];
+      TRACE_PRINT("RUNTIME_EVENT seq=%lu t=%lu kind=%u state=%u generation=%lu command=%lu",
+        (unsigned long)e->sequence, (unsigned long)e->time_ms, (unsigned)e->kind,
+        (unsigned)e->state, (unsigned long)e->generation, (unsigned long)e->command_sequence);
+    }
+  }
   if (header) TRACE_PRINT(
     "TRACE2 BEGIN schema=3 count=%u reason=%u mask=%u trigger=%lu trigger_seq=%lu post_left=%u",
     s_count,s_reason,s_trigger_mask,(unsigned long)s_trigger_ms,

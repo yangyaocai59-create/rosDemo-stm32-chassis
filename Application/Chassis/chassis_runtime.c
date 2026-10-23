@@ -21,6 +21,36 @@ static ChassisRuntimeStatus s_status;
 static uint32_t s_profile_time_ms;
 static uint32_t s_motion_generation;
 
+static ChassisRuntimeEvent s_events[CHASSIS_RUNTIME_EVENT_CAPACITY];
+static uint32_t s_event_head, s_event_count, s_event_sequence, s_event_overwritten;
+
+/* Only bounded RAM writes under the lock; no logging or output ownership. */
+static void ChassisRuntime_RecordEvent(ChassisRuntimeEventKind kind, uint32_t now_ms)
+{
+  taskENTER_CRITICAL();
+  s_events[s_event_head] = (ChassisRuntimeEvent){
+    ++s_event_sequence, now_ms, s_motion_generation, s_status.command_sequence,
+    kind, s_status.state};
+  s_event_head = (s_event_head + 1U) % CHASSIS_RUNTIME_EVENT_CAPACITY;
+  if (s_event_count < CHASSIS_RUNTIME_EVENT_CAPACITY) ++s_event_count;
+  else ++s_event_overwritten;
+  taskEXIT_CRITICAL();
+}
+
+uint32_t ChassisRuntime_GetEvents(ChassisRuntimeEvent events[CHASSIS_RUNTIME_EVENT_CAPACITY],
+                                 uint32_t *overwritten)
+{
+  if (events == NULL || overwritten == NULL) return 0U;
+  taskENTER_CRITICAL();
+  const uint32_t count = s_event_count;
+  for (uint32_t i=0U; i<count; ++i)
+    events[i] = s_events[(s_event_head + CHASSIS_RUNTIME_EVENT_CAPACITY - count + i)
+                         % CHASSIS_RUNTIME_EVENT_CAPACITY];
+  *overwritten = s_event_overwritten;
+  taskEXIT_CRITICAL();
+  return count;
+}
+
 static void ChassisRuntime_ResetProfileLocked(void)
 {
   s_status.applied_command.linear_x_m_s = 0.0f;
@@ -195,6 +225,7 @@ bool ChassisRuntime_Init(uint32_t now_ms)
 
   taskENTER_CRITICAL();
   s_status.state = CHASSIS_RUNTIME_STATE_INIT;
+  s_event_head = s_event_count = s_event_sequence = s_event_overwritten = 0U;
   ++s_motion_generation;
   ChassisRuntime_ResetProfileLocked();
   s_status.fault = CHASSIS_RUNTIME_FAULT_NONE;
@@ -277,6 +308,7 @@ bool ChassisRuntime_SetVelocity(float linear_x_m_s,
 
 void ChassisRuntime_Stop(uint32_t now_ms)
 {
+  ChassisRuntime_RecordEvent(CHASSIS_EVENT_STOP_REQUEST, now_ms);
   (void)now_ms;
   if (EmergencyStop_IsLatched())
   {
@@ -290,6 +322,7 @@ void ChassisRuntime_Stop(uint32_t now_ms)
 
 void ChassisRuntime_StopForTransportLoss(uint32_t now_ms)
 {
+  ChassisRuntime_RecordEvent(CHASSIS_EVENT_TRANSPORT_LOSS, now_ms);
   (void)now_ms;
   if (EmergencyStop_IsLatched())
   {
@@ -303,6 +336,7 @@ void ChassisRuntime_StopForTransportLoss(uint32_t now_ms)
 
 void ChassisRuntime_LatchHealthFault(uint32_t now_ms)
 {
+  ChassisRuntime_RecordEvent(CHASSIS_EVENT_HEALTH_FAULT, now_ms);
   (void)now_ms;
   if (EmergencyStop_IsLatched())
   {
@@ -417,11 +451,13 @@ void ChassisRuntime_Process(uint32_t now_ms, bool diagnostics_active)
         now_ms,
         last_command_ms + CHASSIS_RUNTIME_COMMAND_TIMEOUT_MS))
   {
+    ChassisRuntime_RecordEvent(CHASSIS_EVENT_COMMAND_TIMEOUT, now_ms);
     ChassisRuntime_SetCurrentIdle(generation, CHASSIS_RUNTIME_STOP_COMMAND_TIMEOUT);
     return;
   }
   if (ChassisRuntime_IsZeroCommand(&command))
   {
+    ChassisRuntime_RecordEvent(CHASSIS_EVENT_ZERO_COMMAND, now_ms);
     ChassisRuntime_SetCurrentIdle(generation, CHASSIS_RUNTIME_STOP_ZERO_COMMAND);
     return;
   }
@@ -445,6 +481,7 @@ void ChassisRuntime_Process(uint32_t now_ms, bool diagnostics_active)
       if (started)
       {
         s_status.state = CHASSIS_RUNTIME_STATE_ACTIVE;
+        ChassisRuntime_RecordEvent(CHASSIS_EVENT_START, now_ms);
         s_status.fault = CHASSIS_RUNTIME_FAULT_NONE;
         s_status.controller_fault = CHASSIS_CONTROLLER_FAULT_NONE;
         s_status.last_stop_reason = CHASSIS_RUNTIME_STOP_NONE;
@@ -548,6 +585,7 @@ void ChassisRuntime_SafetyProcess(uint32_t now_ms)
         now_ms,
         last_command_ms + CHASSIS_RUNTIME_COMMAND_TIMEOUT_MS))
   {
+    ChassisRuntime_RecordEvent(CHASSIS_EVENT_COMMAND_TIMEOUT, now_ms);
     ChassisRuntime_SetCurrentIdle(generation, CHASSIS_RUNTIME_STOP_COMMAND_TIMEOUT);
     return;
   }

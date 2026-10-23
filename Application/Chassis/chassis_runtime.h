@@ -67,6 +67,23 @@ typedef struct
   uint32_t rejected_commands;
 } ChassisRuntimeStatus;
 
+/* Bounded request/start history, independently retained from wheel samples. */
+#define CHASSIS_RUNTIME_EVENT_CAPACITY 16U
+typedef enum {
+  CHASSIS_EVENT_START = 1, CHASSIS_EVENT_STOP_REQUEST,
+  CHASSIS_EVENT_TRANSPORT_LOSS, CHASSIS_EVENT_HEALTH_FAULT,
+  CHASSIS_EVENT_ZERO_COMMAND, CHASSIS_EVENT_COMMAND_TIMEOUT
+} ChassisRuntimeEventKind;
+typedef struct {
+  uint32_t sequence, time_ms, generation, command_sequence;
+  ChassisRuntimeEventKind kind;
+  ChassisRuntimeState state;
+} ChassisRuntimeEvent;
+/* Bounded read-only history, independent of the 20ms wheel trace.
+ * Returns oldest-first entries; overwritten count is reported explicitly. */
+uint32_t ChassisRuntime_GetEvents(ChassisRuntimeEvent events[CHASSIS_RUNTIME_EVENT_CAPACITY],
+                                 uint32_t *overwritten);
+
 /** Initialize in motor-disabled IDLE, or ESTOP when the latch is active. */
 bool ChassisRuntime_Init(uint32_t now_ms);
 

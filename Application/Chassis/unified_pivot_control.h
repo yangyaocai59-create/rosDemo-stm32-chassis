@@ -8,13 +8,9 @@
 #include "wheel_speed_control_config.h"
 
 typedef struct {
-  uint32_t no_motion_ms;
   int8_t sign;
-  bool active, failed;
+  bool active;
 } UnifiedPivotState;
-
-static inline uint32_t UnifiedPivot_AddTime(uint32_t value,uint32_t dt,uint32_t cap)
-{ return value>=cap || dt>=cap-value ? cap : value+dt; }
 
 static inline float UnifiedPivot_Clamp(float value,float low,float high)
 { return fminf(high,fmaxf(low,value)); }
@@ -62,12 +58,6 @@ static inline bool UnifiedPivot_Update(UnifiedPivotState *memory,
     desired=UnifiedPivot_Clamp(wanted,0,ceiling)*(float)sign;
     actual=UnifiedPivot_Clamp(desired,previous_output-step,previous_output+step);
   }
-  /* Diagnostic duration only. FaultManager owns the one staged stop policy;
-   * no second sticky 1.5s failure may bypass it through a legacy snapshot. */
-  next.failed=false;
-  next.no_motion_ms=magnitude>=WHEEL_SPEED_CONTROL_PIVOT_STATIONARY_CPS &&
-    fabsf(measured)<=fminf(20.0f,.25f*magnitude) ?
-    UnifiedPivot_AddTime(next.no_motion_ms,dt,UINT32_MAX):0;
   *signed_i=j*(float)sign;
   *signed_ff=ff*(float)sign;
   *signed_p=p*(float)sign;

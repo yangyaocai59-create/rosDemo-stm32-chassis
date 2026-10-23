@@ -1,7 +1,7 @@
 /* Reuse peripheral stubs only; exercise actual candidate runtime/controller/FM. */
 #define main FrozenFrontSafetyMain
 #define Test_ExitCritical FrozenTest_ExitCritical
-#include "test_front_recovery_safety.c"
+#include "unified_runtime_fixture.h"
 #undef Test_ExitCritical
 #undef main
 
@@ -84,7 +84,7 @@ static void TestStopPaths(void)
     {
       WheelSpeedControllerState s;assert(WheelSpeedController_GetState((MotorDriverWheel)w,&s));
       assert(s.integrator_permille==0 && s.command_permille==0);
-      assert(!WheelSpeedController_IsUnifiedPivotOwned((MotorDriverWheel)w,w<2?-240:240));
+      assert(!WheelSpeedController_IsPivotMode((MotorDriverWheel)w));
     }
   }
   puts("PASS: STOP/zero/transport/health/ESTOP/exact250ms timeout/timing/overspeed clear all memory and outputs, including wrap");
@@ -176,8 +176,32 @@ static void TestStartStopInterleavings(void)
   printf("PASS: STOP at %u reachable first-start runtime boundaries cannot enable or restart stale output\n",covered);
 }
 
+static void TestEventHistory(void)
+{
+  const uint32_t base=0xfffffff0U;
+  ResetAll(base);
+  assert(ChassisRuntime_SetVelocity(0,.2f,base));
+  ChassisRuntime_Process(base,false);
+  ChassisRuntime_Stop(base+1U);
+  assert(ChassisRuntime_SetVelocity(0,.2f,base+12U));
+  ChassisRuntime_Process(base+12U,false);
+  ChassisRuntimeEvent events[CHASSIS_RUNTIME_EVENT_CAPACITY]; uint32_t lost;
+  unsigned n=ChassisRuntime_GetEvents(events,&lost);
+  assert(n==3 && lost==0);
+  assert(events[0].kind==CHASSIS_EVENT_START);
+  assert(events[1].kind==CHASSIS_EVENT_STOP_REQUEST && events[1].time_ms==base+1U);
+  assert(events[2].kind==CHASSIS_EVENT_START && events[2].time_ms==base+12U);
+  assert(events[2].generation!=events[0].generation);
+  for(unsigned i=0;i<20;i++) ChassisRuntime_Stop(base+20U+i);
+  n=ChassisRuntime_GetEvents(events,&lost);
+  assert(n==CHASSIS_RUNTIME_EVENT_CAPACITY && lost==7);
+  for(unsigned i=1;i<n;i++) assert(events[i].sequence==events[i-1].sequence+1);
+  puts("PASS: STOP/restart 11ms apart survive between trace samples; event order, tick wrap and explicit overflow count");
+}
+
 int main(void)
 {
+  TestEventHistory();
   TestAllWheelFaults(); TestStopPaths(); TestStopInterleavings(); TestPersistentTargets(); TestStartStopInterleavings();
   return 0;
 }

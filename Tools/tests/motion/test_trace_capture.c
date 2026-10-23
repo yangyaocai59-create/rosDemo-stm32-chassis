@@ -169,3 +169,7 @@ int main(int argc,char **argv)
   printf("PASS: signed 64-bit totals preserved; frame=%zu ring=%zu bytes\n",sizeof(TraceSample),sizeof s_ring);
   return 0;
 }
+
+uint32_t ChassisRuntime_GetEvents(ChassisRuntimeEvent events[CHASSIS_RUNTIME_EVENT_CAPACITY],
+                                 uint32_t *overwritten)
+{ (void)events; *overwritten=0U; return 0U; }

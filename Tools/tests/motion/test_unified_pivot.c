@@ -83,21 +83,6 @@ int main(void)
   }
   puts("PASS: startup slew/PWM saturation anti-windup, negative I cancels excess FF, reversal clears old direction state");
 
-  for(unsigned w=0;w<4;w++)
-  {
-    WheelSpeedController_Reset((MotorDriverWheel)w);
-    for(unsigned t=20;t<=1480;t+=20) Step(w,240,0,20);
-    assert(!s_unified_pivot[w].failed);
-    Step(w,240,240,20); assert(s_unified_pivot[w].no_motion_ms==0);
-    for(unsigned t=20;t<=1500;t+=20) Step(w,240,0,20);
-    assert(!s_unified_pivot[w].failed && s_unified_pivot[w].no_motion_ms==1500);
-    Step(w,240,240,20); assert(!s_unified_pivot[w].failed && s_unified_pivot[w].no_motion_ms==0);
-    WheelSpeedController_Reset((MotorDriverWheel)w);
-    for(unsigned k=0;k<100;k++) Step(w,10,0,20);
-    assert(!s_unified_pivot[w].failed); /* old >=20cps policy boundary */
-  }
-  puts("PASS: PI near-rest duration is diagnostic only, resets on motion; staged fault deadline owned by safety");
-
   WheelSpeedController_Init();
   for(unsigned k=0;k<30;k++) Step(0,240,100,20);
   for(unsigned w=1;w<4;w++) assert(!s_unified_pivot[w].active && s_states[w].integrator_permille==0);
