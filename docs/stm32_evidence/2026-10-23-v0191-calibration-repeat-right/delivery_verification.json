@@ -1,0 +1,25 @@
+{
+  "firmware_source_commit": "68b4597",
+  "source_manifest_files_checked": 246,
+  "source_manifest_mismatches": [
+    "Tools/assess_existing_turn_yaw.py"
+  ],
+  "offline_tool_change": "Reference analysis now reports bias flags correctly and records same-sample updates outside the integration window; rejects differing duplicates inside it. No firmware input changed.",
+  "firmware_sha256": {
+    "elf": "bb52a2f6212cf9dd0eaabe151a3db70e10d7ca1e23bd21219e2c4259159800b3",
+    "hex": "df84a5522ff1a2d8935600031230d1a6d151343ff52a8896ba11b54c96e381df",
+    "bin": "8be9ffcf799d36aafdfc52532fec55c751b52b0598065ffbe9d917108713193f",
+    "map": "4da37b29e8dda1f55df34d0588d3f54a86d9c1f25cd311244efba0bf75e9cfed"
+  },
+  "firmware_archive_sha256": "678e8a9ead736c0429f7546599032c7e8e4128d81a7c78f0f493964e6964e0d1",
+  "capture_mapping": {
+    "calibration": "v0191_calibrate_once_20261023_092853",
+    "reboot_readonly": "v0191_readonly_20261023_093026",
+    "left_repeat": "v0191_400mrad_ground_left_20261023_093049",
+    "right": "v0191_400mrad_ground_right_20261023_093219"
+  },
+  "operator_report": "After full power cycle: ground, VM on, surrounding area clear. No material change to floor, payload or tyres between left runs.",
+  "production_source_changed_this_session": false,
+  "new_firmware_flash_this_session": false,
+  "navigation_acceptance": false
+}

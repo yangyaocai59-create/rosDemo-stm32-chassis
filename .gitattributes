@@ -1,0 +1,6 @@
+# Preserve captured serial bytes and their SHA256 manifests across platforms.
+docs/stm32_evidence/2026-10-23-v0191-ground-left-400mrad-15s/** -text whitespace=cr-at-eol
+docs/stm32_evidence/2026-10-23-v0191-calibration-repeat-right/** -text whitespace=cr-at-eol
+docs/stm32_evidence/2026-10-23-v0191-ground-left-400mrad-15s/**/*.bin binary
+docs/stm32_evidence/2026-10-23-v0191-calibration-repeat-right/**/*.bin binary
+releases/0.19.1/** -text whitespace=cr-at-eol

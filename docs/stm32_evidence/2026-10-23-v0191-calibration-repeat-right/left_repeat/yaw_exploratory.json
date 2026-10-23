@@ -1,0 +1,34 @@
+[
+  {
+    "folder": "build\\hardware_tests\\v0191_400mrad_ground_left_20261023_093049",
+    "motion_seconds": 15.20299999999952,
+    "net_counts": [
+      -9169,
+      -9243,
+      9309,
+      9209
+    ],
+    "assumed_wheel_diameter_m": 0.065,
+    "assumed_effective_track_m": 0.395,
+    "wheel_yaw_deg": 350.6012658227849,
+    "imu_yaw_short_prebaseline_deg": 389.65191336987317,
+    "wheel_minus_imu_deg": -39.05064754708826,
+    "pre_baseline_samples": 80,
+    "pre_baseline_mrad_s": 0.575,
+    "pre_baseline_std_mrad_s": 0.8627716963368699,
+    "post_baseline_mrad_s": 0.2215568862275449,
+    "imu_yaw_using_postbaseline_deg": 389.9817786301764,
+    "source_window_ms": [
+      39961,
+      56250
+    ],
+    "max_imu_interval_ms": 10,
+    "imu_source_count_jumps": [],
+    "bias_valid_flags": [
+      true
+    ],
+    "external_angle_ground_truth_available": false,
+    "acceptance_pass": null,
+    "warning": "Exploratory reference comparison only; short baseline and no external angle truth. Bias validity is reported separately. Do not fit track or declare acceptance."
+  }
+]

@@ -1,0 +1,76 @@
+{
+  "host_motion_seconds": 15.20299999999952,
+  "mcu_active_span_s": 15.2,
+  "source_time_at_least_15s": true,
+  "mcu_start_ms": 39962,
+  "mcu_stop_request_ms": 55162,
+  "requested_rad_s": 0.4,
+  "net_counts": [
+    -9169,
+    -9243,
+    9309,
+    9209
+  ],
+  "geometry": {
+    "effective_track_m": 0.395,
+    "wheel_diameter_m": 0.065,
+    "counts_per_rev": 1560
+  },
+  "encoder_angle_deg": 350.6012658227849,
+  "imu_reference_deg": 389.6723500082609,
+  "encoder_minus_imu_deg": -39.07108418547597,
+  "encoder_minus_imu_percent": -10.026650385804299,
+  "command_integral_source_deg": 348.35833943954054,
+  "encoder_minus_command_deg": 2.2429263832443667,
+  "imu_minus_command_deg": 41.314010568720335,
+  "encoder_mean_rad_s_including_settling": 0.40257542435970156,
+  "imu_mean_rad_s_including_settling": 0.4474385205018359,
+  "instantaneous_minimum_speed_verified": false,
+  "reference_baseline_mrad_s": 0.5448504983388704,
+  "reference_baseline_std_mrad_s": 0.852287362579883,
+  "imu_reference_count_gaps": [],
+  "events_this_run": [
+    {
+      "sequence": 1,
+      "time_ms": 39962,
+      "kind": 1,
+      "state": 2,
+      "generation": 1,
+      "command": 1
+    },
+    {
+      "sequence": 2,
+      "time_ms": 55162,
+      "kind": 2,
+      "state": 2,
+      "generation": 1,
+      "command": 242
+    },
+    {
+      "sequence": 3,
+      "time_ms": 55162,
+      "kind": 2,
+      "state": 1,
+      "generation": 2,
+      "command": 242
+    }
+  ],
+  "accepted_delta": 242,
+  "rejected_delta": 0,
+  "protocol_counter_deltas": [
+    0,
+    0,
+    0
+  ],
+  "host_crc_errors": 0,
+  "vm_mV_range": [
+    10637,
+    11088
+  ],
+  "ports_closed": true,
+  "final_stopped_verified": true,
+  "capture_error": null,
+  "trace_error": null,
+  "external_angle_ground_truth_available": false,
+  "acceptance_threshold_selected": false
+}
