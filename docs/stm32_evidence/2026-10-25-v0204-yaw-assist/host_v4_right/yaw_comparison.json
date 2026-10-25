@@ -1,0 +1,78 @@
+{
+  "firmware_user_report": "0.20.2",
+  "direction": "right",
+  "requested_rad_s": -0.4,
+  "host_command_seconds": 10.0,
+  "mcu_active_seconds": 9.97,
+  "mcu_start_ms": 6759782,
+  "mcu_stop_ms": 6769752,
+  "comparison_window_ms": [
+    6759722,
+    6770762
+  ],
+  "comparison_seconds_including_settling": 11.04,
+  "geometry": {
+    "diameter_m": 0.065,
+    "counts_per_rev": 1560,
+    "effective_track_m": 0.395
+  },
+  "before_wheel": [
+    6759722,
+    -24067,
+    -25401,
+    27067,
+    25588,
+    0,
+    0,
+    0,
+    0
+  ],
+  "after_wheel": [
+    6770762,
+    -17869,
+    -19352,
+    20940,
+    19478,
+    0,
+    0,
+    0,
+    0
+  ],
+  "net_counts": [
+    6198,
+    6049,
+    -6127,
+    -6110
+  ],
+  "encoder_angle_deg": -232.44303797468353,
+  "imu_reference_angle_deg": -226.68368019096158,
+  "encoder_minus_imu_deg": -5.759357783721953,
+  "absolute_difference_deg": 5.759357783721953,
+  "relative_difference_percent": 2.5407024356010925,
+  "percent_denominator": "absolute bias-corrected IMU reference angle",
+  "imu_uncorrected_angle_deg": -201.98976473760777,
+  "imu_using_post_baseline_deg": -227.43123385239042,
+  "bias_sensitivity_deg": 0.7475536614288387,
+  "baselines": {
+    "baseline": {
+      "samples": 308,
+      "span_ms": 3070,
+      "mean_z_mrad_s": 39.03896103896104,
+      "std_z_mrad_s": 0.8855486001103283
+    },
+    "post_baseline": {
+      "samples": 308,
+      "span_ms": 3070,
+      "mean_z_mrad_s": 40.22077922077922,
+      "std_z_mrad_s": 1.0614053000606298
+    }
+  },
+  "imu_source_max_interval_ms": 10,
+  "imu_source_missing_samples": 0,
+  "imu_saved_bias_valid": false,
+  "external_angle_truth_available": false,
+  "final_stopped_verified": true,
+  "command_active_integral_deg": null,
+  "target_imu_deg": null,
+  "angular_rate_schedule": "host firmware C yaw-rate core, bounded correction"
+}

@@ -39,7 +39,12 @@ typedef struct
   bool stopped;
   /** False until the first sample with a non-zero time interval is produced. */
   bool valid;
+  uint32_t sample_sequence;
+  /** Revision 200: interval or implausible count-rate rejection. */
+  uint32_t quality_flags;
 } WheelSpeedState;
+
+enum { WHEEL_SPEED_QUALITY_INTERVAL=1U, WHEEL_SPEED_QUALITY_COUNT_RATE=2U };
 
 /** Capture the initial encoder positions and reset all velocity estimates. */
 bool WheelSpeedEstimator_Init(uint32_t now_ms);

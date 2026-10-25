@@ -1,0 +1,160 @@
+core_strict_build: PASS
+core_strict: PASS
+runtime_strict_build: PASS
+runtime_strict: PASS
+geometry_runtime_strict_build: PASS
+geometry_runtime_strict: PASS
+guard_runtime_strict_build: PASS
+guard_runtime_strict: PASS
+trace_export_strict_build: PASS
+trace_export_strict: PASS
+trace_runtime_strict_build: PASS
+trace_runtime_strict: PASS
+trace_enabled_strict: PASS
+estimator_strict_build: PASS
+estimator_strict: PASS
+motion_profile_strict_build: PASS
+motion_profile_strict: PASS
+feedback_guard_strict_build: PASS
+feedback_guard_strict: PASS
+driver_strict_build: PASS
+driver_strict: PASS
+core_optimized_build: PASS
+core_optimized: PASS
+runtime_optimized_build: PASS
+runtime_optimized: PASS
+geometry_runtime_optimized_build: PASS
+geometry_runtime_optimized: PASS
+guard_runtime_optimized_build: PASS
+guard_runtime_optimized: PASS
+trace_export_optimized_build: PASS
+trace_export_optimized: PASS
+trace_runtime_optimized_build: PASS
+trace_runtime_optimized: PASS
+trace_enabled_optimized: PASS
+estimator_optimized_build: PASS
+estimator_optimized: PASS
+motion_profile_optimized_build: PASS
+motion_profile_optimized: PASS
+feedback_guard_optimized_build: PASS
+feedback_guard_optimized: PASS
+driver_optimized_build: PASS
+driver_optimized: PASS
+core_analyzer_build: PASS
+core_analyzer: PASS
+runtime_analyzer_build: PASS
+runtime_analyzer: PASS
+geometry_runtime_analyzer_build: PASS
+geometry_runtime_analyzer: PASS
+guard_runtime_analyzer_build: PASS
+guard_runtime_analyzer: PASS
+trace_export_analyzer_build: PASS
+trace_export_analyzer: PASS
+trace_runtime_analyzer_build: PASS
+trace_runtime_analyzer: PASS
+trace_enabled_analyzer: PASS
+estimator_analyzer_build: PASS
+estimator_analyzer: PASS
+motion_profile_analyzer_build: PASS
+motion_profile_analyzer: PASS
+feedback_guard_analyzer_build: PASS
+feedback_guard_analyzer: PASS
+driver_analyzer_build: PASS
+driver_analyzer: PASS
+unified: PASS
+trace: PASS
+baseline_build: PASS
+baseline: PASS
+candidate_build: PASS
+candidate: PASS
+80000 NORMAL/PIVOT transitions, reset/prime/dt/sign differential: PASS
+pivot_guard_strict_build: PASS
+pivot_guard_strict: PASS
+pivot_guard_optimized_build: PASS
+pivot_guard_optimized: PASS
+pivot_guard_analyzer_build: PASS
+pivot_guard_analyzer: PASS
+pivot_guard_runtime_strict_build: PASS
+pivot_guard_runtime_strict: PASS
+pivot_guard_runtime_optimized_build: PASS
+pivot_guard_runtime_optimized: PASS
+pivot_guard_runtime_analyzer_build: PASS
+pivot_guard_runtime_analyzer: PASS
+encoder_acquisition_build: PASS
+encoder_acquisition: PASS
+encoder_diag_build: PASS
+encoder_diag: PASS
+odometry: PASS
+strict build: PASS
+strict run: PASS
+PASS: .40rad/s => +/-603.516cps, both wheels per side share targets; physical210/effective395 kept distinct
+PASS: right-turn symmetry and small .10rad/s command retained without hidden floor
+PASS: 1271 mixed forward/reverse/turn commands round-trip consistently with curvature-preserving saturation
+PASS: straight targets unchanged; NULL/NaN/invalid limit rejected
+optimized build: PASS
+optimized run: PASS
+PASS: .40rad/s => +/-603.516cps, both wheels per side share targets; physical210/effective395 kept distinct
+PASS: right-turn symmetry and small .10rad/s command retained without hidden floor
+PASS: 1271 mixed forward/reverse/turn commands round-trip consistently with curvature-preserving saturation
+PASS: straight targets unchanged; NULL/NaN/invalid limit rejected
+analyzer build: PASS
+analyzer run: PASS
+PASS: .40rad/s => +/-603.516cps, both wheels per side share targets; physical210/effective395 kept distinct
+PASS: right-turn symmetry and small .10rad/s command retained without hidden floor
+PASS: 1271 mixed forward/reverse/turn commands round-trip consistently with curvature-preserving saturation
+PASS: straight targets unchanged; NULL/NaN/invalid limit rejected
+runtime strict build: PASS
+runtime strict run: PASS
+PASS: real runtime both turn directions/wrap retain .40rad/s and +/-604cps targets for15.2s supplied-feedback simulation, then STOP disables four outputs
+runtime optimized build: PASS
+runtime optimized run: PASS
+PASS: real runtime both turn directions/wrap retain .40rad/s and +/-604cps targets for15.2s supplied-feedback simulation, then STOP disables four outputs
+runtime analyzer build: PASS
+runtime analyzer run: PASS
+PASS: real runtime both turn directions/wrap retain .40rad/s and +/-604cps targets for15.2s supplied-feedback simulation, then STOP disables four outputs
+PASS: 14 coherent production-transport snapshots; stale caller, IRQ interleavings, 50/51ms, tick wrap, DTR, deconfigure, queue flush
+PASS: 50 production parser STOP/GET_STATUS/restart cycles; 0x0150 preserved; real SOF 51ms/DTR/deconfigure stop; no automatic replay
+PASS: telemetry reserve, 15 FIFO + 3 retry + 1 in-flight; exact overflow accounting and FIFO order
+PASS: USBD_BUSY keeps frame queued for retry without false drop
+PASS: DTR flush removes FIFO/retry data but preserves in-flight buffer ownership
+PASS: SOF timeout guard, buffer ownership, deconfiguration and no queued replay
+PASS: full battery/IMU + preexisting burst + VELOCITY/STOP/GET_STATUS; ACKs/sequence/0x0150, zero drop
+PASS: near-full telemetry yields reserved replies and deferred fresh samples; no sequence consumption on deferral
+PASS: excessive stalled-host burst remains bounded, records real control drops and still executes STOP
+PASS: 50 production parser STOP/GET_STATUS/restart cycles; 0x0150 preserved; real SOF 51ms/DTR/deconfigure stop; no automatic replay
+PASS: signed RAW, scales, baseline, temperature, state/flags and 52-byte layout; legacy unchanged
+PASS: malformed selectors rejected; invalid bias zeroed; fresh calibration baseline and flags visible
+PASS: selector does not refresh motion command; RAW mode retains real SOF/DTR/deconfigure stops
+PASS: session expiry before/after parsing; RAW backpressure/STOP burst/sequence/0x0150; single snapshot per IMU frame
+PASS: RAW v2 exact signed milli-baseline/format/scale, coarse RAW v1 compatibility, precise SI and DTR fallback
+PASS: independent DRDY/USB clocks, 9/10/11 ms sample timestamps, SI/RAW and tick wrap; no artificial duplicate/skip
+PASS: immediate fault/calibration/recovery state, 100 ms stalled health, explicit query, TX retry cursor and source-count wrap
+PASS: pre-scheduler logging, task-local nesting, no USB UART/mutex wait, deferred original timestamp
+PASS: finite log queue, truncation, full/UART-failure accounting, mutex retry and ISR rejection
+PASS: permanent motor/safety/IMU producers are independent and never acquire UART/mutex
+PASS: 14 coherent production-transport snapshots; stale caller, IRQ interleavings, 50/51ms, tick wrap, DTR, deconfigure, queue flush
+PASS: 50 production parser STOP/GET_STATUS/restart cycles; 0x0150 preserved; real SOF 51ms/DTR/deconfigure stop; no automatic replay
+PASS: telemetry reserve, 15 FIFO + 3 retry + 1 in-flight; exact overflow accounting and FIFO order
+PASS: USBD_BUSY keeps frame queued for retry without false drop
+PASS: DTR flush removes FIFO/retry data but preserves in-flight buffer ownership
+PASS: SOF timeout guard, buffer ownership, deconfiguration and no queued replay
+PASS: full battery/IMU + preexisting burst + VELOCITY/STOP/GET_STATUS; ACKs/sequence/0x0150, zero drop
+PASS: near-full telemetry yields reserved replies and deferred fresh samples; no sequence consumption on deferral
+PASS: excessive stalled-host burst remains bounded, records real control drops and still executes STOP
+PASS: 50 production parser STOP/GET_STATUS/restart cycles; 0x0150 preserved; real SOF 51ms/DTR/deconfigure stop; no automatic replay
+PASS: signed RAW, scales, baseline, temperature, state/flags and 52-byte layout; legacy unchanged
+PASS: malformed selectors rejected; invalid bias zeroed; fresh calibration baseline and flags visible
+PASS: selector does not refresh motion command; RAW mode retains real SOF/DTR/deconfigure stops
+PASS: session expiry before/after parsing; RAW backpressure/STOP burst/sequence/0x0150; single snapshot per IMU frame
+PASS: RAW v2 exact signed milli-baseline/format/scale, coarse RAW v1 compatibility, precise SI and DTR fallback
+PASS: independent DRDY/USB clocks, 9/10/11 ms sample timestamps, SI/RAW and tick wrap; no artificial duplicate/skip
+PASS: immediate fault/calibration/recovery state, 100 ms stalled health, explicit query, TX retry cursor and source-count wrap
+PASS: pre-scheduler logging, task-local nesting, no USB UART/mutex wait, deferred original timestamp
+PASS: finite log queue, truncation, full/UART-failure accounting, mutex retry and ISR rejection
+PASS: permanent motor/safety/IMU producers are independent and never acquire UART/mutex
+SKIP old-artifact verification: original workspace backup is not present
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.016s
+
+OK

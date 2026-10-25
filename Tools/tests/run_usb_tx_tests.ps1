@@ -1,11 +1,12 @@
 # Native host tests only. Does not open COM ports or build/flash ARM firmware.
+param([ValidateSet('191','200','201','202','203','204','205')][string]$ControlRevision = '191')
 $ErrorActionPreference = 'Stop'
 $testProjectRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
 Push-Location -LiteralPath $testProjectRoot
 try {
     New-Item -ItemType Directory -Path 'build\tests' -Force | Out-Null
     function Invoke-HostTest([string]$name, [string[]]$compilerArgs) {
-        & gcc -std=c11 -Wall -Wextra -Werror @compilerArgs -o "build/tests/$name.exe"
+        & gcc -std=c11 -Wall -Wextra -Werror "-DCHASSIS_CONTROL_REVISION=$ControlRevision" @compilerArgs -o "build/tests/$name.exe"
         if ($LASTEXITCODE -ne 0) { throw "$name native build failed" }
         & (Join-Path $testProjectRoot "build/tests/$name.exe")
         if ($LASTEXITCODE -ne 0) { throw "$name failed" }

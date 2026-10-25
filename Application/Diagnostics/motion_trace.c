@@ -15,6 +15,11 @@
 #define MOTION_TRACE_POST_SAMPLES 25U
 #define MOTION_TRACE_GRACE_MS 1000U
 #define MOTION_TRACE_CONFIRM_MS 100U
+#if CHASSIS_CONTROL_V2
+#define TRACE_CONTROL_EXTENSION " control=1"
+#else
+#define TRACE_CONTROL_EXTENSION ""
+#endif
 /* Diagnostic thresholds only: never feed these into control or safety. */
 enum { TRACE_NONE, TRACE_UNDERSPEED, TRACE_STOP, TRACE_FAULT, TRACE_ESTOP };
 enum { TRACE_ESTOP_PRESENT=1U, TRACE_ESTOP_BOUNDARY=2U,
@@ -29,6 +34,9 @@ typedef struct
   uint32_t ccr;
   int16_t pwm, request, control_pwm;
   uint8_t limited, output_flags;
+#if CHASSIS_CONTROL_V2
+  uint8_t limit_reasons;
+#endif
 } TraceWheel;
 typedef struct
 {
@@ -37,6 +45,10 @@ typedef struct
   uint32_t arr, bdtr, ccer;
   uint16_t direction_bits;
   uint8_t state, stop, fault, standby, standby_pin, flags;
+#if CHASSIS_CONTROL_V2
+  uint32_t feedback_sequence, generation, pivot_mask;
+  float allocation_scale;
+#endif
   TraceWheel wheel[MOTOR_DRIVER_WHEEL_COUNT];
 } TraceSample;
 
@@ -72,11 +84,17 @@ static bool MotionTrace_Snapshot(uint32_t now_ms, TraceSample *sample)
   const bool estop_after = EmergencyStop_IsLatched();
   taskEXIT_CRITICAL();
   if (!ok) { return false; }
-  *sample = (TraceSample){0};
+  memset(sample,0,sizeof(*sample));
   sample->time_ms=now_ms;
   sample->control_time_ms=controller.last_control_ms;
   sample->speed_time_ms=speeds[0].sample_time_ms;
   sample->speed_dt_ms=speeds[0].sample_period_ms;
+#if CHASSIS_CONTROL_V2
+  sample->feedback_sequence=controller.feedback_sequence;
+  sample->generation=controller.motion_generation;
+  sample->pivot_mask=controller.pivot_mask;
+  sample->allocation_scale=controller.targets.scale;
+#endif
   sample->requested=runtime.requested_command;
   sample->applied=runtime.applied_command;
   sample->state=(uint8_t)runtime.state;
@@ -104,6 +122,9 @@ static bool MotionTrace_Snapshot(uint32_t now_ms, TraceSample *sample)
       .request=hardware.requested_permille[w], .control_pwm=c->command_permille,
       .limited=c->limited, .output_flags=(hardware.guard_mask >> w)&1U
     };
+#if CHASSIS_CONTROL_V2
+    sample->wheel[w].limit_reasons=(uint8_t)controller.output_limit_reasons[w];
+#endif
     /* Observations, not invented controller decisions: 1=driver zero guard,
      * 2=I at cap, 4=FF+P+I beyond PWM cap, 8=request differs from applied. */
     if (fabsf(c->integrator_permille)>=WHEEL_SPEED_CONTROL_INTEGRATOR_LIMIT_PERMILLE-0.001f)
@@ -132,7 +153,12 @@ void MotionTrace_Record(uint32_t now_ms)
   const bool blocked=s_dumping || s_frozen;
   taskEXIT_CRITICAL();
   if (blocked) return;
+#if CHASSIS_CONTROL_V2
+  /* Only motorTask produces records; this buffer never escapes the call. */
+  static TraceSample sample;
+#else
   TraceSample sample;
+#endif
   if (!MotionTrace_Snapshot(now_ms, &sample)) return;
   const bool active=sample.state==CHASSIS_RUNTIME_STATE_ACTIVE;
   if (!active && !s_was_active) return;
@@ -224,7 +250,12 @@ bool MotionTrace_ProcessDump(void)
 #define TRACE_PRINT(...) do { \
   if (!DebugLog_Printf(DEBUG_LOG_LEVEL_INFO, __VA_ARGS__)) goto dump_failed; \
 } while (0)
+#if CHASSIS_CONTROL_V2
+  /* Only telemetryTask drains the ring; separate from the producer scratch. */
+  static TraceSample sample;
+#else
   TraceSample sample;
+#endif
   taskENTER_CRITICAL();
   if (!s_dumping) { taskEXIT_CRITICAL(); return false; }
   /* Pause if motion resumes. At most the one already dequeued frame can print
@@ -250,7 +281,7 @@ bool MotionTrace_ProcessDump(void)
     }
   }
   if (header) TRACE_PRINT(
-    "TRACE2 BEGIN schema=3 count=%u reason=%u mask=%u trigger=%lu trigger_seq=%lu post_left=%u",
+    "TRACE2 BEGIN schema=3 count=%u reason=%u mask=%u trigger=%lu trigger_seq=%lu post_left=%u" TRACE_CONTROL_EXTENSION,
     s_count,s_reason,s_trigger_mask,(unsigned long)s_trigger_ms,
     (unsigned long)s_trigger_sequence,s_post_remaining);
   TRACE_PRINT(
@@ -264,6 +295,14 @@ bool MotionTrace_ProcessDump(void)
     (unsigned long)sample.sequence,(unsigned long)sample.speed_time_ms,
     (unsigned long)sample.control_time_ms,sample.flags,(unsigned long)sample.arr,
     (unsigned long)sample.bdtr,(unsigned long)sample.ccer,sample.direction_bits,sample.standby_pin);
+#if CHASSIS_CONTROL_V2
+  /* Separate extension: existing TRACE2 schema3 consumers remain compatible. */
+  TRACE_PRINT("CONTROL2 t=%lu feedback=%lu generation=%lu pivot=%lu scale_x1000=%ld limits=%u/%u/%u/%u",
+    (unsigned long)sample.time_ms,(unsigned long)sample.feedback_sequence,
+    (unsigned long)sample.generation,(unsigned long)sample.pivot_mask,
+    (long)(sample.allocation_scale*1000),sample.wheel[0].limit_reasons,
+    sample.wheel[1].limit_reasons,sample.wheel[2].limit_reasons,sample.wheel[3].limit_reasons);
+#endif
   static const char *const names[]={"LF","LR","RF","RR"};
   for (uint32_t w=0U; w<MOTOR_DRIVER_WHEEL_COUNT; ++w)
   {

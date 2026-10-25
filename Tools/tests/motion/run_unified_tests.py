@@ -47,6 +47,12 @@ for label, extra in [('strict', []), ('optimized', ['-O2']), ('analyzer', ['-fan
 
 # NORMAL output is compared byte for byte against sealed .21 source.
 baseline = ROOT / 'docs/stm32_evidence/2026-10-22-unified-pivot-v1/baseline_0.18.21'
+portable_baseline=ROOT/'Tools/tests/baselines/v01821'
+if portable_baseline.exists():
+    manifest=json.loads((portable_baseline/'manifest.json').read_text())
+    for name,expected in manifest['files'].items():
+        assert hashlib.sha256((portable_baseline/name).read_bytes()).hexdigest()==expected
+    baseline=portable_baseline
 outputs = []
 for label, source, inc in [
     ('baseline', baseline / 'wheel_speed_controller.c', ['-I' + str(baseline)]),

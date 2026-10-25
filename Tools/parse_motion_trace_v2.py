@@ -12,7 +12,7 @@ WHEELS = ('LF', 'LR', 'RF', 'RR')
 
 def fields(text):
     result = {}
-    for key, value in re.findall(r'(\w+)=(-?\d+(?:/-?\d+)?)', text):
+    for key, value in re.findall(r'(\w+)=(-?\d+(?:/-?\d+)*)', text):
         if key in result:
             raise ValueError('duplicate field: ' + key)
         result[key] = [int(x) for x in value.split('/')] if '/' in value else int(value)
@@ -26,6 +26,8 @@ def parse(text):
             return
         if 'snapshot' not in frame or set(frame['wheels']) != set(WHEELS):
             raise ValueError('incomplete snapshot/wheels')
+        if capture['header'].get('control')==1 and 'control' not in frame:
+            raise ValueError('missing revision 200 control extension')
         for wheel in frame['wheels'].values():
             if 'total' not in wheel or 'pwm' not in wheel:
                 raise ValueError('missing wheel detail or legacy values')
@@ -56,6 +58,20 @@ def parse(text):
             for required in ('seq', 'speed_t', 'control_t', 'flags', 'arr', 'bdtr', 'ccer', 'dirs', 'pin'):
                 if required not in frame['snapshot']:
                     raise ValueError('missing SNAP field ' + required)
+        elif 'CONTROL2 t=' in line and capture is not None:
+            if frame is None or 'control' in frame:
+                raise ValueError('orphan/duplicate CONTROL2')
+            data=fields(line.split('CONTROL2 ',1)[1])
+            required=('t','feedback','generation','pivot','scale_x1000','limits')
+            if any(k not in data for k in required):
+                raise ValueError('missing CONTROL2 field')
+            if data['t']!=frame['t'] or not isinstance(data['limits'],list) or len(data['limits'])!=4:
+                raise ValueError('CONTROL2 timestamp/limits mismatch')
+            if not (0<=data['feedback']<=0xffffffff and 0<=data['generation']<=0xffffffff
+                    and 0<=data['pivot']<=15 and 0<=data['scale_x1000']<=1000
+                    and all(0<=reason<=31 for reason in data['limits'])):
+                raise ValueError('invalid CONTROL2 range')
+            frame['control']=data
         elif (enc := re.search(r'TRACE2 ENC (LF|LR|RF|RR) (.*)',line)) and capture is not None:
             if frame is None: raise ValueError('orphan encoder diagnostic')
             name,tail=enc.groups()

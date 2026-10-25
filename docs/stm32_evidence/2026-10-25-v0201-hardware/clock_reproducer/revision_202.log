@@ -1,0 +1,7 @@
+PASS: Stop invalidates cold/adopted startup before enable; discarded start leaves four PI states reset, including wrap
+PASS: Stop and replacement command interrupt private computation; stale/repeated/invalid feedback cuts all outputs; 40/41ms and tick wrap
+PASS: a new command supersedes runtime shaping without false fault; run metrics cover all wheels and survive Stop
+PASS: pivot hysteresis survives 0.9/1.1mm/s jitter and exits at 4mm/s
+PASS: low-speed NORMAL no-feedback condition now latches within the existing 1s+2s feedback-guard envelope
+PASS: static FF envelope scales all targets together, preserving mixed-motion curvature in both directions
+PASS: rapid NORMAL/PIVOT transitions cannot refresh the 1cps no-feedback grace/deadline

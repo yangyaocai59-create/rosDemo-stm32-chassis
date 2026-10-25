@@ -1,0 +1,152 @@
+{
+  "reference": "IMU as designated by user",
+  "runs": [
+    {
+      "source": "docs/stm32_evidence/2026-10-25-v0202-left-10s/capture",
+      "measurement_sha256": "74dd3f0b503e334602701458d43ba7c026608e75f2a0b25229c088c0b0f46c84",
+      "encoder_deg": 233.46835443037978,
+      "imu_deg": 227.33727889921641,
+      "whole_run_apparent_track_mm": 405.65278359332854,
+      "windows": [
+        {
+          "start_s": 1.0,
+          "end_s": 2.0,
+          "encoder_rate_deg_s": 25.07278481012659,
+          "imu_rate_deg_s": 24.954621613744695,
+          "apparent_effective_track_mm": 396.87037348404994
+        },
+        {
+          "start_s": 2.0,
+          "end_s": 3.0,
+          "encoder_rate_deg_s": 22.898734177215175,
+          "imu_rate_deg_s": 23.93710586537192,
+          "apparent_effective_track_mm": 377.86522944215835
+        },
+        {
+          "start_s": 3.0,
+          "end_s": 4.0,
+          "encoder_rate_deg_s": 22.87025316455697,
+          "imu_rate_deg_s": 25.606406942329627,
+          "apparent_effective_track_mm": 352.79256556164563
+        },
+        {
+          "start_s": 4.0,
+          "end_s": 5.0,
+          "encoder_rate_deg_s": 22.91772151898735,
+          "imu_rate_deg_s": 23.443376674151693,
+          "apparent_effective_track_mm": 386.1431791940259
+        },
+        {
+          "start_s": 5.0,
+          "end_s": 6.0,
+          "encoder_rate_deg_s": 23.174050632911403,
+          "imu_rate_deg_s": 23.370473524299342,
+          "apparent_effective_track_mm": 391.68012537197563
+        },
+        {
+          "start_s": 6.0,
+          "end_s": 7.0,
+          "encoder_rate_deg_s": 23.458860759493632,
+          "imu_rate_deg_s": 21.7414399211834,
+          "apparent_effective_track_mm": 426.2022218211763
+        },
+        {
+          "start_s": 7.0,
+          "end_s": 8.0,
+          "encoder_rate_deg_s": 22.680379746835456,
+          "imu_rate_deg_s": 18.568319437657465,
+          "apparent_effective_track_mm": 482.47500427158855
+        },
+        {
+          "start_s": 8.0,
+          "end_s": 9.0,
+          "encoder_rate_deg_s": 22.718354430379776,
+          "imu_rate_deg_s": 19.136315418282493,
+          "apparent_effective_track_mm": 468.9382362200537
+        }
+      ],
+      "tail_integral_at_50_samples": {
+        "LF": 0,
+        "LR": 0,
+        "RF": 34,
+        "RR": 0
+      },
+      "net_counts": [
+        -6145,
+        -6074,
+        6265,
+        6108
+      ]
+    },
+    {
+      "source": "docs/stm32_evidence/2026-10-25-v0202-imu-left-180/capture",
+      "measurement_sha256": "7e64d5441b3b7ae16b3f152e655b89df2bcb4fcf2f011fae2bb5b694125cebd5",
+      "encoder_deg": 167.9905063291139,
+      "imu_deg": 180.5830320724646,
+      "whole_run_apparent_track_mm": 367.4556199353906,
+      "windows": [
+        {
+          "start_s": 1.0,
+          "end_s": 2.0,
+          "encoder_rate_deg_s": 24.911392405063292,
+          "imu_rate_deg_s": 27.768677360225063,
+          "apparent_effective_track_mm": 354.3560923825091
+        },
+        {
+          "start_s": 2.0,
+          "end_s": 3.0,
+          "encoder_rate_deg_s": 23.15506329113925,
+          "imu_rate_deg_s": 24.252022841894686,
+          "apparent_effective_track_mm": 377.1334894258847
+        },
+        {
+          "start_s": 3.0,
+          "end_s": 4.0,
+          "encoder_rate_deg_s": 23.268987341772146,
+          "imu_rate_deg_s": 26.56847974845276,
+          "apparent_effective_track_mm": 345.94565014715454
+        },
+        {
+          "start_s": 4.0,
+          "end_s": 5.0,
+          "encoder_rate_deg_s": 22.5,
+          "imu_rate_deg_s": 24.715270678413916,
+          "apparent_effective_track_mm": 359.59549525639056
+        },
+        {
+          "start_s": 5.0,
+          "end_s": 6.0,
+          "encoder_rate_deg_s": 23.174050632911374,
+          "imu_rate_deg_s": 25.280894613767018,
+          "apparent_effective_track_mm": 362.0817277176262
+        },
+        {
+          "start_s": 6.0,
+          "end_s": 7.0,
+          "encoder_rate_deg_s": 20.781645569620252,
+          "imu_rate_deg_s": 21.4727650058978,
+          "apparent_effective_track_mm": 382.28658478520816
+        }
+      ],
+      "tail_integral_at_50_samples": {
+        "LF": 19,
+        "LR": 0,
+        "RF": 60,
+        "RR": 0
+      },
+      "net_counts": [
+        -4463,
+        -4331,
+        4577,
+        4324
+      ]
+    }
+  ],
+  "best_common_scalar_on_these_two_endpoints_only": 1.0218489365710968,
+  "best_common_track_mm": 386.55420176435956,
+  "minimum_worst_relative_error_percent_on_these_two_endpoints": 4.940725451126071,
+  "single_constant_calibration_accepted": false,
+  "firmware_modified": false,
+  "new_motion_commanded": false,
+  "interpretation": "Fixed geometry cannot fit both captures. This does not isolate a unique mechanical cause; matched-condition repeated calibration remains necessary."
+}

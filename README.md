@@ -1,8 +1,22 @@
-???????**0.19.1-effective-track-candidate**????????????ROS?395mm?????????????????????????/?????[????????????](docs/STM32_EFFECTIVE_TRACK_0.19.1_20261023.md)???.19.0?????????????
-
-???????**0.19.0-control-simplification-candidate**?????.25????????????????????????????STOP/????????????.25?????????????????????????????[???????](docs/STM32_CONTROL_SIMPLIFICATION_0.19.0_20261023.md)?????????? `Tools/tests/run_motion_tests.ps1`????????????????????????????????
-
 # rosDemo STM32 四轮差速底盘固件
+
+当前交接：**0.20.5**。上位机工程师请先阅读 [最新交接说明](docs/STM32_HOST_HANDOFF_0.20.5_20261025.md)，代码和固件位于 `codex/four-wheel-v0200` 分支；可直接烧录的 HEX 在 [Release 目录](releases/0.20.5/Release/)，历史离线包保持原样。
+
+VS Code 已接入成功编译后的自动同步：当前使用 `WheelV0205Release`，构建分析、代码补全路径与版本状态一起更新，烧录报告单独显示。说明见 [VS Code 固件状态同步](docs/VSCODE_FIRMWARE_STATUS_20261025.md)。
+
+烧录约束：用户的工具固定执行全片擦除，后续升级按“烧录 → 确认 IMU 有效采样 → 静止校准并保存 → 运动验证”执行。普通断电保留校准，下次全片擦除后需重做校准。详见 [固定全片擦除流程](docs/STM32_FULL_ERASE_FLASH_WORKFLOW_20261025.md)。
+
+当前 **0.20.5-wheel-control-candidate**：IMU 已恢复，静止校准保存及普通断电恢复已验证。左右转各 10 秒正常停车，1 秒窗口最大角速度偏差为 8.8% / 11.6%，右转有一个窗口略超 ±10%。重新上电后按 IMU 左/右各转 180°，停车后统一时间窗为 +180.40° / −180.36°，无新增故障；本轮未重新校准、改固件或烧录。完整停车路径重复验收尚未复测。独立配置 `WheelV0205Debug` / `WheelV0205Release`，全部旧包保留；见 [断电恢复与双向 180°](docs/stm32_evidence/2026-10-25-v0205-reboot-180-bidirectional/README.md)、[10 秒实测](docs/stm32_evidence/2026-10-25-v0205-hardware/README.md)及[交付时说明](docs/STM32_WHEEL_CONTROL_0.20.5_20261025.md)。
+
+IMU 定角演示：按 IMU 左转 180°，180.045° 时触发停车，停车后约 1 秒为 180.583°，同期编码器 167.991°。主机实时控制，未改写固件；详见 [180° 左转记录](docs/stm32_evidence/2026-10-25-v0202-imu-left-180/README.md)。
+
+0.20.2 补充实测：+0.40 rad/s 左转发令 10 秒，编码器 233.468°、扣静止零偏后的 IMU 参考 227.337°，终点差 +6.131°（相对 IMU 2.697%）。未调整轮距或参数；详见 [10 秒转角对照](docs/stm32_evidence/2026-10-25-v0202-left-10s/README.md)。
+
+最新独立候选 **0.20.2-wheel-control-candidate**：修复反馈年龄日志回绕和潜在安全误停竞态，使用 `WheelV0202Debug` / `WheelV0202Release`。用户烧录后，六项短时上板复测通过，运行年龄日志 2–20 ms，未再出现回绕；带载标定和角度精度仍待验收。0.19.1、0.20.0、0.20.1 及全部既有产物保留。详见 [0.20.2 上板记录](docs/stm32_evidence/2026-10-25-v0202-hardware/README.md)及[实现说明](docs/STM32_WHEEL_CONTROL_0.20.2_20261025.md)。
+
+最新独立候选 **0.20.1-wheel-control-candidate**：在0.20.0优化基础上增加启动阶段停车代次校验，使用 `WheelV0201Debug` / `WheelV0201Release`。0.19.1与0.20.0均保留；详见 [0.20.1说明](docs/STM32_WHEEL_CONTROL_0.20.1_20261024.md)。
+
+新增独立候选 **0.20.0-wheel-control-candidate**：使用 `WheelV0200Debug` / `WheelV0200Release` 配置和独立输出目录；旧版 0.19.1 固件、发布包和源码备份均保留。新版控制行为、验证范围及待实测项目见 [0.20.0 交付说明](docs/STM32_WHEEL_CONTROL_0.20.0_20261024.md)。这是离线验证候选，尚未烧录或完成实车验收。
 
 STM32F407ZGT6 四轮差速移动机器人底盘控制器工程，配套 Jetson Orin Nano + Ubuntu 22.04 + ROS 2 Humble。
 

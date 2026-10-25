@@ -11,9 +11,16 @@
 
 #include "chassis_kinematics.h"
 #include "wheel_speed_controller.h"
+#if CHASSIS_CONTROL_V2
+#include "control_run_metrics.h"
+#endif
 
 #ifdef __cplusplus
 extern "C" {
+#endif
+
+#if CHASSIS_CONTROL_V2
+bool ChassisController_GetRunMetrics(ChassisRunMetrics *metrics);
 #endif
 
 typedef enum
@@ -40,6 +47,11 @@ typedef struct
   uint32_t limited_mask;
   uint32_t last_command_ms;
   uint32_t last_control_ms;
+  uint32_t feedback_time_ms;
+  uint32_t feedback_sequence;
+  uint32_t motion_generation;
+  uint32_t pivot_mask;
+  uint32_t output_limit_reasons[MOTOR_DRIVER_WHEEL_COUNT];
 } ChassisControllerStatus;
 
 /** Minimal coherent snapshot for nested safety checks (not a wire format). */
@@ -67,7 +79,7 @@ bool ChassisController_StartFromActiveOutputs(
 bool ChassisController_SetCommand(const ChassisVelocityCommand *command,
                                   uint32_t now_ms);
 
-/** Run one controller step; called from the 10 ms motor task. */
+/** Run one controller step from the configured motor sample task. */
 void ChassisController_Process(uint32_t now_ms);
 
 /** Enforce E-stop and command-heartbeat timeout from the safety task. */

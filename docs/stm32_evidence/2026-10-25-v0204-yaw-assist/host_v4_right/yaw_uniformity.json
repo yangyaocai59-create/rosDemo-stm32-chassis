@@ -1,0 +1,35 @@
+{
+  "capture": "v0202_right_explicit_20261025_073313_708451",
+  "method": "Nonoverlapping 1-second source-time gyro integrals; first 1s and final incomplete second excluded; pre-motion stationary bias subtracted",
+  "window_seconds": [
+    1,
+    9
+  ],
+  "requested_rad_s": -0.4,
+  "rates_rad_s": [
+    -0.4122185610389609,
+    -0.3941846110389611,
+    -0.39100126103896105,
+    -0.3929690110389611,
+    -0.38841311103896103,
+    -0.39677866103896087,
+    -0.3961730610389609,
+    -0.39486081103896115
+  ],
+  "mean_rate_rad_s": -0.395824886038961,
+  "std_rate_rad_s": 0.006705978900158737,
+  "relative_error_percent": [
+    -3.054640259740213,
+    1.4538472402597369,
+    2.2496847402597444,
+    1.7577472402597327,
+    2.896722240259747,
+    0.8053347402597888,
+    0.9567347402597848,
+    1.284797240259719
+  ],
+  "rms_relative_error_percent": 1.974869134858009,
+  "max_abs_relative_error_percent": 3.054640259740213,
+  "all_windows_within_10_percent": true,
+  "is_repeated_same_condition_comparison": false
+}

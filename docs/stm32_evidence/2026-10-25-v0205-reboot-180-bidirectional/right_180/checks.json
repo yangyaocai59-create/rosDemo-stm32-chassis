@@ -1,0 +1,79 @@
+{
+  "checks": {
+    "one_motion": true,
+    "target_reached": true,
+    "stopped": true,
+    "no_error": true,
+    "no_fault": true,
+    "transport_clean": true,
+    "bias_valid": true,
+    "zero_final_outputs": true,
+    "zero_final_wheels": true,
+    "imu_target_within_2_deg": true,
+    "yaw_ready": true,
+    "bounded_correction": true,
+    "yaw_intervened": true,
+    "no_overrun": true,
+    "no_online_imu_gaps": true
+  },
+  "active_yaw_logs": [
+    [
+      142671,
+      1,
+      1,
+      -400,
+      0
+    ],
+    [
+      143671,
+      1,
+      1,
+      -400,
+      4
+    ],
+    [
+      144671,
+      1,
+      1,
+      -400,
+      30
+    ],
+    [
+      145671,
+      1,
+      1,
+      -400,
+      45
+    ],
+    [
+      146670,
+      1,
+      1,
+      -400,
+      46
+    ],
+    [
+      147670,
+      1,
+      1,
+      -400,
+      51
+    ],
+    [
+      148670,
+      1,
+      1,
+      -400,
+      7
+    ],
+    [
+      149670,
+      1,
+      1,
+      -200,
+      0
+    ]
+  ],
+  "external_angle_truth_available": false,
+  "trace_available": false
+}

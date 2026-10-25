@@ -1,0 +1,311 @@
+{
+  "folder": "build\\hardware_tests\\v0202_left_explicit_20261025_055935_068989",
+  "result": "PASS_BOUNDED_HARDWARE_CHECK",
+  "setup": "unspecified",
+  "firmware_user_report": "0.20.2",
+  "case": "left",
+  "stop_mode": "explicit",
+  "boot_banner_verified": false,
+  "mcu_active_span_s": 7.732,
+  "events_this_run": [
+    {
+      "seq": 28,
+      "t": 1141342,
+      "kind": 1,
+      "state": 2,
+      "generation": 21,
+      "command": 401
+    },
+    {
+      "seq": 29,
+      "t": 1149074,
+      "kind": 2,
+      "state": 2,
+      "generation": 21,
+      "command": 524
+    },
+    {
+      "seq": 30,
+      "t": 1149074,
+      "kind": 2,
+      "state": 1,
+      "generation": 22,
+      "command": 524
+    }
+  ],
+  "host_velocity_span_s": 7.764999999999418,
+  "startup_exclusion_ms": 800,
+  "command_mm_s_mrad_s": [
+    0,
+    400
+  ],
+  "verified_stop_reason": 2,
+  "net_counts_including_settling": [
+    -4463,
+    -4331,
+    4577,
+    4324
+  ],
+  "wheel_distance_mm_including_settling": [
+    -584.2053338738019,
+    -566.9265742790581,
+    599.1278989783535,
+    566.0102764217611
+  ],
+  "active_trace_samples": 127,
+  "settled_trace_samples": 127,
+  "settled_trace_source_span_ms": [
+    1146543,
+    1149063
+  ],
+  "snapshot_flags": [
+    0
+  ],
+  "feedback_age_ms_range": [
+    1,
+    1
+  ],
+  "control_limit_reasons": [
+    0
+  ],
+  "target_scale_x1000": [
+    1000
+  ],
+  "pivot_masks": [
+    15
+  ],
+  "vm_mV_range": [
+    10296,
+    10626
+  ],
+  "accepted_delta": 124,
+  "rejected_delta": 0,
+  "device_transport_counter_deltas": [
+    0,
+    0,
+    0
+  ],
+  "host_crc_errors": 0,
+  "fault_pairs": [
+    [
+      0,
+      0
+    ]
+  ],
+  "trace_final_stby": 0,
+  "trace_final_ccr": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "last_three_wheel_feedback_zero": true,
+  "final_stopped_verified": true,
+  "wheels": {
+    "LF": {
+      "settled_mean_target_cps": 479.5748031496063,
+      "settled_mean_feedback_cps": 488.0236220472441,
+      "settled_rms_error_cps": 36.7735140907512,
+      "settled_pwm_magnitude_range": [
+        105,
+        156
+      ],
+      "settled_max_integral_magnitude": 50.0,
+      "settled_integral_at_50_samples": 19,
+      "settled_zero_net_count_samples": 0,
+      "trace_request_applied_mismatch_samples": 0,
+      "encoder_bad_values": [
+        0
+      ]
+    },
+    "LR": {
+      "settled_mean_target_cps": 479.5748031496063,
+      "settled_mean_feedback_cps": 463.0551181102362,
+      "settled_rms_error_cps": 52.34515973833202,
+      "settled_pwm_magnitude_range": [
+        74,
+        126
+      ],
+      "settled_max_integral_magnitude": 21.5,
+      "settled_integral_at_50_samples": 0,
+      "settled_zero_net_count_samples": 0,
+      "trace_request_applied_mismatch_samples": 0,
+      "encoder_bad_values": [
+        0
+      ]
+    },
+    "RF": {
+      "settled_mean_target_cps": 479.5748031496063,
+      "settled_mean_feedback_cps": 533.1023622047244,
+      "settled_rms_error_cps": 82.31569726211418,
+      "settled_pwm_magnitude_range": [
+        105,
+        168
+      ],
+      "settled_max_integral_magnitude": 50.0,
+      "settled_integral_at_50_samples": 60,
+      "settled_zero_net_count_samples": 0,
+      "trace_request_applied_mismatch_samples": 0,
+      "encoder_bad_values": [
+        0
+      ]
+    },
+    "RR": {
+      "settled_mean_target_cps": 479.5748031496063,
+      "settled_mean_feedback_cps": 439.31496062992125,
+      "settled_rms_error_cps": 66.59354914255265,
+      "settled_pwm_magnitude_range": [
+        83,
+        126
+      ],
+      "settled_max_integral_magnitude": 38.0,
+      "settled_integral_at_50_samples": 0,
+      "settled_zero_net_count_samples": 0,
+      "trace_request_applied_mismatch_samples": 0,
+      "encoder_bad_values": [
+        0
+      ]
+    }
+  },
+  "timing_lines": [
+    "[0001138332] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=812/344",
+    "[0001138342] [INFO ] CTRL EXEC us max: motor=368 safety=94 acquire=54 control=248 trace=118",
+    "[0001138350] [INFO ] CTRL V2 gen=28 n=500 feedback=34727 age=443808 mode=0 scale_x1000=1000 rms=77/56/84/61 zero_max_ms=60/80/40/80",
+    "[0001139332] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=812/344",
+    "[0001139342] [INFO ] CTRL EXEC us max: motor=368 safety=94 acquire=54 control=248 trace=118",
+    "[0001139350] [INFO ] CTRL V2 gen=28 n=500 feedback=34727 age=444808 mode=0 scale_x1000=1000 rms=77/56/84/61 zero_max_ms=60/80/40/80",
+    "[0001140332] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=812/344",
+    "[0001140342] [INFO ] CTRL EXEC us max: motor=368 safety=94 acquire=54 control=248 trace=118",
+    "[0001140350] [INFO ] CTRL V2 gen=28 n=500 feedback=34727 age=445808 mode=0 scale_x1000=1000 rms=77/56/84/61 zero_max_ms=60/80/40/80",
+    "[0001141332] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=812/344",
+    "[0001141341] [INFO ] CTRL EXEC us max: motor=368 safety=94 acquire=54 control=248 trace=118",
+    "[0001141350] [INFO ] CTRL V2 gen=32 n=1 feedback=57067 age=8 mode=15 scale_x1000=1000 rms=22/22/22/22 zero_max_ms=20/20/20/20",
+    "[0001142332] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=812/344",
+    "[0001142342] [INFO ] CTRL EXEC us max: motor=368 safety=94 acquire=54 control=248 trace=118",
+    "[0001142350] [INFO ] CTRL V2 gen=32 n=51 feedback=57117 age=8 mode=15 scale_x1000=1000 rms=151/134/198/170 zero_max_ms=60/40/60/80",
+    "[0001143332] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=812/344",
+    "[0001143342] [INFO ] CTRL EXEC us max: motor=368 safety=94 acquire=54 control=248 trace=118",
+    "[0001143350] [INFO ] CTRL V2 gen=32 n=101 feedback=57167 age=8 mode=15 scale_x1000=1000 rms=111/107/161/124 zero_max_ms=60/40/60/80",
+    "[0001144332] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=812/344",
+    "[0001144341] [INFO ] CTRL EXEC us max: motor=368 safety=94 acquire=54 control=248 trace=118",
+    "[0001144350] [INFO ] CTRL V2 gen=32 n=151 feedback=57217 age=8 mode=15 scale_x1000=1000 rms=96/89/134/102 zero_max_ms=60/40/60/80",
+    "[0001145332] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=812/344",
+    "[0001145342] [INFO ] CTRL EXEC us max: motor=368 safety=94 acquire=54 control=248 trace=118",
+    "[0001145350] [INFO ] CTRL V2 gen=32 n=201 feedback=57267 age=8 mode=15 scale_x1000=1000 rms=85/79/119/90 zero_max_ms=60/40/60/80",
+    "[0001146332] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=812/344",
+    "[0001146341] [INFO ] CTRL EXEC us max: motor=368 safety=94 acquire=54 control=248 trace=118",
+    "[0001146350] [INFO ] CTRL V2 gen=32 n=251 feedback=57317 age=8 mode=15 scale_x1000=1000 rms=77/72/109/81 zero_max_ms=60/40/60/80",
+    "[0001147332] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=812/344",
+    "[0001147342] [INFO ] CTRL EXEC us max: motor=368 safety=94 acquire=54 control=248 trace=118",
+    "[0001147351] [INFO ] CTRL V2 gen=32 n=301 feedback=57367 age=9 mode=15 scale_x1000=1000 rms=73/67/100/74 zero_max_ms=60/40/60/80",
+    "[0001148332] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=812/344",
+    "[0001148342] [INFO ] CTRL EXEC us max: motor=368 safety=94 acquire=54 control=248 trace=118",
+    "[0001148351] [INFO ] CTRL V2 gen=32 n=351 feedback=57417 age=9 mode=15 scale_x1000=1000 rms=68/64/104/73 zero_max_ms=60/40/60/80",
+    "[0001149332] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=812/344",
+    "[0001149342] [INFO ] CTRL EXEC us max: motor=368 safety=94 acquire=54 control=248 trace=118",
+    "[0001149350] [INFO ] CTRL V2 gen=32 n=387 feedback=57453 age=288 mode=0 scale_x1000=1000 rms=66/65/99/75 zero_max_ms=60/40/60/80",
+    "[0001150332] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=812/344",
+    "[0001150341] [INFO ] CTRL EXEC us max: motor=368 safety=94 acquire=54 control=248 trace=118",
+    "[0001150350] [INFO ] CTRL V2 gen=32 n=387 feedback=57453 age=1288 mode=0 scale_x1000=1000 rms=66/65/99/75 zero_max_ms=60/40/60/80",
+    "[0001151332] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=812/344",
+    "[0001151342] [INFO ] CTRL EXEC us max: motor=368 safety=94 acquire=54 control=248 trace=118",
+    "[0001151350] [INFO ] CTRL V2 gen=32 n=387 feedback=57453 age=2288 mode=0 scale_x1000=1000 rms=66/65/99/75 zero_max_ms=60/40/60/80",
+    "[0001152332] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=812/344",
+    "[0001152342] [INFO ] CTRL EXEC us max: motor=368 safety=94 acquire=54 control=248 trace=118",
+    "[0001152350] [INFO ] CTRL V2 gen=32 n=387 feedback=57453 age=3288 mode=0 scale_x1000=1000 rms=66/65/99/75 zero_max_ms=60/40/60/80",
+    "[0001196082] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=812/344",
+    "[0001196092] [INFO ] CTRL EXEC us max: motor=368 safety=94 acquire=54 control=248 trace=118",
+    "[0001196101] [INFO ] CTRL V2 gen=32 n=387 feedback=57453 age=47039 mode=0 scale_x1000=1000 rms=66/65/99/75 zero_max_ms=60/40/60/80",
+    "[0001197060] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=812/344",
+    "[0001197070] [INFO ] CTRL EXEC us max: motor=368 safety=94 acquire=54 control=248 trace=118",
+    "[0001197078] [INFO ] CTRL V2 gen=32 n=387 feedback=57453 age=48016 mode=0 scale_x1000=1000 rms=66/65/99/75 zero_max_ms=60/40/60/80"
+  ],
+  "active_diagnostics": [
+    {
+      "time_ms": 1141350,
+      "generation": 32,
+      "samples": 1,
+      "feedback_sequence": 57067,
+      "age_ms": 8
+    },
+    {
+      "time_ms": 1142350,
+      "generation": 32,
+      "samples": 51,
+      "feedback_sequence": 57117,
+      "age_ms": 8
+    },
+    {
+      "time_ms": 1143350,
+      "generation": 32,
+      "samples": 101,
+      "feedback_sequence": 57167,
+      "age_ms": 8
+    },
+    {
+      "time_ms": 1144350,
+      "generation": 32,
+      "samples": 151,
+      "feedback_sequence": 57217,
+      "age_ms": 8
+    },
+    {
+      "time_ms": 1145350,
+      "generation": 32,
+      "samples": 201,
+      "feedback_sequence": 57267,
+      "age_ms": 8
+    },
+    {
+      "time_ms": 1146350,
+      "generation": 32,
+      "samples": 251,
+      "feedback_sequence": 57317,
+      "age_ms": 8
+    },
+    {
+      "time_ms": 1147351,
+      "generation": 32,
+      "samples": 301,
+      "feedback_sequence": 57367,
+      "age_ms": 9
+    },
+    {
+      "time_ms": 1148351,
+      "generation": 32,
+      "samples": 351,
+      "feedback_sequence": 57417,
+      "age_ms": 9
+    }
+  ],
+  "active_diagnostic_age_ms_range": [
+    8,
+    9
+  ],
+  "diagnostic_age_unsigned_underflow_samples": 0,
+  "yaw_reference": {
+    "external_truth_available": false,
+    "saved_bias_valid": false,
+    "baseline_samples": 328,
+    "baseline_z_mrad_s": 39.63719512195122,
+    "baseline_z_std_mrad_s": 0.9464732668460601,
+    "imu_gaps_over_30ms": [],
+    "sample_window_ms": [
+      1141351,
+      1150070
+    ],
+    "imu_reference_deg": 180.58665963056617,
+    "encoder_with_track395mm_deg": 167.99050632911394,
+    "command_source_active_integral_deg": null
+  },
+  "checks": {
+    "feedback_age_within_40ms": true,
+    "transport_clean": true,
+    "no_fault": true,
+    "trace_output_disabled": true,
+    "encoder_config_clean": true,
+    "final_stopped": true,
+    "diagnostic_age_no_unsigned_underflow": true,
+    "active_diagnostic_age_within_40ms": true
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "board_version_source": "user reported flash complete after 0.20.4 delivery; startup banner not captured",
+  "new_yaw_diagnostics_observed": true,
+  "motion_sent": false,
+  "fault_clear_sent": false,
+  "reset_requested": false,
+  "imu_identity_hex": "0x70",
+  "imu_state": "IO_FAULT",
+  "imu_sample_count": 0,
+  "imu_reference_valid": false,
+  "yaw_ready": false,
+  "yaw_valid": false,
+  "battery_mV": 10472,
+  "healthy_idle_outputs_zero": true,
+  "previous_sensor_files_unchanged": 10,
+  "sensor_sha256": {
+    "Application/Sensors/imu_bias_units.h": "3da3c824abb4546d43a49c1e47c397af33a3c62121240a86f34e3591f317408d",
+    "Application/Sensors/imu_config.h": "f3d78ea09ed411b67b4a5689610d3d7f7f3a1b397c742515e2e05492cff0611f",
+    "Application/Sensors/imu_service.c": "d3da7816dd031d93ee3bc933becd1b3e637665faf351a02479ba35f1fb1e8a95",
+    "Application/Sensors/imu_service.h": "197e9d4bdb12d3b6b059406a28d53d2102b3fa16af2a9b0a1fd7c2915d1ed91a",
+    "Application/Sensors/mpu6050.c": "a743448ade8cc84bff5465d8f1136bc3237ca18f4eca9099e2d7c1d37e7954f4",
+    "Application/Sensors/mpu6050.h": "6502f162a28c51a4ede13bf9402c665421994b1211980503598e5a9c666915e4",
+    "Application/Sensors/mpu6500.c": "b125ab57f8f07fcad0dd12d2ea9f3de47f1dd9dbdf42a2a7648da64219835bdd",
+    "Application/Sensors/mpu6500.h": "3519988e2f1160db2fc123d9c98fa25fe63fd78c153f6bcc16cf563a6138b06e",
+    "Application/Sensors/mpu_spi_probe.c": "161d1441ec2cf47c720409b64eecb27f90e331a8b6b852a033054715d6f84ea9",
+    "Application/Sensors/mpu_spi_probe.h": "c55bb84e64a3e901457cd12438822a90b6b9e62879e16c03d03e4e1a52ccec24"
+  },
+  "next_step": "operator full power removal and reapply; recheck startup and sensor readiness before motion; root cause not yet determined"
+}

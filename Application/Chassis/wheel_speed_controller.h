@@ -10,6 +10,10 @@
 #include <stdint.h>
 
 #include "motor_driver.h"
+#include "chassis_control_config.h"
+#if CHASSIS_CONTROL_V2
+#include "wheel_control_core.h"
+#endif
 
 #ifdef __cplusplus
 extern "C" {
@@ -25,6 +29,8 @@ typedef struct
   float integrator_permille;
   int16_t command_permille;
   bool limited;
+  /** Detailed limit bits in revision 200; legacy callers retain limited. */
+  uint32_t limit_reasons;
 } WheelSpeedControllerState;
 
 typedef enum
@@ -32,6 +38,24 @@ typedef enum
   WHEEL_SPEED_CONTROL_MODE_NORMAL = 0,
   WHEEL_SPEED_CONTROL_MODE_PIVOT
 } WheelSpeedControlMode;
+
+#if CHASSIS_CONTROL_V2
+/* Single motor-task producer. Caller serializes Begin/Commit with Stop/Reset;
+ * Step only touches the private transaction, with interrupts enabled. */
+typedef struct {
+  WheelControlMemory memory[MOTOR_DRIVER_WHEEL_COUNT];
+  WheelSpeedControllerState state[MOTOR_DRIVER_WHEEL_COUNT];
+  uint32_t revision;
+} WheelSpeedTransaction;
+bool WheelSpeedController_Begin(WheelSpeedTransaction *transaction);
+bool WheelSpeedController_Step(WheelSpeedTransaction *transaction,
+  MotorDriverWheel wheel, float target, float measured, float bias,
+  WheelSpeedControlMode mode, uint32_t elapsed_ms, int16_t *command);
+bool WheelSpeedController_Commit(const WheelSpeedTransaction *transaction);
+/** Static FF envelope only, not a measured loaded motor capability. */
+float WheelSpeedController_GetFeedforwardTargetLimit(MotorDriverWheel wheel,
+  bool forward, WheelSpeedControlMode mode);
+#endif
 
 /** Initialize four independent controller instances. */
 void WheelSpeedController_Init(void);

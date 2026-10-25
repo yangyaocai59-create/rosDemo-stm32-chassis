@@ -6,9 +6,8 @@
             "hidden": true,
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/build/${presetName}",
-		    "toolchainFile": "${sourceDir}/cmake/gcc-arm-none-eabi.cmake",
-            "cacheVariables": {
-            }
+            "toolchainFile": "${sourceDir}/cmake/gcc-arm-none-eabi.cmake",
+            "cacheVariables": {}
         },
         {
             "name": "Debug",
@@ -23,6 +22,102 @@
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release"
             }
+        },
+        {
+            "name": "WheelV0200Debug",
+            "inherits": "default",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CHASSIS_CONTROL_REVISION": "200"
+            }
+        },
+        {
+            "name": "WheelV0200Release",
+            "inherits": "default",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CHASSIS_CONTROL_REVISION": "200"
+            }
+        },
+        {
+            "name": "WheelV0201Debug",
+            "inherits": "default",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CHASSIS_CONTROL_REVISION": "201"
+            }
+        },
+        {
+            "name": "WheelV0201Release",
+            "inherits": "default",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CHASSIS_CONTROL_REVISION": "201"
+            }
+        },
+        {
+            "name": "WheelV0202Debug",
+            "inherits": "default",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CHASSIS_CONTROL_REVISION": "202"
+            }
+        },
+        {
+            "name": "WheelV0202Release",
+            "inherits": "default",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CHASSIS_CONTROL_REVISION": "202"
+            }
+        },
+        {
+            "name": "WheelV0203Debug",
+            "inherits": "default",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CHASSIS_CONTROL_REVISION": "203"
+            }
+        },
+        {
+            "name": "WheelV0204Debug",
+            "inherits": "default",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CHASSIS_CONTROL_REVISION": "204"
+            }
+        },
+        {
+            "name": "WheelV0204Release",
+            "inherits": "default",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CHASSIS_CONTROL_REVISION": "204"
+            }
+        },
+        {
+            "name": "WheelV0203Release",
+            "inherits": "default",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CHASSIS_CONTROL_REVISION": "203"
+            }
+        },
+        {
+            "name": "WheelV0205Debug",
+            "inherits": "default",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CHASSIS_CONTROL_REVISION": "205"
+            }
+        },
+        {
+            "name": "WheelV0205Release",
+            "inherits": "default",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CHASSIS_CONTROL_REVISION": "205"
+            }
         }
     ],
     "buildPresets": [
@@ -33,6 +128,54 @@
         {
             "name": "Release",
             "configurePreset": "Release"
+        },
+        {
+            "name": "WheelV0200Debug",
+            "configurePreset": "WheelV0200Debug"
+        },
+        {
+            "name": "WheelV0200Release",
+            "configurePreset": "WheelV0200Release"
+        },
+        {
+            "name": "WheelV0201Debug",
+            "configurePreset": "WheelV0201Debug"
+        },
+        {
+            "name": "WheelV0201Release",
+            "configurePreset": "WheelV0201Release"
+        },
+        {
+            "name": "WheelV0202Debug",
+            "configurePreset": "WheelV0202Debug"
+        },
+        {
+            "name": "WheelV0202Release",
+            "configurePreset": "WheelV0202Release"
+        },
+        {
+            "name": "WheelV0203Debug",
+            "configurePreset": "WheelV0203Debug"
+        },
+        {
+            "name": "WheelV0203Release",
+            "configurePreset": "WheelV0203Release"
+        },
+        {
+            "name": "WheelV0204Debug",
+            "configurePreset": "WheelV0204Debug"
+        },
+        {
+            "name": "WheelV0204Release",
+            "configurePreset": "WheelV0204Release"
+        },
+        {
+            "name": "WheelV0205Debug",
+            "configurePreset": "WheelV0205Debug"
+        },
+        {
+            "name": "WheelV0205Release",
+            "configurePreset": "WheelV0205Release"
         }
     ]
 }

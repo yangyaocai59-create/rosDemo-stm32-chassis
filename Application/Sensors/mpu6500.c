@@ -6,6 +6,13 @@
 #include "main.h"
 #include "spi.h"
 #include "mpu_spi_probe.h"
+#if defined(CHASSIS_CONTROL_REVISION) && (CHASSIS_CONTROL_REVISION >= 205)
+#include "debug_log.h"
+#define MPU6500_READBACK_FIX 1
+static bool s_verification_reported;
+#else
+#define MPU6500_READBACK_FIX 0
+#endif
 
 #define MPU6500_REG_PWR_MGMT_1 0x6BU
 #define MPU6500_REG_ACCEL_XOUT_H 0x3BU
@@ -80,7 +87,14 @@ bool Mpu6500_ReadWhoAmI(uint8_t *who_am_i)
 
 bool Mpu6500_BeginReset(void)
 {
+#if MPU6500_READBACK_FIX
+  s_verification_reported=false;
+  const bool ok=WriteRegister(MPU6500_REG_PWR_MGMT_1, 0x80U);
+  if (!ok) DEBUG_LOG_ERROR("MPU6500 init reset write failed reg=0x6B");
+  return ok;
+#else
   return WriteRegister(MPU6500_REG_PWR_MGMT_1, 0x80U);
+#endif
 }
 
 bool Mpu6500_Configure(void)
@@ -89,6 +103,10 @@ bool Mpu6500_Configure(void)
   {
     if (!WriteRegister(s_settings[i].address, s_settings[i].value))
     {
+#if MPU6500_READBACK_FIX
+      DEBUG_LOG_ERROR("MPU6500 init write failed reg=0x%02X expected=0x%02X",
+        (unsigned)s_settings[i].address,(unsigned)s_settings[i].value);
+#endif
       return false;
     }
   }
@@ -98,18 +116,49 @@ bool Mpu6500_Configure(void)
 bool Mpu6500_VerifyConfiguration(void)
 {
   uint8_t value;
+#if MPU6500_READBACK_FIX
+  uint8_t user_control=0U;
+#endif
   if (!Mpu6500_ReadWhoAmI(&value) || (value != MPU6500_WHO_AM_I_EXPECTED))
   {
+#if MPU6500_READBACK_FIX
+    DEBUG_LOG_ERROR("MPU6500 verify identity failed actual=0x%02X expected=0x70",(unsigned)value);
+#endif
     return false;
   }
   for (uint32_t i = 0U; i < sizeof(s_settings)/sizeof(s_settings[0]); ++i)
   {
+#if MPU6500_READBACK_FIX
+    /* RM-MPU-6500A-00 rev 2.1 section 4.33: I2C_IF_DIS is a command
+     * bit that auto-clears. Keep writing it, but verify stable bits only.
+     * Retain the settings table/fingerprint for saved-bias compatibility. */
+    const uint8_t mask=s_settings[i].address==0x6AU ?
+      (uint8_t)(s_settings[i].verify_mask & ~0x10U) : s_settings[i].verify_mask;
+    if (!ReadRegisters(s_settings[i].address, &value, 1U)) {
+      DEBUG_LOG_ERROR("MPU6500 verify read failed reg=0x%02X",(unsigned)s_settings[i].address);
+      return false;
+    }
+    if ((value & mask)!=(s_settings[i].value & mask)) {
+      DEBUG_LOG_ERROR("MPU6500 verify mismatch reg=0x%02X actual=0x%02X expected=0x%02X mask=0x%02X",
+        (unsigned)s_settings[i].address,(unsigned)value,
+        (unsigned)(s_settings[i].value & mask),(unsigned)mask);
+      return false;
+    }
+    if (s_settings[i].address==0x6AU) user_control=value;
+#else
     if (!ReadRegisters(s_settings[i].address, &value, 1U) ||
         ((value & s_settings[i].verify_mask) != s_settings[i].value))
     {
       return false;
     }
+#endif
   }
+#if MPU6500_READBACK_FIX
+  if (!s_verification_reported) {
+    DEBUG_LOG_INFO("MPU6500 verify OK USER_CTRL=0x%02X stable_mask=0x60",(unsigned)user_control);
+    s_verification_reported=true;
+  }
+#endif
   return true;
 }
 

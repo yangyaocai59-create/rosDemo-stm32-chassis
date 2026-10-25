@@ -4,3 +4,36 @@ docs/stm32_evidence/2026-10-23-v0191-calibration-repeat-right/** -text whitespac
 docs/stm32_evidence/2026-10-23-v0191-ground-left-400mrad-15s/**/*.bin binary
 docs/stm32_evidence/2026-10-23-v0191-calibration-repeat-right/**/*.bin binary
 releases/0.19.1/** -text whitespace=cr-at-eol
+
+# Differential fixtures and new releases retain their recorded bytes.
+Tools/tests/baselines/** -text
+docs/stm32_evidence/2026-10-24-v0201-portable/** -text whitespace=cr-at-eol
+docs/stm32_evidence/2026-10-25-v0202-turn-geometry-audit/** -text whitespace=cr-at-eol
+releases/0.20.0/** -text whitespace=cr-at-eol
+releases/0.20.1/** -text whitespace=cr-at-eol
+releases/0.20.2/** -text whitespace=cr-at-eol
+releases/0.20.3/** -text whitespace=cr-at-eol
+releases/0.20.4/** -text whitespace=cr-at-eol
+releases/0.20.5/** -text whitespace=cr-at-eol
+docs/stm32_evidence/2026-10-25-v0201-hardware/** -text whitespace=cr-at-eol
+docs/stm32_evidence/2026-10-25-v0201-hardware/**/*.bin binary
+docs/stm32_evidence/2026-10-25-v0202-hardware/** -text whitespace=cr-at-eol
+docs/stm32_evidence/2026-10-25-v0202-hardware/**/*.bin binary
+docs/stm32_evidence/2026-10-25-v0202-left-10s/** -text whitespace=cr-at-eol
+docs/stm32_evidence/2026-10-25-v0202-left-10s/**/*.bin binary
+docs/stm32_evidence/2026-10-25-v0202-imu-left-180/** -text whitespace=cr-at-eol
+docs/stm32_evidence/2026-10-25-v0202-imu-left-180/**/*.bin binary
+docs/stm32_evidence/2026-10-25-v0203-yaw-assist/** -text whitespace=cr-at-eol
+docs/stm32_evidence/2026-10-25-v0203-host-obstruction/** -text whitespace=cr-at-eol
+docs/stm32_evidence/2026-10-25-v0203-yaw-assist/**/*.bin binary
+docs/stm32_evidence/2026-10-25-v0203-host-obstruction/**/*.bin binary
+docs/stm32_evidence/2026-10-25-v0204-yaw-assist/** -text whitespace=cr-at-eol
+docs/stm32_evidence/2026-10-25-v0204-yaw-assist/**/*.bin binary
+docs/stm32_evidence/2026-10-25-v0204-first-boot-imu-fault/** -text whitespace=cr-at-eol
+docs/stm32_evidence/2026-10-25-v0204-first-boot-imu-fault/**/*.bin binary
+docs/stm32_evidence/2026-10-25-v0204-powercycle-imu-fault/** -text whitespace=cr-at-eol
+docs/stm32_evidence/2026-10-25-v0204-powercycle-imu-fault/**/*.bin binary
+docs/stm32_evidence/2026-10-25-v0205-hardware/** -text whitespace=cr-at-eol
+docs/stm32_evidence/2026-10-25-v0205-hardware/**/*.bin binary
+docs/stm32_evidence/2026-10-25-v0205-reboot-180-bidirectional/** -text whitespace=cr-at-eol
+docs/stm32_evidence/2026-10-25-v0205-reboot-180-bidirectional/**/*.bin binary

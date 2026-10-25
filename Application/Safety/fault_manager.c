@@ -136,7 +136,11 @@ void FaultManager_Init(uint32_t now_ms)
     (long)FAULT_MANAGER_STALL_MIN_TARGET_CPS,
     (unsigned long)FAULT_MANAGER_STALL_STARTUP_GRACE_MS,
     (unsigned long)FAULT_MANAGER_STALL_DETECT_MS);
+#if CHASSIS_CONTROL_REVISION >= 201
+  DEBUG_LOG_INFO("Continuous feedback guard: grace=%lums warn=%lums persistent-low=%lums recovery=%lums; all motion modes",
+#else
   DEBUG_LOG_INFO("Unified pivot guard: grace=%lums warn=%lums persistent-low=%lums recovery=%lums; speed-only",
+#endif
     (unsigned long)PIVOT_GUARD_GRACE_MS,(unsigned long)PIVOT_GUARD_WARN_MS,
     (unsigned long)PIVOT_GUARD_STOP_MS,(unsigned long)PIVOT_GUARD_RECOVER_MS);
 }
@@ -162,12 +166,12 @@ void FaultManager_MarkSystemInitComplete(uint32_t now_ms)
   taskEXIT_CRITICAL();
 }
 
-void FaultManager_ObserveMotion(
+void FaultManager_ObserveMotionWithModes(
   uint32_t now_ms,
   bool runtime_active,
   const float target_counts_per_second[MOTOR_DRIVER_WHEEL_COUNT],
   const float measured_counts_per_second[MOTOR_DRIVER_WHEEL_COUNT],
-  const int16_t output_permille[MOTOR_DRIVER_WHEEL_COUNT])
+  const int16_t output_permille[MOTOR_DRIVER_WHEEL_COUNT], uint32_t pivot_mask)
 {
   uint32_t newly_stalled_mask = 0U;
   FaultManagerFaultFlags new_faults = FAULT_MANAGER_FAULT_NONE;
@@ -210,11 +214,11 @@ void FaultManager_ObserveMotion(
     const bool grace_complete =
       ((now_ms - s_motion_start_ms) >=
        FAULT_MANAGER_STALL_STARTUP_GRACE_MS);
-    const bool unified_owned=WheelSpeedController_IsPivotMode((MotorDriverWheel)wheel);
+    const bool unified_owned=(pivot_mask & (1UL<<wheel))!=0U;
     const bool unified_failed=PivotFeedbackGuard_Update(&s_pivot_guard[wheel],
-      unified_owned,target,measured_counts_per_second[wheel],now_ms);
+      CHASSIS_CONTROL_V2 || unified_owned,target,measured_counts_per_second[wheel],now_ms);
     if (s_pivot_guard[wheel].warning) s_pivot_warning_mask|=1UL<<wheel;
-    if (unified_owned)
+    if (unified_owned || (CHASSIS_CONTROL_V2 && unified_failed))
     {
       s_stall_condition_active[wheel]=false;
       s_stall_condition_start_ms[wheel]=0U;
@@ -271,7 +275,11 @@ void FaultManager_ObserveMotion(
   taskEXIT_CRITICAL();
 
   if (previous_warning_mask!=warning_mask)
+#if CHASSIS_CONTROL_REVISION >= 201
+    DEBUG_LOG_WARN("Feedback guard suspect_mask=0x%02lX; persistent low feedback latches at %lums",
+#else
     DEBUG_LOG_WARN("Pivot feedback guard suspect_mask=0x%02lX; persistent low feedback latches at %lums",
+#endif
       (unsigned long)warning_mask,(unsigned long)PIVOT_GUARD_STOP_MS);
 
   if ((new_faults & FAULT_MANAGER_FAULT_WHEEL_STALL) != 0U)
@@ -280,6 +288,19 @@ void FaultManager_ObserveMotion(
       "Fault manager latched wheel stall: wheel_mask=0x%02lX; production motion inhibited",
       (unsigned long)newly_stalled_mask);
   }
+}
+
+void FaultManager_ObserveMotion(uint32_t now_ms,bool active,
+  const float target[MOTOR_DRIVER_WHEEL_COUNT],
+  const float measured[MOTOR_DRIVER_WHEEL_COUNT],
+  const int16_t output[MOTOR_DRIVER_WHEEL_COUNT])
+{
+  uint32_t mask=0U;
+  taskENTER_CRITICAL();
+  for (uint32_t w=0U; w<MOTOR_DRIVER_WHEEL_COUNT; ++w)
+    if (WheelSpeedController_IsPivotMode((MotorDriverWheel)w)) mask|=1UL<<w;
+  taskEXIT_CRITICAL();
+  FaultManager_ObserveMotionWithModes(now_ms,active,target,measured,output,mask);
 }
 
 void FaultManager_Process(uint32_t now_ms)

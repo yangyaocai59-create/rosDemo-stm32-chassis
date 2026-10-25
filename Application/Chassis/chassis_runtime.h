@@ -10,9 +10,16 @@
 #include <stdint.h>
 
 #include "chassis_controller.h"
+#if CHASSIS_CONTROL_REVISION >= 203
+#include "yaw_rate_control_core.h"
+#endif
 
 #ifdef __cplusplus
 extern "C" {
+#endif
+
+#if CHASSIS_CONTROL_REVISION >= 203
+bool ChassisRuntime_GetYawControl(YawRateControlState *state);
 #endif
 
 #define CHASSIS_RUNTIME_COMMAND_TIMEOUT_MS       250U

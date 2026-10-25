@@ -18,7 +18,12 @@ run('unified',[sys.executable,'-B','Tools/tests/motion/run_unified_tests.py'])
 run('trace',[sys.executable,'-B','Tools/tests/motion/run_trace_tests.py'])
 base=OUT/'baseline';base.mkdir(exist_ok=True)
 for name in ['wheel_speed_controller.c','wheel_speed_controller.h','wheel_speed_control_config.h','unified_pivot_control.h']:
- (base/name).write_bytes(subprocess.check_output(['git','show',BASE+':Application/Chassis/'+name],cwd=ROOT))
+ cache=ROOT/'Tools/tests/baselines/v01825'
+ if cache.exists():
+  data=(cache/name).read_bytes()
+  assert hashlib.sha256(data).hexdigest()==json.loads((cache/'manifest.json').read_text())['files'][name]
+ else:data=subprocess.check_output(['git','show',BASE+':Application/Chassis/'+name],cwd=ROOT)
+ (base/name).write_bytes(data)
 outputs=[]
 for label,path,extra in [('baseline',base/'wheel_speed_controller.c',['-I'+str(base)]),('candidate','Application/Chassis/wheel_speed_controller.c',[])]:
  exe=OUT/(label+'.exe')

@@ -1,0 +1,13 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "rosDemo: 编译当前固件并更新界面",
+            "type": "cmake",
+            "command": "build",
+            "preset": "${command:cmake.activeBuildPresetName}",
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}

@@ -18,6 +18,9 @@ bool WheelSpeedEstimator_GetSnapshot(WheelSpeedState states[4])
     .valid=true,.sample_period_ms=20,.sample_time_ms=source_time,
     .accumulated_count=totals[w],.delta_counts=(int32_t)(feedback[w]*.02f),
     .filtered_counts_per_second=feedback[w],.raw_counts_per_second=feedback[w]};
+#if CHASSIS_CONTROL_V2
+  for(unsigned w=0;w<4;w++) states[w].sample_sequence=fixture_feedback_sequence;
+#endif
   return true;
 }
 bool MotorDriver_GetDiagnostics(MotorDriverDiagnostics *out)

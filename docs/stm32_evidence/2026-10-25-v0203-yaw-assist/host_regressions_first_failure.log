@@ -1,0 +1,17 @@
+yaw_assist_strict_build: PASS
+yaw_assist_strict: PASS
+yaw_runtime_strict_build: PASS
+Traceback (most recent call last):
+  File "E:\DEMO\rosDemo\Tools\tests\motion\run_v0200_tests.py", line 46, in <module>
+    run(name+'_'+label,[binary])
+  File "E:\DEMO\rosDemo\Tools\tests\motion\run_v0200_tests.py", line 34, in run
+    raise RuntimeError(name+': '+output[-7000:])
+RuntimeError: yaw_runtime_strict: Assertion failed: yaw.inhibited && yaw.integral==0 && fabsf(yaw.correction)<old_correction, file Tools/tests/motion/test_yaw_runtime.c, line 37
+
+revision 200 regression failed
+At E:\DEMO\rosDemo\Tools\tests\run_wheel_v0200_tests.ps1:8 char:32
++ ...   if ($LASTEXITCODE -ne 0) { throw 'revision 200 regression failed' }
++                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (revision 200 regression failed:String) [], RuntimeException
+    + FullyQualifiedErrorId : revision 200 regression failed
+ 

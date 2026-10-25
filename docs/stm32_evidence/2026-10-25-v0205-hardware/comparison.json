@@ -1,0 +1,48 @@
+[
+  {
+    "case": "left",
+    "active_seconds": 9.966,
+    "encoder_deg": 236.02215189873417,
+    "imu_deg": 224.89452895577548,
+    "difference_deg": 11.12762294295868,
+    "max_one_second_rate_error_percent": 8.76752857142854,
+    "all_windows_within_10_percent": true,
+    "mean_rate": 0.3919922982142857,
+    "bias_sensitivity_deg": 2.520416999436719,
+    "checks": {
+      "motion_completed": true,
+      "stopped": true,
+      "no_fault": true,
+      "clean_transport": true,
+      "zero_final_outputs": true,
+      "zero_final_wheels": true,
+      "yaw_ready_during_motion": true,
+      "bounded_yaw": true,
+      "yaw_intervened": true,
+      "no_control_overruns": true
+    }
+  },
+  {
+    "case": "right",
+    "active_seconds": 9.972,
+    "encoder_deg": -228.69303797468353,
+    "imu_deg": -228.92364004281205,
+    "difference_deg": 0.23060206812851902,
+    "max_one_second_rate_error_percent": 11.613524918566737,
+    "all_windows_within_10_percent": false,
+    "mean_rate": -0.40246716217426703,
+    "bias_sensitivity_deg": 0.11571923565838915,
+    "checks": {
+      "motion_completed": true,
+      "stopped": true,
+      "no_fault": true,
+      "clean_transport": true,
+      "zero_final_outputs": true,
+      "zero_final_wheels": true,
+      "yaw_ready_during_motion": true,
+      "bounded_yaw": true,
+      "yaw_intervened": true,
+      "no_control_overruns": true
+    }
+  }
+]

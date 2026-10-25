@@ -1,0 +1,120 @@
+{
+  "firmware_user_report": "0.20.5",
+  "direction": "right",
+  "requested_rad_s": -0.4,
+  "host_command_seconds": 8.140000000001237,
+  "mcu_active_seconds": 8.126,
+  "mcu_start_ms": 142024,
+  "mcu_stop_ms": 150150,
+  "comparison_window_ms": [
+    141963,
+    151163
+  ],
+  "motion_time_source": "timestamped_runtime_transition_logs",
+  "unused_outside_window_imu_updates": [
+    {
+      "time_ms": 154023,
+      "first_phase": "final_stop",
+      "later_phase": "final_stop",
+      "changed_fields": [
+        7
+      ],
+      "first_row": [
+        154023,
+        15131,
+        171,
+        65,
+        10066,
+        0,
+        -1,
+        -1,
+        28796,
+        0,
+        0,
+        2,
+        7
+      ],
+      "later_row": [
+        154023,
+        15131,
+        171,
+        65,
+        10066,
+        0,
+        -1,
+        0,
+        28796,
+        0,
+        0,
+        2,
+        7
+      ]
+    }
+  ],
+  "comparison_seconds_including_settling": 9.2,
+  "geometry": {
+    "diameter_m": 0.065,
+    "counts_per_rev": 1560,
+    "effective_track_m": 0.395
+  },
+  "before_wheel": [
+    141963,
+    -4607,
+    -4507,
+    4749,
+    4506,
+    0,
+    0,
+    0,
+    0
+  ],
+  "after_wheel": [
+    151163,
+    -305,
+    -390,
+    546,
+    268,
+    0,
+    0,
+    0,
+    0
+  ],
+  "net_counts": [
+    4302,
+    4117,
+    -4203,
+    -4238
+  ],
+  "encoder_angle_deg": -160.06329113924048,
+  "imu_reference_angle_deg": -180.3578323361699,
+  "encoder_minus_imu_deg": 20.29454119692943,
+  "absolute_difference_deg": 20.29454119692943,
+  "relative_difference_percent": 11.25237586527561,
+  "percent_denominator": "absolute bias-corrected IMU reference angle",
+  "imu_uncorrected_angle_deg": -180.38187043519684,
+  "imu_using_post_baseline_deg": -180.46943779593798,
+  "bias_sensitivity_deg": 0.11160545976807157,
+  "baselines": {
+    "baseline": {
+      "samples": 307,
+      "span_ms": 3060,
+      "mean_z_mrad_s": -0.04560260586319218,
+      "std_z_mrad_s": 0.8939929160427266
+    },
+    "post_baseline": {
+      "samples": 307,
+      "span_ms": 3060,
+      "mean_z_mrad_s": 0.16612377850162866,
+      "std_z_mrad_s": 0.8241621691729247
+    }
+  },
+  "imu_source_max_interval_ms": 10,
+  "imu_source_missing_samples": 0,
+  "imu_saved_bias_valid": true,
+  "external_angle_truth_available": false,
+  "final_stopped_verified": true,
+  "command_active_integral_deg": null,
+  "target_imu_deg": 180.0,
+  "angular_rate_schedule": "IMU remaining angle, 0.20..0.40rad/s",
+  "imu_final_minus_target_deg": -0.3578323361699063
+}

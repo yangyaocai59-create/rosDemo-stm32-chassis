@@ -1,0 +1,36 @@
+{
+  "board_version_source": "user-reported 0.20.4; boot banner not captured; YAW3 diagnostics observed",
+  "operator_power_cycle_confirmed": true,
+  "post_cycle_imu_state": "IO_FAULT",
+  "post_cycle_imu_who_am_i": "0x70",
+  "post_cycle_imu_samples": 0,
+  "motion_sent": false,
+  "reset_requested": false,
+  "calibration_sent": false,
+  "fault_cleared": false,
+  "new_firmware_version": "0.20.5",
+  "new_firmware_flashed": false,
+  "hardware_root_cause_confirmed": false,
+  "offline_reproducer_passed": true,
+  "primary_reference_url": "https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6500-Register-Map2.pdf",
+  "reference_section": "4.33 USER_CTRL I2C_IF_DIS, revision 2.1",
+  "reference_access": "official web search indexed PDF excerpt; direct PDF open redirected to vendor search page",
+  "new_firmware_sha256": {
+    "Debug/rosDemo-0.20.5.elf": "88e837e20bdc60d13242bf26fc4e9454339afe61f1526c2748fd92b43addc50d",
+    "Debug/rosDemo-0.20.5.hex": "97f5b23818f9acee4591711447d38b03efbe89ab363a3352e2150d1505db8c4b",
+    "Debug/rosDemo-0.20.5.bin": "bff68dffcd54751899c40474aa9a83f624c232c5fb39186ae2b4ea9d355fca8b",
+    "Debug/rosDemo-0.20.5.map": "0fecead419693ae3050c55bf9b5dfd1975e751785a3e0781b4109fbf51d87cd0",
+    "Release/rosDemo-0.20.5.elf": "b9f3d9ea212334acfe43e4dae3fbd80599b4d3d9f835d09443bdc248b0e5d462",
+    "Release/rosDemo-0.20.5.hex": "4ea4ee72b726de2815ed3a7825133d504860a3bb94fc21fdc12adccb14c0977c",
+    "Release/rosDemo-0.20.5.bin": "b39f781a74a021c6630127a6d0ff74acd8b228620f3bf2172caff2f359f46e6d",
+    "Release/rosDemo-0.20.5.map": "f316f64ea86dbcddb1110a9bd00d1884cf1eed2ee077987f8218eb3e07939913"
+  },
+  "protected_files_unchanged": 184,
+  "intentional_protected_source_changes": {
+    "Application/Sensors/mpu6500.c": {
+      "original_sha256": "b125ab57f8f07fcad0dd12d2ea9f3de47f1dd9dbdf42a2a7648da64219835bdd",
+      "updated_sha256": "515d6eb21ff85f04fd21cf4330f52d5492f88f71ca8f249f9c2441b96a45fa96",
+      "reason": "Revision >=205 excludes self-clearing USER_CTRL bit from readback comparison and logs initialization failures; settings writes, signature and earlier revision behavior retained"
+    }
+  }
+}

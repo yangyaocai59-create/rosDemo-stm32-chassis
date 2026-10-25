@@ -1,0 +1,23 @@
+{
+  "control_reference": "IMU, as designated by user",
+  "target_deg": 180,
+  "stop_trigger_imu_deg": 180.0448495027942,
+  "imu_one_second_after_stop_deg": 180.5830320724646,
+  "imu_three_second_observation_end_deg": 180.69867646476865,
+  "encoder_same_window_deg": 167.9905063291139,
+  "overshoot_one_second_deg": 0.5830320724645901,
+  "mcu_active_seconds": 7.732,
+  "safety_checks": {
+    "feedback_age_within_40ms": true,
+    "transport_clean": true,
+    "no_fault": true,
+    "trace_output_disabled": true,
+    "encoder_config_clean": true,
+    "final_stopped": true,
+    "diagnostic_age_no_unsigned_underflow": true,
+    "active_diagnostic_age_within_40ms": true
+  },
+  "firmware_changed": false,
+  "control_location": "host PC using USB velocity and STOP",
+  "automatic_motion_retries": 0
+}

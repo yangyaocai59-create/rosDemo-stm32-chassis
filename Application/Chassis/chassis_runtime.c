@@ -13,6 +13,15 @@
 #include "fault_manager.h"
 #include "chassis_motion_profile.h"
 #include "task.h"
+#if CHASSIS_CONTROL_REVISION >= 203
+#include "chassis_yaw_feedback.h"
+static YawRateControlState s_yaw_control;
+bool ChassisRuntime_GetYawControl(YawRateControlState *state)
+{
+  if (!state) return false;
+  taskENTER_CRITICAL(); *state=s_yaw_control; taskEXIT_CRITICAL(); return true;
+}
+#endif
 
 #define CHASSIS_RUNTIME_ZERO_LINEAR_M_S       0.0005f
 #define CHASSIS_RUNTIME_ZERO_ANGULAR_RAD_S    0.0005f
@@ -53,6 +62,9 @@ uint32_t ChassisRuntime_GetEvents(ChassisRuntimeEvent events[CHASSIS_RUNTIME_EVE
 
 static void ChassisRuntime_ResetProfileLocked(void)
 {
+#if CHASSIS_CONTROL_REVISION >= 203
+  YawRateControl_Reset(&s_yaw_control);
+#endif
   s_status.applied_command.linear_x_m_s = 0.0f;
   s_status.applied_command.angular_z_rad_s = 0.0f;
   s_profile_time_ms = 0U;
@@ -221,6 +233,9 @@ static void ChassisRuntime_SetCurrentIdle(uint32_t generation,
 bool ChassisRuntime_Init(uint32_t now_ms)
 {
   (void)now_ms;
+#if CHASSIS_CONTROL_REVISION >= 203
+  ChassisYawFeedback_Init();
+#endif
   ChassisController_Stop();
 
   taskENTER_CRITICAL();
@@ -336,6 +351,16 @@ void ChassisRuntime_StopForTransportLoss(uint32_t now_ms)
 
 void ChassisRuntime_LatchHealthFault(uint32_t now_ms)
 {
+#if CHASSIS_CONTROL_REVISION >= 203
+  /* Keep the first fault event instead of flooding the ring every 10 ms. */
+  ChassisControllerSafetyState controller={0};
+  taskENTER_CRITICAL();
+  const bool already_latched=s_status.state==CHASSIS_RUNTIME_STATE_FAULT &&
+    s_status.fault==CHASSIS_RUNTIME_FAULT_HEALTH_MANAGER &&
+    ChassisController_GetSafetyState(&controller) && !controller.active;
+  taskEXIT_CRITICAL();
+  if (already_latched) return;
+#endif
   ChassisRuntime_RecordEvent(CHASSIS_EVENT_HEALTH_FAULT, now_ms);
   (void)now_ms;
   if (EmergencyStop_IsLatched())
@@ -392,6 +417,9 @@ bool ChassisRuntime_ClearFault(uint32_t now_ms)
 
 void ChassisRuntime_Process(uint32_t now_ms, bool diagnostics_active)
 {
+#if CHASSIS_CONTROL_REVISION >= 203
+  YawRateControlState yaw_control;
+#endif
   ChassisRuntimeState state;
   ChassisVelocityCommand command;
   ChassisVelocityCommand applied;
@@ -417,6 +445,9 @@ void ChassisRuntime_Process(uint32_t now_ms, bool diagnostics_active)
   generation = s_motion_generation;
   last_command_ms = s_status.last_command_ms;
   command_valid = s_status.command_valid;
+#if CHASSIS_CONTROL_REVISION >= 203
+  yaw_control=s_yaw_control;
+#endif
   taskEXIT_CRITICAL();
 
   if (!EmergencyStop_CanEnableMotor())
@@ -519,15 +550,41 @@ void ChassisRuntime_Process(uint32_t now_ms, bool diagnostics_active)
       return;
     }
     bool updated = false;
+#if CHASSIS_CONTROL_REVISION >= 203
+    ChassisYawFeedback yaw_feedback={0};
+    (void)ChassisYawFeedback_Get(&yaw_feedback);
+    (void)ChassisController_GetStatus(&controller);
+    bool wheel_authority=controller.limited_mask==0U;
+    for (uint32_t w=0U;w<MOTOR_DRIVER_WHEEL_COUNT;++w) {
+      const float target=controller.targets.counts_per_second[w];
+      const float measured=controller.measured_counts_per_second[w];
+      if (!isfinite(target) || !isfinite(measured) ||
+          fabsf(target-measured)>fmaxf(75.0f,.25f*fabsf(target))) wheel_authority=false;
+    }
+    const bool yaw_valid=yaw_feedback.ready && yaw_feedback.valid &&
+      (uint32_t)(now_ms-yaw_feedback.sample_time_ms)<=40U;
+    ChassisVelocityCommand assisted=shaped;
+    assisted.angular_z_rad_s+=YawRateControl_Step(&yaw_control,
+      shaped.linear_x_m_s,shaped.angular_z_rad_s,yaw_feedback.rate_rad_s,
+      yaw_valid,!wheel_authority,elapsed_ms);
+#endif
     taskENTER_CRITICAL();
     if ((s_status.state == CHASSIS_RUNTIME_STATE_ACTIVE) &&
         s_status.command_valid &&
         (s_motion_generation == generation) &&
         (s_status.command_sequence == command_sequence))
     {
+#if CHASSIS_CONTROL_REVISION >= 203
+      updated = ChassisController_SetCommand(&assisted, now_ms);
+#else
       updated = ChassisController_SetCommand(&shaped, now_ms);
+#endif
       if (updated)
       {
+#if CHASSIS_CONTROL_REVISION >= 203
+        s_yaw_control=yaw_control;
+#endif
+        /* Keep the nominal profile independent of the feedback correction. */
         s_status.applied_command = shaped;
         s_profile_time_ms = now_ms;
       }
@@ -537,6 +594,15 @@ void ChassisRuntime_Process(uint32_t now_ms, bool diagnostics_active)
     {
       /* An explicit/safety stop invalidated this iteration. */
       if (!ChassisRuntime_IsActive()) { return; }
+#if CHASSIS_CONTROL_V2
+      /* A newer velocity command is normal supersession, not a controller
+       * failure. It will be shaped from the last committed state next tick. */
+      taskENTER_CRITICAL();
+      const bool superseded=(s_motion_generation!=generation) ||
+                            (s_status.command_sequence!=command_sequence);
+      taskEXIT_CRITICAL();
+      if (superseded) { return; }
+#endif
     }
 
     if ((!updated) ||

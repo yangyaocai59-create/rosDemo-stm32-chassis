@@ -62,9 +62,9 @@ void FaultManager_MarkSystemInitComplete(uint32_t now_ms);
 
 /**
  * Observe the production controller only. Diagnostics and IDLE never generate
- * a wheel-stall fault. An exhausted front-pivot recovery with a qualified
- * no-motion deadline latches the existing wheel-stall fault below the legacy
- * >=200 cps stall gate as well; safetyTask then stops the entire runtime.
+ * a wheel-stall fault. Revision 200 observes the persistent feedback guard in
+ * all modes (>=1cps), without resetting it on NORMAL/PIVOT transitions; the
+ * original >=200cps NORMAL predicate remains an additional, earlier path.
  */
 void FaultManager_ObserveMotion(
   uint32_t now_ms,
@@ -72,6 +72,12 @@ void FaultManager_ObserveMotion(
   const float target_counts_per_second[MOTOR_DRIVER_WHEEL_COUNT],
   const float measured_counts_per_second[MOTOR_DRIVER_WHEEL_COUNT],
   const int16_t output_permille[MOTOR_DRIVER_WHEEL_COUNT]);
+
+/** Modes captured with the same controller snapshot as targets/feedback. */
+void FaultManager_ObserveMotionWithModes(uint32_t now_ms, bool active,
+  const float target[MOTOR_DRIVER_WHEEL_COUNT],
+  const float measured[MOTOR_DRIVER_WHEEL_COUNT],
+  const int16_t output[MOTOR_DRIVER_WHEEL_COUNT], uint32_t pivot_mask);
 
 /** Refresh task-health state and latch any new critical health fault. */
 void FaultManager_Process(uint32_t now_ms);

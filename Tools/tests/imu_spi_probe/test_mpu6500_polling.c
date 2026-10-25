@@ -29,6 +29,7 @@ static int64_t test_wheel_counts[4];
 static unsigned notifications;
 static bool test_notify_on_clock;
 static bool test_restart_on_guard;
+static bool test_user_control_auto_clear;
 static uint8_t written_regs[32], written_values[32];
 
 void Test_EnterCritical(void) { ++critical_depth; }
@@ -109,7 +110,8 @@ HAL_StatusTypeDef HAL_SPI_TransmitReceive(SPI_HandleTypeDef *handle, uint8_t *tx
       regs[0x75] = 0x70U;
       regs[0x6B] = 0x40U;
     }
-    else regs[reg] = tx[1];
+    else regs[reg] = (reg==0x6AU && test_user_control_auto_clear) ?
+                      (uint8_t)(tx[1] & ~0x10U) : tx[1];
   }
   return HAL_OK;
 }
@@ -142,6 +144,7 @@ static void ResetMock(void)
   test_race_during_burst = false;
   test_notify_on_clock = test_restart_on_guard = false;
   test_motion_allowed = true;
+  test_user_control_auto_clear=false;
   memset(test_wheel_counts, 0, sizeof(test_wheel_counts));
 }
 static void Update(uint32_t now)
@@ -200,7 +203,13 @@ static void TestDriver(void)
     regs[expected_regs[i]] = saved ^ (i == 12 ? 0x80U : 0x01U);
     /* Select a documented field rather than a reserved bit. */
     if (i == 3) regs[0x37] = 0x80;
-    if (i == 1) regs[0x6A] = saved ^ 0x10;
+    if (i == 1) {
+#if defined(CHASSIS_CONTROL_REVISION) && (CHASSIS_CONTROL_REVISION >= 205)
+      regs[0x6A] = saved ^ 0x20; /* Stable I2C master bit must still fail. */
+#else
+      regs[0x6A] = saved ^ 0x10;
+#endif
+    }
     if (i == 8 || i == 9) regs[expected_regs[i]] = saved ^ 0x08;
     assert(!Mpu6500_VerifyConfiguration());
     regs[expected_regs[i]] = saved;
@@ -243,6 +252,31 @@ static void TestDriver(void)
     assert(cs == GPIO_PIN_SET);
   }
   fail_at = 0;
+#if defined(CHASSIS_CONTROL_REVISION) && (CHASSIS_CONTROL_REVISION >= 205)
+  /* The expected fingerprint comes from the archived 0.20.4 settings. */
+  assert(Mpu6500_ConfigurationSignature()==0x212b53a9U);
+  ResetMock();test_user_control_auto_clear=true;
+  StartReady(0);assert(regs[0x6A]==0U);
+  PopulateSample();Update(310);
+  assert(Snapshot().valid && Snapshot().sample_count==1U);
+  assert(Mpu6500_ConfigurationSignature()==0x212b53a9U);
+  for(unsigned bit=5;bit<=6;bit++) {
+    regs[0x6A]=(uint8_t)(1U<<bit);
+    assert(!Mpu6500_VerifyConfiguration());
+  }
+  regs[0x6A]=0x10U;assert(Mpu6500_VerifyConfiguration());
+  regs[0x6A]=0U;assert(Mpu6500_VerifyConfiguration());
+  regs[0x1C]=0U;assert(!Mpu6500_VerifyConfiguration());
+  regs[0x1C]=0x08U;
+  fail_at=transactions+2U;assert(!Mpu6500_VerifyConfiguration());fail_at=0;
+  puts("PASS: self-clearing USER_CTRL command permits actual service READY/sample; stable USER_CTRL/scale/read failures remain rejected; archived calibration signature unchanged");
+#else
+  ResetMock();test_user_control_auto_clear=true;
+  ImuService_Init(0);Update(100);Update(200);Update(300);
+  assert(regs[0x6A]==0U && Snapshot().state==IMU_SERVICE_STATE_IO_FAULT);
+  assert(!Snapshot().valid && Snapshot().sample_count==0U);
+  puts("PASS: reproducer confirms legacy readback rejects a self-cleared command before first sample");
+#endif
 }
 static void TestService(void)
 {

@@ -25,6 +25,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include <math.h>
 #include "board_config.h"
 #include "battery_config.h"
 #include "battery_monitor.h"
@@ -56,6 +57,9 @@
 #include "usb_cdc_transport.h"
 #include "watchdog_service.h"
 #include "wheel_speed_estimator.h"
+#if CHASSIS_CONTROL_REVISION >= 203
+#include "chassis_yaw_feedback.h"
+#endif
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -309,23 +313,78 @@ void StartMotorTask(void *argument)
   DEBUG_LOG_INFO("Chassis controller ready: +vx=forward +wz=CCW-left, command timeout=250 ms");
   (void)ChassisRuntime_Init(HAL_GetTick());
   MotorOpenLoopTest_Init();
+#if CHASSIS_CONTROL_V2
+  ControlTiming_EnableCycleCounter();
+#endif
 
   next_wake_tick = osKernelGetTickCount();
   /* Infinite loop */
   for(;;)
   {
     ControlTiming_RecordStart(CONTROL_TIMING_MOTOR, osKernelGetTickCount());
+#if CHASSIS_CONTROL_V2
+    const uint32_t loop_cycles=ControlTiming_ReadCycles();
+#endif
     if (FaultInjectionTest_ShouldReportHeartbeat(FAULT_MANAGER_TASK_MOTOR))
     {
       FaultManager_Heartbeat(FAULT_MANAGER_TASK_MOTOR, HAL_GetTick());
     }
+    const uint32_t control_now_ms=HAL_GetTick();
+#if CHASSIS_CONTROL_V2
+    uint32_t section_cycles=ControlTiming_ReadCycles();
+#endif
     EncoderService_Update();
-    WheelSpeedEstimator_Update(HAL_GetTick());
-    ChassisRuntime_Process(HAL_GetTick(),
+    WheelSpeedEstimator_Update(control_now_ms);
+#if CHASSIS_CONTROL_V2
+    ControlTiming_RecordSection(CONTROL_SECTION_ACQUISITION,
+      ControlTiming_ReadCycles()-section_cycles,SystemCoreClock);
+    section_cycles=ControlTiming_ReadCycles();
+#endif
+#if CHASSIS_CONTROL_REVISION >= 203
+    {
+      static ImuServiceSnapshot yaw_imu;
+      static WheelSpeedState yaw_wheels[ENCODER_WHEEL_COUNT];
+      static MotorDriverStatus yaw_motor;
+      const bool got_imu=ImuService_GetSnapshot(&yaw_imu);
+      const bool valid_imu=got_imu && yaw_imu.valid &&
+        yaw_imu.state==IMU_SERVICE_STATE_READY && yaw_imu.consecutive_errors==0U;
+      const float accel_squared=yaw_imu.accel_x_m_s2*yaw_imu.accel_x_m_s2+
+        yaw_imu.accel_y_m_s2*yaw_imu.accel_y_m_s2+yaw_imu.accel_z_m_s2*yaw_imu.accel_z_m_s2;
+      bool stationary=valid_imu && isfinite(accel_squared) &&
+        !ImuStaticTest_IsActive() && !MotorOpenLoopTest_IsActive() &&
+        accel_squared>=81.0f && accel_squared<=116.64f &&
+        MotorDriver_GetStatus(&yaw_motor) && !yaw_motor.standby_enabled &&
+        WheelSpeedEstimator_GetSnapshot(yaw_wheels);
+      if (stationary) {
+        for (uint32_t w=0U;w<ENCODER_WHEEL_COUNT;++w) {
+          if (!yaw_wheels[w].valid || yaw_wheels[w].quality_flags!=0U ||
+              (uint32_t)(control_now_ms-yaw_wheels[w].sample_time_ms)>40U ||
+              yaw_wheels[w].delta_counts!=0 ||
+              !isfinite(yaw_wheels[w].filtered_counts_per_second) ||
+              fabsf(yaw_wheels[w].filtered_counts_per_second)>5.0f) stationary=false;
+        }
+      }
+      ChassisYawFeedback_Observe(control_now_ms,stationary,valid_imu,
+        yaw_imu.angular_velocity_z_rad_s,yaw_imu.sample_time_ms,
+        yaw_imu.sample_count,yaw_imu.acquisition_epoch);
+    }
+#endif
+    ChassisRuntime_Process(control_now_ms,
                            MotorOpenLoopTest_IsActive() ||
                            ImuStaticTest_IsActive());
     MotorOpenLoopTest_Process();
+#if CHASSIS_CONTROL_V2
+    ControlTiming_RecordSection(CONTROL_SECTION_CONTROLLER,
+      ControlTiming_ReadCycles()-section_cycles,SystemCoreClock);
+    section_cycles=ControlTiming_ReadCycles();
+#endif
     MotionTrace_Record(HAL_GetTick());
+#if CHASSIS_CONTROL_V2
+    ControlTiming_RecordSection(CONTROL_SECTION_TRACE,
+      ControlTiming_ReadCycles()-section_cycles,SystemCoreClock);
+    ControlTiming_RecordExecution(CONTROL_TIMING_MOTOR,
+      ControlTiming_ReadCycles()-loop_cycles,SystemCoreClock);
+#endif
     next_wake_tick = ControlTiming_NextWake(CONTROL_TIMING_MOTOR,
       next_wake_tick, osKernelGetTickCount(), CHASSIS_SPEED_SAMPLE_PERIOD_MS);
     (void)osDelayUntil(next_wake_tick);
@@ -352,6 +411,9 @@ void StartSafetyTask(void *argument)
   for(;;)
   {
     ControlTiming_RecordStart(CONTROL_TIMING_SAFETY, osKernelGetTickCount());
+#if CHASSIS_CONTROL_V2
+    const uint32_t loop_cycles=ControlTiming_ReadCycles();
+#endif
     const uint32_t now_ms = HAL_GetTick();
     /* Single safetyTask instance: its private scratch snapshots need not
      * occupy the task's 1 KiB stack across every nested safety/log call.
@@ -364,17 +426,26 @@ void StartSafetyTask(void *argument)
     {
       FaultManager_Heartbeat(FAULT_MANAGER_TASK_SAFETY, now_ms);
     }
-    if (ChassisRuntime_GetStatus(&runtime) &&
-        ChassisController_GetStatus(&controller))
+    taskENTER_CRITICAL();
+    const bool observed=ChassisRuntime_GetStatus(&runtime) &&
+                        ChassisController_GetStatus(&controller);
+    taskEXIT_CRITICAL();
+    if (observed)
     {
       FaultInjectionTest_FilterMeasuredSpeed(
         controller.measured_counts_per_second,
         health_measured_counts_per_second);
-      FaultManager_ObserveMotion(now_ms,
+#if CHASSIS_CONTROL_V2
+      FaultManager_ObserveMotionWithModes(now_ms,
                                  runtime.state == CHASSIS_RUNTIME_STATE_ACTIVE,
                                  controller.targets.counts_per_second,
                                  health_measured_counts_per_second,
-                                 controller.output_permille);
+                                 controller.output_permille,controller.pivot_mask);
+#else
+      FaultManager_ObserveMotion(now_ms,
+        runtime.state==CHASSIS_RUNTIME_STATE_ACTIVE,controller.targets.counts_per_second,
+        health_measured_counts_per_second,controller.output_permille);
+#endif
     }
     else
     {
@@ -393,6 +464,10 @@ void StartSafetyTask(void *argument)
       DEBUG_LOG_ERROR("ESTOP latched: motor outputs disabled; MCU reset required");
     }
     WatchdogService_Process(now_ms);
+#if CHASSIS_CONTROL_V2
+    ControlTiming_RecordExecution(CONTROL_TIMING_SAFETY,
+      ControlTiming_ReadCycles()-loop_cycles,SystemCoreClock);
+#endif
     next_wake_tick = ControlTiming_NextWake(CONTROL_TIMING_SAFETY,
       next_wake_tick, osKernelGetTickCount(), 10U);
     (void)osDelayUntil(next_wake_tick);
@@ -605,6 +680,60 @@ void StartTelemetryTask(void *argument)
         (unsigned long)osThreadGetStackSpace(motorTaskHandle),
         (unsigned long)osThreadGetStackSpace(safetyTaskHandle));
       next_control_log_ms = now_ms + 1000U;
+#if CHASSIS_CONTROL_V2
+      ControlSectionTiming acquisition,control,trace;
+      (void)ControlTiming_GetSection(CONTROL_SECTION_ACQUISITION,&acquisition);
+      (void)ControlTiming_GetSection(CONTROL_SECTION_CONTROLLER,&control);
+      (void)ControlTiming_GetSection(CONTROL_SECTION_TRACE,&trace);
+      DEBUG_LOG_INFO("CTRL EXEC us max: motor=%lu safety=%lu acquire=%lu control=%lu trace=%lu",
+        (unsigned long)motor_timing.execution_max_us,(unsigned long)safety_timing.execution_max_us,
+        (unsigned long)acquisition.max_us,(unsigned long)control.max_us,(unsigned long)trace.max_us);
+      static ChassisRunMetrics metrics;
+      static ChassisControllerStatus control_status;
+#if CHASSIS_CONTROL_REVISION >= 202
+      /* UART output above can span a motor update. Copy a coherent pair and
+       * sample time after it; the loop-entry time is too old for this age. */
+      uint32_t diagnostic_now_ms;
+      taskENTER_CRITICAL();
+      const bool diagnostic_valid=ChassisController_GetRunMetrics(&metrics) &&
+                                  ChassisController_GetStatus(&control_status);
+      diagnostic_now_ms=HAL_GetTick();
+      taskEXIT_CRITICAL();
+      if (diagnostic_valid) {
+#else
+      if (ChassisController_GetRunMetrics(&metrics) && ChassisController_GetStatus(&control_status)) {
+#endif
+        uint32_t rms[4]={0};
+        for (uint32_t w=0U;w<4U;++w)
+          if (metrics.wheel[w].samples!=0U)
+            rms[w]=(uint32_t)sqrtf(metrics.wheel[w].squared_error_sum/(float)metrics.wheel[w].samples);
+        DEBUG_LOG_INFO("CTRL V2 gen=%lu n=%lu feedback=%lu age=%lu mode=%lu scale_x1000=%lu rms=%lu/%lu/%lu/%lu zero_max_ms=%lu/%lu/%lu/%lu",
+          (unsigned long)metrics.generation,(unsigned long)metrics.samples,
+          (unsigned long)control_status.feedback_sequence,
+#if CHASSIS_CONTROL_REVISION >= 202
+          (unsigned long)(diagnostic_now_ms-control_status.feedback_time_ms),
+#else
+          (unsigned long)(now_ms-control_status.feedback_time_ms),
+#endif
+          (unsigned long)control_status.pivot_mask,(unsigned long)(control_status.targets.scale*1000),
+          (unsigned long)rms[0],(unsigned long)rms[1],(unsigned long)rms[2],(unsigned long)rms[3],
+          (unsigned long)metrics.wheel[0].longest_zero_net_count_ms,
+          (unsigned long)metrics.wheel[1].longest_zero_net_count_ms,
+          (unsigned long)metrics.wheel[2].longest_zero_net_count_ms,
+          (unsigned long)metrics.wheel[3].longest_zero_net_count_ms);
+      }
+#if CHASSIS_CONTROL_REVISION >= 203
+      {
+        ChassisYawFeedback yaw={0}; YawRateControlState state={0};
+        (void)ChassisYawFeedback_Get(&yaw); (void)ChassisRuntime_GetYawControl(&state);
+        DEBUG_LOG_INFO("YAW3 ready=%u valid=%u bias_urad=%ld rate_mrad=%ld ref_mrad=%ld correction_mrad=%ld i_mrad=%ld warm=%lu inhibit=%u",
+          (unsigned)yaw.ready,(unsigned)yaw.valid,(long)(yaw.bias_rad_s*1000000.0f),
+          (long)(yaw.rate_rad_s*1000.0f),(long)(state.reference*1000.0f),
+          (long)(state.correction*1000.0f),(long)(state.integral*1000.0f),
+          (unsigned long)state.warm_ms,(unsigned)state.inhibited);
+      }
+#endif
+#endif
     }
     if (MotorCharacterizationTest_IsActive() ||
         MotorSpeedControlTest_IsActive() ||

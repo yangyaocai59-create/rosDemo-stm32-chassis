@@ -1,0 +1,12 @@
+PASS: reproducer confirms legacy readback rejects a self-cleared command before first sample
+PASS: DRDY-only acquisition, ISR timestamp, stale caller clock, coalesced edges, read race, stale edge and missing INT timeout
+PASS: actual A/B storage cold restore, old MPU6050/profile/format/CRC rejection, sequence wrap, holes and full journals
+PASS: failures at all 10 Flash words, unlock and readback corruption preserve previous committed record; no erase API
+PASS: exact signed milli-RAW cold restore, integer v2 rejection, coarse view, bounds and all 10 torn-write positions
+PASS: actual 500-sample calibration, MPU6500 temperature, duplicate/motion/owner gates, cancel, old bias preservation and corrected units
+PASS: persistence blocks a concurrent calibration start; bias-range rejection and RAM-only bias on save failure preserve old Flash
+PASS: cold startup orchestration restores compatible bias without recalibration or additional Flash programming
+PASS: full-window wheel/interlock checks, invalid/recovery/read-error/missed/raced/gapped data abort, STD-only rejection and tick wrap
+PASS: Cancel/new Start during validation cannot append or commit the old calibration generation
+PASS: actual 500-sample fractional calibration, exact Flash/service reboot chain and zero modeled mean without zeroing slow rotation
+MPU6500 profile fingerprint=0x53974331; format=3 record_size=40 WHO/algorithm=0x0270 scale=1000

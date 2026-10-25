@@ -1,0 +1,6916 @@
+[
+  {
+    "header": {
+      "schema": 3,
+      "count": 50,
+      "reason": 2,
+      "mask": 0,
+      "trigger": 574842,
+      "trigger_seq": 711,
+      "post_left": 25,
+      "control": 1
+    },
+    "frames": [
+      {
+        "t": 573863,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -2,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": 0,
+            "raw": 0,
+            "target": -15,
+            "cps": 0,
+            "ff_x10": -485,
+            "p_x10": -7,
+            "i_x10": 0,
+            "pwm": -20,
+            "total_hi": 0,
+            "total_lo": 439,
+            "request": -20,
+            "ctrl": -20,
+            "ccr": 168,
+            "limited": 1,
+            "obs": 0,
+            "total": 439,
+            "encoder": {
+              "sampled": 439,
+              "live": 439,
+              "bad": 0,
+              "ab": 2
+            }
+          },
+          "LR": {
+            "dc": 0,
+            "raw": 0,
+            "target": -15,
+            "cps": 0,
+            "ff_x10": -526,
+            "p_x10": -7,
+            "i_x10": 0,
+            "pwm": -20,
+            "total_hi": 0,
+            "total_lo": 305,
+            "request": -20,
+            "ctrl": -20,
+            "ccr": 168,
+            "limited": 1,
+            "obs": 0,
+            "total": 305,
+            "encoder": {
+              "sampled": 305,
+              "live": 305,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RF": {
+            "dc": 0,
+            "raw": 0,
+            "target": -15,
+            "cps": 0,
+            "ff_x10": -589,
+            "p_x10": -7,
+            "i_x10": 0,
+            "pwm": -20,
+            "total_hi": 0,
+            "total_lo": 615,
+            "request": -20,
+            "ctrl": -20,
+            "ccr": 168,
+            "limited": 1,
+            "obs": 0,
+            "total": 615,
+            "encoder": {
+              "sampled": 64921,
+              "live": 64921,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RR": {
+            "dc": 0,
+            "raw": 0,
+            "target": -15,
+            "cps": 0,
+            "ff_x10": -592,
+            "p_x10": -7,
+            "i_x10": 0,
+            "pwm": -20,
+            "total_hi": 0,
+            "total_lo": 485,
+            "request": -20,
+            "ctrl": -20,
+            "ccr": 168,
+            "limited": 1,
+            "obs": 0,
+            "total": 485,
+            "encoder": {
+              "sampled": 65051,
+              "live": 65051,
+              "bad": 0,
+              "ab": 3
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 662,
+          "speed_t": 573862,
+          "control_t": 573862,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 573863,
+          "feedback": 28693,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            4,
+            4,
+            4,
+            4
+          ]
+        }
+      },
+      {
+        "t": 573883,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -6,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": 0,
+            "raw": 0,
+            "target": -45,
+            "cps": 0,
+            "ff_x10": -530,
+            "p_x10": -22,
+            "i_x10": 0,
+            "pwm": -40,
+            "total_hi": 0,
+            "total_lo": 439,
+            "request": -40,
+            "ctrl": -40,
+            "ccr": 336,
+            "limited": 1,
+            "obs": 0,
+            "total": 439,
+            "encoder": {
+              "sampled": 439,
+              "live": 439,
+              "bad": 0,
+              "ab": 2
+            }
+          },
+          "LR": {
+            "dc": 0,
+            "raw": 0,
+            "target": -45,
+            "cps": 0,
+            "ff_x10": -571,
+            "p_x10": -22,
+            "i_x10": 0,
+            "pwm": -40,
+            "total_hi": 0,
+            "total_lo": 305,
+            "request": -40,
+            "ctrl": -40,
+            "ccr": 336,
+            "limited": 1,
+            "obs": 0,
+            "total": 305,
+            "encoder": {
+              "sampled": 305,
+              "live": 305,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RF": {
+            "dc": 0,
+            "raw": 0,
+            "target": -45,
+            "cps": 0,
+            "ff_x10": -633,
+            "p_x10": -22,
+            "i_x10": 0,
+            "pwm": -40,
+            "total_hi": 0,
+            "total_lo": 615,
+            "request": -40,
+            "ctrl": -40,
+            "ccr": 336,
+            "limited": 1,
+            "obs": 0,
+            "total": 615,
+            "encoder": {
+              "sampled": 64921,
+              "live": 64921,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RR": {
+            "dc": 0,
+            "raw": 0,
+            "target": -45,
+            "cps": 0,
+            "ff_x10": -638,
+            "p_x10": -22,
+            "i_x10": 0,
+            "pwm": -40,
+            "total_hi": 0,
+            "total_lo": 485,
+            "request": -40,
+            "ctrl": -40,
+            "ccr": 336,
+            "limited": 1,
+            "obs": 0,
+            "total": 485,
+            "encoder": {
+              "sampled": 65051,
+              "live": 65051,
+              "bad": 0,
+              "ab": 3
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 663,
+          "speed_t": 573882,
+          "control_t": 573882,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 573883,
+          "feedback": 28694,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            4,
+            4,
+            4,
+            4
+          ]
+        }
+      },
+      {
+        "t": 573903,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -10,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": 0,
+            "raw": 0,
+            "target": -76,
+            "cps": 0,
+            "ff_x10": -575,
+            "p_x10": -38,
+            "i_x10": 0,
+            "pwm": -60,
+            "total_hi": 0,
+            "total_lo": 439,
+            "request": -60,
+            "ctrl": -60,
+            "ccr": 504,
+            "limited": 1,
+            "obs": 0,
+            "total": 439,
+            "encoder": {
+              "sampled": 439,
+              "live": 439,
+              "bad": 0,
+              "ab": 2
+            }
+          },
+          "LR": {
+            "dc": 0,
+            "raw": 0,
+            "target": -76,
+            "cps": 0,
+            "ff_x10": -616,
+            "p_x10": -38,
+            "i_x10": 0,
+            "pwm": -60,
+            "total_hi": 0,
+            "total_lo": 305,
+            "request": -60,
+            "ctrl": -60,
+            "ccr": 504,
+            "limited": 1,
+            "obs": 0,
+            "total": 305,
+            "encoder": {
+              "sampled": 305,
+              "live": 305,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RF": {
+            "dc": -1,
+            "raw": -50,
+            "target": -76,
+            "cps": -14,
+            "ff_x10": -676,
+            "p_x10": -31,
+            "i_x10": 0,
+            "pwm": -60,
+            "total_hi": 0,
+            "total_lo": 614,
+            "request": -60,
+            "ctrl": -60,
+            "ccr": 504,
+            "limited": 1,
+            "obs": 0,
+            "total": 614,
+            "encoder": {
+              "sampled": 64922,
+              "live": 64922,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "RR": {
+            "dc": 0,
+            "raw": 0,
+            "target": -76,
+            "cps": 0,
+            "ff_x10": -684,
+            "p_x10": -38,
+            "i_x10": 0,
+            "pwm": -60,
+            "total_hi": 0,
+            "total_lo": 485,
+            "request": -60,
+            "ctrl": -60,
+            "ccr": 504,
+            "limited": 1,
+            "obs": 0,
+            "total": 485,
+            "encoder": {
+              "sampled": 65051,
+              "live": 65051,
+              "bad": 0,
+              "ab": 3
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 664,
+          "speed_t": 573902,
+          "control_t": 573902,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 573903,
+          "feedback": 28695,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            4,
+            4,
+            4,
+            4
+          ]
+        }
+      },
+      {
+        "t": 573923,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -14,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -1,
+            "raw": -50,
+            "target": -106,
+            "cps": -14,
+            "ff_x10": -619,
+            "p_x10": -46,
+            "i_x10": -4,
+            "pwm": -67,
+            "total_hi": 0,
+            "total_lo": 438,
+            "request": -67,
+            "ctrl": -67,
+            "ccr": 562,
+            "limited": 0,
+            "obs": 0,
+            "total": 438,
+            "encoder": {
+              "sampled": 438,
+              "live": 438,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "LR": {
+            "dc": -1,
+            "raw": -50,
+            "target": -106,
+            "cps": -14,
+            "ff_x10": -660,
+            "p_x10": -46,
+            "i_x10": -4,
+            "pwm": -71,
+            "total_hi": 0,
+            "total_lo": 304,
+            "request": -71,
+            "ctrl": -71,
+            "ccr": 596,
+            "limited": 0,
+            "obs": 0,
+            "total": 304,
+            "encoder": {
+              "sampled": 304,
+              "live": 304,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "RF": {
+            "dc": 0,
+            "raw": 0,
+            "target": -106,
+            "cps": -10,
+            "ff_x10": -720,
+            "p_x10": -48,
+            "i_x10": -4,
+            "pwm": -77,
+            "total_hi": 0,
+            "total_lo": 614,
+            "request": -77,
+            "ctrl": -77,
+            "ccr": 646,
+            "limited": 0,
+            "obs": 0,
+            "total": 614,
+            "encoder": {
+              "sampled": 64922,
+              "live": 64922,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "RR": {
+            "dc": -1,
+            "raw": -50,
+            "target": -106,
+            "cps": -14,
+            "ff_x10": -730,
+            "p_x10": -46,
+            "i_x10": -4,
+            "pwm": -78,
+            "total_hi": 0,
+            "total_lo": 484,
+            "request": -78,
+            "ctrl": -78,
+            "ccr": 655,
+            "limited": 0,
+            "obs": 0,
+            "total": 484,
+            "encoder": {
+              "sampled": 65052,
+              "live": 65052,
+              "bad": 0,
+              "ab": 2
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 665,
+          "speed_t": 573922,
+          "control_t": 573922,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 573923,
+          "feedback": 28696,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 573943,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -18,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -2,
+            "raw": -100,
+            "target": -137,
+            "cps": -38,
+            "ff_x10": -664,
+            "p_x10": -49,
+            "i_x10": -9,
+            "pwm": -72,
+            "total_hi": 0,
+            "total_lo": 436,
+            "request": -72,
+            "ctrl": -72,
+            "ccr": 604,
+            "limited": 0,
+            "obs": 0,
+            "total": 436,
+            "encoder": {
+              "sampled": 436,
+              "live": 436,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "LR": {
+            "dc": -2,
+            "raw": -100,
+            "target": -137,
+            "cps": -38,
+            "ff_x10": -705,
+            "p_x10": -49,
+            "i_x10": -9,
+            "pwm": -76,
+            "total_hi": 0,
+            "total_lo": 302,
+            "request": -76,
+            "ctrl": -76,
+            "ccr": 638,
+            "limited": 0,
+            "obs": 0,
+            "total": 302,
+            "encoder": {
+              "sampled": 302,
+              "live": 302,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "RF": {
+            "dc": -1,
+            "raw": -50,
+            "target": -137,
+            "cps": -21,
+            "ff_x10": -763,
+            "p_x10": -57,
+            "i_x10": -10,
+            "pwm": -83,
+            "total_hi": 0,
+            "total_lo": 613,
+            "request": -83,
+            "ctrl": -83,
+            "ccr": 697,
+            "limited": 0,
+            "obs": 0,
+            "total": 613,
+            "encoder": {
+              "sampled": 64923,
+              "live": 64923,
+              "bad": 0,
+              "ab": 2
+            }
+          },
+          "RR": {
+            "dc": -1,
+            "raw": -50,
+            "target": -137,
+            "cps": -24,
+            "ff_x10": -776,
+            "p_x10": -56,
+            "i_x10": -10,
+            "pwm": -84,
+            "total_hi": 0,
+            "total_lo": 483,
+            "request": -84,
+            "ctrl": -84,
+            "ccr": 705,
+            "limited": 0,
+            "obs": 0,
+            "total": 483,
+            "encoder": {
+              "sampled": 65053,
+              "live": 65053,
+              "bad": 0,
+              "ab": 0
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 666,
+          "speed_t": 573942,
+          "control_t": 573942,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 573943,
+          "feedback": 28697,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 573963,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -22,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -2,
+            "raw": -100,
+            "target": -168,
+            "cps": -56,
+            "ff_x10": -709,
+            "p_x10": -55,
+            "i_x10": -15,
+            "pwm": -78,
+            "total_hi": 0,
+            "total_lo": 434,
+            "request": -78,
+            "ctrl": -78,
+            "ccr": 655,
+            "limited": 0,
+            "obs": 0,
+            "total": 434,
+            "encoder": {
+              "sampled": 434,
+              "live": 434,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "LR": {
+            "dc": -1,
+            "raw": -50,
+            "target": -168,
+            "cps": -41,
+            "ff_x10": -750,
+            "p_x10": -63,
+            "i_x10": -15,
+            "pwm": -83,
+            "total_hi": 0,
+            "total_lo": 301,
+            "request": -83,
+            "ctrl": -83,
+            "ccr": 697,
+            "limited": 0,
+            "obs": 0,
+            "total": 301,
+            "encoder": {
+              "sampled": 301,
+              "live": 301,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RF": {
+            "dc": -1,
+            "raw": -50,
+            "target": -168,
+            "cps": -29,
+            "ff_x10": -807,
+            "p_x10": -69,
+            "i_x10": -17,
+            "pwm": -89,
+            "total_hi": 0,
+            "total_lo": 612,
+            "request": -89,
+            "ctrl": -89,
+            "ccr": 747,
+            "limited": 0,
+            "obs": 0,
+            "total": 612,
+            "encoder": {
+              "sampled": 64924,
+              "live": 64924,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "RR": {
+            "dc": -2,
+            "raw": -100,
+            "target": -168,
+            "cps": -46,
+            "ff_x10": -822,
+            "p_x10": -61,
+            "i_x10": -16,
+            "pwm": -90,
+            "total_hi": 0,
+            "total_lo": 481,
+            "request": -90,
+            "ctrl": -90,
+            "ccr": 756,
+            "limited": 0,
+            "obs": 0,
+            "total": 481,
+            "encoder": {
+              "sampled": 65055,
+              "live": 65055,
+              "bad": 0,
+              "ab": 3
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 667,
+          "speed_t": 573962,
+          "control_t": 573962,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 573963,
+          "feedback": 28698,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 573983,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -26,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -5,
+            "raw": -250,
+            "target": -198,
+            "cps": -111,
+            "ff_x10": -754,
+            "p_x10": -43,
+            "i_x10": -19,
+            "pwm": -82,
+            "total_hi": 0,
+            "total_lo": 429,
+            "request": -82,
+            "ctrl": -82,
+            "ccr": 688,
+            "limited": 0,
+            "obs": 0,
+            "total": 429,
+            "encoder": {
+              "sampled": 429,
+              "live": 429,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "LR": {
+            "dc": -5,
+            "raw": -250,
+            "target": -198,
+            "cps": -101,
+            "ff_x10": -795,
+            "p_x10": -48,
+            "i_x10": -20,
+            "pwm": -86,
+            "total_hi": 0,
+            "total_lo": 296,
+            "request": -86,
+            "ctrl": -86,
+            "ccr": 722,
+            "limited": 0,
+            "obs": 0,
+            "total": 296,
+            "encoder": {
+              "sampled": 296,
+              "live": 296,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "RF": {
+            "dc": -1,
+            "raw": -50,
+            "target": -198,
+            "cps": -35,
+            "ff_x10": -851,
+            "p_x10": -81,
+            "i_x10": -25,
+            "pwm": -96,
+            "total_hi": 0,
+            "total_lo": 611,
+            "request": -96,
+            "ctrl": -96,
+            "ccr": 806,
+            "limited": 0,
+            "obs": 0,
+            "total": 611,
+            "encoder": {
+              "sampled": 64925,
+              "live": 64925,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RR": {
+            "dc": -4,
+            "raw": -200,
+            "target": -198,
+            "cps": -90,
+            "ff_x10": -869,
+            "p_x10": -54,
+            "i_x10": -21,
+            "pwm": -95,
+            "total_hi": 0,
+            "total_lo": 477,
+            "request": -95,
+            "ctrl": -95,
+            "ccr": 798,
+            "limited": 0,
+            "obs": 0,
+            "total": 477,
+            "encoder": {
+              "sampled": 65059,
+              "live": 65059,
+              "bad": 0,
+              "ab": 3
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 668,
+          "speed_t": 573982,
+          "control_t": 573982,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 573983,
+          "feedback": 28699,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574003,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -30,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -2,
+            "raw": -100,
+            "target": -229,
+            "cps": -108,
+            "ff_x10": -799,
+            "p_x10": -60,
+            "i_x10": -25,
+            "pwm": -89,
+            "total_hi": 0,
+            "total_lo": 427,
+            "request": -89,
+            "ctrl": -89,
+            "ccr": 747,
+            "limited": 0,
+            "obs": 0,
+            "total": 427,
+            "encoder": {
+              "sampled": 427,
+              "live": 426,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "LR": {
+            "dc": -4,
+            "raw": -200,
+            "target": -229,
+            "cps": -129,
+            "ff_x10": -840,
+            "p_x10": -49,
+            "i_x10": -25,
+            "pwm": -92,
+            "total_hi": 0,
+            "total_lo": 292,
+            "request": -92,
+            "ctrl": -92,
+            "ccr": 772,
+            "limited": 0,
+            "obs": 0,
+            "total": 292,
+            "encoder": {
+              "sampled": 292,
+              "live": 292,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "RF": {
+            "dc": -3,
+            "raw": -150,
+            "target": -229,
+            "cps": -68,
+            "ff_x10": -894,
+            "p_x10": -80,
+            "i_x10": -33,
+            "pwm": -101,
+            "total_hi": 0,
+            "total_lo": 608,
+            "request": -101,
+            "ctrl": -101,
+            "ccr": 848,
+            "limited": 0,
+            "obs": 0,
+            "total": 608,
+            "encoder": {
+              "sampled": 64928,
+              "live": 64928,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "RR": {
+            "dc": -5,
+            "raw": -250,
+            "target": -229,
+            "cps": -135,
+            "ff_x10": -915,
+            "p_x10": -46,
+            "i_x10": -26,
+            "pwm": -99,
+            "total_hi": 0,
+            "total_lo": 472,
+            "request": -99,
+            "ctrl": -99,
+            "ccr": 831,
+            "limited": 0,
+            "obs": 0,
+            "total": 472,
+            "encoder": {
+              "sampled": 65064,
+              "live": 65064,
+              "bad": 0,
+              "ab": 2
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 669,
+          "speed_t": 574002,
+          "control_t": 574002,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574003,
+          "feedback": 28700,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574023,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -34,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -5,
+            "raw": -250,
+            "target": -259,
+            "cps": -148,
+            "ff_x10": -844,
+            "p_x10": -55,
+            "i_x10": -31,
+            "pwm": -93,
+            "total_hi": 0,
+            "total_lo": 422,
+            "request": -93,
+            "ctrl": -93,
+            "ccr": 781,
+            "limited": 0,
+            "obs": 0,
+            "total": 422,
+            "encoder": {
+              "sampled": 422,
+              "live": 422,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "LR": {
+            "dc": -6,
+            "raw": -300,
+            "target": -259,
+            "cps": -178,
+            "ff_x10": -884,
+            "p_x10": -40,
+            "i_x10": -29,
+            "pwm": -96,
+            "total_hi": 0,
+            "total_lo": 286,
+            "request": -96,
+            "ctrl": -96,
+            "ccr": 806,
+            "limited": 0,
+            "obs": 0,
+            "total": 286,
+            "encoder": {
+              "sampled": 286,
+              "live": 286,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "RF": {
+            "dc": -7,
+            "raw": -350,
+            "target": -259,
+            "cps": -148,
+            "ff_x10": -938,
+            "p_x10": -55,
+            "i_x10": -39,
+            "pwm": -103,
+            "total_hi": 0,
+            "total_lo": 601,
+            "request": -103,
+            "ctrl": -103,
+            "ccr": 865,
+            "limited": 0,
+            "obs": 0,
+            "total": 601,
+            "encoder": {
+              "sampled": 64935,
+              "live": 64935,
+              "bad": 0,
+              "ab": 2
+            }
+          },
+          "RR": {
+            "dc": -6,
+            "raw": -300,
+            "target": -259,
+            "cps": -182,
+            "ff_x10": -961,
+            "p_x10": -38,
+            "i_x10": -30,
+            "pwm": -103,
+            "total_hi": 0,
+            "total_lo": 466,
+            "request": -103,
+            "ctrl": -103,
+            "ccr": 865,
+            "limited": 0,
+            "obs": 0,
+            "total": 466,
+            "encoder": {
+              "sampled": 65070,
+              "live": 65070,
+              "bad": 0,
+              "ab": 1
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 670,
+          "speed_t": 574022,
+          "control_t": 574022,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574023,
+          "feedback": 28701,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574043,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -38,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -7,
+            "raw": -350,
+            "target": -290,
+            "cps": -206,
+            "ff_x10": -889,
+            "p_x10": -42,
+            "i_x10": -35,
+            "pwm": -97,
+            "total_hi": 0,
+            "total_lo": 415,
+            "request": -97,
+            "ctrl": -97,
+            "ccr": 814,
+            "limited": 0,
+            "obs": 0,
+            "total": 415,
+            "encoder": {
+              "sampled": 415,
+              "live": 415,
+              "bad": 0,
+              "ab": 2
+            }
+          },
+          "LR": {
+            "dc": -5,
+            "raw": -250,
+            "target": -290,
+            "cps": -198,
+            "ff_x10": -929,
+            "p_x10": -45,
+            "i_x10": -34,
+            "pwm": -101,
+            "total_hi": 0,
+            "total_lo": 281,
+            "request": -101,
+            "ctrl": -101,
+            "ccr": 848,
+            "limited": 0,
+            "obs": 0,
+            "total": 281,
+            "encoder": {
+              "sampled": 281,
+              "live": 281,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RF": {
+            "dc": -7,
+            "raw": -350,
+            "target": -290,
+            "cps": -206,
+            "ff_x10": -981,
+            "p_x10": -42,
+            "i_x10": -43,
+            "pwm": -107,
+            "total_hi": 0,
+            "total_lo": 594,
+            "request": -107,
+            "ctrl": -107,
+            "ccr": 898,
+            "limited": 0,
+            "obs": 0,
+            "total": 594,
+            "encoder": {
+              "sampled": 64942,
+              "live": 64942,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "RR": {
+            "dc": -6,
+            "raw": -300,
+            "target": -290,
+            "cps": -216,
+            "ff_x10": -1007,
+            "p_x10": -37,
+            "i_x10": -34,
+            "pwm": -108,
+            "total_hi": 0,
+            "total_lo": 460,
+            "request": -108,
+            "ctrl": -108,
+            "ccr": 907,
+            "limited": 0,
+            "obs": 0,
+            "total": 460,
+            "encoder": {
+              "sampled": 65076,
+              "live": 65076,
+              "bad": 0,
+              "ab": 2
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 671,
+          "speed_t": 574042,
+          "control_t": 574042,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574043,
+          "feedback": 28702,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574063,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -261,
+            "ff_x10": -911,
+            "p_x10": -21,
+            "i_x10": -37,
+            "pwm": -97,
+            "total_hi": 0,
+            "total_lo": 407,
+            "request": -97,
+            "ctrl": -97,
+            "ccr": 814,
+            "limited": 0,
+            "obs": 0,
+            "total": 407,
+            "encoder": {
+              "sampled": 407,
+              "live": 407,
+              "bad": 0,
+              "ab": 2
+            }
+          },
+          "LR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -256,
+            "ff_x10": -952,
+            "p_x10": -24,
+            "i_x10": -36,
+            "pwm": -101,
+            "total_hi": 0,
+            "total_lo": 273,
+            "request": -101,
+            "ctrl": -101,
+            "ccr": 848,
+            "limited": 0,
+            "obs": 0,
+            "total": 273,
+            "encoder": {
+              "sampled": 273,
+              "live": 273,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -261,
+            "ff_x10": -1003,
+            "p_x10": -21,
+            "i_x10": -45,
+            "pwm": -107,
+            "total_hi": 0,
+            "total_lo": 586,
+            "request": -107,
+            "ctrl": -107,
+            "ccr": 898,
+            "limited": 0,
+            "obs": 0,
+            "total": 586,
+            "encoder": {
+              "sampled": 64950,
+              "live": 64950,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "RR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -268,
+            "ff_x10": -1030,
+            "p_x10": -18,
+            "i_x10": -35,
+            "pwm": -108,
+            "total_hi": 0,
+            "total_lo": 452,
+            "request": -108,
+            "ctrl": -108,
+            "ccr": 907,
+            "limited": 0,
+            "obs": 0,
+            "total": 452,
+            "encoder": {
+              "sampled": 65084,
+              "live": 65084,
+              "bad": 0,
+              "ab": 2
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 672,
+          "speed_t": 574062,
+          "control_t": 574062,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574063,
+          "feedback": 28703,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574083,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -315,
+            "ff_x10": -911,
+            "p_x10": 4,
+            "i_x10": -37,
+            "pwm": -94,
+            "total_hi": 0,
+            "total_lo": 398,
+            "request": -94,
+            "ctrl": -94,
+            "ccr": 789,
+            "limited": 0,
+            "obs": 0,
+            "total": 398,
+            "encoder": {
+              "sampled": 398,
+              "live": 398,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "LR": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -311,
+            "ff_x10": -952,
+            "p_x10": 3,
+            "i_x10": -36,
+            "pwm": -99,
+            "total_hi": 0,
+            "total_lo": 264,
+            "request": -99,
+            "ctrl": -99,
+            "ccr": 831,
+            "limited": 0,
+            "obs": 0,
+            "total": 264,
+            "encoder": {
+              "sampled": 264,
+              "live": 264,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "RF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -301,
+            "ff_x10": -1003,
+            "p_x10": -2,
+            "i_x10": -45,
+            "pwm": -105,
+            "total_hi": 0,
+            "total_lo": 578,
+            "request": -105,
+            "ctrl": -105,
+            "ccr": 882,
+            "limited": 0,
+            "obs": 0,
+            "total": 578,
+            "encoder": {
+              "sampled": 64958,
+              "live": 64958,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "RR": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -320,
+            "ff_x10": -1030,
+            "p_x10": 7,
+            "i_x10": -35,
+            "pwm": -106,
+            "total_hi": 0,
+            "total_lo": 443,
+            "request": -106,
+            "ctrl": -106,
+            "ccr": 890,
+            "limited": 0,
+            "obs": 0,
+            "total": 443,
+            "encoder": {
+              "sampled": 65093,
+              "live": 65093,
+              "bad": 0,
+              "ab": 0
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 673,
+          "speed_t": 574082,
+          "control_t": 574082,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574083,
+          "feedback": 28704,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574103,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -353,
+            "ff_x10": -911,
+            "p_x10": 24,
+            "i_x10": -34,
+            "pwm": -92,
+            "total_hi": 0,
+            "total_lo": 389,
+            "request": -92,
+            "ctrl": -92,
+            "ccr": 772,
+            "limited": 0,
+            "obs": 0,
+            "total": 389,
+            "encoder": {
+              "sampled": 389,
+              "live": 389,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "LR": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -351,
+            "ff_x10": -952,
+            "p_x10": 22,
+            "i_x10": -34,
+            "pwm": -96,
+            "total_hi": 0,
+            "total_lo": 255,
+            "request": -96,
+            "ctrl": -96,
+            "ccr": 806,
+            "limited": 0,
+            "obs": 0,
+            "total": 255,
+            "encoder": {
+              "sampled": 255,
+              "live": 254,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "RF": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -343,
+            "ff_x10": -1003,
+            "p_x10": 19,
+            "i_x10": -44,
+            "pwm": -103,
+            "total_hi": 0,
+            "total_lo": 569,
+            "request": -103,
+            "ctrl": -103,
+            "ccr": 865,
+            "limited": 0,
+            "obs": 0,
+            "total": 569,
+            "encoder": {
+              "sampled": 64967,
+              "live": 64967,
+              "bad": 0,
+              "ab": 2
+            }
+          },
+          "RR": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -357,
+            "ff_x10": -1030,
+            "p_x10": 25,
+            "i_x10": -32,
+            "pwm": -104,
+            "total_hi": 0,
+            "total_lo": 434,
+            "request": -104,
+            "ctrl": -104,
+            "ccr": 873,
+            "limited": 0,
+            "obs": 0,
+            "total": 434,
+            "encoder": {
+              "sampled": 65102,
+              "live": 65102,
+              "bad": 0,
+              "ab": 1
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 674,
+          "speed_t": 574102,
+          "control_t": 574102,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574103,
+          "feedback": 28705,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574123,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -10,
+            "raw": -500,
+            "target": -305,
+            "cps": -395,
+            "ff_x10": -911,
+            "p_x10": 45,
+            "i_x10": -30,
+            "pwm": -90,
+            "total_hi": 0,
+            "total_lo": 379,
+            "request": -90,
+            "ctrl": -90,
+            "ccr": 756,
+            "limited": 0,
+            "obs": 0,
+            "total": 379,
+            "encoder": {
+              "sampled": 379,
+              "live": 379,
+              "bad": 0,
+              "ab": 2
+            }
+          },
+          "LR": {
+            "dc": -10,
+            "raw": -500,
+            "target": -305,
+            "cps": -393,
+            "ff_x10": -952,
+            "p_x10": 44,
+            "i_x10": -29,
+            "pwm": -94,
+            "total_hi": 0,
+            "total_lo": 245,
+            "request": -94,
+            "ctrl": -94,
+            "ccr": 789,
+            "limited": 0,
+            "obs": 0,
+            "total": 245,
+            "encoder": {
+              "sampled": 245,
+              "live": 245,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RF": {
+            "dc": -10,
+            "raw": -500,
+            "target": -305,
+            "cps": -388,
+            "ff_x10": -1003,
+            "p_x10": 41,
+            "i_x10": -39,
+            "pwm": -100,
+            "total_hi": 0,
+            "total_lo": 559,
+            "request": -100,
+            "ctrl": -100,
+            "ccr": 840,
+            "limited": 0,
+            "obs": 0,
+            "total": 559,
+            "encoder": {
+              "sampled": 64977,
+              "live": 64977,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RR": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -383,
+            "ff_x10": -1030,
+            "p_x10": 39,
+            "i_x10": -28,
+            "pwm": -102,
+            "total_hi": 0,
+            "total_lo": 425,
+            "request": -102,
+            "ctrl": -102,
+            "ccr": 856,
+            "limited": 0,
+            "obs": 0,
+            "total": 425,
+            "encoder": {
+              "sampled": 65111,
+              "live": 65111,
+              "bad": 0,
+              "ab": 3
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 675,
+          "speed_t": 574122,
+          "control_t": 574122,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574123,
+          "feedback": 28706,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574143,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -411,
+            "ff_x10": -911,
+            "p_x10": 52,
+            "i_x10": -24,
+            "pwm": -88,
+            "total_hi": 0,
+            "total_lo": 370,
+            "request": -88,
+            "ctrl": -88,
+            "ccr": 739,
+            "limited": 0,
+            "obs": 0,
+            "total": 370,
+            "encoder": {
+              "sampled": 370,
+              "live": 370,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "LR": {
+            "dc": -10,
+            "raw": -500,
+            "target": -305,
+            "cps": -424,
+            "ff_x10": -952,
+            "p_x10": 59,
+            "i_x10": -23,
+            "pwm": -92,
+            "total_hi": 0,
+            "total_lo": 235,
+            "request": -92,
+            "ctrl": -92,
+            "ccr": 772,
+            "limited": 0,
+            "obs": 0,
+            "total": 235,
+            "encoder": {
+              "sampled": 235,
+              "live": 235,
+              "bad": 0,
+              "ab": 2
+            }
+          },
+          "RF": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -405,
+            "ff_x10": -1003,
+            "p_x10": 50,
+            "i_x10": -34,
+            "pwm": -99,
+            "total_hi": 0,
+            "total_lo": 550,
+            "request": -99,
+            "ctrl": -99,
+            "ccr": 831,
+            "limited": 0,
+            "obs": 0,
+            "total": 550,
+            "encoder": {
+              "sampled": 64986,
+              "live": 64986,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "RR": {
+            "dc": -10,
+            "raw": -500,
+            "target": -305,
+            "cps": -417,
+            "ff_x10": -1030,
+            "p_x10": 55,
+            "i_x10": -23,
+            "pwm": -100,
+            "total_hi": 0,
+            "total_lo": 415,
+            "request": -100,
+            "ctrl": -100,
+            "ccr": 840,
+            "limited": 0,
+            "obs": 0,
+            "total": 415,
+            "encoder": {
+              "sampled": 65121,
+              "live": 65121,
+              "bad": 0,
+              "ab": 0
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 676,
+          "speed_t": 574142,
+          "control_t": 574142,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574143,
+          "feedback": 28707,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574163,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -10,
+            "raw": -500,
+            "target": -305,
+            "cps": -436,
+            "ff_x10": -911,
+            "p_x10": 65,
+            "i_x10": -18,
+            "pwm": -86,
+            "total_hi": 0,
+            "total_lo": 360,
+            "request": -86,
+            "ctrl": -86,
+            "ccr": 722,
+            "limited": 0,
+            "obs": 0,
+            "total": 360,
+            "encoder": {
+              "sampled": 360,
+              "live": 360,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "LR": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -431,
+            "ff_x10": -952,
+            "p_x10": 62,
+            "i_x10": -17,
+            "pwm": -91,
+            "total_hi": 0,
+            "total_lo": 226,
+            "request": -91,
+            "ctrl": -91,
+            "ccr": 764,
+            "limited": 0,
+            "obs": 0,
+            "total": 226,
+            "encoder": {
+              "sampled": 226,
+              "live": 226,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "RF": {
+            "dc": -10,
+            "raw": -500,
+            "target": -305,
+            "cps": -432,
+            "ff_x10": -1003,
+            "p_x10": 63,
+            "i_x10": -28,
+            "pwm": -97,
+            "total_hi": 0,
+            "total_lo": 540,
+            "request": -97,
+            "ctrl": -97,
+            "ccr": 814,
+            "limited": 0,
+            "obs": 0,
+            "total": 540,
+            "encoder": {
+              "sampled": 64996,
+              "live": 64996,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "RR": {
+            "dc": -10,
+            "raw": -500,
+            "target": -305,
+            "cps": -440,
+            "ff_x10": -1030,
+            "p_x10": 67,
+            "i_x10": -16,
+            "pwm": -98,
+            "total_hi": 0,
+            "total_lo": 405,
+            "request": -98,
+            "ctrl": -98,
+            "ccr": 823,
+            "limited": 0,
+            "obs": 0,
+            "total": 405,
+            "encoder": {
+              "sampled": 65131,
+              "live": 65131,
+              "bad": 0,
+              "ab": 3
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 677,
+          "speed_t": 574162,
+          "control_t": 574162,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574163,
+          "feedback": 28708,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574183,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -440,
+            "ff_x10": -911,
+            "p_x10": 67,
+            "i_x10": -11,
+            "pwm": -86,
+            "total_hi": 0,
+            "total_lo": 351,
+            "request": -86,
+            "ctrl": -86,
+            "ccr": 722,
+            "limited": 0,
+            "obs": 0,
+            "total": 351,
+            "encoder": {
+              "sampled": 351,
+              "live": 351,
+              "bad": 0,
+              "ab": 2
+            }
+          },
+          "LR": {
+            "dc": -10,
+            "raw": -500,
+            "target": -305,
+            "cps": -451,
+            "ff_x10": -952,
+            "p_x10": 72,
+            "i_x10": -10,
+            "pwm": -89,
+            "total_hi": 0,
+            "total_lo": 216,
+            "request": -89,
+            "ctrl": -89,
+            "ccr": 747,
+            "limited": 0,
+            "obs": 0,
+            "total": 216,
+            "encoder": {
+              "sampled": 216,
+              "live": 216,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "RF": {
+            "dc": -10,
+            "raw": -500,
+            "target": -305,
+            "cps": -452,
+            "ff_x10": -1003,
+            "p_x10": 73,
+            "i_x10": -21,
+            "pwm": -95,
+            "total_hi": 0,
+            "total_lo": 530,
+            "request": -95,
+            "ctrl": -95,
+            "ccr": 798,
+            "limited": 0,
+            "obs": 0,
+            "total": 530,
+            "encoder": {
+              "sampled": 65006,
+              "live": 65006,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "RR": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -443,
+            "ff_x10": -1030,
+            "p_x10": 68,
+            "i_x10": -9,
+            "pwm": -97,
+            "total_hi": 0,
+            "total_lo": 396,
+            "request": -97,
+            "ctrl": -97,
+            "ccr": 814,
+            "limited": 0,
+            "obs": 0,
+            "total": 396,
+            "encoder": {
+              "sampled": 65140,
+              "live": 65140,
+              "bad": 0,
+              "ab": 2
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 678,
+          "speed_t": 574182,
+          "control_t": 574182,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574183,
+          "feedback": 28709,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574203,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -10,
+            "raw": -500,
+            "target": -305,
+            "cps": -457,
+            "ff_x10": -911,
+            "p_x10": 75,
+            "i_x10": -3,
+            "pwm": -84,
+            "total_hi": 0,
+            "total_lo": 341,
+            "request": -84,
+            "ctrl": -84,
+            "ccr": 705,
+            "limited": 0,
+            "obs": 0,
+            "total": 341,
+            "encoder": {
+              "sampled": 341,
+              "live": 341,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "LR": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -450,
+            "ff_x10": -952,
+            "p_x10": 72,
+            "i_x10": -3,
+            "pwm": -88,
+            "total_hi": 0,
+            "total_lo": 207,
+            "request": -88,
+            "ctrl": -88,
+            "ccr": 739,
+            "limited": 0,
+            "obs": 0,
+            "total": 207,
+            "encoder": {
+              "sampled": 207,
+              "live": 207,
+              "bad": 0,
+              "ab": 2
+            }
+          },
+          "RF": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -451,
+            "ff_x10": -1003,
+            "p_x10": 72,
+            "i_x10": -13,
+            "pwm": -94,
+            "total_hi": 0,
+            "total_lo": 521,
+            "request": -94,
+            "ctrl": -94,
+            "ccr": 789,
+            "limited": 0,
+            "obs": 0,
+            "total": 521,
+            "encoder": {
+              "sampled": 65015,
+              "live": 65015,
+              "bad": 0,
+              "ab": 2
+            }
+          },
+          "RR": {
+            "dc": -10,
+            "raw": -500,
+            "target": -305,
+            "cps": -459,
+            "ff_x10": -1030,
+            "p_x10": 77,
+            "i_x10": -1,
+            "pwm": -96,
+            "total_hi": 0,
+            "total_lo": 386,
+            "request": -96,
+            "ctrl": -96,
+            "ccr": 806,
+            "limited": 0,
+            "obs": 0,
+            "total": 386,
+            "encoder": {
+              "sampled": 65150,
+              "live": 65150,
+              "bad": 0,
+              "ab": 1
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 679,
+          "speed_t": 574202,
+          "control_t": 574202,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574203,
+          "feedback": 28710,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574223,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -455,
+            "ff_x10": -911,
+            "p_x10": 74,
+            "i_x10": 3,
+            "pwm": -83,
+            "total_hi": 0,
+            "total_lo": 332,
+            "request": -83,
+            "ctrl": -83,
+            "ccr": 697,
+            "limited": 0,
+            "obs": 0,
+            "total": 332,
+            "encoder": {
+              "sampled": 332,
+              "live": 332,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "LR": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -450,
+            "ff_x10": -952,
+            "p_x10": 72,
+            "i_x10": 4,
+            "pwm": -88,
+            "total_hi": 0,
+            "total_lo": 198,
+            "request": -88,
+            "ctrl": -88,
+            "ccr": 739,
+            "limited": 0,
+            "obs": 0,
+            "total": 198,
+            "encoder": {
+              "sampled": 198,
+              "live": 198,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "RF": {
+            "dc": -10,
+            "raw": -500,
+            "target": -305,
+            "cps": -465,
+            "ff_x10": -1003,
+            "p_x10": 79,
+            "i_x10": -5,
+            "pwm": -93,
+            "total_hi": 0,
+            "total_lo": 511,
+            "request": -93,
+            "ctrl": -93,
+            "ccr": 781,
+            "limited": 0,
+            "obs": 0,
+            "total": 511,
+            "encoder": {
+              "sampled": 65025,
+              "live": 65025,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RR": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -456,
+            "ff_x10": -1030,
+            "p_x10": 75,
+            "i_x10": 5,
+            "pwm": -95,
+            "total_hi": 0,
+            "total_lo": 377,
+            "request": -95,
+            "ctrl": -95,
+            "ccr": 798,
+            "limited": 0,
+            "obs": 0,
+            "total": 377,
+            "encoder": {
+              "sampled": 65159,
+              "live": 65159,
+              "bad": 0,
+              "ab": 3
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 680,
+          "speed_t": 574222,
+          "control_t": 574222,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574223,
+          "feedback": 28711,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574243,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -453,
+            "ff_x10": -911,
+            "p_x10": 74,
+            "i_x10": 10,
+            "pwm": -83,
+            "total_hi": 0,
+            "total_lo": 323,
+            "request": -83,
+            "ctrl": -83,
+            "ccr": 697,
+            "limited": 0,
+            "obs": 0,
+            "total": 323,
+            "encoder": {
+              "sampled": 323,
+              "live": 322,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "LR": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -450,
+            "ff_x10": -952,
+            "p_x10": 72,
+            "i_x10": 11,
+            "pwm": -87,
+            "total_hi": 0,
+            "total_lo": 189,
+            "request": -87,
+            "ctrl": -87,
+            "ccr": 730,
+            "limited": 0,
+            "obs": 0,
+            "total": 189,
+            "encoder": {
+              "sampled": 189,
+              "live": 189,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RF": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -460,
+            "ff_x10": -1003,
+            "p_x10": 77,
+            "i_x10": 1,
+            "pwm": -92,
+            "total_hi": 0,
+            "total_lo": 502,
+            "request": -92,
+            "ctrl": -92,
+            "ccr": 772,
+            "limited": 0,
+            "obs": 0,
+            "total": 502,
+            "encoder": {
+              "sampled": 65034,
+              "live": 65034,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "RR": {
+            "dc": -10,
+            "raw": -500,
+            "target": -305,
+            "cps": -469,
+            "ff_x10": -1030,
+            "p_x10": 81,
+            "i_x10": 14,
+            "pwm": -93,
+            "total_hi": 0,
+            "total_lo": 367,
+            "request": -93,
+            "ctrl": -93,
+            "ccr": 781,
+            "limited": 0,
+            "obs": 0,
+            "total": 367,
+            "encoder": {
+              "sampled": 65169,
+              "live": 65169,
+              "bad": 0,
+              "ab": 0
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 681,
+          "speed_t": 574242,
+          "control_t": 574242,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574243,
+          "feedback": 28712,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574263,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -452,
+            "ff_x10": -911,
+            "p_x10": 73,
+            "i_x10": 18,
+            "pwm": -82,
+            "total_hi": 0,
+            "total_lo": 314,
+            "request": -82,
+            "ctrl": -82,
+            "ccr": 688,
+            "limited": 0,
+            "obs": 0,
+            "total": 314,
+            "encoder": {
+              "sampled": 314,
+              "live": 314,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "LR": {
+            "dc": -10,
+            "raw": -500,
+            "target": -305,
+            "cps": -464,
+            "ff_x10": -952,
+            "p_x10": 79,
+            "i_x10": 19,
+            "pwm": -85,
+            "total_hi": 0,
+            "total_lo": 179,
+            "request": -85,
+            "ctrl": -85,
+            "ccr": 714,
+            "limited": 0,
+            "obs": 0,
+            "total": 179,
+            "encoder": {
+              "sampled": 179,
+              "live": 179,
+              "bad": 0,
+              "ab": 2
+            }
+          },
+          "RF": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -457,
+            "ff_x10": -1003,
+            "p_x10": 76,
+            "i_x10": 9,
+            "pwm": -92,
+            "total_hi": 0,
+            "total_lo": 493,
+            "request": -92,
+            "ctrl": -92,
+            "ccr": 772,
+            "limited": 0,
+            "obs": 0,
+            "total": 493,
+            "encoder": {
+              "sampled": 65043,
+              "live": 65043,
+              "bad": 0,
+              "ab": 2
+            }
+          },
+          "RR": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -463,
+            "ff_x10": -1030,
+            "p_x10": 79,
+            "i_x10": 21,
+            "pwm": -93,
+            "total_hi": 0,
+            "total_lo": 358,
+            "request": -93,
+            "ctrl": -93,
+            "ccr": 781,
+            "limited": 0,
+            "obs": 0,
+            "total": 358,
+            "encoder": {
+              "sampled": 65178,
+              "live": 65178,
+              "bad": 0,
+              "ab": 1
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 682,
+          "speed_t": 574262,
+          "control_t": 574262,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574263,
+          "feedback": 28713,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574283,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -451,
+            "ff_x10": -911,
+            "p_x10": 73,
+            "i_x10": 25,
+            "pwm": -81,
+            "total_hi": 0,
+            "total_lo": 305,
+            "request": -81,
+            "ctrl": -81,
+            "ccr": 680,
+            "limited": 0,
+            "obs": 0,
+            "total": 305,
+            "encoder": {
+              "sampled": 305,
+              "live": 305,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "LR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -446,
+            "ff_x10": -952,
+            "p_x10": 70,
+            "i_x10": 26,
+            "pwm": -86,
+            "total_hi": 0,
+            "total_lo": 171,
+            "request": -86,
+            "ctrl": -86,
+            "ccr": 722,
+            "limited": 0,
+            "obs": 0,
+            "total": 171,
+            "encoder": {
+              "sampled": 171,
+              "live": 171,
+              "bad": 0,
+              "ab": 2
+            }
+          },
+          "RF": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -455,
+            "ff_x10": -1003,
+            "p_x10": 75,
+            "i_x10": 16,
+            "pwm": -91,
+            "total_hi": 0,
+            "total_lo": 484,
+            "request": -91,
+            "ctrl": -91,
+            "ccr": 764,
+            "limited": 0,
+            "obs": 0,
+            "total": 484,
+            "encoder": {
+              "sampled": 65052,
+              "live": 65053,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RR": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -459,
+            "ff_x10": -1030,
+            "p_x10": 77,
+            "i_x10": 29,
+            "pwm": -92,
+            "total_hi": 0,
+            "total_lo": 349,
+            "request": -92,
+            "ctrl": -92,
+            "ccr": 772,
+            "limited": 0,
+            "obs": 0,
+            "total": 349,
+            "encoder": {
+              "sampled": 65187,
+              "live": 65187,
+              "bad": 0,
+              "ab": 3
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 683,
+          "speed_t": 574282,
+          "control_t": 574282,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574283,
+          "feedback": 28714,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574303,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -451,
+            "ff_x10": -911,
+            "p_x10": 72,
+            "i_x10": 32,
+            "pwm": -81,
+            "total_hi": 0,
+            "total_lo": 296,
+            "request": -81,
+            "ctrl": -81,
+            "ccr": 680,
+            "limited": 0,
+            "obs": 0,
+            "total": 296,
+            "encoder": {
+              "sampled": 296,
+              "live": 296,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "LR": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -447,
+            "ff_x10": -952,
+            "p_x10": 70,
+            "i_x10": 33,
+            "pwm": -85,
+            "total_hi": 0,
+            "total_lo": 162,
+            "request": -85,
+            "ctrl": -85,
+            "ccr": 714,
+            "limited": 0,
+            "obs": 0,
+            "total": 162,
+            "encoder": {
+              "sampled": 162,
+              "live": 162,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "RF": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -453,
+            "ff_x10": -1003,
+            "p_x10": 74,
+            "i_x10": 24,
+            "pwm": -90,
+            "total_hi": 0,
+            "total_lo": 475,
+            "request": -90,
+            "ctrl": -90,
+            "ccr": 756,
+            "limited": 0,
+            "obs": 0,
+            "total": 475,
+            "encoder": {
+              "sampled": 65061,
+              "live": 65061,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RR": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -456,
+            "ff_x10": -1030,
+            "p_x10": 75,
+            "i_x10": 37,
+            "pwm": -92,
+            "total_hi": 0,
+            "total_lo": 340,
+            "request": -92,
+            "ctrl": -92,
+            "ccr": 772,
+            "limited": 0,
+            "obs": 0,
+            "total": 340,
+            "encoder": {
+              "sampled": 65196,
+              "live": 65196,
+              "bad": 0,
+              "ab": 2
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 684,
+          "speed_t": 574302,
+          "control_t": 574302,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574303,
+          "feedback": 28715,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574323,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -450,
+            "ff_x10": -911,
+            "p_x10": 72,
+            "i_x10": 40,
+            "pwm": -80,
+            "total_hi": 0,
+            "total_lo": 287,
+            "request": -80,
+            "ctrl": -80,
+            "ccr": 672,
+            "limited": 0,
+            "obs": 0,
+            "total": 287,
+            "encoder": {
+              "sampled": 287,
+              "live": 287,
+              "bad": 0,
+              "ab": 2
+            }
+          },
+          "LR": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -448,
+            "ff_x10": -952,
+            "p_x10": 71,
+            "i_x10": 40,
+            "pwm": -84,
+            "total_hi": 0,
+            "total_lo": 153,
+            "request": -84,
+            "ctrl": -84,
+            "ccr": 705,
+            "limited": 0,
+            "obs": 0,
+            "total": 153,
+            "encoder": {
+              "sampled": 153,
+              "live": 153,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -438,
+            "ff_x10": -1003,
+            "p_x10": 66,
+            "i_x10": 31,
+            "pwm": -91,
+            "total_hi": 0,
+            "total_lo": 467,
+            "request": -91,
+            "ctrl": -91,
+            "ccr": 764,
+            "limited": 0,
+            "obs": 0,
+            "total": 467,
+            "encoder": {
+              "sampled": 65069,
+              "live": 65069,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -440,
+            "ff_x10": -1030,
+            "p_x10": 67,
+            "i_x10": 43,
+            "pwm": -92,
+            "total_hi": 0,
+            "total_lo": 332,
+            "request": -92,
+            "ctrl": -92,
+            "ccr": 772,
+            "limited": 0,
+            "obs": 0,
+            "total": 332,
+            "encoder": {
+              "sampled": 65204,
+              "live": 65205,
+              "bad": 0,
+              "ab": 0
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 685,
+          "speed_t": 574322,
+          "control_t": 574322,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574323,
+          "feedback": 28716,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574343,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -436,
+            "ff_x10": -911,
+            "p_x10": 65,
+            "i_x10": 46,
+            "pwm": -80,
+            "total_hi": 0,
+            "total_lo": 279,
+            "request": -80,
+            "ctrl": -80,
+            "ccr": 672,
+            "limited": 0,
+            "obs": 0,
+            "total": 279,
+            "encoder": {
+              "sampled": 279,
+              "live": 278,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "LR": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -448,
+            "ff_x10": -952,
+            "p_x10": 71,
+            "i_x10": 47,
+            "pwm": -83,
+            "total_hi": 0,
+            "total_lo": 144,
+            "request": -83,
+            "ctrl": -83,
+            "ccr": 697,
+            "limited": 0,
+            "obs": 0,
+            "total": 144,
+            "encoder": {
+              "sampled": 144,
+              "live": 144,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "RF": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -441,
+            "ff_x10": -1003,
+            "p_x10": 68,
+            "i_x10": 37,
+            "pwm": -90,
+            "total_hi": 0,
+            "total_lo": 458,
+            "request": -90,
+            "ctrl": -90,
+            "ccr": 756,
+            "limited": 0,
+            "obs": 0,
+            "total": 458,
+            "encoder": {
+              "sampled": 65078,
+              "live": 65078,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "RR": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -443,
+            "ff_x10": -1030,
+            "p_x10": 68,
+            "i_x10": 50,
+            "pwm": -91,
+            "total_hi": 0,
+            "total_lo": 323,
+            "request": -91,
+            "ctrl": -91,
+            "ccr": 764,
+            "limited": 0,
+            "obs": 0,
+            "total": 323,
+            "encoder": {
+              "sampled": 65213,
+              "live": 65213,
+              "bad": 0,
+              "ab": 0
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 686,
+          "speed_t": 574342,
+          "control_t": 574342,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574343,
+          "feedback": 28717,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574363,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -440,
+            "ff_x10": -911,
+            "p_x10": 67,
+            "i_x10": 53,
+            "pwm": -79,
+            "total_hi": 0,
+            "total_lo": 270,
+            "request": -79,
+            "ctrl": -79,
+            "ccr": 663,
+            "limited": 0,
+            "obs": 0,
+            "total": 270,
+            "encoder": {
+              "sampled": 270,
+              "live": 270,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "LR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -434,
+            "ff_x10": -952,
+            "p_x10": 64,
+            "i_x10": 54,
+            "pwm": -83,
+            "total_hi": 0,
+            "total_lo": 136,
+            "request": -83,
+            "ctrl": -83,
+            "ccr": 697,
+            "limited": 0,
+            "obs": 0,
+            "total": 136,
+            "encoder": {
+              "sampled": 136,
+              "live": 136,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "RF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -429,
+            "ff_x10": -1003,
+            "p_x10": 62,
+            "i_x10": 44,
+            "pwm": -90,
+            "total_hi": 0,
+            "total_lo": 450,
+            "request": -90,
+            "ctrl": -90,
+            "ccr": 756,
+            "limited": 0,
+            "obs": 0,
+            "total": 450,
+            "encoder": {
+              "sampled": 65086,
+              "live": 65086,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "RR": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -445,
+            "ff_x10": -1030,
+            "p_x10": 69,
+            "i_x10": 57,
+            "pwm": -90,
+            "total_hi": 0,
+            "total_lo": 314,
+            "request": -90,
+            "ctrl": -90,
+            "ccr": 756,
+            "limited": 0,
+            "obs": 0,
+            "total": 314,
+            "encoder": {
+              "sampled": 65222,
+              "live": 65222,
+              "bad": 0,
+              "ab": 1
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 687,
+          "speed_t": 574362,
+          "control_t": 574362,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574363,
+          "feedback": 28718,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574383,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -428,
+            "ff_x10": -911,
+            "p_x10": 61,
+            "i_x10": 59,
+            "pwm": -79,
+            "total_hi": 0,
+            "total_lo": 262,
+            "request": -79,
+            "ctrl": -79,
+            "ccr": 663,
+            "limited": 0,
+            "obs": 0,
+            "total": 262,
+            "encoder": {
+              "sampled": 262,
+              "live": 262,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "LR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -424,
+            "ff_x10": -952,
+            "p_x10": 59,
+            "i_x10": 60,
+            "pwm": -83,
+            "total_hi": 0,
+            "total_lo": 128,
+            "request": -83,
+            "ctrl": -83,
+            "ccr": 697,
+            "limited": 0,
+            "obs": 0,
+            "total": 128,
+            "encoder": {
+              "sampled": 128,
+              "live": 128,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "RF": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -435,
+            "ff_x10": -1003,
+            "p_x10": 65,
+            "i_x10": 50,
+            "pwm": -89,
+            "total_hi": 0,
+            "total_lo": 441,
+            "request": -89,
+            "ctrl": -89,
+            "ccr": 747,
+            "limited": 0,
+            "obs": 0,
+            "total": 441,
+            "encoder": {
+              "sampled": 65095,
+              "live": 65095,
+              "bad": 0,
+              "ab": 2
+            }
+          },
+          "RR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -432,
+            "ff_x10": -1030,
+            "p_x10": 63,
+            "i_x10": 64,
+            "pwm": -90,
+            "total_hi": 0,
+            "total_lo": 306,
+            "request": -90,
+            "ctrl": -90,
+            "ccr": 756,
+            "limited": 0,
+            "obs": 0,
+            "total": 306,
+            "encoder": {
+              "sampled": 65230,
+              "live": 65230,
+              "bad": 0,
+              "ab": 1
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 688,
+          "speed_t": 574382,
+          "control_t": 574382,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574383,
+          "feedback": 28719,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574403,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -434,
+            "ff_x10": -911,
+            "p_x10": 64,
+            "i_x10": 66,
+            "pwm": -78,
+            "total_hi": 0,
+            "total_lo": 253,
+            "request": -78,
+            "ctrl": -78,
+            "ccr": 655,
+            "limited": 0,
+            "obs": 0,
+            "total": 253,
+            "encoder": {
+              "sampled": 253,
+              "live": 253,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "LR": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -431,
+            "ff_x10": -952,
+            "p_x10": 63,
+            "i_x10": 66,
+            "pwm": -82,
+            "total_hi": 0,
+            "total_lo": 119,
+            "request": -82,
+            "ctrl": -82,
+            "ccr": 688,
+            "limited": 0,
+            "obs": 0,
+            "total": 119,
+            "encoder": {
+              "sampled": 119,
+              "live": 119,
+              "bad": 0,
+              "ab": 2
+            }
+          },
+          "RF": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -439,
+            "ff_x10": -1003,
+            "p_x10": 67,
+            "i_x10": 57,
+            "pwm": -88,
+            "total_hi": 0,
+            "total_lo": 432,
+            "request": -88,
+            "ctrl": -88,
+            "ccr": 739,
+            "limited": 0,
+            "obs": 0,
+            "total": 432,
+            "encoder": {
+              "sampled": 65104,
+              "live": 65104,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "RR": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -437,
+            "ff_x10": -1030,
+            "p_x10": 65,
+            "i_x10": 70,
+            "pwm": -89,
+            "total_hi": 0,
+            "total_lo": 297,
+            "request": -89,
+            "ctrl": -89,
+            "ccr": 747,
+            "limited": 0,
+            "obs": 0,
+            "total": 297,
+            "encoder": {
+              "sampled": 65239,
+              "live": 65239,
+              "bad": 0,
+              "ab": 3
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 689,
+          "speed_t": 574402,
+          "control_t": 574402,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574403,
+          "feedback": 28720,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574423,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -424,
+            "ff_x10": -911,
+            "p_x10": 59,
+            "i_x10": 72,
+            "pwm": -78,
+            "total_hi": 0,
+            "total_lo": 245,
+            "request": -78,
+            "ctrl": -78,
+            "ccr": 655,
+            "limited": 0,
+            "obs": 0,
+            "total": 245,
+            "encoder": {
+              "sampled": 245,
+              "live": 245,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "LR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -422,
+            "ff_x10": -952,
+            "p_x10": 58,
+            "i_x10": 72,
+            "pwm": -82,
+            "total_hi": 0,
+            "total_lo": 111,
+            "request": -82,
+            "ctrl": -82,
+            "ccr": 688,
+            "limited": 0,
+            "obs": 0,
+            "total": 111,
+            "encoder": {
+              "sampled": 111,
+              "live": 111,
+              "bad": 0,
+              "ab": 2
+            }
+          },
+          "RF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -428,
+            "ff_x10": -1003,
+            "p_x10": 61,
+            "i_x10": 63,
+            "pwm": -88,
+            "total_hi": 0,
+            "total_lo": 424,
+            "request": -88,
+            "ctrl": -88,
+            "ccr": 739,
+            "limited": 0,
+            "obs": 0,
+            "total": 424,
+            "encoder": {
+              "sampled": 65112,
+              "live": 65112,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "RR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -426,
+            "ff_x10": -1030,
+            "p_x10": 60,
+            "i_x10": 76,
+            "pwm": -89,
+            "total_hi": 0,
+            "total_lo": 289,
+            "request": -89,
+            "ctrl": -89,
+            "ccr": 747,
+            "limited": 0,
+            "obs": 0,
+            "total": 289,
+            "encoder": {
+              "sampled": 65247,
+              "live": 65247,
+              "bad": 0,
+              "ab": 3
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 690,
+          "speed_t": 574422,
+          "control_t": 574422,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574423,
+          "feedback": 28721,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574443,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -432,
+            "ff_x10": -911,
+            "p_x10": 63,
+            "i_x10": 78,
+            "pwm": -77,
+            "total_hi": 0,
+            "total_lo": 236,
+            "request": -77,
+            "ctrl": -77,
+            "ccr": 646,
+            "limited": 0,
+            "obs": 0,
+            "total": 236,
+            "encoder": {
+              "sampled": 236,
+              "live": 236,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "LR": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -430,
+            "ff_x10": -952,
+            "p_x10": 62,
+            "i_x10": 78,
+            "pwm": -81,
+            "total_hi": 0,
+            "total_lo": 102,
+            "request": -81,
+            "ctrl": -81,
+            "ccr": 680,
+            "limited": 0,
+            "obs": 0,
+            "total": 102,
+            "encoder": {
+              "sampled": 102,
+              "live": 102,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "RF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -420,
+            "ff_x10": -1003,
+            "p_x10": 57,
+            "i_x10": 69,
+            "pwm": -88,
+            "total_hi": 0,
+            "total_lo": 416,
+            "request": -88,
+            "ctrl": -88,
+            "ccr": 739,
+            "limited": 0,
+            "obs": 0,
+            "total": 416,
+            "encoder": {
+              "sampled": 65120,
+              "live": 65121,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RR": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -433,
+            "ff_x10": -1030,
+            "p_x10": 63,
+            "i_x10": 83,
+            "pwm": -88,
+            "total_hi": 0,
+            "total_lo": 280,
+            "request": -88,
+            "ctrl": -88,
+            "ccr": 739,
+            "limited": 0,
+            "obs": 0,
+            "total": 280,
+            "encoder": {
+              "sampled": 65256,
+              "live": 65256,
+              "bad": 0,
+              "ab": 2
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 691,
+          "speed_t": 574442,
+          "control_t": 574442,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574443,
+          "feedback": 28722,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574463,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -422,
+            "ff_x10": -911,
+            "p_x10": 58,
+            "i_x10": 84,
+            "pwm": -77,
+            "total_hi": 0,
+            "total_lo": 228,
+            "request": -77,
+            "ctrl": -77,
+            "ccr": 646,
+            "limited": 0,
+            "obs": 0,
+            "total": 228,
+            "encoder": {
+              "sampled": 228,
+              "live": 228,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "LR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -421,
+            "ff_x10": -952,
+            "p_x10": 58,
+            "i_x10": 84,
+            "pwm": -81,
+            "total_hi": 0,
+            "total_lo": 94,
+            "request": -81,
+            "ctrl": -81,
+            "ccr": 680,
+            "limited": 0,
+            "obs": 0,
+            "total": 94,
+            "encoder": {
+              "sampled": 94,
+              "live": 94,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "RF": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -428,
+            "ff_x10": -1003,
+            "p_x10": 61,
+            "i_x10": 75,
+            "pwm": -87,
+            "total_hi": 0,
+            "total_lo": 407,
+            "request": -87,
+            "ctrl": -87,
+            "ccr": 730,
+            "limited": 0,
+            "obs": 0,
+            "total": 407,
+            "encoder": {
+              "sampled": 65129,
+              "live": 65129,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -423,
+            "ff_x10": -1030,
+            "p_x10": 59,
+            "i_x10": 89,
+            "pwm": -88,
+            "total_hi": 0,
+            "total_lo": 272,
+            "request": -88,
+            "ctrl": -88,
+            "ccr": 739,
+            "limited": 0,
+            "obs": 0,
+            "total": 272,
+            "encoder": {
+              "sampled": 65264,
+              "live": 65264,
+              "bad": 0,
+              "ab": 2
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 692,
+          "speed_t": 574462,
+          "control_t": 574462,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574463,
+          "feedback": 28723,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574483,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -430,
+            "ff_x10": -911,
+            "p_x10": 62,
+            "i_x10": 90,
+            "pwm": -76,
+            "total_hi": 0,
+            "total_lo": 219,
+            "request": -76,
+            "ctrl": -76,
+            "ccr": 638,
+            "limited": 0,
+            "obs": 0,
+            "total": 219,
+            "encoder": {
+              "sampled": 219,
+              "live": 219,
+              "bad": 0,
+              "ab": 2
+            }
+          },
+          "LR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -415,
+            "ff_x10": -952,
+            "p_x10": 55,
+            "i_x10": 89,
+            "pwm": -81,
+            "total_hi": 0,
+            "total_lo": 86,
+            "request": -81,
+            "ctrl": -81,
+            "ccr": 680,
+            "limited": 0,
+            "obs": 0,
+            "total": 86,
+            "encoder": {
+              "sampled": 86,
+              "live": 85,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -420,
+            "ff_x10": -1003,
+            "p_x10": 57,
+            "i_x10": 81,
+            "pwm": -86,
+            "total_hi": 0,
+            "total_lo": 399,
+            "request": -86,
+            "ctrl": -86,
+            "ccr": 722,
+            "limited": 0,
+            "obs": 0,
+            "total": 399,
+            "encoder": {
+              "sampled": 65137,
+              "live": 65137,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -417,
+            "ff_x10": -1030,
+            "p_x10": 55,
+            "i_x10": 94,
+            "pwm": -88,
+            "total_hi": 0,
+            "total_lo": 264,
+            "request": -88,
+            "ctrl": -88,
+            "ccr": 739,
+            "limited": 0,
+            "obs": 0,
+            "total": 264,
+            "encoder": {
+              "sampled": 65272,
+              "live": 65272,
+              "bad": 0,
+              "ab": 2
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 693,
+          "speed_t": 574482,
+          "control_t": 574482,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574483,
+          "feedback": 28724,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574503,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -421,
+            "ff_x10": -911,
+            "p_x10": 58,
+            "i_x10": 96,
+            "pwm": -76,
+            "total_hi": 0,
+            "total_lo": 211,
+            "request": -76,
+            "ctrl": -76,
+            "ccr": 638,
+            "limited": 0,
+            "obs": 0,
+            "total": 211,
+            "encoder": {
+              "sampled": 211,
+              "live": 211,
+              "bad": 0,
+              "ab": 2
+            }
+          },
+          "LR": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -425,
+            "ff_x10": -952,
+            "p_x10": 59,
+            "i_x10": 95,
+            "pwm": -80,
+            "total_hi": 0,
+            "total_lo": 77,
+            "request": -80,
+            "ctrl": -80,
+            "ccr": 672,
+            "limited": 0,
+            "obs": 0,
+            "total": 77,
+            "encoder": {
+              "sampled": 77,
+              "live": 77,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -414,
+            "ff_x10": -1003,
+            "p_x10": 54,
+            "i_x10": 86,
+            "pwm": -86,
+            "total_hi": 0,
+            "total_lo": 391,
+            "request": -86,
+            "ctrl": -86,
+            "ccr": 722,
+            "limited": 0,
+            "obs": 0,
+            "total": 391,
+            "encoder": {
+              "sampled": 65145,
+              "live": 65145,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RR": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -426,
+            "ff_x10": -1030,
+            "p_x10": 60,
+            "i_x10": 100,
+            "pwm": -87,
+            "total_hi": 0,
+            "total_lo": 255,
+            "request": -87,
+            "ctrl": -87,
+            "ccr": 730,
+            "limited": 0,
+            "obs": 0,
+            "total": 255,
+            "encoder": {
+              "sampled": 65281,
+              "live": 65281,
+              "bad": 0,
+              "ab": 0
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 694,
+          "speed_t": 574502,
+          "control_t": 574502,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574503,
+          "feedback": 28725,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574523,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -429,
+            "ff_x10": -911,
+            "p_x10": 62,
+            "i_x10": 102,
+            "pwm": -75,
+            "total_hi": 0,
+            "total_lo": 202,
+            "request": -75,
+            "ctrl": -75,
+            "ccr": 630,
+            "limited": 0,
+            "obs": 0,
+            "total": 202,
+            "encoder": {
+              "sampled": 202,
+              "live": 202,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "LR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -418,
+            "ff_x10": -952,
+            "p_x10": 56,
+            "i_x10": 101,
+            "pwm": -79,
+            "total_hi": 0,
+            "total_lo": 69,
+            "request": -79,
+            "ctrl": -79,
+            "ccr": 663,
+            "limited": 0,
+            "obs": 0,
+            "total": 69,
+            "encoder": {
+              "sampled": 69,
+              "live": 68,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "RF": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -424,
+            "ff_x10": -1003,
+            "p_x10": 59,
+            "i_x10": 92,
+            "pwm": -85,
+            "total_hi": 0,
+            "total_lo": 382,
+            "request": -85,
+            "ctrl": -85,
+            "ccr": 714,
+            "limited": 0,
+            "obs": 0,
+            "total": 382,
+            "encoder": {
+              "sampled": 65154,
+              "live": 65154,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "RR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -418,
+            "ff_x10": -1030,
+            "p_x10": 56,
+            "i_x10": 106,
+            "pwm": -87,
+            "total_hi": 0,
+            "total_lo": 247,
+            "request": -87,
+            "ctrl": -87,
+            "ccr": 730,
+            "limited": 0,
+            "obs": 0,
+            "total": 247,
+            "encoder": {
+              "sampled": 65289,
+              "live": 65289,
+              "bad": 0,
+              "ab": 0
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 695,
+          "speed_t": 574522,
+          "control_t": 574522,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574523,
+          "feedback": 28726,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574543,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -421,
+            "ff_x10": -911,
+            "p_x10": 57,
+            "i_x10": 108,
+            "pwm": -75,
+            "total_hi": 0,
+            "total_lo": 194,
+            "request": -75,
+            "ctrl": -75,
+            "ccr": 630,
+            "limited": 0,
+            "obs": 0,
+            "total": 194,
+            "encoder": {
+              "sampled": 194,
+              "live": 194,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "LR": {
+            "dc": -9,
+            "raw": -450,
+            "target": -305,
+            "cps": -427,
+            "ff_x10": -952,
+            "p_x10": 60,
+            "i_x10": 107,
+            "pwm": -78,
+            "total_hi": 0,
+            "total_lo": 60,
+            "request": -78,
+            "ctrl": -78,
+            "ccr": 655,
+            "limited": 0,
+            "obs": 0,
+            "total": 60,
+            "encoder": {
+              "sampled": 60,
+              "live": 60,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "RF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -417,
+            "ff_x10": -1003,
+            "p_x10": 56,
+            "i_x10": 98,
+            "pwm": -85,
+            "total_hi": 0,
+            "total_lo": 374,
+            "request": -85,
+            "ctrl": -85,
+            "ccr": 714,
+            "limited": 0,
+            "obs": 0,
+            "total": 374,
+            "encoder": {
+              "sampled": 65162,
+              "live": 65162,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "RR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -413,
+            "ff_x10": -1030,
+            "p_x10": 53,
+            "i_x10": 111,
+            "pwm": -86,
+            "total_hi": 0,
+            "total_lo": 239,
+            "request": -86,
+            "ctrl": -86,
+            "ccr": 722,
+            "limited": 0,
+            "obs": 0,
+            "total": 239,
+            "encoder": {
+              "sampled": 65297,
+              "live": 65297,
+              "bad": 0,
+              "ab": 0
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 696,
+          "speed_t": 574542,
+          "control_t": 574542,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574543,
+          "feedback": 28727,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574563,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -415,
+            "ff_x10": -911,
+            "p_x10": 54,
+            "i_x10": 113,
+            "pwm": -74,
+            "total_hi": 0,
+            "total_lo": 186,
+            "request": -74,
+            "ctrl": -74,
+            "ccr": 621,
+            "limited": 0,
+            "obs": 0,
+            "total": 186,
+            "encoder": {
+              "sampled": 186,
+              "live": 186,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "LR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -419,
+            "ff_x10": -952,
+            "p_x10": 56,
+            "i_x10": 113,
+            "pwm": -78,
+            "total_hi": 0,
+            "total_lo": 52,
+            "request": -78,
+            "ctrl": -78,
+            "ccr": 655,
+            "limited": 0,
+            "obs": 0,
+            "total": 52,
+            "encoder": {
+              "sampled": 52,
+              "live": 52,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "RF": {
+            "dc": -7,
+            "raw": -350,
+            "target": -305,
+            "cps": -398,
+            "ff_x10": -1003,
+            "p_x10": 46,
+            "i_x10": 102,
+            "pwm": -85,
+            "total_hi": 0,
+            "total_lo": 367,
+            "request": -85,
+            "ctrl": -85,
+            "ccr": 714,
+            "limited": 0,
+            "obs": 0,
+            "total": 367,
+            "encoder": {
+              "sampled": 65169,
+              "live": 65170,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "RR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -409,
+            "ff_x10": -1030,
+            "p_x10": 52,
+            "i_x10": 117,
+            "pwm": -86,
+            "total_hi": 0,
+            "total_lo": 231,
+            "request": -86,
+            "ctrl": -86,
+            "ccr": 722,
+            "limited": 0,
+            "obs": 0,
+            "total": 231,
+            "encoder": {
+              "sampled": 65305,
+              "live": 65306,
+              "bad": 0,
+              "ab": 1
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 697,
+          "speed_t": 574562,
+          "control_t": 574562,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574563,
+          "feedback": 28728,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574583,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -410,
+            "ff_x10": -911,
+            "p_x10": 52,
+            "i_x10": 119,
+            "pwm": -74,
+            "total_hi": 0,
+            "total_lo": 178,
+            "request": -74,
+            "ctrl": -74,
+            "ccr": 621,
+            "limited": 0,
+            "obs": 0,
+            "total": 178,
+            "encoder": {
+              "sampled": 178,
+              "live": 178,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "LR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -413,
+            "ff_x10": -952,
+            "p_x10": 54,
+            "i_x10": 118,
+            "pwm": -78,
+            "total_hi": 0,
+            "total_lo": 44,
+            "request": -78,
+            "ctrl": -78,
+            "ccr": 655,
+            "limited": 0,
+            "obs": 0,
+            "total": 44,
+            "encoder": {
+              "sampled": 44,
+              "live": 44,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "RF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -398,
+            "ff_x10": -1003,
+            "p_x10": 46,
+            "i_x10": 107,
+            "pwm": -85,
+            "total_hi": 0,
+            "total_lo": 359,
+            "request": -85,
+            "ctrl": -85,
+            "ccr": 714,
+            "limited": 0,
+            "obs": 0,
+            "total": 359,
+            "encoder": {
+              "sampled": 65177,
+              "live": 65178,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "RR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -406,
+            "ff_x10": -1030,
+            "p_x10": 50,
+            "i_x10": 122,
+            "pwm": -86,
+            "total_hi": 0,
+            "total_lo": 223,
+            "request": -86,
+            "ctrl": -86,
+            "ccr": 722,
+            "limited": 0,
+            "obs": 0,
+            "total": 223,
+            "encoder": {
+              "sampled": 65313,
+              "live": 65313,
+              "bad": 0,
+              "ab": 0
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 698,
+          "speed_t": 574582,
+          "control_t": 574582,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574583,
+          "feedback": 28729,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574603,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -7,
+            "raw": -350,
+            "target": -305,
+            "cps": -393,
+            "ff_x10": -911,
+            "p_x10": 43,
+            "i_x10": 123,
+            "pwm": -74,
+            "total_hi": 0,
+            "total_lo": 171,
+            "request": -74,
+            "ctrl": -74,
+            "ccr": 621,
+            "limited": 0,
+            "obs": 0,
+            "total": 171,
+            "encoder": {
+              "sampled": 171,
+              "live": 170,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "LR": {
+            "dc": -7,
+            "raw": -350,
+            "target": -305,
+            "cps": -395,
+            "ff_x10": -952,
+            "p_x10": 45,
+            "i_x10": 123,
+            "pwm": -78,
+            "total_hi": 0,
+            "total_lo": 37,
+            "request": -78,
+            "ctrl": -78,
+            "ccr": 655,
+            "limited": 0,
+            "obs": 0,
+            "total": 37,
+            "encoder": {
+              "sampled": 37,
+              "live": 36,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "RF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -399,
+            "ff_x10": -1003,
+            "p_x10": 46,
+            "i_x10": 112,
+            "pwm": -84,
+            "total_hi": 0,
+            "total_lo": 351,
+            "request": -84,
+            "ctrl": -84,
+            "ccr": 705,
+            "limited": 0,
+            "obs": 0,
+            "total": 351,
+            "encoder": {
+              "sampled": 65185,
+              "live": 65185,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -404,
+            "ff_x10": -1030,
+            "p_x10": 49,
+            "i_x10": 127,
+            "pwm": -85,
+            "total_hi": 0,
+            "total_lo": 215,
+            "request": -85,
+            "ctrl": -85,
+            "ccr": 714,
+            "limited": 0,
+            "obs": 0,
+            "total": 215,
+            "encoder": {
+              "sampled": 65321,
+              "live": 65321,
+              "bad": 0,
+              "ab": 0
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 699,
+          "speed_t": 574602,
+          "control_t": 574602,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574603,
+          "feedback": 28730,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574623,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -395,
+            "ff_x10": -911,
+            "p_x10": 44,
+            "i_x10": 127,
+            "pwm": -74,
+            "total_hi": 0,
+            "total_lo": 163,
+            "request": -74,
+            "ctrl": -74,
+            "ccr": 621,
+            "limited": 0,
+            "obs": 0,
+            "total": 163,
+            "encoder": {
+              "sampled": 163,
+              "live": 163,
+              "bad": 0,
+              "ab": 2
+            }
+          },
+          "LR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -396,
+            "ff_x10": -952,
+            "p_x10": 45,
+            "i_x10": 127,
+            "pwm": -78,
+            "total_hi": 0,
+            "total_lo": 29,
+            "request": -78,
+            "ctrl": -78,
+            "ccr": 655,
+            "limited": 0,
+            "obs": 0,
+            "total": 29,
+            "encoder": {
+              "sampled": 29,
+              "live": 28,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "RF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -399,
+            "ff_x10": -1003,
+            "p_x10": 46,
+            "i_x10": 116,
+            "pwm": -84,
+            "total_hi": 0,
+            "total_lo": 343,
+            "request": -84,
+            "ctrl": -84,
+            "ccr": 705,
+            "limited": 0,
+            "obs": 0,
+            "total": 343,
+            "encoder": {
+              "sampled": 65193,
+              "live": 65193,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -403,
+            "ff_x10": -1030,
+            "p_x10": 48,
+            "i_x10": 131,
+            "pwm": -85,
+            "total_hi": 0,
+            "total_lo": 207,
+            "request": -85,
+            "ctrl": -85,
+            "ccr": 714,
+            "limited": 0,
+            "obs": 0,
+            "total": 207,
+            "encoder": {
+              "sampled": 65329,
+              "live": 65329,
+              "bad": 0,
+              "ab": 0
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 700,
+          "speed_t": 574622,
+          "control_t": 574622,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574623,
+          "feedback": 28731,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574643,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -396,
+            "ff_x10": -911,
+            "p_x10": 45,
+            "i_x10": 132,
+            "pwm": -73,
+            "total_hi": 0,
+            "total_lo": 155,
+            "request": -73,
+            "ctrl": -73,
+            "ccr": 613,
+            "limited": 0,
+            "obs": 0,
+            "total": 155,
+            "encoder": {
+              "sampled": 155,
+              "live": 155,
+              "bad": 0,
+              "ab": 2
+            }
+          },
+          "LR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -397,
+            "ff_x10": -952,
+            "p_x10": 46,
+            "i_x10": 132,
+            "pwm": -77,
+            "total_hi": 0,
+            "total_lo": 21,
+            "request": -77,
+            "ctrl": -77,
+            "ccr": 646,
+            "limited": 0,
+            "obs": 0,
+            "total": 21,
+            "encoder": {
+              "sampled": 21,
+              "live": 20,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "RF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -399,
+            "ff_x10": -1003,
+            "p_x10": 46,
+            "i_x10": 121,
+            "pwm": -83,
+            "total_hi": 0,
+            "total_lo": 335,
+            "request": -83,
+            "ctrl": -83,
+            "ccr": 697,
+            "limited": 0,
+            "obs": 0,
+            "total": 335,
+            "encoder": {
+              "sampled": 65201,
+              "live": 65201,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -402,
+            "ff_x10": -1030,
+            "p_x10": 48,
+            "i_x10": 136,
+            "pwm": -85,
+            "total_hi": 0,
+            "total_lo": 199,
+            "request": -85,
+            "ctrl": -85,
+            "ccr": 714,
+            "limited": 0,
+            "obs": 0,
+            "total": 199,
+            "encoder": {
+              "sampled": 65337,
+              "live": 65337,
+              "bad": 0,
+              "ab": 0
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 701,
+          "speed_t": 574642,
+          "control_t": 574642,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574643,
+          "feedback": 28732,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574663,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -397,
+            "ff_x10": -911,
+            "p_x10": 46,
+            "i_x10": 137,
+            "pwm": -73,
+            "total_hi": 0,
+            "total_lo": 147,
+            "request": -73,
+            "ctrl": -73,
+            "ccr": 613,
+            "limited": 0,
+            "obs": 0,
+            "total": 147,
+            "encoder": {
+              "sampled": 147,
+              "live": 147,
+              "bad": 0,
+              "ab": 2
+            }
+          },
+          "LR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -398,
+            "ff_x10": -952,
+            "p_x10": 46,
+            "i_x10": 137,
+            "pwm": -77,
+            "total_hi": 0,
+            "total_lo": 13,
+            "request": -77,
+            "ctrl": -77,
+            "ccr": 646,
+            "limited": 0,
+            "obs": 0,
+            "total": 13,
+            "encoder": {
+              "sampled": 13,
+              "live": 12,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "RF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -399,
+            "ff_x10": -1003,
+            "p_x10": 47,
+            "i_x10": 126,
+            "pwm": -83,
+            "total_hi": 0,
+            "total_lo": 327,
+            "request": -83,
+            "ctrl": -83,
+            "ccr": 697,
+            "limited": 0,
+            "obs": 0,
+            "total": 327,
+            "encoder": {
+              "sampled": 65209,
+              "live": 65209,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -401,
+            "ff_x10": -1030,
+            "p_x10": 48,
+            "i_x10": 141,
+            "pwm": -84,
+            "total_hi": 0,
+            "total_lo": 191,
+            "request": -84,
+            "ctrl": -84,
+            "ccr": 705,
+            "limited": 0,
+            "obs": 0,
+            "total": 191,
+            "encoder": {
+              "sampled": 65345,
+              "live": 65345,
+              "bad": 0,
+              "ab": 0
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 702,
+          "speed_t": 574662,
+          "control_t": 574662,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574663,
+          "feedback": 28733,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574683,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -398,
+            "ff_x10": -911,
+            "p_x10": 46,
+            "i_x10": 141,
+            "pwm": -72,
+            "total_hi": 0,
+            "total_lo": 139,
+            "request": -72,
+            "ctrl": -72,
+            "ccr": 604,
+            "limited": 0,
+            "obs": 0,
+            "total": 139,
+            "encoder": {
+              "sampled": 139,
+              "live": 139,
+              "bad": 0,
+              "ab": 2
+            }
+          },
+          "LR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -398,
+            "ff_x10": -952,
+            "p_x10": 46,
+            "i_x10": 141,
+            "pwm": -76,
+            "total_hi": 0,
+            "total_lo": 5,
+            "request": -76,
+            "ctrl": -76,
+            "ccr": 638,
+            "limited": 0,
+            "obs": 0,
+            "total": 5,
+            "encoder": {
+              "sampled": 5,
+              "live": 5,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -399,
+            "ff_x10": -1003,
+            "p_x10": 47,
+            "i_x10": 130,
+            "pwm": -83,
+            "total_hi": 0,
+            "total_lo": 319,
+            "request": -83,
+            "ctrl": -83,
+            "ccr": 697,
+            "limited": 0,
+            "obs": 0,
+            "total": 319,
+            "encoder": {
+              "sampled": 65217,
+              "live": 65217,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -401,
+            "ff_x10": -1030,
+            "p_x10": 47,
+            "i_x10": 146,
+            "pwm": -84,
+            "total_hi": 0,
+            "total_lo": 183,
+            "request": -84,
+            "ctrl": -84,
+            "ccr": 705,
+            "limited": 0,
+            "obs": 0,
+            "total": 183,
+            "encoder": {
+              "sampled": 65353,
+              "live": 65353,
+              "bad": 0,
+              "ab": 0
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 703,
+          "speed_t": 574682,
+          "control_t": 574682,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574683,
+          "feedback": 28734,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574703,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -7,
+            "raw": -350,
+            "target": -305,
+            "cps": -384,
+            "ff_x10": -911,
+            "p_x10": 39,
+            "i_x10": 145,
+            "pwm": -73,
+            "total_hi": 0,
+            "total_lo": 132,
+            "request": -73,
+            "ctrl": -73,
+            "ccr": 613,
+            "limited": 0,
+            "obs": 0,
+            "total": 132,
+            "encoder": {
+              "sampled": 132,
+              "live": 132,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "LR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -399,
+            "ff_x10": -952,
+            "p_x10": 46,
+            "i_x10": 146,
+            "pwm": -76,
+            "total_hi": 4294967295,
+            "total_lo": 4294967293,
+            "request": -76,
+            "ctrl": -76,
+            "ccr": 638,
+            "limited": 0,
+            "obs": 0,
+            "total": -3,
+            "encoder": {
+              "sampled": 4294967293,
+              "live": 4294967293,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -399,
+            "ff_x10": -1003,
+            "p_x10": 47,
+            "i_x10": 135,
+            "pwm": -82,
+            "total_hi": 0,
+            "total_lo": 311,
+            "request": -82,
+            "ctrl": -82,
+            "ccr": 688,
+            "limited": 0,
+            "obs": 0,
+            "total": 311,
+            "encoder": {
+              "sampled": 65225,
+              "live": 65225,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RR": {
+            "dc": -7,
+            "raw": -350,
+            "target": -305,
+            "cps": -386,
+            "ff_x10": -1030,
+            "p_x10": 40,
+            "i_x10": 150,
+            "pwm": -84,
+            "total_hi": 0,
+            "total_lo": 176,
+            "request": -84,
+            "ctrl": -84,
+            "ccr": 705,
+            "limited": 0,
+            "obs": 0,
+            "total": 176,
+            "encoder": {
+              "sampled": 65360,
+              "live": 65360,
+              "bad": 0,
+              "ab": 2
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 704,
+          "speed_t": 574702,
+          "control_t": 574702,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574703,
+          "feedback": 28735,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574723,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -388,
+            "ff_x10": -911,
+            "p_x10": 41,
+            "i_x10": 149,
+            "pwm": -72,
+            "total_hi": 0,
+            "total_lo": 124,
+            "request": -72,
+            "ctrl": -72,
+            "ccr": 604,
+            "limited": 0,
+            "obs": 0,
+            "total": 124,
+            "encoder": {
+              "sampled": 124,
+              "live": 124,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "LR": {
+            "dc": -7,
+            "raw": -350,
+            "target": -305,
+            "cps": -385,
+            "ff_x10": -952,
+            "p_x10": 39,
+            "i_x10": 150,
+            "pwm": -76,
+            "total_hi": 4294967295,
+            "total_lo": 4294967286,
+            "request": -76,
+            "ctrl": -76,
+            "ccr": 638,
+            "limited": 0,
+            "obs": 0,
+            "total": -10,
+            "encoder": {
+              "sampled": 4294967286,
+              "live": 4294967285,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RF": {
+            "dc": -7,
+            "raw": -350,
+            "target": -305,
+            "cps": -385,
+            "ff_x10": -1003,
+            "p_x10": 40,
+            "i_x10": 139,
+            "pwm": -82,
+            "total_hi": 0,
+            "total_lo": 304,
+            "request": -82,
+            "ctrl": -82,
+            "ccr": 688,
+            "limited": 0,
+            "obs": 0,
+            "total": 304,
+            "encoder": {
+              "sampled": 65232,
+              "live": 65232,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "RR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -390,
+            "ff_x10": -1030,
+            "p_x10": 42,
+            "i_x10": 154,
+            "pwm": -83,
+            "total_hi": 0,
+            "total_lo": 168,
+            "request": -83,
+            "ctrl": -83,
+            "ccr": 697,
+            "limited": 0,
+            "obs": 0,
+            "total": 168,
+            "encoder": {
+              "sampled": 65368,
+              "live": 65368,
+              "bad": 0,
+              "ab": 2
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 705,
+          "speed_t": 574722,
+          "control_t": 574722,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574723,
+          "feedback": 28736,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574743,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -392,
+            "ff_x10": -911,
+            "p_x10": 43,
+            "i_x10": 154,
+            "pwm": -71,
+            "total_hi": 0,
+            "total_lo": 116,
+            "request": -71,
+            "ctrl": -71,
+            "ccr": 596,
+            "limited": 0,
+            "obs": 0,
+            "total": 116,
+            "encoder": {
+              "sampled": 116,
+              "live": 116,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "LR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -389,
+            "ff_x10": -952,
+            "p_x10": 41,
+            "i_x10": 154,
+            "pwm": -76,
+            "total_hi": 4294967295,
+            "total_lo": 4294967278,
+            "request": -76,
+            "ctrl": -76,
+            "ccr": 638,
+            "limited": 0,
+            "obs": 0,
+            "total": -18,
+            "encoder": {
+              "sampled": 4294967278,
+              "live": 4294967278,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "RF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -389,
+            "ff_x10": -1003,
+            "p_x10": 42,
+            "i_x10": 143,
+            "pwm": -82,
+            "total_hi": 0,
+            "total_lo": 296,
+            "request": -82,
+            "ctrl": -82,
+            "ccr": 688,
+            "limited": 0,
+            "obs": 0,
+            "total": 296,
+            "encoder": {
+              "sampled": 65240,
+              "live": 65240,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "RR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -393,
+            "ff_x10": -1030,
+            "p_x10": 43,
+            "i_x10": 159,
+            "pwm": -83,
+            "total_hi": 0,
+            "total_lo": 160,
+            "request": -83,
+            "ctrl": -83,
+            "ccr": 697,
+            "limited": 0,
+            "obs": 0,
+            "total": 160,
+            "encoder": {
+              "sampled": 65376,
+              "live": 65376,
+              "bad": 0,
+              "ab": 2
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 706,
+          "speed_t": 574742,
+          "control_t": 574742,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574743,
+          "feedback": 28737,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574763,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -7,
+            "raw": -350,
+            "target": -305,
+            "cps": -380,
+            "ff_x10": -911,
+            "p_x10": 37,
+            "i_x10": 157,
+            "pwm": -72,
+            "total_hi": 0,
+            "total_lo": 109,
+            "request": -72,
+            "ctrl": -72,
+            "ccr": 604,
+            "limited": 0,
+            "obs": 0,
+            "total": 109,
+            "encoder": {
+              "sampled": 109,
+              "live": 108,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "LR": {
+            "dc": -7,
+            "raw": -350,
+            "target": -305,
+            "cps": -378,
+            "ff_x10": -952,
+            "p_x10": 36,
+            "i_x10": 158,
+            "pwm": -76,
+            "total_hi": 4294967295,
+            "total_lo": 4294967271,
+            "request": -76,
+            "ctrl": -76,
+            "ccr": 638,
+            "limited": 0,
+            "obs": 0,
+            "total": -25,
+            "encoder": {
+              "sampled": 4294967271,
+              "live": 4294967270,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "RF": {
+            "dc": -7,
+            "raw": -350,
+            "target": -305,
+            "cps": -378,
+            "ff_x10": -1003,
+            "p_x10": 36,
+            "i_x10": 147,
+            "pwm": -82,
+            "total_hi": 0,
+            "total_lo": 289,
+            "request": -82,
+            "ctrl": -82,
+            "ccr": 688,
+            "limited": 0,
+            "obs": 0,
+            "total": 289,
+            "encoder": {
+              "sampled": 65247,
+              "live": 65247,
+              "bad": 0,
+              "ab": 2
+            }
+          },
+          "RR": {
+            "dc": -7,
+            "raw": -350,
+            "target": -305,
+            "cps": -380,
+            "ff_x10": -1030,
+            "p_x10": 37,
+            "i_x10": 162,
+            "pwm": -83,
+            "total_hi": 0,
+            "total_lo": 153,
+            "request": -83,
+            "ctrl": -83,
+            "ccr": 697,
+            "limited": 0,
+            "obs": 0,
+            "total": 153,
+            "encoder": {
+              "sampled": 65383,
+              "live": 65384,
+              "bad": 0,
+              "ab": 2
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 707,
+          "speed_t": 574762,
+          "control_t": 574762,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574763,
+          "feedback": 28738,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574783,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -385,
+            "ff_x10": -911,
+            "p_x10": 40,
+            "i_x10": 161,
+            "pwm": -71,
+            "total_hi": 0,
+            "total_lo": 101,
+            "request": -71,
+            "ctrl": -71,
+            "ccr": 596,
+            "limited": 0,
+            "obs": 0,
+            "total": 101,
+            "encoder": {
+              "sampled": 101,
+              "live": 101,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "LR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -384,
+            "ff_x10": -952,
+            "p_x10": 39,
+            "i_x10": 162,
+            "pwm": -75,
+            "total_hi": 4294967295,
+            "total_lo": 4294967263,
+            "request": -75,
+            "ctrl": -75,
+            "ccr": 630,
+            "limited": 0,
+            "obs": 0,
+            "total": -33,
+            "encoder": {
+              "sampled": 4294967263,
+              "live": 4294967263,
+              "bad": 0,
+              "ab": 2
+            }
+          },
+          "RF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -384,
+            "ff_x10": -1003,
+            "p_x10": 39,
+            "i_x10": 151,
+            "pwm": -81,
+            "total_hi": 0,
+            "total_lo": 281,
+            "request": -81,
+            "ctrl": -81,
+            "ccr": 680,
+            "limited": 0,
+            "obs": 0,
+            "total": 281,
+            "encoder": {
+              "sampled": 65255,
+              "live": 65255,
+              "bad": 0,
+              "ab": 2
+            }
+          },
+          "RR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -386,
+            "ff_x10": -1030,
+            "p_x10": 40,
+            "i_x10": 166,
+            "pwm": -82,
+            "total_hi": 0,
+            "total_lo": 145,
+            "request": -82,
+            "ctrl": -82,
+            "ccr": 688,
+            "limited": 0,
+            "obs": 0,
+            "total": 145,
+            "encoder": {
+              "sampled": 65391,
+              "live": 65391,
+              "bad": 0,
+              "ab": 3
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 708,
+          "speed_t": 574782,
+          "control_t": 574782,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574783,
+          "feedback": 28739,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574803,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -7,
+            "raw": -350,
+            "target": -305,
+            "cps": -375,
+            "ff_x10": -911,
+            "p_x10": 34,
+            "i_x10": 165,
+            "pwm": -71,
+            "total_hi": 0,
+            "total_lo": 94,
+            "request": -71,
+            "ctrl": -71,
+            "ccr": 596,
+            "limited": 0,
+            "obs": 0,
+            "total": 94,
+            "encoder": {
+              "sampled": 94,
+              "live": 94,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "LR": {
+            "dc": -7,
+            "raw": -350,
+            "target": -305,
+            "cps": -374,
+            "ff_x10": -952,
+            "p_x10": 34,
+            "i_x10": 165,
+            "pwm": -75,
+            "total_hi": 4294967295,
+            "total_lo": 4294967256,
+            "request": -75,
+            "ctrl": -75,
+            "ccr": 630,
+            "limited": 0,
+            "obs": 0,
+            "total": -40,
+            "encoder": {
+              "sampled": 4294967256,
+              "live": 4294967256,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "RF": {
+            "dc": -7,
+            "raw": -350,
+            "target": -305,
+            "cps": -374,
+            "ff_x10": -1003,
+            "p_x10": 34,
+            "i_x10": 154,
+            "pwm": -81,
+            "total_hi": 0,
+            "total_lo": 274,
+            "request": -81,
+            "ctrl": -81,
+            "ccr": 680,
+            "limited": 0,
+            "obs": 0,
+            "total": 274,
+            "encoder": {
+              "sampled": 65262,
+              "live": 65262,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "RR": {
+            "dc": -7,
+            "raw": -350,
+            "target": -305,
+            "cps": -375,
+            "ff_x10": -1030,
+            "p_x10": 35,
+            "i_x10": 170,
+            "pwm": -83,
+            "total_hi": 0,
+            "total_lo": 138,
+            "request": -83,
+            "ctrl": -83,
+            "ccr": 697,
+            "limited": 0,
+            "obs": 0,
+            "total": 138,
+            "encoder": {
+              "sampled": 65398,
+              "live": 65398,
+              "bad": 0,
+              "ab": 1
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 709,
+          "speed_t": 574802,
+          "control_t": 574802,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574803,
+          "feedback": 28740,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574823,
+        "dt": 20,
+        "req": [
+          -40,
+          0
+        ],
+        "applied": [
+          -40,
+          0
+        ],
+        "state": 2,
+        "stop": 0,
+        "fault": 0,
+        "stby": 1,
+        "wheels": {
+          "LF": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -382,
+            "ff_x10": -911,
+            "p_x10": 38,
+            "i_x10": 169,
+            "pwm": -70,
+            "total_hi": 0,
+            "total_lo": 86,
+            "request": -70,
+            "ctrl": -70,
+            "ccr": 588,
+            "limited": 0,
+            "obs": 0,
+            "total": 86,
+            "encoder": {
+              "sampled": 86,
+              "live": 86,
+              "bad": 0,
+              "ab": 3
+            }
+          },
+          "LR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -381,
+            "ff_x10": -952,
+            "p_x10": 38,
+            "i_x10": 169,
+            "pwm": -74,
+            "total_hi": 4294967295,
+            "total_lo": 4294967248,
+            "request": -74,
+            "ctrl": -74,
+            "ccr": 621,
+            "limited": 0,
+            "obs": 0,
+            "total": -48,
+            "encoder": {
+              "sampled": 4294967248,
+              "live": 4294967248,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "RF": {
+            "dc": -7,
+            "raw": -350,
+            "target": -305,
+            "cps": -367,
+            "ff_x10": -1003,
+            "p_x10": 31,
+            "i_x10": 157,
+            "pwm": -81,
+            "total_hi": 0,
+            "total_lo": 267,
+            "request": -81,
+            "ctrl": -81,
+            "ccr": 680,
+            "limited": 0,
+            "obs": 0,
+            "total": 267,
+            "encoder": {
+              "sampled": 65269,
+              "live": 65269,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RR": {
+            "dc": -8,
+            "raw": -400,
+            "target": -305,
+            "cps": -382,
+            "ff_x10": -1030,
+            "p_x10": 38,
+            "i_x10": 174,
+            "pwm": -82,
+            "total_hi": 0,
+            "total_lo": 130,
+            "request": -82,
+            "ctrl": -82,
+            "ccr": 688,
+            "limited": 0,
+            "obs": 0,
+            "total": 130,
+            "encoder": {
+              "sampled": 65406,
+              "live": 65406,
+              "bad": 0,
+              "ab": 1
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 710,
+          "speed_t": 574822,
+          "control_t": 574822,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 150,
+          "pin": 1
+        },
+        "control": {
+          "t": 574823,
+          "feedback": 28741,
+          "generation": 24,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "t": 574842,
+        "dt": 20,
+        "req": [
+          0,
+          0
+        ],
+        "applied": [
+          0,
+          0
+        ],
+        "state": 1,
+        "stop": 7,
+        "fault": 0,
+        "stby": 0,
+        "wheels": {
+          "LF": {
+            "dc": -7,
+            "raw": -350,
+            "target": 0,
+            "cps": -373,
+            "ff_x10": 0,
+            "p_x10": 0,
+            "i_x10": 0,
+            "pwm": 0,
+            "total_hi": 0,
+            "total_lo": 79,
+            "request": 0,
+            "ctrl": 0,
+            "ccr": 0,
+            "limited": 0,
+            "obs": 1,
+            "total": 79,
+            "encoder": {
+              "sampled": 79,
+              "live": 79,
+              "bad": 0,
+              "ab": 2
+            }
+          },
+          "LR": {
+            "dc": -7,
+            "raw": -350,
+            "target": 0,
+            "cps": -372,
+            "ff_x10": 0,
+            "p_x10": 0,
+            "i_x10": 0,
+            "pwm": 0,
+            "total_hi": 4294967295,
+            "total_lo": 4294967241,
+            "request": 0,
+            "ctrl": 0,
+            "ccr": 0,
+            "limited": 0,
+            "obs": 1,
+            "total": -55,
+            "encoder": {
+              "sampled": 4294967241,
+              "live": 4294967241,
+              "bad": 0,
+              "ab": 1
+            }
+          },
+          "RF": {
+            "dc": -7,
+            "raw": -350,
+            "target": 0,
+            "cps": -362,
+            "ff_x10": 0,
+            "p_x10": 0,
+            "i_x10": 0,
+            "pwm": 0,
+            "total_hi": 0,
+            "total_lo": 260,
+            "request": 0,
+            "ctrl": 0,
+            "ccr": 0,
+            "limited": 0,
+            "obs": 1,
+            "total": 260,
+            "encoder": {
+              "sampled": 65276,
+              "live": 65276,
+              "bad": 0,
+              "ab": 0
+            }
+          },
+          "RR": {
+            "dc": -7,
+            "raw": -350,
+            "target": 0,
+            "cps": -373,
+            "ff_x10": 0,
+            "p_x10": 0,
+            "i_x10": 0,
+            "pwm": 0,
+            "total_hi": 0,
+            "total_lo": 123,
+            "request": 0,
+            "ctrl": 0,
+            "ccr": 0,
+            "limited": 0,
+            "obs": 1,
+            "total": 123,
+            "encoder": {
+              "sampled": 65413,
+              "live": 65413,
+              "bad": 0,
+              "ab": 0
+            }
+          }
+        },
+        "snapshot": {
+          "seq": 711,
+          "speed_t": 574842,
+          "control_t": 574822,
+          "flags": 0,
+          "arr": 8399,
+          "bdtr": 40960,
+          "ccer": 4369,
+          "dirs": 0,
+          "pin": 0
+        },
+        "control": {
+          "t": 574842,
+          "feedback": 28741,
+          "generation": 25,
+          "pivot": 0,
+          "scale_x1000": 1000,
+          "limits": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    ]
+  }
+]

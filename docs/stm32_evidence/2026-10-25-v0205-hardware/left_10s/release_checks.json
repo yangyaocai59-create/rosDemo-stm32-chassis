@@ -1,0 +1,110 @@
+{
+  "checks": {
+    "motion_completed": true,
+    "stopped": true,
+    "no_fault": true,
+    "clean_transport": true,
+    "zero_final_outputs": true,
+    "zero_final_wheels": true,
+    "yaw_ready_during_motion": true,
+    "bounded_yaw": true,
+    "yaw_intervened": true,
+    "no_control_overruns": true
+  },
+  "active_yaw_logs": [
+    {
+      "time": 742278,
+      "ready": 1,
+      "valid": 1,
+      "ref": 345,
+      "correction": 0,
+      "integral": 0,
+      "inhibit": 1
+    },
+    {
+      "time": 743471,
+      "ready": 1,
+      "valid": 1,
+      "ref": 400,
+      "correction": 21,
+      "integral": 0,
+      "inhibit": 0
+    },
+    {
+      "time": 744671,
+      "ready": 1,
+      "valid": 1,
+      "ref": 400,
+      "correction": 28,
+      "integral": 6,
+      "inhibit": 0
+    },
+    {
+      "time": 745671,
+      "ready": 1,
+      "valid": 1,
+      "ref": 400,
+      "correction": 13,
+      "integral": 10,
+      "inhibit": 0
+    },
+    {
+      "time": 746671,
+      "ready": 1,
+      "valid": 1,
+      "ref": 400,
+      "correction": -1,
+      "integral": 0,
+      "inhibit": 0
+    },
+    {
+      "time": 747670,
+      "ready": 1,
+      "valid": 1,
+      "ref": 400,
+      "correction": -3,
+      "integral": 0,
+      "inhibit": 0
+    },
+    {
+      "time": 748670,
+      "ready": 1,
+      "valid": 1,
+      "ref": 400,
+      "correction": 13,
+      "integral": 0,
+      "inhibit": 0
+    },
+    {
+      "time": 749670,
+      "ready": 1,
+      "valid": 1,
+      "ref": 400,
+      "correction": -16,
+      "integral": 0,
+      "inhibit": 0
+    },
+    {
+      "time": 750670,
+      "ready": 1,
+      "valid": 1,
+      "ref": 400,
+      "correction": 0,
+      "integral": -3,
+      "inhibit": 0
+    },
+    {
+      "time": 751670,
+      "ready": 1,
+      "valid": 1,
+      "ref": 400,
+      "correction": -4,
+      "integral": -2,
+      "inhibit": 0
+    }
+  ],
+  "trace_available": false,
+  "trace_ccr_registers_verified": false,
+  "setup": "unspecified",
+  "whole_vehicle_repeated_acceptance": false
+}

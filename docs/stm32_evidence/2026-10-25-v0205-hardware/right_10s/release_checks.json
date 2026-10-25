@@ -1,0 +1,110 @@
+{
+  "checks": {
+    "motion_completed": true,
+    "stopped": true,
+    "no_fault": true,
+    "clean_transport": true,
+    "zero_final_outputs": true,
+    "zero_final_wheels": true,
+    "yaw_ready_during_motion": true,
+    "bounded_yaw": true,
+    "yaw_intervened": true,
+    "no_control_overruns": true
+  },
+  "active_yaw_logs": [
+    {
+      "time": 895071,
+      "ready": 1,
+      "valid": 1,
+      "ref": -400,
+      "correction": 0,
+      "integral": 0,
+      "inhibit": 1
+    },
+    {
+      "time": 896071,
+      "ready": 1,
+      "valid": 1,
+      "ref": -400,
+      "correction": -2,
+      "integral": 0,
+      "inhibit": 0
+    },
+    {
+      "time": 897071,
+      "ready": 1,
+      "valid": 1,
+      "ref": -400,
+      "correction": -14,
+      "integral": -2,
+      "inhibit": 0
+    },
+    {
+      "time": 898271,
+      "ready": 1,
+      "valid": 1,
+      "ref": -400,
+      "correction": -14,
+      "integral": -7,
+      "inhibit": 0
+    },
+    {
+      "time": 899270,
+      "ready": 1,
+      "valid": 1,
+      "ref": -400,
+      "correction": 9,
+      "integral": -2,
+      "inhibit": 0
+    },
+    {
+      "time": 900270,
+      "ready": 1,
+      "valid": 1,
+      "ref": -400,
+      "correction": -8,
+      "integral": 0,
+      "inhibit": 1
+    },
+    {
+      "time": 901271,
+      "ready": 1,
+      "valid": 1,
+      "ref": -400,
+      "correction": 15,
+      "integral": 0,
+      "inhibit": 0
+    },
+    {
+      "time": 902270,
+      "ready": 1,
+      "valid": 1,
+      "ref": -400,
+      "correction": 38,
+      "integral": 10,
+      "inhibit": 0
+    },
+    {
+      "time": 903270,
+      "ready": 1,
+      "valid": 1,
+      "ref": -400,
+      "correction": 22,
+      "integral": 16,
+      "inhibit": 0
+    },
+    {
+      "time": 904270,
+      "ready": 1,
+      "valid": 1,
+      "ref": -400,
+      "correction": 18,
+      "integral": 17,
+      "inhibit": 0
+    }
+  ],
+  "trace_available": false,
+  "trace_ccr_registers_verified": false,
+  "setup": "unspecified",
+  "whole_vehicle_repeated_acceptance": false
+}

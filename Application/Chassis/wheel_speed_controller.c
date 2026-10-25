@@ -3,6 +3,10 @@
  * @brief Per-wheel direction-aware feedforward plus PI speed control.
  */
 
+#include "chassis_control_config.h"
+#if CHASSIS_CONTROL_V2
+#include "wheel_speed_controller_v2.inc"
+#else
 #include "wheel_speed_controller.h"
 
 #include <stddef.h>
@@ -403,3 +407,4 @@ bool WheelSpeedController_GetState(MotorDriverWheel wheel,
   *state = s_states[wheel];
   return true;
 }
+#endif /* Legacy compatibility is excluded from revision 200 firmware. */

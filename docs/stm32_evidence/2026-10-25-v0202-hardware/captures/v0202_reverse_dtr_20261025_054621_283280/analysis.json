@@ -1,0 +1,207 @@
+{
+  "folder": "build\\hardware_tests\\v0202_reverse_dtr_20261025_054621_283280",
+  "result": "PASS_BOUNDED_HARDWARE_CHECK",
+  "setup": "unspecified",
+  "firmware_user_report": "0.20.2",
+  "case": "reverse",
+  "stop_mode": "dtr",
+  "boot_banner_verified": false,
+  "mcu_active_span_s": 1.478,
+  "events_this_run": [
+    {
+      "seq": 20,
+      "t": 345562,
+      "kind": 1,
+      "state": 2,
+      "generation": 15,
+      "command": 217
+    },
+    {
+      "seq": 21,
+      "t": 347040,
+      "kind": 3,
+      "state": 2,
+      "generation": 15,
+      "command": 240
+    }
+  ],
+  "host_velocity_span_s": 1.5,
+  "startup_exclusion_ms": 500,
+  "command_mm_s_mrad_s": [
+    -40,
+    0
+  ],
+  "verified_stop_reason": 7,
+  "net_counts_including_settling": [
+    -545,
+    -538,
+    -539,
+    -545
+  ],
+  "wheel_distance_mm_including_settling": [
+    -71.34033317526821,
+    -70.4240353179712,
+    -70.55493501187077,
+    -71.34033317526821
+  ],
+  "active_trace_samples": 74,
+  "settled_trace_samples": 49,
+  "settled_trace_source_span_ms": [
+    346063,
+    347023
+  ],
+  "snapshot_flags": [
+    0
+  ],
+  "feedback_age_ms_range": [
+    1,
+    1
+  ],
+  "control_limit_reasons": [
+    0,
+    4
+  ],
+  "target_scale_x1000": [
+    1000
+  ],
+  "pivot_masks": [
+    0
+  ],
+  "vm_mV_range": [
+    10648,
+    10780
+  ],
+  "accepted_delta": 24,
+  "rejected_delta": 0,
+  "device_transport_counter_deltas": [
+    0,
+    0,
+    0
+  ],
+  "host_crc_errors": 0,
+  "fault_pairs": [
+    [
+      0,
+      0
+    ]
+  ],
+  "trace_final_stby": 0,
+  "trace_final_ccr": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "last_three_wheel_feedback_zero": true,
+  "final_stopped_verified": true,
+  "wheels": {
+    "LF": {
+      "settled_mean_target_cps": 305,
+      "settled_mean_feedback_cps": 384.1020408163265,
+      "settled_rms_error_cps": 90.44696269761904,
+      "settled_pwm_magnitude_range": [
+        67,
+        79
+      ],
+      "settled_max_integral_magnitude": 22.3,
+      "settled_integral_at_50_samples": 0,
+      "settled_zero_net_count_samples": 0,
+      "trace_request_applied_mismatch_samples": 0,
+      "encoder_bad_values": [
+        0
+      ]
+    },
+    "LR": {
+      "settled_mean_target_cps": 305,
+      "settled_mean_feedback_cps": 383.59183673469386,
+      "settled_rms_error_cps": 89.83783576363513,
+      "settled_pwm_magnitude_range": [
+        72,
+        84
+      ],
+      "settled_max_integral_magnitude": 21.5,
+      "settled_integral_at_50_samples": 0,
+      "settled_zero_net_count_samples": 0,
+      "trace_request_applied_mismatch_samples": 0,
+      "encoder_bad_values": [
+        0
+      ]
+    },
+    "RF": {
+      "settled_mean_target_cps": 305,
+      "settled_mean_feedback_cps": 380.2244897959184,
+      "settled_rms_error_cps": 88.4755241145648,
+      "settled_pwm_magnitude_range": [
+        79,
+        89
+      ],
+      "settled_max_integral_magnitude": 20.6,
+      "settled_integral_at_50_samples": 0,
+      "settled_zero_net_count_samples": 0,
+      "trace_request_applied_mismatch_samples": 0,
+      "encoder_bad_values": [
+        0
+      ]
+    },
+    "RR": {
+      "settled_mean_target_cps": 305,
+      "settled_mean_feedback_cps": 385.0204081632653,
+      "settled_rms_error_cps": 92.01097982394963,
+      "settled_pwm_magnitude_range": [
+        79,
+        90
+      ],
+      "settled_max_integral_magnitude": 22.6,
+      "settled_integral_at_50_samples": 0,
+      "settled_zero_net_count_samples": 0,
+      "trace_request_applied_mismatch_samples": 0,
+      "encoder_bad_values": [
+        0
+      ]
+    }
+  },
+  "timing_lines": [
+    "[0000344432] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=812/344",
+    "[0000344441] [INFO ] CTRL EXEC us max: motor=368 safety=83 acquire=52 control=248 trace=118",
+    "[0000344450] [INFO ] CTRL V2 gen=21 n=83 feedback=15345 age=37548 mode=0 scale_x1000=1000 rms=101/103/104/102 zero_max_ms=60/120/40/40",
+    "[0000345432] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=812/344",
+    "[0000345442] [INFO ] CTRL EXEC us max: motor=368 safety=83 acquire=52 control=248 trace=118",
+    "[0000345450] [INFO ] CTRL V2 gen=21 n=83 feedback=15345 age=38548 mode=0 scale_x1000=1000 rms=101/103/104/102 zero_max_ms=60/120/40/40",
+    "[0000346432] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=812/344",
+    "[0000346442] [INFO ] CTRL EXEC us max: motor=368 safety=83 acquire=52 control=248 trace=118",
+    "[0000346450] [INFO ] CTRL V2 gen=24 n=45 feedback=17322 age=8 mode=0 scale_x1000=1000 rms=128/132/133/133 zero_max_ms=80/80/60/80",
+    "[0000347432] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=812/344",
+    "[0000347441] [INFO ] CTRL EXEC us max: motor=368 safety=90 acquire=52 control=248 trace=118",
+    "[0000347450] [INFO ] CTRL V2 gen=24 n=74 feedback=17351 age=428 mode=0 scale_x1000=1000 rms=105/107/108/109 zero_max_ms=80/80/60/80",
+    "[0000373193] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=812/344",
+    "[0000373203] [INFO ] CTRL EXEC us max: motor=368 safety=90 acquire=52 control=248 trace=118",
+    "[0000373211] [INFO ] CTRL V2 gen=24 n=74 feedback=17351 age=26189 mode=0 scale_x1000=1000 rms=105/107/108/109 zero_max_ms=80/80/60/80",
+    "[0000374193] [INFO ] CTRL TIMING: motor_dt=20..20 safety_dt=10..10 overrun=0/0 log_drop=0 stack_free=812/344",
+    "[0000374203] [INFO ] CTRL EXEC us max: motor=368 safety=90 acquire=52 control=248 trace=118",
+    "[0000374211] [INFO ] CTRL V2 gen=24 n=74 feedback=17351 age=27189 mode=0 scale_x1000=1000 rms=105/107/108/109 zero_max_ms=80/80/60/80"
+  ],
+  "active_diagnostics": [
+    {
+      "time_ms": 346450,
+      "generation": 24,
+      "samples": 45,
+      "feedback_sequence": 17322,
+      "age_ms": 8
+    }
+  ],
+  "active_diagnostic_age_ms_range": [
+    8,
+    8
+  ],
+  "diagnostic_age_unsigned_underflow_samples": 0,
+  "checks": {
+    "feedback_age_within_40ms": true,
+    "transport_clean": true,
+    "no_fault": true,
+    "trace_output_disabled": true,
+    "encoder_config_clean": true,
+    "final_stopped": true,
+    "diagnostic_age_no_unsigned_underflow": true,
+    "active_diagnostic_age_within_40ms": true
+  }
+}

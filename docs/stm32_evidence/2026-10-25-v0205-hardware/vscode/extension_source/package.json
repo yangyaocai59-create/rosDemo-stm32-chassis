@@ -1,0 +1,16 @@
+{
+  "name": "firmware-status",
+  "displayName": "rosDemo Firmware Status",
+  "publisher": "rosdemo",
+  "version": "0.1.1",
+  "description": "Synchronize this workspace's successful build with CMake and STM32 Build Analyzer; distinguish user-reported flashes.",
+  "engines": { "vscode": "^1.94.0" },
+  "main": "./extension.js",
+  "activationEvents": ["workspaceContains:rosDemo.ioc", "onUri"],
+  "contributes": {
+    "commands": [
+      {"command":"rosdemo.firmware.refresh","title":"rosDemo: 更新当前固件与构建分析"},
+      {"command":"rosdemo.firmware.status","title":"rosDemo: 查看编译与烧录状态"}
+    ]
+  }
+}

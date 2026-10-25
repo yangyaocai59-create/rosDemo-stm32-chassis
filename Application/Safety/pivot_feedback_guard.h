@@ -5,6 +5,12 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <math.h>
+#include "chassis_control_config.h"
+#if CHASSIS_CONTROL_V2
+#define PIVOT_GUARD_MIN_TARGET_CPS 1.0f
+#else
+#define PIVOT_GUARD_MIN_TARGET_CPS 20.0f
+#endif
 #define PIVOT_GUARD_GRACE_MS 1000U
 #define PIVOT_GUARD_WARN_MS 250U
 #define PIVOT_GUARD_STOP_MS 2000U
@@ -19,7 +25,7 @@ typedef struct
 static inline bool PivotFeedbackGuard_Update(PivotFeedbackGuard *s,
   bool owned,float target,float speed,uint32_t now)
 {
-  if (!owned || !isfinite(target) || !isfinite(speed) || fabsf(target)<20.0f)
+  if (!owned || !isfinite(target) || !isfinite(speed) || fabsf(target)<PIVOT_GUARD_MIN_TARGET_CPS)
   { *s=(PivotFeedbackGuard){0}; return false; }
   const int8_t sign=target>0?1:-1;
   if (!s->active || s->sign!=sign)
@@ -30,7 +36,12 @@ static inline bool PivotFeedbackGuard_Update(PivotFeedbackGuard *s,
   /* Cover near-rest even at low targets, as well as severe tracking loss.
    * At 240 cps: low<=36, confirmed recovery>=60 cps. */
   const float low=fmaxf(fminf(20.0f,.25f*magnitude),.15f*magnitude);
-  const float recovered=fmaxf(low+1.0f,.25f*magnitude);
+  float recovered=fmaxf(low+1.0f,.25f*magnitude);
+#if CHASSIS_CONTROL_V2
+  /* At targets near 1cps, low+1 would exceed the target itself. Normal valid
+   * motion must be able to qualify recovery without artificial overspeed. */
+  recovered=fminf(.75f*magnitude,recovered);
+#endif
   if (!s->low && directed<=low)
   { s->low=true;s->low_since_ms=now; }
   if (s->low)

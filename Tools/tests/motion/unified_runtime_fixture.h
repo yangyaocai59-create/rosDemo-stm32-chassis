@@ -14,8 +14,23 @@ static unsigned depth;
 static bool estop;
 static MotorDriverStatus motor={.initialized=true};
 static float feedback[4];
+#if CHASSIS_CONTROL_V2
+static uint32_t fixture_feedback_time, fixture_feedback_sequence;
+static bool fixture_feedback_frozen, fixture_feedback_invalid;
+static void (*fixture_exit_hook)(void);
+static void (*fixture_snapshot_hook)(void);
+#endif
 void Test_EnterCritical(void) { ++depth; }
-void Test_ExitCritical(void) { assert(depth); --depth; }
+void Test_ExitCritical(void) {
+  assert(depth); --depth;
+#if CHASSIS_CONTROL_V2
+  if (!depth && fixture_exit_hook) {
+    void (*hook)(void)=fixture_exit_hook;
+    fixture_exit_hook=NULL;
+    hook();
+  }
+#endif
+}
 bool DebugLog_Printf(DebugLog_Level level,const char *format,...)
 { (void)level; (void)format; assert(!depth); return true; }
 bool EmergencyStop_CanEnableMotor(void) { return !estop; }
@@ -36,11 +51,29 @@ bool WheelSpeedEstimator_GetSnapshot(WheelSpeedState states[ENCODER_WHEEL_COUNT]
   memset(states,0,sizeof(*states)*ENCODER_WHEEL_COUNT);
   for(unsigned w=0;w<4;w++)
   { states[w].valid=true; states[w].sample_period_ms=20;
-    states[w].filtered_counts_per_second=feedback[w]; }
+    states[w].filtered_counts_per_second=feedback[w];
+#if CHASSIS_CONTROL_V2
+    states[w].sample_time_ms=fixture_feedback_time;
+    states[w].sample_sequence=fixture_feedback_sequence;
+    states[w].valid=!fixture_feedback_invalid;
+    states[w].delta_counts=(int32_t)(feedback[w]*.02f);
+#endif
+  }
+#if CHASSIS_CONTROL_V2
+  if (fixture_snapshot_hook) {
+    void (*hook)(void)=fixture_snapshot_hook;fixture_snapshot_hook=NULL;hook();
+  }
+#endif
   return true;
 }
 static void Heartbeat(uint32_t now)
 {
+#if CHASSIS_CONTROL_V2
+  if (!fixture_feedback_frozen) {
+    fixture_feedback_time=now;
+    ++fixture_feedback_sequence;
+  }
+#endif
   for(unsigned t=0;t<FAULT_MANAGER_TASK_COUNT;t++)
     FaultManager_Heartbeat((FaultManagerTask)t,now);
 }
@@ -49,6 +82,12 @@ static ChassisRuntimeStatus Runtime(void)
 static void Init(uint32_t now)
 {
   estop=false; memset(feedback,0,sizeof(feedback));
+#if CHASSIS_CONTROL_V2
+  fixture_feedback_frozen=fixture_feedback_invalid=false;
+  fixture_feedback_sequence=0U;
+  fixture_exit_hook=NULL;
+  fixture_snapshot_hook=NULL;
+#endif
   FaultManager_Init(now); FaultManager_MarkSystemInitComplete(now); Heartbeat(now);
   ChassisController_Init(); assert(ChassisRuntime_Init(now));
 }

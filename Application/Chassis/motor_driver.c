@@ -10,6 +10,7 @@
 #include "board_config.h"
 #include "emergency_stop.h"
 #include "main.h"
+#include "chassis_control_config.h"
 
 typedef struct
 {
@@ -222,6 +223,11 @@ bool MotorDriver_SetCommand(MotorDriverWheel wheel, int16_t command_permille)
   channel = &s_channels[wheel];
   electrical_command =
     (int16_t)(saturated_command * channel->forward_sign);
+#if CHASSIS_CONTROL_V2
+  /* ARR is fixed after initialization. Keep the 64-bit ratio division out of
+   * PRIMASK; GPIO/CCR writes and emergency-stop rechecks remain protected. */
+  compare = MotorDriver_CommandToCompare(channel, electrical_command);
+#endif
 
   previous_primask = __get_PRIMASK();
   __disable_irq();
@@ -269,7 +275,9 @@ bool MotorDriver_SetCommand(MotorDriverWheel wheel, int16_t command_permille)
         (requested_sign > 0) ? GPIO_PIN_SET : GPIO_PIN_RESET,
         (requested_sign < 0) ? GPIO_PIN_SET : GPIO_PIN_RESET);
     }
+#if !CHASSIS_CONTROL_V2
     compare = MotorDriver_CommandToCompare(channel, electrical_command);
+#endif
     __HAL_TIM_SET_COMPARE(channel->timer, channel->channel, compare);
     s_electrical_sign[wheel] = requested_sign;
     s_zero_pending[wheel] = false;
